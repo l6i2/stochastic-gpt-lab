@@ -1,4 +1,4 @@
-# Diccionario del dataset v1.0
+# Diccionario del dataset v1.1
 
 Una fila por señal; CSV separado por coma, UTF-8 y punto decimal. Faltantes se escriben vacíos, se leen como NaN y se conservan en Parquet. No se reemplazan por ceros. Todos los precios, distancias, ATR y PnL están en unidades absolutas del símbolo. Ratios son fracciones salvo nombres que indican percent/percentile (0–100). La lista exhaustiva está al final; `python/research.py:REQUIRED` define el contrato ejecutable.
 
@@ -93,6 +93,86 @@ HH/HL/LH/LL no son pivotes retrospectivos: cuentan comparaciones de cada vela ce
 `entry_bid`, `entry_ask`, `spread=ask-bid`, `follow_side`, `invert_side`. Para cada prefijo `follow_`/`invert_`: `entry_price`, `exit_time` (milisegundos de server), `exit_price`, `exit_reason` (TP/SL/TIME_EXIT/END_OF_DATA), `PnL`, `MFE`, `MAE`, `bars_in_trade`. Censura mantiene último precio observado como marca, PnL vacío y ventaja vacía si cualquiera de los lados está censurado. MFE/MAE no negativas en unidades de precio, definición y límites en STRATEGY_SPEC.
 
 `excursion_quality=observed_quotes` o `full_exit_bar_bounds`. `directional_advantage=follow_PnL−invert_PnL`. Valores positivos favorecen FOLLOW. No implican rentabilidad monetaria.
+
+## HEIKIN_ASHI — familia causal, schema 1.1
+
+HA es exclusivamente contexto. No genera ni cancela señales, no modifica dirección Stochastic, entrada, TP, SL, timeout ni FOLLOW/INVERT. Los precios HA **no son cotizaciones ejecutables**.
+
+### Serie, inicialización y warmup
+
+El EA carga hasta 350 barras M5 **cerradas** en su primer cambio de vela. Recorre esas barras desde la más antigua hasta la de señal. Para la primera barra histórica usada:
+
+```text
+HA_Close[0] = (Open[0] + High[0] + Low[0] + Close[0]) / 4
+HA_Open[0]  = (Open[0] + Close[0]) / 2
+```
+
+Para cada barra cronológicamente posterior t:
+
+```text
+HA_Close[t] = (Open[t] + High[t] + Low[t] + Close[t]) / 4
+HA_Open[t]  = (HA_Open[t-1] + HA_Close[t-1]) / 2
+HA_High[t]  = max(High[t], HA_Open[t], HA_Close[t])
+HA_Low[t]   = min(Low[t], HA_Open[t], HA_Close[t])
+```
+
+La recurrencia y los contadores persisten toda la corrida. Se actualizan **en cada barra cerrada, también sin señal**; no se reinician por señal ni al deslizar la ventana de CopyRates. Se guardan 21 barras HA recientes para estadísticas y un estado recursivo/streak persistente. Se rechazan barras duplicadas, anteriores o cuyo cierre `(bar_open+300)*1000-1` supere el cutoff. La HA exportada debe corresponder exactamente a `signal_bar_open`; nunca a `entry_bar_open`.
+
+Warmup fijo de **256 barras procesadas**, incluidas en la recurrencia pero excluidas de las ventanas HA exportables. La primera fila `ready` requiere **276 barras**: así su ventana máxima de 20 comienza en la barra 257. Para la misma secuencia de OHLC posterior al seed, un error inicial de HA_Open se divide por 2 por barra: queda multiplicado por 2^-256 al inicio de las ventanas elegibles (salvo redondeo). Esto no garantiza signo estable para dojis numéricamente casi exactos; las fórmulas de dirección son comparaciones estrictas.
+
+Si no hay prehistoria suficiente, se conservan **todas** las señales y trades Stochastic: campos HA vacíos, `ha_status=warming_up`. No se fuerza un filtro operativo ni se completa HA retrospectivamente. Para un run ordinario, aportar las 350 barras previas recomendadas. Cambiar la fecha inicial puede cambiar seed/streak observado; conservar metadata y misma prehistoria al comparar corridas.
+
+### Metadata HA
+
+| Campo | Definición |
+|---|---|
+| ha_status | ready, warming_up o unavailable (desalineación de contexto); sólo ready publica features |
+| ha_seed_bar_open | Timestamp server en segundos de la primera barra usada, no se mueve durante la corrida |
+| ha_last_bar_open | Timestamp server de la última barra HA incorporada; igual a signal_bar_open para ready |
+| ha_bars_processed | Total acumulado de barras cerradas procesadas desde seed |
+| ha_warmup_bars | Constante 256 |
+| ha_streak_left_censored | 1 si un streak actual o el previo alcanza la primera barra del seed; su longitud observada es una cota inferior |
+
+Los streaks cuentan desde seed (incluido warmup), no se limitan a 21/350 barras. Un doji termina ambos streaks. Censura izquierda no cancela señales ni invalida los demás campos.
+
+### Fórmulas de features
+
+En la tabla, `x[0]` = HA de la vela señal cerrada, `x[j]` = j barras antes; `B=abs(HA_Close−HA_Open)`, `R=HA_High−HA_Low`. División por cero => vacío, nunca infinito. Medias y ratios sólo usan las barras HA descritas, no las futuras.
+
+| Campos | Fórmula exacta |
+|---|---|
+| ha_open/high/low/close | OHLC sintéticos de la recurrencia anterior |
+| ha_direction | +1 si HA_Close>HA_Open, −1 si menor, 0 si iguales |
+| ha_body, ha_range | B, R |
+| ha_body_percent | 100*B/R |
+| ha_upper_wick | HA_High−max(HA_Open,HA_Close) |
+| ha_lower_wick | min(HA_Open,HA_Close)−HA_Low |
+| ha_upper_wick_to_range, ha_lower_wick_to_range | Mecha correspondiente/R, fracción 0–1 |
+| ha_delta_close_1/2/3 | HA_Close[0]−HA_Close[j] |
+| ha_delta_body_1/2/3 | B[0]−B[j] |
+| ha_body_expansion | B[0]/B[1] (no se resta 1) |
+| ha_range_expansion | R[0]/R[1] |
+| ha_consecutive_bullish/bearish | Longitud contigua de ese color terminando en señal; 0 si señal de otro color o doji |
+| ha_bullish_ratio_n/ha_bearish_ratio_n, n=3/5/10/20 | Fracción de barras de ese color en índices [0,n); incluye señal; dojis sólo en denominador |
+| ha_avg_body_n/ha_avg_range_n, n=3/5/10/20 | Media de B/R en [0,n); incluye señal |
+| ha_body_vs_avg5/10 | B[0]/media(B[1:n+1]); denominador excluye señal |
+| ha_range_vs_avg5/10 | R[0]/media(R[1:n+1]); denominador excluye señal |
+| ha_no_lower_wick/ha_no_upper_wick | 1 si mecha correspondiente <=1e-10 unidades de precio, tolerancia numérica fija |
+| ha_small_body | 1 si R>0 y B<=0.25*R |
+| ha_bullish_strong | 1 si direction=+1, no_lower_wick=1 y B>=0.5*R |
+| ha_bearish_strong | 1 si direction=−1, no_upper_wick=1 y B>=0.5*R |
+| ha_indecision | 1 si small_body=1 y ambas mechas >1e-10 |
+| ha_changed_to_bullish | 1 si direction[0]=+1 y direction[1]!=+1; incluye transición desde doji |
+| ha_changed_to_bearish | 1 si direction[0]=−1 y direction[1]!=−1; incluye transición desde doji |
+| ha_bullish_after_bearish_run | 1 si dirección actual +1 y streak bearish que termina en la barra anterior >0 |
+| ha_bearish_after_bullish_run | 1 si dirección actual −1 y streak bullish que termina en la barra anterior >0 |
+| ha_bullish_run_before_signal/ha_bearish_run_before_signal | Longitud contigua de ese color terminando en la barra inmediatamente anterior, excluye señal |
+
+Los umbrales 25 % / 50 % son convenciones descriptivas fijas, no parámetros optimizados con resultados. No activan acciones. En vela de rango cero, direction=0, small_body=0, strong=0, indecision=0; las dos flags sin mecha son 1 y los cocientes de rango son vacíos.
+
+### Compatibilidad
+
+Schema 1.1 incorpora 54 features y 6 campos de metadata HA: **329 columnas, 225 features numéricas causales**. CSV y Parquet conservan las mismas columnas y faltantes. Schema 1.0 sigue siendo legible/validable/analizable sin HA; no se puede reconstruir una serie recursiva completa usando sólo sus filas de señales. No se mezclan versiones dentro de un archivo; columnas HA requieren versión 1.1. Audit y dataset deben coincidir en versión.
 
 ## Columnas exhaustivas por clase
 
@@ -270,6 +350,60 @@ vp_previous_session_high_volume_node_nearest
 vp_previous_session_low_volume_node_nearest
 vp_previous_session_distance_to_HVN
 vp_previous_session_distance_to_LVN
+ha_open
+ha_high
+ha_low
+ha_close
+ha_direction
+ha_body
+ha_range
+ha_body_percent
+ha_upper_wick
+ha_lower_wick
+ha_upper_wick_to_range
+ha_lower_wick_to_range
+ha_delta_close_1
+ha_delta_close_2
+ha_delta_close_3
+ha_delta_body_1
+ha_delta_body_2
+ha_delta_body_3
+ha_body_expansion
+ha_range_expansion
+ha_consecutive_bullish
+ha_consecutive_bearish
+ha_bullish_ratio_3
+ha_bullish_ratio_5
+ha_bullish_ratio_10
+ha_bullish_ratio_20
+ha_bearish_ratio_3
+ha_bearish_ratio_5
+ha_bearish_ratio_10
+ha_bearish_ratio_20
+ha_avg_body_3
+ha_avg_body_5
+ha_avg_body_10
+ha_avg_body_20
+ha_avg_range_3
+ha_avg_range_5
+ha_avg_range_10
+ha_avg_range_20
+ha_body_vs_avg5
+ha_body_vs_avg10
+ha_range_vs_avg5
+ha_range_vs_avg10
+ha_no_lower_wick
+ha_no_upper_wick
+ha_small_body
+ha_bullish_strong
+ha_bearish_strong
+ha_indecision
+ha_changed_to_bullish
+ha_changed_to_bearish
+ha_bullish_after_bearish_run
+ha_bearish_after_bullish_run
+ha_bullish_run_before_signal
+ha_bearish_run_before_signal
 ```
 
 ### Metadata de evento, ejecución y configuración
@@ -308,6 +442,12 @@ follow_side
 invert_side
 excursion_quality
 run_status
+ha_status
+ha_seed_bar_open
+ha_last_bar_open
+ha_bars_processed
+ha_warmup_bars
+ha_streak_left_censored
 ```
 
 ### Metadata de perfiles

@@ -24,3 +24,21 @@ Las señales correlacionadas y las dos direcciones de una señal **no** son mues
 `--walk-forward --wf-initial N --wf-step M`: ventana TRAIN expansiva y ventanas posteriores de validación de M señales (la última puede ser parcial). Cada fold ajusta sus cortes usando exclusivamente su TRAIN; purga etiquetas que crucen la frontera del fold y de validación al siguiente fold. Se usa sólo el conjunto anterior a FINAL_TEST y se purga también la frontera final. Los informes se escriben separados por fold. Los tamaños están en señales, pero las ventanas son cronológicas. El walk-forward muestra estabilidad temporal; no busca tamaños ni selecciona reglas.
 
 Para investigación con GPT, suministrar únicamente informes TRAIN durante descubrimiento; adjuntar especificación y diccionario. Pedir hipótesis descriptivas con incertidumbre y soporte muestral. No adjuntar FINAL_TEST a la conversación exploratoria.
+
+## Extensión HEIKIN_ASHI (schema 1.1)
+
+HA es contexto causal, nunca filtro de señales. Mantener el universo Stochastic completo, incluidas filas `warming_up`/`unavailable` y censura de streaks al inicio del histórico. Las features HA no disponibles se analizan como missing y se reportan en missingness; no se borran sus señales del dataset. No comparar configuraciones con distinta prehistoria sin revisar seed, conteos y censura.
+
+`ha_interactions.csv` calcula exclusivamente 30 pares predefinidos, siempre para ALL, BUY y SELL por separado, con los mismos estadísticos FOLLOW/INVERT de los informes base:
+
+- Dirección HA × señal original (follow_side), y dirección HA × relative_volume_20.
+- Streak HA × relative_volume_20: color y longitudes fijas 0, 1, 2–3, 4–7, 8+. Son grupos descriptivos, sin ajuste por PnL.
+- Expansión de cuerpo HA × expansión de volumen.
+- Transición HA × volume_percentile_20; transición = to_bullish, to_bearish, doji, unchanged (o missing).
+- Dirección HA × distancia POC/VAH/VAL, para cada uno de los seis perfiles (18 pares).
+- Transición HA × estado de Value Area inside/above/below/missing para cada perfil (6 pares).
+- Fuerza HA × ATR_percentile_20. Fuerza = bullish_strong, bearish_strong, indecision, other, missing según fórmulas fijas.
+
+Las variables continuas utilizan deciles ajustados exclusivamente sobre TRAIN purgado; también ha_body_expansion. En cada fold se vuelven a ajustar sólo con su TRAIN. No hay búsqueda combinatoria ni ranking que recomiende operaciones. Se mantienen grupos con pérdidas/empates, faltantes y métricas de pares completos; una correlación no crea una regla operativa. Todas las features HA se incluyen además en correlaciones y cuantiles descriptivos.
+
+Las hipótesis sobre HA deben descubrirse en TRAIN y congelarse antes de evaluar validación. FINAL_TEST conserva el mismo bloqueo explícito. Las comprobaciones estructurales de versión/causalidad del dataset completo no constituyen exploración de resultados. Los informes v1.0 omiten HA porque sus filas por señal no contienen todas las barras necesarias para la recurrencia.

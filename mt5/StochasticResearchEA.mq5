@@ -1,6 +1,8 @@
 #property strict
 #include "ResearchCore.mqh"
-#property version "1.00"
+#include "HeikinAshiCore.mqh"
+HeikinAshiState ha;
+#property version "1.10"
 #property description "Research only: causal M5 stochastic events and independent counterfactuals."
 // No trading API is used anywhere in this project.
 enum TriggerLine { MAIN_K=0, SIGNAL_D=1 };
@@ -98,9 +100,27 @@ void Profile(string p,long from,long to,double price) {
  N(p+"high_volume_node_nearest",hv);N(p+"low_volume_node_nearest",lv);N(p+"distance_to_HVN",Diff(price,hv));N(p+"distance_to_LVN",Diff(price,lv));
 }
 void EMAFeatures(string suffix,double &a[]) { N("price_to_ema"+suffix,Diff(rates[0].close,a[0]));N("ema"+suffix+"_slope",Diff(a[0],a[1])); }
+void UpdateHA(long cutoff) {
+ // Called for EVERY closed bar, including bars without a Stochastic signal.
+ // First call seeds once using available prehistory (up to 350 closed bars).
+ for(int j=ArraySize(rates)-1;j>=0;j--) {
+  if(ha.count>0&&(long)rates[j].time<=ha.last_time)continue;
+  ha.Append((long)rates[j].time,rates[j].open,rates[j].high,rates[j].low,rates[j].close,cutoff);
+ }
+}
+void HAFeatures(long cutoff) {
+ bool aligned=ha.count>0&&ha.last_time==(long)rates[0].time&&
+              (ha.last_time+300)*1000-1<=cutoff;
+ S("ha_status",!aligned?"unavailable":ha.Ready()?"ready":"warming_up");
+ I("ha_seed_bar_open",ha.seed_time);I("ha_last_bar_open",ha.last_time);
+ I("ha_bars_processed",ha.count);I("ha_warmup_bars",HA_WARMUP);
+ I("ha_streak_left_censored",ha.LeftCensored());
+ string names[]={"ha_open","ha_high","ha_low","ha_close","ha_direction","ha_body","ha_range","ha_body_percent","ha_upper_wick","ha_lower_wick","ha_upper_wick_to_range","ha_lower_wick_to_range","ha_delta_close_1","ha_delta_close_2","ha_delta_close_3","ha_delta_body_1","ha_delta_body_2","ha_delta_body_3","ha_body_expansion","ha_range_expansion","ha_consecutive_bullish","ha_consecutive_bearish","ha_bullish_ratio_3","ha_bullish_ratio_5","ha_bullish_ratio_10","ha_bullish_ratio_20","ha_bearish_ratio_3","ha_bearish_ratio_5","ha_bearish_ratio_10","ha_bearish_ratio_20","ha_avg_body_3","ha_avg_body_5","ha_avg_body_10","ha_avg_body_20","ha_avg_range_3","ha_avg_range_5","ha_avg_range_10","ha_avg_range_20","ha_body_vs_avg5","ha_body_vs_avg10","ha_range_vs_avg5","ha_range_vs_avg10","ha_no_lower_wick","ha_no_upper_wick","ha_small_body","ha_bullish_strong","ha_bearish_strong","ha_indecision","ha_changed_to_bullish","ha_changed_to_bearish","ha_bullish_after_bearish_run","ha_bearish_after_bullish_run","ha_bullish_run_before_signal","ha_bearish_run_before_signal"};
+ for(int j=0;j<ArraySize(names);j++)N(names[j],aligned&&ha.Ready()?ha.values[j]:EMPTY_VALUE);
+}
 bool Capture(long cutoff,int side,MqlTick &tick) {
  row="";defining=(header=="");datetime signal=(datetime)((cutoff+1)/1000);int n=ArraySize(rates);
- S("signal_id",sym+"_M5_"+IntegerToString(cutoff)+"_"+EnumToString(trigger_line));S("symbol",sym);S("schema_version","1.0");S("trigger_line",EnumToString(trigger_line));
+ S("signal_id",sym+"_M5_"+IntegerToString(cutoff)+"_"+EnumToString(trigger_line));S("symbol",sym);S("schema_version","1.1");S("trigger_line",EnumToString(trigger_line));
  S("simulation_mode",EnumToString(simulation_mode));I("signal_time_msc",cutoff);I("feature_max_time_msc",cutoff);I("signal_bar_open",(long)rates[0].time);I("entry_bar_open",(long)last_bar);I("entry_time_msc",tick.time_msc);
  I("stoch_k_period",K_PERIOD);I("stoch_d_period",D_PERIOD);I("stoch_slowing",SLOWING);N("tp_distance",TP_DISTANCE);N("sl_distance",SL_DISTANCE);I("time_exit_bars",TIME_EXIT_BARS);
  N("stoch_k",kval[0]);N("stoch_d",dval[0]);N("stoch_k_prev",kval[1]);N("stoch_d_prev",dval[1]);
@@ -126,6 +146,7 @@ bool Capture(long cutoff,int side,MqlTick &tick) {
  N("ema20_minus_50",Diff(ev0[0],ev1[0]));N("ema50_minus_100",Diff(ev1[0],ev2[0]));N("ema100_minus_200",Diff(ev2[0],ev3[0]));
  bool ready=ev0[0]!=EMPTY_VALUE&&ev1[0]!=EMPTY_VALUE&&ev2[0]!=EMPTY_VALUE&&ev3[0]!=EMPTY_VALUE;
  N("bull_alignment",ready?(ev0[0]>ev1[0]&&ev1[0]>ev2[0]&&ev2[0]>ev3[0]?1:0):EMPTY_VALUE);N("bear_alignment",ready?(ev0[0]<ev1[0]&&ev1[0]<ev2[0]&&ev2[0]<ev3[0]?1:0):EMPTY_VALUE);
+ HAFeatures(cutoff);
  TimeFeatures(signal);
  int mins[4]={30,60,120,240};for(int j=0;j<4;j++)Profile("vp_"+IntegerToString(mins[j])+"m_",cutoff+1-(long)mins[j]*60000,cutoff,rates[0].close);
  // Session containing the completed bar, so midnight signals retain the session just ended.
@@ -183,6 +204,7 @@ void OnTick(){
  if(simulation_mode==TICK_QUOTES)for(int i=next_write;i<ArraySize(events);i++){TickTrade(events[i].follow,tick,newbar);TickTrade(events[i].invert,tick,newbar);}
  Flush();if(!newbar)return;
  ArraySetAsSeries(rates,true);int n=CopyRates(sym,PERIOD_M5,1,350,rates);if(n<4){Fatal("Insufficient stochastic history; start tester with prehistory");return;}
+ UpdateHA(ResearchSignalCutoff((long)rates[0].time));
  if(!Buffer(stoch,0,n,kval)||!Buffer(stoch,1,n,dval)){Fatal("Stochastic history unavailable");return;}
  double current=trigger_line==MAIN_K?kval[0]:dval[0],previous=trigger_line==MAIN_K?kval[1]:dval[1];if(current==EMPTY_VALUE||previous==EMPTY_VALUE){Fatal("Stochastic not initialized");return;}
  int side=ResearchSignal(previous,current);if(side==0)return;
@@ -195,6 +217,6 @@ void OnTick(){
 void Censor(VirtualTrade &t,MqlTick &q){if(t.done)return;CloseTrade(t,t.side==1?q.bid:q.ask,q.time_msc,"END_OF_DATA",(int)MathMax(1,serial-t.entry_bar+1));}
 void OnDeinit(const int reason){
  if(out!=INVALID_HANDLE){MqlTick q;ZeroMemory(q);SymbolInfoTick(sym,q);for(int i=next_write;i<ArraySize(events);i++){Censor(events[i].follow,q);Censor(events[i].invert,q);}Flush();FileClose(out);
-  int audit=FileOpen(OutputFile+".audit.json",FILE_WRITE|FILE_TXT|FILE_ANSI,0,CP_UTF8);if(audit!=INVALID_HANDLE){FileWriteString(audit,"{\"profile_bin_size\":"+Num(ProfileBinSize)+",\"profile_max_bins\":"+IntegerToString(ProfileMaxBins)+",\"profile_weight\":\""+EnumToString(profile_weight)+"\",\"session_start_server_hour\":"+IntegerToString(SessionStartServerHour)+",\"server_utc_offset_winter_hours\":"+IntegerToString(ServerUTCOffsetWinterHours)+",\"server_dst_rule\":\""+EnumToString(ServerDSTRule)+"\",\"terminal_build\":"+IntegerToString(TerminalInfoInteger(TERMINAL_BUILD))+",\"real_tick_mode_attested\":"+(ConfirmRealTickTesterMode?"true":"false")+",\"schema_version\":\"1.0\",\"signals\":"+IntegerToString(ArraySize(events))+",\"rows_written\":"+IntegerToString(rows_written)+",\"aborted\":"+(failed?"true":"false")+",\"deinit_reason\":"+IntegerToString(reason)+"}");FileClose(audit);}}
+  int audit=FileOpen(OutputFile+".audit.json",FILE_WRITE|FILE_TXT|FILE_ANSI,0,CP_UTF8);if(audit!=INVALID_HANDLE){FileWriteString(audit,"{\"profile_bin_size\":"+Num(ProfileBinSize)+",\"profile_max_bins\":"+IntegerToString(ProfileMaxBins)+",\"profile_weight\":\""+EnumToString(profile_weight)+"\",\"session_start_server_hour\":"+IntegerToString(SessionStartServerHour)+",\"server_utc_offset_winter_hours\":"+IntegerToString(ServerUTCOffsetWinterHours)+",\"server_dst_rule\":\""+EnumToString(ServerDSTRule)+"\",\"terminal_build\":"+IntegerToString(TerminalInfoInteger(TERMINAL_BUILD))+",\"real_tick_mode_attested\":"+(ConfirmRealTickTesterMode?"true":"false")+",\"schema_version\":\"1.1\",\"signals\":"+IntegerToString(ArraySize(events))+",\"rows_written\":"+IntegerToString(rows_written)+",\"aborted\":"+(failed?"true":"false")+",\"deinit_reason\":"+IntegerToString(reason)+"}");FileClose(audit);}}
  if(stoch!=INVALID_HANDLE)IndicatorRelease(stoch);if(atr!=INVALID_HANDLE)IndicatorRelease(atr);for(int i=0;i<4;i++)if(ema[i]!=INVALID_HANDLE)IndicatorRelease(ema[i]);
 }

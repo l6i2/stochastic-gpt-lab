@@ -15,6 +15,8 @@ Laboratorio **independiente** para MetaTrader 5: estrategia Stochastic M5 fija, 
 ```text
 mt5/StochasticResearchEA.mq5     EA para Strategy Tester
 mt5/ResearchCore.mqh            reglas escalares compartidas con las pruebas
+mt5/HeikinAshiCore.mqh           serie HA persistente y 54 features causales
+python/heikin_ashi.py           contrato y validación HA
 python/research.py             contrato, validación, particiones y oráculo de perfil
 python/validate_dataset.py     validador y conversión Parquet
 python/analyze_dataset.py      informes descriptivos
@@ -30,7 +32,7 @@ outputs/.gitkeep
 
 ## Ejecutar en MT5
 
-1. Copiar **ambos** archivos de `mt5/` a `MQL5/Experts/StochasticResearch/`. Abrir el `.mq5` en MetaEditor y compilar con F7.
+1. Copiar **los tres** archivos de `mt5/` a `MQL5/Experts/StochasticResearch/`. Abrir el `.mq5` en MetaEditor y compilar con F7.
 2. Abrir Strategy Tester, elegir el EA, US30/US30Cash o el equivalente del broker y M5. El cálculo utiliza M5 de forma explícita incluso si el gráfico tiene otro periodo.
 3. Elegir **Every tick based on real ticks** y `ConfirmRealTickTesterMode=true`. El EA no puede verificar automáticamente ese ajuste del terminal: la confirmación es una declaración del investigador. Mantener `LIVE_TRADING=false`. La optimización del tester está bloqueada.
 4. `ResearchSymbol=""` usa el símbolo del tester. Si se configura otro nombre, debe coincidir exactamente con ese símbolo. No hay ejecución multi-símbolo.
@@ -85,3 +87,13 @@ Crear el archivo de hipótesis como resultado de la investigación; no existe un
 ## Límites importantes
 
 El proyecto no incluye terminal MT5, datos del broker ni un `.ex5` verificado. Consultar [verificación](docs/VERIFICATION.md) y completar [aceptación en MT5](docs/MT5_ACCEPTANCE.md). PnL/MFE/MAE son unidades de precio: no incluyen comisiones, swap, lotes o conversión monetaria. El perfil usa la historia que entrega el broker; una consulta exitosa no garantiza cobertura completa. La reproducción de una implementación histórica externa requiere comparar su línea trigger, SMA/LowHigh, calendario, fills y datos. No se afirma equivalencia con código original que no se ha proporcionado.
+
+## Heikin Ashi causal (schema 1.1)
+
+Añade **54 features HA**, sólo contexto de investigación: OHLC sintéticos, cuerpo/mechas, dinámica, ratios, streaks, promedios, morfología y transiciones. HA nunca genera/cancela señales ni cambia BUY/SELL, TP=240, SL=180, TIME_EXIT=100 o FOLLOW/INVERT.
+
+`HA_Close=(O+H+L+C)/4`; seed `HA_Open=(O+C)/2`; después `HA_Open=(HA_Open_previo+HA_Close_previo)/2`. High/Low son max/min entre precio original, HA_Open y HA_Close. Se procesa prehistoria y cada barra M5 cerrada, con estado persistente (no se reinicia por señal). Warmup fijo 256 barras y 20 barras adicionales para ventanas completas: listo desde la barra 276. Las señales con warmup insuficiente se conservan con HA vacío. Las fórmulas, tolerancias y metadata están en DATA_DICTIONARY.
+
+El informe `ha_interactions.csv` cruza dirección/streak/transición/fuerza/expansión HA con señal original, volumen, niveles y estado de Value Area de los seis perfiles, y régimen ATR. Incluye ALL/BUY/SELL y resultados FOLLOW/INVERT. Son 30 pares predefinidos; no se buscan combinaciones ni se seleccionan reglas. Cortes numéricos ajustados sólo en TRAIN o TRAIN de cada fold. FINAL_TEST sigue bloqueado.
+
+Schema 1.0 continúa compatible con validación, análisis y conversión Parquet; sin informes HA ni reconstrucción artificial de su historia. Nuevos CSV/audit usan 1.1. Las pruebas compilan y ejecutan también el núcleo HA real como C++ y lo comparan con un oráculo independiente. La compilación del EA completo en MetaEditor sigue pendiente en este entorno.

@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import numpy as np
 import pandas as pd
+from heikin_ashi import HA_COLUMNS, HA_METADATA, validate_ha
 
 PROFILE_PREFIXES = [f"vp_{m}m_" for m in (30,60,120,240)] + ["vp_session_", "vp_previous_session_"]
 PROFILE_VALUES = ["POC","VAH","VAL","distance_price_to_POC","distance_price_to_VAH","distance_price_to_VAL","inside_value_area","above_value_area","below_value_area","POC_position_in_range","high_volume_node_nearest","low_volume_node_nearest","distance_to_HVN","distance_to_LVN"]
@@ -31,6 +32,12 @@ PROFILE_META = ['status','source','window_start_msc','window_end_msc','copy_erro
 OUTCOMES = [f'{side}_{field}' for side in ('follow','invert') for field in ('entry_price','exit_time','exit_price','exit_reason','PnL','MFE','MAE','bars_in_trade')] + ['directional_advantage']
 REQUIRED = list(dict.fromkeys(METADATA+FEATURE_COLUMNS+[p+f for p in PROFILE_PREFIXES for f in PROFILE_META]+OUTCOMES))
 
+REQUIRED_V1 = REQUIRED.copy()
+FEATURE_COLUMNS_V1 = FEATURE_COLUMNS.copy()
+FEATURE_COLUMNS += HA_COLUMNS
+METADATA += HA_METADATA
+REQUIRED += HA_COLUMNS + HA_METADATA
+
 
 def read_dataset(path: str | Path) -> pd.DataFrame:
     path = Path(path)
@@ -49,7 +56,13 @@ def read_dataset(path: str | Path) -> pd.DataFrame:
 
 def validate(df: pd.DataFrame, audit: dict | None = None) -> list[str]:
     errors: list[str] = []
-    missing = sorted(set(REQUIRED)-set(df.columns))
+    versions = set(df.schema_version.astype(str)) if 'schema_version' in df else set()
+    if len(versions)!=1 or not versions.issubset({'1.0', '1.1'}):
+        return ['Unsupported or mixed schema_version (expected 1.0 or 1.1)']
+    has_ha = versions == {'1.1'}
+    if not has_ha and any(c in df for c in HA_COLUMNS+HA_METADATA):
+        return ['HEIKIN_ASHI columns require schema_version 1.1']
+    missing = sorted(set(REQUIRED if has_ha else REQUIRED_V1)-set(df.columns))
     if missing:
         return ['Missing columns: '+', '.join(missing)]
     def check(ok, message):
@@ -118,6 +131,10 @@ def validate(df: pd.DataFrame, audit: dict | None = None) -> list[str]:
     if audit is not None:
         check(not audit.get('aborted',True), 'Audit reports aborted run')
         check(audit.get('signals')==audit.get('rows_written')==len(df), 'Audit signal/row count mismatch')
+    if has_ha:
+        errors.extend(validate_ha(df))
+    if audit is not None:
+        check(str(audit.get('schema_version')) in versions, 'Audit schema version mismatch')
     return errors
 
 

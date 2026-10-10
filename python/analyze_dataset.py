@@ -8,19 +8,21 @@ from pathlib import Path
 import sys
 import numpy as np
 import pandas as pd
+from heikin_ashi import HA_COLUMNS
 from research import (FEATURE_COLUMNS, PROFILE_PREFIXES, chronological_split,
                       purge_at_boundary, read_dataset, validate, walk_forward)
 
 GROUP_FEATURES = ['volume_percentile_20','volume_percentile_50','volume_percentile_100',
                  'relative_volume_5','relative_volume_10','relative_volume_20','relative_volume_50','relative_volume_100',
                  'volume_expansion','ATR_percentile_20','ATR_percentile_50','ATR_percentile_100',
-                 *[p+'distance_price_to_'+v for p in PROFILE_PREFIXES for v in ('POC','VAH','VAL')]]
+                 *[p+'distance_price_to_'+v for p in PROFILE_PREFIXES for v in ('POC','VAH','VAL')]] + ['ha_body_expansion']
 
 
 def fit_deciles(train):
     # Edges depend only on TRAIN features; repeated values reduce the number of bins.
     edges={}
     for column in GROUP_FEATURES:
+        if column not in train: continue
         values=train[column].dropna()
         edges[column]=np.unique(values.quantile(np.linspace(.1,.9,9)).to_numpy()).tolist() if len(values) else []
     return edges
@@ -59,7 +61,7 @@ def report(df, edges, folder):
     pd.DataFrame([{'population':name,**stats(d)} for name,d in populations.items()]).to_csv(folder/'summary.csv',index=False)
     groups=[]; correlations=[]
     for population,d in populations.items():
-        for feature in GROUP_FEATURES+['NY_hour','trend_alignment']:
+        for feature in list(edges)+['NY_hour','trend_alignment']:
             if feature=='NY_hour': group=d.NY_hour.astype(str)
             elif feature=='trend_alignment':
                 group=pd.Series(np.select([d.bull_alignment.eq(1),d.bear_alignment.eq(1)],['bull','bear'],default='mixed'),index=d.index)
@@ -67,7 +69,7 @@ def report(df, edges, folder):
             else: group=bins(d[feature],edges[feature])
             for label,index in group.groupby(group).groups.items():
                 groups.append({'population':population,'feature':feature,'bin':label,**stats(d.loc[index])})
-        for feature in FEATURE_COLUMNS:
+        for feature in [c for c in FEATURE_COLUMNS if c in d]:
             for outcome in ('follow_PnL','invert_PnL','directional_advantage'):
                 pair=d[[feature,outcome]].dropna()
                 pearson=spearman=np.nan
@@ -78,9 +80,46 @@ def report(df, edges, folder):
     pd.DataFrame(groups).to_csv(folder/'groups.csv',index=False)
     pd.DataFrame(correlations).to_csv(folder/'correlations.csv',index=False)
     # All causal numeric features get descriptive deciles, independently of outcome.
-    df[FEATURE_COLUMNS].quantile(np.linspace(0,1,11)).rename_axis('quantile').to_csv(folder/'feature_deciles.csv')
-    df[FEATURE_COLUMNS].isna().mean().rename('missing_fraction').to_csv(folder/'missingness.csv')
+    df[[c for c in FEATURE_COLUMNS if c in df]].quantile(np.linspace(0,1,11)).rename_axis('quantile').to_csv(folder/'feature_deciles.csv')
+    df[[c for c in FEATURE_COLUMNS if c in df]].isna().mean().rename('missing_fraction').to_csv(folder/'missingness.csv')
+    ha_interactions(df, edges, folder)
     pd.DataFrame({s:df[s+'_exit_reason'].value_counts() for s in ('follow','invert')}).fillna(0).to_csv(folder/'exit_reasons.csv')
+
+
+
+def ha_interactions(df, edges, folder):
+    """Fixed small set of descriptive pairs. No Cartesian search or rule selection."""
+    if not set(HA_COLUMNS).issubset(df.columns):
+        return  # schema 1.0 remains readable; HA cannot be reconstructed from signal rows
+    direction=df.ha_direction.map({1:'bullish', -1:'bearish', 0:'doji'}).fillna('missing')
+    streak=df.ha_consecutive_bullish.fillna(0)-df.ha_consecutive_bearish.fillna(0)
+    # Fixed short/medium/long run descriptions, not fitted thresholds.
+    streak_group=pd.Series(np.select([streak.abs().eq(0),streak.abs().eq(1),streak.abs().between(2,3),streak.abs().between(4,7)],['0','1','2-3','4-7'],default='8+'),index=df.index)
+    streak_group=direction+':'+streak_group
+    transition=pd.Series(np.select([df.ha_changed_to_bullish.eq(1),df.ha_changed_to_bearish.eq(1),df.ha_direction.eq(0)],['to_bullish','to_bearish','doji'],default='unchanged'),index=df.index)
+    strength=pd.Series(np.select([df.ha_bullish_strong.eq(1),df.ha_bearish_strong.eq(1),df.ha_indecision.eq(1)],['bullish_strong','bearish_strong','indecision'],default='other'),index=df.index)
+    for series in (streak_group, transition, strength):
+        series.loc[~df.ha_status.eq('ready')]='missing'
+    pairs=[('ha_direction','signal_original',direction,df.follow_side),
+           ('ha_direction','relative_volume_20',direction,bins(df.relative_volume_20,edges['relative_volume_20'])),
+           ('ha_streak','relative_volume_20',streak_group,bins(df.relative_volume_20,edges['relative_volume_20'])),
+           ('ha_body_expansion','volume_expansion',bins(df.ha_body_expansion,edges['ha_body_expansion']),bins(df.volume_expansion,edges['volume_expansion'])),
+           ('ha_transition','volume_percentile_20',transition,bins(df.volume_percentile_20,edges['volume_percentile_20'])),
+           ('ha_strength','ATR_percentile_20',strength,bins(df.ATR_percentile_20,edges['ATR_percentile_20']))]
+    for prefix in PROFILE_PREFIXES:
+        for level in ('POC','VAH','VAL'):
+            feature=prefix+'distance_price_to_'+level
+            pairs.append(('ha_direction',feature,direction,bins(df[feature],edges[feature])))
+        state=pd.Series(np.select([df[prefix+'inside_value_area'].eq(1),df[prefix+'above_value_area'].eq(1),df[prefix+'below_value_area'].eq(1)],['inside','above','below'],default='missing'),index=df.index)
+        pairs.append(('ha_transition',prefix+'value_area_state',transition,state))
+    rows=[]
+    for population, subset in [('ALL',df),('BUY',df[df.follow_side.eq('BUY')]),('SELL',df[df.follow_side.eq('SELL')])]:
+        for left_name,right_name,left,right in pairs:
+            groups=pd.DataFrame({'left':left.loc[subset.index],'right':right.loc[subset.index]})
+            for (a,b),index in groups.groupby(['left','right'],dropna=False).groups.items():
+                rows.append({'population':population,'ha_feature':left_name,'context_feature':right_name,
+                             'ha_group':a,'context_group':b,**stats(subset.loc[index])})
+    pd.DataFrame(rows).to_csv(folder/'ha_interactions.csv',index=False)
 
 
 def main():
@@ -117,7 +156,7 @@ def main():
         selected={'TRAIN':train,'DISCOVERY_VALIDATION':discovery,'FINAL_TEST':parts['FINAL_TEST']}[args.evaluate]
         if selected.empty: raise ValueError('Selected partition empty after purging')
         args.output.mkdir(parents=True)
-        manifest={'schema_version':'1.0','dataset_sha256':hashlib.sha256(args.dataset.read_bytes()).hexdigest(),
+        manifest={'schema_version':str(df.schema_version.iloc[0]),'dataset_sha256':hashlib.sha256(args.dataset.read_bytes()).hexdigest(),
                   'fractions':{'TRAIN':args.train,'DISCOVERY_VALIDATION':args.validation,'FINAL_TEST':1-args.train-args.validation},
                   'counts':{k:len(v) for k,v in parts.items()},'validation_start_msc':validation_start,'final_test_start_msc':test_start,
                   'purged_train':purged_train,'purged_validation':purged_validation,'evaluated':args.evaluate,

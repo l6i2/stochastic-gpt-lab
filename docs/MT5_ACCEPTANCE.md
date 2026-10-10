@@ -16,3 +16,7 @@ Estas comprobaciones requieren el terminal del broker y no se sustituyen por las
 12. Ejecutar validador con audit, conversión Parquet y análisis TRAIN. Confirmar que FINAL_TEST no tiene informe. Verificar que abortos y archivos truncados se rechazan.
 
 No marcar esta lista completada sin evidencia del terminal. Una respuesta exitosa de CopyTicksRange no certifica cobertura total ni que el tester esté usando ticks reales en cada tramo: revisar los avisos de sustitución por ticks modelados del tester.
+
+## Aceptación HA adicional (schema 1.1)
+
+Copiar también `HeikinAshiCore.mqh` junto a los otros dos archivos antes de compilar. Comprobar que el seed corresponde a la primera barra de prehistoria cargada; HA debe actualizarse aun en barras sin señal y conservar seed/count durante todo el run. Con menos de 276 barras procesadas, seguir obteniendo señales Stochastic con HA vacío; desde 276, comparar la serie y sus ventanas con un cálculo secuencial de esas mismas barras. Extender la fecha final sin cambiar inicio/prehistoria debe conservar todas las features HA anteriores. Comparar señales, entradas y resultados con la versión anterior para el mismo histórico: deben coincidir. Revisar streaks largos y metadata de censura. No confundir HA sintético con precios de entrada/salida.

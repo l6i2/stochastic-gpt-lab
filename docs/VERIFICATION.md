@@ -46,3 +46,29 @@ Completar `MT5_ACCEPTANCE.md` antes de considerar validada la ejecución en el t
 - Secuencias extremas que excedan la ventana de 350 barras se marcan censuradas. La estabilización de indicadores depende de la prehistoria MT5.
 - El guardado requiere finalización normal para audit y filas pendientes; un corte abrupto produce un artefacto incompleto que debe rechazarse.
 - Los controles de FINAL_TEST exigen intención explícita e hipótesis, pero no pueden impedir que un investigador vuelva a consultar un archivo por fuera del programa.
+
+## Extensión causal Heikin Ashi — schema 1.1
+
+Verificación adicional sobre el commit base `3844d04079145865a43d1fce0a17240b34c69d69`, sin reescribirlo:
+
+```text
+.venv/bin/python -m unittest discover -s tests -v
+Ran 28 tests
+OK
+
+.venv/bin/python -m compileall -q python tests
+Completado sin errores
+
+git diff --check
+Sin errores
+```
+
+Se mantienen las 16 pruebas anteriores y se añaden 12 pruebas HA. El núcleo `HeikinAshiCore.mqh` usado por el EA se compila y ejecuta directamente mediante `tests/ha_native.cpp` con C++17, `-Wall -Wextra -Werror`. Las 54 features se comparan contra un oráculo batch independiente con 500 barras sintéticas. Se comprueban seed, recurrencia, warmup, atenuación del seed, cuerpo/mechas, ventanas, streaks de 400 barras, censura izquierda, dojis, rango cero y rechazo de duplicados.
+
+Pruebas anti-lookahead: mutar barras futuras no cambia ningún valor anterior; el cutoff excluye la vela de entrada; HA de señal se alinea con barra cerrada; ratios/streaks se contrastan con prefijos exclusivamente pasados. El validador rechaza HA futura, desalineada o publicada antes de warmup. Los tests existentes de FINAL_TEST y walk-forward siguen pasando con schema 1.1. La conversión CSV/Parquet también conserva los campos HA y sus faltantes. Se verifica además el análisis de archivos legacy 1.0 sin HA.
+
+La regresión compara byte a byte `ResearchCore.mqh` y toda la implementación de simulación virtual (desde OpenTrade hasta Flush) con el commit base. Permanecen sin cambios señal Stochastic, BUY/SELL, TP=240, SL=180, TIME_EXIT=100, FOLLOW/INVERT y LIVE_TRADING=false. HA se actualiza antes de comprobar si hay señal y no interviene en esa decisión.
+
+Se revisó el diff de implementación/documentación. Nuevo contrato: 329 columnas, 225 features numéricas causales (54 HA), con 6 campos adicionales de metadata HA. Interacciones limitadas a 30 pares descriptivos fijos; cortes continuos TRAIN-only y sin selección automática de reglas.
+
+Sigue pendiente compilar el **EA completo con MetaEditor** y ejecutar la aceptación con datos del broker: este entorno no tiene MT5. La compilación nativa verifica los núcleos compartidos, no el ciclo de eventos ni las APIs del terminal. No se ejecutó trading live ni se tocó `asistente-trader-ia`.
