@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+*.ex5
+*.log
+outputs/*
+!outputs/.gitkeep
