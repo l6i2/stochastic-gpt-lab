@@ -1,5 +1,32 @@
 # Verificación realizada
 
+## Estado MT5 actual — 2026-10-12
+
+Este registro complementa las verificaciones históricas de abajo. El código fuente del repo no se modificó durante la instalación y compilación local.
+
+### Instalación y compilación local
+
+- Se usó MetaEditor de XM Global MT5 en Windows 10 (build 19044.1466). El terminal no estaba abierto durante esta revisión.
+- Se copiaron `StochasticResearchEA.mq5`, `ResearchCore.mqh` y su dependencia incluida `HeikinAshiCore.mqh` a `MQL5/Experts/StochasticResearch/` en la carpeta de datos de XM.
+- SHA-256 de las fuentes copiadas: EA `e63a66a027b576107e476c89d31b06e978610929462dbf5a68f52e61d4124a6f`; `ResearchCore.mqh` `99a5328d58bf613d5cc9b354ddfee936a0e23427b8a16792a19d6e63b0011283`; `HeikinAshiCore.mqh` `d9a1e525a99e66f855bc49c3a696030c5e12ef534a1aeff5012b63a462a3e8ef`.
+- MetaEditor compiló `StochasticResearchEA.mq5` y generó `StochasticResearchEA.ex5` (74,016 bytes). Resultado del log: `0 errors, 0 warnings` (4,495 ms; X64 Regular). El log completo se conserva localmente; no se publica porque contiene rutas de usuario de esa computadora.
+- La compilación no necesitó cambios de código. La búsqueda de las funciones de envío de órdenes en el repo solo encontró esos nombres dentro de pruebas que verifican que estén ausentes. `LIVE_TRADING=false` permanece en el EA.
+
+### Strategy Tester y datos
+
+- No se confirmó la visibilidad del EA en el Navigator ni se configuró o inició Strategy Tester; la interfaz del terminal no se abrió en esta revisión.
+- El historial disponible localmente incluía EURUSD, GBPUSD, GOLD, USDCHF y USDJPY; no se encontró un símbolo US30/Dow con historial para seleccionar.
+- No se ejecutó smoke test ni histórico largo. No se generaron `stochastic_events.csv` ni `stochastic_events.csv.audit.json`, y no se ejecutó `validate_dataset.py`.
+- No se hizo trading real ni se modificó la configuración de cuenta del broker. No se abrió ni modificó `asistente-trader-ia`.
+
+### Pruebas de Python
+
+- `python -m compileall -q python tests` terminó sin errores.
+- La máquina solo tenía Python 3.8, mientras que el proyecto declara Python 3.10+. En un entorno aislado con dependencias, 14 pruebas de `test_research.py` pasaron; una prueba nativa no pudo ejecutarse porque `g++` no está instalado.
+- `test_heikin_ashi.py` también requiere `g++` y no pudo iniciar. `test_parquet.py` terminó el proceso durante `test_roundtrip_and_walk_forward_cli` con el código de Windows `0xC000001D`; la suite completa no se considera aprobada.
+
+El siguiente paso pendiente es abrir MT5, refrescar el Navigator, identificar un símbolo Dow con datos y completar la smoke test de aproximadamente un mes antes de producir o validar cualquier CSV.
+
 Fecha: 2026-10-10. Proyecto nuevo: `/workspace/stochastic-gpt-lab`, con repositorio Git propio. Todas las escrituras del proyecto están dentro de ese directorio. No se abrió, modificó ni cambió rama de `asistente-trader-ia`.
 
 ## Evidencia local
@@ -71,4 +98,4 @@ La regresión compara byte a byte `ResearchCore.mqh` y toda la implementación d
 
 Se revisó el diff de implementación/documentación. Nuevo contrato: 329 columnas, 225 features numéricas causales (54 HA), con 6 campos adicionales de metadata HA. Interacciones limitadas a 30 pares descriptivos fijos; cortes continuos TRAIN-only y sin selección automática de reglas.
 
-Sigue pendiente compilar el **EA completo con MetaEditor** y ejecutar la aceptación con datos del broker: este entorno no tiene MT5. La compilación nativa verifica los núcleos compartidos, no el ciclo de eventos ni las APIs del terminal. No se ejecutó trading live ni se tocó `asistente-trader-ia`.
+En aquella verificación del 2026-10-10 seguía pendiente compilar el **EA completo con MetaEditor** y ejecutar la aceptación con datos del broker: ese entorno no tenía MT5. La compilación nativa verifica los núcleos compartidos, no el ciclo de eventos ni las APIs del terminal. No se ejecutó trading live ni se tocó `asistente-trader-ia`; el estado actualizado figura al inicio de este archivo.
