@@ -1,0 +1,23 @@
+# Intra-trade research status
+
+Date: 2026-10-13. Branch: `research/full-pipeline`. Current remote base: `fc178e7577f2c372194fedd295805cff3932440a`.
+
+## INTRA_A — instrumentation
+
+**Status: source and compiler checks pass; smoke verification blocked by MT5 UI access.** The independent `mt5/StochasticIntratradeResearchEA.mq5` exports open virtual FOLLOW/INVERT states at offsets 1, 2, 3, 5, 10, 15, 20, 30, and 50. It retains `LIVE_TRADING=false`, requires Strategy Tester with optimization OFF and `TICK_QUOTES`, uses the same unchanged `ResearchCore.mqh`, and does not call trading APIs. The deployed file and both includes are in the XM data folder. XM MetaEditor build 6257 compiled it with 0 errors and 0 warnings; evidence is in the local-only `outputs/verification/metaeditor_intratrade_compile.log`.
+
+Static regression tests confirm that the base signal thresholds and the `TickTrade`/`BarTrade` execution routines are unchanged. Validator and frozen-hypothesis tests verify snapshot cutoffs, separate targets, no final-test IDs, and single-use validation. `python -m compileall -q python tests` passes. The full suite passes: 54 tests, 9 skipped because `g++` is unavailable.
+
+## MT5 smoke test gate
+
+No intra-trade snapshot block has yet run. Two bounded CLI launches did not start the requested tester run because MT5 was already open and kept its existing XM DEMO instance. The Windows desktop helper then timed out while capturing that window twice; no UI input was sent after those timeouts. Do not claim that any snapshot/target CSV exists until a tester audit confirms it.
+
+A Jan 1–31, 2024 smoke configuration and input preset are prepared locally, as are four historical tester configurations for Dec 2023, 2024, 2025, and Jan 1–Mar 19, 2026. The 2026 export stops before the protected FINAL_TEST boundary on Mar 20. The user must load the EA/preset in the already-open MT5 tester and press Start; the exact values and expected files are in the final handoff. The automated UI recovery limit has been reached.
+
+## Data and evaluation limitations
+
+The snapshot CSV and target CSV are separate. The exporter writes causal features only through the completed-bar cutoff and delays targets until closure; end-of-data records remain censored. Profile windows are recomputed at snapshot time and cached for paired FOLLOW/INVERT rows on that bar.
+
+The current source records scheduled snapshot states and terminal labels, not the full ordered quote path after each snapshot. Therefore a decision policy that exits at a later tick or reverses direction cannot yet be faithfully simulated; `REVERSE_DIRECTION` is marked unavailable until that path is exported. The fixed-bar-3 HOLD, EARLY_EXIT, and +60 PROTECT_PROFIT comparisons are predeclared and research-only. They cannot create or promote a candidate.
+
+No raw blocks, master snapshots, TRAIN analysis, intra-trade hypotheses, model metrics, or walk-forward metrics exist yet. `NO CANDIDATE`; FINAL_TEST remains locked and DEMO execution remains disabled.

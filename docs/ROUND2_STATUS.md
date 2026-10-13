@@ -26,14 +26,14 @@ Family-wise 99.5% week-cluster bootstrap intervals and the six-month/70%-positiv
 
 Results are local under `outputs/entry_research_round2/` and are not published with raw datasets. The run manifest contains hashes for all ten frozen definitions and the single validation parquet. Validation results are exploratory, account for clustered uncertainty, and do not authorize a candidate unless all predeclared promotion criteria pass.
 
-## Intra-trade research: blocked on source data
+## Intra-trade research: instrumentation ready; export blocked on UI
 
-The current 329-column event rows have entry-time features and final outcome summaries only. They contain no intervening tick/bar paths. Terminal `MFE`, `MAE`, exit price/time/reason, and PnL cannot reconstruct when conditions changed and are future information; using them as snapshots would leak labels. A read-only Python API probe of the local MT5 terminal produced no usable response. Consequently, no intra-trade dataset, reversal finding, or policy simulation is reported. `docs/INTRATRADE_RESEARCH_PROTOCOL.md` specifies the additional source data required. The next actionable step is an instrumented Strategy Tester export of open-trade path states on the same real-tick configuration, with `LIVE_TRADING=false`, followed by a separately versioned build.
+The 329-column entry rows still cannot reconstruct intermediate state. A separate `StochasticIntratradeResearchEA.mq5` now exports scheduled causal snapshots and separate future labels. It compiled in XM MetaEditor build 6257 with 0 errors and 0 warnings; the base signal and tick/bar exit routines are unchanged. No intra-trade dataset or finding is claimed because the smoke tester run has not started. The existing MT5 DEMO window could not be captured after two bounded UI attempts, and CLI launches were consumed by the already-running terminal. The input preset and period configs are prepared in the ignored `outputs/verification` directory. See `docs/INTRATRADE_STATUS.md` for the manual tester step and current limitations.
 
 ## Checkpoint
 
 - `ROUND2_A` entry discovery/validation: COMPLETE; all ten hypotheses INCONCLUSIVE.
-- `ROUND2_B` snapshots: BLOCKED until tick/bar path data is exported.
+- `ROUND2_B` snapshots: instrumentation compiled; raw export awaits one manual Strategy Tester run.
 - `ROUND2_C` intra-trade hypotheses: NOT STARTED; no valid snapshot dataset exists.
 - `ROUND2_D` validation: entry hypotheses evaluated once; intra-trade validation not run.
 - `ROUND2_E` ML: four entry models evaluated on 4,070 validation pairs; intra-trade models require snapshots and are not fit.

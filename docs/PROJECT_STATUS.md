@@ -76,3 +76,11 @@ No candidate is frozen, so `WAITING_FINAL_TEST_AUTHORIZATION` has not been reach
 ## Round-two research checkpoint
 
 Round-two entry investigation, ten frozen hypotheses, one DISCOVERY_VALIDATION evaluation, fixed interaction analysis, and four controlled entry classifiers are documented in `docs/ROUND2_STATUS.md`. No hypothesis or model survived the predefined criteria. Intra-trade snapshot research is blocked because the frozen event dataset has no intervening open-position tick/bar path. FINAL_TEST remains unopened; Demo remains disabled.
+
+## INTRA_A — intra-trade exporter prepared; smoke run pending
+
+The separate `mt5/StochasticIntratradeResearchEA.mq5` and schema 2.0 snapshot validator are ready. XM MetaEditor build 6257 reports 0 errors and 0 warnings for the instrumented EA; regression tests assert that the frozen Stochastic thresholds and the base `TickTrade`/`BarTrade` routines are unchanged. `LIVE_TRADING=false`; no order APIs exist; the EA refuses chart/live use, optimization, and non-TICK_QUOTES mode.
+
+No snapshot or target CSV has been generated. MT5's active XM DEMO window was returned by the desktop app inventory, but two state captures timed out and no UI input was sent. Two CLI launches did not replace or modify the existing instance's tester run. The Jan 2024 smoke preset and historical tester configuration plan are local under ignored `outputs/verification`; the 2026 export plan stops on March 19, before the March 20 protected FINAL_TEST boundary. `docs/INTRATRADE_STATUS.md` records the exact manual action, export scope, and the missing ordered post-snapshot quote path that currently prevents faithful reverse-direction policy simulation.
+
+No intra-trade hypotheses or models were evaluated. No candidate exists. FINAL_TEST remains locked and DEMO execution remains disabled.
