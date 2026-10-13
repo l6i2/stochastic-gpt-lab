@@ -34,6 +34,25 @@ class HypothesisEvaluationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Unsafe or non-causal"):
             _select(frame, [{"column": "follow_PnL", "operator": "gt", "value": 0}])
 
+    def test_uncertain_effect_is_inconclusive_not_rejected(self):
+        frame = dataset(100)
+        frame["signal_utc_epoch"] = [1704067200 + i * 7 * 86400 for i in range(len(frame))]
+        frame["follow_side"] = "BUY"
+        frame["ha_direction"] = 1
+        frame["directional_advantage"] = [1 if i % 2 else -1 for i in range(len(frame))]
+        frame["follow_PnL"] = frame.directional_advantage
+        frame["invert_PnL"] = 0.0
+        hypothesis = {
+            "hypothesis_id": "TEST-UNCERTAIN", "causal_at_signal_time": True,
+            "outcome": "directional_advantage", "expected_sign": 1,
+            "signal_side": "BUY", "conditions": [
+                {"column": "follow_side", "operator": "eq", "value": "BUY"},
+                {"column": "ha_direction", "operator": "eq", "value": 1}],
+            "minimum_support": {"overall": 50, "intended_side": 50},
+        }
+        result = evaluate(frame, hypothesis, seed=42)
+        self.assertEqual(result["status"], "INCONCLUSIVE")
+
 
 if __name__ == "__main__":
     unittest.main()
