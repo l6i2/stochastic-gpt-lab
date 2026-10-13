@@ -63,7 +63,8 @@ def evaluate(frame: pd.DataFrame, hypothesis: dict, seed: int = 20261013) -> dic
     enough = len(values) >= int(minimum.get("overall", 0)) and counts.get(intended_side, 0) >= required_n
     survives = bool(enough and mean is not None and sign * ci[0] > 0 and
                     selected.follow_PnL.mean() > selected.invert_PnL.mean())
-    status = "SURVIVES_VALIDATION" if survives else ("REJECTED" if enough else "INCONCLUSIVE")
+    opposite = bool(enough and mean is not None and sign * ci[1] < 0)
+    status = "SURVIVES_VALIDATION" if survives else ("REJECTED" if opposite else "INCONCLUSIVE")
     return {
         "hypothesis_id": hypothesis["hypothesis_id"], "status": status,
         "n_paired": len(values), "n_by_signal_side": counts,
