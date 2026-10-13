@@ -55,9 +55,9 @@ Descriptive analysis is restricted to TRAIN. The report includes ALL/BUY/SELL su
 
 One TRAIN-derived BUY-only hypothesis is registered and SHA-256 frozen. Its causal condition is Stochastic BUY plus bullish Heikin-Ashi at signal time; its target is paired FOLLOW minus INVERT PnL. It is side-specific by design and does not make a claim about SELL.
 
-## CHECKPOINT_E — discovery validation: COMPLETE; HYPOTHESIS REJECTED
+## CHECKPOINT_E — discovery validation: COMPLETE; HYPOTHESIS INCONCLUSIVE
 
-The frozen BUY hypothesis was evaluated once on purged DISCOVERY_VALIDATION: 865 paired BUY observations, mean directional advantage −1.04 price units, with a week-cluster bootstrap 95% interval [−23.96, 22.87]. It failed the frozen positive-effect criterion and is not promoted. The result and hypothesis hash are local. FINAL_TEST was not read or evaluated.
+The frozen BUY hypothesis was evaluated once on purged DISCOVERY_VALIDATION: 865 paired BUY observations, mean directional advantage −1.04 price units, with a week-cluster bootstrap 95% interval [−23.96, 22.87]. The interval crosses zero, so the result is INCONCLUSIVE under the project's uncertainty rule; it is not promoted. The result and hypothesis hash are local. FINAL_TEST was not read or evaluated.
 
 ## CHECKPOINT_F — walk-forward: BASELINE COMPLETE; ML INCOMPLETE
 
