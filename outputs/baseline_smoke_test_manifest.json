@@ -1,0 +1,79 @@
+{
+  "manifest_version": "1",
+  "checkpoint": "CHECKPOINT_A",
+  "audited_at": "2026-10-12",
+  "repository": "l6i2/stochastic-gpt-lab",
+  "audited_head": "d8f639578a409acd941ec35b6d5349a66d7007c4",
+  "branch": "research/full-pipeline",
+  "safety": {
+    "LIVE_TRADING": false,
+    "real_trading_performed": false,
+    "account": "XM demo"
+  },
+  "mt5": {
+    "terminal": "XM Global SC MT5",
+    "terminal_version": "5.0.0.6257",
+    "metaeditor_version": "5.0.0.6257",
+    "symbol": "US30Cash",
+    "tester_timeframe": "M5",
+    "active_chart_timeframe_at_audit": "H1"
+  },
+  "ea": {
+    "files": [
+      "StochasticResearchEA.mq5",
+      "ResearchCore.mqh",
+      "HeikinAshiCore.mqh"
+    ],
+    "location": "active terminal MQL5/Experts/StochasticResearch",
+    "includes": [
+      "ResearchCore.mqh",
+      "HeikinAshiCore.mqh"
+    ],
+    "live_trading": false,
+    "ex5_exists": true,
+    "compile_errors": 0,
+    "compile_warnings": 0,
+    "compile_log_sha256": "9E8B08A25D43CFFA356DB9F52771233E514FC5D320EB528EB806B1F481503ED9",
+    "ex5_sha256": ""
+  },
+  "smoke_test": {
+    "symbol": "US30Cash",
+    "timeframe": "M5",
+    "model": "Every tick based on real ticks",
+    "optimization": "OFF",
+    "period_server": "2026-10-01..2026-10-11",
+    "bars_m5": 1932,
+    "ticks": 888125,
+    "result": "Test passed",
+    "real_tick_mode_attested": true,
+    "signals": 200,
+    "rows_written": 200,
+    "aborted": false,
+    "fatal_error": null,
+    "schema_version": "1.1",
+    "first_signal_utc": "2026-09-30T22:40:00Z",
+    "last_signal_utc": "2026-10-09T20:05:00Z",
+    "BUY": 95,
+    "SELL": 105,
+    "FOLLOW_rows": 200,
+    "INVERT_rows": 200,
+    "csv_sha256": "474B5C7A3FDFDA1BD3CC738A706F6121246D16DF44DD6C22B015DD8DBB90A6C2",
+    "audit_sha256": "2294DB88D568DB98062953996CACB618B2E81B4BC990B1C1C96A28898D20562B",
+    "raw_outputs_committed": false,
+    "validator": "NOT_RUN"
+  },
+  "environment": {
+    "runtimes": [
+      "Python 3.8 x64",
+      "Python 2.7 x86"
+    ],
+    "python312": "signed official 3.12.10 installer verified; two user-scope quiet installs hung without creating the runtime and were cancelled",
+    "venv": "not created; available runtime is below repo minimum Python 3.10",
+    "compileall": "PASS with Python 3.8.10 (syntax compilation only)",
+    "unittest": "FAIL at test imports: numpy and pandas missing",
+    "gxx": "not detected",
+    "historical_expansion": "paused pending supported Python environment and passing structural tests"
+  },
+  "private_local_paths_omitted": true,
+  "original_worktree_note": "A pre-existing local deletion of mt5/StochasticResearchEA.mq5 remains untouched in the original worktree."
+}
