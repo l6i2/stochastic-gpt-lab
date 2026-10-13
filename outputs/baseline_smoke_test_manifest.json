@@ -1,22 +1,21 @@
 {
   "manifest_version": "1",
   "checkpoint": "CHECKPOINT_A",
-  "audited_at": "2026-10-12",
+  "audited_at": "2026-10-13T04:15:00Z",
   "repository": "l6i2/stochastic-gpt-lab",
   "audited_head": "d8f639578a409acd941ec35b6d5349a66d7007c4",
-  "branch": "research/full-pipeline",
-  "safety": {
-    "LIVE_TRADING": false,
-    "real_trading_performed": false,
-    "account": "XM demo"
-  },
-  "mt5": {
-    "terminal": "XM Global SC MT5",
+  "audit_branch": "research/full-pipeline",
+  "original_worktree_note": "A pre-existing deletion of mt5/StochasticResearchEA.mq5 remains untouched in the original worktree.",
+  "metatrader": {
+    "terminal_vendor": "XM Global SC MT5",
     "terminal_version": "5.0.0.6257",
     "metaeditor_version": "5.0.0.6257",
-    "symbol": "US30Cash",
-    "tester_timeframe": "M5",
-    "active_chart_timeframe_at_audit": "H1"
+    "active_terminal_data_folder": "redacted local AppData path",
+    "account_mode": "DEMO (terminal window title)",
+    "active_chart_symbol": "US30Cash",
+    "active_chart_period": "H1 at audit time",
+    "tester_symbol": "US30Cash",
+    "tester_period": "M5"
   },
   "ea": {
     "files": [
@@ -24,7 +23,7 @@
       "ResearchCore.mqh",
       "HeikinAshiCore.mqh"
     ],
-    "location": "active terminal MQL5/Experts/StochasticResearch",
+    "source_location": "active XM terminal MQL5/Experts/StochasticResearch",
     "includes": [
       "ResearchCore.mqh",
       "HeikinAshiCore.mqh"
@@ -34,18 +33,21 @@
     "compile_errors": 0,
     "compile_warnings": 0,
     "compile_log_sha256": "9E8B08A25D43CFFA356DB9F52771233E514FC5D320EB528EB806B1F481503ED9",
-    "ex5_sha256": ""
+    "ex5_sha256": "0321C41CACB8003410CD6079F9AE65EAFD94B2CA2A2637E2F455E66B4BDA432F"
   },
   "smoke_test": {
     "symbol": "US30Cash",
     "timeframe": "M5",
     "model": "Every tick based on real ticks",
     "optimization": "OFF",
-    "period_server": "2026-10-01..2026-10-11",
-    "bars_m5": 1932,
+    "start_server_time": "2026-10-01",
+    "end_server_time": "2026-10-11",
     "ticks": 888125,
-    "result": "Test passed",
+    "bars_m5": 1932,
+    "tester_result": "Test passed",
     "real_tick_mode_attested": true,
+    "live_trading": false,
+    "account_mode": "DEMO",
     "signals": 200,
     "rows_written": 200,
     "aborted": false,
@@ -53,27 +55,40 @@
     "schema_version": "1.1",
     "first_signal_utc": "2026-09-30T22:40:00Z",
     "last_signal_utc": "2026-10-09T20:05:00Z",
-    "BUY": 95,
-    "SELL": 105,
-    "FOLLOW_rows": 200,
-    "INVERT_rows": 200,
+    "buy": 95,
+    "sell": 105,
+    "follow_rows": 200,
+    "invert_rows": 200,
     "csv_sha256": "474B5C7A3FDFDA1BD3CC738A706F6121246D16DF44DD6C22B015DD8DBB90A6C2",
     "audit_sha256": "2294DB88D568DB98062953996CACB618B2E81B4BC990B1C1C96A28898D20562B",
-    "raw_outputs_committed": false,
-    "validator": "NOT_RUN"
+    "outputs_saved_in_repo": false,
+    "output_location_note": "Local MT5 Tester agent Files directory; absolute user path intentionally omitted.",
+    "validator": "PASS: validate_dataset.py on CSV and Parquet (200 rows, 329 columns, 5 censored rows)",
+    "parquet_roundtrip": "PASS via fastparquet"
   },
-  "environment": {
-    "runtimes": [
-      "Python 3.8 x64",
-      "Python 2.7 x86"
+  "verification": {
+    "unit_tests": "PASS: 29 tests, 9 skipped (g++ unavailable), 20 passed; Python 3.12.10 x64 in project .venv",
+    "compileall": "PASS on Python 3.12.10",
+    "gxx": "not detected; 9 native tests skipped",
+    "python_runtimes": [
+      "3.12.10 x64 (project .venv)",
+      "3.8 x64 (system)",
+      "2.7 x86 (system)"
     ],
-    "python312": "signed official 3.12.10 installer verified; two user-scope quiet installs hung without creating the runtime and were cancelled",
-    "venv": "not created; available runtime is below repo minimum Python 3.10",
-    "compileall": "PASS with Python 3.8.10 (syntax compilation only)",
-    "unittest": "FAIL at test imports: numpy and pandas missing",
-    "gxx": "not detected",
-    "historical_expansion": "paused pending supported Python environment and passing structural tests"
+    "project_venv_exists": true,
+    "python312_install": "PASS through portable uv-managed distribution; global Python unchanged",
+    "venv": "Created at project worktree root; ignored by git",
+    "pip_check": "PASS: uv pip check",
+    "environment": "Project-isolated .venv; CPython 3.12.10 x64 installed with portable uv; no global PATH/registry changes"
   },
-  "private_local_paths_omitted": true,
-  "original_worktree_note": "A pre-existing local deletion of mt5/StochasticResearchEA.mq5 remains untouched in the original worktree."
+  "history_coverage": {
+    "status": "INCOMPLETE",
+    "symbol": "US30Cash",
+    "first_tick_observed_utc": "2023-12-20T12:06:50.263Z",
+    "last_tick_observed_utc": "2026-10-13T07:50:51.32Z",
+    "m5_visible_first_utc": "2025-05-14T22:45:00Z",
+    "m5_visible_last_utc": "2026-10-13T07:50:00Z",
+    "chart_limit_bars": 100000,
+    "note": "Earliest broker bar and continuous tick coverage not established; July-November 2023 sampled months returned zero. No historical blocks started."
+  }
 }

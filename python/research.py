@@ -5,6 +5,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from heikin_ashi import HA_COLUMNS, HA_METADATA, validate_ha
+from parquet_io import read_parquet
 
 PROFILE_PREFIXES = [f"vp_{m}m_" for m in (30,60,120,240)] + ["vp_session_", "vp_previous_session_"]
 PROFILE_VALUES = ["POC","VAH","VAL","distance_price_to_POC","distance_price_to_VAH","distance_price_to_VAL","inside_value_area","above_value_area","below_value_area","POC_position_in_range","high_volume_node_nearest","low_volume_node_nearest","distance_to_HVN","distance_to_LVN"]
@@ -42,7 +43,7 @@ REQUIRED += HA_COLUMNS + HA_METADATA
 def read_dataset(path: str | Path) -> pd.DataFrame:
     path = Path(path)
     if path.suffix == '.parquet':
-        return pd.read_parquet(path)
+        return read_parquet(path)
     # Reject duplicate headers rather than accepting pandas' automatic renaming.
     import csv
     with path.open(encoding='utf-8-sig', newline='') as fh:

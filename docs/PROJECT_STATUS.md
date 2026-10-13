@@ -1,20 +1,29 @@
 # Project status
 
-## CHECKPOINT_A — baseline audit
+## CHECKPOINT_A — baseline audit: COMPLETE
 
-**Status:** complete on branch `research/full-pipeline`; no project code was changed before the audit. The public manifest is `outputs/baseline_smoke_test_manifest.json`.
+Repository: `l6i2/stochastic-gpt-lab`, branch `research/full-pipeline`; audit baseline HEAD `d8f639578a409acd941ec35b6d5349a66d7007c4`. No project code was changed before the audit. The original worktree's pre-existing deletion of `mt5/StochasticResearchEA.mq5` remains untouched.
 
-- Repository HEAD at audit: `d8f639578a409acd941ec35b6d5349a66d7007c4`.
-- MT5: XM Global SC MT5 6257; the terminal title showed a DEMO account. Active chart was US30Cash H1 at audit time; the completed Strategy Tester run used US30Cash M5.
-- EA: all three required source files were together in the active terminal's `MQL5/Experts/StochasticResearch/`. `LIVE_TRADING=false`, the `.ex5` exists, and the latest MetaEditor log records 0 errors and 0 warnings.
-- Smoke test: 2026-10-01 through 2026-10-11 server time, 888,125 ticks and 1,932 M5 bars; real-tick attestation true; 200 signals and 200 dataset rows; schema 1.1; no abort or fatal error; 95 BUY and 105 SELL. Each signal has FOLLOW and INVERT virtual outcomes.
-- Raw CSV and audit remain on the local MT5 tester agent; only small metadata and hashes are published. No real trading occurred.
+- XM Global SC MT5 / MetaEditor build 6257. The active terminal title showed a DEMO account. The completed smoke test used US30Cash M5, every tick based on real ticks, optimization OFF, 2026-10-01 through 2026-10-11 server time, 888,125 ticks and 1,932 M5 bars.
+- Smoke audit: 200 signals / 200 rows; schema 1.1; `aborted=false`, no fatal error; 95 BUY and 105 SELL. Each event contains FOLLOW and INVERT virtual outcomes. CSV validator: PASS (200 rows, 329 columns, 5 censored rows). A local Parquet round-trip and second validation also passed using fastparquet. Raw CSV remains local and is not committed.
+- The deployed EA and both includes are byte-for-byte identical to the corresponding files at the audited main HEAD. The current `.ex5` exists; the saved MetaEditor log reports 0 errors and 0 warnings. `LIVE_TRADING=false`; no trading occurred.
 
-## Python environment blocker
+## FASE 1 — Python environment: PASS WITH NATIVE-TEST LIMIT
 
-- The machine has Python 3.8 x64 and Python 2.7 x86, while this repo requires Python 3.10+. No project `.venv` exists.
-- Python 3.8 `compileall` passes as syntax-only validation. `python -m unittest discover -s tests -v` fails during import because NumPy and pandas are missing.
-- The official signed Python 3.12.10 x64 installer was downloaded and Authenticode-verified. Two quiet user-scope install attempts hung without creating a runtime and were cancelled. No global Python configuration was changed.
-- `g++` is unavailable.
+- Created project `.venv` with isolated CPython 3.12.10 x64 via portable `uv` 0.12.19; system Python registrations and PATH were not changed.
+- Verified: NumPy 1.26.4, pandas 2.2.3, PyArrow 14.0.2, fastparquet 2026.9.0, scikit-learn 1.9.1, joblib 1.6.0. `uv pip check` passed.
+- This host exposes SSE4.1 but not SSE4.2. The installed PyArrow wheels can terminate with an illegal instruction during Parquet reads. Added `python/parquet_io.py` to select fastparquet on CPUs without SSE4.2; CSV→Parquet→read validation now works. Requirements cap NumPy and pandas to avoid wheels that require unsupported CPU features.
+- `python -m compileall -q python tests`: PASS. Full unittest run: 29 tests, 9 skipped and the remaining 20 passed. The skipped tests are the native C++ HA/core tests because `g++` is not installed; Python-only causal, split, audit, Parquet, and FINAL_TEST-lock checks passed.
+- No g++ was installed. Installing a native toolchain is deferred; it is not required for the Python research path.
 
-**Gate:** historical expansion, dataset freezing, analysis, validation and ML remain paused until a supported Python runtime/dependencies are available and the existing tests pass. Do not open FINAL_TEST. Do not enable Demo execution. Keep `LIVE_TRADING=false`.
+## FASE 2 — MT5 compilation: VERIFIED
+
+Required files are together at the active terminal's `MQL5/Experts/StochasticResearch/`. MetaEditor build 6257 reports **0 errors, 0 warnings**, with `.ex5` present. Sanitized evidence is saved at `outputs/verification/metaeditor_compile.log`. No MQL5 strategy or parameters were changed.
+
+## FASE 3 — history coverage: IN PROGRESS
+
+Read-only queries through the official MT5 Python integration found US30Cash ticks from at least `2023-12-20T12:06:50.263Z` through `2026-10-13T07:50:51.320Z`; ticks were present in sampled windows in 2024, 2025, and 2026. Samples from July–November 2023 returned no ticks. These are observations, not a complete gap audit.
+
+The active terminal exposes only its newest 100,000 M5 bars through `copy_rates_from_pos`, from `2025-05-14T22:45:00Z` through `2026-10-13T07:50:00Z`. The exact earliest broker M5 bar beyond that chart limit is not yet established. No historical dataset block has been run.
+
+**Next:** resolve the MT5 chart-history limit / broker M5 coverage, produce `outputs/history_coverage.json`, then run bounded historical blocks only after validating their per-block outputs. Preserve causal splits; never open FINAL_TEST or enable Demo execution. Keep `LIVE_TRADING=false`.

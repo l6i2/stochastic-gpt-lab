@@ -1,0 +1,25 @@
+{
+  "status": "INCOMPLETE",
+  "queried_at_utc": "2026-10-13T04:15:00Z",
+  "symbol": "US30Cash",
+  "broker": "XM Global Limited",
+  "server": "XMGlobal-MT5 10",
+  "timezone": "UTC timestamps returned by MT5 Python API; broker server offset/DST mapping not established",
+  "first_real_tick_observed_utc": "2023-12-20T12:06:50.263Z",
+  "last_real_tick_observed_utc": "2026-10-13T07:50:51.320Z",
+  "earliest_m5_bar_visible_utc": "2025-05-14T22:45:00Z",
+  "latest_m5_bar_visible_utc": "2026-10-13T07:50:00Z",
+  "m5_terminal_bar_limit": 100000,
+  "observations": {
+    "sampled_tick_windows_present": ["2023-12-20..2023-12-29", "2024-01-02", "2024-07-01..2024-07-08", "2025-07-01..2025-07-08", "2026-07-01..2026-07-08", "2026-10-12..2026-10-13"],
+    "sampled_tick_windows_empty": ["2023-07", "2023-08", "2023-09", "2023-10", "2023-11"],
+    "known_gaps": "Not fully audited; sampled empty months are not evidence of continuous absence or complete broker coverage."
+  },
+  "limitations": [
+    "The terminal currently exposes only 100000 newest M5 bars; earliest broker M5 coverage is unknown.",
+    "Earliest available real tick coverage is not established; the timestamp is the earliest observed in limited probes.",
+    "The current-terminal API view and cached files have not been expanded or exhaustively gap-audited.",
+    "No historical data blocks were run."
+  ],
+  "next_action": "Determine MT5 maximum-bars setting and query bounded ranges without changing account settings; then establish full M5/tick coverage and gaps before historical block runs."
+}

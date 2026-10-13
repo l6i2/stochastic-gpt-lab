@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import subprocess
+import shutil
 import sys
 import tempfile
 import unittest
@@ -13,6 +14,7 @@ from analyze_dataset import fit_deciles, bins, stats
 ROOT=Path(__file__).resolve().parents[1]
 
 class ResearchTests(unittest.TestCase):
+    @unittest.skipUnless(shutil.which('g++'), 'g++ unavailable; native scalar-core test not run')
     def test_actual_shared_mql_scalar_core(self):
         with tempfile.TemporaryDirectory() as tmp:
             binary=Path(tmp)/'core_test'

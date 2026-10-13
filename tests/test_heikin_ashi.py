@@ -2,6 +2,7 @@ import io
 import json
 from pathlib import Path
 import subprocess
+import shutil
 import sys
 import tempfile
 import unittest
@@ -19,10 +20,14 @@ BASE='3844d04079145865a43d1fce0a17240b34c69d69'
 class HeikinAshiTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        if not shutil.which('g++'):
+            cls.tmp=None;cls.binary=None
+            return
         cls.tmp=tempfile.TemporaryDirectory();cls.binary=Path(cls.tmp.name)/'ha_native'
         subprocess.run(['g++','-std=c++17','-Wall','-Wextra','-Werror',str(ROOT/'tests/ha_native.cpp'),'-o',str(cls.binary)],check=True)
     @classmethod
-    def tearDownClass(cls):cls.tmp.cleanup()
+    def tearDownClass(cls):
+        if cls.tmp is not None:cls.tmp.cleanup()
     def native(self,raw,cutoff=None):
         cutoff=int((raw.time.iloc[-1]+300)*1000-1) if cutoff is None else int(cutoff)
         payload=raw[['time','open','high','low','close']].to_csv(sep=' ',header=False,index=False)
@@ -30,6 +35,7 @@ class HeikinAshiTests(unittest.TestCase):
         names=['time','count','seed','raw_open','raw_close','ready','censored']+HA_COLUMNS
         return pd.read_csv(io.StringIO(out),names=names).replace(np.finfo(float).max,np.nan)
 
+    @unittest.skipUnless(shutil.which('g++'), 'g++ unavailable; native HA-core test not run')
     def test_seed_and_recurrence(self):
         raw=candles(4);got=self.native(raw)
         self.assertAlmostEqual(got.raw_open.iloc[0],(raw.open.iloc[0]+raw.close.iloc[0])/2)
@@ -37,11 +43,13 @@ class HeikinAshiTests(unittest.TestCase):
             self.assertAlmostEqual(got.raw_open.iloc[i],(got.raw_open.iloc[i-1]+got.raw_close.iloc[i-1])/2)
         self.assertTrue(got.ha_open.isna().all())
 
+    @unittest.skipUnless(shutil.which('g++'), 'g++ unavailable; native HA-core test not run')
     def test_all_54_features_match_independent_past_only_oracle(self):
         raw=candles(500);got=self.native(raw);expected=reference(raw,(raw.time.iloc[-1]+300)*1000-1)
         np.testing.assert_allclose(got[HA_COLUMNS],expected[HA_COLUMNS],rtol=1e-9,atol=1e-9,equal_nan=True)
         np.testing.assert_array_equal(got.censored,expected.ha_streak_left_censored)
 
+    @unittest.skipUnless(shutil.which('g++'), 'g++ unavailable; native HA-core test not run')
     def test_warmup_and_single_seed_persist(self):
         got=self.native(candles(400))
         self.assertTrue(got.loc[:274,'ha_open'].isna().all())
@@ -49,6 +57,7 @@ class HeikinAshiTests(unittest.TestCase):
         self.assertEqual(got.seed.nunique(),1)
         self.assertEqual(got['count'].iloc[-1],400)
 
+    @unittest.skipUnless(shutil.which('g++'), 'g++ unavailable; native HA-core test not run')
     def test_future_perturbation_and_entry_bar_excluded(self):
         raw=candles(330);signal_index=300;cutoff=(raw.time.iloc[signal_index]+300)*1000-1
         original=self.native(raw,cutoff)
@@ -60,6 +69,7 @@ class HeikinAshiTests(unittest.TestCase):
         # Even when later bars become closed, the earlier output is invariant.
         pd.testing.assert_frame_equal(self.native(raw).iloc[:301],self.native(changed).iloc[:301])
 
+    @unittest.skipUnless(shutil.which('g++'), 'g++ unavailable; native HA-core test not run')
     def test_ratios_and_streaks_use_only_closed_history(self):
         raw=candles(320);got=self.native(raw)
         directions=np.sign(got.raw_close-got.raw_open)
@@ -72,6 +82,7 @@ class HeikinAshiTests(unittest.TestCase):
                 count+=1
             self.assertEqual(got.ha_consecutive_bullish.iloc[i],count)
 
+    @unittest.skipUnless(shutil.which('g++'), 'g++ unavailable; native HA-core test not run')
     def test_doji_zero_range_and_duplicate_bar(self):
         raw=candles(300);raw[['open','high','low','close']]=1000.
         got=self.native(raw)
@@ -81,6 +92,7 @@ class HeikinAshiTests(unittest.TestCase):
         duplicate=pd.concat([raw,raw.iloc[[-1]]],ignore_index=True)
         pd.testing.assert_frame_equal(got,self.native(duplicate))
 
+    @unittest.skipUnless(shutil.which('g++'), 'g++ unavailable; native HA-core test not run')
     def test_initialization_influence_decays_before_ready(self):
         raw=candles(300);changed=raw.copy()
         changed.loc[0,['open','high','low','close']]+=1000
@@ -88,6 +100,7 @@ class HeikinAshiTests(unittest.TestCase):
         self.assertGreater(abs(a.raw_open.iloc[0]-b.raw_open.iloc[0]),999)
         np.testing.assert_allclose(a.raw_open.iloc[256:],b.raw_open.iloc[256:],rtol=0,atol=1e-10)
 
+    @unittest.skipUnless(shutil.which('g++'), 'g++ unavailable; native HA-core test not run')
     def test_long_streak_not_truncated_to_rolling_window(self):
         raw=candles(400)
         op=1000+np.arange(400)*2

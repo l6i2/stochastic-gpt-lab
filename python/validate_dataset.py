@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import sys
 from research import read_dataset, validate
+from parquet_io import write_parquet
 
 
 def main():
@@ -24,11 +25,11 @@ def main():
         if args.parquet:
             args.parquet.parent.mkdir(parents=True,exist_ok=True)
             if args.parquet.exists(): raise ValueError('Refusing to overwrite Parquet output')
-            df.to_parquet(args.parquet,index=False)
+            write_parquet(df,args.parquet,index=False)
             Path(str(args.parquet)+'.audit.json').write_text(json.dumps(audit,indent=2)+'\n')
         print(json.dumps({'valid':True,'rows':len(df),'columns':len(df.columns),'censored_rows':int((df.follow_exit_reason.eq('END_OF_DATA')|df.invert_exit_reason.eq('END_OF_DATA')).sum())},indent=2))
         return 0
-    except (ValueError, OSError, ImportError, KeyError, TypeError) as exc:
+    except (ValueError, OSError, ImportError, KeyError, TypeError, RuntimeError) as exc:
         print(f'Validation failed: {exc}',file=sys.stderr); return 1
 
 
