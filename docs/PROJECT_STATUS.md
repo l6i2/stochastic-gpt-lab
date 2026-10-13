@@ -12,6 +12,8 @@ The active XM MetaEditor build 6257 log reports 0 errors and 0 warnings; the `.e
 
 A project-local `.venv` uses isolated CPython 3.12.10 x64 via portable `uv`. System Python and PATH were not changed. NumPy 1.26.4, pandas 2.2.3, PyArrow 14.0.2, fastparquet 2026.9.0, scikit-learn 1.9.1, joblib 1.6.0, and the read-only MetaTrader5 Python API 5.0.5572 are available. `uv pip check` and `compileall` pass. The full unittest suite passes: 36 tests run, 27 pass, 9 native C++ tests skipped because `g++` is absent (702 seconds on this host).
 
+After the final confidence-interval status correction, the three hypothesis-evaluation tests and `compileall` were rerun and passed. The full suite was not rerun after this small classification change.
+
 PyArrow wheels crash on this host's CPU without SSE4.2; the new `python/parquet_io.py` selects fastparquet as the safe fallback. No global compiler or Python installation was added.
 
 ## FASE 2 — MT5 compilation: VERIFIED
