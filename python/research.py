@@ -52,7 +52,9 @@ def read_dataset(path: str | Path) -> pd.DataFrame:
         raise ValueError('Duplicate CSV column names')
     if not header:
         raise ValueError('Empty run: no event header. Check the EA audit file.')
-    return pd.read_csv(path)
+    # Preserve binary float values written with 17 significant digits so that
+    # CSV and Parquet exports can be compared without parser-rounding noise.
+    return pd.read_csv(path, float_precision='round_trip')
 
 
 def validate(df: pd.DataFrame, audit: dict | None = None) -> list[str]:

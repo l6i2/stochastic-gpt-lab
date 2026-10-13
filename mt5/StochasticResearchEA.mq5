@@ -31,7 +31,8 @@ MqlRates rates[]; double kval[],dval[],av[],ev0[],ev1[],ev2[],ev3[];
 struct VirtualTrade { int side; double entry,exit_price,mfe,mae; long entry_bar,entry_msc,exit_msc; int bars; string reason; bool done; };
 struct Event { string features; VirtualTrade follow; VirtualTrade invert; };
 Event events[];
-string Num(double x) { if(!MathIsValidNumber(x)||x==EMPTY_VALUE) return ""; return DoubleToString(x,10); }
+// Preserve enough precision that strict Stochastic threshold crossings survive CSV round-trips.
+string Num(double x) { if(!MathIsValidNumber(x)||x==EMPTY_VALUE) return ""; return DoubleToString(x,16); }
 void S(string key,string value) { if(defining) header+=(header==""?"":",")+key; row+=(row==""?"":",")+value; }
 void N(string key,double value) { S(key,Num(value)); }
 void I(string key,long value) { S(key,IntegerToString(value)); }

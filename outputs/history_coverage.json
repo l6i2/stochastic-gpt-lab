@@ -1,25 +1,40 @@
 {
-  "status": "INCOMPLETE",
-  "queried_at_utc": "2026-10-13T04:15:00Z",
+  "status": "COVERAGE_MEASURED_MONTHLY",
+  "queried_at_utc": "2026-10-13T05:12:00Z",
   "symbol": "US30Cash",
   "broker": "XM Global Limited",
   "server": "XMGlobal-MT5 10",
-  "timezone": "UTC timestamps returned by MT5 Python API; broker server offset/DST mapping not established",
-  "first_real_tick_observed_utc": "2023-12-20T12:06:50.263Z",
-  "last_real_tick_observed_utc": "2026-10-13T07:50:51.320Z",
-  "earliest_m5_bar_visible_utc": "2025-05-14T22:45:00Z",
-  "latest_m5_bar_visible_utc": "2026-10-13T07:50:00Z",
-  "m5_terminal_bar_limit": 100000,
-  "observations": {
-    "sampled_tick_windows_present": ["2023-12-20..2023-12-29", "2024-01-02", "2024-07-01..2024-07-08", "2025-07-01..2025-07-08", "2026-07-01..2026-07-08", "2026-10-12..2026-10-13"],
-    "sampled_tick_windows_empty": ["2023-07", "2023-08", "2023-09", "2023-10", "2023-11"],
-    "known_gaps": "Not fully audited; sampled empty months are not evidence of continuous absence or complete broker coverage."
+  "server_timezone": {
+    "winter_offset_hours": 2,
+    "summer_offset_hours": 3,
+    "source": "XM Help Center confirms GMT+2 winter / GMT+3 summer; EA uses DST_EU (enum 1).",
+    "dst_rule": "DST_EU, consistent with published server offsets and the existing EA default.",
+    "timestamp_handling": "The MT5 Python API returned current tick/bar epochs about three hours ahead of the machine UTC clock; recorded raw values are labeled broker-server time. UTC estimates subtract the XM seasonal offset. This interpretation is an inference from the live clock comparison and broker documentation."
   },
-  "limitations": [
-    "The terminal currently exposes only 100000 newest M5 bars; earliest broker M5 coverage is unknown.",
-    "Earliest available real tick coverage is not established; the timestamp is the earliest observed in limited probes.",
-    "The current-terminal API view and cached files have not been expanded or exhaustively gap-audited.",
-    "No historical data blocks were run."
-  ],
-  "next_action": "Determine MT5 maximum-bars setting and query bounded ranges without changing account settings; then establish full M5/tick coverage and gaps before historical block runs."
+  "m5_bars": {
+    "count_returned": 701578,
+    "earliest_server_time": "2011-08-10T00:00:00",
+    "earliest_utc_estimate": "2011-08-09T21:00:00Z",
+    "latest_server_time": "2026-10-13T08:05:00",
+    "latest_utc_estimate": "2026-10-13T05:05:00Z",
+    "terminal_max_bars": 1000000,
+    "end_of_history_confirmed": true,
+    "method": "copy_rates_from_pos in 100000-row chunks; final chunk had 1578 bars, next start position returned none."
+  },
+  "real_ticks": {
+    "first_server_time": "2023-12-20T12:06:50.263",
+    "first_utc_estimate": "2023-12-20T10:06:50.263Z",
+    "last_server_time": "2026-10-13T08:11:31.375",
+    "last_utc_estimate": "2026-10-13T05:11:31.375Z",
+    "monthly_coverage": "No ticks in each queried month from 2010-01 through 2023-11. Partial 2023-12 begins 2023-12-20. Every month from 2024-01 through 2026-10 (partial through Oct 13) returned ticks.",
+    "known_month_gaps": ["2010-01..2023-11: no ticks returned by monthly queries"],
+    "within_month_gaps": "Not exhaustively classified; market closures/weekends and intra-month missing intervals were not audited."
+  },
+  "method": {
+    "read_only": true,
+    "api": "MetaTrader5 Python 5.0.5572, active XM terminal build 6257",
+    "trading_functions_called": false,
+    "account_mode": "DEMO"
+  },
+  "next_action": "Monthly real-tick history has been exported in bounded blocks through 2026-10-13 and validated. Do not claim tick coverage before 2023-12-20; M5 bars extend to 2011."
 }

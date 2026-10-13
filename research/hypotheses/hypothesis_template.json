@@ -1,0 +1,19 @@
+{
+  "hypothesis_id": "HYP-YYYYMMDD-001",
+  "date_utc": "YYYY-MM-DD",
+  "version": 1,
+  "source": "TRAIN descriptive research",
+  "feature_family": ["volume", "heikin_ashi", "volume_profile"],
+  "signal_side": "BUY_AND_SELL_SEPARATELY",
+  "expected_direction": "",
+  "follow_invert_expectation": "",
+  "definition": "",
+  "causal_at_signal_time": true,
+  "train_sample_size": 0,
+  "train_effect": null,
+  "minimum_support": {"overall": 500, "per_side": 100},
+  "missing_handling": "Report missing as a separate group; do not impute outcomes.",
+  "failure_criterion": "Effect direction reverses or confidence interval crosses zero in the frozen validation plan.",
+  "validation_criterion": "See docs/PROMOTION_CRITERIA.md; do not modify after registration.",
+  "status": "DRAFT_NOT_VALIDATED"
+}

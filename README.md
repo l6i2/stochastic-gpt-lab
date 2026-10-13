@@ -50,7 +50,7 @@ Seleccionar explícitamente `simulation_mode=BAR_CONSERVATIVE`. En una vela ambi
 
 ## Python
 
-Python 3.10+; pandas y numpy para análisis, pyarrow para Parquet. Crear un entorno aislado:
+Python 3.10+; numpy y pandas para análisis, pyarrow o fastparquet para Parquet. `python/parquet_io.py` selecciona fastparquet si el CPU no soporta SSE4.2. Crear un entorno aislado:
 
 ```bash
 python3 -m venv .venv
@@ -86,7 +86,9 @@ Crear el archivo de hipótesis como resultado de la investigación; no existe un
 
 ## Límites importantes
 
-El proyecto no incluye terminal MT5, datos del broker ni un `.ex5` verificado. Consultar [verificación](docs/VERIFICATION.md) y completar [aceptación en MT5](docs/MT5_ACCEPTANCE.md). PnL/MFE/MAE son unidades de precio: no incluyen comisiones, swap, lotes o conversión monetaria. El perfil usa la historia que entrega el broker; una consulta exitosa no garantiza cobertura completa. La reproducción de una implementación histórica externa requiere comparar su línea trigger, SMA/LowHigh, calendario, fills y datos. No se afirma equivalencia con código original que no se ha proporcionado.
+El flujo reproducible está disponible en `python/pipeline.py`: `historical` informa cobertura/bloques existentes sin iniciar MT5; `validate`, `build-master`, `train-analysis`, `validate-hypotheses`, `ml-train` y `candidate` realizan las etapas de investigación. `candidate` se bloquea si ninguna hipótesis congelada sobrevive. No hay comando FINAL_TEST en el orquestador. El Tester MT5 aún se inicia fuera del orquestador y requiere verificar su log/dataset por bloque.
+
+La verificación local vigente de MT5 y la cobertura medida de XM están en [estado del proyecto](docs/PROJECT_STATUS.md). Esa verificación incluye un `.ex5` compilado por MetaEditor con 0 errores y 0 warnings y un smoke test DEMO; los datos crudos permanecen locales. Consultar también [aceptación en MT5](docs/MT5_ACCEPTANCE.md). PnL/MFE/MAE son unidades de precio: no incluyen comisiones, swap, lotes o conversión monetaria. El perfil usa la historia que entrega el broker; una consulta exitosa no garantiza cobertura completa. La reproducción de una implementación histórica externa requiere comparar su línea trigger, SMA/LowHigh, calendario, fills y datos. No se afirma equivalencia con código original que no se ha proporcionado.
 
 ## Heikin Ashi causal (schema 1.1)
 
@@ -96,4 +98,6 @@ Añade **54 features HA**, sólo contexto de investigación: OHLC sintéticos, c
 
 El informe `ha_interactions.csv` cruza dirección/streak/transición/fuerza/expansión HA con señal original, volumen, niveles y estado de Value Area de los seis perfiles, y régimen ATR. Incluye ALL/BUY/SELL y resultados FOLLOW/INVERT. Son 30 pares predefinidos; no se buscan combinaciones ni se seleccionan reglas. Cortes numéricos ajustados sólo en TRAIN o TRAIN de cada fold. FINAL_TEST sigue bloqueado.
 
-Schema 1.0 continúa compatible con validación, análisis y conversión Parquet; sin informes HA ni reconstrucción artificial de su historia. Nuevos CSV/audit usan 1.1. Las pruebas compilan y ejecutan también el núcleo HA real como C++ y lo comparan con un oráculo independiente. La compilación del EA completo en MetaEditor sigue pendiente en este entorno.
+Schema 1.0 continúa compatible con validación, análisis y conversión Parquet; sin informes HA ni reconstrucción artificial de su historia. Nuevos CSV/audit usan 1.1. Las pruebas compilan y ejecutan también el núcleo HA real como C++ y lo comparan con un oráculo independiente. La compilación del EA en MetaEditor se verificó con 0 errores y 0 warnings para el código vigente en la auditoría; revisar [estado del proyecto](docs/PROJECT_STATUS.md) para el HEAD auditado y límites actuales.
+
+\n

@@ -31,7 +31,7 @@ class ParquetTests(unittest.TestCase):
             pd.testing.assert_frame_equal(pd.read_csv(csv),read_dataset(parquet))
             subprocess.run([sys.executable,str(ROOT/'python/validate_dataset.py'),str(parquet)],check=True,capture_output=True,text=True)
             subprocess.run([sys.executable,str(ROOT/'python/analyze_dataset.py'),str(parquet),'--output',str(root/'wf'),'--walk-forward','--wf-initial','50','--wf-step','20'],check=True,capture_output=True,text=True)
-            self.assertTrue(list((root/'wf').glob('walk_forward_*/TRAIN/summary.csv')))
+            self.assertTrue(list((root/'wf').glob('walk_forward_*/metrics.csv')))
             self.assertFalse(list((root/'wf').glob('**/FINAL_TEST')))
 
 if __name__=='__main__':unittest.main()

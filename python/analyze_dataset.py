@@ -55,6 +55,25 @@ def stats(df):
     return result
 
 
+def walk_forward_metrics(df):
+    rows=[]
+    populations={'ALL':df,'BUY':df[df.follow_side.eq('BUY')],'SELL':df[df.follow_side.eq('SELL')]}
+    for population,data in populations.items():
+        paired=data.follow_PnL.notna()&data.invert_PnL.notna()
+        row={'population':population,'signals':len(data),'paired':int(paired.sum()),
+             'directional_advantage_mean':data.loc[paired,'directional_advantage'].mean()}
+        for side in ('follow','invert'):
+            pnl=data.loc[data[side+'_PnL'].notna(),side+'_PnL']
+            gains=pnl[pnl>0].sum(); losses=-pnl[pnl<0].sum()
+            equity=pnl.cumsum()
+            row.update({side+'_n':len(pnl),side+'_win_rate':(pnl>0).mean() if len(pnl) else np.nan,
+                        side+'_mean_pnl':pnl.mean(),side+'_median_pnl':pnl.median(),
+                        side+'_profit_factor':gains/losses if losses else (np.inf if gains else np.nan),
+                        side+'_drawdown_proxy':(equity-equity.cummax()).min() if len(equity) else np.nan})
+        rows.append(row)
+    return rows
+
+
 def report(df, edges, folder):
     folder.mkdir(parents=True,exist_ok=False)
     populations={'ALL':df,'BUY':df[df.follow_side.eq('BUY')],'SELL':df[df.follow_side.eq('SELL')]}
@@ -144,7 +163,10 @@ def main():
             if not raw.strip(): raise ValueError('Hypotheses file must not be empty')
             hypotheses=hashlib.sha256(raw).hexdigest()
         df=read_dataset(args.dataset)
-        audit=json.loads(Path(str(args.dataset)+'.audit.json').read_text())
+        audit_path=Path(str(args.dataset)+'.audit.json')
+        if not audit_path.exists():
+            audit_path=args.dataset.parent/'master_audit.json'
+        audit=json.loads(audit_path.read_text())
         errors=validate(df,audit)
         if errors: raise ValueError('; '.join(errors))
         parts=chronological_split(df,args.train,args.validation)
@@ -173,9 +195,10 @@ def main():
                 validation,last_purged=purge_at_boundary(validation,test_start);meta['final_boundary_purged']=last_purged
                 if training.empty or validation.empty: continue
                 fold=args.output/f'walk_forward_{i:03d}';fold.mkdir()
-                fold_edges=fit_deciles(training)
-                report(training,fold_edges,fold/'TRAIN');report(validation,fold_edges,fold/'DISCOVERY_VALIDATION')
-                (fold/'manifest.json').write_text(json.dumps({**meta,'edges':fold_edges,'training_signals':len(training),'validation_signals':len(validation)},indent=2)+'\n');count+=1
+                metrics=[{**row,'partition':'TRAIN'} for row in walk_forward_metrics(training)]
+                metrics += [{**row,'partition':'DISCOVERY_VALIDATION'} for row in walk_forward_metrics(validation)]
+                pd.DataFrame(metrics).to_csv(fold/'metrics.csv',index=False)
+                (fold/'manifest.json').write_text(json.dumps({**meta,'training_signals':len(training),'validation_signals':len(validation)},indent=2)+'\n');count+=1
             if count==0: raise ValueError('No nonempty walk-forward folds after purging; adjust sizes or add history')
         print(f'Descriptive {args.evaluate} report: {args.output}. FINAL_TEST '+('explicitly evaluated.' if args.evaluate=='FINAL_TEST' else 'not explored.'))
         return 0

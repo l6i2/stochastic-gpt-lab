@@ -38,4 +38,6 @@
  : information: generating code 95%
  : information: generating code 100%
  : information: code generated
-Result: 0 errors, 0 warnings, 13452 ms elapsed, cpu='X64 Regular'
+Result: 0 errors, 0 warnings, 7090 ms elapsed, cpu='X64 Regular'
+
+\n

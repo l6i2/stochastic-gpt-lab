@@ -1,0 +1,32 @@
+{
+  "hypothesis_id": "HYP-20261013-001",
+  "date_utc": "2026-10-13",
+  "version": 1,
+  "source": "TRAIN descriptive report: ha_direction × signal_original",
+  "feature_family": ["heikin_ashi", "stochastic_signal"],
+  "signal_side": "BUY",
+  "expected_direction": "mean directional_advantage > 0",
+  "follow_invert_expectation": "FOLLOW has higher paired PnL than INVERT",
+  "definition": "For BUY Stochastic signals with causal ha_direction == 1 at signal time, estimate paired FOLLOW minus INVERT PnL.",
+  "causal_at_signal_time": true,
+  "conditions": [
+    {"column": "follow_side", "operator": "eq", "value": "BUY"},
+    {"column": "ha_direction", "operator": "eq", "value": 1}
+  ],
+  "outcome": "directional_advantage",
+  "expected_sign": 1,
+  "train_sample_size": 2508,
+  "train_effect": {
+    "mean_directional_advantage": 7.7932695374802625,
+    "median_directional_advantage": 6.849999999998545,
+    "follow_mean_pnl": -0.25622009569336446,
+    "invert_mean_pnl": -8.049489633173627
+  },
+  "minimum_support": {"overall": 500, "intended_side": 500},
+  "missing_handling": "Do not impute; condition rows require observed ha_direction and paired complete outcomes.",
+  "failure_criterion": "Validation cluster-bootstrap 95% confidence interval for mean directional_advantage crosses or falls below zero, or mean FOLLOW PnL is not greater than mean INVERT PnL.",
+  "validation_criterion": "At least 500 paired BUY observations; positive directional-advantage mean and cluster-bootstrap 95% lower bound above zero; report SELL separately as out of scope, not as evidence for this BUY-only hypothesis.",
+  "status": "FROZEN_TRAIN_READY_FOR_VALIDATION",
+  "dataset_sha256": "e2c05a24551078efb584cc4732b796846f3b98793d21978522b36be141de59c1",
+  "train_split_sha256": "4823eb1aa4ca08899ffcbcff957b4dfb726b30c9dd074a2c968efb1f133bb1c1"
+}
