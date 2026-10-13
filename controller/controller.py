@@ -10,7 +10,7 @@ from .mt5_env import status
 
 def main():
     parser = argparse.ArgumentParser(description='Local MT5 research controller')
-    parser.add_argument('command', choices=['status', 'compile', 'backtest', 'validate', 'logs', 'history', 'resume'])
+    parser.add_argument('command', choices=['status', 'compile', 'backtest', 'validate', 'logs', 'history', 'resume', 'postprocess'])
     parser.add_argument('--ea', default='StochasticIntratradeResearchEA')
     parser.add_argument('--symbol', default='US30Cash')
     parser.add_argument('--from', dest='start')
@@ -33,8 +33,13 @@ def main():
         from .tester_runner import run
         result = run(args.start, args.end, args.ea, args.symbol, args.timeout)
     elif args.command == 'validate':
+        if not args.run_id:
+            parser.error('--run-id required')
         from .validation import validate_run
         result = validate_run(args.run_id)
+    elif args.command == 'postprocess':
+        from .postprocess import postprocess
+        result = postprocess()
     elif args.command == 'logs':
         if not args.run_id or not args.run_id.replace('_', '').isalnum():
             parser.error('valid --run-id required')

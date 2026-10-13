@@ -1,16 +1,5 @@
 """CLI launch with bounded waiting. Never terminates an existing terminal."""
-import json
 import re
-import subprocess
-import time
-import uuid
-from datetime import datetime, timezone
-from pathlib import Path
-from .artifact_collector import collect, find_artifacts, write_manifest
-from .compile_runner import compile_ea, ea_path, sha256
-from .mt5_env import require_active_environment, status
-from .safety_gate import ROOT, assert_research_range_allowed
-from .tester_config import config, preset, write_preset
 
 
 def read_log(path):
