@@ -71,7 +71,7 @@ def main() -> int:
         return run(["python/evaluate_hypotheses.py", "outputs/splits/validation.parquet",
                     *[str(p) for p in args.hypotheses], "--output", str(args.output)])
     if args.command == "candidate":
-        result_path = ROOT / "outputs/validation/20261013/results.json"
+        result_path = ROOT / "outputs/validation/20261013_v2/results.json"
         if not result_path.is_file():
             print("Candidate blocked: no frozen-hypothesis validation evidence.", file=sys.stderr)
             return 2
