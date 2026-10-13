@@ -1,0 +1,19 @@
+{
+  "partition": "TRAIN",
+  "rows": 12228,
+  "candidate_count": 10,
+  "hypothesis_sha256": {
+    "R2-BUY-ha_alignment": "6237623fb8fe8844a1af43d7959296232ee2a615bd2472ac15a94279bf50d1e1",
+    "R2-BUY-volume_at_or_above_baseline": "dcd99bd8e9d8a9178aa367f515d1a46896ca478bf278acb1af372bd679abba55",
+    "R2-BUY-ha_alignment_and_volume": "623670922c03a938492d54e572fad40276bdc73d4cd1516a45dea500765ab15d",
+    "R2-BUY-ha_transition_and_volume": "83f6e6c644792532015a70855d0b4c5a657aa372e52b6a8abb8d8e28017bc774",
+    "R2-BUY-ha_alignment_and_outside_value_area": "17dc1999facf9e6568a61696f33d476ec1b9f03f1f3c5fefbd0ddfe1c82ec78d",
+    "R2-SELL-ha_alignment": "642272f24e090b146ca62300b1f3d4fb9f530572ee1e37701498855ac8a3b9fa",
+    "R2-SELL-volume_at_or_above_baseline": "dda50ba4fe036d94af7b83212aa15386582c683ef40c3528e21fc107d6ef2069",
+    "R2-SELL-ha_alignment_and_volume": "8a08538d3cd46d9c23590a206a235f82f2c0275fca9681d231ff97bffc63c5ff",
+    "R2-SELL-ha_transition_and_volume": "b81769e6ec7d26686b4f847781b8ca5bbfc8876e57f02fc581e74bd4a51e662e",
+    "R2-SELL-ha_alignment_and_outside_value_area": "d28ff9d87631621b22cf31310d53b05a7847ffd12ece1d2efa0c9f6e93b269fb"
+  },
+  "final_test_accessed": false,
+  "skip_or_no_trade_policy": false
+}

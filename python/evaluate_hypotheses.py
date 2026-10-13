@@ -17,7 +17,8 @@ ALLOWED_COLUMNS = set(FEATURE_COLUMNS) | {
 OPERATORS = {"eq", "ge", "le", "gt", "lt"}
 
 
-def _bootstrap_ci(values: pd.DataFrame, outcome: str, seed: int, repetitions: int = 4000):
+def _bootstrap_ci(values: pd.DataFrame, outcome: str, seed: int, repetitions: int = 4000,
+                  quantiles: tuple[float, float] = (0.025, 0.975)):
     weeks = (pd.to_datetime(values.signal_utc_epoch, unit="s", utc=True)
              .dt.tz_localize(None).dt.to_period("W").astype(str))
     groups = [part[outcome].to_numpy(dtype=float) for _, part in values.assign(_week=weeks).groupby("_week", sort=True)]
@@ -28,7 +29,7 @@ def _bootstrap_ci(values: pd.DataFrame, outcome: str, seed: int, repetitions: in
     for i in range(repetitions):
         draw = rng.integers(0, len(groups), size=len(groups))
         estimates[i] = np.concatenate([groups[j] for j in draw]).mean()
-    return [float(x) for x in np.quantile(estimates, [0.025, 0.975])]
+    return [float(x) for x in np.quantile(estimates, quantiles)]
 
 
 def _select(frame: pd.DataFrame, conditions: list[dict]) -> pd.DataFrame:

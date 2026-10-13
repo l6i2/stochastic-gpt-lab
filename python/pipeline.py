@@ -25,9 +25,18 @@ def main() -> int:
     models = sub.add_parser("ml-train", help="fit fixed models on TRAIN; compare on validation")
     models.add_argument("--output", type=Path, default=Path("outputs/ml/current"))
     models.add_argument("--walk-forward", action="store_true")
+    models.add_argument("--round2", action="store_true", help="fixed small feature subset with predefined interactions")
     hypotheses = sub.add_parser("validate-hypotheses", help="evaluate frozen hypothesis files on validation")
     hypotheses.add_argument("hypotheses", nargs="+", type=Path)
     hypotheses.add_argument("--output", required=True, type=Path)
+    r2 = sub.add_parser("round2-entry-freeze", help="freeze the fixed ten-hypothesis family using TRAIN only")
+    r2.add_argument("--output", type=Path, default=Path("research/hypotheses_round2"))
+    r2v = sub.add_parser("round2-entry-validate", help="evaluate frozen round-two entry hypotheses once on validation")
+    r2v.add_argument("--hypotheses", type=Path, default=Path("research/hypotheses_round2"))
+    r2v.add_argument("--output", type=Path, default=Path("outputs/entry_research_round2/validation"))
+    r2i = sub.add_parser("round2-entry-interactions", help="write fixed descriptive interaction tables from TRAIN only")
+    r2i.add_argument("--output", type=Path, default=Path("outputs/entry_research_round2/train_report/interactions.csv"))
+    sub.add_parser("intratrade-status", help="report whether causal path-state source exists; never fabricates snapshots")
     sub.add_parser("candidate", help="verify promotion gates; creates no candidate if any gate fails")
     args = parser.parse_args()
     if args.command == "historical":
@@ -66,10 +75,37 @@ def main() -> int:
                    "outputs/splits/validation.parquet", "--output", str(args.output)]
         if args.walk_forward:
             command.append("--walk-forward")
+        if args.round2:
+            command.append("--round2")
         return run(command)
     if args.command == "validate-hypotheses":
         return run(["python/evaluate_hypotheses.py", "outputs/splits/validation.parquet",
                     *[str(p) for p in args.hypotheses], "--output", str(args.output)])
+    if args.command == "round2-entry-freeze":
+        return run(["python/round2_entry_research.py", "freeze", "outputs/splits/train.parquet",
+                    "--out", str(args.output)])
+    if args.command == "round2-entry-validate":
+        return run(["python/round2_entry_research.py", "validate", "outputs/splits/validation.parquet",
+                    str(args.hypotheses), "--out", str(args.output)])
+    if args.command == "round2-entry-interactions":
+        return run(["python/round2_entry_research.py", "train-interactions", "outputs/splits/train.parquet",
+                    "--out", str(args.output)])
+    if args.command == "intratrade-status":
+        candidates = [ROOT / "outputs/intratrade/path_states.parquet",
+                     ROOT / "outputs/intratrade/path_states.csv"]
+        available = [str(path.relative_to(ROOT)) for path in candidates if path.is_file()]
+        status = {"status": "PATH_SOURCE_AVAILABLE" if available else "BLOCKED_MISSING_PATH_STATE_SOURCE",
+                  "path_sources": available, "snapshots_built": False,
+                  "final_test_accessed": False, "reason": None if available else
+                  "The frozen event dataset contains signal-time features and terminal outcomes, not the open-trade M5/tick path required to reconstruct causal snapshots."}
+        status_path = ROOT / "outputs/intratrade/round2_build_status.json"
+        status_path.parent.mkdir(parents=True, exist_ok=True)
+        if status_path.exists():
+            print(f"Refusing to overwrite existing status artifact: {status_path}", file=sys.stderr)
+            return 1
+        status_path.write_text(json.dumps(status, indent=2) + "\n", encoding="utf-8")
+        print(json.dumps(status, indent=2))
+        return 0 if available else 2
     if args.command == "candidate":
         result_path = ROOT / "outputs/validation/20261013_v2/results.json"
         if not result_path.is_file():

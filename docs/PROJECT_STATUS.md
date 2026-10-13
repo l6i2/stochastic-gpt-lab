@@ -72,3 +72,7 @@ All three simple classifiers were trained on 12,228 paired TRAIN labels and scor
 ## CHECKPOINT_H onward
 
 No candidate is frozen, so `WAITING_FINAL_TEST_AUTHORIZATION` has not been reached. FINAL_TEST remains locked. Demo architecture and execution remain pending; no live or Demo trading occurred. Do not open FINAL_TEST or enable Demo execution until the promotion prerequisites exist, then stop and request explicit authorization before any held-out evaluation.
+
+## Round-two research checkpoint
+
+Round-two entry investigation, ten frozen hypotheses, one DISCOVERY_VALIDATION evaluation, fixed interaction analysis, and four controlled entry classifiers are documented in `docs/ROUND2_STATUS.md`. No hypothesis or model survived the predefined criteria. Intra-trade snapshot research is blocked because the frozen event dataset has no intervening open-position tick/bar path. FINAL_TEST remains unopened; Demo remains disabled.

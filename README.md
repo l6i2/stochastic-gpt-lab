@@ -100,4 +100,10 @@ El informe `ha_interactions.csv` cruza dirección/streak/transición/fuerza/expa
 
 Schema 1.0 continúa compatible con validación, análisis y conversión Parquet; sin informes HA ni reconstrucción artificial de su historia. Nuevos CSV/audit usan 1.1. Las pruebas compilan y ejecutan también el núcleo HA real como C++ y lo comparan con un oráculo independiente. La compilación del EA en MetaEditor se verificó con 0 errores y 0 warnings para el código vigente en la auditoría; revisar [estado del proyecto](docs/PROJECT_STATUS.md) para el HEAD auditado y límites actuales.
 
+## Round two (TRAIN → DISCOVERY_VALIDATION)
+
+La ronda dos mantiene los eventos Stochastic obligatorios y compara FOLLOW/INVERT sin `SKIP` ni `NO_TRADE`. El set de diez hipótesis y el pequeño conjunto de interacciones están fijados en código antes de la única validación. Los clasificadores usan un whitelist causal reducido, interacciones predefinidas y calibración logística con folds temporales dentro de TRAIN. Los comandos `round2-entry-freeze`, `round2-entry-interactions`, `round2-entry-validate`, `ml-train --round2` e `intratrade-status` están en `python/pipeline.py`. No existe un comando FINAL_TEST.
+
+La exportación actual del EA no guarda estados de operaciones abiertas a través de las barras. El constructor de snapshots debe esperar un export nuevo de la secuencia tick/bar y estados virtuales; los resultados terminales MFE/MAE no se usan para reconstruirlo. Consulta [estado de round two](docs/ROUND2_STATUS.md) y el [protocolo intra-trade](docs/INTRATRADE_RESEARCH_PROTOCOL.md).
+
 \n

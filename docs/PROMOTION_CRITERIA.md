@@ -10,3 +10,7 @@ No rule or model is promoted because of TRAIN performance alone. A candidate mus
 6. A candidate is frozen with code, dataset, feature, training and policy hashes before any FINAL_TEST access. A single explicit user authorization is required to evaluate FINAL_TEST once.
 
 These are conservative project gates, not evidence that the strategy has an edge. If the sample/uncertainty requirements are not met, classify as INCONCLUSIVE rather than relaxing criteria after seeing results.
+
+## Round-two discovery family (frozen before its validation run)
+
+The fixed round-two entry family contains ten related hypotheses. To avoid treating the best of ten nominal 95% intervals as an unselected result, report a week-cluster bootstrap family-wise 95% interval using Bonferroni-adjusted two-sided alpha 0.005 per hypothesis (99.5% interval). No candidate is considered to survive on the nominal 95% interval alone. A one-sided BUY or SELL hypothesis must have at least 500 paired observations in its declared side; report the other side as out of scope. Any future two-sided candidate must have at least 100 observations on each side and meet all original overall support gates. Report month-level direction consistency and sample support; fewer than 6 eligible calendar months or consistency below 70% is inconclusive. The ten candidate definitions and this rule are frozen before validation and may not be relaxed after results are seen.

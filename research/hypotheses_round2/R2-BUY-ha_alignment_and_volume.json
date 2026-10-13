@@ -1,0 +1,50 @@
+{
+  "hypothesis_id": "R2-BUY-ha_alignment_and_volume",
+  "signal_side": "BUY",
+  "conditions": [
+    {
+      "column": "follow_side",
+      "operator": "eq",
+      "value": "BUY"
+    },
+    {
+      "column": "ha_direction",
+      "operator": "eq",
+      "value": 1
+    },
+    {
+      "column": "relative_volume_20",
+      "operator": "ge",
+      "value": 1.0
+    }
+  ],
+  "feature_family": [
+    "heikin_ashi",
+    "volume"
+  ],
+  "date_utc": "2026-10-13",
+  "version": 1,
+  "source": "Predeclared round-two causal entry research protocol",
+  "causal_at_signal_time": true,
+  "outcome": "directional_advantage",
+  "expected_sign": 1,
+  "train_sample_size": 1238,
+  "train_effect": {
+    "mean_directional_advantage": 5.252576736672224,
+    "median_directional_advantage": 1.375,
+    "mean_follow_pnl": -1.237318255250083,
+    "mean_invert_pnl": -6.489894991922307
+  },
+  "minimum_support": {
+    "overall": 500,
+    "intended_side": 500
+  },
+  "missing_handling": "No imputation; conditions and outcomes must be observed.",
+  "failure_criterion": "Do not promote if validation's week-cluster 95% CI crosses zero, mean FOLLOW is not greater than mean INVERT, support is insufficient, or promotion gates otherwise fail.",
+  "validation_criterion": "One evaluation on purged DISCOVERY_VALIDATION; report BUY and SELL separately; apply docs/PROMOTION_CRITERIA.md as frozen before validation.",
+  "status": "FROZEN_TRAIN_READY_FOR_VALIDATION",
+  "dataset_sha256": "e2c05a24551078efb584cc4732b796846f3b98793d21978522b36be141de59c1",
+  "train_split_sha256": "4823eb1aa4ca08899ffcbcff957b4dfb726b30c9dd074a2c968efb1f133bb1c1",
+  "signal_side_scope": "BUY",
+  "interpretation": "Conditional research association only; does not skip or alter any Stochastic signal."
+}
