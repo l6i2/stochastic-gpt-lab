@@ -33,7 +33,12 @@ def collect(paths, run_dir):
 
 
 def write_manifest(run_dir, manifest):
-    path = Path(run_dir) / 'run_manifest.json'
+    atomic_json(Path(run_dir) / 'run_manifest.json',manifest)
+
+
+def atomic_json(path, manifest):
+    path=Path(path)
+    path.parent.mkdir(parents=True,exist_ok=True)
     temporary = path.with_suffix('.tmp')
     temporary.write_text(json.dumps(manifest, indent=2), encoding='utf-8')
     for attempt in range(20):

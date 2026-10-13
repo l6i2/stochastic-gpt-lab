@@ -1,6 +1,6 @@
 import json
 from datetime import datetime, timedelta, timezone
-from .artifact_collector import write_manifest
+from .artifact_collector import atomic_json
 from .safety_gate import ROOT, boundaries, assert_research_range_allowed
 from .tester_config import tester_end
 
@@ -46,9 +46,7 @@ def history(resume=False, timeout=3600):
                 and record.get('CAUSALITY_STATUS') == 'PASS'):
             smokes.append(record)
     def save():
-        temporary = checkpoint.with_suffix('.tmp')
-        temporary.write_text(json.dumps({'blocks': blocks}, indent=2))
-        temporary.replace(checkpoint)
+        atomic_json(checkpoint,{'blocks':blocks})
     save()
     if not smokes:
         raise RuntimeError('VALIDATION: AUTOMATED_SMOKE_TEST has not passed; history blocked')
