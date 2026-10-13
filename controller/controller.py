@@ -16,7 +16,7 @@ def main():
     parser.add_argument('--from', dest='start')
     parser.add_argument('--to', dest='end')
     parser.add_argument('--run-id')
-    parser.add_argument('--timeout', type=int, default=120)
+    parser.add_argument('--timeout', type=int, default=3600)
     parser.add_argument('--mode', choices=['intratrade'], default='intratrade')
     args = parser.parse_args()
     if args.command == 'status':

@@ -2,6 +2,7 @@ import json
 from datetime import datetime, timedelta, timezone
 from .artifact_collector import write_manifest
 from .safety_gate import ROOT, boundaries, assert_research_range_allowed
+from .tester_config import tester_end
 
 
 def plan():
@@ -40,6 +41,8 @@ def history(resume=False, timeout=3600):
         record = json.loads(path.read_text())
         if (record.get('from') == '2024-01-01' and record.get('to') == '2024-01-31'
                 and record.get('VALIDATION_STATUS') == 'PASS'
+                and record.get('tester_status') == 'PASS'
+                and record.get('tester_to_exclusive') == tester_end(record['to'])
                 and record.get('CAUSALITY_STATUS') == 'PASS'):
             smokes.append(record)
     def save():
@@ -55,7 +58,19 @@ def history(resume=False, timeout=3600):
         block['STATUS'] = 'RUNNING'
         save()
         try:
-            record = run(block['DATE_FROM'], block['DATE_TO'], timeout=timeout)
+            # Reattach an interrupted monitor instead of starting a duplicate tester.
+            interrupted=[]
+            for path in (ROOT/'outputs/controller/runs').glob('r*/run_manifest.json'):
+                item=json.loads(path.read_text())
+                if (item.get('from')==block['DATE_FROM'] and item.get('to')==block['DATE_TO']
+                        and item.get('tester_status')=='RUNNING' and item.get('MT5_CLOSED_BEFORE_LAUNCH')):
+                    interrupted.append(item)
+            if interrupted:
+                from .cold_start import monitor_cold
+                item=max(interrupted,key=lambda r:r['start_time'])
+                record=monitor_cold(item['run_id'],timeout=timeout)
+            else:
+                record = run(block['DATE_FROM'], block['DATE_TO'], timeout=timeout)
             block['RUN_ID'] = record['run_id']
             block['ARTIFACTS'] = list(record['artifact_hashes'])
             if record['tester_status'] != 'PASS':

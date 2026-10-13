@@ -25,6 +25,7 @@ class ControllerSafetyTests(unittest.TestCase):
         a = config('2024-01-01', '2024-01-31', 'r1.set', 'report')
         self.assertEqual(a, config('2024-01-01', '2024-01-31', 'r1.set', 'report'))
         self.assertIn('Model=4', a)
+        self.assertIn('ToDate=2024.02.01', a)
         self.assertIn('Optimization=0', a)
         self.assertEqual(preset('r1'), preset('r1'))
         self.assertEqual(preset('r1')['LIVE_TRADING'], 'false')

@@ -37,7 +37,19 @@ def validate_run(run_id):
         if process.returncode:
             break
     result['CAUSALITY_STATUS'] = 'NOT_VERIFIED'
-    # A future-invariance proof requires running the feature producer, not mutating an exported CSV.
+    proof_path = ROOT / 'outputs/controller/checkpoints/causal_invariance.json'
+    if proof_path.exists():
+        proof = json.loads(proof_path.read_text())
+        proof_folder = ROOT / 'outputs/controller/causality' / proof['run_id']
+        hashes_match = all((ROOT/'mt5'/name).is_file() and sha256(ROOT/'mt5'/name)==expected
+                           for name,expected in proof.get('producer_hashes',{}).items())
+        artifacts_match = all((proof_folder/name).is_file() and sha256(proof_folder/name)==expected
+                              for name,expected in proof.get('artifact_hashes',{}).items())
+        if (proof.get('CAUSAL_INVARIANCE') == 'PASS' and proof.get('compared_snapshots',0)>0
+                and proof.get('compared_features',0)>0 and proof.get('ea_hash')==manifest['ea_hash']
+                and hashes_match and artifacts_match):
+            result['CAUSALITY_STATUS']='PASS'
+            result['CAUSAL_PROOF_RUN_ID']=proof['run_id']
     result['VALIDATION_STATUS'] = 'PASS' if all(
         result.get(key) == 'PASS' for key in commands) and result['CAUSALITY_STATUS'] == 'PASS' else 'FAIL'
     manifest.update(result)

@@ -1,5 +1,6 @@
 import json
 import shutil
+import time
 from pathlib import Path
 from .compile_runner import sha256
 
@@ -35,4 +36,11 @@ def write_manifest(run_dir, manifest):
     path = Path(run_dir) / 'run_manifest.json'
     temporary = path.with_suffix('.tmp')
     temporary.write_text(json.dumps(manifest, indent=2), encoding='utf-8')
-    temporary.replace(path)
+    for attempt in range(20):
+        try:
+            temporary.replace(path)
+            return
+        except PermissionError:
+            if attempt == 19:
+                raise
+            time.sleep(0.1 * (attempt + 1))
