@@ -122,6 +122,6 @@
       "trading_functions_called": false,
       "account_mode": "DEMO"
     },
-    "next_action": "Run bounded real-tick Tester blocks beginning 2023-12-20. Do not claim historical coverage before the first tick, even though M5 bars extend to 2011."
+    "next_action": "Bounded real-tick Tester blocks have been run and validated through 2026-10-13. Do not claim tick coverage before 2023-12-20, even though M5 bars extend to 2011."
   }
 }
