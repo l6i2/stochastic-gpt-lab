@@ -35,13 +35,17 @@ def ea_path(environment, ea=EA):
         seen.add(file)
         if not file.is_relative_to(root.resolve()):
             raise RuntimeError('SECURITY_GATE: include outside active MQL5')
-        assert_safe = file == source
         text = file.read_text(encoding='utf-8-sig')
         if re.search(r'\b(OrderSend|OrderSendAsync|CTrade|PositionOpen)\b', text, re.I):
             raise RuntimeError('SECURITY_GATE: trading API in source/include')
         for bracket, name in re.findall(r'#include\s*([<"])([^>"\r\n]+)[>"]', text):
             includes((root / 'Include' if bracket == '<' else file.parent) / name)
     includes(source)
+    repository = Path(__file__).resolve().parents[1] / 'mt5'
+    for file in seen:
+        local = repository / file.name
+        if not local.is_file() or sha256(file) != sha256(local):
+            raise RuntimeError('MQL5_COMPILE: deployed source/include differs from repository')
     return source
 
 
