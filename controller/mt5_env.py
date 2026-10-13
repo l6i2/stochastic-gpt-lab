@@ -39,12 +39,12 @@ def read_origin(path):
 
 
 def resolve_active(processes, candidates):
-    """Fail closed on multiple processes/folders or portable/custom launch modes."""
+    """Fail closed on multiple processes/folders or portable launch mode."""
     if len(processes) != 1:
         return None
     process = processes[0]
     command = (process.get('CommandLine') or '').lower()
-    if '/portable' in command or '/config' in command:
+    if '/portable' in command:
         return None
     executable = process.get('ExecutablePath')
     if not executable:

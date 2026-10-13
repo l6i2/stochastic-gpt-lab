@@ -42,11 +42,19 @@ def main():
         result = {p.name: p.read_text(encoding='utf-8', errors='replace') for p in folder.glob('*validator.log')}
         result['manifest'] = json.loads((folder / 'run_manifest.json').read_text())
     else:
-        from .history_orchestrator import history
-        result = history(resume=args.command == 'resume', timeout=args.timeout)
+        if args.command == 'resume' and args.run_id:
+            from .tester_runner import recover
+            result = recover(args.run_id)
+        else:
+            from .history_orchestrator import history
+            result = history(resume=args.command == 'resume', timeout=args.timeout)
     print(json.dumps(result, indent=2))
     return 1 if result.get('tester_status') == 'FAIL' or result.get('VALIDATION_STATUS') == 'FAIL' else 0
 
 
 if __name__ == '__main__':
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except (RuntimeError, ValueError, OSError) as error:
+        print(json.dumps({'STATUS': 'BLOCKED', 'CAUSE': str(error)}))
+        raise SystemExit(1)

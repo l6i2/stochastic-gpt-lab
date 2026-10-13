@@ -17,10 +17,12 @@ def preset(run_id):
 
 def config(start, end, preset_name, report, manifest=None):
     assert_research_range_allowed(start, end, manifest)
-    values = dict(Expert=r'StochasticIntratradeResearch\StochasticIntratradeResearchEA.ex5',
+    if Path(str(report)).is_absolute() or '..' in str(report) or '\n' in str(report):
+        raise ValueError('Report must be a safe path relative to the terminal Data Folder')
+    values = dict(Expert=r'StochasticIntratradeResearch\StochasticIntratradeResearchEA',
                   ExpertParameters=preset_name, Symbol='US30Cash', Period='M5', Model=4,
                   FromDate=start.replace('-', '.'), ToDate=end.replace('-', '.'),
-                  Optimization=0, Deposit=10000, Currency='USD', Report=str(report),
+                  Optimization=0, ForwardMode=0, Deposit=10000, Currency='USD', Report=str(report),
                   ReplaceReport=0, ShutdownTerminal=0, Visual=0, UseLocal=1, UseRemote=0, UseCloud=0)
     return '[Tester]\n' + ''.join(f'{k}={v}\n' for k, v in values.items())
 

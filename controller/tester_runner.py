@@ -48,9 +48,10 @@ def run(start, end, ea='StochasticIntratradeResearchEA', symbol='US30Cash', time
         raise RuntimeError('MT5_CONFIG: preset collision')
     profile.write_bytes(local_preset.read_bytes())
     ini = folder / 'tester.ini'
+    (Path(environment['DATA_FOLDER']) / 'reports/controller').mkdir(parents=True, exist_ok=True)
     # Disable chart trading independently of the EA's own mandatory tester gate.
     ini.write_text('[Experts]\nAllowLiveTrading=0\n' + config(
-        start, end, profile.name, folder / 'report'), encoding=config_encoding)
+        start, end, profile.name, 'reports\\controller\\' + run_id + '.htm'), encoding=config_encoding)
     started = time.time()
     log_roots = [Path(environment['DATA_FOLDER']) / 'Tester/logs'] + [
         Path(p) / 'logs' for p in environment['TESTER_AGENT_FOLDERS']]
@@ -60,6 +61,8 @@ def run(start, end, ea='StochasticIntratradeResearchEA', symbol='US30Cash', time
         **compiled, symbol=symbol, period='M5', model='real_ticks', optimization=False,
         inputs=inputs, start_time=datetime.now(timezone.utc).isoformat(),
         tester_status='RUNNING', artifact_hashes={}, **{'from': start, 'to': end})
+    manifest['environment'] = environment
+    manifest['log_offsets'] = {str(p): offset for p, offset in offsets.items()}
     write_manifest(folder, manifest)
     process = subprocess.Popen([environment['TERMINAL_PATH'], '/config:' + str(ini)],
                                creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
@@ -107,3 +110,34 @@ def run(start, end, ea='StochasticIntratradeResearchEA', symbol='US30Cash', time
         manifest['artifact_hashes'][path.name] = sha256(path)
     write_manifest(folder, manifest)
     return manifest
+
+
+def recover(run_id):
+    """Collect this nonce's output after the operator restarts XM with the saved INI."""
+    if not run_id or not run_id.replace('_', '').isalnum():
+        raise ValueError('Valid --run-id required')
+    folder = ROOT / 'outputs/controller/runs' / run_id
+    record = json.loads((folder / 'run_manifest.json').read_text())
+    assert_research_range_allowed(record['from'], record['to'])
+    environment = record['environment']
+    source = ea_path(require_active_environment(status()))
+    if sha256(source) != record['ea_hash'] or sha256(source.with_suffix('.ex5')) != record['ex5_hash']:
+        raise RuntimeError('SECURITY_GATE: binary/source changed since launch')
+    started = datetime.fromisoformat(record['start_time']).timestamp()
+    paths = find_artifacts(environment, run_id, started)
+    chunks = []
+    for name, offset in record['log_offsets'].items():
+        path = Path(name)
+        with path.open('rb') as stream:
+            stream.seek(offset)
+            chunks.append(stream.read().decode('utf-16-le', errors='replace'))
+    text = '\n'.join(chunks)
+    if not (paths and classify_log(text) == 'PASS'
+            and 'StochasticIntratradeResearch' in text
+            and record['from'].replace('-', '.') in text and record['to'].replace('-', '.') in text):
+        raise RuntimeError('TESTER_LAUNCH: this run has not completed; no artifacts collected')
+    record['artifact_hashes'].update(collect(paths, folder))
+    record.update(tester_status='PASS', end_time=datetime.now(timezone.utc).isoformat())
+    write_manifest(folder, record)
+    from .validation import validate_run
+    return validate_run(run_id)
