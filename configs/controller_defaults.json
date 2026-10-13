@@ -1,0 +1,13 @@
+{
+  "symbol": "US30Cash",
+  "timeframe": "M5",
+  "model": "real_ticks",
+  "optimization": false,
+  "live_trading": false,
+  "trigger_line": "MAIN_K",
+  "simulation_mode": "TICK_QUOTES",
+  "confirm_real_tick_mode": true,
+  "profile_weight": "TICK_ACTIVITY",
+  "profile_bin_size": 10.0,
+  "ea": "StochasticIntratradeResearchEA"
+}
