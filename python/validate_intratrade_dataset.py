@@ -141,9 +141,12 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
         split_counts = {"TRAIN": sum(s in train_ids for s in seen_modes),
                         "DISCOVERY_VALIDATION": sum(s in validation_ids for s in seen_modes)}
 
+    membership_verified = bool(train_parquet and validation_parquet)
     return {"status": "PASS", "snapshot_rows": row_count, "target_rows": target_count,
             "unique_signals": len(seen_modes), "schema_version": audit["schema_version"],
-            "split_signals": split_counts, "final_test_accessed": False}
+            "split_signals": split_counts, "split_membership_verified": membership_verified,
+            # A structural-only pass cannot attest that signal IDs avoid the held-out split.
+            "final_test_accessed": False if membership_verified else None}
 
 
 def main() -> int:

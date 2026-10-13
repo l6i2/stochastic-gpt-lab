@@ -38,10 +38,11 @@ class IntratradeDatasetTests(unittest.TestCase):
     def tearDown(self):
         self.tmp.cleanup()
 
-    def test_causal_snapshot_passes_without_targets_for_censored_trade(self):
+    def test_unscoped_pass_does_not_claim_final_test_was_not_accessed(self):
         result = validate(self.snapshots, self.audit, self.targets)
         self.assertEqual(result["status"], "PASS")
-        self.assertFalse(result["final_test_accessed"])
+        self.assertFalse(result["split_membership_verified"])
+        self.assertIsNone(result["final_test_accessed"])
 
     def test_rejects_feature_timestamp_after_snapshot(self):
         with self.snapshots.open("r", newline="", encoding="utf-8") as stream:
