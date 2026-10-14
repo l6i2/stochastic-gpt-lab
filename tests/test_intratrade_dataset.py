@@ -4,6 +4,7 @@ import csv
 import json
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 import pandas as pd
@@ -13,6 +14,24 @@ from python.validate_intratrade_dataset import REQUIRED_FEATURE_COLUMNS, validat
 
 
 class IntratradeDatasetTests(unittest.TestCase):
+    def test_endpoint_quarantine_uses_entry_clock_not_previous_bar_cutoff(self):
+        train, validation = self.root/'train.parquet', self.root/'validation.parquet'
+        write_parquet(pd.DataFrame({'signal_id':['train']}),train)
+        write_parquet(pd.DataFrame({'signal_id':['validation']}),validation)
+        events=self.root/'events.csv'
+        events.write_text('signal_id,signal_time_msc,entry_time_msc,tp_distance,sl_distance,time_exit_bars,follow_side,invert_side,follow_exit_reason,invert_exit_reason,follow_exit_time,invert_exit_time\n'
+                          'sig,1000,1001,240,180,100,BUY,SELL,END_OF_DATA,END_OF_DATA,2500,2500\n')
+        self.snapshots.write_text(self.snapshots.read_text().replace('1500','1001'))
+        split=self.root/'split.json'
+        split.write_text(json.dumps({'boundaries':{'validation_start_signal_time_msc':3000,
+                                                  'final_test_start_signal_time_msc':5000}}))
+        contract=self.root/'contract.json';contract.write_text('{}')
+        with patch('python.membership_contract.quarantine_windows',return_value=[(1001,1501)]):
+            result=validate(self.snapshots,self.audit,self.targets,train,validation,events,split,
+                            quarantine_manifest=contract)
+        self.assertEqual(result['quarantined_noncanonical_signals'],1)
+        self.assertEqual(result['purged_signals_excluded_from_splits'],0)
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name)

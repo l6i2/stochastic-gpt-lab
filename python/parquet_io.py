@@ -44,10 +44,10 @@ def parquet_engine() -> str:
     raise ImportError("Parquet I/O requires pyarrow or fastparquet")
 
 
-def read_parquet(path: str | Path):
+def read_parquet(path: str | Path, **kwargs):
     import pandas as pd
 
-    return pd.read_parquet(path, engine=parquet_engine())
+    return pd.read_parquet(path, engine=parquet_engine(), **kwargs)
 
 
 def write_parquet(frame, path: str | Path, **kwargs) -> None:

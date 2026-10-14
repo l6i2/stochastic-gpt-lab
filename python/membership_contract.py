@@ -39,12 +39,15 @@ def derive(root=ROOT):
             raise ValueError('Endpoint quarantine is outside the allowed frozen evidence contract')
         count = 0
         latest = 0
+        latest_entry = 0
         with source.open(encoding='utf-8-sig', newline='') as stream:
             for row in csv.DictReader(stream):
                 stamp = int(row['signal_time_msc'])
-                if stamp >= start:
+                entry = int(row['entry_time_msc'])
+                if stamp >= start or entry >= start or entry <= stamp:
                     raise ValueError('Frozen source already contains endpoint day; quarantine forbidden')
                 latest = max(latest, stamp)
+                latest_entry = max(latest_entry, entry)
                 count += 1
         if count != manifest['signals'] or count == 0:
             raise ValueError('Frozen source signal count differs')
@@ -52,8 +55,9 @@ def derive(root=ROOT):
                          canonical_manifest=str(manifest_path.relative_to(root)),
                          canonical_manifest_sha256=digest(manifest_path),
                          canonical_csv_sha256=digest(source), canonical_signals=count,
-                         last_canonical_signal_msc=latest))
-    return dict(action='EXCLUDE_FROM_RESEARCH_PRESERVE_FROZEN_SIGNAL_UNIVERSE',
+                         last_canonical_signal_msc=latest,last_canonical_entry_msc=latest_entry))
+    return dict(contract_version=2, classification_clock='entry_time_msc',
+                action='EXCLUDE_FROM_RESEARCH_PRESERVE_FROZEN_SIGNAL_UNIVERSE',
                 split_manifest_sha256=digest(split), master_manifest_sha256=digest(master),
                 final_test_accessed=False, split_boundaries_changed=False,
                 selection_uses_outcomes=False, days=days)
@@ -70,7 +74,7 @@ def quarantine_windows(path, split_path, root=ROOT):
 
 if __name__ == '__main__':
     result = derive()
-    target = ROOT/'outputs/controller/checkpoints/membership_quarantine.json'
+    target = ROOT/'outputs/controller/checkpoints/membership_quarantine_v2.json'
     if target.exists() and json.loads(target.read_text()) != result:
         raise ValueError('Refusing to replace a different frozen-universe contract')
     target.parent.mkdir(parents=True, exist_ok=True)

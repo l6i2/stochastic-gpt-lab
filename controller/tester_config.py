@@ -16,6 +16,8 @@ def preset(run_id, ea=BASE_EA):
         raise ValueError('Invalid run ID')
     if profile(ea)['schema'] == '3.0':
         values['ExecutionQuoteOutputFile'] = f'{run_id}_bar_execution_quotes.csv'
+        values['QuotePathOutputFile'] = f'{run_id}_bar_quote_path.bin'
+        values['TradeIndexOutputFile'] = f'{run_id}_bar_trade_index.csv'
     return values
 
 

@@ -92,3 +92,12 @@ frozen before validation. No candidate can be inferred from its unit tests.
 Temporal calibration and walk-forward training now purge complete signal groups
 whose observed label horizons reach the next fold. Calibration folds with no
 remaining training support fail rather than silently leak future labels.
+
+The current preparation revision additionally exports every observed bid/ask
+quote as little-endian `<qddi` records (28 bytes: millisecond time, bid, ask,
+observed bar index). Record position is the quote sequence. A separate trade
+index binds native entries and exits to exact quote indices. The CSV previously
+called execution quotes records decision-arrival quotes; these are not policy
+fills. A real policy fill must use a strictly later sequence and its predeclared
+latency. Binary path validation replays frozen SL/TP/time exit, gap prices,
+MFE/MAE, entry/exit times and observed-bar lifetimes before acceptance.

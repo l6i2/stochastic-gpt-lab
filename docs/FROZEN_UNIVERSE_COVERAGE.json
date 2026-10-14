@@ -1,4 +1,6 @@
 {
+  "contract_version": 2,
+  "classification_clock": "entry_time_msc",
   "action": "EXCLUDE_FROM_RESEARCH_PRESERVE_FROZEN_SIGNAL_UNIVERSE",
   "split_manifest_sha256": "be6960e748f789a2638ec5700d0e7fd240703d90f397c551cc989a590db8c44e",
   "master_manifest_sha256": "abe1d6b0a1244ff5f1faad366c655fe96148deb66c756d2e16c2e322fd6629b4",
@@ -14,7 +16,8 @@
       "canonical_manifest_sha256": "f80faacc4af42c58e531ea2cb9f71b98031275db34e0cd79203318f11fcfbb86",
       "canonical_csv_sha256": "794dba183224b2aa9262c06921bce62e1ae82d5888dabcc1448ea88965e191fa",
       "canonical_signals": 7390,
-      "last_canonical_signal_msc": 1735601099999
+      "last_canonical_signal_msc": 1735601099999,
+      "last_canonical_entry_msc": 1735601100131
     },
     {
       "date": "2025-12-31",
@@ -24,7 +27,8 @@
       "canonical_manifest_sha256": "3229f17bb882e97068530364ecde50cd43cc4e01f8caf11ef39e77bdbcdc033c",
       "canonical_csv_sha256": "5c3be1cb73204f5d4cdd6e74215e8bb10d79b718552829a82cf8a0ef32a1ff50",
       "canonical_signals": 7175,
-      "last_canonical_signal_msc": 1767136799999
+      "last_canonical_signal_msc": 1767136799999,
+      "last_canonical_entry_msc": 1767136800069
     }
   ]
 }

@@ -23,6 +23,8 @@ class Decision:
     feature_max_time_msc: int
     mark_time_msc: int
     action: str
+    available_sequence: int | None = None
+    latency_msc: int = 0
 
 
 def replay(quotes, side, decisions=(), *, allowed_end_exclusive, coverage_verified=False):
@@ -62,6 +64,13 @@ def replay(quotes, side, decisions=(), *, allowed_end_exclusive, coverage_verifi
                 or d.cutoff_msc >= allowed_end_exclusive
                 or (i and d.cutoff_msc <= decisions[i - 1].cutoff_msc)):
             raise ValueError('Noncausal or nonmonotone decision state')
+        if d.latency_msc < 0 or not isinstance(d.latency_msc,int):
+            raise ValueError('Invalid predeclared execution latency')
+        if d.available_sequence is not None:
+            available = next((q for q in quotes if q.sequence == d.available_sequence),None)
+            if available is None or available.time_msc <= d.cutoff_msc:
+                raise ValueError('Decision availability quote is missing or noncausal')
+    availability_times = {q.sequence:q.time_msc for q in quotes}
     entry = quotes[0].ask if side == 1 else quotes[0].bid
     entry_bar = quotes[0].bar_index
     previous_bar = entry_bar
@@ -79,6 +88,11 @@ def replay(quotes, side, decisions=(), *, allowed_end_exclusive, coverage_verifi
             reason = 'TIME_EXIT'
         if reason is None:
             while pending < len(decisions) and decisions[pending].cutoff_msc < q.time_msc:
+                decision = decisions[pending]
+                if decision.available_sequence is not None and (
+                        q.sequence <= decision.available_sequence
+                        or q.time_msc < availability_times[decision.available_sequence]+decision.latency_msc):
+                    break
                 action = decisions[pending].action
                 pending += 1
                 if action == 'EXIT':

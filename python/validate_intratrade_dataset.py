@@ -24,7 +24,7 @@ REQUIRED_TARGET_COLUMNS = {
     "future_pnl_to_exit", "future_max_favorable_move", "future_max_adverse_move",
     "profit_erosion", "recovery_after_drawdown", "continuation_score", "reversal_event",
 }
-FORBIDDEN_FEATURE_TOKENS = ("future_", "final_", "exit_", "execution_", "target", "label", "reversal_event")
+FORBIDDEN_FEATURE_TOKENS = ("future_", "final_", "exit_", "execution_", "quote_index", "target", "label", "reversal_event")
 
 
 def validate(snapshot_csv: Path, audit_path: Path | None = None,
@@ -106,7 +106,8 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
                 expected_original = event["follow_side"]
                 expected_virtual = event["follow_side"] if mode == "FOLLOW" else event["invert_side"]
                 if (original != expected_original or side != expected_virtual
-                        or int(row["signal_time_msc"]) != int(event["signal_time_msc"])):
+                        or int(row["signal_time_msc"]) != int(event["signal_time_msc"])
+                        or ('entry_time_msc' in event and int(row['entry_time_msc']) != int(event['entry_time_msc']))):
                     raise ValueError(f"Snapshot/event mapping mismatch in {snapshot_id}")
             bar = int(row["snapshot_bar"])
             if bar not in schedule or int(row["bars_open"]) != bar:
@@ -242,9 +243,9 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
         validation_start = int(split_data["boundaries"]["validation_start_signal_time_msc"])
         if quarantine_manifest is None:
             root = Path(__file__).resolve().parents[1]
-            quarantine_manifest = (root / 'outputs/controller/checkpoints/membership_quarantine.json'
+            quarantine_manifest = (root / 'outputs/controller/checkpoints/membership_quarantine_v2.json'
                                    if split_manifest.resolve() == (root/'outputs/splits/split_manifest.json').resolve()
-                                   else split_manifest.with_name('membership_quarantine.json'))
+                                   else split_manifest.with_name('membership_quarantine_v2.json'))
         try:
             from .membership_contract import quarantine_windows
         except ImportError:
@@ -265,7 +266,11 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
                 raise ValueError('Inherited split has a feature or label horizon crossing its boundary')
         for signal_id in unknown:
             event = event_rows[signal_id]
-            if any(start <= event_times[signal_id] < end for start, end in windows):
+            if windows and 'entry_time_msc' not in event:
+                raise ValueError('Endpoint quarantine requires source entry timestamps')
+            if windows and any(start <= int(event['entry_time_msc']) < end for start, end in windows):
+                if int(event['entry_time_msc']) <= event_times[signal_id]:
+                    raise ValueError('Endpoint signal/entry chronology is invalid')
                 quarantined_signals += 1
                 quarantined_ids.add(signal_id)
                 continue

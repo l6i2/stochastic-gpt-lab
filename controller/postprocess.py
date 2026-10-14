@@ -10,22 +10,27 @@ from decimal import Decimal
 from .artifact_collector import OUTPUTS, atomic_json
 from .compile_runner import sha256
 from .safety_gate import ROOT, assert_research_range_allowed
+from .profiles import BASE_EA, profile
 
 
-def accepted_blocks():
-    state=json.loads((ROOT/'outputs/controller/checkpoints/history_state.json').read_text())
+def accepted_blocks(ea=BASE_EA):
+    selected = profile(ea)
+    output = ROOT/'outputs'/selected['namespace']
+    state=json.loads((output/'checkpoints/history_state.json').read_text())
     if not state['blocks'] or any(b['STATUS']!='PASS' for b in state['blocks']):
         raise RuntimeError('VALIDATION: historical blocks have not all passed')
     prepared=[]
     for block in state['blocks']:
         assert_research_range_allowed(block['DATE_FROM'],block['DATE_TO'])
-        run=ROOT/'outputs/controller/runs'/block['RUN_ID']
+        run=output/'runs'/block['RUN_ID']
         record=json.loads((run/'run_manifest.json').read_text())
         if record.get('VALIDATION_STATUS')!='PASS' or record.get('CAUSALITY_STATUS')!='PASS':
             raise RuntimeError('VALIDATION: block acceptance is missing')
-        target=ROOT/'outputs/controller/validated_blocks'/block['BLOCK_ID']
+        if selected['schema']=='3.0' and record.get('BASELINE_REPLAY')!='PASS':
+            raise RuntimeError('VALIDATION: ordered-quote baseline parity is missing')
+        target=output/'validated_blocks'/block['BLOCK_ID']
         target.mkdir(parents=True,exist_ok=True)
-        for name in OUTPUTS:
+        for name in selected['outputs']:
             source=run/(record['run_id']+'_'+name)
             if sha256(source)!=record['artifact_hashes'][source.name]:
                 raise RuntimeError('VALIDATION: accepted artifact changed')
@@ -40,6 +45,7 @@ def accepted_blocks():
         atomic_json(target/'manifest.json',dict(LIVE_TRADING=False,optimization='OFF',symbol='US30Cash',
             timeframe='M5',model='Every tick based on real ticks',period=[block['DATE_FROM'],block['DATE_TO']],
             max_signal_time_msc=max(times),min_signal_time_msc=min(times),run_id=record['run_id'],
+            producer_schema=selected['schema'], ea_hash=record['ea_hash'],
             controller_manifest_sha256=sha256(run/'run_manifest.json'),source_artifact_hashes=record['artifact_hashes']))
         prepared.append(target)
     return prepared

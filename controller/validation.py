@@ -35,6 +35,11 @@ def validate_run(run_id, ea=BASE_EA):
     if selected['schema'] == '3.0':
         commands['INTRATRADE_VALIDATOR'].extend([
             '--execution-quotes', str(folder/(run_id+'_bar_execution_quotes.csv'))])
+        commands['BASELINE_REPLAY'] = [str(ROOT/'python/validate_bar_path.py'),
+            '--quote-path',str(folder/(run_id+'_bar_quote_path.bin')),
+            '--trade-index',str(folder/(run_id+'_bar_trade_index.csv')),
+            '--events',str(prefix),'--execution-quotes',str(folder/(run_id+'_bar_execution_quotes.csv')),
+            '--split-manifest',str(ROOT/'outputs/splits/split_manifest.json')]
     for key, arguments in commands.items():
         process = subprocess.run([sys.executable, *arguments], cwd=ROOT, capture_output=True, text=True)
         (folder / (key.lower() + '.log')).write_text(process.stdout + process.stderr, encoding='utf-8')
@@ -61,9 +66,11 @@ def validate_run(run_id, ea=BASE_EA):
         name: sha256(ROOT/name) for name in (
             'controller/validation.py', 'python/validate_dataset.py', 'python/research.py',
             'python/validate_intratrade_dataset.py', 'python/membership_contract.py')}
+    if selected['schema']=='3.0':
+        result['VALIDATION_CODE_HASHES']['python/validate_bar_path.py'] = sha256(ROOT/'python/validate_bar_path.py')
     result['VALIDATION_GIT_SHA'] = subprocess.check_output(
         ['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
-    contract = ROOT/'outputs/controller/checkpoints/membership_quarantine.json'
+    contract = ROOT/'outputs/controller/checkpoints/membership_quarantine_v2.json'
     if contract.exists():
         result['FROZEN_UNIVERSE_CONTRACT_SHA256'] = sha256(contract)
     manifest.update(result)

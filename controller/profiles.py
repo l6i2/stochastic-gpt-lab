@@ -8,7 +8,7 @@ PROFILES = {
     BASE_EA: dict(folder='StochasticIntratradeResearch', namespace='controller',
                   schema='2.0', outputs=BASE_OUTPUTS),
     BAR_EA: dict(folder='StochasticBarDecisionResearch', namespace='bar_controller',
-                 schema='3.0', outputs=BASE_OUTPUTS + ('bar_execution_quotes.csv',)),
+                 schema='3.0', outputs=BASE_OUTPUTS + ('bar_execution_quotes.csv', 'bar_quote_path.bin', 'bar_trade_index.csv')),
 }
 
 

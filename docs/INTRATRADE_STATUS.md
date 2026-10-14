@@ -39,6 +39,12 @@ not add observations to TRAIN/VALIDATION, move boundaries, or select by outcome.
 Other unexplained nonmember IDs still fail closed. The 2024 block now passes both
 validators and causal acceptance; C5 remains incomplete until 2025/2026 pass.
 
+2025 tester PASS: 7,200 signals versus 7,175 in the frozen source. Endpoint
+contract v2 uses actual entry time, preserving the old v1 checkpoint. The 25
+additional entries on December 31 include a signal whose cutoff is December 30
+23:59:59.999. The other ten nonmember signals are genuine TRAIN-boundary purges.
+Revalidation reuses this completed export; no additional 2025 tester run is needed.
+
 Date: 2026-10-13. Branch: `research/full-pipeline`. Current remote base: `fc178e7577f2c372194fedd295805cff3932440a`.
 
 ## INTRA_A — instrumentation

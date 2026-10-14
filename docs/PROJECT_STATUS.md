@@ -6,7 +6,10 @@ This section supersedes operational next-step statements in historical sections
 below. December 2023 PASS. Interrupted 2024 run `r20261013T121405_09901cc2`
 was recovered and rejected: no completed test or accepted artifacts. Replacement
 `r20261014T052944_07590da1` is PASS after completed-run revalidation;
-2025 run `r20261014T061439_70753a52` is active; 2026-01-01..03-19 pending.
+2025 run `r20261014T061439_70753a52` completed the tester; 2026-01-01..03-19 pending.
+Acceptance is being retried on
+the existing artifacts with endpoint contract v2, which classifies by entry
+time (including a previous-bar cutoff one millisecond before midnight).
 Accepted December evidence was preserved and not rerun. Postprocess is pending.
 
 The local quote-mark correction matches the deployed compiled producer and

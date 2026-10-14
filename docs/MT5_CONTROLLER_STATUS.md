@@ -12,7 +12,7 @@ C5_HISTORY: INCOMPLETE. December 2023 PASS. Interrupted 2024 run
 `r20261013T121405_09901cc2` recovered as FAIL, without completed test or export.
 Replacement `r20261014T052944_07590da1` PASS after the frozen-universe endpoint-gap
 remediation and completed-run revalidation. 2025 `r20261014T061439_70753a52`
-RUNNING; allowed 2026 pending.
+tester PASS, acceptance retry with entry-clock endpoint contract v2; allowed 2026 pending.
 
 The first strict membership validation correctly rejected 22 December 31 IDs
 absent from frozen TRAIN/VALIDATION. `FROZEN_UNIVERSE_COVERAGE.json` now documents

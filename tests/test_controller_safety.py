@@ -66,7 +66,9 @@ class ControllerSafetyTests(unittest.TestCase):
             self.assertIsNone(find_artifacts(environment, 'new', 0))
             self.assertIsNotNone(find_artifacts(environment, 'old', 0))
             self.assertIsNone(find_artifacts(environment, 'old', 0, profile(BAR_EA)['outputs']))
-            (root/'old_bar_execution_quotes.csv').write_text('separate execution evidence')
+            for name in profile(BAR_EA)['outputs']:
+                if not (root/('old_'+name)).exists():
+                    (root/('old_'+name)).write_text('separate path evidence')
             self.assertIsNotNone(find_artifacts(environment, 'old', 0, profile(BAR_EA)['outputs']))
             self.assertIsNone(find_artifacts(environment, 'old', 9999999999))
             self.assertEqual(sha256(root / 'old_stochastic_events.csv'), hashlib.sha256(b'old').hexdigest())

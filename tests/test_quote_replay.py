@@ -4,6 +4,14 @@ from python.quote_replay import Quote, Decision, replay
 
 
 class ReplayTests(unittest.TestCase):
+    def test_production_decision_waits_for_a_later_quote_and_latency(self):
+        quotes=[Quote(1,0,0,1000,1002),Quote(2,1,0,1003,1005),
+                Quote(2,2,0,1008,1010),Quote(8,3,0,1010,1012)]
+        decision=Decision(1,1,1,'EXIT',available_sequence=1)
+        self.assertEqual(self.run_path(quotes,decisions=[decision])['exit_sequence'],2)
+        delayed=Decision(1,1,1,'EXIT',available_sequence=1,latency_msc=5)
+        self.assertEqual(self.run_path(quotes,decisions=[delayed])['exit_sequence'],3)
+
     def run_path(self, quotes, side=1, decisions=()):
         return replay(quotes, side, decisions, allowed_end_exclusive=10000, coverage_verified=True)
 
