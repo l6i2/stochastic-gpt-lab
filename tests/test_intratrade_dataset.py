@@ -126,6 +126,22 @@ class IntratradeDatasetTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Noncausal'):
             validate(self.snapshots, self.audit, self.targets, execution_quotes_csv=execution)
 
+    def test_known_train_id_still_requires_past_only_label_horizon(self):
+        train, validation = self.root/'train.parquet', self.root/'validation.parquet'
+        write_parquet(pd.DataFrame({'signal_id': ['sig']}), train)
+        write_parquet(pd.DataFrame({'signal_id': ['other']}), validation)
+        events = self.root/'events.csv'
+        events.write_text('signal_id,signal_time_msc,tp_distance,sl_distance,time_exit_bars,follow_side,invert_side,follow_exit_reason,invert_exit_reason,follow_exit_time,invert_exit_time\n'
+                          'sig,1000,240,180,100,BUY,SELL,END_OF_DATA,END_OF_DATA,3500,3500\n')
+        split = self.root/'split.json'
+        split.write_text(json.dumps({'boundaries': {'validation_start_signal_time_msc': 3000,
+                                                   'final_test_start_signal_time_msc': 5000}}))
+        with self.assertRaisesRegex(ValueError, 'horizon crossing'):
+            validate(self.snapshots, self.audit, self.targets, train, validation, events, split)
+        events.write_text(events.read_text().replace(',3500,3500', ',2500,2500'))
+        self.assertTrue(validate(self.snapshots, self.audit, self.targets, train, validation, events, split)
+                        ['split_membership_verified'])
+
 
 if __name__ == "__main__":
     unittest.main()

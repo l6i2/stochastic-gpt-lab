@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from python.build_bar_replay_producer import ROOT, build
+from python.build_bar_replay_producer import ROOT, build, build_probe
 from tests.test_intratrade_instrumentation import function_source
 
 
@@ -23,6 +23,12 @@ class ProducerTests(unittest.TestCase):
             self.assertEqual(result['status'], 'PREPARED_NOT_DEPLOYED')
             with self.assertRaises(FileExistsError):
                 build(source, destination)
+            probe = Path(tmp)/'BarReplayProbe.mq5'
+            build_probe(probe)
+            fixture = probe.read_text()
+            self.assertIn('execution_rows=0;', fixture)
+            self.assertIn('FileClose(execution_out)', fixture)
+            self.assertIn('#include "StochasticBarDecisionResearchEA.mq5"', fixture)
 
     def test_unknown_base_is_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:

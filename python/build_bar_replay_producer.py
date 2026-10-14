@@ -77,6 +77,31 @@ def build(source, destination):
     return result
 
 
+def build_probe(destination):
+    """Derive the synthetic future-perturbation fixture for the prepared source."""
+    source = (ROOT/'tests/mql5/SnapshotCausalProbe.mq5').read_text()
+    old = '#include "..\\..\\Experts\\StochasticIntratradeResearch\\StochasticIntratradeResearchEA.mq5"'
+    if source.count(old) != 1:
+        raise ValueError('Causal fixture include changed')
+    source = source.replace(old, '#include "StochasticBarDecisionResearchEA.mq5"')
+    source = source.replace('failed=false;probe_failed=false;', 'execution_rows=0;failed=false;probe_failed=false;')
+    anchor = ' if(out==INVALID_HANDLE||snapshot_out==INVALID_HANDLE||target_out==INVALID_HANDLE)probe_failed=true;'
+    if source.count(anchor) != 1:
+        raise ValueError('Causal fixture output setup changed')
+    source = source.replace(anchor,
+        ' execution_out=FileOpen(PROBE_ID+"_"+suffix+"_execution_quotes.csv",FILE_WRITE|FILE_TXT|FILE_ANSI,0,CP_UTF8);\n'
+        ' if(out==INVALID_HANDLE||snapshot_out==INVALID_HANDLE||target_out==INVALID_HANDLE||execution_out==INVALID_HANDLE)probe_failed=true;')
+    anchor = 'FileClose(out);FileClose(snapshot_out);FileClose(target_out);'
+    if source.count(anchor) != 1:
+        raise ValueError('Causal fixture output teardown changed')
+    source = source.replace(anchor, anchor+'FileFlush(execution_out);FileClose(execution_out);')
+    destination = Path(destination)
+    if destination.exists():
+        raise FileExistsError('Refusing to overwrite a causal fixture')
+    destination.write_text(source, encoding='utf-8', newline='\n')
+    return hashlib.sha256(destination.read_bytes()).hexdigest()
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', type=Path, required=True)

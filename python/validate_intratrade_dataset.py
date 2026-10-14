@@ -237,6 +237,19 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
         if any(event_times[signal_id] >= final_start for signal_id in unknown):
             raise ValueError("Snapshots contain signal IDs at or after protected FINAL_TEST boundary")
         validation_start = int(split_data["boundaries"]["validation_start_signal_time_msc"])
+        if any(value >= final_start for value in snapshot_times.values()):
+            raise ValueError('Snapshot state reaches protected FINAL_TEST boundary')
+        cutoffs_by_signal = {}
+        for (signal_id, _), (_, cutoff) in last_by_trade.items():
+            cutoffs_by_signal[signal_id] = max(cutoff, cutoffs_by_signal.get(signal_id, 0))
+        for signal_id in seen_modes:
+            if signal_id not in train_ids and signal_id not in validation_ids:
+                continue
+            boundary = validation_start if signal_id in train_ids else final_start
+            event = event_rows[signal_id]
+            label_end = max(int(event['follow_exit_time']), int(event['invert_exit_time']))
+            if label_end >= boundary or cutoffs_by_signal[signal_id] >= boundary:
+                raise ValueError('Inherited split has a feature or label horizon crossing its boundary')
         for signal_id in unknown:
             event = event_rows[signal_id]
             boundary = validation_start if event_times[signal_id] < validation_start else final_start

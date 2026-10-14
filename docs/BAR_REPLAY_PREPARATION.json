@@ -13,5 +13,8 @@
   "baseline_parity": "NOT_RUN",
   "compile_log_sha256": "124d55c2dec78af1680f7c54f59b60c580885afeb37f6f31c50cf8556a8f1f7e",
   "execution_status": "NOT_DEPLOYED_NOT_RUN",
-  "baseline_strategy_changed": false
+  "baseline_strategy_changed": false,
+  "probe_compile": "PASS_0_ERRORS_0_WARNINGS",
+  "probe_source_sha256": "82a4531385d2354ff86357f9d73b080e275c7af4816dc911b472c144d8a366cf",
+  "probe_compile_log_sha256": "6702d61bad29e68a3a942421cdd4764ac320e5c0a2e8bda62a06ff591595dde3"
 }
