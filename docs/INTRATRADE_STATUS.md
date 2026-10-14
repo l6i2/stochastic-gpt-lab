@@ -1,5 +1,26 @@
 # Intra-trade research status
 
+## Current authoritative checkpoint — 2026-10-14
+
+Older sections below are historical, not the current execution plan. The master
+request now authorizes safe bounded reruns. December 2023 PASS. Recovery of
+2024 run `r20261013T121405_09901cc2` found no completion/artifact evidence and
+marked it FAIL. Replacement `r20261014T052944_07590da1` is active; 2025 and
+2026 through March 19 pending. Accepted evidence was preserved.
+
+The local quote-mark correction is already deployed and matches the compiled
+source and causal proof. Twenty focused existing tests and two quality-audit
+tests pass. No new master, hypothesis validation or model results exist yet.
+
+Dynamic research is gated by `DYNAMIC_REPLAY_REQUIREMENTS.md`. Scheduled offsets
+lack ordered executable post-decision quotes. Lifetime-extrema increments are
+not future path excursions; derived recovery labels are excluded from promotion
+research. Strict breakout flags whose reference window includes the current
+bar are excluded until corrected and versioned. No candidate can be promoted
+using the prototype support-only hypothesis checks.
+
+FINAL_TEST=LOCKED; LIVE_TRADING=false; DEMO disabled; no candidate promoted.
+
 Date: 2026-10-13. Branch: `research/full-pipeline`. Current remote base: `fc178e7577f2c372194fedd295805cff3932440a`.
 
 ## INTRA_A — instrumentation
@@ -23,3 +44,13 @@ The snapshot CSV and target CSV are separate. The exporter writes causal feature
 The current source records scheduled snapshot states and terminal labels, not the full ordered quote path after each snapshot. Therefore a decision policy that exits at a later tick or reverses direction cannot yet be faithfully simulated; `REVERSE_DIRECTION` is marked unavailable until that path is exported. The fixed-bar-3 HOLD, EARLY_EXIT, and +60 PROTECT_PROFIT comparisons are predeclared and research-only. They cannot create or promote a candidate.
 
 No raw blocks, master snapshots, TRAIN analysis, intra-trade hypotheses, model metrics, or walk-forward metrics exist yet. `NO CANDIDATE`; FINAL_TEST remains locked and DEMO execution remains disabled.
+
+## 2025 annual run audit — 2026-10-13
+
+The requested `US30Cash`, M5, real-tick, optimization-OFF, `LIVE_TRADING=false` test completed for 2025-01-01..2025-12-31. The entry audit reports 7,175 signals (3,338 BUY; 3,837 SELL), no fatal/abort, and the baseline event CSV matches the canonical 2025 event hash. The intra-trade audit reports 116,929 snapshots and 116,825 targets; offsets are +1 14,302, +2 14,228, +3 14,135, +5 13,935, +10 13,387, +15 12,916, +20 12,437, +30 11,545, +50 10,044. FOLLOW has 58,428 snapshots; INVERT has 58,501.
+
+**Rejected for research.** Split-aware `validate_intratrade_dataset.py` fails because current MFE does not bound current unrealized PnL. A full streaming audit found 207 MFE-bound violations, 0 MAE-bound violations, 0 future timestamp violations, 0 FOLLOW/INVERT side-mapping violations, 0 duplicate snapshot IDs, and no monotonic MFE/MAE regressions. The export's mark quote was reconstructed from bar close and bar spread while excursion tracking used actual ticks. That can create a mark PnL larger than observed MFE. No raw data was canonicalized, no master/split/research was built, and no FINAL_TEST data was opened.
+
+The exporter was minimally changed to mark each snapshot from the last observed bid/ask at or before the cutoff; Stochastic logic, parameters, and tick/bar exit routines were left intact. The dedicated XM MetaEditor compile log reports 0 errors and 0 warnings. Focused Python tests are being run. Per the instruction not to start the Tester again yet, the corrected 2025 block has not been rerun. A corrected 2025 preset and bounded presets for 2023-12-20..31, 2024, and 2026-01-01..2026-03-19 are prepared under `outputs/verification/intratrade_export_plan/corrected/` and the `.set` files are copied to the active XM `MQL5/Profiles/Tester` folder. The 2026 range ends before the protected FINAL_TEST boundary.
+
+**Next required run:** start only `intratrade_2025_quote_markfix_20261013.set` (dedicated expert path) and stop after it finishes. Do not build the intratrade master or analyze hypotheses until the corrected 2025 export passes validation. Remaining bounded blocks stay queued.

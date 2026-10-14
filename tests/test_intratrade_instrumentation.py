@@ -56,6 +56,12 @@ class IntratradeInstrumentationTests(unittest.TestCase):
         self.assertIn("WriteSnapshotTargets", self.instrumented)
         self.assertIn("snapshot MFE >= 60", self.instrumented)
 
+    def test_snapshot_mark_uses_causal_quote_not_reconstructed_bar_ask(self):
+        snapshot = function_source(self.instrumented, "SnapshotTrade")
+        self.assertIn("double bid=last_bid,ask=last_ask,spread=ask-bid", snapshot)
+        self.assertIn("last_quote_msc>cutoff", snapshot)
+        self.assertNotIn("bid=rates[0].close", snapshot)
+
 
 if __name__ == "__main__":
     unittest.main()

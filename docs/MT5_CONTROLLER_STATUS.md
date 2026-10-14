@@ -1,5 +1,28 @@
 # Controller verification status
 
+## Current authoritative checkpoint — 2026-10-14
+
+This section supersedes the historical diagnostic below.
+C1_ENV: recorded verified XM DEMO environment and read-only API evidence.
+C2_COMPILE: deployed source matches repository; recorded clean 0/0 compile.
+C3_HEADLESS_TESTER: cold-start operation verified by completed January smoke
+and December 2023 exports; warm-instance failures below are historical.
+C4_ARTIFACTS: accepted smoke/December nonce artifacts and hashes exist.
+C5_HISTORY: INCOMPLETE. December 2023 PASS. Interrupted 2024 run
+`r20261013T121405_09901cc2` recovered as FAIL, without completed test or export.
+Replacement `r20261014T052944_07590da1` active; 2025 and allowed 2026 pending.
+
+CAUSAL_INVARIANCE: production fixture PASS, 156 snapshots across 257 columns,
+future-only mutations and changed future targets. Finite fixture, not universal
+proof. Producer hash matches the local quote-mark correction.
+POSTPROCESS: pending all-block acceptance. CONTROLLER_C1_C5_COMPLETE not reached.
+Quality audit implemented and tested; dynamic replay requirements documented
+before new validation. Twenty focused existing tests and two new audit tests pass.
+
+FINAL_TEST=LOCKED; LIVE_TRADING=false; DEMO_EXECUTOR=NOT_IMPLEMENTED.
+
+## Historical diagnostic (superseded)
+
 2026-10-13: C1 verified against running XM, unique Data Folder
 20C285FE08971A9A2E814AAC44AFC9D2. Read-only API reports connected DEMO,
 US30Cash available. DEMO executor is NOT_IMPLEMENTED and disabled.

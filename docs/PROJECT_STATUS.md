@@ -1,5 +1,23 @@
 # Project status
 
+## Current authoritative checkpoint — 2026-10-14
+
+This section supersedes operational next-step statements in historical sections
+below. December 2023 PASS. Interrupted 2024 run `r20261013T121405_09901cc2`
+was recovered and rejected: no completed test or accepted artifacts. Replacement
+`r20261014T052944_07590da1` is active; 2025 and 2026-01-01..03-19 pending.
+Accepted December evidence was preserved and not rerun. Postprocess is pending.
+
+The local quote-mark correction matches the deployed compiled producer and
+existing causal checkpoint. Twenty focused existing tests and two quality-audit
+tests pass. `controller.data_quality` is prepared; it fails closed until all
+historical blocks pass. `DYNAMIC_REPLAY_REQUIREMENTS.md` records pre-validation
+exclusions and the ordered quote/decision extension required before dynamic
+policy research. No new hypotheses or models have been validated.
+
+FINAL_TEST=LOCKED; LIVE_TRADING=false; DEMO disabled; no candidate promoted.
+The master objective does not guarantee that a credible candidate exists.
+
 ## FASE 0 — baseline audit: COMPLETE
 
 Repository: `l6i2/stochastic-gpt-lab`, isolated branch `research/full-pipeline`, audit baseline `d8f639578a409acd941ec35b6d5349a66d7007c4`. The pre-existing deletion of `mt5/StochasticResearchEA.mq5` in the user's original worktree remains untouched. No files in `asistente-trader-ia` were accessed or changed.
@@ -84,3 +102,9 @@ The separate `mt5/StochasticIntratradeResearchEA.mq5` and schema 2.0 snapshot va
 MT5 generated an intra-trade run dated 2026-10-01 through 2026-10-12, which is after the protected 2026-03-20 FINAL_TEST boundary. Its tester log also shows the stale EA path `Experts\\StochasticResearch\\StochasticIntratradeResearchEA.ex5`, rather than the dedicated deployment path. Those files remain in the local tester-agent folder, were not copied into the repo, and are rejected for research. A structural-only validator pass did not verify split membership; the validator now reports the held-out status as unknown unless TRAIN and DISCOVERY_VALIDATION membership are supplied. The Jan 2024 smoke preset and historical tester configuration plan remain local; 2026 historical export stops on March 19. `docs/INTRATRADE_STATUS.md` records the blocked status and rerun requirements.
 
 No intra-trade hypotheses or models were evaluated. No candidate exists. FINAL_TEST remains locked and DEMO execution remains disabled.
+
+## INTRA_B — 2025 intra-trade annual audit: FAIL, rerun prepared
+
+The 2025 real-tick export completed with 7,175 signals, 116,929 snapshots, and 116,825 targets. It failed the strict dataset validator: 207 snapshot rows have current unrealized PnL larger than recorded current MFE. The cause is mark-price reconstruction from bar close plus bar spread while excursions use actual tick quotes. Other full-scan checks found unique snapshot IDs, no current-MAE bound failures, no future timestamp violations, and correct FOLLOW/INVERT mapping. The dataset was not canonicalized and was not used for research.
+
+A minimal exporter correction now uses the last observed bid/ask quote at the snapshot cutoff. The dedicated XM MetaEditor compile is clean (0 errors, 0 warnings), and the corrected annual preset is ready. No Tester rerun has started because the operator explicitly said not to rerun yet. The only next manual Tester run is the corrected 2025 preset. If it passes, run the remaining allowed periods: Dec 20–31, 2023; 2024; and Jan 1–Mar 19, 2026. Do not run on/after Mar 20, 2026. FINAL_TEST remains locked; no intra-trade master, hypothesis evaluation, model, or candidate exists.

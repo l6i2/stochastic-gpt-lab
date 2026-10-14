@@ -66,12 +66,32 @@ class IntratradeDatasetTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "leaked"):
             validate(self.snapshots, self.audit, self.targets)
 
-    def test_rejects_signal_not_in_train_or_validation(self):
+    def test_accepts_only_known_pre_final_purged_signals(self):
         train, validation = self.root / "train.parquet", self.root / "validation.parquet"
         write_parquet(pd.DataFrame({"signal_id": ["train"]}), train)
         write_parquet(pd.DataFrame({"signal_id": ["validation"]}), validation)
-        with self.assertRaisesRegex(ValueError, "FINAL_TEST"):
-            validate(self.snapshots, self.audit, self.targets, train, validation)
+        events = self.root / "stochastic_events.csv"
+        events.write_text("signal_id,signal_time_msc,tp_distance,sl_distance,time_exit_bars,follow_side,invert_side,follow_exit_reason,invert_exit_reason,follow_exit_time,invert_exit_time\n"
+                          "sig,1000,240,180,100,BUY,SELL,END_OF_DATA,END_OF_DATA,3500,3500\n", encoding="utf-8")
+        boundary = self.root / "split_manifest.json"
+        boundary.write_text(json.dumps({"boundaries": {"validation_start_signal_time_msc": 3000,
+                                                       "final_test_start_signal_time_msc": 5000}}), encoding="utf-8")
+        result = validate(self.snapshots, self.audit, self.targets, train, validation, events, boundary)
+        self.assertEqual(result["purged_signals_excluded_from_splits"], 1)
+        self.assertFalse(result["final_test_accessed"])
+        events.write_text(events.read_text().replace(',3500,3500', ',2500,2500'))
+        with self.assertRaisesRegex(ValueError, "not explained by chronological boundary purging"):
+            validate(self.snapshots, self.audit, self.targets, train, validation, events, boundary)
+
+    def test_rejects_signal_id_absent_from_safe_event_source(self):
+        train, validation = self.root / "train.parquet", self.root / "validation.parquet"
+        write_parquet(pd.DataFrame({"signal_id": ["train"]}), train)
+        write_parquet(pd.DataFrame({"signal_id": ["validation"]}), validation)
+        events = self.root / "stochastic_events.csv"
+        events.write_text("signal_id,signal_time_msc,tp_distance,sl_distance,time_exit_bars,follow_side,invert_side,follow_exit_reason,invert_exit_reason\n"
+                          "other,1000,240,180,100,BUY,SELL,END_OF_DATA,END_OF_DATA\n", encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "absent from block event source"):
+            validate(self.snapshots, self.audit, self.targets, train, validation, events)
 
     def test_rejects_live_trading_manifest(self):
         data = json.loads(self.audit.read_text(encoding="utf-8"))

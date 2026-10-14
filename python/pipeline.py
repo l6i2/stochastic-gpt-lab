@@ -198,6 +198,7 @@ def main() -> int:
         for snapshot in blocks:
             code = run(["python/validate_intratrade_dataset.py", str(snapshot),
                         "--targets", str(snapshot.parent / "intratrade_snapshot_targets.csv"),
+                        "--events", str(snapshot.parent / "stochastic_events.csv"),
                         "--train", "outputs/splits/train.parquet", "--validation", "outputs/splits/validation.parquet"])
             if code:
                 return code

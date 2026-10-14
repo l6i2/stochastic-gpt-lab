@@ -5,6 +5,7 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+from decimal import Decimal
 
 from .artifact_collector import OUTPUTS, atomic_json
 from .compile_runner import sha256
@@ -51,6 +52,24 @@ def execute(arguments, log):
         raise RuntimeError('VALIDATION: postprocess failed: '+str(log))
 
 
+def normalize_timestamp_csv(path):
+    """Preserve nullable integer millisecond timestamps after pandas CSV export."""
+    temporary=path.with_suffix('.normalized.tmp')
+    with path.open(encoding='utf-8-sig',newline='') as source, temporary.open('w',encoding='utf-8',newline='') as target:
+        reader=csv.DictReader(source)
+        writer=csv.DictWriter(target,fieldnames=reader.fieldnames);writer.writeheader()
+        columns=[name for name in reader.fieldnames if name.endswith('_msc')]
+        for row in reader:
+            for name in columns:
+                if row[name]:
+                    number=Decimal(row[name])
+                    if number!=number.to_integral_value():
+                        raise RuntimeError('VALIDATION: fractional millisecond timestamp in master')
+                    row[name]=str(int(number))
+            writer.writerow(row)
+    temporary.replace(path)
+
+
 def postprocess():
     blocks=accepted_blocks()
     out=ROOT/'outputs/controller/research'
@@ -64,6 +83,11 @@ def postprocess():
     execute([ROOT/'python/build_intratrade_master.py',*blocks,'--out',master,
              '--train',ROOT/'outputs/splits/train.parquet','--validation',ROOT/'outputs/splits/validation.parquet'],out/'build.log')
     audit=json.loads((master/'intratrade_master_audit.json').read_text())
+    normalize_timestamp_csv(master/'intratrade_master.csv')
+    audit['sha256']['intratrade_master.csv']=sha256(master/'intratrade_master.csv')
+    audit['csv_integer_timestamp_normalization']=True
+    atomic_json(master/'intratrade_master_audit.json',audit)
+    atomic_json(master/'intratrade_master_manifest.json',audit)
     events=out/'all_allowed_events.csv'
     count=0
     with events.open('w',encoding='utf-8',newline='') as destination:

@@ -41,6 +41,8 @@ def build(blocks: list[Path], out: Path, train_path: Path, validation_path: Path
     snapshots: list[pd.DataFrame] = []
     targets: list[pd.DataFrame] = []
     source_manifests: list[dict] = []
+    purged_signal_ids: set[str] = set()
+    purged_snapshot_rows = 0
     for block in blocks:
         manifest_path = block / "manifest.json"
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -55,18 +57,27 @@ def build(blocks: list[Path], out: Path, train_path: Path, validation_path: Path
             raise ValueError(f"Block period reaches protected FINAL_TEST boundary: {manifest_path}")
         snapshot_path = block / "intratrade_snapshots.csv"
         target_path = block / "intratrade_snapshot_targets.csv"
-        audit_path = block / "intratrade_snapshots.audit.json"
-        validate(snapshot_path, audit_path, target_path)
+        audit_path = block / "intratrade_snapshots.csv.audit.json"
+        events_path = block / "stochastic_events.csv"
+        validation = validate(snapshot_path, audit_path, target_path, train_path, validation_path,
+                              events_path, split_manifest_path)
         snapshot = pd.read_csv(snapshot_path)
         target = pd.read_csv(target_path) if target_path.exists() and target_path.stat().st_size else pd.DataFrame()
         unknown = set(snapshot["signal_id"].astype(str)) - train_ids - validation_ids
-        if unknown:
-            raise ValueError(f"Block contains unknown/protected signal IDs (sample={next(iter(unknown))})")
+        if len(unknown) != int(validation["purged_signals_excluded_from_splits"]):
+            raise ValueError("Split membership and independently validated purged signal IDs disagree")
+        purged_signal_ids.update(unknown)
+        purged_snapshot_rows += int(snapshot["signal_id"].astype(str).isin(unknown).sum())
+        snapshot = snapshot[~snapshot["signal_id"].astype(str).isin(unknown)].copy()
+        if not target.empty:
+            target = target[target["signal_id"].astype(str).isin(train_ids | validation_ids)].copy()
         snapshots.append(snapshot)
         if not target.empty:
             targets.append(target)
         source_manifests.append({"path": str(manifest_path.relative_to(ROOT)), "sha256": sha256(manifest_path),
-                                 "period": manifest.get("period"), "max_signal_time_msc": int(max_signal)})
+                                 "period": manifest.get("period"), "max_signal_time_msc": int(max_signal),
+                                 "purged_signals": len(unknown),
+                                 "source_event_sha256": sha256(events_path)})
 
     if not snapshots:
         raise ValueError("No validated intra-trade blocks were supplied")
@@ -112,6 +123,7 @@ def build(blocks: list[Path], out: Path, train_path: Path, validation_path: Path
               "validation_rows": len(validation_frame), "master_rows": len(frame),
               "target_rows": len(target_frame), "train_signals": int(train_frame.signal_id.nunique()),
               "validation_signals": int(validation_frame.signal_id.nunique()),
+              "purged_signal_ids": len(purged_signal_ids), "purged_snapshot_rows": purged_snapshot_rows,
               "source_blocks": source_manifests,
               "sha256": {p.name: sha256(p) for p in (all_csv, all_parquet, train_out, val_out, targets_out)}}
     (out / "intratrade_master_audit.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
