@@ -30,7 +30,8 @@ FORBIDDEN_FEATURE_TOKENS = ("future_", "final_", "exit_", "execution_", "target"
 def validate(snapshot_csv: Path, audit_path: Path | None = None,
              targets_csv: Path | None = None, train_parquet: Path | None = None,
              validation_parquet: Path | None = None, events_csv: Path | None = None,
-             split_manifest: Path | None = None, execution_quotes_csv: Path | None = None) -> dict:
+             split_manifest: Path | None = None, execution_quotes_csv: Path | None = None,
+             quarantine_manifest: Path | None = None) -> dict:
     snapshot_csv = snapshot_csv.resolve()
     audit_path = (audit_path or Path(str(snapshot_csv) + ".audit.json")).resolve()
     targets_csv = targets_csv.resolve() if targets_csv else None
@@ -210,6 +211,8 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
 
     split_counts = {}
     purged_signals = 0
+    quarantined_signals = 0
+    quarantined_ids = set()
     if bool(train_parquet) != bool(validation_parquet):
         raise ValueError("Provide both TRAIN and VALIDATION Parquet files, or neither")
     if train_parquet and validation_parquet:
@@ -237,6 +240,16 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
         if any(event_times[signal_id] >= final_start for signal_id in unknown):
             raise ValueError("Snapshots contain signal IDs at or after protected FINAL_TEST boundary")
         validation_start = int(split_data["boundaries"]["validation_start_signal_time_msc"])
+        if quarantine_manifest is None:
+            root = Path(__file__).resolve().parents[1]
+            quarantine_manifest = (root / 'outputs/controller/checkpoints/membership_quarantine.json'
+                                   if split_manifest.resolve() == (root/'outputs/splits/split_manifest.json').resolve()
+                                   else split_manifest.with_name('membership_quarantine.json'))
+        try:
+            from .membership_contract import quarantine_windows
+        except ImportError:
+            from membership_contract import quarantine_windows
+        windows = quarantine_windows(quarantine_manifest, split_manifest) if quarantine_manifest.exists() else []
         if any(value >= final_start for value in snapshot_times.values()):
             raise ValueError('Snapshot state reaches protected FINAL_TEST boundary')
         cutoffs_by_signal = {}
@@ -252,6 +265,10 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
                 raise ValueError('Inherited split has a feature or label horizon crossing its boundary')
         for signal_id in unknown:
             event = event_rows[signal_id]
+            if any(start <= event_times[signal_id] < end for start, end in windows):
+                quarantined_signals += 1
+                quarantined_ids.add(signal_id)
+                continue
             boundary = validation_start if event_times[signal_id] < validation_start else final_start
             try:
                 label_end = max(int(event["follow_exit_time"]), int(event["invert_exit_time"]))
@@ -259,7 +276,7 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
                 raise ValueError("Unknown signal has no verifiable purge horizon") from exc
             if label_end < boundary:
                 raise ValueError("Unknown signal is not explained by chronological boundary purging")
-        purged_signals = len(unknown)
+        purged_signals = len(unknown) - quarantined_signals
         split_counts = {"TRAIN": sum(s in train_ids for s in seen_modes),
                         "DISCOVERY_VALIDATION": sum(s in validation_ids for s in seen_modes)}
 
@@ -303,6 +320,9 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
             "execution_quote_rows": execution_count,
             "split_signals": split_counts, "split_membership_verified": membership_verified,
             "purged_signals_excluded_from_splits": purged_signals,
+            "quarantined_noncanonical_signals": quarantined_signals,
+            "quarantined_signal_ids": sorted(quarantined_ids),
+            "excluded_nonmember_signals": purged_signals + quarantined_signals,
             "signals": int(audit["signals"]), "buy_signals": event_sides["BUY"],
             "sell_signals": event_sides["SELL"], "snapshot_offsets": dict(sorted(offset_counts.items())),
             "follow_snapshots": mode_counts["FOLLOW"], "invert_snapshots": mode_counts["INVERT"],
@@ -330,10 +350,11 @@ def main() -> int:
     parser.add_argument("--split-manifest", type=Path,
                         help="split boundaries manifest (defaults to outputs/splits/split_manifest.json)")
     parser.add_argument('--execution-quotes', type=Path)
+    parser.add_argument('--quarantine-manifest', type=Path)
     args = parser.parse_args()
     try:
         result = validate(args.snapshots, args.audit, args.targets, args.train, args.validation,
-                          args.events, args.split_manifest, args.execution_quotes)
+                          args.events, args.split_manifest, args.execution_quotes, args.quarantine_manifest)
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"INTRATRADE DATASET INVALID: {exc}", file=sys.stderr)
         return 1

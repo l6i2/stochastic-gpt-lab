@@ -57,6 +57,15 @@ def validate_run(run_id, ea=BASE_EA):
             result['CAUSAL_PROOF_RUN_ID']=proof['run_id']
     result['VALIDATION_STATUS'] = 'PASS' if all(
         result.get(key) == 'PASS' for key in commands) and result['CAUSALITY_STATUS'] == 'PASS' else 'FAIL'
+    result['VALIDATION_CODE_HASHES'] = {
+        name: sha256(ROOT/name) for name in (
+            'controller/validation.py', 'python/validate_dataset.py', 'python/research.py',
+            'python/validate_intratrade_dataset.py', 'python/membership_contract.py')}
+    result['VALIDATION_GIT_SHA'] = subprocess.check_output(
+        ['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+    contract = ROOT/'outputs/controller/checkpoints/membership_quarantine.json'
+    if contract.exists():
+        result['FROZEN_UNIVERSE_CONTRACT_SHA256'] = sha256(contract)
     manifest.update(result)
     write_manifest(folder, manifest)
     return result

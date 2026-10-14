@@ -5,7 +5,8 @@
 This section supersedes operational next-step statements in historical sections
 below. December 2023 PASS. Interrupted 2024 run `r20261013T121405_09901cc2`
 was recovered and rejected: no completed test or accepted artifacts. Replacement
-`r20261014T052944_07590da1` is active; 2025 and 2026-01-01..03-19 pending.
+`r20261014T052944_07590da1` is PASS after completed-run revalidation;
+2025 run `r20261014T061439_70753a52` is active; 2026-01-01..03-19 pending.
 Accepted December evidence was preserved and not rerun. Postprocess is pending.
 
 The local quote-mark correction matches the deployed compiled producer and
@@ -21,6 +22,13 @@ The master objective does not guarantee that a credible candidate exists.
 Preparatory schema 3 code and compile evidence are recorded in
 `BAR_REPLAY_PREPARATION.json`; no rollout or research result is claimed.
 Calibration/walk-forward helpers now purge label horizons across folds.
+
+Coverage remediation: the frozen 2024/2025 source files end December 30. The
+correct inclusive 2024 controller export contains 22 additional December 31
+signals. They are retained in evidence but quarantined from research to preserve
+the exact frozen signal universe, not mislabeled as boundary-purged signals.
+`FROZEN_UNIVERSE_COVERAGE.json` pins the source hashes and exclusion dates before
+new hypothesis validation. No split boundaries or memberships are changed.
 
 ## FASE 0 — baseline audit: COMPLETE
 

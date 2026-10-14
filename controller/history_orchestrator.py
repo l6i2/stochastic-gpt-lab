@@ -61,12 +61,23 @@ def history(resume=False, timeout=3600, ea=BASE_EA):
         try:
             # Reattach an interrupted monitor instead of starting a duplicate tester.
             interrupted=[]
+            completed=[]
             for path in (output/'runs').glob('r*/run_manifest.json'):
                 item=json.loads(path.read_text())
                 if (item.get('from')==block['DATE_FROM'] and item.get('to')==block['DATE_TO']
+                        and item.get('tester_status')=='PASS' and item.get('MT5_CLOSED_BEFORE_LAUNCH')
+                        and item.get('artifact_hashes')):
+                    completed.append(item)
+                if (item.get('from')==block['DATE_FROM'] and item.get('to')==block['DATE_TO']
                         and item.get('tester_status')=='RUNNING' and item.get('MT5_CLOSED_BEFORE_LAUNCH')):
                     interrupted.append(item)
-            if interrupted:
+            if completed:
+                # Revalidate existing evidence after a validator remediation.
+                # Never rerun a successful tester merely because acceptance failed.
+                record = max(completed, key=lambda r:r['start_time'])
+                block['RUN_ID'] = record['run_id']
+                save()
+            elif interrupted:
                 from .cold_start import monitor_cold
                 item=max(interrupted,key=lambda r:r['start_time'])
                 block['RUN_ID'] = item['run_id']
@@ -86,6 +97,7 @@ def history(resume=False, timeout=3600, ea=BASE_EA):
             if validation['VALIDATION_STATUS'] != 'PASS':
                 raise RuntimeError('VALIDATION: history block failed')
             block['STATUS'] = 'PASS'
+            block.pop('ERROR', None)
             save()
         except Exception as error:
             block['STATUS'] = 'FAIL'

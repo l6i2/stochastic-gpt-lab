@@ -5,8 +5,9 @@
 Older sections below are historical, not the current execution plan. The master
 request now authorizes safe bounded reruns. December 2023 PASS. Recovery of
 2024 run `r20261013T121405_09901cc2` found no completion/artifact evidence and
-marked it FAIL. Replacement `r20261014T052944_07590da1` is active; 2025 and
-2026 through March 19 pending. Accepted evidence was preserved.
+marked it FAIL. Replacement `r20261014T052944_07590da1` is PASS after revalidating
+the existing completed artifacts without another backtest. 2025 run
+`r20261014T061439_70753a52` is active; 2026 through March 19 pending. Evidence preserved.
 
 The local quote-mark correction is already deployed and matches the compiled
 source and causal proof. Twenty focused existing tests and two quality-audit
@@ -28,6 +29,15 @@ It has not been deployed, causally accepted or used for historical exports.
 The schema 3 validator requires contiguous bar coverage, baseline-lifetime
 agreement and complete, finite, strictly post-cutoff execution rows. None of
 this makes the incomplete C5 history or dynamic master ready.
+
+The new inclusive 2024 export has 7,412 signals versus 7,390 in the frozen source.
+The 22 additional IDs all occur December 31, a day missing from that source due
+to the old exclusive ToDate endpoint. Frozen 2025 has the same endpoint gap.
+The explicit hash-verified contract in `FROZEN_UNIVERSE_COVERAGE.json` preserves
+all raw evidence while excluding these noncanonical IDs from research. It does
+not add observations to TRAIN/VALIDATION, move boundaries, or select by outcome.
+Other unexplained nonmember IDs still fail closed. The 2024 block now passes both
+validators and causal acceptance; C5 remains incomplete until 2025/2026 pass.
 
 Date: 2026-10-13. Branch: `research/full-pipeline`. Current remote base: `fc178e7577f2c372194fedd295805cff3932440a`.
 

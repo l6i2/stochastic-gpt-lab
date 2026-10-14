@@ -11,6 +11,33 @@ from controller.history_orchestrator import history
 
 
 class CausalTests(unittest.TestCase):
+    def test_validation_remediation_reuses_completed_tester_artifacts(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            runs = root/'outputs/controller/runs'
+            (runs/'rsmoke').mkdir(parents=True)
+            (runs/'rsmoke/run_manifest.json').write_text(json.dumps({
+                'from':'2024-01-01','to':'2024-01-31','tester_to_exclusive':'2024.02.01',
+                'tester_status':'PASS','VALIDATION_STATUS':'PASS','CAUSALITY_STATUS':'PASS'}))
+            (runs/'rdone').mkdir()
+            (runs/'rdone/run_manifest.json').write_text(json.dumps({
+                'from':'2024-01-01','to':'2024-12-31','tester_status':'PASS',
+                'MT5_CLOSED_BEFORE_LAUNCH':True,'artifact_hashes':{'data':'hash'},
+                'start_time':'2026-10-14T00:00:00Z','run_id':'rdone'}))
+            blocks=[dict(BLOCK_ID='2024',DATE_FROM='2024-01-01',DATE_TO='2024-12-31',
+                         STATUS='FAIL',ERROR='old validator failure')]
+            checkpoint=root/'outputs/controller/checkpoints/history_state.json'
+            checkpoint.parent.mkdir()
+            checkpoint.write_text(json.dumps({'blocks':blocks}))
+            with patch('controller.history_orchestrator.ROOT',root), \
+                 patch('controller.history_orchestrator.plan',return_value=blocks), \
+                 patch('controller.tester_runner.run') as runner, \
+                 patch('controller.validation.validate_run',return_value={'VALIDATION_STATUS':'PASS'}):
+                result=history(resume=True)
+            runner.assert_not_called()
+            self.assertEqual(result['blocks'][0]['STATUS'],'PASS')
+            self.assertNotIn('ERROR',result['blocks'][0])
+
     def fixture(self, folder):
         for side in ('base','future_changed'):
             def table(suffix,rows):

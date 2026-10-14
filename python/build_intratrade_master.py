@@ -42,6 +42,8 @@ def build(blocks: list[Path], out: Path, train_path: Path, validation_path: Path
     targets: list[pd.DataFrame] = []
     source_manifests: list[dict] = []
     purged_signal_ids: set[str] = set()
+    quarantined_signal_ids: set[str] = set()
+    quarantined_snapshot_rows = 0
     purged_snapshot_rows = 0
     for block in blocks:
         manifest_path = block / "manifest.json"
@@ -64,10 +66,13 @@ def build(blocks: list[Path], out: Path, train_path: Path, validation_path: Path
         snapshot = pd.read_csv(snapshot_path)
         target = pd.read_csv(target_path) if target_path.exists() and target_path.stat().st_size else pd.DataFrame()
         unknown = set(snapshot["signal_id"].astype(str)) - train_ids - validation_ids
-        if len(unknown) != int(validation["purged_signals_excluded_from_splits"]):
+        if len(unknown) != int(validation["excluded_nonmember_signals"]):
             raise ValueError("Split membership and independently validated purged signal IDs disagree")
-        purged_signal_ids.update(unknown)
-        purged_snapshot_rows += int(snapshot["signal_id"].astype(str).isin(unknown).sum())
+        quarantined = set(validation['quarantined_signal_ids'])
+        quarantined_signal_ids.update(quarantined)
+        purged_signal_ids.update(unknown - quarantined)
+        purged_snapshot_rows += int(snapshot['signal_id'].astype(str).isin(unknown - quarantined).sum())
+        quarantined_snapshot_rows += int(snapshot['signal_id'].astype(str).isin(quarantined).sum())
         snapshot = snapshot[~snapshot["signal_id"].astype(str).isin(unknown)].copy()
         if not target.empty:
             target = target[target["signal_id"].astype(str).isin(train_ids | validation_ids)].copy()
@@ -76,7 +81,8 @@ def build(blocks: list[Path], out: Path, train_path: Path, validation_path: Path
             targets.append(target)
         source_manifests.append({"path": str(manifest_path.relative_to(ROOT)), "sha256": sha256(manifest_path),
                                  "period": manifest.get("period"), "max_signal_time_msc": int(max_signal),
-                                 "purged_signals": len(unknown),
+                                 "purged_signals": validation['purged_signals_excluded_from_splits'],
+                                 "quarantined_signals": validation['quarantined_noncanonical_signals'],
                                  "source_event_sha256": sha256(events_path)})
 
     if not snapshots:
@@ -124,6 +130,8 @@ def build(blocks: list[Path], out: Path, train_path: Path, validation_path: Path
               "target_rows": len(target_frame), "train_signals": int(train_frame.signal_id.nunique()),
               "validation_signals": int(validation_frame.signal_id.nunique()),
               "purged_signal_ids": len(purged_signal_ids), "purged_snapshot_rows": purged_snapshot_rows,
+              "quarantined_noncanonical_signals": len(quarantined_signal_ids),
+              "quarantined_snapshot_rows": quarantined_snapshot_rows,
               "source_blocks": source_manifests,
               "sha256": {p.name: sha256(p) for p in (all_csv, all_parquet, train_out, val_out, targets_out)}}
     (out / "intratrade_master_audit.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
