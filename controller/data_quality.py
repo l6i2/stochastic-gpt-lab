@@ -12,14 +12,14 @@ from .safety_gate import ROOT, assert_research_range_allowed
 
 
 def summarize_snapshots(path):
-    counts = {name: Counter() for name in ('offset', 'session', 'side', 'mode', 'ha_status')}
+    counts = {name: Counter() for name in ('offset', 'session', 'side', 'mode', 'ha_status', 'vp_30m_status')}
     missing = Counter()
     statistics = {}
     ids = set()
     duplicates = 0
     rows = 0
     features = ('tick_volume', 'real_volume', 'relative_volume_20', 'ATR',
-                'ha_body', 'vp_30m_poc', 'current_unrealized_pnl',
+                'ha_body', 'vp_30m_POC', 'vp_30m_VAH', 'vp_30m_VAL', 'current_unrealized_pnl',
                 'current_mfe_so_far', 'current_mae_so_far')
     with Path(path).open(encoding='utf-8-sig', newline='') as stream:
         reader = csv.DictReader(stream)
@@ -30,7 +30,7 @@ def summarize_snapshots(path):
             ids.add(row['snapshot_id'])
             for group, column in (('offset', 'snapshot_bar'), ('session', 'session'),
                                   ('side', 'original_signal'), ('mode', 'virtual_mode'),
-                                  ('ha_status', 'ha_status')):
+                                  ('ha_status', 'ha_status'), ('vp_30m_status', 'vp_30m_status')):
                 counts[group][row.get(column) or 'MISSING'] += 1
             for column, value in row.items():
                 if value is None or value.strip().lower() in ('', 'nan', 'null'):
@@ -68,11 +68,13 @@ def tick_warnings(folder):
         if not path.exists():
             continue
         for line in path.read_text(encoding='utf-8', errors='replace').splitlines():
-            if re.search(r'discarded|generated ticks|mismatch|no real ticks', line, re.I):
+            if re.search(r'discarded|generated ticks|every tick generation|mismatch|no real ticks', line, re.I):
                 # Store only the diagnostic message, not arbitrary log identity fields.
                 message = line.split('\t')[-1]
                 warnings.add(message)
                 for match in re.finditer(r'(\d+)\s+minutes?[^\n]*discarded', message, re.I):
+                    discarded.add(int(match.group(1)))
+                for match in re.finditer(r'discarded for\s+(\d+)\s+minutes?', message, re.I):
                     discarded.add(int(match.group(1)))
     return dict(messages=sorted(warnings), discarded_minute_counts_reported=sorted(discarded),
                 generated_tick_substitution_count=None,

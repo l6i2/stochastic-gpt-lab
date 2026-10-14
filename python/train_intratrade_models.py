@@ -64,7 +64,19 @@ def _join(snapshot_path: Path, targets_path: Path) -> pd.DataFrame:
                            how="inner", validate="one_to_one")
 
 
+def _purge_training_groups(frame: pd.DataFrame, boundary: int) -> pd.DataFrame:
+    """Keep a signal only if every label in that training group ends in the past."""
+    if 'exit_time_msc' not in frame:
+        raise ValueError('Temporal training requires independently observed label exit times')
+    exits = pd.to_numeric(frame['exit_time_msc'], errors='coerce')
+    if exits.isna().any():
+        raise ValueError('Temporal training label horizons are missing')
+    last = exits.groupby(frame.signal_id).transform('max')
+    return frame.loc[last < boundary].copy()
+
+
 def _temporal_group_folds(frame: pd.DataFrame, n_splits: int = 3):
+    frame = frame.reset_index(drop=True)
     signals = (frame[["signal_id", "signal_time_msc"]].drop_duplicates("signal_id")
                .sort_values(["signal_time_msc", "signal_id"], kind="stable").reset_index(drop=True))
     if len(signals) < n_splits + 2:
@@ -75,8 +87,12 @@ def _temporal_group_folds(frame: pd.DataFrame, n_splits: int = 3):
         train_ids, test_ids = set(groups[train_idx]), set(groups[test_idx])
         if train_ids & test_ids:
             raise AssertionError("Temporal calibration split crosses a signal")
-        tr = np.flatnonzero(frame.signal_id.isin(train_ids).to_numpy())
+        boundary = int(signals.iloc[test_idx].signal_time_msc.min())
+        eligible = _purge_training_groups(frame[frame.signal_id.isin(train_ids)], boundary)
+        tr = np.flatnonzero(frame.index.isin(eligible.index))
         te = np.flatnonzero(frame.signal_id.isin(test_ids).to_numpy())
+        if not len(tr) or not len(te):
+            raise ValueError('Temporal calibration fold is empty after label-horizon purging')
         folds.append((tr, te))
     return folds
 

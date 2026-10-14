@@ -16,10 +16,10 @@ from sklearn.preprocessing import StandardScaler
 
 try:
     from .parquet_io import read_parquet
-    from .train_intratrade_models import FEATURES, _performance
+    from .train_intratrade_models import FEATURES, _performance, _purge_training_groups
 except ImportError:
     from parquet_io import read_parquet
-    from train_intratrade_models import FEATURES, _performance
+    from train_intratrade_models import FEATURES, _performance, _purge_training_groups
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -44,14 +44,14 @@ def walk_forward(train_path: Path, validation_path: Path, targets_path: Path, ou
         raise ValueError("Not enough validation signals for temporal folds")
     splitter = TimeSeriesSplit(n_splits=4)
     fold_results = []
-    prior_validation_ids: set[str] = set()
-    base_ids = set(train.signal_id.astype(str))
     for fold_id, (train_ix, test_ix) in enumerate(splitter.split(signals), 1):
-        fold_train_ids = prior_validation_ids | base_ids
+        fold_train_ids = set(signals.iloc[train_ix].signal_id.astype(str))
         test_ids = set(signals.iloc[test_ix].signal_id.astype(str))
-        fold_train = pd.concat([train, validation[validation.signal_id.astype(str).isin(prior_validation_ids)]],
+        fold_train = pd.concat([train, validation[validation.signal_id.astype(str).isin(fold_train_ids)]],
                                ignore_index=True)
         fold_test = validation[validation.signal_id.astype(str).isin(test_ids)].copy()
+        before_purge = len(fold_train)
+        fold_train = _purge_training_groups(fold_train, int(fold_test.signal_time_msc.min()))
         y_train = pd.to_numeric(fold_train.reversal_event).astype(int)
         y_test = pd.to_numeric(fold_test.reversal_event).astype(int)
         if y_train.nunique() < 2 or y_test.nunique() < 2:
@@ -77,7 +77,7 @@ def walk_forward(train_path: Path, validation_path: Path, targets_path: Path, ou
                       "bar3_early_exit_if_reversal_ge_0_7": _performance(candidate, bar3.signal_time_msc),
                       "final_test_accessed": False}
         fold_results.append(result)
-        prior_validation_ids.update(set(signals.iloc[test_ix].signal_id.astype(str)))
+        result['purged_training_snapshots'] = before_purge - len(fold_train)
     out.mkdir(parents=True, exist_ok=True)
     result = {"status": "EXPANDING_TRAIN_VALIDATION_WALK_FORWARD", "final_test_accessed": False,
               "random_shuffle": False, "features": features, "threshold": 0.7,

@@ -4,7 +4,7 @@ import unittest
 
 import pandas as pd
 
-from python.train_intratrade_models import FEATURES, _policy_report, _temporal_group_folds
+from python.train_intratrade_models import FEATURES, _policy_report, _temporal_group_folds, _purge_training_groups
 
 
 class IntratradeModelSafetyTests(unittest.TestCase):
@@ -20,7 +20,7 @@ class IntratradeModelSafetyTests(unittest.TestCase):
         for signal in range(20):
             for bar in (1, 3, 5):
                 rows.append({"signal_id": f"s{signal}", "signal_time_msc": signal,
-                             "snapshot_bar": bar})
+                             "snapshot_bar": bar, "exit_time_msc": signal + 1})
         frame = pd.DataFrame(rows)
         for train_idx, test_idx in _temporal_group_folds(frame):
             train_ids = set(frame.iloc[train_idx].signal_id)
@@ -28,6 +28,15 @@ class IntratradeModelSafetyTests(unittest.TestCase):
             self.assertFalse(train_ids & test_ids)
             self.assertLess(frame.iloc[train_idx].signal_time_msc.max(),
                             frame.iloc[test_idx].signal_time_msc.min())
+            self.assertLess(frame.iloc[train_idx].exit_time_msc.max(),
+                            frame.iloc[test_idx].signal_time_msc.min())
+
+    def test_purging_removes_entire_signal_with_overlapping_label(self):
+        frame = pd.DataFrame({'signal_id': ['a', 'a', 'b'], 'exit_time_msc': [5, 10, 8]})
+        result = _purge_training_groups(frame, 10)
+        self.assertEqual(result.signal_id.tolist(), ['b'])
+        with self.assertRaisesRegex(ValueError, 'exit times'):
+            _purge_training_groups(frame.drop(columns='exit_time_msc'), 10)
 
     def test_policy_report_freezes_bar_and_does_not_simulate_reverse(self):
         frame = pd.DataFrame([

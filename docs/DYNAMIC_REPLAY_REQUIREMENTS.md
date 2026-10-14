@@ -56,3 +56,35 @@ for this new version; do not overwrite accepted schema 2.0 blocks.
 Do not freeze or validate dynamic policies until this gate passes. Existing
 intra-trade prototype hypothesis support checks are not a substitute for the
 project's bootstrap, multiplicity, walk-forward and robustness gates.
+
+## Data-quality exclusions declared before new validation
+
+The accepted December 2023 log reports real ticks discarded for 1,230 of 9,635
+minute bars, with generated-tick substitution. This is HIGH severity for path
+generalization. Do not infer raw-tick microstructure or sub-minute execution
+advantages from a block with any reported generated-tick substitution. Keep
+its evidence and disclose it; do not drop individual losing observations.
+Any coarse bar-policy analysis must retain an explicitly labeled synthetic-tick
+sensitivity report and cannot claim verified real-market execution fidelity.
+Apply this rule consistently to every year, before inspecting policy outcomes.
+
+Real volume is zero throughout accepted December snapshots. Until verified
+nonzero trade-volume coverage exists, exclude real-trade-volume hypothesis
+families; tick activity and relative tick volume must retain their actual names.
+Unavailable profile/HA features use an explicit missing policy frozen before
+validation, never outcome-dependent imputation.
+
+## Preparatory code, not accepted replay evidence
+
+`python/quote_replay.py` is an experimental kernel with synthetic fixtures for
+strictly post-cutoff execution, bid/ask spread, gap SL, fixed TP, time-exit
+precedence, censoring and protected-boundary rejection. It has no dataset or
+promotion CLI and does not make the missing production trajectory available.
+It supports HOLD/EXIT only, requires independently validated ordered coverage,
+and must pass baseline parity on actual exports before policy evaluation.
+Execution-delay, spread/slippage stress and missing-quote policies must be
+frozen before validation. No candidate can be inferred from its unit tests.
+
+Temporal calibration and walk-forward training now purge complete signal groups
+whose observed label horizons reach the next fold. Calibration folds with no
+remaining training support fail rather than silently leak future labels.
