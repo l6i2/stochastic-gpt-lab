@@ -9,9 +9,20 @@ from controller.compile_runner import ea_path, sha256
 from controller.tester_runner import classify_log
 from controller.artifact_collector import find_artifacts
 from controller.history_orchestrator import plan
+from controller.profiles import BASE_EA, BAR_EA, profile
 
 
 class ControllerSafetyTests(unittest.TestCase):
+    def test_bar_export_is_explicitly_allowed_and_isolates_evidence(self):
+        self.assertNotEqual(profile(BASE_EA)['namespace'], profile(BAR_EA)['namespace'])
+        self.assertIn('bar_execution_quotes.csv', profile(BAR_EA)['outputs'])
+        self.assertNotIn('ExecutionQuoteOutputFile', preset('test', BASE_EA))
+        self.assertEqual(preset('test', BAR_EA)['ExecutionQuoteOutputFile'], 'test_bar_execution_quotes.csv')
+        configured = config('2024-01-01', '2024-01-31', 'test.set', 'report', ea=BAR_EA)
+        self.assertIn('Expert=StochasticBarDecisionResearch\\StochasticBarDecisionResearchEA', configured)
+        with self.assertRaises(RuntimeError):
+            profile('unregistered')
+
     def test_dates_and_crossing(self):
         self.assertTrue(is_train_range('2024-01-01', '2024-01-31'))
         self.assertTrue(is_validation_range('2025-09-01', '2025-09-30'))
@@ -54,6 +65,9 @@ class ControllerSafetyTests(unittest.TestCase):
                 (root / ('old_' + name)).write_text('old')
             self.assertIsNone(find_artifacts(environment, 'new', 0))
             self.assertIsNotNone(find_artifacts(environment, 'old', 0))
+            self.assertIsNone(find_artifacts(environment, 'old', 0, profile(BAR_EA)['outputs']))
+            (root/'old_bar_execution_quotes.csv').write_text('separate execution evidence')
+            self.assertIsNotNone(find_artifacts(environment, 'old', 0, profile(BAR_EA)['outputs']))
             self.assertIsNone(find_artifacts(environment, 'old', 9999999999))
             self.assertEqual(sha256(root / 'old_stochastic_events.csv'), hashlib.sha256(b'old').hexdigest())
 

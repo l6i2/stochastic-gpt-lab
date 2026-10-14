@@ -9,11 +9,11 @@ OUTPUTS = ('stochastic_events.csv', 'stochastic_events.csv.audit.json',
            'intratrade_snapshots.csv.audit.json')
 
 
-def find_artifacts(environment, run_id, started):
+def find_artifacts(environment, run_id, started, outputs=OUTPUTS):
     matches = []
     for folder in environment['TESTER_AGENT_FOLDERS']:
         files = Path(folder) / 'MQL5/Files'
-        paths = [files / f'{run_id}_{name}' for name in OUTPUTS]
+        paths = [files / f'{run_id}_{name}' for name in outputs]
         if all(p.is_file() and p.stat().st_mtime >= started - 2 for p in paths):
             matches.append(paths)
     if len(matches) > 1:

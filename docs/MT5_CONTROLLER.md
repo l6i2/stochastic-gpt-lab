@@ -1,5 +1,13 @@
 # Local MT5 controller
 
+Versioned exporter preparation: `--ea StochasticBarDecisionResearchEA` is an
+explicit allowlisted research profile with separate `outputs/bar_controller`
+evidence. Its collector requires the additional execution-quote table. The
+default schema 2 profile retains `outputs/controller`; existing PASS blocks are
+not converted or overwritten. Versioned postprocess currently fails closed
+until its separate builder is accepted. No prepared schema 3 source is deployed
+or causally accepted merely by selecting this profile.
+
 Run from this worktree with `.venv\Scripts\python.exe -m controller.controller status`.
 Dependencies: psutil, MetaTrader5, and the project's research requirements.
 The system Python 3.8 does not have the project dependencies; use the worktree venv.

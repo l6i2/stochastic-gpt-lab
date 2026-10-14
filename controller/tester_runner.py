@@ -17,10 +17,10 @@ def run(start, end, ea='StochasticIntratradeResearchEA', symbol='US30Cash', time
     return run_cold(start, end, ea, symbol, timeout)
 
 
-def recover(run_id):
+def recover(run_id, ea='StochasticIntratradeResearchEA'):
     from .cold_start import monitor_cold
     from .validation import validate_run
-    record = monitor_cold(run_id)
+    record = monitor_cold(run_id, ea=ea)
     if record['tester_status'] != 'PASS':
         raise RuntimeError('TESTER_LAUNCH: this run has not passed')
-    return validate_run(run_id)
+    return validate_run(run_id, ea=ea)

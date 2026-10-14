@@ -3,6 +3,7 @@ from datetime import datetime, timedelta, timezone
 from .artifact_collector import atomic_json
 from .safety_gate import ROOT, boundaries, assert_research_range_allowed
 from .tester_config import tester_end
+from .profiles import BASE_EA, profile
 
 
 def plan():
@@ -23,10 +24,12 @@ def plan():
     return blocks
 
 
-def history(resume=False, timeout=3600):
+def history(resume=False, timeout=3600, ea=BASE_EA):
     from .tester_runner import run
     from .validation import validate_run
-    checkpoint = ROOT / 'outputs/controller/checkpoints/history_state.json'
+    selected = profile(ea)
+    output = ROOT / 'outputs' / selected['namespace']
+    checkpoint = output / 'checkpoints/history_state.json'
     checkpoint.parent.mkdir(parents=True, exist_ok=True)
     blocks = plan()
     if checkpoint.exists():
@@ -37,7 +40,7 @@ def history(resume=False, timeout=3600):
         blocks = saved['blocks']
     # Only a complete smoke acceptance can open the historical execution path.
     smokes = []
-    for path in (ROOT / 'outputs/controller/runs').glob('r*/run_manifest.json'):
+    for path in (output / 'runs').glob('r*/run_manifest.json'):
         record = json.loads(path.read_text())
         if (record.get('from') == '2024-01-01' and record.get('to') == '2024-01-31'
                 and record.get('VALIDATION_STATUS') == 'PASS'
@@ -58,7 +61,7 @@ def history(resume=False, timeout=3600):
         try:
             # Reattach an interrupted monitor instead of starting a duplicate tester.
             interrupted=[]
-            for path in (ROOT/'outputs/controller/runs').glob('r*/run_manifest.json'):
+            for path in (output/'runs').glob('r*/run_manifest.json'):
                 item=json.loads(path.read_text())
                 if (item.get('from')==block['DATE_FROM'] and item.get('to')==block['DATE_TO']
                         and item.get('tester_status')=='RUNNING' and item.get('MT5_CLOSED_BEFORE_LAUNCH')):
@@ -66,14 +69,19 @@ def history(resume=False, timeout=3600):
             if interrupted:
                 from .cold_start import monitor_cold
                 item=max(interrupted,key=lambda r:r['start_time'])
-                record=monitor_cold(item['run_id'],timeout=timeout)
+                block['RUN_ID'] = item['run_id']
+                save()
+                record=monitor_cold(item['run_id'],timeout=timeout,ea=ea)
             else:
-                record = run(block['DATE_FROM'], block['DATE_TO'], timeout=timeout)
+                arguments = dict(timeout=timeout)
+                if ea != BASE_EA:
+                    arguments['ea'] = ea
+                record = run(block['DATE_FROM'], block['DATE_TO'], **arguments)
             block['RUN_ID'] = record['run_id']
             block['ARTIFACTS'] = list(record['artifact_hashes'])
             if record['tester_status'] != 'PASS':
                 raise RuntimeError('TESTER_LAUNCH: history block failed')
-            validation = validate_run(record['run_id'])
+            validation = validate_run(record['run_id'], ea=ea)
             block['VALIDATOR'] = validation
             if validation['VALIDATION_STATUS'] != 'PASS':
                 raise RuntimeError('VALIDATION: history block failed')

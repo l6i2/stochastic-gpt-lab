@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 from datetime import datetime, timezone
 from .mt5_env import status
+from .profiles import BASE_EA, profile
 
 
 def main():
@@ -23,9 +24,11 @@ def main():
         result = status()
     elif args.command == 'compile':
         from .compile_runner import compile_ea
-        run = Path(__file__).resolve().parents[1] / 'outputs/controller/runs' / (
+        run = Path(__file__).resolve().parents[1] / 'outputs' / profile(args.ea)['namespace'] / 'runs' / (
             'compile_' + datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%f'))
-        result = compile_ea(status(), run, args.ea)
+        environment = status()
+        result = compile_ea(environment, run, args.ea)
+        result['environment'] = environment
         (run / 'compile_manifest.json').write_text(json.dumps(result, indent=2))
     elif args.command == 'backtest':
         if not args.start or not args.end:
@@ -36,23 +39,25 @@ def main():
         if not args.run_id:
             parser.error('--run-id required')
         from .validation import validate_run
-        result = validate_run(args.run_id)
+        result = validate_run(args.run_id, args.ea)
     elif args.command == 'postprocess':
+        if args.ea != BASE_EA:
+            raise RuntimeError('VALIDATION: versioned bar master builder has not been accepted yet')
         from .postprocess import postprocess
         result = postprocess()
     elif args.command == 'logs':
         if not args.run_id or not args.run_id.replace('_', '').isalnum():
             parser.error('valid --run-id required')
-        folder = Path(__file__).resolve().parents[1] / 'outputs/controller/runs' / args.run_id
+        folder = Path(__file__).resolve().parents[1] / 'outputs' / profile(args.ea)['namespace'] / 'runs' / args.run_id
         result = {p.name: p.read_text(encoding='utf-8', errors='replace') for p in folder.glob('*validator.log')}
         result['manifest'] = json.loads((folder / 'run_manifest.json').read_text())
     else:
         if args.command == 'resume' and args.run_id:
             from .tester_runner import recover
-            result = recover(args.run_id)
+            result = recover(args.run_id, args.ea)
         else:
             from .history_orchestrator import history
-            result = history(resume=args.command == 'resume', timeout=args.timeout)
+            result = history(resume=args.command == 'resume', timeout=args.timeout, ea=args.ea)
     print(json.dumps(result, indent=2))
     return 1 if result.get('tester_status') == 'FAIL' or result.get('VALIDATION_STATUS') == 'FAIL' else 0
 

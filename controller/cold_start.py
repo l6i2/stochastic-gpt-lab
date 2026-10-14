@@ -16,19 +16,28 @@ from .compile_runner import EA, ea_path, sha256
 from .mt5_env import active_processes, read_origin
 from .safety_gate import ROOT, assert_research_range_allowed
 from .tester_config import config, preset, write_preset, tester_end
+from .profiles import PROFILES, profile
 
 
 def now():
     return datetime.now(timezone.utc).isoformat()
 
 
-def pinned_environment():
-    candidates = sorted((ROOT / 'outputs/controller/runs').glob('r*/run_manifest.json'), reverse=True)
+def pinned_environment(ea=EA):
+    profile(ea)
+    candidates = []
+    for selected in PROFILES.values():
+        root = ROOT/'outputs'/selected['namespace']/'runs'
+        candidates.extend(root.glob('r*/run_manifest.json'))
+        candidates.extend(root.glob('compile*/compile_manifest.json'))
+    candidates.sort(key=lambda p: p.stat().st_mtime, reverse=True)
     for path in candidates:
         record = json.loads(path.read_text())
+        if Path(record.get('ea_path', '')).stem != ea:
+            continue
         environment = record.get('environment', {})
         if environment.get('READ_ONLY_API_STATUS') == 'VERIFIED' and environment.get('XM_ACTIVE'):
-            source = ea_path(environment)
+            source = ea_path(environment, ea)
             if record.get('ea_hash') != sha256(source) or record.get('ex5_hash') != sha256(source.with_suffix('.ex5')):
                 continue
             data = Path(environment['DATA_FOLDER']).resolve()
@@ -90,16 +99,17 @@ def redact(text):
 
 def run_cold(start, end, ea=EA, symbol='US30Cash', timeout=1800, variant=1):
     assert_research_range_allowed(start, end)
-    if ea != EA or symbol != 'US30Cash' or variant not in (1, 2, 3):
+    selected = profile(ea)
+    if symbol != 'US30Cash' or variant not in (1, 2, 3):
         raise ValueError('Unsupported research launch')
     if active_processes():
         raise RuntimeError('TESTER_LAUNCH: cold start requires no running terminal')
-    environment, compiled = pinned_environment()
-    source = ea_path(environment)
+    environment, compiled = pinned_environment(ea)
+    source = ea_path(environment, ea)
     run_id = 'r' + datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S') + '_' + uuid.uuid4().hex[:8]
-    folder = ROOT / 'outputs/controller/runs' / run_id
+    folder = ROOT / 'outputs' / selected['namespace'] / 'runs' / run_id
     folder.mkdir(parents=True)
-    inputs = preset(run_id)
+    inputs = preset(run_id, ea)
     local_preset = folder / (run_id + '.set')
     write_preset(local_preset, inputs)
     profiles = [Path(environment['TESTER_PROFILES'])]
@@ -114,7 +124,7 @@ def run_cold(start, end, ea=EA, symbol='US30Cash', timeout=1800, variant=1):
     ini = folder / 'tester.ini'
     (Path(environment['DATA_FOLDER']) / 'reports/controller').mkdir(parents=True, exist_ok=True)
     content = '[Experts]\nAllowLiveTrading=0\nAllowDllImport=0\n' + config(
-        start, end, local_preset.name, 'reports\\controller\\' + run_id + '.htm')
+        start, end, local_preset.name, 'reports\\controller\\' + run_id + '.htm', ea=ea)
     content = content.replace('ShutdownTerminal=0', 'ShutdownTerminal=1')
     if variant == 3:
         content = content.replace('Expert=StochasticIntratradeResearch\\StochasticIntratradeResearchEA\n',
@@ -157,11 +167,11 @@ def run_cold(start, end, ea=EA, symbol='US30Cash', timeout=1800, variant=1):
             break
         time.sleep(2)
     text = '\n'.join(deltas.values())
-    paths = find_artifacts(environment, run_id, started)
+    paths = find_artifacts(environment, run_id, started, selected['outputs'])
     # Evidence must describe the dedicated expert, exact dates, real ticks and M5.
     evidence = dict(test_passed=bool(re.search(r'test passed', text, re.I)),
                     shutdown_finished=bool(re.search(r'shutdown finished', text, re.I)),
-                    expert=EA in text, symbol=symbol in text, timeframe='M5' in text,
+                    expert=ea in text, symbol=symbol in text, timeframe='M5' in text,
                     start=start.replace('-', '.') in text, end=tester_end(end) in text,
                     real_ticks=bool(re.search(r'real ticks|real tick', text, re.I)),
                     process_exited=process.poll() is not None, artifacts=bool(paths),
@@ -184,11 +194,12 @@ def run_cold(start, end, ea=EA, symbol='US30Cash', timeout=1800, variant=1):
     return manifest
 
 
-def monitor_cold(run_id, timeout=1800):
+def monitor_cold(run_id, timeout=1800, ea=EA):
     """Resume observation of an existing nonce after a monitor interruption."""
     if not run_id.replace('_','').isalnum():
         raise ValueError('Invalid run ID')
-    folder = ROOT / 'outputs/controller/runs' / run_id
+    selected = profile(ea)
+    folder = ROOT / 'outputs' / selected['namespace'] / 'runs' / run_id
     manifest = json.loads((folder / 'run_manifest.json').read_text())
     launch = json.loads((folder / 'launch.json').read_text())
     environment = manifest['environment']
@@ -211,10 +222,10 @@ def monitor_cold(run_id, timeout=1800):
         time.sleep(10)
     deltas = read_deltas(environment, previous)
     text = '\n'.join(deltas.values())
-    paths = find_artifacts(environment, run_id, started)
+    paths = find_artifacts(environment, run_id, started, selected['outputs'])
     evidence = dict(test_passed=bool(re.search(r'test passed', text, re.I)),
         shutdown_finished=bool(re.search(r'shutdown finished', text,re.I)),
-        expert=EA in text, symbol=manifest['symbol'] in text, timeframe='M5' in text,
+        expert=ea in text, symbol=manifest['symbol'] in text, timeframe='M5' in text,
         start=manifest['from'].replace('-','.') in text, end=manifest.get('tester_to_exclusive',manifest['to'].replace('-','.')) in text,
         real_ticks=bool(re.search(r'real ticks|real tick',text,re.I)),process_exited=not running(),artifacts=bool(paths))
     evidence['data_folder']=environment['DATA_FOLDER'].lower() in text.lower()

@@ -4,6 +4,7 @@ import subprocess
 from pathlib import Path
 from .mt5_env import require_active_environment
 from .safety_gate import assert_safe_source
+from .profiles import profile
 
 EA = 'StochasticIntratradeResearchEA'
 
@@ -18,10 +19,9 @@ def sha256(path):
 
 def ea_path(environment, ea=EA):
     require_active_environment(environment)
-    if ea != EA:
-        raise RuntimeError('SECURITY_GATE: only dedicated research EA allowed')
+    selected = profile(ea)
     root = Path(environment['DATA_FOLDER']).resolve() / 'MQL5'
-    source = root / 'Experts/StochasticIntratradeResearch' / (ea + '.mq5')
+    source = root / 'Experts' / selected['folder'] / (ea + '.mq5')
     source = source.resolve(strict=True)
     if not source.is_relative_to(root.resolve()):
         raise RuntimeError('SECURITY_GATE: EA outside active Data Folder')
@@ -69,7 +69,7 @@ def compile_ea(environment, run_dir, ea=EA):
         raise RuntimeError('MQL5_COMPILE: no compiler summary')
     errors, warnings = map(int, matches[-1])
     binary = source.with_suffix('.ex5')
-    passed = errors == 0 and binary.is_file() and binary.stat().st_mtime >= started - 2
+    passed = errors == 0 and warnings == 0 and binary.is_file() and binary.stat().st_mtime >= started - 2
     result = dict(COMPILE_STATUS='PASS' if passed else 'FAIL', ERRORS=errors, WARNINGS=warnings,
                   EX5_EXISTS=binary.is_file(), ea_path=str(source), ea_hash=sha256(source),
                   ex5_hash=sha256(binary) if binary.exists() else None, compile_log=str(log))

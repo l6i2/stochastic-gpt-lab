@@ -5,12 +5,14 @@ from pathlib import Path
 from .compile_runner import sha256
 from .artifact_collector import write_manifest
 from .safety_gate import ROOT, assert_research_range_allowed
+from .profiles import BASE_EA, profile
 
 
-def validate_run(run_id):
+def validate_run(run_id, ea=BASE_EA):
     if not run_id.replace('_', '').isalnum():
         raise ValueError('Invalid run ID')
-    folder = ROOT / 'outputs/controller/runs' / run_id
+    selected = profile(ea)
+    folder = ROOT / 'outputs' / selected['namespace'] / 'runs' / run_id
     manifest = json.loads((folder / 'run_manifest.json').read_text())
     assert_research_range_allowed(manifest['from'], manifest['to'])
     if manifest['tester_status'] != 'PASS':
@@ -30,6 +32,9 @@ def validate_run(run_id):
             '--split-manifest', str(ROOT / 'outputs/splits/split_manifest.json')],
     }
     result = {}
+    if selected['schema'] == '3.0':
+        commands['INTRATRADE_VALIDATOR'].extend([
+            '--execution-quotes', str(folder/(run_id+'_bar_execution_quotes.csv'))])
     for key, arguments in commands.items():
         process = subprocess.run([sys.executable, *arguments], cwd=ROOT, capture_output=True, text=True)
         (folder / (key.lower() + '.log')).write_text(process.stdout + process.stderr, encoding='utf-8')
@@ -37,10 +42,10 @@ def validate_run(run_id):
         if process.returncode:
             break
     result['CAUSALITY_STATUS'] = 'NOT_VERIFIED'
-    proof_path = ROOT / 'outputs/controller/checkpoints/causal_invariance.json'
+    proof_path = ROOT / 'outputs' / selected['namespace'] / 'checkpoints/causal_invariance.json'
     if proof_path.exists():
         proof = json.loads(proof_path.read_text())
-        proof_folder = ROOT / 'outputs/controller/causality' / proof['run_id']
+        proof_folder = ROOT / 'outputs' / selected['namespace'] / 'causality' / proof['run_id']
         hashes_match = all((ROOT/'mt5'/name).is_file() and sha256(ROOT/'mt5'/name)==expected
                            for name,expected in proof.get('producer_hashes',{}).items())
         artifacts_match = all((proof_folder/name).is_file() and sha256(proof_folder/name)==expected
