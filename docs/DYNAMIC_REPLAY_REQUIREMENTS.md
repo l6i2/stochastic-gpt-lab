@@ -24,7 +24,11 @@ must be excluded until a versioned, past-window feature has been tested.
 
 ## Required versioned extension
 
-Keep schema 2.0 evidence intact. A separate producer version must export:
+Keep schema 2.0 evidence intact. A separate producer version must first declare
+its policy class. A bar-boundary HOLD/EXIT-only class can use complete per-bar
+states, actual first-next-quote fills and frozen baseline exit events; it must
+not be presented as a tick-triggered or reversal simulation. The broader kernel
+requires an ordered quote stream. Required evidence for the broader class is:
 
 - Every completed-bar decision state while each baseline virtual trade is open,
   including bars beyond 50 through its frozen exit, with exact cutoff and

@@ -25,7 +25,8 @@ class IntratradeDatasetTests(unittest.TestCase):
                     "signal_time_msc": "1000", "original_signal": "BUY", "virtual_mode": "FOLLOW",
                     "virtual_side": "BUY", "entry_time_msc": "1500", "snapshot_bar": "1",
                     "snapshot_time_msc": "2000", "feature_max_time_msc": "2000",
-                    "mark_time_msc": "1999", "bars_open": "1"})
+                    "mark_time_msc": "1999", "bars_open": "1", "current_ask": "2",
+                    "distance_to_tp": "239", "distance_to_sl": "181"})
         with self.snapshots.open("w", newline="", encoding="utf-8") as stream:
             writer = csv.DictWriter(stream, fieldnames=self.feature_fields)
             writer.writeheader()
@@ -99,6 +100,31 @@ class IntratradeDatasetTests(unittest.TestCase):
         self.audit.write_text(json.dumps(data), encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "Unsafe"):
             validate(self.snapshots, self.audit, self.targets)
+
+    def test_nan_cannot_bypass_execution_bounds(self):
+        with self.snapshots.open(newline='') as stream:
+            rows = list(csv.DictReader(stream))
+        rows[0]['current_mfe_so_far'] = 'nan'
+        with self.snapshots.open('w', newline='') as stream:
+            writer = csv.DictWriter(stream, fieldnames=self.feature_fields)
+            writer.writeheader(); writer.writerows(rows)
+        with self.assertRaisesRegex(ValueError, 'Nonfinite'):
+            validate(self.snapshots, self.audit, self.targets)
+
+    def test_every_bar_schema_requires_complete_post_decision_execution_quotes(self):
+        data = json.loads(self.audit.read_text())
+        data.update(schema_version='3.0', snapshot_schedule=','.join(map(str, range(1, 101))))
+        self.audit.write_text(json.dumps(data))
+        with self.assertRaisesRegex(ValueError, 'separate execution quote'):
+            validate(self.snapshots, self.audit, self.targets)
+        execution = self.root/'execution.csv'
+        execution.write_text('snapshot_id,signal_id,virtual_mode,snapshot_bar,decision_cutoff_msc,execution_time_msc,execution_bid,execution_ask\n'
+                             'sig_FOLLOW_1,sig,FOLLOW,1,2000,2001,1,2\n')
+        result = validate(self.snapshots, self.audit, self.targets, execution_quotes_csv=execution)
+        self.assertEqual(result['execution_quote_rows'], 1)
+        execution.write_text(execution.read_text().replace(',2001,', ',2000,'))
+        with self.assertRaisesRegex(ValueError, 'Noncausal'):
+            validate(self.snapshots, self.audit, self.targets, execution_quotes_csv=execution)
 
 
 if __name__ == "__main__":

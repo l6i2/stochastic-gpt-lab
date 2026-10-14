@@ -19,6 +19,11 @@ POSTPROCESS: pending all-block acceptance. CONTROLLER_C1_C5_COMPLETE not reached
 Quality audit implemented and tested; dynamic replay requirements documented
 before new validation. Twenty focused existing tests and two new audit tests pass.
 
+Preparatory every-bar producer: versioned derivation built outside the deployed
+EA, clean 0-error/0-warning compile. Hashes and explicit NOT_DEPLOYED/NOT_RUN
+gates are in `BAR_REPLAY_PREPARATION.json`. This is not a new causal acceptance
+or an accepted historical dataset. The current C5 tester still uses schema 2.0.
+
 FINAL_TEST=LOCKED; LIVE_TRADING=false; DEMO_EXECUTOR=NOT_IMPLEMENTED.
 
 ## Historical diagnostic (superseded)

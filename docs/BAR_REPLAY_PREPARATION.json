@@ -1,0 +1,17 @@
+{
+  "status": "PREPARED_NOT_DEPLOYED",
+  "schema_version": "3.0",
+  "base_sha256": "981a895d497be2f6bf3bf164dbefc39b4e63e1090fd27f3fda3ba12d0d3d08f1",
+  "producer_sha256": "6d85fcdd145f2c6b8f7f52f67e371417aa273d558ecc3c66d5fb5f690b0a7029",
+  "policy_class": "M5_BAR_BOUNDARY_HOLD_EXIT_ONLY",
+  "FINAL_TEST": "LOCKED",
+  "LIVE_TRADING": false,
+  "execution_quotes": "SEPARATE_FUTURE_EXECUTION_TABLE_NEVER_FEATURES",
+  "legacy_future_excursion_labels": "NOT_ELIGIBLE_FOR_PROMOTION",
+  "compile": "PASS_0_ERRORS_0_WARNINGS",
+  "causal_invariance": "NOT_RUN",
+  "baseline_parity": "NOT_RUN",
+  "compile_log_sha256": "124d55c2dec78af1680f7c54f59b60c580885afeb37f6f31c50cf8556a8f1f7e",
+  "execution_status": "NOT_DEPLOYED_NOT_RUN",
+  "baseline_strategy_changed": false
+}

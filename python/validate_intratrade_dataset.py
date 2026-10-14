@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import math
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -23,24 +24,28 @@ REQUIRED_TARGET_COLUMNS = {
     "future_pnl_to_exit", "future_max_favorable_move", "future_max_adverse_move",
     "profit_erosion", "recovery_after_drawdown", "continuation_score", "reversal_event",
 }
-FORBIDDEN_FEATURE_TOKENS = ("future_", "final_", "exit_", "target", "label", "reversal_event")
+FORBIDDEN_FEATURE_TOKENS = ("future_", "final_", "exit_", "execution_", "target", "label", "reversal_event")
 
 
 def validate(snapshot_csv: Path, audit_path: Path | None = None,
              targets_csv: Path | None = None, train_parquet: Path | None = None,
              validation_parquet: Path | None = None, events_csv: Path | None = None,
-             split_manifest: Path | None = None) -> dict:
+             split_manifest: Path | None = None, execution_quotes_csv: Path | None = None) -> dict:
     snapshot_csv = snapshot_csv.resolve()
     audit_path = (audit_path or Path(str(snapshot_csv) + ".audit.json")).resolve()
     targets_csv = targets_csv.resolve() if targets_csv else None
     audit = json.loads(audit_path.read_text(encoding="utf-8"))
-    if audit.get("schema_version") != "2.0":
-        raise ValueError("Expected intratrade schema_version 2.0")
+    schemas = {'2.0': SCHEDULE, '3.0': tuple(range(1, 101))}
+    schedule = schemas.get(audit.get('schema_version'))
+    if schedule is None:
+        raise ValueError("Expected intratrade schema_version 2.0 or 3.0")
+    if audit['schema_version'] == '3.0' and execution_quotes_csv is None:
+        raise ValueError('Schema 3.0 requires a separate execution quote table')
     if audit.get("LIVE_TRADING") is not False or audit.get("optimization") != "OFF":
         raise ValueError("Unsafe source manifest: LIVE_TRADING must be false and optimization OFF")
     if audit.get("aborted") is not False:
         raise ValueError("Snapshot run is aborted or incomplete")
-    if tuple(map(int, audit.get("snapshot_schedule", "").split(","))) != SCHEDULE:
+    if tuple(map(int, audit.get("snapshot_schedule", "").split(","))) != schedule:
         raise ValueError("Snapshot schedule does not match the frozen schedule")
 
     event_rows = {}
@@ -103,7 +108,7 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
                         or int(row["signal_time_msc"]) != int(event["signal_time_msc"])):
                     raise ValueError(f"Snapshot/event mapping mismatch in {snapshot_id}")
             bar = int(row["snapshot_bar"])
-            if bar not in SCHEDULE or int(row["bars_open"]) != bar:
+            if bar not in schedule or int(row["bars_open"]) != bar:
                 raise ValueError(f"Snapshot at unscheduled bar offset: {snapshot_id}")
             snapshot_time = int(row["snapshot_time_msc"])
             feature_max = int(row["feature_max_time_msc"])
@@ -128,9 +133,20 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
             previous = last_by_trade.get(key)
             if previous and (bar <= previous[0] or snapshot_time <= previous[1]):
                 raise ValueError(f"Non-monotone snapshots for {key}")
+            if audit['schema_version'] == '3.0' and bar != (previous[0] + 1 if previous else 1):
+                raise ValueError(f"Incomplete every-bar decision trajectory for {key}")
             last_by_trade[key] = (bar, snapshot_time)
             pnl = float(row["current_unrealized_pnl"])
             mfe, mae = float(row["current_mfe_so_far"]), float(row["current_mae_so_far"])
+            numbers = {name: float(row[name]) for name in (
+                'current_bid', 'current_ask', 'spread', 'distance_to_tp', 'distance_to_sl')}
+            if not all(math.isfinite(value) for value in (pnl, mfe, mae, *numbers.values())):
+                raise ValueError(f"Nonfinite execution state in {snapshot_id}")
+            if (numbers['current_bid'] <= 0 or numbers['current_ask'] < numbers['current_bid']
+                    or abs(numbers['spread'] - (numbers['current_ask'] - numbers['current_bid'])) > 1e-8
+                    or abs(numbers['distance_to_tp'] - (240.0 - pnl)) > 1e-8
+                    or abs(numbers['distance_to_sl'] - (180.0 + pnl)) > 1e-8):
+                raise ValueError(f"Quote or frozen barrier distance mismatch in {snapshot_id}")
             if mfe < max(0.0, pnl) - 1e-8 or mae < max(0.0, -pnl) - 1e-8:
                 raise ValueError(f"Current MFE/MAE does not bound current PnL in {snapshot_id}")
             previous_excursion = excursions_by_trade.get(key)
@@ -141,7 +157,7 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
             mode_counts[mode] += 1
             signal_side_counts[original] += 1
             virtual_side_counts[side] += 1
-            target_refs[snapshot_id] = (signal_id, mode, snapshot_time)
+            target_refs[snapshot_id] = (signal_id, mode, snapshot_time, bar)
             snapshot_times[snapshot_id] = snapshot_time
             pairs.add(pair)
             seen_modes[signal_id].add(mode)
@@ -174,7 +190,7 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
                     raise ValueError(f"Target exit is not after snapshot: {sid}")
                 if row["label_status"] != "COMPLETE":
                     raise ValueError(f"Unexpected target status for {sid}")
-                signal_id, mode, _ = target_refs[sid]
+                signal_id, mode, _, _ = target_refs[sid]
                 if events_csv is not None:
                     event = event_rows[signal_id]
                     prefix = "follow_" if mode == "FOLLOW" else "invert_"
@@ -187,7 +203,7 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
     if events_csv is not None:
         missing_targets = set(target_refs) - target_ids
         for sid in missing_targets:
-            signal_id, mode, _ = target_refs[sid]
+            signal_id, mode, _, _ = target_refs[sid]
             prefix = "follow_" if mode == "FOLLOW" else "invert_"
             if event_rows[signal_id][prefix + "exit_reason"] != "END_OF_DATA":
                 raise ValueError(f"Open-at-snapshot row has no target but terminal trade is not censored: {sid}")
@@ -234,9 +250,44 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
         split_counts = {"TRAIN": sum(s in train_ids for s in seen_modes),
                         "DISCOVERY_VALIDATION": sum(s in validation_ids for s in seen_modes)}
 
+    execution_count = 0
+    if audit['schema_version'] == '3.0' and events_csv is not None:
+        for signal_id, event in event_rows.items():
+            for mode in ('FOLLOW', 'INVERT'):
+                prefix = mode.lower() + '_'
+                bars = int(event[prefix + 'bars_in_trade'])
+                last_bar = last_by_trade.get((signal_id, mode), (0, 0))[0]
+                if not max(0, bars - 1) <= last_bar <= min(100, bars):
+                    raise ValueError('Every-bar decision coverage disagrees with baseline lifetime')
+                if event[prefix + 'exit_reason'] == 'TIME_EXIT' and last_bar != 100:
+                    raise ValueError('TIME_EXIT trade lacks all 100 decision states')
+    if execution_quotes_csv is not None:
+        execution_ids = set()
+        with execution_quotes_csv.open(encoding='utf-8-sig', newline='') as stream:
+            for row in csv.DictReader(stream):
+                sid = row['snapshot_id']
+                ref = target_refs.get(sid)
+                if sid in execution_ids or ref is None:
+                    raise ValueError('Duplicate or unknown execution quote snapshot ID')
+                signal, mode, cutoff, bar = ref
+                bid, ask = float(row['execution_bid']), float(row['execution_ask'])
+                fill_time = int(row['execution_time_msc'])
+                if (row['signal_id'] != signal or row['virtual_mode'] != mode
+                        or int(row['snapshot_bar']) != bar
+                        or int(row['decision_cutoff_msc']) != cutoff or fill_time <= cutoff
+                        or not math.isfinite(bid) or not math.isfinite(ask) or bid <= 0 or ask < bid):
+                    raise ValueError('Noncausal or inconsistent execution quote')
+                if train_parquet and validation_parquet and fill_time >= final_start:
+                    raise ValueError('Execution quote reaches protected FINAL_TEST boundary')
+                execution_ids.add(sid)
+        if execution_ids != set(target_refs):
+            raise ValueError('Execution quote coverage is incomplete')
+        execution_count = len(execution_ids)
+
     membership_verified = bool(train_parquet and validation_parquet and events_csv)
     return {"status": "PASS", "snapshot_rows": row_count, "target_rows": target_count,
             "unique_signals": len(seen_modes), "schema_version": audit["schema_version"],
+            "execution_quote_rows": execution_count,
             "split_signals": split_counts, "split_membership_verified": membership_verified,
             "purged_signals_excluded_from_splits": purged_signals,
             "signals": int(audit["signals"]), "buy_signals": event_sides["BUY"],
@@ -265,10 +316,11 @@ def main() -> int:
                         help="same-block stochastic_events.csv; required with split membership")
     parser.add_argument("--split-manifest", type=Path,
                         help="split boundaries manifest (defaults to outputs/splits/split_manifest.json)")
+    parser.add_argument('--execution-quotes', type=Path)
     args = parser.parse_args()
     try:
         result = validate(args.snapshots, args.audit, args.targets, args.train, args.validation,
-                          args.events, args.split_manifest)
+                          args.events, args.split_manifest, args.execution_quotes)
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"INTRATRADE DATASET INVALID: {exc}", file=sys.stderr)
         return 1

@@ -18,6 +18,10 @@ policy research. No new hypotheses or models have been validated.
 FINAL_TEST=LOCKED; LIVE_TRADING=false; DEMO disabled; no candidate promoted.
 The master objective does not guarantee that a credible candidate exists.
 
+Preparatory schema 3 code and compile evidence are recorded in
+`BAR_REPLAY_PREPARATION.json`; no rollout or research result is claimed.
+Calibration/walk-forward helpers now purge label horizons across folds.
+
 ## FASE 0 — baseline audit: COMPLETE
 
 Repository: `l6i2/stochastic-gpt-lab`, isolated branch `research/full-pipeline`, audit baseline `d8f639578a409acd941ec35b6d5349a66d7007c4`. The pre-existing deletion of `mt5/StochasticResearchEA.mq5` in the user's original worktree remains untouched. No files in `asistente-trader-ia` were accessed or changed.

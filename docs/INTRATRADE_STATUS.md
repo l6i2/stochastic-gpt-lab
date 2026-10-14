@@ -21,6 +21,14 @@ using the prototype support-only hypothesis checks.
 
 FINAL_TEST=LOCKED; LIVE_TRADING=false; DEMO disabled; no candidate promoted.
 
+Preparation while C5 runs: `build_bar_replay_producer` derives a separate schema
+3.0 producer with every-bar states and a separate first-post-decision quote
+table. Baseline execution functions are preserved; preview compilation is 0/0.
+It has not been deployed, causally accepted or used for historical exports.
+The schema 3 validator requires contiguous bar coverage, baseline-lifetime
+agreement and complete, finite, strictly post-cutoff execution rows. None of
+this makes the incomplete C5 history or dynamic master ready.
+
 Date: 2026-10-13. Branch: `research/full-pipeline`. Current remote base: `fc178e7577f2c372194fedd295805cff3932440a`.
 
 ## INTRA_A — instrumentation
