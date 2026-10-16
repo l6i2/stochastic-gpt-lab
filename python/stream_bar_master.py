@@ -8,13 +8,18 @@ from pathlib import Path
 
 import pandas as pd
 
-from .membership_contract import digest
-from .parquet_io import read_parquet
-from .validate_intratrade_dataset import REQUIRED_TARGET_COLUMNS, validate
+try:
+    from .membership_contract import digest
+    from .parquet_io import read_parquet
+    from .validate_intratrade_dataset import REQUIRED_TARGET_COLUMNS, validate
+except ImportError:
+    from membership_contract import digest
+    from parquet_io import read_parquet
+    from validate_intratrade_dataset import REQUIRED_TARGET_COLUMNS, validate
 
 ROOT = Path(__file__).resolve().parents[1]
 STRINGS = {'snapshot_id', 'signal_id', 'symbol', 'original_signal', 'virtual_mode',
-           'virtual_side', 'stoch_zone', 'ha_status', 'server_time', 'UTC_time', 'NY_time'}
+           'virtual_side', 'stoch_zone', 'ha_status', 'session', 'server_time', 'UTC_time', 'NY_time'}
 
 
 def feature_dtypes(columns):
@@ -51,12 +56,18 @@ def copy_allowed_rows(paths, destination, allowed, empty_columns=()):
     return count
 
 
-def build(blocks, out, train_path, validation_path, split_manifest, chunksize=5000):
+def build(blocks, out, train_path, validation_path, split_manifest, chunksize=5000,schema_version='3.0'):
+    if schema_version not in ('2.0','3.0'):
+        raise ValueError('Unsupported streaming schema')
     blocks = list(map(Path, blocks))
     out = Path(out)
     if out.exists() and any(out.iterdir()):
         raise ValueError('Refusing to overwrite an existing streaming build')
     out.mkdir(parents=True, exist_ok=True)
+    partition_root=out if schema_version=='3.0' else out.parent/'splits'
+    partition_root.mkdir(parents=True,exist_ok=True)
+    if any((partition_root/name).exists() for name in ('train.parquet','validation.parquet')):
+        raise ValueError('Refusing to reuse existing partition outputs')
     split = json.loads(Path(split_manifest).read_text())
     final = int(split['boundaries']['final_test_start_signal_time_msc'])
     for field, path in (('train_parquet_sha256', train_path), ('validation_parquet_sha256', validation_path)):
@@ -81,14 +92,17 @@ def build(blocks, out, train_path, validation_path, split_manifest, chunksize=50
         for block in blocks:
             metadata = json.loads((block/'manifest.json').read_text())
             end = datetime.fromisoformat(metadata['period'][1]).replace(tzinfo=timezone.utc)+timedelta(days=1)
-            if (metadata.get('producer_schema') != '3.0' or int(metadata['max_signal_time_msc']) >= final
+            if (metadata.get('producer_schema') != schema_version or int(metadata['max_signal_time_msc']) >= final
                     or int(end.timestamp()*1000) > final or metadata.get('LIVE_TRADING') is not False
                     or metadata.get('optimization') != 'OFF' or metadata.get('symbol') != 'US30Cash'
                     or metadata.get('timeframe') != 'M5'):
                 raise ValueError('Unaccepted producer version or protected range')
-            for name in ('stochastic_events.csv', 'stochastic_events.csv.audit.json',
+            required=('stochastic_events.csv', 'stochastic_events.csv.audit.json',
                          'intratrade_snapshots.csv', 'intratrade_snapshots.csv.audit.json',
-                         'intratrade_snapshot_targets.csv', 'bar_execution_quotes.csv'):
+                         'intratrade_snapshot_targets.csv')
+            if schema_version=='3.0':
+                required+=('bar_execution_quotes.csv','bar_quote_path.bin','bar_trade_index.csv')
+            for name in required:
                 expected = metadata['source_artifact_hashes'][metadata['run_id']+'_'+name]
                 if digest(block/name) != expected:
                     raise ValueError('Accepted source hash changed')
@@ -96,7 +110,7 @@ def build(blocks, out, train_path, validation_path, split_manifest, chunksize=50
             audit = validate(snapshot, targets_csv=block/'intratrade_snapshot_targets.csv',
                              train_parquet=Path(train_path), validation_parquet=Path(validation_path),
                              events_csv=block/'stochastic_events.csv', split_manifest=Path(split_manifest),
-                             execution_quotes_csv=block/'bar_execution_quotes.csv')
+                             execution_quotes_csv=block/'bar_execution_quotes.csv' if schema_version=='3.0' else None)
             quarantine = set(audit['quarantined_signal_ids'])
             with snapshot.open(encoding='utf-8-sig', newline='') as stream:
                 columns = next(csv.reader(stream))
@@ -128,22 +142,38 @@ def build(blocks, out, train_path, validation_path, split_manifest, chunksize=50
                                               ('DISCOVERY_VALIDATION',validation_ids,'validation.parquet')):
                     partition = frame.loc[frame.signal_id.isin(ids)]
                     if len(partition):
-                        append_frame(partition, out/filename)
+                        append_frame(partition, partition_root/filename)
                         counts[label] += len(partition)
                         seen_signals[label].update(partition.signal_id)
                 counts['master'] += len(frame)
-            sources.append(dict(manifest_sha256=digest(block/'manifest.json'), validation=audit))
+            sources.append(dict(source_folder=str(block.relative_to(ROOT)), block=block.name,
+                                manifest_sha256=digest(block/'manifest.json'), validation=audit))
         if not counts['TRAIN'] or not counts['DISCOVERY_VALIDATION']:
             raise ValueError('Both inherited research partitions require observations')
         targets = copy_allowed_rows([Path(b)/'intratrade_snapshot_targets.csv' for b in blocks],
                                     out/'intratrade_targets.csv', allowed, sorted(REQUIRED_TARGET_COLUMNS))
-        fills = copy_allowed_rows([Path(b)/'bar_execution_quotes.csv' for b in blocks],
-                                  out/'bar_execution_quotes.csv', allowed)
-        if fills != counts['master']:
+        fills = (copy_allowed_rows([Path(b)/'bar_execution_quotes.csv' for b in blocks],
+                                  out/'bar_execution_quotes.csv', allowed) if schema_version=='3.0' else 0)
+        if schema_version=='3.0' and fills != counts['master']:
             raise ValueError('Execution coverage changed while building')
         event_count = copy_allowed_rows([Path(b)/'stochastic_events.csv' for b in blocks],
-                                        out/'all_allowed_events.csv', None)
-        manifest = dict(schema_version='3.0', dataset_version='bar_decision_master_v1',
+                                        out/'all_allowed_events.csv', allowed)
+        # Quote indices restart in each native block. Preserve their namespace;
+        # replay must never treat concatenated quote indices as a single tape.
+        if schema_version=='3.0':
+            assigned=set()
+            with (out/'signal_source_blocks.csv').open('w',newline='',encoding='utf-8') as target:
+                writer=csv.writer(target);writer.writerow(['signal_id','source_block'])
+                for block in blocks:
+                    with (block/'stochastic_events.csv').open(encoding='utf-8-sig',newline='') as stream:
+                        for row in csv.DictReader(stream):
+                            signal=row['signal_id']
+                            if signal not in allowed:
+                                continue
+                            if signal in assigned:
+                                raise ValueError('A signal belongs to multiple quote tapes')
+                            assigned.add(signal);writer.writerow([signal,block.name])
+        manifest = dict(schema_version=schema_version, dataset_version='intratrade_stream_master_'+schema_version,
                         status='BUILT_NOT_PROMOTED', FINAL_TEST='LOCKED', LIVE_TRADING=False,
                         final_test_accessed=False, split_membership_changed=False,
                         split_manifest_sha256=digest(split_manifest), rows=counts,
@@ -152,6 +182,13 @@ def build(blocks, out, train_path, validation_path, split_manifest, chunksize=50
                         row_order='producer decision-time chronology', chunksize=chunksize,
                         sources=sources, legacy_future_excursions='EXCLUDED_FROM_PROMOTION',
                         sha256={p.name:digest(p) for p in out.iterdir() if p.is_file()})
+        manifest.update(master_rows=counts['master'],train_rows=counts['TRAIN'],
+                        validation_rows=counts['DISCOVERY_VALIDATION'],target_rows=targets,
+                        train_signals=len(seen_signals['TRAIN']),validation_signals=len(seen_signals['DISCOVERY_VALIDATION']),
+                        build_method='BOUNDED_STREAM_SQLITE',
+                        purged_snapshot_rows=counts['purged'],quarantined_snapshot_rows=counts['quarantined'])
+        manifest['sha256'].update({name:digest(partition_root/name) for name in ('train.parquet','validation.parquet')})
+        (out/'intratrade_master_audit.json').write_text(json.dumps(manifest,indent=2)+'\n')
         (out/'intratrade_master_manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
         return manifest
     finally:

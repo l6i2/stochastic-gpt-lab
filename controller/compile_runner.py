@@ -60,8 +60,11 @@ def compile_ea(environment, run_dir, ea=EA):
     if log.exists():
         raise RuntimeError('MQL5_COMPILE: use a fresh run directory')
     started = __import__('time').time()
+    startup=subprocess.STARTUPINFO()
+    startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW
+    startup.wShowWindow=0
     subprocess.run([str(editor), '/compile:' + str(source), '/log:' + str(log.resolve())],
-                   timeout=180, check=False)
+                   timeout=600, check=False,startupinfo=startup)
     raw = log.read_bytes()
     text = raw.decode('utf-16' if raw.startswith(b'\xff\xfe') else 'utf-8-sig', errors='replace')
     matches = re.findall(r'(\d+) errors?,\s*(\d+) warnings?', text, re.I)

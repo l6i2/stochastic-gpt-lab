@@ -251,6 +251,14 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
         except ImportError:
             from membership_contract import quarantine_windows
         windows = quarantine_windows(quarantine_manifest, split_manifest) if quarantine_manifest.exists() else []
+        root=Path(__file__).resolve().parents[1]
+        censor_ids=set()
+        if split_manifest.resolve()==(root/'outputs/splits/split_manifest.json').resolve():
+            try:
+                from .censored_membership_contract import verified_ids
+            except ImportError:
+                from censored_membership_contract import verified_ids
+            censor_ids=verified_ids(root/'outputs/controller/checkpoints/censored_membership_quarantine_v1.json',split_manifest)
         if any(value >= final_start for value in snapshot_times.values()):
             raise ValueError('Snapshot state reaches protected FINAL_TEST boundary')
         cutoffs_by_signal = {}
@@ -266,6 +274,11 @@ def validate(snapshot_csv: Path, audit_path: Path | None = None,
                 raise ValueError('Inherited split has a feature or label horizon crossing its boundary')
         for signal_id in unknown:
             event = event_rows[signal_id]
+            if signal_id in censor_ids:
+                if any(event[mode+'_exit_reason']!='END_OF_DATA' for mode in ('follow','invert')):
+                    raise ValueError('Censored nonmember evidence disagrees with current source')
+                quarantined_signals+=1;quarantined_ids.add(signal_id)
+                continue
             if windows and 'entry_time_msc' not in event:
                 raise ValueError('Endpoint quarantine requires source entry timestamps')
             if windows and any(start <= int(event['entry_time_msc']) < end for start, end in windows):

@@ -1,5 +1,6 @@
 import json
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from .artifact_collector import atomic_json
 from .safety_gate import ROOT, boundaries, assert_research_range_allowed
 from .tester_config import tester_end
@@ -24,6 +25,47 @@ def plan():
     return blocks
 
 
+def is_validated_smoke(record, ea):
+    """Require one completed, split-safe smoke for the selected producer."""
+    selected = profile(ea)
+    try:
+        start = datetime.fromisoformat(record['from']).date()
+        end = datetime.fromisoformat(record['to']).date()
+        span = (end - start).days + 1
+    except (KeyError, TypeError, ValueError):
+        return False
+    inputs = record.get('inputs', {})
+    environment = record.get('environment', {})
+    evidence = record.get('evidence', {})
+    live_values = [value for value in (record.get('LIVE_TRADING'),
+                   inputs.get('LIVE_TRADING'), environment.get('LIVE_TRADING')) if value is not None]
+    live_values = [value.strip().lower() == 'true' if isinstance(value, str) else bool(value)
+                   for value in live_values]
+    common = (record.get('tester_status') == 'PASS'
+              and record.get('VALIDATION_STATUS') == 'PASS'
+              and record.get('CAUSALITY_STATUS') == 'PASS'
+              and record.get('tester_to_exclusive') == tester_end(record.get('to', ''))
+              and record.get('COMPILE_STATUS') == 'PASS'
+              and bool(live_values) and not any(live_values)
+              and environment.get('ACCOUNT_MODE') == 'DEMO'
+              and environment.get('DEMO_EXECUTION_ALLOWED') == 'NO'
+              and record.get('symbol') == 'US30Cash'
+              and record.get('period') == 'M5'
+              and record.get('model') == 'real_ticks'
+              and record.get('optimization') is False
+              and record.get('ea_hash')
+              and Path(record.get('ea_path', '')).stem == ea
+              and 1 <= span <= 31)
+    if not common:
+        return False
+    if selected['schema'] == '3.0':
+        return (record.get('BASELINE_REPLAY') == 'PASS'
+                and evidence.get('real_ticks') is True
+                and evidence.get('artifacts') is True
+                and evidence.get('demo_account') is True)
+    return start == datetime(2024, 1, 1).date() and end == datetime(2024, 1, 31).date()
+
+
 def history(resume=False, timeout=3600, ea=BASE_EA):
     from .tester_runner import run
     from .validation import validate_run
@@ -42,11 +84,7 @@ def history(resume=False, timeout=3600, ea=BASE_EA):
     smokes = []
     for path in (output / 'runs').glob('r*/run_manifest.json'):
         record = json.loads(path.read_text())
-        if (record.get('from') == '2024-01-01' and record.get('to') == '2024-01-31'
-                and record.get('VALIDATION_STATUS') == 'PASS'
-                and record.get('tester_status') == 'PASS'
-                and record.get('tester_to_exclusive') == tester_end(record['to'])
-                and record.get('CAUSALITY_STATUS') == 'PASS'):
+        if is_validated_smoke(record, ea):
             smokes.append(record)
     def save():
         atomic_json(checkpoint,{'blocks':blocks})

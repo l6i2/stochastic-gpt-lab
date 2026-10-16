@@ -48,6 +48,9 @@ class StreamingMasterTests(unittest.TestCase):
                                entry_time_msc=stamp+1,snapshot_bar=1,snapshot_time_msc=stamp+300000,
                                feature_max_time_msc=stamp+300000,mark_time_msc=stamp+299999,
                                current_ask=2,distance_to_tp=239,distance_to_sl=181)
+                    row.update(session='Asia',vp_30m_status='unavailable',vp_30m_source='TICK_ACTIVITY',
+                               vp_30m_first_tick_msc='' if signal=='train' else stamp+1,
+                               stoch_k=80.00000000000001)
                     rows.append(row)
                     fills.append(dict(snapshot_id=row['snapshot_id'],signal_id=signal,virtual_mode=mode,
                                       snapshot_bar=1,decision_cutoff_msc=stamp+300000,
@@ -59,6 +62,9 @@ class StreamingMasterTests(unittest.TestCase):
             table('intratrade_snapshots.csv',rows)
             table('stochastic_events.csv',events)
             table('bar_execution_quotes.csv',fills)
+            # This unit exercises merge/membership, not native path validation.
+            (block/'bar_quote_path.bin').write_bytes(b'fixture')
+            (block/'bar_trade_index.csv').write_text('fixture')
             (block/'intratrade_snapshot_targets.csv').write_text('')
             (block/'stochastic_events.csv.audit.json').write_text('{}')
             (block/'intratrade_snapshots.csv.audit.json').write_text(json.dumps(dict(
@@ -74,10 +80,25 @@ class StreamingMasterTests(unittest.TestCase):
                 result=build([block],root/'out',train,validation,split,chunksize=1)
             self.assertEqual(result['rows']['master'],4)
             self.assertEqual(result['execution_quotes'],4)
+            self.assertEqual(set(pd.read_csv(root/'out/signal_source_blocks.csv').source_block),{block.name})
             cohort=read_parquet(root/'out/train.parquet')
             self.assertEqual(set(cohort.signal_id),{'train'})
             self.assertNotIn('execution_bid',cohort.columns)
+            self.assertEqual(cohort.session.iloc[0],'Asia')
+            self.assertTrue(cohort.vp_30m_first_tick_msc.isna().all())
+            self.assertEqual(float(cohort.stoch_k.iloc[0]),80.00000000000001)
             self.assertEqual(int(cohort.signal_time_msc.iloc[0]),epoch(2024))
             self.assertFalse(result['final_test_accessed'])
+            audit_path=block/'intratrade_snapshots.csv.audit.json'
+            audit=json.loads(audit_path.read_text())
+            audit.update(schema_version='2.0',snapshot_schedule='1,2,3,5,10,15,20,30,50')
+            audit_path.write_text(json.dumps(audit))
+            metadata['producer_schema']='2.0'
+            metadata['source_artifact_hashes']['run_'+audit_path.name]=digest(audit_path)
+            (block/'manifest.json').write_text(json.dumps(metadata))
+            with patch('python.stream_bar_master.ROOT',root):
+                legacy=build([block],root/'legacy',train,validation,split,chunksize=1,schema_version='2.0')
+            self.assertEqual(legacy['master_rows'],4)
+            self.assertEqual(set(read_parquet(root/'splits/train.parquet').signal_id),{'train'})
             with self.assertRaisesRegex(ValueError,'overwrite'):
                 build([block],root/'out',train,validation,split,chunksize=1)

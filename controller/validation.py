@@ -65,7 +65,8 @@ def validate_run(run_id, ea=BASE_EA):
     result['VALIDATION_CODE_HASHES'] = {
         name: sha256(ROOT/name) for name in (
             'controller/validation.py', 'python/validate_dataset.py', 'python/research.py',
-            'python/validate_intratrade_dataset.py', 'python/membership_contract.py')}
+            'python/validate_intratrade_dataset.py', 'python/membership_contract.py',
+            'python/censored_membership_contract.py')}
     if selected['schema']=='3.0':
         result['VALIDATION_CODE_HASHES']['python/validate_bar_path.py'] = sha256(ROOT/'python/validate_bar_path.py')
     result['VALIDATION_GIT_SHA'] = subprocess.check_output(
@@ -73,6 +74,9 @@ def validate_run(run_id, ea=BASE_EA):
     contract = ROOT/'outputs/controller/checkpoints/membership_quarantine_v2.json'
     if contract.exists():
         result['FROZEN_UNIVERSE_CONTRACT_SHA256'] = sha256(contract)
+    censor_contract=ROOT/'outputs/controller/checkpoints/censored_membership_quarantine_v1.json'
+    if censor_contract.exists():
+        result['CENSORED_NONMEMBER_CONTRACT_SHA256']=sha256(censor_contract)
     manifest.update(result)
     write_manifest(folder, manifest)
     return result

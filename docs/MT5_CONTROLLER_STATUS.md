@@ -1,5 +1,35 @@
 # Controller verification status
 
+## Current authoritative checkpoint — 2026-10-14 (all base history accepted)
+
+This section supersedes operational statements in older sections below.
+Base history: December 2023 PASS; 2024 PASS (`r20261014T052944_07590da1`);
+2025 PASS (`r20261014T061439_70753a52`); January 1–March 19 2026 PASS
+(`r20261014T070800_6a2dbe02`). No accepted native block was repeated.
+The interrupted old 2024 attempt remains rejected and preserved.
+
+Frozen membership is unchanged: 16,320 known signals, ten observed boundary
+purges, 47 endpoint-gap quarantines, and two end-of-data censored nonmembers.
+The latter two are quarantined with pinned allowed-source evidence; no future
+outcome or original protected purge reason is inferred. See the two membership
+contract JSON documents. All raw evidence remains available locally.
+
+Postprocess is RUNNING with bounded streaming and SQLite uniqueness checks.
+The earlier dense attempt exhausted available memory and was stopped; its
+partial outputs were archived, not accepted or deleted. Final consolidation,
+combined validation and quality audit have not yet passed.
+
+The separate schema 3 producer adds every-bar states, an ordered quote tape
+and trade indices. Baseline strategy functions are preserved. Preview compile
+was 0/0; the first deployed compile timed out without a success summary and
+was rejected. A fresh compile is being retried with a longer timeout. Native
+schema 3 causal proof, smoke/history and dynamic master remain pending.
+
+No new hypothesis validation, model training, walk-forward, robustness result
+or candidate is claimed. Legacy future excursion labels and unusable breakout
+features remain excluded from promotion. FINAL_TEST=LOCKED;
+LIVE_TRADING=false; DEMO_EXECUTOR=NOT_STARTED.
+
 ## Current authoritative checkpoint — 2026-10-14
 
 This section supersedes the historical diagnostic below.
@@ -68,3 +98,11 @@ It verifies the source/binary and nonce, then runs split-aware validators. It wi
 not approve causality automatically or unlock history without the missing proof.
 
 FINAL_TEST remains locked; live trading is false. DEMO_EXECUTOR=NOT_IMPLEMENTED.
+
+## Continuation checkpoint — 2026-10-16
+
+Real state audit: branch `research/full-pipeline`, HEAD `71667a86597adee298cbfd56c37c6be55c162b40` initially equal to origin; XM terminal is closed after Tester; no account settings changed. Existing schema 2 history checkpoints and postprocess manifest show four permitted blocks PASS, master schema 2 built with only TRAIN and DISCOVERY_VALIDATION partitions, 816 quarantined snapshot rows/169 purged, and descriptive TRAIN analysis only. This scheduled snapshot dataset does not model executable dynamic exits.
+
+Schema 3 every-bar/quote-tape exporter is now compiled 0/0, future-invariance proof PASS (1,060 snapshots, 257 features, exact 404-record quote prefix), synthetic frozen-baseline replay PASS, and real Jan 2025 smoke PASS (611 events; 92,023 snapshots; 91,893 targets; 1,952,817 real ticks; 5,850 bars). Run `r20261016T154619_288daa1d` validated events, snapshots, quote path, trade index, baseline parity and source causal proof. Tester was DEMO, `LIVE_TRADING=false`, no trading calls.
+
+Four full schema 3 history blocks remain. The postprocess/master/research stages must use the schema 3 quote tapes and avoid legacy lifetime-extrema delta labels. FINAL_TEST (from 2026-03-20) remains locked and DEMO execution remains disabled.

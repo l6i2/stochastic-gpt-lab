@@ -8,7 +8,7 @@ from controller.tester_config import config, preset
 from controller.compile_runner import ea_path, sha256
 from controller.tester_runner import classify_log
 from controller.artifact_collector import find_artifacts
-from controller.history_orchestrator import plan
+from controller.history_orchestrator import plan, is_validated_smoke
 from controller.profiles import BASE_EA, BAR_EA, profile
 
 
@@ -79,6 +79,24 @@ class ControllerSafetyTests(unittest.TestCase):
         self.assertEqual(blocks[-1]['DATE_TO'], '2026-03-19')
         for block in blocks:
             assert_research_range_allowed(block['DATE_FROM'], block['DATE_TO'])
+
+    def test_schema3_history_accepts_only_complete_validated_safe_smoke(self):
+        record = dict(
+            **{'from':'2025-01-01','to':'2025-01-31'},
+            tester_status='PASS', VALIDATION_STATUS='PASS', CAUSALITY_STATUS='PASS',
+            BASELINE_REPLAY='PASS', COMPILE_STATUS='PASS', LIVE_TRADING=False,
+            symbol='US30Cash', period='M5', model='real_ticks', optimization=False,
+            ea_hash='a'*64, ea_path=r'C:\MT5\StochasticBarDecisionResearchEA.mq5',
+            tester_to_exclusive='2025.02.01', inputs={'LIVE_TRADING':'false'},
+            environment={'ACCOUNT_MODE':'DEMO','DEMO_EXECUTION_ALLOWED':'NO'},
+            evidence={'real_ticks':True,'artifacts':True,'demo_account':True})
+        self.assertTrue(is_validated_smoke(record, BAR_EA))
+        for change in ({'BASELINE_REPLAY':'FAIL'}, {'LIVE_TRADING':True},
+                       {'model':'generated_ticks'}, {'to':'2026-03-20'},
+                       {'VALIDATION_STATUS':'FAIL'}):
+            unsafe = dict(record, **change)
+            self.assertFalse(is_validated_smoke(unsafe, BAR_EA), change)
+        self.assertFalse(is_validated_smoke(record, BASE_EA))
 
 
 if __name__ == '__main__':

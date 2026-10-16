@@ -14,8 +14,20 @@ except ImportError:
 
 
 def analyze(train_path: Path, targets_path: Path, out: Path) -> dict:
-    train = read_parquet(train_path)
-    targets = pd.read_csv(targets_path)
+    # This legacy descriptive checkpoint does not need the 257-column frame
+    # resident in memory. Exhaustive causal research uses the versioned path.
+    import fastparquet
+    available=set(fastparquet.ParquetFile(train_path).columns)
+    requested={'snapshot_id','signal_id','snapshot_bar','original_signal','virtual_mode',
+               'virtual_side','ha_direction','stoch_direction_change',
+               'vp_30m_inside_value_area','vp_30m_above_value_area',
+               'vp_30m_below_value_area','volume_expansion',
+               'current_unrealized_pnl','mfe_so_far','mae_so_far','stoch_k',
+               'atr_14','signal_time_msc','snapshot_time_msc'}
+    train = read_parquet(train_path,columns=sorted(available & requested))
+    train_ids=set(train.signal_id.astype(str))
+    targets=pd.concat([chunk.loc[chunk.signal_id.astype(str).isin(train_ids)]
+                       for chunk in pd.read_csv(targets_path,chunksize=10000)],ignore_index=True)
     if train["signal_id"].nunique() == 0:
         raise ValueError("TRAIN snapshots are empty")
     data = train.merge(targets, on=["snapshot_id", "signal_id", "virtual_mode", "snapshot_bar"],
@@ -87,6 +99,9 @@ def analyze(train_path: Path, targets_path: Path, out: Path) -> dict:
     pd.DataFrame(corr_rows).sort_values("feature").to_csv(out / "correlations.csv", index=False)
     data[list(train.columns)].isna().mean().rename("missing_fraction").to_csv(out / "missingness.csv", header=True)
     summary = {"status": "TRAIN_DESCRIPTIVE_ONLY", "rows": len(train),
+               "analysis_scope": "PROJECTED_LEGACY_DESCRIPTIVE_FEATURES_NOT_PROMOTION",
+               "projected_columns": sorted(train.columns),
+               "legacy_future_excursions": "EXCLUDED_FROM_PROMOTION",
                "signals": int(train.signal_id.nunique()), "labeled_snapshots": int(data.reversal_event.notna().sum()),
                "final_test_accessed": False, "feature_count_numeric_descriptive": len(numeric_features),
                "artifacts": ["summary.csv", "groups.csv", "correlations.csv", "missingness.csv"]}

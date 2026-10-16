@@ -87,7 +87,7 @@ def postprocess():
     if master.exists() and any(master.iterdir()):
         raise RuntimeError('STORAGE: nonempty master destination requires audit before retry')
     execute([ROOT/'python/build_intratrade_master.py',*blocks,'--out',master,
-             '--train',ROOT/'outputs/splits/train.parquet','--validation',ROOT/'outputs/splits/validation.parquet'],out/'build.log')
+             '--train',ROOT/'outputs/splits/train.parquet','--validation',ROOT/'outputs/splits/validation.parquet','--stream'],out/'build.log')
     audit=json.loads((master/'intratrade_master_audit.json').read_text())
     normalize_timestamp_csv(master/'intratrade_master.csv')
     audit['sha256']['intratrade_master.csv']=sha256(master/'intratrade_master.csv')

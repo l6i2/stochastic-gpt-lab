@@ -1,0 +1,28 @@
+{
+  "contract_version": 1,
+  "source_run_id": "r20261014T070800_6a2dbe02",
+  "events_sha256": "97b8eab43696ba0f17e3c736bd0e4fb02bf55300a2f0ea1eba346bbc52d13038",
+  "run_identity_sha256": "65332af3b86fbecb24ffaab51e7fbf8637315ce1cb5f9f24e44a1fe4ebfb7500",
+  "split_manifest_sha256": "be6960e748f789a2638ec5700d0e7fd240703d90f397c551cc989a590db8c44e",
+  "expected_known_signals": 1555,
+  "frozen_membership_preserved": true,
+  "final_test_accessed": false,
+  "protected_outcomes_inferred": false,
+  "classification": "QUARANTINE_NOT_CONFIRMED_PURGE",
+  "ids": [
+    {
+      "signal_id": "US30Cash_M5_1773955799999_MAIN_K",
+      "signal_time_msc": 1773955799999,
+      "entry_time_msc": 1773955800098,
+      "censor_time_msc": 1773961199756,
+      "reason": "UNRESOLVED_CENSORED_NONMEMBER_EXCLUDED_FROM_RESEARCH"
+    },
+    {
+      "signal_id": "US30Cash_M5_1773959999999_MAIN_K",
+      "signal_time_msc": 1773959999999,
+      "entry_time_msc": 1773960000902,
+      "censor_time_msc": 1773961199756,
+      "reason": "UNRESOLVED_CENSORED_NONMEMBER_EXCLUDED_FROM_RESEARCH"
+    }
+  ]
+}

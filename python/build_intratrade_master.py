@@ -145,9 +145,18 @@ def main() -> int:
     parser.add_argument("--out", type=Path, default=Path("outputs/intratrade/master"))
     parser.add_argument("--train", type=Path, default=Path("outputs/splits/train.parquet"))
     parser.add_argument("--validation", type=Path, default=Path("outputs/splits/validation.parquet"))
+    parser.add_argument('--stream',action='store_true')
     args = parser.parse_args()
     try:
-        result = build([p if p.is_absolute() else ROOT / p for p in args.blocks],
+        builder=build
+        if args.stream:
+            try:
+                from .stream_bar_master import build as streaming_build
+            except ImportError:
+                from stream_bar_master import build as streaming_build
+            def builder(blocks,out,train,validation):
+                return streaming_build(blocks,out,train,validation,ROOT/'outputs/splits/split_manifest.json',schema_version='2.0')
+        result = builder([p if p.is_absolute() else ROOT / p for p in args.blocks],
                        args.out if args.out.is_absolute() else ROOT / args.out,
                        args.train if args.train.is_absolute() else ROOT / args.train,
                        args.validation if args.validation.is_absolute() else ROOT / args.validation)

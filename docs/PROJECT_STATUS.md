@@ -1,5 +1,35 @@
 # Project status
 
+## Current authoritative checkpoint — 2026-10-14 (all base history accepted)
+
+This section supersedes operational statements in older sections below.
+Base history: December 2023 PASS; 2024 PASS (`r20261014T052944_07590da1`);
+2025 PASS (`r20261014T061439_70753a52`); January 1–March 19 2026 PASS
+(`r20261014T070800_6a2dbe02`). No accepted native block was repeated.
+The interrupted old 2024 attempt remains rejected and preserved.
+
+Frozen membership is unchanged: 16,320 known signals, ten observed boundary
+purges, 47 endpoint-gap quarantines, and two end-of-data censored nonmembers.
+The latter two are quarantined with pinned allowed-source evidence; no future
+outcome or original protected purge reason is inferred. See the two membership
+contract JSON documents. All raw evidence remains available locally.
+
+Postprocess is RUNNING with bounded streaming and SQLite uniqueness checks.
+The earlier dense attempt exhausted available memory and was stopped; its
+partial outputs were archived, not accepted or deleted. Final consolidation,
+combined validation and quality audit have not yet passed.
+
+The separate schema 3 producer adds every-bar states, an ordered quote tape
+and trade indices. Baseline strategy functions are preserved. Preview compile
+was 0/0; the first deployed compile timed out without a success summary and
+was rejected. A fresh compile is being retried with a longer timeout. Native
+schema 3 causal proof, smoke/history and dynamic master remain pending.
+
+No new hypothesis validation, model training, walk-forward, robustness result
+or candidate is claimed. Legacy future excursion labels and unusable breakout
+features remain excluded from promotion. FINAL_TEST=LOCKED;
+LIVE_TRADING=false; DEMO_EXECUTOR=NOT_STARTED.
+
 ## Current authoritative checkpoint — 2026-10-14
 
 This section supersedes operational next-step statements in historical sections
@@ -123,3 +153,11 @@ No intra-trade hypotheses or models were evaluated. No candidate exists. FINAL_T
 The 2025 real-tick export completed with 7,175 signals, 116,929 snapshots, and 116,825 targets. It failed the strict dataset validator: 207 snapshot rows have current unrealized PnL larger than recorded current MFE. The cause is mark-price reconstruction from bar close plus bar spread while excursions use actual tick quotes. Other full-scan checks found unique snapshot IDs, no current-MAE bound failures, no future timestamp violations, and correct FOLLOW/INVERT mapping. The dataset was not canonicalized and was not used for research.
 
 A minimal exporter correction now uses the last observed bid/ask quote at the snapshot cutoff. The dedicated XM MetaEditor compile is clean (0 errors, 0 warnings), and the corrected annual preset is ready. No Tester rerun has started because the operator explicitly said not to rerun yet. The only next manual Tester run is the corrected 2025 preset. If it passes, run the remaining allowed periods: Dec 20–31, 2023; 2024; and Jan 1–Mar 19, 2026. Do not run on/after Mar 20, 2026. FINAL_TEST remains locked; no intra-trade master, hypothesis evaluation, model, or candidate exists.
+
+## 2026-10-16 authoritative continuation checkpoint
+
+Repo branch remains `research/full-pipeline`; initial HEAD was `71667a86597adee298cbfd56c37c6be55c162b40` and matched origin. Local changes from the preceding run were preserved and reviewed. Four schema 2 history blocks are accepted through 2026-03-19 and the protected boundary is 2026-03-20. Their master and descriptive TRAIN analysis are not dynamic-policy evidence.
+
+Schema 3 producer `StochasticBarDecisionResearchEA` compiled in active XM MetaEditor build 6257 with 0 errors/0 warnings. Production-code future-mutation proof: 1,060 snapshots, 257 features, 404 quote-prefix records unchanged; baseline replay fixtures pass. The real Jan 2025 smoke passed in run `r20261016T154619_288daa1d`: 611 signals, 92,023 every-bar snapshots, 91,893 targets, 1,952,817 ticks, 5,850 M5 bars; dataset, snapshot, baseline replay and causal validators all PASS. `LIVE_TRADING=false`; Tester account DEMO; no execution was enabled.
+
+Schema 3 history is not complete. Next safe action is to run only the four permitted blocks (2023-12-20..31, 2024, 2025, 2026-01-01..03-19) using the bar producer and isolated namespace. After all pass, build and quality-audit the schema 3 master, inherit only frozen TRAIN/VALIDATION membership, exclude quarantined nonmembers, and keep FINAL_TEST unmaterialized. Existing schema 2 analysis remains descriptive only; dynamic GPT/ML research has not started. FINAL_TEST locked, DEMO disabled, LIVE false.

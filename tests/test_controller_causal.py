@@ -18,7 +18,12 @@ class CausalTests(unittest.TestCase):
             (runs/'rsmoke').mkdir(parents=True)
             (runs/'rsmoke/run_manifest.json').write_text(json.dumps({
                 'from':'2024-01-01','to':'2024-01-31','tester_to_exclusive':'2024.02.01',
-                'tester_status':'PASS','VALIDATION_STATUS':'PASS','CAUSALITY_STATUS':'PASS'}))
+                'tester_status':'PASS','VALIDATION_STATUS':'PASS','CAUSALITY_STATUS':'PASS',
+                'COMPILE_STATUS':'PASS','symbol':'US30Cash','period':'M5','model':'real_ticks',
+                'optimization':False,'ea_path':r'C:\XM\StochasticIntratradeResearchEA.mq5',
+                'ea_hash':'x','inputs':{'LIVE_TRADING':'false'},
+                'environment':{'ACCOUNT_MODE':'DEMO','DEMO_EXECUTION_ALLOWED':'NO'},
+                'evidence':{'demo_account':True}}))
             (runs/'rdone').mkdir()
             (runs/'rdone/run_manifest.json').write_text(json.dumps({
                 'from':'2024-01-01','to':'2024-12-31','tester_status':'PASS',
@@ -78,7 +83,12 @@ class CausalTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);runs=root/'outputs/controller/runs/rsmoke';runs.mkdir(parents=True)
             (runs/'run_manifest.json').write_text(json.dumps({'from':'2024-01-01','to':'2024-01-31',
-                'tester_to_exclusive':'2024.02.01','tester_status':'PASS','VALIDATION_STATUS':'PASS','CAUSALITY_STATUS':'PASS'}))
+                'tester_to_exclusive':'2024.02.01','tester_status':'PASS','VALIDATION_STATUS':'PASS','CAUSALITY_STATUS':'PASS',
+                'COMPILE_STATUS':'PASS','symbol':'US30Cash','period':'M5','model':'real_ticks',
+                'optimization':False,'ea_path':r'C:\XM\StochasticIntratradeResearchEA.mq5',
+                'ea_hash':'x','inputs':{'LIVE_TRADING':'false'},
+                'environment':{'ACCOUNT_MODE':'DEMO','DEMO_EXECUTION_ALLOWED':'NO'},
+                'evidence':{'demo_account':True}}))
             blocks=[{'BLOCK_ID':str(i),'DATE_FROM':f'202{i}-01-01','DATE_TO':f'202{i}-12-31',
                      'STATUS':'PASS' if i==3 else 'PENDING'} for i in (3,4,5)]
             checkpoint=root/'outputs/controller/checkpoints/history_state.json';checkpoint.parent.mkdir()

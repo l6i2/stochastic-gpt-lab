@@ -8,6 +8,7 @@ from pathlib import Path
 from .cold_start import active_processes, baseline, pinned_environment, read_deltas, redact, now
 from .compile_runner import sha256
 from .safety_gate import ROOT
+from .profiles import BASE_EA, BAR_EA, profile
 
 
 def compare(folder, probe_id):
@@ -62,24 +63,39 @@ def compare(folder, probe_id):
                 scope='Exact production OnTick, SnapshotTrade, Profile, HA and virtual trade state; synthetic causal market-data/indicator adapter')
 
 
-def run_probe(timeout=600):
+def run_probe(timeout=600,ea=BASE_EA):
     if active_processes():
         raise RuntimeError('ENVIRONMENT: causal script requires a closed terminal')
-    environment, compiled = pinned_environment()
+    selected=profile(ea)
+    environment, compiled = pinned_environment(ea)
     probe_id = 'causal_' + __import__('uuid').uuid4().hex[:12]
-    folder = ROOT / 'outputs/controller/causality' / probe_id
+    folder = ROOT / 'outputs' / selected['namespace'] / 'causality' / probe_id
     folder.mkdir(parents=True)
-    scripts = Path(environment['DATA_FOLDER']) / 'MQL5/Scripts/ControllerResearch'
+    script_relative='ControllerResearch'
+    if ea==BAR_EA:
+        script_relative='ControllerResearchBar/'+probe_id
+    scripts = Path(environment['DATA_FOLDER']) / 'MQL5/Scripts' / script_relative
     scripts.mkdir(parents=True,exist_ok=True)
     source = scripts / 'SnapshotCausalProbe.mq5'
-    source.write_text((ROOT/'tests/mql5/SnapshotCausalProbe.mq5').read_text().replace('__PROBE_ID__',probe_id),encoding='utf-8')
+    if ea==BAR_EA:
+        from python.build_bar_replay_producer import build_probe
+        for name in (ea+'.mq5','ResearchCore.mqh','HeikinAshiCore.mqh'):
+            shutil.copy2(ROOT/'mt5'/name,scripts/name)
+        build_probe(source)
+        source.write_text(source.read_text().replace('__PROBE_ID__',probe_id),encoding='utf-8')
+    else:
+        source.write_text((ROOT/'tests/mql5/SnapshotCausalProbe.mq5').read_text().replace('__PROBE_ID__',probe_id),encoding='utf-8')
     log = folder / 'compile.log'
-    subprocess.run([environment['METAEDITOR_PATH'],'/compile:'+str(source),'/log:'+str(log)],timeout=180,check=False)
+    startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
+    subprocess.run([environment['METAEDITOR_PATH'],'/compile:'+str(source),'/log:'+str(log)],timeout=600,check=False,startupinfo=startup)
     if '0 errors, 0 warnings' not in log.read_text(encoding='utf-16'):
         raise RuntimeError('CAUSAL_INVARIANCE: harness compile failed: '+str(log))
     shutil.copy2(source,folder/source.name)
+    if ea==BAR_EA:
+        for name in (ea+'.mq5','ResearchCore.mqh','HeikinAshiCore.mqh'):
+            shutil.copy2(scripts/name,folder/name)
     ini = folder/'causal.ini'
-    ini.write_text('[Experts]\nAllowLiveTrading=0\nAllowDllImport=0\n[StartUp]\nScript=ControllerResearch\\SnapshotCausalProbe\nShutdownTerminal=1\n',encoding='ascii')
+    ini.write_text('[Experts]\nAllowLiveTrading=0\nAllowDllImport=0\n[StartUp]\nScript='+script_relative.replace('/','\\')+'\\SnapshotCausalProbe\nShutdownTerminal=1\n',encoding='ascii')
     previous = baseline(environment)
     command=[environment['TERMINAL_PATH'],'/config:'+str(ini)]
     (folder/'launch.json').write_text(json.dumps(dict(command=command,logs_before=previous,started_at=now()),indent=2))
@@ -102,11 +118,28 @@ def run_probe(timeout=600):
     for path in files.glob(probe_id+'_*'):
         shutil.copy2(path,folder/path.name)
     result=compare(folder,probe_id)
+    if ea==BAR_EA:
+        import numpy as np
+        from python.validate_bar_path import validate as validate_path, QUOTE_DTYPE
+        streams=[]
+        parity={}
+        for side in ('base','future_changed'):
+            path=folder/f'{probe_id}_{side}_quote_path.bin'
+            streams.append(np.fromfile(path,dtype=QUOTE_DTYPE))
+            parity[side]=validate_path(path,folder/f'{probe_id}_{side}_trade_index.csv',
+                folder/f'{probe_id}_{side}_events.csv',folder/f'{probe_id}_{side}_execution_quotes.csv',
+                int(streams[-1]['time_msc'].max())+1)
+        before,after=[a[a['time_msc']<=result['cutoff']] for a in streams]
+        if not len(before) or before.tobytes()!=after.tobytes():
+            raise RuntimeError('CAUSAL_INVARIANCE: past quote tape changed')
+        result['BASELINE_REPLAY']=parity
+        result['quote_prefix_records']=len(before)
     result.update(ea_hash=compiled['ea_hash'],ex5_hash=compiled['ex5_hash'],
         producer_hashes={p.name:sha256(p) for p in (ROOT/'mt5').glob('*.mq*')},
         harness_sha256=sha256(source),run_id=probe_id,process_exit_code=process.returncode,
         artifact_hashes={p.name:sha256(p) for p in folder.iterdir() if p.is_file()})
     (folder/'causal_manifest.json').write_text(json.dumps(result,indent=2))
-    checkpoint=ROOT/'outputs/controller/checkpoints/causal_invariance.json'
+    checkpoint=ROOT/'outputs'/selected['namespace']/'checkpoints/causal_invariance.json'
+    checkpoint.parent.mkdir(parents=True,exist_ok=True)
     checkpoint.write_text(json.dumps(result,indent=2))
     return result
