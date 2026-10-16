@@ -106,3 +106,7 @@ Real state audit: branch `research/full-pipeline`, HEAD `71667a86597adee298cbfd5
 Schema 3 every-bar/quote-tape exporter is now compiled 0/0, future-invariance proof PASS (1,060 snapshots, 257 features, exact 404-record quote prefix), synthetic frozen-baseline replay PASS, and real Jan 2025 smoke PASS (611 events; 92,023 snapshots; 91,893 targets; 1,952,817 real ticks; 5,850 bars). Run `r20261016T154619_288daa1d` validated events, snapshots, quote path, trade index, baseline parity and source causal proof. Tester was DEMO, `LIVE_TRADING=false`, no trading calls.
 
 Four full schema 3 history blocks remain. The postprocess/master/research stages must use the schema 3 quote tapes and avoid legacy lifetime-extrema delta labels. FINAL_TEST (from 2026-03-20) remains locked and DEMO execution remains disabled.
+
+### Schema 3 history progress — 2026-10-16
+
+The allowed 2023-12-20..31 block has completed and passed event, snapshot, quote-tape and frozen baseline replay validation. Run `r20261016T155454_92027a5b`: 450,741 ordered quotes, 420 indexed virtual trades, 38,084 decision arrivals; 3,683 snapshots, with no future-boundary access. The 2024 full-year schema 3 block is now running; 2025 and 2026-01-01..03-19 remain pending. Keep the documented December generated-tick substitution warning in all reports.
