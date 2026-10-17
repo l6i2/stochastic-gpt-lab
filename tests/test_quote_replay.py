@@ -2,7 +2,8 @@ import unittest
 
 import numpy as np
 
-from python.quote_replay import Quote, Decision, replay, replay_memmap_window
+from python.quote_replay import (Quote, Decision, replay, replay_memmap_window,
+                                 replay_memmap_scenarios)
 from python.validate_bar_path import QUOTE_DTYPE, baseline
 
 
@@ -41,6 +42,28 @@ class ReplayTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Protected boundary'):
             replay_memmap_window(tape, 0, 2, 1, allowed_end_exclusive=2000,
                                  coverage_verified=True)
+
+    def test_batched_memmap_scenarios_match_single_replays(self):
+        tape = np.array([
+            (1000, 100.0, 101.0, 0),
+            (1500, 100.5, 101.5, 0),
+            (2000, 101.0, 102.0, 1),
+            (2500, 342.0, 343.0, 1),
+        ], dtype=QUOTE_DTYPE)
+        decision = Decision(1200, 1200, 1200, 'EXIT', available_sequence=1)
+        base, scenarios = replay_memmap_scenarios(
+            tape, 0, 3, 1, decisions={'ha': decision}, latencies_msc=(0, 1000),
+            allowed_end_exclusive=5000, coverage_verified=True)
+        self.assertEqual(base['reason'], 'TP')
+        for latency in (0, 1000):
+            single = replay_memmap_window(
+                tape, 0, 3, 1,
+                decision=Decision(1200, 1200, 1200, 'EXIT', available_sequence=1,
+                                  latency_msc=latency),
+                allowed_end_exclusive=5000, coverage_verified=True)
+            batched = scenarios[('ha', latency)]
+            self.assertEqual((batched['reason'], batched['exit_sequence'], batched['pnl']),
+                             (single['reason'], single['exit_sequence'], single['pnl']))
 
     def test_production_decision_waits_for_a_later_quote_and_latency(self):
         quotes=[Quote(1,0,0,1000,1002),Quote(2,1,0,1003,1005),

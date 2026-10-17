@@ -181,3 +181,70 @@ def replay_memmap_window(tape, entry_index, baseline_exit_index, side, *,
                 exit_time_msc=int(tape[fill]['time_msc']), exit_sequence=fill,
                 pnl=side * (exit_price-entry), decision_arrival_sequence=arrival,
                 fill_sequence=fill, latency_msc=decision.latency_msc)
+
+
+def replay_memmap_scenarios(tape, entry_index, baseline_exit_index, side, *,
+                            decisions, latencies_msc, allowed_end_exclusive,
+                            coverage_verified=False):
+    """Replay many frozen EXIT rules/latencies while scanning one trade path once."""
+    if not coverage_verified:
+        raise ValueError('Independently validated ordered quote coverage is required')
+    if side not in (1, -1) or not 0 <= entry_index <= baseline_exit_index < len(tape):
+        raise ValueError('Invalid side or baseline quote bounds')
+    if int(tape[entry_index]['time_msc']) >= allowed_end_exclusive or int(tape[baseline_exit_index]['time_msc']) >= allowed_end_exclusive:
+        raise ValueError('Protected boundary reached')
+
+    start, stop = int(entry_index), int(baseline_exit_index)
+    window = tape[start:stop+1]
+    entry = float(window[0]['ask' if side == 1 else 'bid'])
+    prices = window['bid' if side == 1 else 'ask']
+    pnl_path = side * (prices - entry)
+    bars = window['bar_index'].astype(np.int64) - int(window[0]['bar_index'])
+    newbar = np.r_[False, np.diff(window['bar_index']) != 0]
+    stops, profits = pnl_path <= -180.0, pnl_path >= 240.0
+    timeouts = newbar & (bars >= 100)
+    hits = np.flatnonzero(stops | profits | timeouts)
+    baseline_hit = start + int(hits[0]) if len(hits) else None
+
+    def result_at(index):
+        local = index - start
+        reason = 'SL' if stops[local] else 'TP' if profits[local] else 'TIME_EXIT'
+        exit_price = entry + side * 240.0 if reason == 'TP' else float(prices[local])
+        return dict(status='COMPLETE', reason=reason, entry=entry, exit=exit_price,
+                    exit_time_msc=int(tape[index]['time_msc']), exit_sequence=index,
+                    pnl=side * (exit_price-entry))
+
+    base = result_at(baseline_hit) if baseline_hit is not None else dict(
+        status='CENSORED', reason='END_OF_ALLOWED_PATH', entry=entry, pnl=None)
+    output = {}
+    times = window['time_msc']
+    for name, decision in decisions.items():
+        if (decision.action != 'EXIT' or decision.feature_max_time_msc > decision.cutoff_msc
+                or decision.mark_time_msc > decision.cutoff_msc
+                or decision.cutoff_msc >= allowed_end_exclusive
+                or not isinstance(decision.available_sequence, int)
+                or decision.latency_msc < 0 or not isinstance(decision.latency_msc, int)):
+            raise ValueError('Invalid or noncausal EXIT decision')
+        arrival = decision.available_sequence
+        if (not start < arrival <= stop
+                or int(tape[arrival]['time_msc']) <= decision.cutoff_msc):
+            raise ValueError('Decision arrival is outside the trade or not strictly after cutoff')
+        for latency in latencies_msc:
+            if not isinstance(latency, int) or latency < 0:
+                raise ValueError('Invalid scenario latency')
+            target_time = int(tape[arrival]['time_msc']) + latency
+            time_offset = int(np.searchsorted(times, target_time, side='left'))
+            fill = max(arrival + 1, start + time_offset)
+            if fill > stop or (baseline_hit is not None and baseline_hit <= fill):
+                scenario = base
+            elif baseline_hit is None:
+                scenario = dict(status='CENSORED', reason='END_OF_ALLOWED_PATH', entry=entry, pnl=None)
+            else:
+                px = float(tape[fill]['bid' if side == 1 else 'ask'])
+                scenario = dict(status='COMPLETE', reason='POLICY_EXIT', entry=entry,
+                                exit=px, exit_time_msc=int(tape[fill]['time_msc']),
+                                exit_sequence=fill, pnl=side*(px-entry),
+                                decision_arrival_sequence=arrival, fill_sequence=fill,
+                                latency_msc=latency)
+            output[(name, latency)] = scenario
+    return base, output

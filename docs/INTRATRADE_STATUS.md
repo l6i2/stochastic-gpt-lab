@@ -16,11 +16,18 @@ strictly post-arrival fills, latency and barrier precedence, and protected
 boundaries. Its bounded TRAIN runner rechecked all 23,428 virtual HOLD paths
 from the 11,714 quality-v1 TRAIN signals; all matched the frozen exit, quote,
 time, and PnL evidence. Report:
-`outputs/bar_controller/research/train_hold_replay.json`. No Validation or
-FINAL_TEST rows were read. Dynamic exit policy research still needs a frozen
-execution-latency assumption. The 2023–2026-03-19 allowed history remains the
-only history scope. FINAL_TEST is locked; `LIVE_TRADING=false`; DEMO execution
-remains disabled.
+`outputs/bar_controller/research/train_hold_replay.json`.
+
+Dynamic EXIT TRAIN discovery used the user-selected 250 ms primary execution
+latency and 0/500 ms sensitivities. The three fixed HA/Stochastic rules were
+replayed on 1,810,478 causal snapshots. A four-fold expanding, purged
+walk-forward passed in only 2/4 folds; the largest fold contributed 69.7% of
+positive change. The frozen gate failed, so Validation was not opened and no
+candidate exists. See `docs/DYNAMIC_EXIT_TRAIN_REPORT.md`. FINAL_TEST is locked;
+`LIVE_TRADING=false`; DEMO execution remains disabled.
+
+The rejected one-sided hypothesis is preserved and hashed at
+`research/hypotheses/HYP-20261017-DYN-001.json`; it was not sent to Validation.
 
 ## Authoritative checkpoint — 2026-10-16 (schema 3 every-bar master)
 

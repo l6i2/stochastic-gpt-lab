@@ -1,0 +1,66 @@
+{
+  "hypothesis_id": "HYP-20261017-DYN-001",
+  "date_utc": "2026-10-17",
+  "version": 1,
+  "source": "Quality-v1 TRAIN-only dynamic EXIT discovery; preregistered three-rule family and selection protocol",
+  "feature_family": [
+    "heikin_ashi",
+    "stochastic"
+  ],
+  "signal_side": "SELL virtual positions only",
+  "virtual_mode": "FOLLOW only",
+  "expected_direction": "mean paired PnL change > 0 versus frozen FOLLOW HOLD on intended SELL positions",
+  "definition": "Exit FOLLOW virtual SELL at the first open-trade snapshot where ha_direction == +1 (opposite the SELL position). Other FOLLOW BUY and all INVERT paths remain the baseline.",
+  "family_examined_on_TRAIN": {
+    "HA_OPPOSITE": "first snapshot with ha_direction * virtual_side < 0",
+    "STOCH_KD_OPPOSITE": "first snapshot with (stoch_k - stoch_d) * virtual_side < 0",
+    "HA_AND_STOCH_OPPOSITE": "first snapshot where both component rules are true"
+  },
+  "selection_rule": "Among the three frozen rules, choose the largest mean paired PnL change for FOLLOW virtual SELL at 250 ms; exact ties follow rule order HA_OPPOSITE, STOCH_KD_OPPOSITE, HA_AND_STOCH_OPPOSITE.",
+  "latency_primary_msc": 250,
+  "latency_sensitivities_msc": [
+    0,
+    500
+  ],
+  "execution": "First quote strictly after the decision-arrival quote plus latency; frozen TP=240, SL=180 and TIME_EXIT=100 have precedence.",
+  "causal_features": [
+    "ha_direction",
+    "feature_max_time_msc",
+    "mark_time_msc",
+    "snapshot_time_msc"
+  ],
+  "causal_at_decision": true,
+  "missing_handling": "A missing HA value does not trigger an exit.",
+  "minimum_support": {
+    "intended_FOLLOW_SELL_positions_TRAIN": 500
+  },
+  "train_support": 6258,
+  "train_effect_250ms": {
+    "baseline_mean_pnl": -9.968,
+    "exit_mean_pnl": -4.46,
+    "mean_paired_delta": 5.508
+  },
+  "train_sensitivity_mean_paired_delta": {
+    "0ms": 5.498,
+    "500ms": 5.483
+  },
+  "walk_forward_criterion": "At least 70% positive expanding purged TRAIN folds and no fold contributes more than 50% of aggregate positive intended-side change.",
+  "walk_forward_observed": {
+    "positive_folds": 2,
+    "eligible_folds": 4,
+    "largest_fold_share": 0.6968754828265593,
+    "gate_pass": false
+  },
+  "failure_criterion": "Reject before Discovery Validation if the predefined walk-forward consistency or concentration gate fails.",
+  "status": "REJECTED_WALK_FORWARD_PRE_VALIDATION",
+  "validation_accessed": false,
+  "final_test_accessed": false,
+  "candidate_promoted": false,
+  "live_trading": false,
+  "dataset_sha256": "a10a1e94c0435315a76e9cd871cf9020cbd032f1df0c880b119db87200c1f439",
+  "quality_manifest_sha256": "2886cba1096ca1f512b2c6d0ff5393063c1888ea5a158454e71e1b66261eb52d",
+  "train_membership_sha256": "4823eb1aa4ca08899ffcbcff957b4dfb726b30c9dd074a2c968efb1f133bb1c1",
+  "rule_runner_sha256": "904cb0f7b421c4f9a6ced30e715150aa6185a87f301ffba4ac1f65723f311ed4",
+  "walk_forward_report_sha256": "28c48b7864bcfa3d38f69b06ef807b46b84ca8a0bccb3349b8bbbaf4aa942b5a",
+  "trade_results_sha256": "eafd518a9a6a4930ec09fa5cfc6220b037eb1c8274cda416a7498d0cac1b4c73"
+}

@@ -2,14 +2,14 @@
 
 ## Authoritative checkpoint — 2026-10-16 (offline analysis; MT5 unchanged)
 
-No MT5 or account interaction was needed for the completed offline
-quality-v1 entry-direction study or TRAIN HOLD replay. The bounded replay
-matched all 23,428 TRAIN virtual paths to the frozen source evidence. The
-validated history remains the four
-permitted XM DEMO Strategy Tester periods through 2026-03-19; this analysis
-placed no orders. The quote replay runner is scoped to TRAIN; the dynamic EXIT
-runner and its execution-latency assumption remain pending.
-`LIVE_TRADING=false`; no Demo execution is enabled; FINAL_TEST remains locked.
+No MT5 or account interaction was needed for the offline quality-v1 entry
+study, TRAIN HOLD replay, or dynamic EXIT discovery. The baseline runner
+matched all 23,428 TRAIN virtual paths. The dynamic runner used 250 ms as its
+primary latency (0/500 ms sensitivities); its purged TRAIN walk-forward failed
+the predefined consistency gate, so no rule proceeds to Validation. The
+validated history remains the four permitted XM DEMO Strategy Tester periods
+through 2026-03-19; no orders were placed. `LIVE_TRADING=false`; DEMO execution
+is disabled; FINAL_TEST remains locked.
 
 ## Authoritative checkpoint — 2026-10-16 (schema 3 history complete)
 

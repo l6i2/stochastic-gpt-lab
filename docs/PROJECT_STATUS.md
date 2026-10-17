@@ -22,10 +22,18 @@ Exit reasons, quote indices/times, and PnL matched the validated source; source
 quote tapes were hash-checked and rescanned for valid ordering and protected
 boundaries. The local report is
 `outputs/bar_controller/research/train_hold_replay.json`, status
-`TRAIN_HOLD_BASELINE_REPLAY_PASS`. It did not read Validation or FINAL_TEST.
-No dynamic intra-trade exit policy has been evaluated yet; its end-to-end
-runner still requires a frozen execution-latency assumption. FINAL_TEST remains
-locked; `LIVE_TRADING=false`, and no Demo execution occurred.
+`TRAIN_HOLD_BASELINE_REPLAY_PASS`.
+
+Dynamic EXIT discovery then tested three frozen causal rules at 0/250/500 ms,
+primary 250 ms, using TRAIN only. Expanding purged walk-forward selected rules
+only on prior TRAIN data: 2/4 folds were positive, and the largest fold
+contributed 69.7% of positive target-side change. The preregistered gate failed;
+no rule proceeds to Validation and no candidate exists. Details:
+`docs/DYNAMIC_EXIT_TRAIN_REPORT.md`. The entry-direction models were also
+rejected for promotion. Neither experiment accessed FINAL_TEST. `LIVE_TRADING=false`;
+no Demo execution occurred. The dynamic one-sided hypothesis is preserved as
+`research/hypotheses/HYP-20261017-DYN-001.json` with status
+`REJECTED_WALK_FORWARD_PRE_VALIDATION`; it was never evaluated on Validation.
 
 ## Authoritative checkpoint — 2026-10-16 (schema 3 history and quality gate)
 

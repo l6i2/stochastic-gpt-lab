@@ -22,6 +22,29 @@ scored once; there is no threshold/model selection after seeing it. Expanding
 purged walk-forward folds use TRAIN only. No candidate is promoted by this
 study; dynamic quote replay and policy robustness remain separate gates.
 
+### Dynamic EXIT discovery contract
+
+The TRAIN-only rule family consists of the first open-trade snapshot where
+(1) `ha_direction * virtual_side < 0`, (2)
+`(stoch_k - stoch_d) * virtual_side < 0`, or (3) both are true. Missing inputs
+do not trigger an exit. Rules use only signal-time-causal snapshot fields;
+decision features and mark time must be no later than the decision cutoff.
+Execution is at the first quote strictly after the arrival quote plus latency;
+an intervening frozen SL, TP, or TIME_EXIT takes precedence. The primary
+latency is 250 ms, with fixed sensitivities of 0 and 500 ms.
+
+Discovery selects at most one rule using TRAIN only: maximize mean paired PnL
+change among FOLLOW-mode SELL-position trades at 250 ms; exact ties use the
+fixed rule order HA, Stochastic K/D, then both. BUY and INVERT are not selection
+targets and are still reported; the frozen candidate leaves those paths at the
+baseline. Walk-forward refits this same selection rule inside each expanding,
+purged TRAIN fold and reports its untouched later fold. Only the single
+full-TRAIN-selected rule can be tested once on DISCOVERY_VALIDATION, after the
+walk-forward and minimum-support/uncertainty gates pass. The hypothesis,
+dataset, feature contract, selection rule, and code hash must be recorded
+before that score. The 0/500 ms results are sensitivity checks and cannot
+replace the 250 ms primary result.
+
 The old schema-2 limitations below describe historical evidence only. The
 allowed schema-3 every-bar blocks now provide rows for each observed open-trade
 bar, ordered quote tapes, per-trade quote-index bounds, and exact decision
@@ -37,12 +60,14 @@ aggregate row-by-row PASS. Only its TRAIN/Discovery Validation partitions are
 eligible for discovery. The legacy schema-2 trainer's fixed-bar calculation
 is descriptive, not an executable policy backtest.
 
-Before outcome-based research, implement a bounded-memory dataset replay that
-uses the quote tape and decision-arrival sequence to reproduce HOLD exactly,
-then evaluates only preregistered HOLD/EXIT rules with frozen latency and
-barrier precedence. Dynamic reversal remains unsupported until reverse-entry
-and post-original-exit quote paths are validated. No validation result,
-walk-forward result, or candidate exists yet. FINAL_TEST remains locked.
+The bounded-memory HOLD replay is implemented and matched all 23,428 frozen
+TRAIN virtual paths against the source exit, quote, timestamp, and PnL records.
+The three-rule dynamic EXIT discovery was also replayed on TRAIN at the frozen
+latencies. Its expanding, purged walk-forward was positive in 2/4 folds and
+failed the predefined consistency and fold-concentration gates. Therefore no
+dynamic rule is eligible for DISCOVERY_VALIDATION and no candidate exists.
+Dynamic reversal remains unsupported until reverse-entry and post-original-exit
+quote paths are validated. FINAL_TEST remains locked.
 
 ## Status and data gate
 
