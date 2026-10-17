@@ -2,6 +2,26 @@
 
 ## Current schema 3 checkpoint (2026-10-16)
 
+### Fixed entry-direction study (preregistered before Discovery Validation)
+
+The quality-v1 event table keeps the EA event schema `1.1`; its provenance is
+the four accepted schema `3.0` historical blocks and their causal validators.
+Do not describe the event rows themselves as schema 3. The entry-direction
+study asks whether signal-time context can choose between the frozen FOLLOW
+and INVERT outcomes. It is a separate, fixed-exit entry decision and does not
+claim to evaluate a dynamic intra-trade exit policy.
+
+The one planned comparison uses the outcome-blind quality-v1 events, frozen
+TRAIN and DISCOVERY_VALIDATION memberships, the existing `ROUND2_BASE_FEATURES`
+plus its fixed ten interaction features, and three fixed classifiers:
+logistic regression, random forest, and histogram gradient boosting (seed
+20261013). The target is `directional_advantage > 0`; threshold is 0.5. Compare
+against FOLLOW-always and INVERT-always on the same complete-label cases. Keep
+censored rows in the coverage counts and never discard losses. Validation is
+scored once; there is no threshold/model selection after seeing it. Expanding
+purged walk-forward folds use TRAIN only. No candidate is promoted by this
+study; dynamic quote replay and policy robustness remain separate gates.
+
 The old schema-2 limitations below describe historical evidence only. The
 allowed schema-3 every-bar blocks now provide rows for each observed open-trade
 bar, ordered quote tapes, per-trade quote-index bounds, and exact decision

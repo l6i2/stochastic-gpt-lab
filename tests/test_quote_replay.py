@@ -1,9 +1,47 @@
 import unittest
 
-from python.quote_replay import Quote, Decision, replay
+import numpy as np
+
+from python.quote_replay import Quote, Decision, replay, replay_memmap_window
+from python.validate_bar_path import QUOTE_DTYPE, baseline
 
 
 class ReplayTests(unittest.TestCase):
+    def test_memmap_window_matches_hold_and_obeys_arrival_latency(self):
+        tape = np.array([
+            (1000, 100.0, 101.0, 0),
+            (1500, 100.5, 101.5, 0),
+            (2000, 101.0, 102.0, 1),
+            (2500, 342.0, 343.0, 1),
+        ], dtype=QUOTE_DTYPE)
+        hold = replay_memmap_window(tape, 0, 3, 1, allowed_end_exclusive=5000,
+                                    coverage_verified=True)
+        expected = baseline(tape, 0, 3, 1)
+        self.assertEqual((hold['reason'], hold['exit_sequence'], hold['pnl']),
+                         (expected['reason'], expected['exit_index'], expected['pnl']))
+
+        immediate = Decision(1200, 1200, 1200, 'EXIT', available_sequence=1)
+        result = replay_memmap_window(tape, 0, 3, 1, decision=immediate,
+                                      allowed_end_exclusive=5000, coverage_verified=True)
+        self.assertEqual((result['reason'], result['exit_sequence'], result['pnl']),
+                         ('POLICY_EXIT', 2, 0.0))
+
+        delayed = Decision(1200, 1200, 1200, 'EXIT', available_sequence=1, latency_msc=1000)
+        result = replay_memmap_window(tape, 0, 3, 1, decision=delayed,
+                                      allowed_end_exclusive=5000, coverage_verified=True)
+        self.assertEqual((result['reason'], result['exit_sequence']), ('TP', 3))
+
+    def test_memmap_window_rejects_future_feature_and_protected_end(self):
+        tape = np.array([(1000, 100.0, 101.0, 0), (1500, 100.5, 101.5, 0),
+                         (2000, 101.0, 102.0, 1)], dtype=QUOTE_DTYPE)
+        bad = Decision(1200, 1201, 1200, 'EXIT', available_sequence=1)
+        with self.assertRaisesRegex(ValueError, 'noncausal'):
+            replay_memmap_window(tape, 0, 2, 1, decision=bad,
+                                 allowed_end_exclusive=3000, coverage_verified=True)
+        with self.assertRaisesRegex(ValueError, 'Protected boundary'):
+            replay_memmap_window(tape, 0, 2, 1, allowed_end_exclusive=2000,
+                                 coverage_verified=True)
+
     def test_production_decision_waits_for_a_later_quote_and_latency(self):
         quotes=[Quote(1,0,0,1000,1002),Quote(2,1,0,1003,1005),
                 Quote(2,2,0,1008,1010),Quote(8,3,0,1010,1012)]

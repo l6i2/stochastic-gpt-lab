@@ -1,5 +1,26 @@
 # Project status
 
+## Authoritative checkpoint — 2026-10-16 (quality-v1 entry model scored)
+
+The quality-v1 signal-time entry-direction experiment is complete. It used
+11,714 TRAIN events and scored the frozen models once on 4,077
+DISCOVERY_VALIDATION events after validating schema/provenance, temporal
+features, split membership, label horizons, fixed parameters, and FOLLOW/INVERT
+mapping. The CSV correctly retains EA event schema 1.1; its four history
+sources are individually validated producer schema 3.0. The study used a fixed
+59-feature whitelist, three classifier families, seed 20261013, and threshold
+0.5. Four expanding purged folds used TRAIN only.
+
+No model beat FOLLOW-always on Validation. AUC was 0.488–0.501 and model mean
+PnL ranged from -7.86 to -14.13 versus -3.81 for FOLLOW-always. The entry
+direction hypothesis is rejected for promotion; no candidate exists. Results
+and caveats are in `docs/QUALITY_DIRECTION_MODEL_REPORT.md`; local models and
+metrics are under `outputs/models/quality_directional_v1/` and are excluded
+from Git. No dynamic intra-trade exit policy has been evaluated yet: the
+bounded quote replay has synthetic tests but still needs an end-to-end runner
+and a frozen execution-latency assumption. FINAL_TEST remains locked;
+`LIVE_TRADING=false`, and no Demo execution occurred.
+
 ## Authoritative checkpoint — 2026-10-16 (schema 3 history and quality gate)
 
 The four permitted every-bar schema 3 blocks are complete and individually

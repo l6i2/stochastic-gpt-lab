@@ -1,5 +1,23 @@
 # Intra-trade research status
 
+## Authoritative checkpoint — 2026-10-16 (entry model rejected; dynamic replay pending)
+
+A signal-time entry-direction model study was completed on the quality-v1
+event table (event schema 1.1, from validated schema 3.0 blocks): 11,714 TRAIN
+events and a single score on 4,077 Discovery Validation events. Its 59 fixed
+causal features, three fixed classifiers, and 0.5 threshold did not outperform
+FOLLOW-always; discrimination was near chance. It is rejected for promotion;
+no candidate exists. Four expanding walk-forward folds were purged and used
+TRAIN only. See `docs/QUALITY_DIRECTION_MODEL_REPORT.md`.
+
+This entry-direction comparison does not test dynamic intra-trade decisions.
+The memmap quote replay kernel now has synthetic tests for baseline parity,
+strictly post-arrival fills, latency and barrier precedence, and protected
+boundaries. An end-to-end dataset replay runner and a frozen execution-latency
+assumption are still needed before dynamic policy research. The 2023–2026-03-19
+allowed history remains the only history scope. FINAL_TEST is locked;
+`LIVE_TRADING=false`; DEMO execution remains disabled.
+
 ## Authoritative checkpoint — 2026-10-16 (schema 3 every-bar master)
 
 Schema 3 every-bar/ordered-quote history is complete for all allowed dates:

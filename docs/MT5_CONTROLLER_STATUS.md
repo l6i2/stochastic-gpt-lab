@@ -1,5 +1,15 @@
 # Controller verification status
 
+## Authoritative checkpoint — 2026-10-16 (offline analysis; MT5 unchanged)
+
+No MT5 or account interaction was needed for the completed offline
+quality-v1 entry-direction study. The validated history remains the four
+permitted XM DEMO Strategy Tester periods through 2026-03-19; this analysis
+placed no orders. The schema-3 quote replay kernel has synthetic regression
+coverage, but its dataset runner and execution-latency assumption remain
+pending. `LIVE_TRADING=false`; no Demo execution is enabled; FINAL_TEST remains
+locked.
+
 ## Authoritative checkpoint — 2026-10-16 (schema 3 history complete)
 
 The MT5 XM DEMO historical runs are complete for the allowed periods only:
