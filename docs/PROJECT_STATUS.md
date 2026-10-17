@@ -1,5 +1,47 @@
 # Project status
 
+## Authoritative checkpoint — 2026-10-16 (schema 3 history and quality gate)
+
+The four permitted every-bar schema 3 blocks are complete and individually
+validated: 2023-12-20..31, 2024, 2025, and 2026-01-01..03-19. The ordered quote
+tapes cover 57,079,575 records; historical coverage stops before the protected
+FINAL_TEST boundary (2026-03-20). The raw stream master is recorded as
+`BUILT_NOT_PROMOTED`, with 2,480,241 snapshots and inherited TRAIN and
+DISCOVERY_VALIDATION partitions.
+
+The outcome-blind tick-quality derivative is at
+`outputs/bar_controller/research/quality_v1/`. It excludes the entire 2023 block
+(real-tick coverage warnings exceeded the preregistered 1% threshold) and 319
+2024 signals whose feature/trade intervals overlap warned server dates plus the
+two-day halo. It retains 15,791 event rows (7,398 BUY / 8,393 SELL), 2,388,383
+snapshots, 2,388,383 targets, and 2,388,383 decision-arrival quotes. The filtered
+parquets contain 1,810,478 TRAIN snapshots across 11,697 signals and 577,905
+Discovery Validation snapshots across 4,074 signals. Artifacts and exclusions
+have SHA-256 hashes in `tick_quality_manifest.json`.
+
+Validation status is explicitly `PASS_INHERITED_VALIDATION`: all four source
+blocks carry the full causal/schema-3 validator PASS; the derivative finalizer
+recomputes exclusions and confirms exact event membership, inherited split
+membership, frozen TP/SL/TIME_EXIT, row-count reconciliation, and hashes. A
+second monolithic row-by-row validation of the 2.4M-row combined derivative was
+stopped after Windows paged its multi-million-key maps and made no progress.
+That aggregate validator did not finish, and this checkpoint does not claim a
+second independent row-level PASS. The raw source proofs and deterministic
+signal-level filter remain available for audit.
+
+No hypothesis or model has been trained or validated from this derivative.
+Existing schema-2 model/report code uses fixed-bar target deltas rather than
+realizable ordered-quote policy replay; it is not valid promotion evidence for
+schema 3. Next is to audit/implement a bounded TRAIN-only ordered-quote replay
+and baseline parity path. FINAL_TEST remains locked; DEMO execution and live
+trading remain disabled (`LIVE_TRADING=false`).
+
+A feature-only TRAIN profile (1,810,478 rows / 11,697 signals) is available at
+`outputs/gpt_research/train_schema3_quality_v1/`. It records descriptive
+missingness and moments for Stochastic, volume, Heikin Ashi, profile, ATR,
+spread and current virtual-position state. It read no targets or Validation
+data and makes no edge, significance, or policy claim.
+
 ## Current authoritative checkpoint — 2026-10-14 (all base history accepted)
 
 This section supersedes operational statements in older sections below.

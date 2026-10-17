@@ -1,5 +1,39 @@
 # Intra-trade research status
 
+## Authoritative checkpoint — 2026-10-16 (schema 3 every-bar master)
+
+Schema 3 every-bar/ordered-quote history is complete for all allowed dates:
+2023-12-20..31, 2024, 2025, and 2026-01-01..03-19. All four raw blocks passed
+their intra-trade causal, FOLLOW/INVERT, frozen exit, split, quote-arrival, and
+baseline replay validators. The master is `BUILT_NOT_PROMOTED` and contains
+2,480,241 snapshots; no FINAL_TEST data was read.
+
+The separately hashed quality derivative is
+`outputs/bar_controller/research/quality_v1/`. The frozen tick-quality rule
+excludes 210 2023 signals and 319 2024 signals on time-window evidence alone.
+The derivative contains 15,791 events (7,398 BUY; 8,393 SELL), 2,388,383
+snapshots, the same number of complete targets and decision-arrival quotes,
+1,810,478 TRAIN rows (11,697 signals), and 577,905 Discovery Validation rows
+(4,074 signals). Its status is `PASS_INHERITED_VALIDATION`: source block causal
+passes plus exact filter/split membership, frozen parameters, count checks, and
+artifact hashes. The combined full validator was interrupted after its
+multi-million-key in-memory indexes triggered sustained paging; no independent
+aggregate row-by-row PASS is claimed.
+
+The every-bar producer now supplies state trajectories, quote paths, trade
+indices, and strictly-after-cutoff arrival quotes. The existing replay kernel
+has only synthetic fixtures and HOLD/EXIT actions; it has no bounded dataset
+runner. Existing schema-2 hypothesis/ML reports estimate fixed-bar outcomes,
+not executable dynamic exits, so they are not being used. Research has started
+with schema/quality and TRAIN membership audit only; no outcome-based TRAIN
+discovery, validation, walk-forward, or candidate is claimed yet. A feature-only
+TRAIN profile (1,810,478 rows / 11,697 signals) is available at
+`outputs/gpt_research/train_schema3_quality_v1/`. It profiles causal Stochastic,
+volume, Heikin Ashi, Volume Profile, ATR, spread, and virtual-position fields;
+it read no targets or Validation rows and makes no outcome or edge claim. Next
+is a bounded-memory TRAIN-only quote replay reproducing HOLD before evaluating
+any policy. FINAL_TEST is locked; Demo and live execution remain disabled.
+
 ## Current authoritative checkpoint — 2026-10-14 (all base history accepted)
 
 This section supersedes operational statements in older sections below.

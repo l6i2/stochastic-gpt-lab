@@ -1,5 +1,30 @@
 # Controller verification status
 
+## Authoritative checkpoint — 2026-10-16 (schema 3 history complete)
+
+The MT5 XM DEMO historical runs are complete for the allowed periods only:
+2023-12-20..31, 2024, 2025, and 2026-01-01..03-19. The four runs passed their
+schema-3 event/snapshot/quote-path validators, causal invariance checks, and
+frozen FOLLOW/INVERT baseline replay. The 2023 and 2024 logs contain tick
+replacement/discard warnings; the outcome-blind quality gate excludes all
+2023 data and a conservative date halo in 2024. 2025 and permitted 2026 have no
+such warnings. Tester execution was DEMO with `LIVE_TRADING=false`; no real
+trades were placed.
+
+The source runs, tester logs, manifests, and quote paths remain local under
+`outputs/bar_controller/runs/`; no large tick data or account information is
+published. The local quality derivative is `outputs/bar_controller/research/
+quality_v1/` and is recorded as `PASS_INHERITED_VALIDATION` with exact signal
+membership, row counts, split inheritance, frozen parameters, and SHA-256
+evidence. Its source validators were full PASS; the combined 2.4M-row validator
+was stopped after severe Windows paging and is not represented as a completed
+aggregate PASS.
+
+The tester is not being relaunched. Next controller work is a local,
+bounded-memory quote replay using the accepted per-block tapes; no tester UI
+action or account change is needed. FINAL_TEST, Demo execution, and live trading
+remain disabled.
+
 ## Current authoritative checkpoint — 2026-10-14 (all base history accepted)
 
 This section supersedes operational statements in older sections below.

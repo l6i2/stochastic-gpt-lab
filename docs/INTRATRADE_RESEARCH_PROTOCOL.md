@@ -1,5 +1,29 @@
 # Intra-trade research protocol (round 2)
 
+## Current schema 3 checkpoint (2026-10-16)
+
+The old schema-2 limitations below describe historical evidence only. The
+allowed schema-3 every-bar blocks now provide rows for each observed open-trade
+bar, ordered quote tapes, per-trade quote-index bounds, and exact decision
+arrival quotes. All four permitted raw blocks individually passed full source
+validation and frozen-HOLD replay. A quality-gated derivative excludes all
+2023 rows and 319 2024 warning-window signals before research; see
+`docs/PROJECT_STATUS.md` and `outputs/bar_controller/research/quality_v1/`.
+
+The derivative's validation is inherited from those block proofs plus exact
+membership, split, frozen-parameter, row-count and hash checks. The monolithic
+combined validator was interrupted after paging; do not describe it as an
+aggregate row-by-row PASS. Only its TRAIN/Discovery Validation partitions are
+eligible for discovery. The legacy schema-2 trainer's fixed-bar calculation
+is descriptive, not an executable policy backtest.
+
+Before outcome-based research, implement a bounded-memory dataset replay that
+uses the quote tape and decision-arrival sequence to reproduce HOLD exactly,
+then evaluates only preregistered HOLD/EXIT rules with frozen latency and
+barrier precedence. Dynamic reversal remains unsupported until reverse-entry
+and post-original-exit quote paths are validated. No validation result,
+walk-forward result, or candidate exists yet. FINAL_TEST remains locked.
+
 ## Status and data gate
 
 The frozen entry dataset has one record per Stochastic signal and terminal FOLLOW/INVERT summaries. It does not contain intervening state. The separate `StochasticIntratradeResearchEA.mq5` is prepared to export actual open-trade snapshots at +1, +2, +3, +5, +10, +15, +20, +30, and +50 completed bars. It compiles, but no snapshot block has been run or validated yet.
