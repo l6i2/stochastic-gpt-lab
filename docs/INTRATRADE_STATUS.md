@@ -13,10 +13,14 @@ TRAIN only. See `docs/QUALITY_DIRECTION_MODEL_REPORT.md`.
 This entry-direction comparison does not test dynamic intra-trade decisions.
 The memmap quote replay kernel now has synthetic tests for baseline parity,
 strictly post-arrival fills, latency and barrier precedence, and protected
-boundaries. An end-to-end dataset replay runner and a frozen execution-latency
-assumption are still needed before dynamic policy research. The 2023–2026-03-19
-allowed history remains the only history scope. FINAL_TEST is locked;
-`LIVE_TRADING=false`; DEMO execution remains disabled.
+boundaries. Its bounded TRAIN runner rechecked all 23,428 virtual HOLD paths
+from the 11,714 quality-v1 TRAIN signals; all matched the frozen exit, quote,
+time, and PnL evidence. Report:
+`outputs/bar_controller/research/train_hold_replay.json`. No Validation or
+FINAL_TEST rows were read. Dynamic exit policy research still needs a frozen
+execution-latency assumption. The 2023–2026-03-19 allowed history remains the
+only history scope. FINAL_TEST is locked; `LIVE_TRADING=false`; DEMO execution
+remains disabled.
 
 ## Authoritative checkpoint — 2026-10-16 (schema 3 every-bar master)
 

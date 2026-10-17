@@ -16,10 +16,16 @@ PnL ranged from -7.86 to -14.13 versus -3.81 for FOLLOW-always. The entry
 direction hypothesis is rejected for promotion; no candidate exists. Results
 and caveats are in `docs/QUALITY_DIRECTION_MODEL_REPORT.md`; local models and
 metrics are under `outputs/models/quality_directional_v1/` and are excluded
-from Git. No dynamic intra-trade exit policy has been evaluated yet: the
-bounded quote replay has synthetic tests but still needs an end-to-end runner
-and a frozen execution-latency assumption. FINAL_TEST remains locked;
-`LIVE_TRADING=false`, and no Demo execution occurred.
+from Git. The bounded replay runner independently rechecked the unchanged HOLD
+baseline on all 11,714 quality-v1 TRAIN signals (23,428 FOLLOW/INVERT paths).
+Exit reasons, quote indices/times, and PnL matched the validated source; source
+quote tapes were hash-checked and rescanned for valid ordering and protected
+boundaries. The local report is
+`outputs/bar_controller/research/train_hold_replay.json`, status
+`TRAIN_HOLD_BASELINE_REPLAY_PASS`. It did not read Validation or FINAL_TEST.
+No dynamic intra-trade exit policy has been evaluated yet; its end-to-end
+runner still requires a frozen execution-latency assumption. FINAL_TEST remains
+locked; `LIVE_TRADING=false`, and no Demo execution occurred.
 
 ## Authoritative checkpoint — 2026-10-16 (schema 3 history and quality gate)
 
