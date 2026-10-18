@@ -1,5 +1,23 @@
 # Project status
 
+## Latest checkpoint — 2026-10-18 (TRAIN/Validation incident unresolved)
+
+The R2–R4 retrospective isolation audit found that the exact R2 and R3 runner
+sources are not preserved in the audited Git history. Their manifests report
+`validation_accessed=false`, and the published metrics are TRAIN-fold metrics,
+but those assertions do not independently prove that no Validation value
+influenced execution or decisions. Status is therefore
+`DISCOVERY_VALIDATION_CONTAMINATION=POTENTIAL`; the incident is not closed and
+the existing Discovery Validation split is blocked from any future use until a
+scientifically valid, independently auditable remediation is established.
+
+All 16 R2–R4 hypotheses remain rejected in TRAIN; no new round or hypothesis
+was created. See `docs/ISOLATION_INCIDENT_AUDIT.md`,
+`docs/R2_R4_FAILURE_ANALYSIS.md`, and
+`docs/INTRATRADE_NEXT_RESEARCH_PROPOSAL.md`. TRAIN loaders now reject explicit
+Validation/FINAL_TEST paths before I/O, with focused tests. `FINAL_TEST=LOCKED`,
+`DEMO=DISABLED`, and `LIVE_TRADING=false`.
+
 ## Latest checkpoint — 2026-10-18 (three TRAIN-only dynamic-exit rounds rejected)
 
 Continued on `research/full-pipeline` at the existing repo state. Audited the

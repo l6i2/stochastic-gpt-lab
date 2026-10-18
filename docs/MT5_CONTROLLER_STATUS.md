@@ -1,5 +1,15 @@
 # Controller verification status
 
+## Latest checkpoint — 2026-10-18 (offline isolation audit; MT5 unchanged)
+
+The TRAIN/Discovery Validation incident audit is POTENTIAL, not closed:
+historical R2/R3 runner source bytes are absent even though their manifests
+claim `validation_accessed=false`. The existing Discovery Validation split is
+blocked pending a scientifically valid, independently auditable remediation.
+No MT5, account, Strategy Tester, or EA action was taken. `FINAL_TEST=LOCKED`,
+`DEMO=DISABLED`, and `LIVE_TRADING=false`. See
+`docs/ISOLATION_INCIDENT_AUDIT.md` and `docs/PROJECT_STATUS.md`.
+
 ## Research checkpoint — 2026-10-18 (no MT5 action)
 
 Three new intra-trade rounds (R2–R4; 16 hashed hypotheses) completed

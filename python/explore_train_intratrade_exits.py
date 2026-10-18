@@ -22,7 +22,7 @@ import numpy as np
 import pandas as pd
 
 from parquet_io import read_parquet
-from train_event_source import read_events_for_ids
+from train_event_source import assert_train_only_source_path, read_events_for_ids
 from quote_replay import Decision, replay_memmap_scenarios
 from validate_bar_path import QUOTE_DTYPE
 
@@ -37,6 +37,7 @@ SNAPSHOT_COLUMNS = [
 
 
 def sha256(path: Path) -> str:
+    path = assert_train_only_source_path(path)
     h = hashlib.sha256()
     with Path(path).open("rb") as stream:
         for chunk in iter(lambda: stream.read(1024 * 1024), b""):
@@ -81,6 +82,10 @@ class Stats:
 def _load_inputs(root: Path):
     qdir = root / "outputs/bar_controller/research/quality_v1"
     quality_path = qdir / "tick_quality_manifest.json"
+    for path in (quality_path, qdir / "stochastic_events.csv",
+                 root / "outputs/splits/train.parquet", qdir / "excluded_signal_ids.csv",
+                 qdir / "signal_source_blocks.csv"):
+        assert_train_only_source_path(path)
     quality = json.loads(quality_path.read_text(encoding="utf-8"))
     if quality.get("status") != "PASS_INHERITED_VALIDATION" or quality.get("final_test_accessed") is not False:
         raise ValueError("Quality-v1 provenance is not accepted")
@@ -105,7 +110,7 @@ def _load_inputs(root: Path):
 def _read_first_triggers(qdir: Path, train_ids: set[str]):
     from fastparquet import ParquetFile
 
-    parquet = ParquetFile(qdir / "train.parquet")
+    parquet = ParquetFile(assert_train_only_source_path(qdir / "train.parquet"))
     missing = set(SNAPSHOT_COLUMNS) - set(parquet.columns)
     if missing:
         raise ValueError(f"Training snapshot schema is missing {sorted(missing)}")
@@ -151,7 +156,8 @@ def _join_trigger_arrivals(qdir: Path, decisions: dict) -> dict:
     wanted = {row["snapshot_id"] for row in decisions.values()}
     arrivals = {}
     print(f"Joining {len(wanted):,} trigger snapshots to arrival quotes...", flush=True)
-    with (qdir / "bar_execution_quotes.csv").open(encoding="utf-8-sig", newline="") as stream:
+    arrivals_path = assert_train_only_source_path(qdir / "bar_execution_quotes.csv")
+    with arrivals_path.open(encoding="utf-8-sig", newline="") as stream:
         for row in csv.DictReader(stream):
             snapshot_id = row["snapshot_id"]
             if snapshot_id in wanted:
@@ -176,10 +182,13 @@ def run(root: Path = ROOT, *, output: Path | None = None) -> dict:
     if output is not None and ("final_test" in Path(output).as_posix().lower() or Path(output).exists()
                                or detail_path.exists()):
         raise ValueError("Refusing protected or existing output path")
+    if output is not None:
+        assert_train_only_source_path(output)
     qdir, quality_path, quality, train_ids, source_map, event_map = _load_inputs(root)
-    split = json.loads((root / "outputs/splits/split_manifest.json").read_text(encoding="utf-8"))
+    split_path = assert_train_only_source_path(root / "outputs/splits/split_manifest.json")
+    split = json.loads(split_path.read_text(encoding="utf-8"))
     boundary = int(split["boundaries"]["final_test_start_signal_time_msc"])
-    hold_proof_path = root / "outputs/bar_controller/research/train_hold_replay.json"
+    hold_proof_path = assert_train_only_source_path(root / "outputs/bar_controller/research/train_hold_replay.json")
     hold_proof = json.loads(hold_proof_path.read_text(encoding="utf-8"))
     if (hold_proof.get("status") != "TRAIN_HOLD_BASELINE_REPLAY_PASS"
             or hold_proof.get("final_test_accessed") is not False
@@ -192,7 +201,7 @@ def run(root: Path = ROOT, *, output: Path | None = None) -> dict:
         if not block_ids:
             continue
         block = root / "outputs/bar_controller/validated_blocks" / block_name
-        manifest_path = block / "manifest.json"
+        manifest_path = assert_train_only_source_path(block / "manifest.json")
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         proof = source_proofs[block_name]
         if (sha256(manifest_path) != proof["manifest_sha256"]
@@ -203,12 +212,13 @@ def run(root: Path = ROOT, *, output: Path | None = None) -> dict:
         prior_tape_hash = hold_proof["source_runs"][block_name]["quote_tape_sha256"]
         if prior_tape_hash != expected_tape_hash:
             raise ValueError(f"TRAIN replay proof and source tape disagree: {block_name}")
-        quote_path = block / "bar_quote_path.bin"
+        quote_path = assert_train_only_source_path(block / "bar_quote_path.bin")
         if quote_path.stat().st_size % QUOTE_DTYPE.itemsize:
             raise ValueError(f"Partial quote record in {block_name}")
         tapes[block_name] = np.memmap(quote_path, dtype=QUOTE_DTYPE, mode="r")
         manifests[block_name] = manifest
-        with (block / "bar_trade_index.csv").open(encoding="utf-8-sig", newline="") as stream:
+        trade_index_path = assert_train_only_source_path(block / "bar_trade_index.csv")
+        with trade_index_path.open(encoding="utf-8-sig", newline="") as stream:
             for row in csv.DictReader(stream):
                 if row["signal_id"] in block_ids:
                     key = (row["signal_id"], row["virtual_mode"])

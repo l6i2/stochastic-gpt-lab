@@ -1,5 +1,31 @@
 # Intra-trade research status
 
+## Latest checkpoint — 2026-10-18 (isolation incident: potential contamination)
+
+The R2/R3 manifests say `validation_accessed=false`, and their saved reports
+contain TRAIN-fold metrics, but their exact runner sources are missing from the
+audited Git history. Therefore the negative claim that Validation did not
+influence any execution path or decision cannot be independently established.
+`DISCOVERY_VALIDATION_CONTAMINATION=POTENTIAL`; the incident remains open and
+use of the existing split is blocked pending an auditable scientific
+remediation. The committed R4 runner source is recoverable and uses frozen
+TRAIN IDs, but it does not close the R2/R3 gap.
+
+The diagnostic grouped the 16 failures: support and prevalence failed for one
+rule (R4-002, zero triggers); the overall fold gate failed for 14; the combined
+BUY/SELL gate and multi-session gate failed for all 16; latency robustness
+failed for four; multi-block robustness failed for six; and the drawdown proxy
+failed for none. Threshold robustness was not tested because definitions were
+frozen and no threshold sweeps were permitted. No new hypotheses or round were
+created. Reports: `docs/ISOLATION_INCIDENT_AUDIT.md`,
+`docs/R2_R4_FAILURE_ANALYSIS.md`, and
+`docs/INTRATRADE_NEXT_RESEARCH_PROPOSAL.md`.
+
+TRAIN source readers now fail closed on explicit Validation / FINAL_TEST paths.
+Tests cover rejection before file reads. A combined shared event source still
+has to be scanned to retain exact TRAIN IDs; the guard does not claim otherwise.
+`FINAL_TEST=LOCKED`; `DEMO=DISABLED`; `LIVE_TRADING=false`.
+
 ## Latest checkpoint — 2026-10-18 (R2, R3, and R4 TRAIN gates failed)
 
 Three new, frozen rounds were evaluated only on quality-v1 TRAIN. R2 contained

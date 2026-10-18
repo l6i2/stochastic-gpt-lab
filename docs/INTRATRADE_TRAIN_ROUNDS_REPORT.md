@@ -1,16 +1,16 @@
 # TRAIN-only intra-trade rounds — 2026-10-18
 
-Three preregistered rounds were replayed against quality-v1 TRAIN only, using
-four chronological expanding purged folds, exact arrival-quote joins and
-ordered quote tapes. Each fixed FOLLOW exit was compared with FOLLOW HOLD and
-INVERT HOLD; all trade outcomes were retained. Latencies were 0/250/500 ms,
-with 250 ms primary. No Discovery Validation outcomes were scored, compared,
-or used for selection. The combined event CSV contains both TRAIN and
-Validation; the first round runners loaded that shared source into a lookup
-before restricting calculations to frozen TRAIN IDs. Therefore zero physical
-read of Validation rows cannot be claimed, but no Validation values entered
-the replay, walk-forward metrics, gates, or selection. I changed the loaders
-after these runs to stream/filter by frozen TRAIN IDs before retaining rows.
+Three preregistered rounds were reported against quality-v1 TRAIN, using four
+chronological expanding purged folds, exact arrival-quote joins, and ordered
+quote tapes. Each fixed FOLLOW exit was compared with FOLLOW HOLD and INVERT
+HOLD; all trade outcomes were retained. Latencies were 0/250/500 ms, with
+250 ms primary. The combined event CSV contains TRAIN and Validation, and the
+early R2/R3 runners are not preserved as source in the audited Git history.
+Their manifests report `validation_accessed=false`, but those declarations
+cannot independently establish every execution path or rule out unrecorded
+influence. The incident audit therefore classifies contamination as POTENTIAL
+and blocks further use of the existing Discovery Validation split. See
+`docs/ISOLATION_INCIDENT_AUDIT.md`.
 
 ## Results
 
@@ -87,8 +87,9 @@ validator was not completed.
 
 After R4, do not expand the rule family further against the same TRAIN folds
 without a prospective, fixed search budget; doing so would increase adaptive
-selection risk. No Validation score has been spent. Any future candidate must
-still pass the reserved single Discovery Validation gate.
+selection risk. The existing Discovery Validation split is blocked pending
+remediation; do not assume it is clean or spend it. Any future evaluation must
+use a separately justified and independently auditable design.
 
 Small run manifests and fold reports remain local under
 `outputs/bar_controller/research/round2/`, `round3/`, and `round4/`; per-trade quote replay

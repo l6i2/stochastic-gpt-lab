@@ -16,6 +16,7 @@ import numpy as np
 from fastparquet import ParquetFile
 
 from explore_train_intratrade_exits import _join_trigger_arrivals, _load_inputs
+from train_event_source import assert_train_only_source_path
 from quote_replay import Decision, replay_memmap_scenarios
 from validate_bar_path import QUOTE_DTYPE
 
@@ -35,8 +36,9 @@ FEATURES = (
 
 
 def sha256(path: Path) -> str:
+    path = assert_train_only_source_path(path)
     digest = hashlib.sha256()
-    with Path(path).open("rb") as stream:
+    with path.open("rb") as stream:
         for chunk in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
@@ -113,17 +115,19 @@ def run(root: Path = ROOT, output: Path | None = None, round_id: str = "R2") -> 
     root = Path(root)
     if output is not None and (output.exists() or "final_test" in output.as_posix().lower()):
         raise ValueError("Refusing existing/protected output")
+    if output is not None:
+        assert_train_only_source_path(output)
     qdir, quality_path, quality, train_ids, source_map, event_map = _load_inputs(root)
     rule_files = tuple(sorted((root / "research/hypotheses").glob(f"HYP-20261018-{round_id}-*.json")))
     if not 1 <= len(rule_files) <= 10:
         raise ValueError(f"Expected 1..10 frozen hypotheses, found {len(rule_files)}")
-    hypotheses = [json.loads(path.read_text(encoding="utf-8")) for path in rule_files]
+    hypotheses = [json.loads(assert_train_only_source_path(path).read_text(encoding="utf-8")) for path in rule_files]
     hyp_hashes = {h["hypothesis_id"]: sha256(p) for h, p in zip(hypotheses, rule_files)}
     for h in hypotheses:
         if h.get("status_before_evaluation") != "FROZEN_TRAIN_WALK_FORWARD_PENDING":
             raise ValueError(f"Hypothesis not frozen before evaluation: {h['hypothesis_id']}")
 
-    parquet = ParquetFile(qdir / "train.parquet")
+    parquet = ParquetFile(assert_train_only_source_path(qdir / "train.parquet"))
     missing = set(FEATURES) - set(parquet.columns)
     if missing:
         raise ValueError(f"Missing frozen causal feature columns: {sorted(missing)}")
@@ -166,9 +170,11 @@ def run(root: Path = ROOT, output: Path | None = None, round_id: str = "R2") -> 
             snapshot_count += 1
     print(f"Scanned {snapshot_count:,} rows; {len(decisions):,} first triggers.", flush=True)
     arrivals = _join_trigger_arrivals(qdir, decisions)
-    split = json.loads((root / "outputs/splits/split_manifest.json").read_text(encoding="utf-8"))
+    split_path = assert_train_only_source_path(root / "outputs/splits/split_manifest.json")
+    split = json.loads(split_path.read_text(encoding="utf-8"))
     boundary = int(split["boundaries"]["final_test_start_signal_time_msc"])
-    proof = json.loads((root / "outputs/bar_controller/research/train_hold_replay.json").read_text(encoding="utf-8"))
+    proof_path = assert_train_only_source_path(root / "outputs/bar_controller/research/train_hold_replay.json")
+    proof = json.loads(proof_path.read_text(encoding="utf-8"))
     if proof.get("status") != "TRAIN_HOLD_BASELINE_REPLAY_PASS" or proof.get("final_test_accessed") is not False:
         raise ValueError("Verified HOLD replay proof required")
     block_proofs = {b["block"]: b for b in quality["blocks"]}
@@ -178,15 +184,16 @@ def run(root: Path = ROOT, output: Path | None = None, round_id: str = "R2") -> 
         if not ids:
             continue
         bdir = root / "outputs/bar_controller/validated_blocks" / block
-        manifest_path = bdir / "manifest.json"
+        manifest_path = assert_train_only_source_path(bdir / "manifest.json")
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         if sha256(manifest_path) != block_proofs[block]["manifest_sha256"]:
             raise ValueError(f"Source manifest changed: {block}")
-        tape_path = bdir / "bar_quote_path.bin"
+        tape_path = assert_train_only_source_path(bdir / "bar_quote_path.bin")
         if tape_path.stat().st_size % QUOTE_DTYPE.itemsize:
             raise ValueError(f"Partial quote tape: {block}")
         tapes[block] = np.memmap(tape_path, dtype=QUOTE_DTYPE, mode="r")
-        with (bdir / "bar_trade_index.csv").open(encoding="utf-8-sig", newline="") as stream:
+        trade_index_path = assert_train_only_source_path(bdir / "bar_trade_index.csv")
+        with trade_index_path.open(encoding="utf-8-sig", newline="") as stream:
             for tr in csv.DictReader(stream):
                 if tr["signal_id"] in ids and tr["virtual_mode"] == "FOLLOW":
                     if tr["signal_id"] in trade_indices:
@@ -217,6 +224,8 @@ def run(root: Path = ROOT, output: Path | None = None, round_id: str = "R2") -> 
     detail_path = output.with_name(output.stem + "_trades.csv")
     if output.exists() or detail_path.exists():
         raise ValueError("Refusing to overwrite round output")
+    assert_train_only_source_path(output)
+    assert_train_only_source_path(detail_path)
     output.parent.mkdir(parents=True, exist_ok=True)
     import tempfile
     tmp = tempfile.NamedTemporaryFile("w", newline="", encoding="utf-8", dir=output.parent,

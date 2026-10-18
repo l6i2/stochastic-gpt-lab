@@ -15,7 +15,7 @@ from fastparquet import ParquetFile
 
 from evaluate_train_exit_walkforward import build_folds
 from explore_train_intratrade_round2 import FEATURES, ROOT, sha256, triggers
-from train_event_source import read_events_for_ids
+from train_event_source import assert_train_only_source_path, read_events_for_ids
 
 
 def _stats(values):
@@ -44,7 +44,7 @@ def _session(ny_time: str) -> str:
 
 def _first_trigger_metadata(root: Path, train_ids: set[str], round_id: str) -> dict:
     qdir = root / "outputs/bar_controller/research/quality_v1"
-    pf = ParquetFile(qdir / "train.parquet")
+    pf = ParquetFile(assert_train_only_source_path(qdir / "train.parquet"))
     output = {}
     last_bar = {}
     previous_poc = {}
@@ -74,6 +74,15 @@ def evaluate(root: Path = ROOT, *, replay_path: Path | None = None,
     root = Path(root)
     replay_path = replay_path or root / f"outputs/bar_controller/research/round{round_id[-1]}/train_intratrade_round{round_id[-1]}.json"
     trade_path = replay_path.with_name(replay_path.stem + "_trades.csv")
+    for path in (replay_path, replay_path.with_name(replay_path.stem + "_trades.csv"),
+                 root / "outputs/bar_controller/research/quality_v1/tick_quality_manifest.json",
+                 root / "outputs/splits/split_manifest.json",
+                 root / "outputs/bar_controller/research/train_hold_replay.json",
+                 root / "outputs/bar_controller/research/quality_v1/train.parquet",
+                 root / "outputs/splits/train.parquet",
+                 root / "outputs/bar_controller/research/quality_v1/excluded_signal_ids.csv",
+                 root / "outputs/bar_controller/research/quality_v1/stochastic_events.csv"):
+        assert_train_only_source_path(path)
     run = json.loads(replay_path.read_text(encoding="utf-8"))
     if (run.get("scope") != "QUALITY_V1_TRAIN_ONLY" or run.get("validation_accessed") is not False
             or run.get("final_test_accessed") is not False or sha256(trade_path) != run["trade_results_sha256"]):
@@ -82,16 +91,17 @@ def evaluate(root: Path = ROOT, *, replay_path: Path | None = None,
     if sha256(quality_path) != run["quality_manifest_sha256"]:
         raise ValueError("Quality manifest changed after replay")
     split_path = root / "outputs/splits/split_manifest.json"
-    split = json.loads(split_path.read_text(encoding="utf-8"))
-    hold_proof = json.loads((root / "outputs/bar_controller/research/train_hold_replay.json").read_text(encoding="utf-8"))
+    split = json.loads(assert_train_only_source_path(split_path).read_text(encoding="utf-8"))
+    hold_proof_path = assert_train_only_source_path(root / "outputs/bar_controller/research/train_hold_replay.json")
+    hold_proof = json.loads(hold_proof_path.read_text(encoding="utf-8"))
     if (sha256(split_path) != run["split_manifest_sha256"] or
             sha256(split_path) != hold_proof.get("split_manifest_sha256") or
             int(split["boundaries"]["final_test_start_signal_time_msc"]) <= 0):
         raise ValueError("Pinned split manifest/protected boundary mismatch")
     qdir = root / "outputs/bar_controller/research/quality_v1"
-    train_ids = set(pd.read_parquet(root / "outputs/splits/train.parquet", columns=["signal_id"],
+    train_ids = set(pd.read_parquet(assert_train_only_source_path(root / "outputs/splits/train.parquet"), columns=["signal_id"],
                                     engine="fastparquet").signal_id.astype(str))
-    exclusions = set(pd.read_csv(qdir / "excluded_signal_ids.csv", dtype=str).signal_id)
+    exclusions = set(pd.read_csv(assert_train_only_source_path(qdir / "excluded_signal_ids.csv"), dtype=str).signal_id)
     train_ids -= exclusions
     event_cols = ["signal_id", "signal_time_msc", "follow_exit_time", "invert_exit_time",
                   "follow_PnL", "invert_PnL"]
@@ -105,7 +115,7 @@ def evaluate(root: Path = ROOT, *, replay_path: Path | None = None,
         raise ValueError(f"Expected four frozen folds, got {len(folds)}")
 
     by_policy = {h: {} for h in run["hypothesis_hashes"]}
-    with trade_path.open(encoding="utf-8-sig", newline="") as stream:
+    with assert_train_only_source_path(trade_path).open(encoding="utf-8-sig", newline="") as stream:
         for row in csv.DictReader(stream):
             hid, sid, latency = row["policy"], row["signal_id"], int(row["latency_msc"])
             if hid not in by_policy or sid not in train_ids:
@@ -249,6 +259,7 @@ def evaluate(root: Path = ROOT, *, replay_path: Path | None = None,
     if output.exists():
         raise ValueError("Refusing to overwrite walk-forward report")
     protocol_path = root / f"docs/INTRATRADE_{round_id}_PROTOCOL.md"
+    assert_train_only_source_path(protocol_path)
     report = {"status": f"TRAIN_{round_id}_WALK_FORWARD_COMPLETE", "round": round_id,
               "scope": "QUALITY_V1_TRAIN_ONLY", "hypotheses": results,
               "hypotheses_created": len(results), "train_survivors": survivors,
@@ -259,6 +270,7 @@ def evaluate(root: Path = ROOT, *, replay_path: Path | None = None,
               "validation_accessed": False, "final_test_accessed": False,
               "demo_execution": False, "live_trading": False}
     output.parent.mkdir(parents=True, exist_ok=True)
+    assert_train_only_source_path(output)
     output.write_text(json.dumps(report, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     return report
 
