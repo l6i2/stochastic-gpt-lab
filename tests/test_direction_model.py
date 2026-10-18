@@ -23,7 +23,7 @@ class DirectionModelSafetyTests(unittest.TestCase):
     def test_final_test_path_is_refused_before_any_output(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
-            with self.assertRaisesRegex(ValueError, "FINAL_TEST paths are categorically refused"):
+            with self.assertRaisesRegex(ValueError, "protected split path"):
                 run(root / "train.parquet", root / "final_test.parquet", root / "out", False)
             self.assertFalse((root / "out").exists())
 

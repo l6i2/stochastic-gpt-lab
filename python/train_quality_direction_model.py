@@ -27,6 +27,7 @@ from train_direction_model import (  # noqa: E402
     make_models,
 )
 from parquet_io import read_parquet  # noqa: E402
+from train_event_source import assert_train_only_source_path  # noqa: E402
 
 MODEL_NAMES = ("logistic_regression", "random_forest", "hist_gradient_boosting")
 SEED = 20261013
@@ -49,6 +50,9 @@ def _load_membership(path: Path) -> set[str]:
 def load_partitions(events_path: Path, quality_manifest_path: Path,
                     train_membership: Path, validation_membership: Path,
                     split_manifest_path: Path):
+    for path in (events_path, quality_manifest_path, train_membership,
+                 validation_membership, split_manifest_path):
+        assert_train_only_source_path(path)
     quality = json.loads(quality_manifest_path.read_text(encoding="utf-8"))
     if quality.get("status") != "PASS_INHERITED_VALIDATION" or quality.get("final_test_accessed") is not False:
         raise ValueError("Quality-v1 manifest is not accepted")

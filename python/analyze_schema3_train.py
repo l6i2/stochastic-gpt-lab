@@ -10,6 +10,10 @@ from pathlib import Path
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
+try:
+    from .train_event_source import assert_train_only_source_path
+except ImportError:
+    from train_event_source import assert_train_only_source_path
 FEATURES = (
     "current_unrealized_pnl", "current_mfe_so_far", "current_mae_so_far",
     "stoch_k", "stoch_d", "relative_volume_20", "volume_zscore_20",
@@ -21,8 +25,8 @@ GROUPS = ("original_signal", "virtual_mode", "snapshot_bar")
 
 def analyze(train_path: Path, output: Path, quality_manifest: Path) -> dict:
     train_path, output = Path(train_path), Path(output)
-    if "final_test" in train_path.as_posix().lower():
-        raise ValueError("FINAL_TEST input is forbidden")
+    train_path = assert_train_only_source_path(train_path)
+    assert_train_only_source_path(quality_manifest)
     quality = json.loads(Path(quality_manifest).read_text(encoding="utf-8"))
     if (quality.get("status") != "PASS_INHERITED_VALIDATION"
             or quality.get("final_test_accessed") is not False):

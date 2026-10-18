@@ -5,3 +5,5 @@ __pycache__/
 *.log
 outputs/*
 !outputs/.gitkeep
+# The sealed prospective cohort contains broker market data and is never committed.
+outputs/future_validation_cohort/

@@ -16,18 +16,19 @@ from sklearn.preprocessing import StandardScaler
 
 try:
     from .parquet_io import read_parquet
+    from .train_event_source import assert_train_only_source_path
     from .train_intratrade_models import FEATURES, _performance, _purge_training_groups
 except ImportError:
     from parquet_io import read_parquet
+    from train_event_source import assert_train_only_source_path
     from train_intratrade_models import FEATURES, _performance, _purge_training_groups
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def walk_forward(train_path: Path, validation_path: Path, targets_path: Path, out: Path) -> dict:
-    for path in (train_path, validation_path, targets_path):
-        if "final_test" in path.as_posix().lower():
-            raise ValueError("FINAL_TEST is not accepted by walk-forward")
+    for path in (train_path, validation_path, targets_path, out):
+        assert_train_only_source_path(path)
     targets = pd.read_csv(targets_path)
     train = read_parquet(train_path).merge(targets, on=["snapshot_id", "signal_id", "virtual_mode", "snapshot_bar"],
                                            how="inner", validate="one_to_one")

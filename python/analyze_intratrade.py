@@ -9,11 +9,15 @@ import pandas as pd
 
 try:
     from .parquet_io import read_parquet
+    from .train_event_source import assert_train_only_source_path, read_rows_for_ids
 except ImportError:
     from parquet_io import read_parquet
+    from train_event_source import assert_train_only_source_path, read_rows_for_ids
 
 
 def analyze(train_path: Path, targets_path: Path, out: Path) -> dict:
+    train_path = assert_train_only_source_path(train_path)
+    targets_path = assert_train_only_source_path(targets_path)
     # This legacy descriptive checkpoint does not need the 257-column frame
     # resident in memory. Exhaustive causal research uses the versioned path.
     import fastparquet
@@ -26,8 +30,7 @@ def analyze(train_path: Path, targets_path: Path, out: Path) -> dict:
                'atr_14','signal_time_msc','snapshot_time_msc'}
     train = read_parquet(train_path,columns=sorted(available & requested))
     train_ids=set(train.signal_id.astype(str))
-    targets=pd.concat([chunk.loc[chunk.signal_id.astype(str).isin(train_ids)]
-                       for chunk in pd.read_csv(targets_path,chunksize=10000)],ignore_index=True)
+    targets = read_rows_for_ids(targets_path, train_ids, chunksize=10_000)
     if train["signal_id"].nunique() == 0:
         raise ValueError("TRAIN snapshots are empty")
     data = train.merge(targets, on=["snapshot_id", "signal_id", "virtual_mode", "snapshot_bar"],

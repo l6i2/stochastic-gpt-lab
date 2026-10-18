@@ -9,6 +9,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from parquet_io import read_parquet
+from train_event_source import assert_train_only_source_path, read_events_for_ids
 
 ROOT = Path(__file__).resolve().parents[1]
 RULES = ("HA_OPPOSITE", "STOCH_KD_OPPOSITE", "HA_AND_STOCH_OPPOSITE")
@@ -16,6 +18,7 @@ PRIMARY_LATENCY = 250
 
 
 def sha256(path: Path) -> str:
+    path = assert_train_only_source_path(path)
     digest = hashlib.sha256()
     with Path(path).open("rb") as stream:
         for chunk in iter(lambda: stream.read(1024 * 1024), b""):
@@ -65,9 +68,15 @@ def build_folds(events: pd.DataFrame, initial: int = 4000, step: int = 2000) -> 
 
 def run(root: Path = ROOT, *, output: Path | None = None) -> dict:
     root = Path(root)
+    if output is not None:
+        assert_train_only_source_path(output)
     if output is not None and ("final_test" in Path(output).as_posix().lower() or Path(output).exists()):
         raise ValueError("Refusing protected or existing output path")
     qdir = root / "outputs/bar_controller/research/quality_v1"
+    for path in (qdir / "tick_quality_manifest.json", root / "outputs/splits/train.parquet",
+                 root / "outputs/splits/split_manifest.json", qdir / "stochastic_events.csv",
+                 qdir / "excluded_signal_ids.csv"):
+        assert_train_only_source_path(path)
     quality_path = qdir / "tick_quality_manifest.json"
     quality = json.loads(quality_path.read_text(encoding="utf-8"))
     if quality.get("status") != "PASS_INHERITED_VALIDATION" or quality.get("final_test_accessed") is not False:
@@ -82,18 +91,14 @@ def run(root: Path = ROOT, *, output: Path | None = None) -> dict:
     split_path = root / "outputs/splits/split_manifest.json"
     split = json.loads(split_path.read_text(encoding="utf-8"))
     events_path = qdir / "stochastic_events.csv"
-    events = pd.read_csv(events_path, usecols=["signal_id", "signal_time_msc",
-                                               "follow_exit_time", "invert_exit_time"],
-                         dtype={"signal_id": str})
-    events["label_end_msc"] = events[["follow_exit_time", "invert_exit_time"]].max(axis=1)
-    train_ids = set(pd.read_parquet(root / "outputs/splits/train.parquet",
-                                    columns=["signal_id"], engine="fastparquet")
+    train_ids = set(read_parquet(root / "outputs/splits/train.parquet", columns=["signal_id"])
                     .signal_id.astype(str))
     excluded = set(pd.read_csv(qdir / "excluded_signal_ids.csv", dtype=str).signal_id)
     train_ids -= excluded
-    events = events[events.signal_id.astype(str).isin(train_ids)].copy()
-    if set(events.signal_id.astype(str)) != train_ids:
-        raise ValueError("Quality-v1 TRAIN event membership differs from frozen split")
+    events = read_events_for_ids(events_path,
+                                 ["signal_id", "signal_time_msc", "follow_exit_time", "invert_exit_time"],
+                                 train_ids)
+    events["label_end_msc"] = events[["follow_exit_time", "invert_exit_time"]].max(axis=1)
     folds = build_folds(events)
     by_signal: dict[str, dict] = {}
     with trade_path.open(encoding="utf-8-sig", newline="") as stream:

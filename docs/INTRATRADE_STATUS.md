@@ -265,3 +265,7 @@ The raw historical runs remain intact. A pre-outcome data-quality policy is now 
 
 Next: build the complete raw schema 3 master and inherited partitions, then create and validate a separately hashed quality-eligible TRAIN/ DISCOVERY_VALIDATION derivative. Begin GPT/ML research only from its TRAIN partition. FINAL_TEST is still locked; no policy candidate or Demo execution exists.
 
+
+## Future validation isolation — 2026-10-18
+
+Dynamic-policy research is paused outside TRAIN. The contaminated legacy Discovery Validation remains blocked and is not repurposed. A separate raw-only prospective cohort is preregistered at `outputs/future_validation_cohort/cohort_20261019/`, with fixed start `2026-10-19T00:00:00Z`, no backfill, its own hash-chained manifest, and false TRAIN/evaluation permissions. TRAIN readers reject its path before I/O; any future derivation/evaluation requires a separate frozen protocol and explicit authorization. The scheduled collector is read-only and captures closed-day US30Cash M5 quotes/bars. No validation rows, FINAL_TEST rows, outcomes, or cohort data were used in hypothesis work. No new hypotheses were created.

@@ -11,7 +11,7 @@ from python.parquet_io import write_parquet
 
 
 class IntratradeHypothesisTests(unittest.TestCase):
-    def test_freezes_train_rules_hashes_and_validates_once(self):
+    def test_freezes_train_rules_but_blocks_contaminated_discovery_validation(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             train_path, validation_path, targets_path = (root / "train.parquet", root / "validation.parquet",
@@ -45,13 +45,13 @@ class IntratradeHypothesisTests(unittest.TestCase):
             self.assertEqual(len(manifest["hypotheses"]), 4)
             with self.assertRaises(FileExistsError):
                 freeze(train_path, targets_path, frozen_dir)
-            result = evaluate(validation_path, targets_path, frozen_dir, root / "results")
-            self.assertFalse(result["final_test_accessed"])
-            with self.assertRaises(FileExistsError):
-                evaluate(validation_path, targets_path, frozen_dir, root / "results")
+            results_path = root / "results"
+            with self.assertRaisesRegex(ValueError, "protected split path"):
+                evaluate(validation_path, targets_path, frozen_dir, results_path)
+            self.assertFalse(results_path.exists())
 
     def test_final_test_named_inputs_are_rejected(self):
-        with self.assertRaisesRegex(ValueError, "FINAL_TEST"):
+        with self.assertRaisesRegex(ValueError, "protected split path"):
             freeze(Path("final_test.parquet"), Path("targets.csv"), Path("hypotheses"))
 
 

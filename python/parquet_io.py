@@ -46,7 +46,6 @@ def parquet_engine() -> str:
 
 def read_parquet(path: str | Path, **kwargs):
     import pandas as pd
-
     return pd.read_parquet(path, engine=parquet_engine(), **kwargs)
 
 

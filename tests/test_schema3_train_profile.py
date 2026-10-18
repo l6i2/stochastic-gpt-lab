@@ -11,7 +11,7 @@ from python.analyze_schema3_train import FEATURES, GROUPS, analyze
 
 class Schema3TrainProfileTests(unittest.TestCase):
     def test_final_test_path_is_rejected_before_reading(self):
-        with self.assertRaisesRegex(ValueError, "FINAL_TEST"):
+        with self.assertRaisesRegex(ValueError, "protected split path"):
             analyze(Path("outputs/final_test/private.parquet"), Path("unused"), Path("unused"))
 
     def test_profile_reads_only_features_and_hash_pinned_train(self):

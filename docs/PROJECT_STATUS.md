@@ -315,3 +315,11 @@ The raw historical runs remain intact. A pre-outcome data-quality policy is now 
 
 Next: build the complete raw schema 3 master and inherited partitions, then create and validate a separately hashed quality-eligible TRAIN/ DISCOVERY_VALIDATION derivative. Begin GPT/ML research only from its TRAIN partition. FINAL_TEST is still locked; no policy candidate or Demo execution exists.
 
+
+## Prospective validation cohort checkpoint — 2026-10-18
+
+Legacy `DISCOVERY_VALIDATION` remains `BLOCKED` because isolation cannot be proven; `FINAL_TEST` remains `LOCKED`. TRAIN-specific CSV/target loaders and research runner entrypoints reject protected split paths before file I/O. Pipeline stages that depend on contaminated legacy validation fail closed. Combined raw-source ingestion retains only frozen TRAIN signal IDs. The future cohort is excluded from hypothesis generation and selection by policy and TRAIN-reader guards.
+
+The independent `FUTURE_VALIDATION_COHORT` protocol is preregistered with a fixed no-backfill start of `2026-10-19T00:00:00Z`, after the last frozen TRAIN signal (`2025-08-19T08:04:59.999Z`) and after historical source data. Its manifest is initialized and hashed; evaluation and TRAIN access are false. Raw US30Cash M5 bars/ticks are captured only after UTC-day close and a two-hour lag. A Windows Task Scheduler job is registered every 15 minutes starting 2026-10-19 00:15 local time under the interactive user, to attach to XM DEMO read-only. It does not backfill, create features/labels, or call trading APIs. First actual collection has not yet occurred.
+
+Focused isolation and collector tests: 16 PASS; `compileall` PASS. Full suite: 130 PASS, 9 skipped because native `g++` is unavailable. `LIVE_TRADING=false`; DEMO execution remains disabled; no trade or Tester run was initiated. Evaluation of the future cohort is not authorized by this preparation. See `docs/FUTURE_VALIDATION_PROTOCOL.md` and `docs/FUTURE_VALIDATION_COLLECTOR_PLAN.md`.

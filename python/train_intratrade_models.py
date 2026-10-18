@@ -22,8 +22,10 @@ from sklearn.preprocessing import StandardScaler
 
 try:
     from .parquet_io import read_parquet
+    from .train_event_source import assert_train_only_source_path, read_rows_for_ids
 except ImportError:
     from parquet_io import read_parquet
+    from train_event_source import assert_train_only_source_path, read_rows_for_ids
 
 ROOT = Path(__file__).resolve().parents[1]
 FEATURES = (
@@ -53,13 +55,13 @@ MODELS = ("calibrated_logistic", "random_forest", "hist_gradient_boosting")
 
 
 def _safe_path(path: Path) -> None:
-    if "final_test" in path.as_posix().lower():
-        raise ValueError("FINAL_TEST is not accepted by this trainer")
+    assert_train_only_source_path(path)
 
 
 def _join(snapshot_path: Path, targets_path: Path) -> pd.DataFrame:
     _safe_path(snapshot_path); _safe_path(targets_path)
-    snapshots, targets = read_parquet(snapshot_path), pd.read_csv(targets_path)
+    snapshots = read_parquet(snapshot_path)
+    targets = read_rows_for_ids(targets_path, set(snapshots.signal_id.astype(str)))
     return snapshots.merge(targets, on=["snapshot_id", "signal_id", "virtual_mode", "snapshot_bar"],
                            how="inner", validate="one_to_one")
 
@@ -168,6 +170,8 @@ def _policy_report(val: pd.DataFrame, predictions: dict[str, pd.Series]) -> dict
 
 
 def train(train_path: Path, validation_path: Path, targets_path: Path, output: Path) -> dict:
+    for path in (train_path, validation_path, targets_path, output):
+        assert_train_only_source_path(path)
     train_data, validation_data = _join(train_path, targets_path), _join(validation_path, targets_path)
     if set(train_data.signal_id) & set(validation_data.signal_id):
         raise ValueError("TRAIN and VALIDATION signal IDs overlap")

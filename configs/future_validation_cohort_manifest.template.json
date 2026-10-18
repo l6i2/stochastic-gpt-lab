@@ -1,0 +1,29 @@
+{
+  "schema_version": "future-validation-cohort/1.0",
+  "cohort_id": "us30cash_m5_future_20261019_v1",
+  "symbol": "US30Cash",
+  "timeframe": "M5",
+  "source": "XM MT5 read-only Python integration",
+  "cohort_start_utc": "2026-10-19T00:00:00Z",
+  "legacy_latest_train_signal_utc": "2025-08-19T08:04:59.999Z",
+  "capture_policy": {
+    "ticks": "COPY_TICKS_ALL, partitioned by UTC hourly query windows",
+    "bars": "M5 bars, closed UTC calendar days only",
+    "settlement_lag_hours": 2,
+    "backfill_before_start": false,
+    "features_or_labels_generated": false,
+    "TRAIN_or_hypothesis_generation_use": false
+  },
+  "access_policy": {
+    "train_access_allowed": false,
+    "hypothesis_generation_allowed": false,
+    "threshold_selection_allowed": false,
+    "ranking_or_tuning_allowed": false,
+    "evaluation_authorized": false,
+    "legacy_discovery_validation_used": false,
+    "legacy_final_test_used": false,
+    "live_trading": false,
+    "demo_execution": false
+  },
+  "segments": []
+}

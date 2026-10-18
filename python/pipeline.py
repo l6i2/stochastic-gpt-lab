@@ -119,6 +119,18 @@ def main() -> int:
     sub.add_parser("intratrade-status", help="report whether causal path-state source exists; never fabricates snapshots")
     sub.add_parser("candidate", help="verify promotion gates; creates no candidate if any gate fails")
     args = parser.parse_args()
+    validation_blocked_commands = {
+        "validate", "build-master", "ml-train", "validate-hypotheses",
+        "round2-entry-validate", "intratrade-export-plan", "intratrade-validate",
+        "intratrade-build", "intratrade-ml", "intratrade-validation",
+        "intratrade-walkforward", "candidate",
+    }
+    if args.command in validation_blocked_commands or (
+            args.command == "intratrade-hypotheses" and args.action == "validate"):
+        print("BLOCKED: legacy DISCOVERY_VALIDATION is potentially contaminated; "
+              "FINAL_TEST and FUTURE_VALIDATION_COHORT are not available to this command.",
+              file=sys.stderr)
+        return 2
     if args.command == "historical":
         path = ROOT / "outputs/history_coverage.json"
         coverage = json.loads(path.read_text(encoding="utf-8"))
@@ -147,7 +159,7 @@ def main() -> int:
             return 1
         return run(["python/build_master_dataset.py", *blocks])
     if args.command == "train-analysis":
-        return run(["python/analyze_dataset.py", "outputs/master/stochastic_master.parquet",
+        return run(["python/analyze_dataset.py", "outputs/splits/train.parquet",
                     "--output", str(args.output), "--evaluate", "TRAIN", "--walk-forward",
                     "--wf-initial", "5000", "--wf-step", "2500"])
     if args.command == "ml-train":

@@ -11,8 +11,10 @@ import pandas as pd
 
 try:
     from .parquet_io import read_parquet
+    from .train_event_source import assert_train_only_source_path, read_rows_for_ids
 except ImportError:
     from parquet_io import read_parquet
+    from train_event_source import assert_train_only_source_path, read_rows_for_ids
 
 ROOT = Path(__file__).resolve().parents[1]
 RULES = {
@@ -28,8 +30,7 @@ RULES = {
 
 
 def _reject_final(path: Path) -> None:
-    if "final_test" in path.as_posix().lower():
-        raise ValueError("FINAL_TEST paths are never accepted by intra-trade discovery tools")
+    assert_train_only_source_path(path)
 
 
 def condition(frame: pd.DataFrame, hypothesis_id: str) -> pd.Series:
@@ -51,7 +52,7 @@ def load_joined(snapshots_path: Path, targets_path: Path) -> pd.DataFrame:
     _reject_final(snapshots_path)
     _reject_final(targets_path)
     snapshots = read_parquet(snapshots_path)
-    targets = pd.read_csv(targets_path)
+    targets = read_rows_for_ids(targets_path, set(snapshots.signal_id.astype(str)))
     return snapshots.merge(targets, on=["snapshot_id", "signal_id", "virtual_mode", "snapshot_bar"],
                            how="inner", validate="one_to_one")
 

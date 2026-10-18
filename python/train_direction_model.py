@@ -20,6 +20,7 @@ from sklearn.calibration import CalibratedClassifierCV
 from sklearn.model_selection import TimeSeriesSplit
 
 from research import FEATURE_COLUMNS, purge_at_boundary, read_dataset, validate, walk_forward
+from train_event_source import assert_train_only_source_path
 
 SEED = 20261013
 TARGET = "directional_advantage > 0"
@@ -164,6 +165,8 @@ def _score_fitted(model, features, train_rows, eval_rows, y_train, y_eval, name,
 
 def score_saved_models(train_path: Path, validation_path: Path, output: Path) -> dict:
     """Score already-fitted TRAIN models without refitting or entering FINAL_TEST."""
+    assert_train_only_source_path(train_path)
+    assert_train_only_source_path(validation_path)
     if "final_test" in str(train_path).lower() or "final_test" in str(validation_path).lower():
         raise ValueError("FINAL_TEST paths are categorically refused")
     if not output.is_dir() or not (output / "models").is_dir():
@@ -205,6 +208,8 @@ def score_saved_models(train_path: Path, validation_path: Path, output: Path) ->
 
 def run(train_path: Path, validation_path: Path, output: Path, do_walk_forward: bool,
         round2: bool = False) -> dict:
+    assert_train_only_source_path(train_path)
+    assert_train_only_source_path(validation_path)
     if "final_test" in str(train_path).lower() or "final_test" in str(validation_path).lower():
         raise ValueError("FINAL_TEST paths are categorically refused")
     if output.exists():

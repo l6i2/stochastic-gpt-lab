@@ -12,6 +12,7 @@ import pandas as pd
 
 from parquet_io import read_parquet
 from quote_replay import replay_memmap_window
+from train_event_source import assert_train_only_source_path, read_events_for_ids
 from validate_bar_path import QUOTE_DTYPE, open_quotes
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,6 +21,7 @@ MODES = ("FOLLOW", "INVERT")
 
 
 def sha256(path: Path) -> str:
+    path = assert_train_only_source_path(path)
     digest = hashlib.sha256()
     with Path(path).open("rb") as stream:
         for chunk in iter(lambda: stream.read(1024 * 1024), b""):
@@ -35,6 +37,10 @@ def run(root: Path = ROOT, *, output: Path | None = None) -> dict:
     root = Path(root)
     quality_dir = root / "outputs/bar_controller/research/quality_v1"
     quality_manifest_path = quality_dir / "tick_quality_manifest.json"
+    for path in (quality_manifest_path, root / "outputs/splits/train.parquet",
+                 quality_dir / "excluded_signal_ids.csv", quality_dir / "signal_source_blocks.csv",
+                 quality_dir / "stochastic_events.csv"):
+        assert_train_only_source_path(path)
     quality = json.loads(quality_manifest_path.read_text(encoding="utf-8"))
     if quality.get("status") != "PASS_INHERITED_VALIDATION" or quality.get("final_test_accessed") is not False:
         raise ValueError("Quality-v1 provenance is not accepted")
@@ -50,8 +56,7 @@ def run(root: Path = ROOT, *, output: Path | None = None) -> dict:
     source_map = dict(zip(sources.signal_id, sources.source_block))
     event_columns = ["signal_id", "schema_version", "follow_PnL", "follow_exit_time",
                      "follow_exit_reason", "invert_PnL", "invert_exit_time", "invert_exit_reason"]
-    events = pd.read_csv(quality_dir / "stochastic_events.csv", usecols=event_columns,
-                         dtype={"signal_id": str, "schema_version": str})
+    events = read_events_for_ids(quality_dir / "stochastic_events.csv", event_columns, train_ids)
     event_map = events.set_index("signal_id").to_dict(orient="index")
     if not set(event_map) <= set(source_map):
         raise ValueError("Invalid event/source mapping")
