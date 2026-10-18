@@ -1,5 +1,38 @@
 # Intra-trade research status
 
+## Latest checkpoint — 2026-10-18 (R2, R3, and R4 TRAIN gates failed)
+
+Three new, frozen rounds were evaluated only on quality-v1 TRAIN. R2 contained
+eight hypotheses covering profit erosion, stop distance, Stochastic zone
+recovery, HA with relative volume, ATR regime, value-area edges, and session
+close. R3 contained four distinct definitions for MAE recovery, TP proximity,
+low-volume profit protection, and adverse POC crossing. R4 contained EMA,
+structure, 50-bar loss-stop, and volatility-contraction rules. All used the existing
+four expanding purged folds and 0/250/500 ms quote replay. Hypothesis SHA-256s
+and results are in `docs/INTRATRADE_TRAIN_ROUNDS_REPORT.md`.
+
+R2: 0/8 passed all preregistered gates. R3: 0/4 passed. R4: 0/4 passed. R3 MAE recovery was
+positive in all four overall folds, but SELL was positive in only 2/4 and the
+New York session contributed 55.0% of the positive session effect; the policy
+also remained below the INVERT-always mean. None proceeds to Discovery
+Validation, no candidate is frozen, and no rule was retuned. The R4 fixed
+50-bar loss stop was positive in all four overall folds but failed SELL and
+session consistency; the structure-break rule had zero triggers. The 250 ms
+primary latency and 0/500 ms sensitivities remain unchanged.
+
+No FINAL_TEST outcome or held-out Validation metric was analyzed or scored.
+The first runners loaded the combined event CSV before restricting all
+calculations to frozen TRAIN IDs, so physical zero-read of Validation rows
+cannot be claimed; loaders now stream/filter by TRAIN membership. No Demo/live execution
+occurred; `LIVE_TRADING=false`. Historical quality caveat remains:
+`PASS_INHERITED_VALIDATION`, without a separate completed aggregate row-level
+validator.
+
+After R4 the rule search is stopped on this reused TRAIN fold set to avoid
+unbounded adaptive hypothesis selection. No Discovery Validation score has
+been spent; new research needs a fixed prospective search budget or additional
+permitted data.
+
 ## Authoritative checkpoint — 2026-10-16 (entry model rejected; dynamic replay pending)
 
 A signal-time entry-direction model study was completed on the quality-v1

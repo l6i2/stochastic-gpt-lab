@@ -1,5 +1,39 @@
 # Project status
 
+## Latest checkpoint — 2026-10-18 (three TRAIN-only dynamic-exit rounds rejected)
+
+Continued on `research/full-pipeline` at the existing repo state. Audited the
+rejected R1 HA/Stochastic rules and did not reuse or retune them. Preregistered
+and SHA-256-froze eight R2 hypotheses, four new R3 hypotheses, and four new R4
+hypotheses before their replays. All three rounds used quality-v1 TRAIN only,
+four expanding purged folds,
+verified quote arrivals, and 0/250/500 ms execution latency. All replayed
+decisions were causal; no targets were used as features. No hypotheses passed
+the complete side-specific consistency, support, concentration, session/block,
+latency, and drawdown gates. Discovery Validation was not scored in these
+rounds; no candidate exists. No Validation outcomes were scored or used. The
+first runners loaded the combined event source before restricting computations
+to TRAIN IDs, so physical zero-read cannot be claimed; loaders now stream/filter
+by TRAIN membership. See `docs/INTRATRADE_TRAIN_ROUNDS_REPORT.md`.
+
+The closest result was R3 MAE recovery: +1.084 mean paired change versus FOLLOW
+HOLD, all four overall folds positive, and stable latency; however SELL was
+positive in only 2/4 folds and New York accounted for 55.0% of positive session
+change. Its policy mean remained below INVERT HOLD. It is rejected without
+retuning. The data derivative remains `PASS_INHERITED_VALIDATION`; the
+aggregate row-by-row validator was not completed. Raw per-trade replay CSVs
+remain local and excluded from Git.
+
+The R4 continuation also produced no candidate. Stop expanding rules against
+these same walk-forward folds until there is a prospective fixed search budget;
+more adaptive rounds would increase selection risk. The single Discovery
+Validation score remains unspent.
+
+`FINAL_TEST=LOCKED`; `DEMO=DISABLED`; `LIVE_TRADING=false`; no real or Demo
+orders were placed. The full metrics, frozen hypothesis hashes, and
+reproducibility manifests are in the round report and local
+`outputs/bar_controller/research/round{2,3,4}/` artifacts.
+
 ## Authoritative checkpoint — 2026-10-16 (quality-v1 entry model scored)
 
 The quality-v1 signal-time entry-direction experiment is complete. It used

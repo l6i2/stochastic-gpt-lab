@@ -22,6 +22,7 @@ import numpy as np
 import pandas as pd
 
 from parquet_io import read_parquet
+from train_event_source import read_events_for_ids
 from quote_replay import Decision, replay_memmap_scenarios
 from validate_bar_path import QUOTE_DTYPE
 
@@ -94,7 +95,7 @@ def _load_inputs(root: Path):
     source_map = dict(zip(source.signal_id, source.source_block))
     event_columns = ["signal_id", "signal_time_msc", "follow_exit_time", "invert_exit_time",
                      "follow_PnL", "invert_PnL"]
-    events = pd.read_csv(events_path, usecols=event_columns, dtype={"signal_id": str})
+    events = read_events_for_ids(events_path, event_columns, train_ids)
     event_map = events.set_index("signal_id").to_dict(orient="index")
     if not train_ids <= set(source_map) or not train_ids <= set(event_map):
         raise ValueError("Frozen TRAIN membership is missing a source or event record")

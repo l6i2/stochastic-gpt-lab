@@ -1,5 +1,14 @@
 # Controller verification status
 
+## Research checkpoint — 2026-10-18 (no MT5 action)
+
+Three new intra-trade rounds (R2–R4; 16 hashed hypotheses) completed
+TRAIN-only ordered-quote replay and four-fold purged evaluation. No hypothesis
+passed all gates; no Discovery Validation score or FINAL_TEST access occurred.
+No MT5 compile, tester run, account operation, or deployment was performed in
+this continuation. `LIVE_TRADING=false`; Demo execution is disabled. See
+`docs/INTRATRADE_TRAIN_ROUNDS_REPORT.md`.
+
 ## Authoritative checkpoint — 2026-10-16 (offline analysis; MT5 unchanged)
 
 No MT5 or account interaction was needed for the offline quality-v1 entry
@@ -166,4 +175,14 @@ All permitted historical blocks passed their event, intra-trade, ordered-quote b
 The raw historical runs remain intact. A pre-outcome data-quality policy is now encoded in `python/tick_quality_gate.py` and tested. The 2023 tester log reports 665 minute bars with no real ticks and 1,230 of 9,635 minute bars with real ticks discarded (plus tick-price/volume mismatches); this exceeds the frozen 1% quality threshold, so all 210 signals from that block are ineligible for research. The 2024 log reports 208 of 354,053 minute bars with discarded/mismatched ticks on six server dates. A conservative two-server-day halo around each warning date, applied to feature windows and open-trade intervals without inspecting returns, excludes 319 signals. 2025 and 2026 logs have no tick replacement/mismatch warnings and remain eligible. The preview counts come from event timestamps and trade interval bounds only; no target or PnL columns are read.
 
 Next: build the complete raw schema 3 master and inherited partitions, then create and validate a separately hashed quality-eligible TRAIN/ DISCOVERY_VALIDATION derivative. Begin GPT/ML research only from its TRAIN partition. FINAL_TEST is still locked; no policy candidate or Demo execution exists.
+
+# Research controller checkpoint — 2026-10-18
+
+TRAIN-only intra-trade dynamic exit exploration completed two preregistered
+rounds (8 + 4 frozen hypotheses). Every policy used causal snapshots and the
+validated ordered quote replay at 0/250/500 ms. No hypothesis met the complete
+walk-forward and robustness gates; Discovery Validation and FINAL_TEST remain
+unopened. No MT5 compile, tester run, account operation, or deployment was
+performed in this research continuation. `LIVE_TRADING=false`; Demo execution
+is disabled. Report: `docs/INTRATRADE_TRAIN_ROUNDS_REPORT.md`.
 
