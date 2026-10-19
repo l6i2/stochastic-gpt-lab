@@ -15,10 +15,14 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import sys
 import tempfile
+import time as time_module
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 COHORT_ROOT = ROOT / "outputs/future_validation_cohort/cohort_20261019"
 TEMPLATE_PATH = ROOT / "configs/future_validation_cohort_manifest.template.json"
 COHORT_ID = "us30cash_m5_future_20261019_v1"
@@ -29,6 +33,18 @@ SETTLEMENT_LAG = timedelta(hours=2)
 TICK_QUERY_CHUNK = timedelta(hours=1)
 TICK_FIELDS = ("time", "time_msc", "bid", "ask", "last", "volume", "volume_real", "flags")
 BAR_FIELDS = ("time", "open", "high", "low", "close", "tick_volume", "spread", "real_volume")
+MAX_QUERY_ATTEMPTS = 4
+
+
+def _mt5_query_with_retry(mt5, function_name: str, *args):
+    function = getattr(mt5, function_name)
+    for attempt in range(MAX_QUERY_ATTEMPTS):
+        result = function(*args)
+        if result is not None:
+            return result
+        if attempt + 1 < MAX_QUERY_ATTEMPTS:
+            time_module.sleep(min(2 ** attempt, 8))
+    raise RuntimeError(f"{function_name} failed after {MAX_QUERY_ATTEMPTS} attempts: {mt5.last_error()}")
 
 
 def _sha256(path: Path) -> str:
@@ -137,11 +153,67 @@ def _write_gzip_csv(path: Path, fields: tuple[str, ...], rows) -> tuple[int, str
     return count, _sha256(path), path.stat().st_size
 
 
+def _recover_orphan_day(final_day_dir: Path, day_start: datetime, day_end: datetime,
+                        data_dir: Path) -> dict[str, Any]:
+    """Adopt a fully written day directory left between atomic rename and manifest update."""
+    day_name = day_start.strftime("%Y%m%d")
+    ticks_path = final_day_dir / f"ticks_{day_name}.csv.gz"
+    bars_path = final_day_dir / f"bars_{day_name}.csv.gz"
+    if not ticks_path.is_file() or not bars_path.is_file():
+        raise FileExistsError(f"Incomplete orphan day directory; refusing overwrite: {day_name}")
+
+    tick_count = 0
+    tick_min = tick_max = previous_tick = None
+    with gzip.open(ticks_path, "rt", encoding="utf-8", newline="") as stream:
+        reader = csv.DictReader(stream)
+        if tuple(reader.fieldnames or ()) != TICK_FIELDS:
+            raise ValueError(f"Orphan tick schema mismatch: {day_name}")
+        for row in reader:
+            stamp = int(row["time_msc"])
+            if not (_ms(day_start) <= stamp < _ms(day_end)) or (previous_tick is not None and stamp < previous_tick):
+                raise ValueError(f"Orphan tick interval/order error: {day_name}")
+            tick_count += 1
+            tick_min = stamp if tick_min is None else min(tick_min, stamp)
+            tick_max = stamp if tick_max is None else max(tick_max, stamp)
+            previous_tick = stamp
+
+    bar_count = 0
+    first_bar = last_bar = previous_bar = None
+    with gzip.open(bars_path, "rt", encoding="utf-8", newline="") as stream:
+        reader = csv.DictReader(stream)
+        if tuple(reader.fieldnames or ()) != BAR_FIELDS:
+            raise ValueError(f"Orphan M5 bar schema mismatch: {day_name}")
+        for row in reader:
+            stamp = int(row["time"])
+            if (not (_ms(day_start) <= stamp * 1000 < _ms(day_end))
+                    or (previous_bar is not None and stamp <= previous_bar)):
+                raise ValueError(f"Orphan M5 bar interval/order error: {day_name}")
+            first_bar = stamp if first_bar is None else first_bar
+            last_bar = previous_bar = stamp
+            bar_count += 1
+
+    return {
+        "day_utc": day_name,
+        "range_start_utc": day_start.isoformat().replace("+00:00", "Z"),
+        "range_end_exclusive_utc": day_end.isoformat().replace("+00:00", "Z"),
+        "ticks_file": str(ticks_path.relative_to(data_dir.parent)).replace("\\", "/"),
+        "ticks_sha256": _sha256(ticks_path), "ticks_bytes": ticks_path.stat().st_size,
+        "ticks_rows": tick_count, "first_tick_msc": tick_min, "last_tick_msc": tick_max,
+        "bars_file": str(bars_path.relative_to(data_dir.parent)).replace("\\", "/"),
+        "bars_sha256": _sha256(bars_path), "bars_bytes": bars_path.stat().st_size,
+        "bars_rows": bar_count,
+        "first_bar_time_utc": datetime.fromtimestamp(first_bar, timezone.utc).isoformat().replace("+00:00", "Z") if first_bar is not None else None,
+        "last_bar_time_utc": datetime.fromtimestamp(last_bar, timezone.utc).isoformat().replace("+00:00", "Z") if last_bar is not None else None,
+        "empty_day": tick_count == 0 and bar_count == 0,
+        "recovered_after_restart": True,
+    }
+
+
 def _collect_day(mt5, day_start: datetime, day_end: datetime, data_dir: Path) -> dict[str, Any]:
     day_name = day_start.strftime("%Y%m%d")
     final_day_dir = data_dir / day_name
     if final_day_dir.exists():
-        raise FileExistsError(f"Refusing to overwrite a cohort day already on disk: {day_name}")
+        return _recover_orphan_day(final_day_dir, day_start, day_end, data_dir)
     data_dir.mkdir(parents=True, exist_ok=True)
     staging = Path(tempfile.mkdtemp(prefix=f".{day_name}.pending-", dir=data_dir))
     ticks_path = staging / f"ticks_{day_name}.csv.gz"
@@ -149,6 +221,7 @@ def _collect_day(mt5, day_start: datetime, day_end: datetime, data_dir: Path) ->
     tick_count = 0
     tick_min = None
     tick_max = None
+    previous_tick = None
     try:
         with gzip.open(ticks_path, "wt", encoding="utf-8", newline="") as stream:
             writer = csv.DictWriter(stream, fieldnames=TICK_FIELDS, extrasaction="ignore")
@@ -157,9 +230,8 @@ def _collect_day(mt5, day_start: datetime, day_end: datetime, data_dir: Path) ->
             while cursor < day_end:
                 end = min(cursor + TICK_QUERY_CHUNK, day_end)
                 inclusive_end = end - timedelta(milliseconds=1)
-                ticks = mt5.copy_ticks_range(SYMBOL, cursor, inclusive_end, mt5.COPY_TICKS_ALL)
-                if ticks is None:
-                    raise RuntimeError(f"copy_ticks_range failed: {mt5.last_error()}")
+                ticks = _mt5_query_with_retry(mt5, "copy_ticks_range", SYMBOL, cursor,
+                                              inclusive_end, mt5.COPY_TICKS_ALL)
                 names = getattr(getattr(ticks, "dtype", None), "names", None)
                 if ticks.size and (not names or not set(TICK_FIELDS).issubset(names)):
                     raise ValueError("MT5 tick response is missing required quote fields")
@@ -167,18 +239,20 @@ def _collect_day(mt5, day_start: datetime, day_end: datetime, data_dir: Path) ->
                     stamp = int(_scalar(row["time_msc"]))
                     if not (_ms(cursor) <= stamp < _ms(end)):
                         raise ValueError("MT5 tick outside requested UTC partition")
+                    if previous_tick is not None and stamp < previous_tick:
+                        raise ValueError("MT5 ticks are not ordered by UTC milliseconds")
                     writer.writerow({key: _scalar(row[key]) for key in TICK_FIELDS})
                     tick_count += 1
                     tick_min = stamp if tick_min is None else min(tick_min, stamp)
                     tick_max = stamp if tick_max is None else max(tick_max, stamp)
+                    previous_tick = stamp
                 cursor = end
         with ticks_path.open("r+b") as stream:
             os.fsync(stream.fileno())
 
-        rates = mt5.copy_rates_range(SYMBOL, mt5.TIMEFRAME_M5, day_start,
-                                     day_end - timedelta(milliseconds=1))
-        if rates is None:
-            raise RuntimeError(f"copy_rates_range failed: {mt5.last_error()}")
+        rates = _mt5_query_with_retry(mt5, "copy_rates_range", SYMBOL,
+                                      mt5.TIMEFRAME_M5, day_start,
+                                      day_end - timedelta(milliseconds=1))
         names = getattr(getattr(rates, "dtype", None), "names", None)
         if rates.size and (not names or not set(BAR_FIELDS).issubset(names)):
             raise ValueError("MT5 M5 response is missing required OHLC/volume fields")
@@ -205,6 +279,8 @@ def _collect_day(mt5, day_start: datetime, day_end: datetime, data_dir: Path) ->
             "ticks_file": str(ticks_path.relative_to(data_dir.parent)).replace("\\", "/"),
             "ticks_sha256": ticks_hash, "ticks_bytes": ticks_size, "ticks_rows": tick_count,
             "first_tick_msc": tick_min, "last_tick_msc": tick_max,
+            "first_bar_time_utc": datetime.fromtimestamp(bar_rows[0]["time"], timezone.utc).isoformat().replace("+00:00", "Z") if bar_rows else None,
+            "last_bar_time_utc": datetime.fromtimestamp(bar_rows[-1]["time"], timezone.utc).isoformat().replace("+00:00", "Z") if bar_rows else None,
             "bars_file": str(bars_path.relative_to(data_dir.parent)).replace("\\", "/"),
             "bars_sha256": bars_hash, "bars_bytes": bars_size, "bars_rows": bar_count,
             "empty_day": tick_count == 0 and bar_count == 0,
@@ -219,6 +295,30 @@ def _closed_day_boundary(now: datetime) -> datetime:
     return datetime.combine(safe.date(), time.min, timezone.utc)
 
 
+def _acquire_lock(lock: Path) -> int:
+    try:
+        return os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+    except FileExistsError as exc:
+        try:
+            content = lock.read_text(encoding="ascii")
+            pid = int(content.splitlines()[0].removeprefix("pid="))
+            age = time_module.time() - lock.stat().st_mtime
+            os.kill(pid, 0)
+            alive = True
+        except ProcessLookupError:
+            alive = False
+        except (OSError, ValueError, IndexError):
+            alive = True
+            age = 0
+        if not alive and age > 2 * 60 * 60:
+            lock.unlink(missing_ok=True)
+            try:
+                return os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+            except FileExistsError as retry_exc:
+                raise RuntimeError("Collector lock was reclaimed concurrently; retry next schedule") from retry_exc
+        raise RuntimeError("Collector already running or lock needs review; refusing concurrent collection") from exc
+
+
 def collect_once(*, now: datetime | None = None, cohort_root: Path = COHORT_ROOT,
                  template_path: Path = TEMPLATE_PATH, mt5_module=None,
                  environment_status=None) -> dict[str, Any]:
@@ -230,10 +330,7 @@ def collect_once(*, now: datetime | None = None, cohort_root: Path = COHORT_ROOT
 
     cohort_root.mkdir(parents=True, exist_ok=True)
     lock = cohort_root / ".collector.lock"
-    try:
-        descriptor = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
-    except FileExistsError as exc:
-        raise RuntimeError("Collector already running or stale lock requires review") from exc
+    descriptor = _acquire_lock(lock)
     try:
         os.write(descriptor, f"pid={os.getpid()}\n".encode("ascii"))
         os.close(descriptor)
@@ -316,6 +413,98 @@ def status(cohort_root: Path = COHORT_ROOT) -> dict[str, Any]:
     }
 
 
+def health(cohort_root: Path = COHORT_ROOT, *, now: datetime | None = None,
+           environment_status=None) -> dict[str, Any]:
+    """Return operational health without exposing credentials or market rows."""
+    now = (now or datetime.now(timezone.utc)).astimezone(timezone.utc)
+    cohort_root = Path(cohort_root)
+    basic = status(cohort_root)
+    manifest_path = cohort_root / "cohort_manifest.json"
+    scheduler_log = cohort_root / "scheduler.log"
+    latest_attempt = None
+    last_exit = None
+    last_error = None
+    if scheduler_log.is_file():
+        try:
+            lines = [line for line in scheduler_log.read_text(encoding="utf-8-sig").splitlines() if line.strip()]
+            if lines:
+                latest_attempt = json.loads(lines[-1])
+                last_exit = latest_attempt.get("exit_code")
+                if last_exit != 0:
+                    last_error = str(latest_attempt.get("output", "collector returned nonzero"))[-2000:]
+        except (OSError, json.JSONDecodeError):
+            last_error = "scheduler.log is unreadable or contains malformed JSON"
+
+    if environment_status is None:
+        try:
+            from controller.mt5_env import status as environment_status
+        except ImportError:
+            environment_status = lambda: {}
+    try:
+        environment = environment_status()
+    except Exception as exc:  # health should report a failed probe, never crash a status query
+        environment = {}
+        last_error = f"MT5 environment probe failed: {type(exc).__name__}"
+
+    result = {
+        **basic,
+        "collector_status": "WAITING_FIRST_CAPTURE",
+        "last_success_utc": None,
+        "last_attempt_utc": latest_attempt.get("started_utc") if latest_attempt else None,
+        "ticks_rows": 0, "bars_rows": 0, "latest_timestamp_utc": None,
+        "errors": [last_error] if last_error else [],
+        "mt5_connected": environment.get("CONNECTED") is True,
+        "account_mode": environment.get("ACCOUNT_MODE", "UNKNOWN"),
+        "symbol_status": "AVAILABLE" if environment.get("US30Cash_AVAILABLE") is True
+                        else "UNAVAILABLE" if environment.get("US30Cash_AVAILABLE") is False else "UNKNOWN",
+        "duplicate_day_segments": False, "missing_utc_days": [],
+        "manifest_sha256": None,
+    }
+    if not manifest_path.is_file():
+        result["collector_status"] = "MANIFEST_MISSING"
+        return result
+    try:
+        manifest = _load_manifest(cohort_root, TEMPLATE_PATH)
+        result["manifest_sha256"] = _sha256(manifest_path)
+    except (OSError, ValueError, json.JSONDecodeError) as exc:
+        result["collector_status"] = "MANIFEST_OR_SEGMENT_INVALID"
+        result["errors"].append(str(exc))
+        return result
+
+    segments = manifest.get("segments", [])
+    days = [str(item.get("day_utc", "")) for item in segments]
+    result["duplicate_day_segments"] = len(days) != len(set(days))
+    result["ticks_rows"] = sum(int(item.get("ticks_rows", 0)) for item in segments)
+    result["bars_rows"] = sum(int(item.get("bars_rows", 0)) for item in segments)
+    cursors = [item.get("last_tick_msc") for item in segments if item.get("last_tick_msc") is not None]
+    bar_times = [item.get("last_bar_time_utc") for item in segments if item.get("last_bar_time_utc")]
+    latest_values = ([datetime.fromtimestamp(max(cursors) / 1000, timezone.utc)] if cursors else [])
+    latest_values.extend(datetime.fromisoformat(value.replace("Z", "+00:00")) for value in bar_times)
+    if latest_values:
+        result["latest_timestamp_utc"] = max(latest_values).isoformat().replace("+00:00", "Z")
+    result["last_success_utc"] = manifest.get("updated_utc")
+    result["last_attempt_utc"] = manifest.get("collector_last_attempt_utc") or result["last_attempt_utc"]
+
+    cursor = datetime.fromisoformat(manifest["next_cursor_utc"].replace("Z", "+00:00"))
+    expected = set()
+    day = START_UTC.date()
+    while day < cursor.date():
+        expected.add(day.strftime("%Y%m%d"))
+        day += timedelta(days=1)
+    result["missing_utc_days"] = sorted(expected - set(days))
+    if result["duplicate_day_segments"] or result["missing_utc_days"]:
+        result["collector_status"] = "SEGMENT_COVERAGE_INVALID"
+        result["errors"].append("UTC-day segment sequence has duplicates or gaps")
+    elif not segments:
+        if last_exit not in (None, 0):
+            result["collector_status"] = "BLOCKED_OR_FAILED_BEFORE_FIRST_CAPTURE"
+    else:
+        updated = manifest.get("updated_utc")
+        age_hours = (now - datetime.fromisoformat(updated.replace("Z", "+00:00"))).total_seconds() / 3600 if updated else float("inf")
+        result["collector_status"] = "STALE" if age_hours > 26 else "HEALTHY"
+    return result
+
+
 def prepare_cohort(cohort_root: Path = COHORT_ROOT,
                    template_path: Path = TEMPLATE_PATH) -> dict[str, Any]:
     cohort_root = Path(cohort_root)
@@ -330,10 +519,12 @@ def prepare_cohort(cohort_root: Path = COHORT_ROOT,
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("status", "prepare", "collect"))
+    parser.add_argument("command", choices=("status", "health", "prepare", "collect"))
     args = parser.parse_args()
     if args.command == "status":
         result = status()
+    elif args.command == "health":
+        result = health()
     elif args.command == "prepare":
         result = prepare_cohort()
     else:

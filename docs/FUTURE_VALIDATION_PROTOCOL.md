@@ -68,9 +68,14 @@ chain. An altered manifest, mismatched segment, wrong terminal, non-DEMO
 account, missing symbol, or API error stops collection fail-closed.
 
 The cohort cannot participate in hypothesis generation, threshold selection,
-ranking, or tuning. No evaluator is provided by this preparation. A later
-protocol must be frozen independently before a one-time evaluation is allowed;
-this document does not authorize opening the cohort or FINAL_TEST.
+ranking, or tuning. A read-only single-use evaluator is implemented at
+`python/future_validation_evaluator.py`; it requires a frozen candidate and
+SHA-256 sidecar, an independently audited mature/causal evaluation table, and
+a matching explicit authorization artifact. Its synthetic tests do not open
+the real cohort. The evaluator does not tune, and a candidate/cohort pair can
+be consumed once only. The separate maturity thresholds are frozen in
+`docs/FUTURE_VALIDATION_READINESS_RULE.md`. This protocol does not authorize
+opening the cohort or FINAL_TEST.
 
 ## Data-quality acceptance before any future evaluation
 

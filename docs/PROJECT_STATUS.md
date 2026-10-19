@@ -323,3 +323,19 @@ Legacy `DISCOVERY_VALIDATION` remains `BLOCKED` because isolation cannot be prov
 The independent `FUTURE_VALIDATION_COHORT` protocol is preregistered with a fixed no-backfill start of `2026-10-19T00:00:00Z`, after the last frozen TRAIN signal (`2025-08-19T08:04:59.999Z`) and after historical source data. Its manifest is initialized and hashed; evaluation and TRAIN access are false. Raw US30Cash M5 bars/ticks are captured only after UTC-day close and a two-hour lag. A Windows Task Scheduler job is registered every 15 minutes starting 2026-10-19 00:15 local time under the interactive user, to attach to XM DEMO read-only. It does not backfill, create features/labels, or call trading APIs. First actual collection has not yet occurred.
 
 Focused isolation and collector tests: 16 PASS; `compileall` PASS. Full suite: 130 PASS, 9 skipped because native `g++` is unavailable. `LIVE_TRADING=false`; DEMO execution remains disabled; no trade or Tester run was initiated. Evaluation of the future cohort is not authorized by this preparation. See `docs/FUTURE_VALIDATION_PROTOCOL.md` and `docs/FUTURE_VALIDATION_COLLECTOR_PLAN.md`.
+## 2026-10-19 continuation — preparation state
+
+The prospective cohort task is registered and healthy as a scheduler entry,
+but collection is operationally blocked: zero captured rows, no active XM MT5
+terminal, connection false, account mode unknown. Its scheduled retries fail
+closed without credentials or order calls. Fixed maturity gates are now
+published in `docs/FUTURE_VALIDATION_READINESS_RULE.md`. A TRAIN-only
+quote-friction router was preregistered in the V2 protocol and has not been
+evaluated because paired quote-tape/fold inputs are not yet verified. There is
+no credible or frozen candidate. A hash-bound, explicitly authorized,
+single-use future evaluator and pure Demo safety gates are implemented and
+covered with synthetic tests; they were not run on the actual cohort.
+`DEMO_EXECUTOR=NOT_READY` (no candidate or MT5 order adapter).
+`SHADOW_MODE=READY_BUT_DISABLED` (hypothetical recorder only, not connected to
+MT5). `DISCOVERY_VALIDATION=BLOCKED`; `FINAL_TEST=LOCKED`; `DEMO=DISABLED`;
+`LIVE_TRADING=false`.

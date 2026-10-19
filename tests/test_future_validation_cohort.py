@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 import json
 import os
 from pathlib import Path
@@ -14,7 +14,8 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "python"))
 from future_validation_collector import (  # noqa: E402
-    COHORT_ID, START_UTC, _load_manifest, collect_once, prepare_cohort, status,
+    COHORT_ID, START_UTC, _collect_day, _load_manifest, _mt5_query_with_retry,
+    collect_once, health, prepare_cohort, status,
 )
 
 
@@ -105,6 +106,15 @@ class FutureValidationCohortTests(unittest.TestCase):
             self.assertFalse(manifest["live_trading"])
             self.assertTrue(all(item["ticks_rows"] > 0 and item["bars_rows"] == 1
                                 for item in manifest["segments"]))
+            repeat = collect_once(
+                now=datetime(2026, 10, 21, 3, tzinfo=timezone.utc), cohort_root=cohort,
+                environment_status=lambda: {
+                    "SAFE_FOR_RESEARCH": True, "ACCOUNT_MODE": "DEMO", "XM_ACTIVE": True,
+                    "CONNECTED": True, "US30Cash_AVAILABLE": True,
+                    "TERMINAL_PATH": "unused", "DATA_FOLDER": str(mt5.data_path),
+                }, mt5_module=mt5)
+            self.assertEqual(repeat["status"], "CAUGHT_UP_WAITING_FOR_CLOSED_DAY")
+            self.assertEqual(len(_load_manifest(cohort, ROOT / "configs/future_validation_cohort_manifest.template.json")["segments"]), 2)
 
     def test_manifest_tampering_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -131,6 +141,59 @@ class FutureValidationCohortTests(unittest.TestCase):
             run.return_value.returncode = 0
             self.assertTrue(status()["collector_scheduled"])
             run.assert_called_once()
+
+    def test_transient_mt5_query_failure_retries_with_backoff(self):
+        class Query:
+            calls = 0
+
+            @staticmethod
+            def last_error():
+                return (-1, "temporary")
+
+            def copy_ticks_range(self):
+                self.calls += 1
+                return None if self.calls < 3 else np.array([], dtype=_FakeMT5.tick_dtype)
+
+        query = Query()
+        with patch("future_validation_collector.time_module.sleep") as pause:
+            result = _mt5_query_with_retry(query, "copy_ticks_range")
+        self.assertEqual(result.size, 0)
+        self.assertEqual(query.calls, 3)
+        self.assertEqual([call.args[0] for call in pause.call_args_list], [1, 2])
+
+    def test_completed_orphan_day_is_recovered_without_overwrite(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            cohort = base / "future-cohort"
+            prepare_cohort(cohort, ROOT / "configs/future_validation_cohort_manifest.template.json")
+            mt5 = _FakeMT5(base / "terminal-data")
+            day_start = START_UTC
+            _collect_day(mt5, day_start, day_start + timedelta(days=1), cohort / "raw")
+            result = collect_once(
+                now=datetime(2026, 10, 21, 3, tzinfo=timezone.utc), cohort_root=cohort,
+                environment_status=lambda: {
+                    "SAFE_FOR_RESEARCH": True, "ACCOUNT_MODE": "DEMO", "XM_ACTIVE": True,
+                    "CONNECTED": True, "US30Cash_AVAILABLE": True,
+                    "TERMINAL_PATH": "unused", "DATA_FOLDER": str(mt5.data_path),
+                }, mt5_module=mt5)
+            self.assertEqual(result["days_added"], 2)
+            manifest = _load_manifest(cohort, ROOT / "configs/future_validation_cohort_manifest.template.json")
+            self.assertTrue(manifest["segments"][0]["recovered_after_restart"])
+
+    def test_health_reports_no_capture_and_blocked_terminal(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cohort = Path(tmp) / "cohort"
+            prepare_cohort(cohort, ROOT / "configs/future_validation_cohort_manifest.template.json")
+            with patch("future_validation_collector.subprocess.run") as run:
+                run.return_value.returncode = 0
+                result = health(cohort, now=datetime(2026, 10, 20, tzinfo=timezone.utc),
+                                environment_status=lambda: {
+                                    "CONNECTED": False, "ACCOUNT_MODE": "UNKNOWN",
+                                    "US30Cash_AVAILABLE": None,
+                                })
+            self.assertEqual(result["collector_status"], "WAITING_FIRST_CAPTURE")
+            self.assertEqual(result["ticks_rows"], 0)
+            self.assertFalse(result["mt5_connected"])
 
 
 if __name__ == "__main__":

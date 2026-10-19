@@ -269,3 +269,14 @@ Next: build the complete raw schema 3 master and inherited partitions, then crea
 ## Future validation isolation — 2026-10-18
 
 Dynamic-policy research is paused outside TRAIN. The contaminated legacy Discovery Validation remains blocked and is not repurposed. A separate raw-only prospective cohort is preregistered at `outputs/future_validation_cohort/cohort_20261019/`, with fixed start `2026-10-19T00:00:00Z`, no backfill, its own hash-chained manifest, and false TRAIN/evaluation permissions. TRAIN readers reject its path before I/O; any future derivation/evaluation requires a separate frozen protocol and explicit authorization. The scheduled collector is read-only and captures closed-day US30Cash M5 quotes/bars. No validation rows, FINAL_TEST rows, outcomes, or cohort data were used in hypothesis work. No new hypotheses were created.
+## 2026-10-19 continuation — no candidate; V2 preregistered
+
+The previously reported TRAIN-only R2–R4 rounds remain rejected (16/16); no
+Discovery Validation was evaluated for those rounds, and the legacy isolation
+incident remains POTENTIAL, so Discovery Validation stays blocked. A single
+new, methodologically distinct entry quote-friction router has been frozen in
+`docs/RESEARCH_PROTOCOL_V2.md` and
+`research/hypotheses_v2/HV2_ENTRY_SPREAD_ATR_ROUTER.json`, with hashes. It has
+not been run. Required verified quote-tape/fold pairing is not yet established;
+there is no candidate and no basis to open any holdout. `FINAL_TEST=LOCKED`,
+`DEMO=DISABLED`, `LIVE_TRADING=false`.

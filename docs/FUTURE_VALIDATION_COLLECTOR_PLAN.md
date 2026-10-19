@@ -62,3 +62,14 @@ The task's stdout and exit code are appended to the ignored runtime
 the next interval. This automation collects raw observations only. It does not
 build events or features, create hypotheses, run research, score candidates,
 or access either legacy holdout.
+
+## Current health — 2026-10-19
+
+The task is enabled and its action points to Windows PowerShell; the latest
+scheduled attempt exited nonzero. Health reports 0 tick rows, 0 bar rows, no
+successful capture, `CONNECTED=false`, account mode `UNKNOWN`, symbol
+`UNKNOWN`, and `BLOCKED_MT5_XM_DEMO_NOT_VERIFIED`. No XM terminal process was
+active, so it was not started automatically. The task retries every 15
+minutes. To resume, open the XM terminal normally, confirm the DEMO account
+and `US30Cash`, and leave it connected; the collector attaches read-only and
+uses no credentials. No cohort data has been captured.

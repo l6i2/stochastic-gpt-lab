@@ -1,0 +1,37 @@
+{
+  "hypothesis_id": "HV2_ENTRY_SPREAD_ATR_ROUTER",
+  "version": 1,
+  "status": "PREREGISTERED_NOT_RUN",
+  "registered_utc": "2026-10-19T06:16:09Z",
+  "source": "research readiness review; protocol RESEARCH_PROTOCOL_V2.md",
+  "family": "entry quote-friction regime router",
+  "signal_sides": ["BUY", "SELL"],
+  "definition": {
+    "feature": "signal_time_spread / signal_time_ATR",
+    "missing_policy": "FOLLOW and report missingness",
+    "fold_cut_points": "training-only empirical tertiles within each expanding fold",
+    "decision": "within side and regime, choose FOLLOW or INVERT by higher mean paired TRAIN replay PnL; ties FOLLOW",
+    "minimum_training_support": 100,
+    "latency_primary_ms": 250,
+    "latency_sensitivity_ms": [0, 500],
+    "threshold_sensitivity": "training-only 25/75 quantile diagnostic; cannot replace primary"
+  },
+  "expected_direction": "Lower entry quote friction should preserve or improve FOLLOW-relative policy outcomes; sign is evaluated separately by side.",
+  "minimum_evaluation_support": {
+    "total_distinct_signals": 200,
+    "each_side_distinct_signals": 80,
+    "positive_folds_fraction_each_side": 0.7
+  },
+  "baseline": ["FOLLOW_ALWAYS", "INVERT_ALWAYS"],
+  "failure_criteria": [
+    "fewer than 70% positive eligible folds for either side",
+    "one fold, source block, or session contributes over 50% of positive effect",
+    "insufficient support in either side or fewer than two source blocks/sessions",
+    "effect sign changes across 0/250/500 ms or magnitude sensitivity exceeds protocol bound",
+    "25/75 diagnostic reverses the primary sign",
+    "drawdown proxy worsens over the frozen 20% limit",
+    "quote tape, fold membership, or source hashes cannot be verified"
+  ],
+  "selection_boundary": "TRAIN walk-forward only; no Discovery Validation, prospective cohort, or FINAL_TEST access",
+  "hash_policy": "SHA-256 sidecar is immutable after preregistration; amendments require a new hypothesis ID/version before any evaluation"
+}
