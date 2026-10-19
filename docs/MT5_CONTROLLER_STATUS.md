@@ -200,14 +200,21 @@ is disabled. Report: `docs/INTRATRADE_TRAIN_ROUNDS_REPORT.md`.
 ## Prospective cohort collector — 2026-10-18
 
 A read-only collector for future US30Cash M5 data is prepared and its Windows Scheduled Task is registered as `StochasticGptLabFutureValidationCollector` (next run: 2026-10-19 00:15:15 local). It runs every 15 minutes under the current interactive user and requires the active XM terminal, DEMO trade mode, exact symbol, and matching Data Folder; it supplies no credentials and calls no order API. It only collects closed UTC days after a two-hour lag, with a fixed UTC start of 2026-10-19 and no backfill. The empty cohort manifest has been initialized and hashed. Setup did not connect to MT5 or execute the task. First collection is pending; no trade/Tester action occurred. `LIVE_TRADING=false`; DEMO execution disabled. See `docs/FUTURE_VALIDATION_COLLECTOR_PLAN.md`.
-## Prospective collector status — 2026-10-19
+## Collector activation check — 2026-10-19
 
-The read-only future-cohort task is enabled and runs every 15 minutes using
-Windows PowerShell. Latest health check: zero tick/bar rows, no successful
-capture, `CONNECTED=false`, account mode `UNKNOWN`, symbol `UNKNOWN`, and
-`BLOCKED_MT5_XM_DEMO_NOT_VERIFIED`; the task's last run exited nonzero and is
-set to retry. No MT5 terminal process was active, so the terminal was not
-started automatically. The collector calls no trading API and `LIVE_TRADING`
-remains false. Resume requires the user to open the XM terminal normally and
-leave it connected to DEMO with `US30Cash` selected; the scheduled collector
-then attaches read-only.
+Detected active instance: XM `terminal64.exe`; MetaEditor is paired to that
+installation. Environment probe confirms `CONNECTED=true`, `ACCOUNT_MODE=DEMO`,
+`US30Cash_AVAILABLE=true`, and `SAFE_FOR_RESEARCH=true`. A second non-XM
+installation exists but is not active. The data directory and account details
+are kept local rather than published.
+
+The collector task runs as Roberto with interactive, limited privileges and
+the data directory grants the account write access. It is Enabled/Ready and
+now invokes `.venv/Scripts/python.exe scripts/run_future_validation_collector.py`;
+last task result is 0, with the next 15-minute trigger scheduled. Health is
+`WAITING_FIRST_CAPTURE`, last success null, latest attempt
+`2026-10-19T17:25:53Z`, 0 tick rows, 0 bar rows, latest timestamp null, no
+errors, MT5 connected, DEMO, symbol available. The manual collection attempt
+returned `CAUGHT_UP_WAITING_FOR_CLOSED_DAY`; cursor remains exactly at the fixed
+start with no backfill. First eligible collection is 2026-10-20 02:00 UTC or
+the next scheduled tick after it. `LIVE_TRADING=false`.

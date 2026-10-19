@@ -335,6 +335,14 @@ def collect_once(*, now: datetime | None = None, cohort_root: Path = COHORT_ROOT
         os.write(descriptor, f"pid={os.getpid()}\n".encode("ascii"))
         os.close(descriptor)
         manifest = _load_manifest(cohort_root, template_path)
+        cursor = datetime.fromisoformat(manifest["next_cursor_utc"].replace("Z", "+00:00"))
+        if cursor < START_UTC or cursor != datetime.combine(cursor.date(), time.min, timezone.utc):
+            raise ValueError("Cohort cursor is not an aligned UTC day at or after the frozen start")
+        end = _closed_day_boundary(now)
+        # Avoid initializing MT5 when no complete, settled cohort day exists.
+        if end <= cursor:
+            return {"status": "CAUGHT_UP_WAITING_FOR_CLOSED_DAY", "collected": 0,
+                    "next_cursor_utc": manifest["next_cursor_utc"], "live_trading": False}
         if environment_status is None:
             from controller.mt5_env import status as environment_status
         environment = environment_status()
@@ -355,13 +363,6 @@ def collect_once(*, now: datetime | None = None, cohort_root: Path = COHORT_ROOT
                     or not account or account.trade_mode != mt5_module.ACCOUNT_TRADE_MODE_DEMO
                     or not symbol):
                 raise RuntimeError("MT5 attachment, XM data-folder, DEMO mode, or exact symbol check failed")
-            cursor = datetime.fromisoformat(manifest["next_cursor_utc"].replace("Z", "+00:00"))
-            end = _closed_day_boundary(now)
-            if cursor < START_UTC or cursor != datetime.combine(cursor.date(), time.min, timezone.utc):
-                raise ValueError("Cohort cursor is not an aligned UTC day at or after the frozen start")
-            if end <= cursor:
-                return {"status": "CAUGHT_UP_WAITING_FOR_CLOSED_DAY", "collected": 0,
-                        "next_cursor_utc": manifest["next_cursor_utc"], "live_trading": False}
             previous_hash = _sha256(cohort_root / "cohort_manifest.json")
             manifest["status"] = "COLLECTING"
             manifest["collector_last_attempt_utc"] = now.isoformat().replace("+00:00", "Z")

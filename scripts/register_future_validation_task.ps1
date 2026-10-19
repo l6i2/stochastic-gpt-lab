@@ -2,24 +2,22 @@ param([switch]$ReplaceExisting)
 $ErrorActionPreference = 'Stop'
 $TaskName = 'StochasticGptLabFutureValidationCollector'
 $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-$Runner = Join-Path $PSScriptRoot 'run_future_validation_collector.ps1'
+$Runner = Join-Path $PSScriptRoot 'run_future_validation_collector.py'
+$PythonExe = Join-Path $RepoRoot '.venv\Scripts\python.exe'
 $Now = Get-Date
 $NextQuarter = [int]([Math]::Floor($Now.Minute / 15) + 1) * 15
 $StartAt = $Now.Date.AddHours($Now.Hour).AddMinutes($NextQuarter)
 
 if (-not (Test-Path -LiteralPath $Runner -PathType Leaf)) { throw 'Collector task runner is missing.' }
+if (-not (Test-Path -LiteralPath $PythonExe -PathType Leaf)) { throw 'Project virtualenv Python is missing.' }
 if ($StartAt -le (Get-Date)) { throw 'Scheduled start has passed; review the start rule before registering.' }
 $Existing = Get-ScheduledTask -TaskName $TaskName -ErrorAction SilentlyContinue
 if ($Existing -and -not $ReplaceExisting) {
     throw "Task already exists; inspect it first or pass -ReplaceExisting: $TaskName"
 }
 
-$PowerShellExe = Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'
-if (-not (Test-Path -LiteralPath $PowerShellExe -PathType Leaf)) {
-    throw "Windows PowerShell executable is missing: $PowerShellExe"
-}
-$Arguments = "-NoProfile -NonInteractive -ExecutionPolicy Bypass -File `"$Runner`""
-$Action = New-ScheduledTaskAction -Execute $PowerShellExe -Argument $Arguments -WorkingDirectory $RepoRoot
+$Arguments = "`"$Runner`""
+$Action = New-ScheduledTaskAction -Execute $PythonExe -Argument $Arguments -WorkingDirectory $RepoRoot
 $Trigger = New-ScheduledTaskTrigger -Once -At $StartAt `
     -RepetitionInterval (New-TimeSpan -Minutes 15) `
     -RepetitionDuration (New-TimeSpan -Days 3650)

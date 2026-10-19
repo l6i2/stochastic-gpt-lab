@@ -326,10 +326,11 @@ Focused isolation and collector tests: 16 PASS; `compileall` PASS. Full suite: 1
 ## 2026-10-19 continuation — preparation state
 
 The prospective cohort task is registered and healthy as a scheduler entry,
-but collection is operationally blocked: zero captured rows, no active XM MT5
-terminal, connection false, account mode unknown. Its scheduled retries fail
-closed without credentials or order calls. Fixed maturity gates are now
-published in `docs/FUTURE_VALIDATION_READINESS_RULE.md`. A TRAIN-only
+but has not yet captured a complete, settled cohort day: zero rows, no
+successful collection, and cursor still at `2026-10-19T00:00:00Z`. The active
+XM terminal is verified connected in DEMO with `US30Cash` available. Fixed
+maturity gates are now published in `docs/FUTURE_VALIDATION_READINESS_RULE.md`.
+A TRAIN-only
 quote-friction router was preregistered in the V2 protocol and has not been
 evaluated because paired quote-tape/fold inputs are not yet verified. There is
 no credible or frozen candidate. A hash-bound, explicitly authorized,
@@ -339,3 +340,14 @@ covered with synthetic tests; they were not run on the actual cohort.
 `SHADOW_MODE=READY_BUT_DISABLED` (hypothetical recorder only, not connected to
 MT5). `DISCOVERY_VALIDATION=BLOCKED`; `FINAL_TEST=LOCKED`; `DEMO=DISABLED`;
 `LIVE_TRADING=false`.
+
+## Collector activation check — 2026-10-19
+
+One manual collection attempt returned `CAUGHT_UP_WAITING_FOR_CLOSED_DAY`;
+zero rows were written and the fixed cursor was unchanged, so NO_BACKFILL
+passes. Code now checks the UTC closed-day/settlement cutoff before initializing
+MT5, avoiding unnecessary API attach attempts. The prior PowerShell scheduled
+wrapper lingered after logging; the task now runs the project virtualenv Python
+entrypoint directly. The task is Enabled/Ready, its last test run exited 0,
+and it is scheduled every 15 minutes. Earliest eligible data capture is
+2026-10-20 02:00 UTC, subject to the next scheduler tick.

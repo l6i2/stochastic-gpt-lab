@@ -81,6 +81,25 @@ class FutureValidationCohortTests(unittest.TestCase):
             self.assertEqual(result["status"], "WAITING_FOR_FUTURE_START")
             self.assertFalse(root.exists())
 
+    def test_open_cohort_day_waits_before_mt5_or_environment_probe(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "cohort"
+            prepare_cohort(root, ROOT / "configs/future_validation_cohort_manifest.template.json")
+
+            class ForbiddenMT5:
+                def initialize(self, **kwargs):
+                    raise AssertionError("MT5 must not initialize before a closed cohort day exists")
+
+            def forbidden_environment():
+                raise AssertionError("Environment probe must not run before the cutoff")
+
+            result = collect_once(
+                now=datetime(2026, 10, 19, 17, tzinfo=timezone.utc), cohort_root=root,
+                environment_status=forbidden_environment, mt5_module=ForbiddenMT5())
+            self.assertEqual(result["status"], "CAUGHT_UP_WAITING_FOR_CLOSED_DAY")
+            self.assertEqual(result["collected"], 0)
+            self.assertEqual(result["next_cursor_utc"], "2026-10-19T00:00:00Z")
+
     def test_collector_writes_separate_hashed_read_only_days(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp)
