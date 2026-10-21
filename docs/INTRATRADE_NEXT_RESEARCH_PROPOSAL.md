@@ -2,6 +2,14 @@
 
 **Decision: `NEXT_RESEARCH_FAMILY=NONE` for the current dataset and split.**
 
+The completed entry-friction V2 gate analysis is now recorded in
+[`V2_FAILURE_ANALYSIS.md`](V2_FAILURE_ANALYSIS.md). Across R2–R4 and V2 there
+are 17 tested hypotheses and no survivor. The proposed trajectory, erosion /
+recovery, momentum, volatility, session, and volume / profile lines overlap
+families already tested on these TRAIN outcomes. No new hypotheses are created
+for this sample; revisiting them after observing failures would be adaptive
+reuse, not a clean independent round.
+
 R2–R4 already covered adverse excursion/profit erosion, recovery, momentum and
 Stochastic deterioration, volatility, session, and Volume Profile / POC
 conditions. Sixteen frozen rules produced no survivor, with persistent

@@ -1,5 +1,13 @@
 # Project status
 
+## Current checkpoint — 2026-10-21 (V2 failure analysis closed; no new round)
+
+Formal failure analysis is complete in [`V2_FAILURE_ANALYSIS.md`](V2_FAILURE_ANALYSIS.md). The 17 known frozen TRAIN hypotheses (16 in R2–R4 plus `HV2_ENTRY_SPREAD_ATR_ROUTER`) have zero survivors and no candidate. V2 had adequate aggregate sample support and passed latency and drawdown-proxy gates, but BUY failed block/session concentration and SELL failed fold direction, fold concentration, and 25/75 sign robustness. V2 month dependence was not separately measured; it is recorded as unknown.
+
+No new same-TRAIN hypotheses were created. The proposed trajectory, erosion/recovery, momentum, volatility, volume/profile and session families substantially overlap already rejected R2–R4 preregistrations. Reopening them against these same outcomes would expand adaptive reuse, while the existing Discovery Validation remains potentially contaminated and blocked. The next defensible research opportunity is a separately preregistered prospective cohort after its fixed maturity rule; it must remain unscored until then.
+
+No protected split or future cohort was read for scoring. Collector status remains the last recorded enabled/running state; cohort maturity was not re-counted. `BEST_CANDIDATE=NONE`, `CANDIDATE_FROZEN=NO`, `FUTURE_EVALUATOR=READY_BUT_GATED`, `DEMO_EXECUTOR=READY_BUT_DISABLED` (mock recorder only), `SHADOW_MODE=READY_BUT_DISABLED`, `FINAL_TEST=LOCKED`, `DEMO=DISABLED`, and `LIVE_TRADING=false`.
+
 ## Current checkpoint — 2026-10-21 (TRAIN V2 completed, family rejected)
 
 The low-memory replay resolved the 4 GB host bottleneck without changing the

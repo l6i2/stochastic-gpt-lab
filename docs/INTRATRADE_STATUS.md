@@ -1,5 +1,13 @@
 # Intra-trade research status
 
+## Current checkpoint — 2026-10-21 (formal V2 failure analysis; research paused on current TRAIN)
+
+The formal gate-by-gate analysis is in [`V2_FAILURE_ANALYSIS.md`](V2_FAILURE_ANALYSIS.md). This makes explicit that V2 month-level dependence was not separately measured, aggregate support was adequate, latency and the limited drawdown proxy passed, and rejection came from preregistered block/session concentration (BUY) and fold/threshold instability (SELL). Both clustered intervals include zero. No BUY-only rescue or threshold change is permitted.
+
+There are 17 tested hypotheses across R2–R4 and V2, zero survivors, and no candidate. No new family is preregistered on this TRAIN: R2–R4 already covered the proposed intra-trade trajectory, erosion/recovery, momentum, volatility, volume/profile, HA, Stochastic and session themes. More same-sample exploration would be adaptive reuse, and Discovery Validation remains blocked by the unresolved isolation incident. The prospective cohort remains unscored and governed by its existing fixed maturity protocol.
+
+`FINAL_TEST=LOCKED`, `DEMO=DISABLED`, `LIVE_TRADING=false`.
+
 ## Current checkpoint — 2026-10-21 (V2 evaluated on TRAIN; rejected)
 
 `HV2_ENTRY_SPREAD_ATR_ROUTER` completed on 11,714 TRAIN signals, 23,428 paired

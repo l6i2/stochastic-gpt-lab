@@ -1,5 +1,9 @@
 # Controller verification status
 
+## Current checkpoint — 2026-10-21 (offline failure analysis; collection unchanged)
+
+No MT5 terminal, account, Strategy Tester, EA, or order path was opened or changed. The cohort collector is left in its previously recorded enabled/running state; no manual capture, backfill, cohort read, or scoring was performed. The cohort maturity status remains the last confirmed `NO` and was not re-counted here. The formal TRAIN V2 analysis produced no candidate, so no execution preparation or policy change was made. Mock-only `DEMO_EXECUTOR=READY_BUT_DISABLED`, `SHADOW_MODE=READY_BUT_DISABLED`, `FINAL_TEST=LOCKED`, `DEMO=DISABLED`, and `LIVE_TRADING=false` remain in force.
+
 ## Current checkpoint — 2026-10-21 (mock-only adapter; no MT5 action)
 
 No terminal, account, Strategy Tester, or EA was opened. The new mock/shadow
