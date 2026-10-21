@@ -1,35 +1,34 @@
 # Project status
 
-## Current checkpoint — 2026-10-21 (TRAIN V2 audit resumed)
+## Current checkpoint — 2026-10-21 (TRAIN V2 completed, family rejected)
 
-Rechecked branch `research/full-pipeline` at `6bb8bb3f73ef33f17294611616c1887db4c2ef9a`.
-No protected split or prospective-cohort values were opened for scoring. The
-TRAIN split manifest binds the quality-v1 TRAIN parquet to 11,714 signals; the
-existing `TRAIN_HOLD_BASELINE_REPLAY_PASS` proves 23,428 paired FOLLOW/INVERT
-paths and explicitly records no Validation/FINAL_TEST access. The V2 runner
-requires four purged expanding folds and verifies the source hashes before
-replay. This verifies its frozen inputs and control path, not V2 outcome
-metrics.
+The low-memory replay resolved the 4 GB host bottleneck without changing the
+frozen protocol. The full 11,714-signal TRAIN run completed in 119.238 s with
+806.4 MiB peak working set, exact quote pairing, four purged folds, and 0/250/500
+ms outcomes. The preregistered entry spread/ATR router was rejected: BUY fails
+block/session concentration; SELL fails fold direction, threshold robustness,
+fold/block/session concentration. No candidate exists and no gate was changed.
+Details, stage profile, equivalence checks, and artifact hashes are in
+`docs/TRAIN_V2_LOW_MEMORY_BENCHMARK.md`; machine result is
+`outputs/bar_controller/research/train_entry_spread_atr_router.json`.
 
-The output `outputs/bar_controller/research/train_entry_spread_atr_router.json`
-does not exist. Thus the preregistered router remains **not evaluated** (zero
-completed hypotheses; one frozen family prepared), not statistically rejected
-or accepted. Replaying requires scanning approximately 1.4 GB of quote tapes
-for the eligible 2024/2025 blocks on a 4 GB host with about 0.4 GB free at
-check time; earlier full attempts were stopped after paging/runtime. No
-candidate is available. The user-requested broader trajectory/MFE/MAE,
-erosion/recovery, and volume/profile hypothesis families are outside the
-frozen one-family V2 protocol and were not tested or added post hoc.
+Normal/low-memory equality passed on 17.24M TRAIN quote prefix rows, 30 exact
+real-quote replay outcomes, and fixtures. The 2024/2025 replay checkpoints were
+hash-bound and block-resumable. Focused router, source-isolation, and mock
+safety tests pass; `compileall` and `git diff --check` pass.
 
-Twenty focused router, source-isolation, and safety tests passed; Python
-`compileall` passed. The collector task is enabled, its scheduled 09:45 local
-run returned code 0, and the latest scheduler log reports
-`CAUGHT_UP_WAITING_FOR_CLOSED_DAY` with `live_trading=false`; no scoring or
-backfill was performed. The future cohort remains immature under its fixed
-rule. The safety authorization gate and hypothetical shadow recorder are
-tested, but there is no executable DEMO order adapter; both remain disabled.
-`DISCOVERY_VALIDATION=BLOCKED`, `FINAL_TEST=LOCKED`, `DEMO=DISABLED`, and
-`LIVE_TRADING=false`.
+The collector remains enabled. The scheduler currently reports its task as
+running (`0x41301`); its latest completed log entry says
+`CAUGHT_UP_WAITING_FOR_CLOSED_DAY`, with `live_trading=false`. No capture was
+forced, no backfill occurred, and the future cohort was not scored. Its rows
+were not re-counted during this task; the previously confirmed cohort is not
+mature under the fixed rule.
+
+`DEMO_EXECUTOR=READY_BUT_DISABLED` now means **mock recorder only**: durable
+deduplication and audit storage, REAL/UNKNOWN hard fail, runtime safety gates,
+and zero order capability. The separate shadow recorder remains ready but
+disabled. No MT5/account UI or broker was opened. `DISCOVERY_VALIDATION=BLOCKED`,
+`FINAL_TEST=LOCKED`, `DEMO=DISABLED`, and `LIVE_TRADING=false`.
 
 ## Current checkpoint — 2026-10-21 (TRAIN V2 runner prepared; replay incomplete)
 

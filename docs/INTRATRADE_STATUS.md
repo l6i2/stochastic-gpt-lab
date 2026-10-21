@@ -1,29 +1,23 @@
 # Intra-trade research status
 
-## Current checkpoint — 2026-10-21 (input and control audit; replay still pending)
+## Current checkpoint — 2026-10-21 (V2 evaluated on TRAIN; rejected)
 
-At HEAD `6bb8bb3f73ef33f17294611616c1887db4c2ef9a`, the TRAIN parquet hash
-matches the frozen split manifest and contains 11,714 quality-v1 TRAIN events.
-The accepted baseline replay binds 23,428 FOLLOW/INVERT paths; exact new
-latency fills have focused tests for post-arrival quote selection, TP/SL first
-hit, TIME_EXIT, and the TRAIN-only source path. Four expanding purged folds
-and the side/regime router are prescribed in the frozen V2 protocol.
+`HV2_ENTRY_SPREAD_ATR_ROUTER` completed on 11,714 TRAIN signals, 23,428 paired
+baseline paths, four frozen purged folds, and 70,284 exact latency/mode replay
+outcomes. The full benchmark, exact output hashes, peak memory, and
+normal/low-memory equality are in `docs/TRAIN_V2_LOW_MEMORY_BENCHMARK.md`.
+Result status is `TRAIN_ROUTER_REJECTED`; no provisional candidate was frozen.
 
-This is an input/code audit only: the V2 outcomes were not computed. Its JSON
-result is absent because prior full replays exceeded the current host's
-memory/runtime budget (4 GB RAM; 1.4 GB relevant quote tapes). Record
-`TRAIN_INPUTS_VERIFIED=YES`, `ROUTER_V2=NOT_RUN_TO_COMPLETION`,
-`TRAIN_RESEARCH=INCOMPLETE`, `HYPOTHESES_TESTED=0 completed`, and
-`CANDIDATE=NONE`. Do not interpret the resource stop as a hypothesis failure.
-The user-listed trajectory, MFE/MAE, recovery, momentum, and volume/profile
-families are not part of preregistered V2 and remain untested; adding them now
-would require a separate preregistration before any result is inspected.
+BUY passes fold and latency/threshold gates but fails block and session
+concentration. SELL passes latency but fails fold direction, threshold
+robustness, and fold/block/session concentration. Drawdown passes; both
+signal-clustered intervals include zero. The rule is rejected without retuning.
+The other user-listed intra-trade feature families are outside the frozen V2
+preregistration and were not evaluated.
 
-Twenty focused tests passed and `compileall` passed. No Discovery Validation,
-FINAL_TEST, or future cohort value was scored. The cohort collector remains
-scheduled and latest log status is `CAUGHT_UP_WAITING_FOR_CLOSED_DAY`; no
-backfill occurred. `FINAL_TEST=LOCKED`, `DEMO=DISABLED`,
-`LIVE_TRADING=false`.
+The JSON result binds the current runner/data hashes and records no Validation,
+FINAL_TEST, or future-cohort access. `DISCOVERY_VALIDATION=BLOCKED`,
+`FINAL_TEST=LOCKED`, `DEMO=DISABLED`, and `LIVE_TRADING=false`.
 
 ## Current checkpoint — 2026-10-21 (V2 entry-friction replay incomplete)
 

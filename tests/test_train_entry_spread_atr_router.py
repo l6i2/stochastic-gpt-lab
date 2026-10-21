@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -9,13 +10,41 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "python"))
 from train_entry_spread_atr_router import (
-    QUOTE_CHUNK_SIZE, _price_block_extrema, _regime, _replay_entry_latency,
-    _select_policy,
+    QUOTE_CHUNK_SIZE, _lower_bound, _price_block_extrema, _regime, _replay_entry_latency,
+    _prefix_quotes, _select_policy,
 )
 from validate_bar_path import QUOTE_DTYPE
 
 
 class TrainEntrySpreadAtrRouterTests(unittest.TestCase):
+    def test_low_memory_lower_bound_matches_numpy_for_strided_quote_fields(self):
+        tape = np.array([
+            (1000, 1.0, 2.0, 0), (1000, 1.1, 2.1, 0),
+            (1200, 1.2, 2.2, 1), (1400, 1.3, 2.3, 1),
+        ], dtype=QUOTE_DTYPE)
+        for field in ("time_msc", "bar_index"):
+            values = tape[field]
+            for target in (-1, 0, 1000, 1001, 1200, 1400, 1401):
+                self.assertEqual(_lower_bound(values, target),
+                                 int(np.searchsorted(values, target, side="left")))
+
+    def test_low_memory_prefix_matches_normal_prefix_on_quote_fixture(self):
+        tape = np.array([
+            (1000, 1.0, 2.0, 0), (1000, 1.1, 2.1, 0),
+            (1200, 1.2, 2.2, 1), (1400, 1.3, 2.3, 1),
+        ], dtype=QUOTE_DTYPE)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "quotes.bin"
+            tape.tofile(path)
+            for boundary in (1001, 1200, 1300, 1400, 1401):
+                low = _prefix_quotes(path, boundary, low_memory=True)
+                normal = _prefix_quotes(path, boundary, low_memory=False)
+                try:
+                    np.testing.assert_array_equal(low, normal)
+                finally:
+                    low._mmap.close()
+                    normal._mmap.close()
+
     def test_regime_and_missing_feature_policy_are_deterministic(self):
         self.assertEqual(_regime(float("nan"), 1.0, 2.0), "MISSING")
         self.assertEqual(_regime(1.0, 1.0, 2.0), "LOW")
@@ -52,6 +81,10 @@ class TrainEntrySpreadAtrRouterTests(unittest.TestCase):
         extrema = _price_block_extrema(tape["bid"], tape["ask"], QUOTE_CHUNK_SIZE)
         out0 = _replay_entry_latency(tape, extrema, record, 0, 5000)
         out500 = _replay_entry_latency(tape, extrema, record, 500, 5000)
+        self.assertEqual(out0, _replay_entry_latency(
+            tape, extrema, record, 0, 5000, low_memory=False))
+        self.assertEqual(out500, _replay_entry_latency(
+            tape, extrema, record, 500, 5000, low_memory=False))
         self.assertEqual(out0["entry_index"], 1)
         self.assertEqual(out0["entry_time"], 1100)
         self.assertEqual(out500["entry_index"], 2)
@@ -78,6 +111,9 @@ class TrainEntrySpreadAtrRouterTests(unittest.TestCase):
         sl = _replay_entry_latency(
             sl_tape, _price_block_extrema(sl_tape["bid"], sl_tape["ask"], QUOTE_CHUNK_SIZE),
             record, 0, 5000)
+        self.assertEqual(sl, _replay_entry_latency(
+            sl_tape, _price_block_extrema(sl_tape["bid"], sl_tape["ask"], QUOTE_CHUNK_SIZE),
+            record, 0, 5000, low_memory=False))
         self.assertEqual((sl["reason"], sl["pnl"]), ("SL", -181.0))
 
         tp_tape = np.array([
@@ -87,6 +123,9 @@ class TrainEntrySpreadAtrRouterTests(unittest.TestCase):
         tp = _replay_entry_latency(
             tp_tape, _price_block_extrema(tp_tape["bid"], tp_tape["ask"], QUOTE_CHUNK_SIZE),
             record, 0, 5000)
+        self.assertEqual(tp, _replay_entry_latency(
+            tp_tape, _price_block_extrema(tp_tape["bid"], tp_tape["ask"], QUOTE_CHUNK_SIZE),
+            record, 0, 5000, low_memory=False))
         self.assertEqual((tp["reason"], tp["pnl"]), ("TP", 240.0))
 
         timeout_tape = np.array([
@@ -96,6 +135,10 @@ class TrainEntrySpreadAtrRouterTests(unittest.TestCase):
             timeout_tape,
             _price_block_extrema(timeout_tape["bid"], timeout_tape["ask"], QUOTE_CHUNK_SIZE),
             record, 0, 5000)
+        self.assertEqual(timeout, _replay_entry_latency(
+            timeout_tape,
+            _price_block_extrema(timeout_tape["bid"], timeout_tape["ask"], QUOTE_CHUNK_SIZE),
+            record, 0, 5000, low_memory=False))
         self.assertEqual(timeout["reason"], "TIME_EXIT")
         self.assertEqual(timeout["exit_time"], 1101)
 

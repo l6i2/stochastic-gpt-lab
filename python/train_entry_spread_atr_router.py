@@ -9,9 +9,13 @@ from __future__ import annotations
 
 import argparse
 import csv
+import ctypes
+import ctypes.wintypes
 import hashlib
 import json
 import math
+import os
+import time
 from pathlib import Path
 
 import numpy as np
@@ -28,6 +32,19 @@ LATENCIES = (0, 250, 500)
 MIN_CELL_SIGNALS = 100
 BLOCKS = ("2023", "2024", "2025", "2026")
 QUOTE_CHUNK_SIZE = 8192
+
+
+@njit(cache=True)
+def _lower_bound(values, target):
+    """NumPy ``searchsorted(..., side='left')`` without copying strided fields."""
+    lo, hi = 0, len(values)
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if values[mid] < target:
+            lo = mid + 1
+        else:
+            hi = mid
+    return lo
 
 
 @njit(cache=True)
@@ -83,6 +100,30 @@ def sha256(path: Path) -> str:
         for chunk in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def _peak_working_set_mb() -> float | None:
+    """Return process peak resident working set where the OS exposes it."""
+    if os.name == "nt":
+        class _PROCESS_MEMORY_COUNTERS(ctypes.Structure):
+            _fields_ = [
+                ("cb", ctypes.wintypes.DWORD), ("PageFaultCount", ctypes.wintypes.DWORD),
+                ("PeakWorkingSetSize", ctypes.c_size_t), ("WorkingSetSize", ctypes.c_size_t),
+                ("QuotaPeakPagedPoolUsage", ctypes.c_size_t), ("QuotaPagedPoolUsage", ctypes.c_size_t),
+                ("QuotaPeakNonPagedPoolUsage", ctypes.c_size_t), ("QuotaNonPagedPoolUsage", ctypes.c_size_t),
+                ("PagefileUsage", ctypes.c_size_t), ("PeakPagefileUsage", ctypes.c_size_t),
+            ]
+        kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+        psapi = ctypes.WinDLL("psapi", use_last_error=True)
+        kernel32.GetCurrentProcess.restype = ctypes.wintypes.HANDLE
+        psapi.GetProcessMemoryInfo.argtypes = [
+            ctypes.wintypes.HANDLE, ctypes.POINTER(_PROCESS_MEMORY_COUNTERS), ctypes.wintypes.DWORD]
+        psapi.GetProcessMemoryInfo.restype = ctypes.wintypes.BOOL
+        counters = _PROCESS_MEMORY_COUNTERS()
+        counters.cb = ctypes.sizeof(counters)
+        if psapi.GetProcessMemoryInfo(kernel32.GetCurrentProcess(), ctypes.byref(counters), counters.cb):
+            return round(counters.PeakWorkingSetSize / (1024 * 1024), 1)
+    return None
 
 
 def _regime(value: float, q1: float, q2: float) -> str:
@@ -197,7 +238,7 @@ def _read_train_trade_index(path: Path, wanted: set[str]) -> dict:
     return result
 
 
-def _prefix_quotes(path: Path, boundary: int):
+def _prefix_quotes(path: Path, boundary: int, *, low_memory: bool = True):
     """Expose only the TRAIN quote prefix from an already hash-validated tape.
 
     The immutable source-block validation and TRAIN replay proof certify tape
@@ -211,7 +252,13 @@ def _prefix_quotes(path: Path, boundary: int):
     full = np.memmap(path, dtype=QUOTE_DTYPE, mode="r")
     # Binary search the ordered timestamp field; no quote price after the
     # boundary enters the returned view or any metric.
-    count = int(np.searchsorted(full["time_msc"], boundary, side="left"))
+    # `time_msc` is an 8-byte strided view of the 32-byte structured quote
+    # record. NumPy may materialize that view for searchsorted, causing a large
+    # temporary and paging on a 4 GB host. This scalar binary search reads the
+    # same ordered values directly from the memmap and returns the identical
+    # left insertion point with O(log N) memory.
+    count = (int(_lower_bound(full["time_msc"], boundary)) if low_memory else
+             int(np.searchsorted(full["time_msc"], boundary, side="left")))
     if not count:
         raise ValueError("No quote observations in TRAIN prefix")
     tape = full[:count]
@@ -220,12 +267,21 @@ def _prefix_quotes(path: Path, boundary: int):
     return tape
 
 
-def _replay_entry_latency(tape, extrema, record: dict, latency: int, boundary: int) -> dict:
+def _left_index(values, target: int, low_memory: bool) -> int:
+    return (int(_lower_bound(values, target)) if low_memory else
+            int(np.searchsorted(values, target, side="left")))
+
+
+def _replay_entry_latency(tape, extrema, record: dict, latency: int, boundary: int,
+                          *, low_memory: bool = True) -> dict:
     arrival = record["entry"]
     if not 0 <= arrival < len(tape) or int(tape[arrival]["time_msc"]) != record["entry_time"]:
         raise ValueError("TRAIN entry quote does not match its trade index")
     target = int(tape[arrival]["time_msc"]) + latency
-    fill = arrival + 1 + int(np.searchsorted(tape["time_msc"][arrival + 1:], target, side="left"))
+    if low_memory:
+        fill = max(arrival + 1, _left_index(tape["time_msc"], target, True))
+    else:
+        fill = arrival + 1 + _left_index(tape["time_msc"][arrival + 1:], target, False)
     if fill >= len(tape) or int(tape[fill]["time_msc"]) >= boundary:
         return {"complete": False, "reason": "TRAIN_BOUNDARY", "exit_time": boundary}
     side_text = record["side"]
@@ -236,8 +292,7 @@ def _replay_entry_latency(tape, extrema, record: dict, latency: int, boundary: i
     entry_bar = int(tape[fill]["bar_index"])
     # Use only the TRAIN-prefix slice. The first quote at bar+100 is the
     # project's frozen TIME_EXIT point.
-    timeout_index = int(np.searchsorted(tape["bar_index"], entry_bar + 100,
-                                        side="left"))
+    timeout_index = _left_index(tape["bar_index"], entry_bar + 100, low_memory)
     has_timeout = timeout_index < len(tape) and int(tape["bar_index"][timeout_index]) == entry_bar + 100
     if timeout_index < len(tape) and int(tape["bar_index"][timeout_index]) > entry_bar + 100:
         raise ValueError("TRAIN quote tape skipped a TIME_EXIT bar")
@@ -260,7 +315,9 @@ def _replay_entry_latency(tape, extrema, record: dict, latency: int, boundary: i
 
 
 def _collect_outcomes(root: Path, events: pd.DataFrame, boundary: int,
-                      quality: dict, split: dict) -> dict:
+                      quality: dict, split: dict, *, low_memory: bool = True,
+                      checkpoint_path: Path | None = None,
+                      profile: dict | None = None) -> dict:
     ids = set(events.signal_id)
     source_path = assert_train_only_source_path(
         root / "outputs/bar_controller/research/quality_v1/signal_source_blocks.csv")
@@ -295,12 +352,43 @@ def _collect_outcomes(root: Path, events: pd.DataFrame, boundary: int,
             or proof.get("train_membership_sha256") != sha256(train_path)
             or proof.get("split_manifest_sha256") != sha256(split_path)):
         raise ValueError("Existing TRAIN baseline replay proof is stale or incomplete")
+    checkpoint_identity = {
+        "version": 1,
+        "mode": "LOW_MEMORY_REPLAY" if low_memory else "NORMAL_REPLAY",
+        "runner_sha256": sha256(Path(__file__).resolve()),
+        "protocol_sha256": sha256(root / "docs/RESEARCH_PROTOCOL_V2.md"),
+        "quality_manifest_sha256": sha256(quality_path),
+        "train_membership_sha256": sha256(train_path),
+        "split_manifest_sha256": sha256(split_path),
+        "baseline_replay_sha256": sha256(proof_path),
+    }
+    completed_blocks: dict[str, dict] = {}
+    if checkpoint_path is not None and checkpoint_path.exists():
+        saved = json.loads(checkpoint_path.read_text(encoding="utf-8"))
+        if saved.get("identity") != checkpoint_identity:
+            raise ValueError("Replay checkpoint provenance mismatch; refusing resume")
+        completed_blocks = saved.get("completed_blocks", {})
+        if profile is not None:
+            profile.setdefault("blocks", {}).update(saved.get("profile_blocks", {}))
+        for name, records in completed_blocks.items():
+            if name not in BLOCKS:
+                raise ValueError("Replay checkpoint contains an unknown source block")
+            for sid, value in records.items():
+                value["pnl"] = {int(lat): modes for lat, modes in value["pnl"].items()}
+                if sid not in by_id or len(value["exit_times"]) != 6 or len(value["baseline_exit_times"]) != 2:
+                    raise ValueError("Replay checkpoint has invalid TRAIN outcome records")
+                by_id[sid] = value
     # direction is reconstructed from FOLLOW side in the trade index below;
     # this value is overwritten once its per-mode records are loaded.
     for block_name in BLOCKS:
         wanted = {sid for sid in ids if source_map[sid] == block_name}
         if not wanted:
             continue
+        if block_name in completed_blocks:
+            if set(completed_blocks[block_name]) != wanted:
+                raise ValueError(f"Replay checkpoint membership mismatch: {block_name}")
+            continue
+        block_started, block_cpu = time.perf_counter(), time.process_time()
         block = root / "outputs/bar_controller/validated_blocks" / block_name
         manifest_path = assert_train_only_source_path(block / "manifest.json")
         quote_path = assert_train_only_source_path(block / "bar_quote_path.bin")
@@ -312,9 +400,16 @@ def _collect_outcomes(root: Path, events: pd.DataFrame, boundary: int,
                 or manifest.get("source_artifact_hashes", {}).get(quote_key)
                    != run_proof.get("quote_tape_sha256")):
             raise ValueError(f"TRAIN replay source hash mismatch: {block_name}")
+        stage = time.perf_counter()
         index = _read_train_trade_index(block / "bar_trade_index.csv", wanted)
-        tape = _prefix_quotes(quote_path, boundary)
+        index_seconds = time.perf_counter() - stage
+        stage = time.perf_counter()
+        tape = _prefix_quotes(quote_path, boundary, low_memory=low_memory)
+        prefix_seconds = time.perf_counter() - stage
+        stage = time.perf_counter()
         extrema = _price_block_extrema(tape["bid"], tape["ask"], QUOTE_CHUNK_SIZE)
+        extrema_seconds = time.perf_counter() - stage
+        stage = time.perf_counter()
         ordered_ids = sorted(wanted, key=lambda sid: index[(sid, "FOLLOW")]["entry"])
         for sid in ordered_ids:
             modes = {}
@@ -332,11 +427,41 @@ def _collect_outcomes(root: Path, events: pd.DataFrame, boundary: int,
                     by_id[sid]["side"] = record["side"]
             for latency in LATENCIES:
                 for mode, record in modes.items():
-                    outcome = _replay_entry_latency(tape, extrema, record, latency, boundary)
+                    outcome = _replay_entry_latency(
+                        tape, extrema, record, latency, boundary, low_memory=low_memory)
                     if not outcome["complete"]:
                         raise ValueError(f"Incomplete TRAIN latency replay: {sid}/{mode}/{latency}")
                     by_id[sid]["pnl"][latency][mode] = outcome["pnl"]
                     by_id[sid]["exit_times"].append(outcome["exit_time"])
+        replay_seconds = time.perf_counter() - stage
+        block_records = {sid: by_id[sid] for sid in wanted}
+        completed_blocks[block_name] = block_records
+        if checkpoint_path is not None:
+            checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
+            temp_path = checkpoint_path.with_suffix(checkpoint_path.suffix + ".tmp")
+            temp_path.write_text(json.dumps({"identity": checkpoint_identity,
+                                             "completed_blocks": completed_blocks,
+                                             "profile_blocks": profile.get("blocks", {})
+                                             if profile is not None else {}}),
+                                 encoding="utf-8")
+            os.replace(temp_path, checkpoint_path)
+        if profile is not None:
+            profile.setdefault("blocks", {})[block_name] = {
+                "train_signals": len(wanted), "quote_bytes": quote_path.stat().st_size,
+                "quote_records_in_train_prefix": len(tape), "trade_index_seconds": index_seconds,
+                "prefix_map_seconds": prefix_seconds, "extrema_index_seconds": extrema_seconds,
+                "exact_replay_seconds": replay_seconds,
+                "total_wall_seconds": time.perf_counter() - block_started,
+                "total_cpu_seconds": time.process_time() - block_cpu,
+                "process_peak_working_set_mb": _peak_working_set_mb(),
+                "quote_matching": "strict left-bound search; no quote records copied",
+            }
+            print(json.dumps({"event": "TRAIN_REPLAY_BLOCK_COMPLETE",
+                              "block": block_name,
+                              "signals": len(wanted),
+                              "profile": profile["blocks"][block_name]}), flush=True)
+        # Drop the block memmap view before loading the next quote tape.
+        del tape, extrema, index
     if any(len(data["exit_times"]) != 6 or len(data["baseline_exit_times"]) != 2
            for data in by_id.values()):
         raise ValueError("TRAIN replay omitted one or more mode/latency outcomes")
@@ -405,14 +530,28 @@ def _summarize_fold(eval_rows: pd.DataFrame, outcomes: dict, modes: dict,
     return result
 
 
-def run(root: Path = ROOT, output: Path | None = None) -> dict:
+def run(root: Path = ROOT, output: Path | None = None, *, low_memory: bool = True) -> dict:
     root = Path(root)
     if output is not None:
         output = assert_train_only_source_path(output)
         if output.exists():
             raise ValueError("Refusing to overwrite existing TRAIN research output")
+    total_started, total_cpu = time.perf_counter(), time.process_time()
+    profile = {"mode": "LOW_MEMORY_REPLAY" if low_memory else "NORMAL_REPLAY",
+               "blocks": {}, "folds": []}
+    stage_started, stage_cpu = time.perf_counter(), time.process_time()
     events, boundary, quality, split = _load_train(root)
-    outcomes = _collect_outcomes(root, events, boundary, quality, split)
+    profile["train_input_load_seconds"] = time.perf_counter() - stage_started
+    profile["train_input_load_cpu_seconds"] = time.process_time() - stage_cpu
+    checkpoint_path = (output.with_name(output.stem + ".checkpoint.json")
+                       if output is not None else None)
+    stage_started, stage_cpu = time.perf_counter(), time.process_time()
+    outcomes = _collect_outcomes(root, events, boundary, quality, split,
+                                 low_memory=low_memory,
+                                 checkpoint_path=checkpoint_path, profile=profile)
+    profile["all_quote_replay_seconds"] = time.perf_counter() - stage_started
+    profile["all_quote_replay_cpu_seconds"] = time.process_time() - stage_cpu
+    stage_started, stage_cpu = time.perf_counter(), time.process_time()
     events["label_end_msc"] = events.signal_id.map(
         {sid: max(value["baseline_exit_times"]) for sid,value in outcomes.items()})
     raw_folds = build_folds(events)
@@ -438,6 +577,7 @@ def run(root: Path = ROOT, output: Path | None = None) -> dict:
     selected_rows = {side: [] for side in ("BUY", "SELL")}
     dd_policy, dd_fixed = [], []
     for f, train_ids, eval_ids in fold_ranges:
+        fold_started, fold_cpu = time.perf_counter(), time.process_time()
         training = rows_by_id.loc[sorted(train_ids)].reset_index(drop=True)
         evaluation = rows_by_id.loc[sorted(eval_ids)].sort_values("signal_time_msc", kind="stable")
         if not len(training) or not len(evaluation):
@@ -480,6 +620,12 @@ def run(root: Path = ROOT, output: Path | None = None) -> dict:
                                                 "time": int(row.signal_time_msc)})
                     dd_policy.append((int(row.signal_time_msc), picked))
                     dd_fixed.append((int(row.signal_time_msc), baseline))
+        profile["folds"].append({
+            "fold": int(f["fold"]), "training_signals": len(training),
+            "evaluation_signals": len(evaluation),
+            "wall_seconds": time.perf_counter() - fold_started,
+            "cpu_seconds": time.process_time() - fold_cpu,
+        })
     side_gates = {}
     for side in ("BUY", "SELL"):
         primary = [r["by_side"][side]["mean_delta_vs_best_fixed"] for r in fold_results
@@ -557,6 +703,7 @@ def run(root: Path = ROOT, output: Path | None = None) -> dict:
         "replay_kernel_sha256": sha256(root / "python/validate_bar_path.py"),
         "validation_accessed": False, "final_test_accessed": False,
         "future_cohort_accessed": False, "demo_execution": False, "live_trading": False,
+        "replay_mode": profile["mode"],
     }
     if survive:
         final_policy = _select_policy(events, outcomes, 1/3, 2/3)
@@ -588,9 +735,21 @@ def run(root: Path = ROOT, output: Path | None = None) -> dict:
         }
     else:
         summary["candidate_provisional"] = None
+    profile["fold_processing_seconds"] = time.perf_counter() - stage_started
+    profile["fold_processing_cpu_seconds"] = time.process_time() - stage_cpu
+    profile["peak_working_set_mb"] = _peak_working_set_mb()
+    profile["total_wall_seconds_before_serialization"] = time.perf_counter() - total_started
+    profile["total_cpu_seconds_before_serialization"] = time.process_time() - total_cpu
+    summary["performance_profile"] = profile
     if output is not None:
         output.parent.mkdir(parents=True, exist_ok=True)
-        output.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+        serialization_started = time.perf_counter()
+        encoded = json.dumps(summary, indent=2) + "\n"
+        profile["summary_serialization_seconds"] = time.perf_counter() - serialization_started
+        encoded = json.dumps(summary, indent=2) + "\n"
+        output.write_text(encoded, encoding="utf-8")
+        if checkpoint_path is not None and checkpoint_path.exists():
+            checkpoint_path.unlink()
     return summary
 
 
@@ -599,10 +758,11 @@ def main() -> int:
     parser.add_argument("--root", type=Path, default=ROOT)
     parser.add_argument("--output", type=Path,
                         default=Path("outputs/bar_controller/research/train_entry_spread_atr_router.json"))
+    parser.add_argument("--mode", choices=("low-memory", "normal"), default="low-memory")
     args = parser.parse_args()
     root = args.root if args.root.is_absolute() else ROOT / args.root
     output = args.output if args.output.is_absolute() else root / args.output
-    print(json.dumps(run(root, output), indent=2))
+    print(json.dumps(run(root, output, low_memory=args.mode == "low-memory"), indent=2))
     return 0
 
 

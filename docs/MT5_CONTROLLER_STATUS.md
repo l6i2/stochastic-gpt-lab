@@ -1,19 +1,22 @@
 # Controller verification status
 
-## Current checkpoint — 2026-10-21 (offline audit; capture scheduler enabled)
+## Current checkpoint — 2026-10-21 (mock-only adapter; no MT5 action)
 
-No MT5 terminal, account, Strategy Tester, or EA was opened or changed.
-`LIVE_TRADING=false`. The Windows task `StochasticGptLabFutureValidationCollector`
-is enabled; its last scheduled run at 09:45 local returned result code 0, and
-the latest scheduler log entry (09:51 local) says
-`CAUGHT_UP_WAITING_FOR_CLOSED_DAY`, `collected=0`,
-`live_trading=false`. This is expected while the current UTC day remains open;
-no manual capture or backfill was performed. The fixed cohort remains
-unscored and immature.
+No terminal, account, Strategy Tester, or EA was opened. The new mock/shadow
+adapter writes hypothetical decisions and audit events to a transactional
+local SQLite store, persists duplicate-signal keys, defaults disabled, and
+hard-fails REAL/UNKNOWN account modes. It contains no broker connection or
+order-sending interface; even the test-enabled state records only a mock event
+with `orders_sent=0`. Existing kill-switch, reconnect, stale-data, spread,
+slippage, position, loss, and drawdown gates are applied before acceptance.
+`DEMO_EXECUTOR=READY_BUT_DISABLED` refers only to this mock adapter; no Demo
+trading path is enabled. `SHADOW_MODE=READY_BUT_DISABLED`.
 
-The DEMO safety gate and hypothetical shadow recorder pass focused tests, but
-there is no order adapter or validated candidate. DEMO execution and shadow
-actions remain disabled. `FINAL_TEST=LOCKED`; no real or Demo trade was made.
+The collector task is enabled and a scheduler query during this task reported
+it as running (`0x41301`). The latest completed log entry available reports
+`CAUGHT_UP_WAITING_FOR_CLOSED_DAY`, `collected=0`, and `live_trading=false`.
+The cohort was not scored or re-counted; there was no forced capture or
+backfill. `FINAL_TEST=LOCKED`, `DEMO=DISABLED`, and `LIVE_TRADING=false`.
 
 ## Current checkpoint — 2026-10-21 (no MT5 interaction)
 
