@@ -1,5 +1,13 @@
 # Intra-trade research status
 
+## Current checkpoint — 2026-10-21 (prospective evaluation frozen; no scoring)
+
+[`PROSPECTIVE_EVALUATION_PROTOCOL.md`](PROSPECTIVE_EVALUATION_PROTOCOL.md) now fixes the one-shot outcome metrics and PASS/FAIL/INCONCLUSIVE gates before prospective results. The raw-only maturity auditor found 2 days, 263,727 ticks, 552 bars, 29 BUY and 26 SELL support signals, zero invalid ticks/bars, and no missing capture days. These are counts/coverage metadata only. The cohort is not mature: minimum duration/support are unmet, and the verified XM server calendar, causal audit, frozen candidate, and complete pre-archive manifest chain are absent. No outcome, ranking, or candidate score was read.
+
+The prospective protocol and metadata specification are SHA-256 pinned. Full verification passes: 163 unit tests, 9 skipped because `g++` is unavailable, plus compileall. No scoring or protected-split access occurred.
+
+The evaluator is `READY_BUT_GATED`; the hash-bound candidate packaging path is available but there is no candidate. Drift monitoring and shadow recording are fixture-tested; shadow is disabled and cannot send orders. `FINAL_TEST=LOCKED`, `DEMO=DISABLED`, `LIVE_TRADING=false`.
+
 ## Current checkpoint — 2026-10-21 (formal V2 failure analysis; research paused on current TRAIN)
 
 The formal gate-by-gate analysis is in [`V2_FAILURE_ANALYSIS.md`](V2_FAILURE_ANALYSIS.md). This makes explicit that V2 month-level dependence was not separately measured, aggregate support was adequate, latency and the limited drawdown proxy passed, and rejection came from preregistered block/session concentration (BUY) and fold/threshold instability (SELL). Both clustered intervals include zero. No BUY-only rescue or threshold change is permitted.

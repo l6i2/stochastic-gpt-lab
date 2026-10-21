@@ -1,0 +1,50 @@
+{
+  "schema_version": "future-cohort-metadata/1.0",
+  "purpose": "eligibility and data-health metadata only; never candidate scoring",
+  "signal_contract": {
+    "symbol": "US30Cash",
+    "timeframe": "M5",
+    "bar_time": "closed-bar UTC close time (bar open + 300 seconds)",
+    "stochastic": {"K": 5, "D": 3, "slowing": 3, "main_line": "3-period SMA of fast %K"},
+    "BUY": "previous MAIN_K <= 20 and current MAIN_K > 20",
+    "SELL": "previous MAIN_K >= 80 and current MAIN_K < 80",
+    "outputs": "counts and coverage only; no entries, exits, labels, PnL, or replay"
+  },
+  "sessions": {
+    "timezone": "America/New_York using US DST rules",
+    "Asia": "19:00-03:00 local, crossing midnight",
+    "London": "03:00-08:00 local",
+    "New_York": "08:00-17:00 local",
+    "Other": "17:00-19:00 local"
+  },
+  "causal_regimes": {
+    "ATR": "14-period simple mean of true range through the closed signal bar",
+    "EMA": "standard recursive EMA on closed M5 close values, spans 20 and 50",
+    "uptrend": "EMA20 > EMA50 and EMA50 change over 12 bars / ATR14 > 0.1",
+    "downtrend": "EMA20 < EMA50 and EMA50 change over 12 bars / ATR14 < -0.1",
+    "range": "abs((EMA20-EMA50)/ATR14) <= 0.1 and 20-bar high-low range / ATR14 <= 3.0",
+    "transition": "all remaining finite states",
+    "volatility_reference": "median ATR14 over the preceding 288 closed M5 bars; current bar excluded",
+    "low_volatility": "current ATR14 / reference < 0.8",
+    "medium_volatility": "0.8 <= current ATR14 / reference <= 1.25",
+    "high_volatility": "current ATR14 / reference > 1.25",
+    "warmup_missing_policy": "no regime bucket until every required lookback is finite; maturity cannot pass while required signals are unclassified"
+  },
+  "quality": {
+    "valid_tick": "finite time/time_msc, finite bid and ask, 0 < bid <= ask",
+    "valid_bar": "finite positive OHLC and low <= open/close <= high",
+    "duplicate_ticks": "count and report; never silently deduplicate",
+    "segment_hashes": "must match immutable cohort manifest",
+    "session_calendar": "separate authoritative XM US30Cash UTC weekly schedule and holiday/early-close artifact required for gap acceptance"
+  },
+  "access": {
+    "pnl_read": false,
+    "labels_read": false,
+    "candidate_scoring": false,
+    "ranking": false,
+    "threshold_tuning": false,
+    "train_access_allowed": false,
+    "final_test_access_allowed": false,
+    "live_trading": false
+  }
+}

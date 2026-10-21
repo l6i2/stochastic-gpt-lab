@@ -4,12 +4,13 @@ import json
 import sqlite3
 import tempfile
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "python"))
 from demo_safety import DemoLimits, RuntimeState, authorize_demo_decision
-from shadow_mode import ShadowRecorder
+from shadow_mode import ReadOnlyMT5Adapter, ShadowMode, ShadowRecorder, sha256_bytes
 from demo_mock_executor import MockShadowExecutor
 
 
@@ -32,6 +33,10 @@ class DemoShadowSafetyTests(unittest.TestCase):
             (RuntimeState(**{**self.state.__dict__, "heartbeat_age_seconds": 99}), "STALE_HEARTBEAT"),
             (RuntimeState(**{**self.state.__dict__, "open_positions": 1}), "POSITION_LIMIT"),
             (RuntimeState(**{**self.state.__dict__, "requested_lot": 0.2}), "LOT_LIMIT"),
+            (RuntimeState(**{**self.state.__dict__, "daily_loss": 100.0}), "DAILY_LOSS_LIMIT"),
+            (RuntimeState(**{**self.state.__dict__, "consecutive_losses": 3}), "CONSECUTIVE_LOSS_LIMIT"),
+            (RuntimeState(**{**self.state.__dict__, "trades_today": 4}), "DAILY_TRADE_LIMIT"),
+            (RuntimeState(**{**self.state.__dict__, "symbol": "US30"}), "SYMBOL_NOT_ALLOWED"),
             (RuntimeState(**{**self.state.__dict__, "observed_slippage": 3}), "SLIPPAGE_LIMIT"),
             (RuntimeState(**{**self.state.__dict__, "equity_drawdown": 150.0}), "EQUITY_DRAWDOWN_LIMIT"),
             (RuntimeState(**{**self.state.__dict__, "reconnect_pending": True}), "RECONNECT_RECONCILIATION_REQUIRED"),
@@ -57,13 +62,63 @@ class DemoShadowSafetyTests(unittest.TestCase):
             path = Path(tmp) / "shadow.jsonl"
             ShadowRecorder(path).record({
                 "timestamp_utc": "2026-10-19T00:00:00Z", "signal_id": "s1",
-                "candidate_sha256": "abc", "decision": "NO_DECISION", "reason": "stale",
+                "candidate_sha256": "a" * 64, "decision": "NO_DECISION", "reason": "stale",
+                "features": {"x": 1}, "feature_sha256": sha256_bytes(b'{"x":1}'),
+                "quote_time_utc": "2026-10-19T00:00:00Z", "spread": 0.5,
+                "feature_max_time_utc": "2026-10-19T00:00:00Z", "latency_ms": 0,
+                "policy_version": "fixture-v1", "baseline_decision": "FOLLOW",
             })
             record = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual(record["decision"], "NO_DECISION")
-            self.assertFalse(any("order" in key.casefold() for key in record))
+            self.assertEqual(record["orders_sent"], 0)
             with self.assertRaises(ValueError):
                 ShadowRecorder(path).record({"decision": "TRADE"})
+
+    def test_shadow_pipeline_is_disabled_by_default_and_zero_order(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "shadow.jsonl"
+            disabled = ShadowMode(ShadowRecorder(path))
+            self.assertEqual(disabled.observe(signal={}, quote={}, candidate_sha256="",
+                policy_version="v1", decision_fn=lambda _: "FOLLOW")["status"], "DISABLED")
+            self.assertFalse(path.exists())
+            mode = ShadowMode(ShadowRecorder(path), enabled=True)
+            signal = {"signal_id": "s1", "symbol": "US30Cash",
+                      "signal_time_utc": "2026-10-19T00:00:08Z",
+                      "feature_max_time_utc": "2026-10-19T00:00:05Z", "features": {"k": 22}}
+            quote = {"symbol": "US30Cash", "time_utc": "2026-10-19T00:00:09Z",
+                     "bid": 40000.0, "ask": 40000.5}
+            result = mode.observe(signal=signal, quote=quote, candidate_sha256="c" * 64,
+                policy_version="candidate-v1", decision_fn=lambda _: "FOLLOW",
+                now_utc=datetime(2026, 10, 19, 0, 0, 10, tzinfo=timezone.utc))
+            self.assertEqual(result["decision"], "FOLLOW")
+            self.assertEqual(result["orders_sent"], 0)
+            event = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(event["order_count"], 0)
+            self.assertEqual(event["spread"], 0.5)
+            stale_quote = {**quote, "time_utc": "2026-10-19T00:00:00Z"}
+            stale = mode.observe(signal=signal, quote=stale_quote, candidate_sha256="c" * 64,
+                policy_version="candidate-v1", decision_fn=lambda _: "INVERT",
+                now_utc=datetime(2026, 10, 19, 0, 0, 10, tzinfo=timezone.utc))
+            self.assertEqual(stale["decision"], "NO_DECISION")
+            self.assertEqual(mode.order_count, 0)
+            no_candidate = mode.observe(
+                signal={**signal, "signal_id": "s2"}, quote=quote, candidate_sha256=None,
+                policy_version="NO_CANDIDATE", decision_fn=lambda _: self.fail("policy must not run without a candidate"),
+                now_utc=datetime(2026, 10, 19, 0, 0, 10, tzinfo=timezone.utc))
+            self.assertEqual(no_candidate["status"], "NO_FROZEN_CANDIDATE")
+            self.assertEqual(no_candidate["orders_sent"], 0)
+
+    def test_read_only_mt5_adapter_exposes_no_order_methods(self):
+        class FakeMT5:
+            def symbol_info_tick(self, symbol):
+                return symbol
+            def order_send(self, request):
+                raise AssertionError("must never be callable")
+
+        adapter = ReadOnlyMT5Adapter(FakeMT5())
+        self.assertEqual(adapter.symbol_info_tick("US30Cash"), "US30Cash")
+        with self.assertRaisesRegex(AttributeError, "refuses method"):
+            adapter.order_send
 
     def test_mock_adapter_is_disabled_by_default_and_never_emits_orders(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -77,6 +132,7 @@ class DemoShadowSafetyTests(unittest.TestCase):
             try:
                 self.assertEqual(connection.execute("SELECT COUNT(*) FROM audit_events").fetchone()[0], 1)
                 self.assertEqual(connection.execute("SELECT COUNT(*) FROM processed_signals").fetchone()[0], 0)
+                self.assertEqual(connection.execute("SELECT COUNT(*) FROM order_intents").fetchone()[0], 1)
             finally:
                 connection.close()
 
@@ -110,9 +166,23 @@ class DemoShadowSafetyTests(unittest.TestCase):
             connection = sqlite3.connect(database)
             try:
                 self.assertEqual(connection.execute("SELECT COUNT(*) FROM processed_signals").fetchone()[0], 1)
+                self.assertEqual(connection.execute("SELECT COUNT(*) FROM order_intents").fetchone()[0], 2)
                 self.assertEqual(connection.execute("SELECT COUNT(*) FROM audit_events").fetchone()[0], 3)
             finally:
                 connection.close()
+
+    def test_blocked_intent_is_idempotent_across_restart(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            db = Path(tmp) / "state.sqlite3"
+            state = RuntimeState(**{**self.state.__dict__, "signal_key": "daily-loss", "daily_loss": 100.0})
+            first = MockShadowExecutor(db, enabled=True)
+            result = first.record(state, self.limits, decision="FOLLOW", candidate_sha256="d" * 64)
+            self.assertEqual(result["reason"], "DAILY_LOSS_LIMIT")
+            restarted = MockShadowExecutor(db, enabled=True)
+            self.assertEqual(restarted.load_runtime_snapshot()["signal_key"], "daily-loss")
+            duplicate = restarted.record(state, self.limits, decision="FOLLOW", candidate_sha256="d" * 64)
+            self.assertEqual(duplicate["reason"], "DUPLICATE_OR_EMPTY_SIGNAL")
+            self.assertEqual(duplicate["orders_sent"], 0)
 
 
 if __name__ == "__main__":

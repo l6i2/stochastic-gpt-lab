@@ -1,0 +1,31 @@
+{
+  "schema_version": "prospective-candidate/1.0",
+  "candidate_id": "REQUIRED_NEW_ID",
+  "status": "DRAFT",
+  "policy": "REQUIRED_FROZEN_POLICY",
+  "symbol": "US30Cash",
+  "timeframe": "M5",
+  "latency_ms": 250,
+  "strategy_contract": {
+    "stochastic": {"K": 5, "D": 3, "slowing": 3, "trigger_line": "MAIN_K"},
+    "buy": "previous <= 20 and current > 20",
+    "sell": "previous >= 80 and current < 80",
+    "tp": 240,
+    "sl": 180,
+    "time_exit_bars": 100
+  },
+  "features_sha256": "REQUIRED_SHA256",
+  "code_sha256": "REQUIRED_SHA256",
+  "dataset_sha256": "REQUIRED_SHA256",
+  "model_sha256": null,
+  "policy_sha256": "REQUIRED_SHA256",
+  "prospective_protocol_sha256": "REQUIRED_SHA256",
+  "thresholds": "MUST_BE_IMMUTABLE_JSON_OBJECT",
+  "failure_criteria": "MUST_MATCH_PROSPECTIVE_EVALUATION_PROTOCOL",
+  "train_walk_forward_report_sha256": "REQUIRED_SHA256",
+  "discovery_validation_used": false,
+  "future_cohort_used": false,
+  "final_test_used": false,
+  "demo_enabled": false,
+  "live_trading": false
+}

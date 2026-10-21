@@ -1,0 +1,19 @@
+{
+  "schema_version": "drift-feature-whitelist/1.0",
+  "features": [
+    "stoch_main_k",
+    "spread",
+    "atr14_over_previous_288_bar_median",
+    "relative_tick_volume_20",
+    "ha_body_atr",
+    "distance_poc_atr",
+    "distance_vah_atr",
+    "distance_val_atr"
+  ],
+  "excluded": [
+    "signal_id", "entry_price", "exit_price", "exit_reason", "target", "label",
+    "pnl", "candidate_pnl", "follow_pnl", "invert_pnl", "win_rate", "profit_factor",
+    "mfe", "mae", "future_return"
+  ],
+  "status": "WHITELIST_ONLY; NO_BASELINE_COUNTS_COMPUTED"
+}

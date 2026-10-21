@@ -94,3 +94,36 @@ scheduled task is enabled, Ready, last result 0, and continues every 15
 minutes. This capture is raw-only and remains inaccessible to TRAIN scoring;
 no backfill, evaluation, or trading was performed. Runtime data and logs stay
 local and ignored by Git.
+
+## Prospective health gate — 2026-10-21
+
+`python/future_cohort_health.py` now verifies segment hashes/counts, timestamps,
+quote/bar validity, fixed Stochastic signal support, UTC weeks/months, NY-based
+session counts, causal regime/volatility counts, and expected M5 gaps when a
+verified server calendar is present. The Task Scheduler wrapper archives each
+new manifest and writes a separate hash-pinned health report when capture or
+health inputs change. It never reads outcomes.
+
+The permitted metadata-only audit reports **2 captured days**, **263,727
+ticks**, **552 M5 bars**, **29 BUY / 26 SELL support signals**, zero invalid
+ticks/bars, zero missing UTC capture days, and latest raw tick
+`2026-10-20T23:59:58.880Z`. Health report SHA-256 is
+`a42ecdc9142807d1a2b9ad32c4f347d0fa76d4e2adcb0d0b250b2d12706101ce`.
+`COHORT_MATURE=false`: duration, signal/session/regime support, candidate, and
+causality-audit gates are incomplete; the exact XM server calendar is
+unverified; and the old manifest versions were overwritten before immutable
+snapshot archiving began. No performance field was read or calculated.
+
+The prospective protocol and metadata-only specification now have committed
+SHA-256 sidecars, which the candidate freezer, evaluator, and health gate
+require. The health report confirms `metadata_spec_frozen=true`; it remains
+`NOT_MATURE`. At 2026-10-21 15:50 CDT, Task Scheduler reports the collector
+`Ready`, last scheduled result `0` at 15:45:45, next run 16:00:00. The latest
+wrapper log entry also exited `0` with `CAUGHT_UP_WAITING_FOR_CLOSED_DAY`;
+it collected no new segment because the next UTC day is not yet eligible.
+
+Future snapshots will be checked against an immutable chain from the current
+audit anchor. This does not claim to reconstruct overwritten pre-deployment
+versions; the frozen maturity gate remains closed while that prefix is
+unverified. The calendar template is intentionally unverified and therefore
+fails gap acceptance until the exact XM server schedule is sourced and hashed.

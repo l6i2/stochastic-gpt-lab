@@ -1,0 +1,12 @@
+{
+  "schema_version": "xm-us30cash-session-calendar/1.0",
+  "verified": false,
+  "symbol": "US30Cash",
+  "server": "XM server identity required",
+  "timezone_and_dst": "not yet verified for the active server",
+  "weekly_sessions_utc": [],
+  "holidays_and_early_closes": [],
+  "source": null,
+  "source_sha256": null,
+  "verification_note": "Fail maturity closed until an authoritative schedule for this exact XM server and symbol is recorded and hashed. Do not infer open hours from observed cohort bars."
+}

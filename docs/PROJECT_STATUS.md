@@ -1,5 +1,15 @@
 # Project status
 
+## Current checkpoint — 2026-10-21 (prospective gate and safety tooling prepared)
+
+The prospective scoring rule is frozen in [`PROSPECTIVE_EVALUATION_PROTOCOL.md`](PROSPECTIVE_EVALUATION_PROTOCOL.md); thresholds inherit the unchanged readiness rule. The new raw-only health checker is [`future_cohort_health.py`](../python/future_cohort_health.py), and its fixture tests prove no outcome/scoring fields are produced. The existing cohort health audit reports 2 days, 263,727 ticks, 552 M5 bars, 29 BUY and 26 SELL support signals, 0 invalid ticks/bars, and latest UTC tick `2026-10-20T23:59:58.880Z`. This is metadata only; no performance was opened. Maturity is NO because support/duration gates are unmet, there is no frozen candidate or causal audit, the XM server calendar is unverified, and pre-archive manifest history cannot be reconstructed.
+
+The evaluator now binds candidate, cohort, health report, table, protocol, and evaluator hashes, consumes a globally single-use nonce before opening outcome rows, records an audit trail, and refuses retry. Candidate packaging is prepared but no candidate exists. The disabled mock executor now has persistent idempotent intents/runtime snapshots and full safety tests; it has no order-sending path. Shadow decisions are disabled, read-only, and always record `orders_sent=0`; drift monitoring is feature/coverage-only. `DEMO_EXECUTOR=READY_BUT_DISABLED_FULL`, `SHADOW_MODE=READY_BUT_DISABLED`, `FUTURE_EVALUATOR=READY_BUT_GATED`, `FINAL_TEST=LOCKED`, `DEMO=DISABLED`, `LIVE_TRADING=false`.
+
+The collector task is enabled (`Ready`; last scheduled result 0 at 2026-10-21 15:45:45 CDT; next run 16:00:00). The latest wrapper log also exited 0 with `CAUGHT_UP_WAITING_FOR_CLOSED_DAY`. Its wrapper archives manifest snapshots and refreshes only integrity/maturity metadata after changed inputs; it does not authorize evaluation. The fresh health report SHA-256 is `a42ecdc9142807d1a2b9ad32c4f347d0fa76d4e2adcb0d0b250b2d12706101ce`; the metadata spec is hash-pinned. No protected split was opened.
+
+Verification after this update: `python -m unittest discover -s tests -v` passed 163 tests with 9 native-toolchain skips (`g++` unavailable); `python -m compileall -q python tests` and `git diff --check` passed. The repository `.venv` now has the already-declared `numba` dependency installed; global Python was not changed.
+
 ## Current checkpoint — 2026-10-21 (V2 failure analysis closed; no new round)
 
 Formal failure analysis is complete in [`V2_FAILURE_ANALYSIS.md`](V2_FAILURE_ANALYSIS.md). The 17 known frozen TRAIN hypotheses (16 in R2–R4 plus `HV2_ENTRY_SPREAD_ATR_ROUTER`) have zero survivors and no candidate. V2 had adequate aggregate sample support and passed latency and drawdown-proxy gates, but BUY failed block/session concentration and SELL failed fold direction, fold concentration, and 25/75 sign robustness. V2 month dependence was not separately measured; it is recorded as unknown.

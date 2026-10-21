@@ -7,16 +7,22 @@ from __future__ import annotations
 
 import argparse
 import csv
+from datetime import datetime, timezone
 import hashlib
 import json
 import os
 from pathlib import Path
-from statistics import mean
+import random
+from statistics import mean, median
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_COHORT = ROOT / "outputs/future_validation_cohort/cohort_20261019"
-REQUIRED_COLUMNS = {"signal_id", "side", "decision", "candidate_pnl", "follow_pnl", "invert_pnl"}
+REQUIRED_COLUMNS = {"signal_id", "signal_time_utc", "side", "decision",
+                    "candidate_pnl", "follow_pnl", "invert_pnl"}
+PROTOCOL_PATH = ROOT / "docs/PROSPECTIVE_EVALUATION_PROTOCOL.md"
+BOOTSTRAP_REPS = 10_000
+BOOTSTRAP_SEED = 20261019
 
 
 def sha256(path: Path) -> str:
@@ -57,6 +63,50 @@ def _summary(rows: list[dict[str, str]]) -> dict[str, Any]:
     return result
 
 
+def _paired_ci(rows: list[dict[str, str]], baseline: str, *, seed: int) -> dict[str, float]:
+    differences = [float(row["candidate_pnl"]) - float(row[baseline]) for row in rows]
+    if not differences:
+        raise ValueError("Cannot calculate paired confidence interval without rows")
+    rng = random.Random(seed)
+    n = len(differences)
+    means = []
+    for _ in range(BOOTSTRAP_REPS):
+        means.append(sum(differences[rng.randrange(n)] for _ in range(n)) / n)
+    means.sort()
+    return {"mean_delta": mean(differences),
+            "ci95_low": means[int(0.025 * BOOTSTRAP_REPS)],
+            "ci95_high": means[int(0.975 * BOOTSTRAP_REPS) - 1],
+            "bootstrap_replicates": BOOTSTRAP_REPS,
+            "bootstrap_seed": seed}
+
+
+def _max_drawdown(values: list[float]) -> float:
+    equity = peak = 0.0
+    drawdown = 0.0
+    for value in values:
+        equity += value
+        peak = max(peak, equity)
+        drawdown = min(drawdown, equity - peak)
+    return abs(drawdown)
+
+
+def _evaluation_metrics(rows: list[dict[str, str]]) -> dict[str, Any]:
+    result: dict[str, Any] = {"n": len(rows)}
+    for baseline in ("follow_pnl", "invert_pnl"):
+        result[f"candidate_minus_{baseline.replace('_pnl', '')}"] = _paired_ci(
+            rows, baseline, seed=BOOTSTRAP_SEED + (baseline == "invert_pnl"))
+    for label, key in (("candidate", "candidate_pnl"), ("follow", "follow_pnl"), ("invert", "invert_pnl")):
+        vals = [float(row[key]) for row in rows]
+        gains = sum(v for v in vals if v > 0)
+        losses = abs(sum(v for v in vals if v < 0))
+        result[f"{label}_mean_pnl"] = mean(vals)
+        result[f"{label}_median_pnl"] = median(vals)
+        result[f"{label}_win_rate"] = sum(v > 0 for v in vals) / len(vals)
+        result[f"{label}_profit_factor"] = gains / losses if losses else (None if gains else 0.0)
+        result[f"{label}_max_drawdown"] = _max_drawdown(vals)
+    return result
+
+
 def evaluate(*, candidate_path: Path, eval_csv: Path, eval_manifest_path: Path,
              authorization_path: Path, cohort_root: Path = DEFAULT_COHORT,
              ledger_root: Path | None = None) -> dict[str, Any]:
@@ -83,7 +133,28 @@ def evaluate(*, candidate_path: Path, eval_csv: Path, eval_manifest_path: Path,
             or candidate_sidecar.read_text(encoding="ascii").split()[0] != candidate_hash):
         raise ValueError("Candidate must have a matching immutable SHA-256 sidecar")
     cohort_manifest_path = cohort_root / "cohort_manifest.json"
+    cohort_sidecar_path = cohort_root / "cohort_manifest.sha256"
+    if (not cohort_sidecar_path.is_file()
+            or cohort_sidecar_path.read_text(encoding="ascii").strip() != sha256(cohort_manifest_path)):
+        raise ValueError("Cohort manifest SHA-256 sidecar is missing or invalid")
     cohort_hash = sha256(cohort_manifest_path)
+    health_path = cohort_root / "cohort_health_report.json"
+    health_sidecar = health_path.with_name(health_path.name + ".sha256")
+    if (not health_path.is_file() or not health_sidecar.is_file()
+            or health_sidecar.read_text(encoding="ascii").strip() != sha256(health_path)):
+        raise ValueError("A hash-verified cohort health/maturity report is required")
+    health = _read_json(health_path)
+    if (health.get("cohort_mature") is not True
+            or health.get("cohort_manifest_sha256") != cohort_hash
+            or health.get("scoring_performed") is not False):
+        raise ValueError("Hash-bound cohort health report is not mature and score-free")
+    health_hash = sha256(health_path)
+    protocol_hash = sha256(PROTOCOL_PATH)
+    protocol_sidecar = PROTOCOL_PATH.with_name(PROTOCOL_PATH.name + ".sha256")
+    if (not protocol_sidecar.is_file()
+            or protocol_sidecar.read_text(encoding="ascii").split()[0] != protocol_hash):
+        raise ValueError("Frozen prospective evaluation protocol sidecar is missing or invalid")
+    evaluator_hash = sha256(Path(__file__).resolve())
     if candidate.get("status") != "FROZEN" or not candidate.get("candidate_id"):
         raise ValueError("Only a frozen candidate may be evaluated")
     expected = {
@@ -91,16 +162,53 @@ def evaluate(*, candidate_path: Path, eval_csv: Path, eval_manifest_path: Path,
         "evaluation_table_sha256": table_hash,
         "cohort_manifest_sha256": cohort_hash,
     }
+    expected["protocol_sha256"] = protocol_hash
+    expected["evaluator_sha256"] = evaluator_hash
+    expected["health_report_sha256"] = health_hash
     for key, value in expected.items():
         if manifest.get(key) != value:
             raise ValueError(f"Evaluation manifest hash mismatch: {key}")
     if manifest.get("maturity_status") != "PASS" or manifest.get("causality_status") != "PASS":
         raise ValueError("Cohort maturity and causality must both PASS")
     if (authorization.get("user_authorized") is not True
+            or not authorization.get("authorization_id")
+            or len(str(authorization.get("single_use_nonce", ""))) != 64
+            or any(c not in "0123456789abcdef" for c in str(authorization.get("single_use_nonce", "")).lower())
             or authorization.get("candidate_sha256") != candidate_hash
             or authorization.get("cohort_manifest_sha256") != cohort_hash
-            or authorization.get("evaluation_table_sha256") != table_hash):
+            or authorization.get("evaluation_table_sha256") != table_hash
+            or authorization.get("protocol_sha256") != protocol_hash
+            or authorization.get("evaluator_sha256") != evaluator_hash
+            or authorization.get("health_report_sha256") != health_hash):
         raise ValueError("Explicit matching one-time authorization is required")
+
+    ledger_root = (ledger_root or eval_root / "evaluation_ledger").resolve()
+    ledger_root.mkdir(parents=True, exist_ok=True)
+    ledger_key = hashlib.sha256(f"{candidate_hash}:{cohort_hash}".encode()).hexdigest()
+    lock_path = ledger_root / f"{ledger_key}.consumed"
+    nonce_hash = hashlib.sha256(authorization["single_use_nonce"].encode("ascii")).hexdigest()
+    nonce_path = ledger_root / f"{nonce_hash}.token-consumed"
+    audit_path = ledger_root / "evaluation_audit.jsonl"
+    consume_record = {
+        "status": "AUTHORIZATION_CONSUMED_BEFORE_OUTCOME_READ",
+        "authorization_id": authorization["authorization_id"],
+        "single_use_nonce_sha256": nonce_hash,
+        **expected,
+    }
+    try:
+        token_fd = os.open(nonce_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
+    except FileExistsError as exc:
+        raise ValueError("This one-use authorization token has already been consumed") from exc
+    with os.fdopen(token_fd, "w", encoding="utf-8") as stream:
+        stream.write(json.dumps(consume_record, sort_keys=True))
+    try:
+        pair_fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
+    except FileExistsError as exc:
+        raise ValueError("This candidate/cohort pair has already been consumed") from exc
+    with os.fdopen(pair_fd, "w", encoding="utf-8") as stream:
+        stream.write(json.dumps(consume_record, sort_keys=True))
+    with audit_path.open("a", encoding="utf-8") as stream:
+        stream.write(json.dumps(consume_record, sort_keys=True) + "\n")
 
     with eval_csv.open("r", encoding="utf-8-sig", newline="") as stream:
         reader = csv.DictReader(stream)
@@ -112,32 +220,46 @@ def evaluate(*, candidate_path: Path, eval_csv: Path, eval_manifest_path: Path,
         raise ValueError("Unexpected/empty evaluation table")
     if len({row["signal_id"] for row in rows}) != len(rows) or any(not row["signal_id"] for row in rows):
         raise ValueError("Signal IDs must be nonempty and unique")
-    # Parse all score columns before consuming the one-time evaluation token.
+    times = []
+    for row in rows:
+        stamp = row["signal_time_utc"]
+        parsed = datetime.fromisoformat(stamp.replace("Z", "+00:00"))
+        if parsed.tzinfo is None:
+            raise ValueError("Evaluation timestamps must be timezone-aware")
+        times.append(parsed.astimezone(timezone.utc))
+    if times != sorted(times) or len(times) != len(set(times)):
+        raise ValueError("Evaluation rows must have unique, strictly increasing UTC signal times")
+    # The authorization was consumed before this outcome table was opened.
     for row in rows:
         for key in ("candidate_pnl", "follow_pnl", "invert_pnl"):
             float(row[key])
 
-    ledger_root = (ledger_root or eval_root / "evaluation_ledger").resolve()
-    ledger_root.mkdir(parents=True, exist_ok=True)
-    ledger_key = hashlib.sha256(f"{candidate_hash}:{cohort_hash}".encode()).hexdigest()
-    lock_path = ledger_root / f"{ledger_key}.consumed"
-    try:
-        fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
-    except FileExistsError as exc:
-        raise ValueError("This candidate/cohort pair has already been consumed") from exc
-    with os.fdopen(fd, "w", encoding="utf-8") as stream:
-        stream.write(json.dumps({"candidate_sha256": candidate_hash,
-                                 "cohort_manifest_sha256": cohort_hash,
-                                 "evaluation_table_sha256": table_hash,
-                                 "status": "CONSUMED"}, sort_keys=True))
-
+    metrics = {"all": _evaluation_metrics(rows)}
+    for side in ("BUY", "SELL"):
+        side_rows = [row for row in rows if row["side"] == side]
+        if side_rows:
+            metrics[side] = _evaluation_metrics(side_rows)
+    primary_keys = [f"candidate_minus_{baseline}" for baseline in ("follow", "invert")]
+    groups = [metrics["all"], metrics.get("BUY", {}), metrics.get("SELL", {})]
+    primary = [group[key] for group in groups if group for key in primary_keys]
+    follow_dd = metrics["all"]["follow_max_drawdown"]
+    candidate_dd = metrics["all"]["candidate_max_drawdown"]
+    drawdown_pass = candidate_dd <= follow_dd * 1.2 if follow_dd else candidate_dd == 0
+    if not drawdown_pass or any(item["ci95_high"] <= 0 for item in primary):
+        evaluation_status = "FAIL"
+    elif groups[1] and groups[2] and all(item["ci95_low"] > 0 for item in primary):
+        evaluation_status = "PASS"
+    else:
+        evaluation_status = "INCONCLUSIVE"
     result = {
         "status": "EVALUATED_ONCE",
+        "evaluation_status": evaluation_status,
         "candidate_id": candidate["candidate_id"],
         **expected,
-        "all": _summary(rows),
-        "by_side": {side: _summary([row for row in rows if row["side"] == side])
-                    for side in ("BUY", "SELL") if any(row["side"] == side for row in rows)},
+        "metrics": metrics,
+        "drawdown_pass": drawdown_pass,
+        "bootstrap_replicates": BOOTSTRAP_REPS,
+        "bootstrap_seed": BOOTSTRAP_SEED,
         "tuning_allowed": False,
         "final_test_accessed": False,
         "demo_enabled": False,
@@ -147,6 +269,9 @@ def evaluate(*, candidate_path: Path, eval_csv: Path, eval_manifest_path: Path,
     temp = result_path.with_suffix(".tmp")
     temp.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     os.replace(temp, result_path)
+    with audit_path.open("a", encoding="utf-8") as stream:
+        stream.write(json.dumps({"status": "EVALUATION_COMPLETE", "evaluation_status": evaluation_status,
+                                 "result_sha256": sha256(result_path), **expected}, sort_keys=True) + "\n")
     return result
 
 

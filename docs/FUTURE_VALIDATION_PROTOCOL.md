@@ -71,11 +71,22 @@ The cohort cannot participate in hypothesis generation, threshold selection,
 ranking, or tuning. A read-only single-use evaluator is implemented at
 `python/future_validation_evaluator.py`; it requires a frozen candidate and
 SHA-256 sidecar, an independently audited mature/causal evaluation table, and
-a matching explicit authorization artifact. Its synthetic tests do not open
-the real cohort. The evaluator does not tune, and a candidate/cohort pair can
-be consumed once only. The separate maturity thresholds are frozen in
-`docs/FUTURE_VALIDATION_READINESS_RULE.md`. This protocol does not authorize
-opening the cohort or FINAL_TEST.
+a matching explicit one-use authorization token. Its synthetic tests do not
+open the real cohort. It verifies candidate, cohort manifest, health report,
+evaluation table, evaluator, and protocol hashes, consumes authorization before
+reading outcomes, and writes a hash-bound audit trail. See
+[`PROSPECTIVE_EVALUATION_PROTOCOL.md`](PROSPECTIVE_EVALUATION_PROTOCOL.md) for
+the frozen metrics and PASS/FAIL/INCONCLUSIVE gates. The separate maturity
+thresholds remain frozen in `docs/FUTURE_VALIDATION_READINESS_RULE.md`. This
+protocol does not authorize scoring or opening FINAL_TEST.
+
+Integrity and maturity metadata are produced by
+`python/future_cohort_health.py`. It reads raw ticks/bars only and calculates
+signal counts, coverage, quote quality, fixed session/regime support and gaps;
+it has no outcome fields or scoring path. Maturity stays false until the exact
+XM server calendar is independently verified, the frozen candidate/evidence
+requirements pass, and the raw cohort passes all frozen quality gates.
+Feature-only drift rules are in [`DRIFT_MONITOR_PROTOCOL.md`](DRIFT_MONITOR_PROTOCOL.md).
 
 ## Data-quality acceptance before any future evaluation
 

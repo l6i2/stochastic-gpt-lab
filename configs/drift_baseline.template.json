@@ -1,0 +1,19 @@
+{
+  "schema_version": "feature-drift-baseline/1.0",
+  "status": "TEMPLATE_NOT_FITTED",
+  "source_split": "TRAIN_ONLY",
+  "source_sha256": null,
+  "feature_only": true,
+  "alert_limits": {"psi": 0.25, "missing_rate_delta": 0.1},
+  "features": {
+    "stoch_main_k": {"edges": [20, 50, 80], "counts": [], "missing": null, "missing_rate": null},
+    "spread": {"edges": [1, 2, 5], "counts": [], "missing": null, "missing_rate": null},
+    "atr14_over_previous_288_bar_median": {"edges": [0.8, 1.25], "counts": [], "missing": null, "missing_rate": null},
+    "relative_tick_volume_20": {"edges": [0.8, 1.2], "counts": [], "missing": null, "missing_rate": null},
+    "ha_body_atr": {"edges": [-1, 0, 1], "counts": [], "missing": null, "missing_rate": null},
+    "distance_poc_atr": {"edges": [-2, -1, 0, 1, 2], "counts": [], "missing": null, "missing_rate": null},
+    "distance_vah_atr": {"edges": [-2, -1, 0, 1, 2], "counts": [], "missing": null, "missing_rate": null},
+    "distance_val_atr": {"edges": [-2, -1, 0, 1, 2], "counts": [], "missing": null, "missing_rate": null}
+  },
+  "policy": "Do not fit, tune, or compare using the future cohort. Populate only from the frozen TRAIN source when a separately permitted process runs."
+}
