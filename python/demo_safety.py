@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import math
 
 
 @dataclass(frozen=True)
@@ -13,6 +14,7 @@ class DemoLimits:
     max_spread: float
     max_slippage: float
     max_trades_per_day: int
+    max_equity_drawdown: float = 0.0
 
 
 @dataclass(frozen=True)
@@ -31,6 +33,10 @@ class RuntimeState:
     signal_key: str
     requested_lot: float = 0.0
     observed_slippage: float = 0.0
+    equity_drawdown: float = 0.0
+    reconnect_pending: bool = False
+    persistent_state_valid: bool = True
+    audit_log_writable: bool = True
 
 
 def authorize_demo_decision(state: RuntimeState, limits: DemoLimits,
@@ -45,11 +51,26 @@ def authorize_demo_decision(state: RuntimeState, limits: DemoLimits,
         return False, "DEMO_DISABLED"
     if state.kill_switch:
         return False, "KILL_SWITCH"
+    if state.reconnect_pending:
+        return False, "RECONNECT_RECONCILIATION_REQUIRED"
+    if state.persistent_state_valid is not True:
+        return False, "PERSISTENT_STATE_UNAVAILABLE"
+    if state.audit_log_writable is not True:
+        return False, "AUDIT_LOG_UNAVAILABLE"
     if any(value <= 0 for value in (limits.max_lot, limits.max_positions,
                                     limits.max_daily_loss, limits.max_consecutive_losses,
                                     limits.max_spread, limits.max_slippage,
-                                    limits.max_trades_per_day)):
+                                    limits.max_trades_per_day,
+                                    limits.max_equity_drawdown)):
         return False, "INVALID_RISK_LIMIT"
+    numeric_state = (state.heartbeat_age_seconds, state.quote_age_seconds,
+                     state.daily_loss, state.spread, state.requested_lot,
+                     state.observed_slippage, state.equity_drawdown)
+    numeric_limits = (limits.max_lot, limits.max_daily_loss, limits.max_spread,
+                      limits.max_slippage, limits.max_equity_drawdown)
+    if (not all(math.isfinite(value) for value in numeric_state + numeric_limits)
+            or min(state.open_positions, state.consecutive_losses, state.trades_today) < 0):
+        return False, "INVALID_RUNTIME_STATE"
     if state.heartbeat_age_seconds < 0 or state.heartbeat_age_seconds > max_heartbeat_age:
         return False, "STALE_HEARTBEAT"
     if state.quote_age_seconds < 0 or state.quote_age_seconds > max_quote_age:
@@ -58,6 +79,8 @@ def authorize_demo_decision(state: RuntimeState, limits: DemoLimits,
         return False, "POSITION_LIMIT"
     if state.daily_loss >= limits.max_daily_loss:
         return False, "DAILY_LOSS_LIMIT"
+    if state.equity_drawdown < 0 or state.equity_drawdown >= limits.max_equity_drawdown:
+        return False, "EQUITY_DRAWDOWN_LIMIT"
     if state.consecutive_losses >= limits.max_consecutive_losses:
         return False, "CONSECUTIVE_LOSS_LIMIT"
     if state.spread < 0 or state.spread > limits.max_spread:

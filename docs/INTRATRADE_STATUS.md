@@ -1,5 +1,29 @@
 # Intra-trade research status
 
+## Current checkpoint — 2026-10-21 (V2 entry-friction replay incomplete)
+
+The TRAIN-only V2 router is preregistered in `docs/RESEARCH_PROTOCOL_V2.md`.
+Its new runner tests a single signal-time `spread/ATR` regime policy, with BUY
+and SELL separated, FOLLOW/INVERT baselines, 250 ms primary execution latency,
+0/500 ms sensitivities, four expanding purged folds, and frozen rejection
+gates. No prior R2–R4 rule was retuned. No held-out or future cohort data was
+scored.
+
+The full run did not finish: two earlier implementations were stopped after
+excessive paging/runtime; the latest block-extrema implementation has unit
+coverage but was not completed on the current host. No result JSON exists, so
+record `ROUTER_V2=INCOMPLETE`, `HYPOTHESES_TESTED=0 completed (1 attempted)`,
+and `CANDIDATE=NONE`. Do not interpret this as an outcome or run Discovery
+Validation. Focused tests cover strict post-arrival fills, exact SL/TP/time
+exit behavior, safe-block skipping, causal TRAIN boundary enforcement, and
+isolation guards.
+
+The runner’s accepted source baseline is `TRAIN_HOLD_BASELINE_REPLAY_PASS`:
+11,714 signals and 23,428 quote-paired virtual paths. The latest user-provided
+cohort status remains healthy but is not mature (two days accumulated against
+the preregistered 16-week/four-month rule); no cohort scoring has occurred.
+`FINAL_TEST=LOCKED`, `DEMO=DISABLED`, and `LIVE_TRADING=false`.
+
 ## Latest checkpoint — 2026-10-18 (isolation incident: potential contamination)
 
 The R2/R3 manifests say `validation_accessed=false`, and their saved reports

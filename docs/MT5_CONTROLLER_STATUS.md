@@ -1,5 +1,14 @@
 # Controller verification status
 
+## Current checkpoint — 2026-10-21 (no MT5 interaction)
+
+This continuation was offline research only. No MT5 terminal, account,
+Strategy Tester, or EA was opened or changed. `LIVE_TRADING=false` remains the
+required configuration; Demo execution remains disabled. The local
+TRAIN-only router runner is not yet complete, so it is not deployable and no
+candidate is available. Future collection was not scored; current scheduler
+health was not reverified here. `FINAL_TEST=LOCKED`.
+
 ## Latest checkpoint — 2026-10-18 (offline isolation audit; MT5 unchanged)
 
 The TRAIN/Discovery Validation incident audit is POTENTIAL, not closed:

@@ -13,7 +13,7 @@ from shadow_mode import ShadowRecorder
 
 class DemoShadowSafetyTests(unittest.TestCase):
     def setUp(self):
-        self.limits = DemoLimits(0.1, 1, 100.0, 3, 5.0, 2.0, 4)
+        self.limits = DemoLimits(0.1, 1, 100.0, 3, 5.0, 2.0, 4, 150.0)
         self.state = RuntimeState("DEMO", "US30Cash", True, False, 1, 1, 0, 0, 0, 1, 0, "s1", 0.1, 0.0)
 
     def test_real_unknown_account_and_disabled_mode_fail_closed(self):
@@ -31,6 +31,11 @@ class DemoShadowSafetyTests(unittest.TestCase):
             (RuntimeState(**{**self.state.__dict__, "open_positions": 1}), "POSITION_LIMIT"),
             (RuntimeState(**{**self.state.__dict__, "requested_lot": 0.2}), "LOT_LIMIT"),
             (RuntimeState(**{**self.state.__dict__, "observed_slippage": 3}), "SLIPPAGE_LIMIT"),
+            (RuntimeState(**{**self.state.__dict__, "equity_drawdown": 150.0}), "EQUITY_DRAWDOWN_LIMIT"),
+            (RuntimeState(**{**self.state.__dict__, "reconnect_pending": True}), "RECONNECT_RECONCILIATION_REQUIRED"),
+            (RuntimeState(**{**self.state.__dict__, "persistent_state_valid": False}), "PERSISTENT_STATE_UNAVAILABLE"),
+            (RuntimeState(**{**self.state.__dict__, "audit_log_writable": False}), "AUDIT_LOG_UNAVAILABLE"),
+            (RuntimeState(**{**self.state.__dict__, "spread": float("nan")}), "INVALID_RUNTIME_STATE"),
         ]
         for state, expected in cases:
             self.assertEqual(authorize_demo_decision(state, self.limits, set()), (False, expected))
@@ -39,6 +44,11 @@ class DemoShadowSafetyTests(unittest.TestCase):
         allowed, reason = authorize_demo_decision(self.state, self.limits, set())
         self.assertTrue(allowed)
         self.assertEqual(reason, "GATES_PASS_NO_ORDER_SENT")
+
+    def test_equity_drawdown_limit_must_be_configured(self):
+        limits = DemoLimits(0.1, 1, 100.0, 3, 5.0, 2.0, 4)
+        self.assertEqual(authorize_demo_decision(self.state, limits, set()),
+                         (False, "INVALID_RISK_LIMIT"))
 
     def test_shadow_recorder_writes_hypothetical_event_only(self):
         with tempfile.TemporaryDirectory() as tmp:

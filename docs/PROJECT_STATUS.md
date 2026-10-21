@@ -1,5 +1,38 @@
 # Project status
 
+## Current checkpoint — 2026-10-21 (TRAIN V2 runner prepared; replay incomplete)
+
+Work continued on `research/full-pipeline`. No Discovery Validation, FINAL_TEST,
+or FUTURE_VALIDATION_COHORT values were scored; no Demo or live orders were
+enabled. The 16 R2–R4 hypotheses remain rejected and were not reused.
+
+A frozen TRAIN-only entry-spread/ATR router runner and exact quote replay were
+added for the preregistered V2 protocol. Input membership is 11,714 quality-v1
+TRAIN signals; the accepted baseline provenance records 23,428 matched virtual
+FOLLOW/INVERT paths. The runner validates the previous TRAIN replay proof and
+source manifest bindings, evaluates 0/250/500 ms with four purged expanding
+TRAIN folds, and applies the preregistered support, fold, threshold, latency,
+block/session concentration, and drawdown gates. It does not load Validation,
+FINAL_TEST, or future-cohort data. Focused isolation, replay, and safety tests
+pass (20 total); `compileall` passes.
+
+The first full V2 replay was stopped after excessive paging on this 4 GB host.
+A second tick-by-tick replay was also stopped for runtime. Its final result file
+was not written, so this is **not** a rejection or a survival result. The
+replay was then changed to use an exact per-quote-block extrema index and
+chronological entry ordering, with unit tests for first-hit SL/TP/TIME_EXIT
+semantics. The optimized full replay has not yet completed. Therefore
+`TRAIN_RESEARCH=INCOMPLETE`, no candidate exists, and no candidate is frozen.
+Next step: complete the same preregistered runner on the isolated Python 3.12
+environment and verify its JSON artifact before any Validation use.
+
+The project-local `.venv-router` contains the declared dependencies plus Numba;
+no global Python was modified. `DEMO=DISABLED`, `FINAL_TEST=LOCKED`, and
+`LIVE_TRADING=false`. The future cohort remains unscored and immature; the last
+provided collector state was healthy at 263,727 ticks / 552 M5 bars through
+2026-10-20 23:59:58.880 UTC, but its latest scheduler execution was not
+reverified during this continuation.
+
 ## Latest checkpoint — 2026-10-18 (TRAIN/Validation incident unresolved)
 
 The R2–R4 retrospective isolation audit found that the exact R2 and R3 runner
