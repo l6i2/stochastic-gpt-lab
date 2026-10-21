@@ -1,5 +1,30 @@
 # Intra-trade research status
 
+## Current checkpoint — 2026-10-21 (input and control audit; replay still pending)
+
+At HEAD `6bb8bb3f73ef33f17294611616c1887db4c2ef9a`, the TRAIN parquet hash
+matches the frozen split manifest and contains 11,714 quality-v1 TRAIN events.
+The accepted baseline replay binds 23,428 FOLLOW/INVERT paths; exact new
+latency fills have focused tests for post-arrival quote selection, TP/SL first
+hit, TIME_EXIT, and the TRAIN-only source path. Four expanding purged folds
+and the side/regime router are prescribed in the frozen V2 protocol.
+
+This is an input/code audit only: the V2 outcomes were not computed. Its JSON
+result is absent because prior full replays exceeded the current host's
+memory/runtime budget (4 GB RAM; 1.4 GB relevant quote tapes). Record
+`TRAIN_INPUTS_VERIFIED=YES`, `ROUTER_V2=NOT_RUN_TO_COMPLETION`,
+`TRAIN_RESEARCH=INCOMPLETE`, `HYPOTHESES_TESTED=0 completed`, and
+`CANDIDATE=NONE`. Do not interpret the resource stop as a hypothesis failure.
+The user-listed trajectory, MFE/MAE, recovery, momentum, and volume/profile
+families are not part of preregistered V2 and remain untested; adding them now
+would require a separate preregistration before any result is inspected.
+
+Twenty focused tests passed and `compileall` passed. No Discovery Validation,
+FINAL_TEST, or future cohort value was scored. The cohort collector remains
+scheduled and latest log status is `CAUGHT_UP_WAITING_FOR_CLOSED_DAY`; no
+backfill occurred. `FINAL_TEST=LOCKED`, `DEMO=DISABLED`,
+`LIVE_TRADING=false`.
+
 ## Current checkpoint — 2026-10-21 (V2 entry-friction replay incomplete)
 
 The TRAIN-only V2 router is preregistered in `docs/RESEARCH_PROTOCOL_V2.md`.

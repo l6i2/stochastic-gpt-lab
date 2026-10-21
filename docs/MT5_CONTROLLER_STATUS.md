@@ -1,5 +1,20 @@
 # Controller verification status
 
+## Current checkpoint — 2026-10-21 (offline audit; capture scheduler enabled)
+
+No MT5 terminal, account, Strategy Tester, or EA was opened or changed.
+`LIVE_TRADING=false`. The Windows task `StochasticGptLabFutureValidationCollector`
+is enabled; its last scheduled run at 09:45 local returned result code 0, and
+the latest scheduler log entry (09:51 local) says
+`CAUGHT_UP_WAITING_FOR_CLOSED_DAY`, `collected=0`,
+`live_trading=false`. This is expected while the current UTC day remains open;
+no manual capture or backfill was performed. The fixed cohort remains
+unscored and immature.
+
+The DEMO safety gate and hypothetical shadow recorder pass focused tests, but
+there is no order adapter or validated candidate. DEMO execution and shadow
+actions remain disabled. `FINAL_TEST=LOCKED`; no real or Demo trade was made.
+
 ## Current checkpoint — 2026-10-21 (no MT5 interaction)
 
 This continuation was offline research only. No MT5 terminal, account,

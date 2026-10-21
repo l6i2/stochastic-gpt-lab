@@ -1,5 +1,36 @@
 # Project status
 
+## Current checkpoint — 2026-10-21 (TRAIN V2 audit resumed)
+
+Rechecked branch `research/full-pipeline` at `6bb8bb3f73ef33f17294611616c1887db4c2ef9a`.
+No protected split or prospective-cohort values were opened for scoring. The
+TRAIN split manifest binds the quality-v1 TRAIN parquet to 11,714 signals; the
+existing `TRAIN_HOLD_BASELINE_REPLAY_PASS` proves 23,428 paired FOLLOW/INVERT
+paths and explicitly records no Validation/FINAL_TEST access. The V2 runner
+requires four purged expanding folds and verifies the source hashes before
+replay. This verifies its frozen inputs and control path, not V2 outcome
+metrics.
+
+The output `outputs/bar_controller/research/train_entry_spread_atr_router.json`
+does not exist. Thus the preregistered router remains **not evaluated** (zero
+completed hypotheses; one frozen family prepared), not statistically rejected
+or accepted. Replaying requires scanning approximately 1.4 GB of quote tapes
+for the eligible 2024/2025 blocks on a 4 GB host with about 0.4 GB free at
+check time; earlier full attempts were stopped after paging/runtime. No
+candidate is available. The user-requested broader trajectory/MFE/MAE,
+erosion/recovery, and volume/profile hypothesis families are outside the
+frozen one-family V2 protocol and were not tested or added post hoc.
+
+Twenty focused router, source-isolation, and safety tests passed; Python
+`compileall` passed. The collector task is enabled, its scheduled 09:45 local
+run returned code 0, and the latest scheduler log reports
+`CAUGHT_UP_WAITING_FOR_CLOSED_DAY` with `live_trading=false`; no scoring or
+backfill was performed. The future cohort remains immature under its fixed
+rule. The safety authorization gate and hypothetical shadow recorder are
+tested, but there is no executable DEMO order adapter; both remain disabled.
+`DISCOVERY_VALIDATION=BLOCKED`, `FINAL_TEST=LOCKED`, `DEMO=DISABLED`, and
+`LIVE_TRADING=false`.
+
 ## Current checkpoint — 2026-10-21 (TRAIN V2 runner prepared; replay incomplete)
 
 Work continued on `research/full-pipeline`. No Discovery Validation, FINAL_TEST,
