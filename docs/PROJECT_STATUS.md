@@ -354,13 +354,12 @@ and it is scheduled every 15 minutes. Earliest eligible data capture is
 
 ## Future validation first settled capture — 2026-10-21
 
-The fixed cohort rule now has an eligible settled day. The first eligible
-instant was 2026-10-20 02:00 UTC (after the 2026-10-19 UTC day closed and the
-two-hour settlement lag elapsed). The enabled 15-minute collector completed
-its first capture successfully at 2026-10-21 02:00:15 UTC, collecting both
-eligible UTC days without backfill: 263,727 ticks and 552 M5 bars across
-2026-10-19 and 2026-10-20. Latest observation is
-2026-10-20T23:59:58.880Z. Manifest and all four compressed segment hashes
+The first eligible instant was 2026-10-20 02:00 UTC, after the 2026-10-19
+UTC day closed and its two-hour settlement lag elapsed. The collector captured
+2026-10-19 at 2026-10-20 02:00:17.688 UTC, then captured 2026-10-20 at
+2026-10-21 02:00:15.277 UTC. This sequential daily collection is within the
+fixed cohort start and did not backfill: 263,727 ticks and 552 M5 bars across
+both days. Latest observation is 2026-10-20T23:59:58.880Z. Manifest and all four compressed segment hashes
 verify; manifest SHA-256 is
 `77fd6d09235144590183897211db6efbc8d8871e5451ef56728028974f1f26d3`.
 Collector health is `HEALTHY`, with no errors, active XM DEMO connection and

@@ -80,9 +80,11 @@ never backfills. No cohort rows have been captured.
 
 ## First eligible capture — 2026-10-21
 
-The maturity rule was unchanged. On 2026-10-21 at 02:00:15 UTC the collector
-successfully captured the two eligible days, 2026-10-19 and 2026-10-20. The
-manifest reports 129,508 + 134,219 = 263,727 ticks and 276 + 276 = 552 M5
+The maturity rule was unchanged. The first eligible day (2026-10-19) was
+captured at 2026-10-20 02:00:17.688 UTC; the next day (2026-10-20) was
+captured at 2026-10-21 02:00:15.277 UTC. This follows the daily cursor in order
+from the fixed start and performs no backfill. The manifest reports 129,508 +
+134,219 = 263,727 ticks and 276 + 276 = 552 M5
 bars; latest timestamp is 2026-10-20T23:59:58.880Z. Each day's tick and bar
 SHA-256 matches its manifest entry, and the manifest sidecar matches manifest
 SHA-256 `77fd6d09235144590183897211db6efbc8d8871e5451ef56728028974f1f26d3`.

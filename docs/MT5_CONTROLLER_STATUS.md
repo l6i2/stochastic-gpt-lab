@@ -222,10 +222,11 @@ the next scheduled tick after it. `LIVE_TRADING=false`.
 
 ## Future cohort collection — 2026-10-21
 
-The collector has now completed its first eligible capture. The maturity
-boundary was 2026-10-20 02:00 UTC; at 2026-10-21 02:00:15 UTC the collector
-captured the two settled days since the fixed 2026-10-19T00:00:00Z start.
-Health: `HEALTHY`, 263,727 ticks, 552 M5 bars, latest timestamp
+The first eligible capture was the 2026-10-19 UTC day at 2026-10-20
+02:00:17.688 UTC, immediately after its maturity boundary. The next scheduled
+daily capture added 2026-10-20 at 2026-10-21 02:00:15.277 UTC. This is
+sequential collection from the fixed 2026-10-19T00:00:00Z start, with no
+backfill. Health: `HEALTHY`, 263,727 ticks, 552 M5 bars, latest timestamp
 2026-10-20T23:59:58.880Z, no errors, DEMO account, connected XM terminal, and
 `US30Cash` available. The Windows task remains enabled and ready; last result
 0 and next trigger 2026-10-21 02:00 CDT (07:00 UTC). Manifest SHA-256:
