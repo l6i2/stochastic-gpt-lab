@@ -351,3 +351,25 @@ wrapper lingered after logging; the task now runs the project virtualenv Python
 entrypoint directly. The task is Enabled/Ready, its last test run exited 0,
 and it is scheduled every 15 minutes. Earliest eligible data capture is
 2026-10-20 02:00 UTC, subject to the next scheduler tick.
+
+## Future validation first settled capture — 2026-10-21
+
+The fixed cohort rule now has an eligible settled day. The first eligible
+instant was 2026-10-20 02:00 UTC (after the 2026-10-19 UTC day closed and the
+two-hour settlement lag elapsed). The enabled 15-minute collector completed
+its first capture successfully at 2026-10-21 02:00:15 UTC, collecting both
+eligible UTC days without backfill: 263,727 ticks and 552 M5 bars across
+2026-10-19 and 2026-10-20. Latest observation is
+2026-10-20T23:59:58.880Z. Manifest and all four compressed segment hashes
+verify; manifest SHA-256 is
+`77fd6d09235144590183897211db6efbc8d8871e5451ef56728028974f1f26d3`.
+Collector health is `HEALTHY`, with no errors, active XM DEMO connection and
+`US30Cash` available. The scheduled task is Enabled/Ready, last result 0, and
+remains on its 15-minute cadence. Runtime cohort data remains local and is not
+used for scoring, feature generation, or hypothesis selection.
+
+TRAIN research remains incomplete: the preregistered V2 quote-friction router
+has not been evaluated because paired quote-tape/fold inputs are not verified;
+no best candidate exists. `DEMO_EXECUTOR=NOT_READY`,
+`SHADOW_MODE=READY_BUT_DISABLED`, legacy `DISCOVERY_VALIDATION=BLOCKED`,
+`FINAL_TEST=LOCKED`, `DEMO=DISABLED`, and `LIVE_TRADING=false`.

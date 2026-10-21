@@ -76,3 +76,19 @@ day is not complete and settled. The first eligible collection is no earlier
 than **2026-10-20 02:00 UTC** (2026-10-19 21:00 CDT), at the next 15-minute
 task tick. Before then, the collector exits without initializing MT5 and
 never backfills. No cohort rows have been captured.
+
+
+## First eligible capture — 2026-10-21
+
+The maturity rule was unchanged. On 2026-10-21 at 02:00:15 UTC the collector
+successfully captured the two eligible days, 2026-10-19 and 2026-10-20. The
+manifest reports 129,508 + 134,219 = 263,727 ticks and 276 + 276 = 552 M5
+bars; latest timestamp is 2026-10-20T23:59:58.880Z. Each day's tick and bar
+SHA-256 matches its manifest entry, and the manifest sidecar matches manifest
+SHA-256 `77fd6d09235144590183897211db6efbc8d8871e5451ef56728028974f1f26d3`.
+Health is `HEALTHY`, with no errors, no duplicate or missing UTC days, DEMO
+account mode, connected XM terminal, and the exact symbol available. The
+scheduled task is enabled, Ready, last result 0, and continues every 15
+minutes. This capture is raw-only and remains inaccessible to TRAIN scoring;
+no backfill, evaluation, or trading was performed. Runtime data and logs stay
+local and ignored by Git.

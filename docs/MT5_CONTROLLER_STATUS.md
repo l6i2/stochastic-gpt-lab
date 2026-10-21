@@ -218,3 +218,17 @@ errors, MT5 connected, DEMO, symbol available. The manual collection attempt
 returned `CAUGHT_UP_WAITING_FOR_CLOSED_DAY`; cursor remains exactly at the fixed
 start with no backfill. First eligible collection is 2026-10-20 02:00 UTC or
 the next scheduled tick after it. `LIVE_TRADING=false`.
+
+
+## Future cohort collection — 2026-10-21
+
+The collector has now completed its first eligible capture. The maturity
+boundary was 2026-10-20 02:00 UTC; at 2026-10-21 02:00:15 UTC the collector
+captured the two settled days since the fixed 2026-10-19T00:00:00Z start.
+Health: `HEALTHY`, 263,727 ticks, 552 M5 bars, latest timestamp
+2026-10-20T23:59:58.880Z, no errors, DEMO account, connected XM terminal, and
+`US30Cash` available. The Windows task remains enabled and ready; last result
+0 and next trigger 2026-10-21 02:00 CDT (07:00 UTC). Manifest SHA-256:
+`77fd6d09235144590183897211db6efbc8d8871e5451ef56728028974f1f26d3`.
+Segment files and their recorded hashes match. No scoring, training,
+backfill, order placement, or protected-split access occurred.
