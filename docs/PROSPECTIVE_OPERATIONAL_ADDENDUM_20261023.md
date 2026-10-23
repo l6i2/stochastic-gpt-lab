@@ -1,4 +1,4 @@
-# Prospective operational addendum — 2026-10-23
+# Prospective operational addendum â€” 2026-10-23
 
 This is the current authoritative operational checkpoint. It supersedes earlier operational status notes, including claims that XM is closed or that the session probe has not run. It does not amend the sealed research/maturity/evaluation protocols, collector identity, cohort start, splits, rejected hypotheses, candidate rules or scientific thresholds.
 
@@ -6,14 +6,14 @@ This is the current authoritative operational checkpoint. It supersedes earlier 
 
 | Field | Result |
 |---|---|
-| SESSION_CALENDAR | PASS_WITH_RUNTIME_GUARD — conditional operational containment only |
+| SESSION_CALENDAR | PASS_WITH_RUNTIME_GUARD â€” conditional operational containment only |
 | DST_RULES | PARTIAL |
 | HOLIDAY_EXCEPTIONS | UNKNOWN / REQUIRE_RUNTIME_GUARD |
-| RUNTIME_SESSION_GUARD | READY — tested engine, read-only diagnostic, disabled shadow/mock integrations |
-| CAUSAL_AUDIT | FAIL — native-trigger equivalence not established; counterexample documented |
-| MANIFEST_CHAIN | PARTIAL — all 3 retained snapshots verify from anchor; older prefix unavailable |
-| DRIFT_MONITOR | NOT_READY — no equivalent fitted baseline/future producer stream |
-| FUTURE_COLLECTION_ACTIVE | YES — scheduled, active verified XM DEMO, data health HEALTHY |
+| RUNTIME_SESSION_GUARD | READY â€” tested engine, read-only diagnostic, disabled shadow/mock integrations |
+| CAUSAL_AUDIT | FAIL â€” native-trigger equivalence not established; counterexample documented |
+| MANIFEST_CHAIN | PARTIAL â€” all 3 retained snapshots verify from anchor; older prefix unavailable |
+| DRIFT_MONITOR | NOT_READY â€” no equivalent fitted baseline/future producer stream |
+| FUTURE_COLLECTION_ACTIVE | YES â€” scheduled, active verified XM DEMO, data health HEALTHY |
 | COHORT_MATURE | NO |
 | FUTURE_EVALUATOR | READY_BUT_GATED |
 | DEMO_EXECUTOR | READY_BUT_DISABLED_FULL |
@@ -22,7 +22,7 @@ This is the current authoritative operational checkpoint. It supersedes earlier 
 | FINAL_TEST | LOCKED |
 | DEMO | DISABLED |
 | LIVE_TRADING | false |
-| NEXT_STATE | HARD_BLOCKER — frozen metadata/native parity and clock/calendar provenance need resolution |
+| NEXT_STATE | HARD_BLOCKER â€” frozen metadata/native parity and clock/calendar provenance need resolution |
 
 `PASS_WITH_RUNTIME_GUARD` is an operational risk-containment disposition, not a verified historical UTC calendar. The existing cohort calendar still has `verified=false`, and its unchanged maturity gate remains false. Unknown dates/holidays never become open sessions by default. No automatic scoring, DEMO activation, candidate promotion, or historical gap acceptance follows from this status. Runtime diagnostics currently refuse permission.
 
@@ -34,10 +34,10 @@ Exact broker-API wall-time snapshot:
 
 | Day | Quotes | Trading |
 |---|---|---|
-| Monday–Wednesday | 00:00–23:00 | 00:05–22:55 |
-| Thursday | 01:00–00:00 | 01:05–23:55 |
-| Friday | 01:00–00:00 | 01:05–23:50 |
-| Saturday–Sunday | No sessions returned | No sessions returned |
+| Mondayâ€“Wednesday | 00:00â€“23:00 | 00:05â€“22:55 |
+| Thursday | 01:00â€“00:00 | 01:05â€“23:55 |
+| Friday | 01:00â€“00:00 | 01:05â€“23:50 |
+| Saturdayâ€“Sunday | No sessions returned | No sessions returned |
 
 Quote availability and trading availability differ: in particular Friday quotes may extend beyond the 23:50 trade cutoff. The runtime parser interprets a nonzero start ending at 00:00 as the day-end boundary, retains separate quote/trade schedules, uses half-open intervals and blocks at the exact close. Equal start/end or unsupported overnight ambiguity is rejected. This guarded boundary interpretation is not asserted as a verified historical holiday/DST conversion. Weekends are checked in broker wall time, including the boundary while the UTC date is still Friday.
 
@@ -88,3 +88,5 @@ Hypotheses remain 17 tested, zero survivors, no frozen candidate. The remaining 
 Full suite: **190 tests in 133.612 seconds, OK; 181 executed successfully, 9 native tests skipped because g++ is unavailable**. Includes both DST boundaries, weekday differences, daily breaks, Friday exact close, server-weekend boundaries, holiday unknown/closed, broker closed, stale/future/invalid quotes, disabled integrations, session-before-policy enforcement, manifest tamper/rewrite/path checks, drift producer/definition mismatches, evaluator audit binding and single-use authorization behavior. Compileall and whitespace checks pass.
 
 The collector source, metadata specification, both sealed prospective protocols and the cohort UTC calendar retain their existing hashes. Raw cohort data, account identifiers, unrelated logs and local workspace files are not committed. Machine-readable sanitized status and operational policy are [technical audit](../configs/technical_readiness_audit_20261023.json) and [guard policy](../configs/xm_runtime_session_policy.json), both with SHA-256 sidecars.
+
+Git checkout integrity: targeted `-text` attributes preserve exact bytes for hash-bound protocols, evidence, metadata and runtime sources. Staged Git payloads were checked byte-for-byte against audited working files, and all existing seals and the collector manifest binding still match. No sealed payload was edited or re-signed. This prevents platform line-ending normalization from changing hash identities on checkout.
