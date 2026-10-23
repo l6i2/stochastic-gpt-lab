@@ -467,7 +467,7 @@ This is the current status; older dated checkpoints below are historical.
   completed with result 0, and next run is 21:15. XM terminal is connected in DEMO with
   `US30Cash` available.
 - Cohort: 4 complete UTC days, 545,461 ticks, 1,104 M5 bars, 60 BUY / 61 SELL
-  metadata support signals; latest tick `2026-10-22T23:59:57.410Z`. Health
+  metadata support signals; latest tick `2026-10-22T23:59:57.051Z`. Health
   report SHA-256 `0a6b90a8d0f8091681976b0881bd0d58951c7d17ce4f5be26b2e1fc792e5ca61`.
   No backfill, scoring, labels, PnL, or outcomes were read. `COHORT_MATURE=NO`.
 - Maturity blockers: exact active-server quote/trade sessions and current

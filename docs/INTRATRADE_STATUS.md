@@ -6,7 +6,7 @@
 
 The prospective protocol and metadata specification are SHA-256 pinned. Full verification passes: 163 unit tests, 9 skipped because `g++` is unavailable, plus compileall. No scoring or protected-split access occurred.
 
-As of 2026-10-22, the prospective cohort has four complete UTC days, 545,461 raw ticks, 1,104 M5 bars, and 60 BUY / 61 SELL support signals. It is still `NOT_MATURE`; the hash-pinned health report reports no labels or PnL read. Calendar hash changes now force a new health report. No hypotheses were created and no cohort scoring occurred.
+As of 2026-10-22, the prospective cohort has four complete UTC days, 545,461 raw ticks, 1,104 M5 bars, and 60 BUY / 61 SELL support signals. Latest tick: `2026-10-22T23:59:57.051Z`. It is still `NOT_MATURE`; the hash-pinned health report reports no labels or PnL read. Calendar hash changes now force a new health report. No hypotheses were created and no cohort scoring occurred.
 
 The evaluator is `READY_BUT_GATED`; the hash-bound candidate packaging path is available but there is no candidate. Drift monitoring and shadow recording are fixture-tested; shadow is disabled and cannot send orders. `FINAL_TEST=LOCKED`, `DEMO=DISABLED`, `LIVE_TRADING=false`.
 

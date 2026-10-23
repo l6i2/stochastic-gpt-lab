@@ -142,7 +142,7 @@ The collector task remains Enabled/Ready at a 15-minute cadence. The 21:00
 local instance completed with result 0; the next run is 21:15.
 The active XM DEMO terminal is connected and `US30Cash` is available. Current
 metadata-only health: 4 complete UTC days, 545,461 ticks, 1,104 M5 bars, 60 BUY
-and 61 SELL support signals, latest tick `2026-10-22T23:59:57.410Z`, zero
+and 61 SELL support signals, latest tick `2026-10-22T23:59:57.051Z`, zero
 invalid ticks/time/bars, zero missing capture days, and 41 duplicate-millisecond
 ticks reported without removal. Health SHA-256:
 `0a6b90a8d0f8091681976b0881bd0d58951c7d17ce4f5be26b2e1fc792e5ca61`.

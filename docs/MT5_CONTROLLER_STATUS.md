@@ -284,7 +284,7 @@ runs on its 15-minute schedule, and completed its 21:00 local run with result
 4 settled UTC days, 545,461 ticks, 1,104 M5 bars, 60 BUY and 61 SELL metadata
 signals, 0 invalid ticks/times/bars, 0 missing UTC capture days, and 41
 duplicate millisecond timestamps reported without deduplication. Latest tick:
-`2026-10-22T23:59:57.410Z`; report SHA-256:
+`2026-10-22T23:59:57.051Z`; report SHA-256:
 `0a6b90a8d0f8091681976b0881bd0d58951c7d17ce4f5be26b2e1fc792e5ca61`.
 
 `COHORT_MATURE=NO`: the XM server session calendar is not verified and the

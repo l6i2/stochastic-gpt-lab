@@ -111,7 +111,7 @@ Informational status; this paragraph does not alter the frozen cohort start,
 maturity gates, evaluation protocol, or authorization requirements. The
 collector has captured four complete UTC days through 2026-10-22, with 545,461
 ticks, 1,104 M5 bars, and 60 BUY / 61 SELL metadata support signals. The
-latest tick is `2026-10-22T23:59:57.410Z`; latest health report SHA-256 is
+latest tick is `2026-10-22T23:59:57.051Z`; latest health report SHA-256 is
 `0a6b90a8d0f8091681976b0881bd0d58951c7d17ce4f5be26b2e1fc792e5ca61`.
 Manifest integrity matches the health report. No labels, outcomes, PnL,
 ranking, or scoring were read; the cohort is `NOT_MATURE` and evaluation is
