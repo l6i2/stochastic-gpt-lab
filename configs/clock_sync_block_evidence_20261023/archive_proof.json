@@ -1,0 +1,22 @@
+{
+  "raw_timestamp_fields_modified": false,
+  "records": 150,
+  "artifacts": [
+    {
+      "name": "attest_20261023_a2_native.csv",
+      "sha256": "3e019ac5acf18a93db974a8123f6eb05858440275c87b350e0a4f74d255e5a24",
+      "bytes": 32548,
+      "file_mtime_ns_unchanged": true,
+      "archive_relative_path": "clock_audit_archive/a2_first_completed/attest_20261023_a2_native.csv"
+    },
+    {
+      "name": "attest_20261023_a2_markers.txt",
+      "sha256": "abbcf95b7f96d2edbdc8edfd7169fd82e60dbed589b46421c03a01aaa3ecca1e",
+      "bytes": 232,
+      "file_mtime_ns_unchanged": true,
+      "archive_relative_path": "clock_audit_archive/a2_first_completed/attest_20261023_a2_markers.txt"
+    }
+  ],
+  "probe_source_sha256": "e63202fc1fd637242b91295660a7cc634c955d87ab1e34bf81a86fa6c9de50cd",
+  "probe_ex5_sha256": "077f43ebf61cfe1ccfe9c034ba9cb3985dde0b88989dac82b707851326b6d9d9"
+}

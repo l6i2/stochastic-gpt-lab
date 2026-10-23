@@ -1,0 +1,23 @@
+{
+  "offset": {
+    "qpc_end_ns": 36548454399800,
+    "qpc_start_ns": 36543668135300,
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "Seguimiento time.windows.com [40.119.6.228:123].\nRecopilando 3 muestras.\nLa hora actual es 23/10/2026 9:11:56.\n09:11:56, +207999.8399083s\n09:11:59, +207999.8402134s\n09:12:01, +207999.8400620s\n"
+  },
+  "source": {
+    "qpc_end_ns": 36543186522800,
+    "qpc_start_ns": 36541977619100,
+    "returncode": 2147943462,
+    "stderr": "",
+    "stdout": "Error: No se ha iniciado el servicio. (0x80070426)\n"
+  },
+  "status": {
+    "qpc_end_ns": 36543668132100,
+    "qpc_start_ns": 36543186528500,
+    "returncode": 2147943462,
+    "stderr": "",
+    "stdout": "Error: No se ha iniciado el servicio. (0x80070426)\n"
+  }
+}

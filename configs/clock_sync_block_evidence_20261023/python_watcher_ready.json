@@ -1,0 +1,31 @@
+{
+  "clock_changed": false,
+  "native_filename": "attest_20261023_a2_native.csv",
+  "orders_sent": 0,
+  "start": {
+    "end_tick_ms": 36009125,
+    "local_read_tick_ms": 36009109,
+    "local_time_fields": {
+      "day": 23,
+      "hour": 9,
+      "millisecond": 379,
+      "minute": 3,
+      "month": 10,
+      "second": 2,
+      "weekday": 5,
+      "year": 2026
+    },
+    "precise_read_tick_ms": 36009109,
+    "precise_utc_ns": 1792764182379965100,
+    "python_local": "2026-10-23T09:03:02.379858-05:00",
+    "python_time_ns": 1792764182379858800,
+    "qpc_end_ns": 36009286672300,
+    "qpc_start_ns": 36009229324700,
+    "standard_read_tick_ms": 36009109,
+    "standard_utc_ns": 1792764182379858800,
+    "start_tick_ms": 36009078,
+    "timezone_read_tick_ms": 36009109,
+    "windows_timezone": "Central Standard Time"
+  },
+  "state": "ARMED_NO_EXPIRY"
+}

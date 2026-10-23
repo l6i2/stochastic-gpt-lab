@@ -1,0 +1,6 @@
+{
+  "route": "supported_terminal_mcp",
+  "credentials_modified": false,
+  "existing_mcp_token_found": false,
+  "http_status": 401
+}

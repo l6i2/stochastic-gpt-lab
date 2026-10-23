@@ -1,0 +1,43 @@
+[
+  {
+    "launches_mt5_script": false,
+    "order": 1,
+    "result": "ARMED_NO_EXPIRY",
+    "route": "Python watcher"
+  },
+  {
+    "order": 2,
+    "policy_changed": false,
+    "result": "BLOCKED_BY_SCRIPT_EXECUTION_POLICY",
+    "route": "PowerShell watcher"
+  },
+  {
+    "order": 3,
+    "result": "TASK_STARTED_BUT_POWERSHELL_SCRIPT_BLOCKED",
+    "route": "Temporary Task Scheduler",
+    "task_removed": true
+  },
+  {
+    "order": 4,
+    "result": "NO_NATIVE_EXECUTION_OBSERVED",
+    "route": "MT5 startup config against running terminal",
+    "terminal_restarted": false
+  },
+  {
+    "order": 5,
+    "result": "ONLY_PREVIOUS_BEGIN_END_FOUND; no new execution",
+    "route": "Log tailing"
+  },
+  {
+    "credentials_changed": false,
+    "order": 6,
+    "result": "HTTP_401",
+    "route": "Supported terminal MCP"
+  },
+  {
+    "input_sent": false,
+    "order": 6,
+    "result": "FRAME_CAPTURE_TIMEOUT_AFTER_RECOVERY",
+    "route": "Windows Computer Use"
+  }
+]

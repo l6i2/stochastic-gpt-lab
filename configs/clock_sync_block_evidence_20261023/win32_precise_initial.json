@@ -1,0 +1,29 @@
+[
+  {
+    "qpc_before_ns": 35784472395700,
+    "win32_precise_utc_ns": 1792763957628567800,
+    "win32_standard_utc_ns": 1792763957627852300,
+    "python_time_ns": 1792763957627852300,
+    "python_datetime_utc": "2026-10-23T13:59:17.627852+00:00",
+    "precise_render": "2026-10-23T13:59:17.628568+00:00",
+    "qpc_after_ns": 35784516352000
+  },
+  {
+    "qpc_before_ns": 35784516356100,
+    "win32_precise_utc_ns": 1792763957628733500,
+    "win32_standard_utc_ns": 1792763957627852300,
+    "python_time_ns": 1792763957627852300,
+    "python_datetime_utc": "2026-10-23T13:59:17.627852+00:00",
+    "precise_render": "2026-10-23T13:59:17.628733+00:00",
+    "qpc_after_ns": 35784516379800
+  },
+  {
+    "qpc_before_ns": 35784516381400,
+    "win32_precise_utc_ns": 1792763957628757500,
+    "win32_standard_utc_ns": 1792763957627852300,
+    "python_time_ns": 1792763957627852300,
+    "python_datetime_utc": "2026-10-23T13:59:17.627852+00:00",
+    "precise_render": "2026-10-23T13:59:17.628757+00:00",
+    "qpc_after_ns": 35784516400400
+  }
+]

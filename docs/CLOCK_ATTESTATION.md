@@ -1,5 +1,9 @@
 # Clock attestation y mapping temporal
 
+## Preparación posterior: captura simultánea automatizada
+
+El [checkpoint de automatización](CLOCK_SYNC_AUTOMATION.md) reutiliza el probe a2 sin recompilarlo. Sus registros anteriores se archivaron conservando bytes, hashes y mtime. El watcher Python y el finalizador automático están armados sin caducidad; las rutas de lanzamiento automático fallaron de forma documentada. Windows preciso/estándar y w32tm confirman que el reloj sigue sin atestarse. La única acción manual pendiente y todos los estados están en ese checkpoint. Los apartados siguientes conservan la captura anterior como evidencia histórica.
+
 Expediente 20261023, identificado por la fecha del cliente. Las fechas del host, MT5 y referencias externas se guardan como observaciones distintas; ninguna se sustituye silenciosamente.
 
 ## Resultado

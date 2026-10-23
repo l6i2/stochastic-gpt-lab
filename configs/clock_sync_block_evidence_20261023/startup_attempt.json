@@ -1,0 +1,9 @@
+{
+  "route": "terminal_startup_existing_instance",
+  "startup_config_contains_credentials": false,
+  "terminal_restarted": false,
+  "original_pid_preserved": true,
+  "child_exit_code": null,
+  "native_csv_present": false,
+  "child_pid": 9556
+}
