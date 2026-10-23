@@ -134,6 +134,23 @@ class DemoShadowSafetyTests(unittest.TestCase):
                 self.assertEqual(result["decision"], "NO_DECISION")
                 self.assertEqual(result["orders_sent"], 0)
 
+    def test_shadow_enforces_millisecond_future_and_staleness_before_session_or_policy(self):
+        now = datetime(2026, 10, 23, 8, 0, tzinfo=timezone.utc)
+        signal = {"signal_id": "temporal-fixture", "symbol": "US30Cash", "signal_time_utc": "2026-10-23T08:00:00Z",
+                  "feature_max_time_utc": "2026-10-23T08:00:00Z", "features": {"x": 1}}
+        with tempfile.TemporaryDirectory() as tmp:
+            mode = ShadowMode(ShadowRecorder(Path(tmp) / "temporal.jsonl"), enabled=True)
+            for stamp, reason in (("2026-10-23T08:00:00.001Z", "FUTURE_QUOTE"),
+                                  ("2026-10-23T08:00:00.000001Z", "FUTURE_QUOTE"),
+                                  ("2026-10-23T07:59:54.999Z", "STALE_QUOTE"),
+                                  ("2026-10-23T07:59:55Z", "SESSION_GUARD_UNAVAILABLE"),
+                                  ("2026-10-23T08:00:00Z", "SESSION_GUARD_UNAVAILABLE")):
+                result = mode.observe(signal=signal, quote={"symbol": "US30Cash", "time_utc": stamp, "bid": 40000, "ask": 40001},
+                    candidate_sha256="a" * 64, policy_version="fixture", now_utc=now,
+                    decision_fn=lambda _: self.fail("guarded policy must not execute"))
+                self.assertEqual(result["status"], reason)
+                self.assertEqual(result["orders_sent"], 0)
+
     def test_read_only_mt5_adapter_exposes_no_order_methods(self):
         class FakeMT5:
             def symbol_info_tick(self, symbol):

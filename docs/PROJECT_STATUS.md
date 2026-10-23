@@ -1,5 +1,11 @@
 # Project status
 
+## Latest MAIN_K / temporal audit — 2026-10-23
+
+[Authoritative audit](MAIN_K_NATIVE_PARITY_AND_TIME_AUDIT.md): frozen production still uses native iStochastic 5/3/3 SMA Low/High MAIN_K, shift 1. All 128 native historical values in the 64-event TRAIN sample match the ratio-of-sums reference (max error 2.84e-14); historical impact NONE, no rebuild. Auxiliary metadata/legacy indicator fixture use an incompatible arithmetic Fast-K mean. Native five-fixture harness compiled 0 errors/0 warnings and deployed as `ResearchDiagnostics/pk_41a2e93f/MainKNativeParity`, but execution/clock exports are still absent. MAIN_K_PARITY FAIL (not yet evidenced); CAUSAL_AUDIT FAIL. Temporal invariants PASS; a future-dated native latest quote is quarantined, backend clock/cache origin pending MQL capture. Full suite 198 tests, 9 native skips. SESSION_CALENDAR PASS_WITH_RUNTIME_GUARD; Validation BLOCKED; FINAL_TEST LOCKED; DEMO DISABLED; LIVE_TRADING=false. NEXT_STATE HARD_BLOCKER_NATIVE_PARITY_AND_CLOCK_EXPORT_PENDING.
+
+This checkpoint supersedes all earlier operational snapshots below; accepted data, producer hashes and sealed protocols remain unchanged.
+
 ## Authoritative operational checkpoint — 2026-10-23
 
 [Current addendum and evidence](PROSPECTIVE_OPERATIONAL_ADDENDUM_20261023.md): `SESSION_CALENDAR=PASS_WITH_RUNTIME_GUARD` for operational containment; historical UTC calendar remains unverified. Guard READY, DST PARTIAL, holidays UNKNOWN. Causal audit FAIL (frozen metadata/native-trigger non-equivalence), manifest chain PARTIAL, drift NOT_READY. Collector active/HEALTHY, cohort NOT_MATURE, evaluator READY_BUT_GATED. DEMO executor and shadow READY_BUT_DISABLED; no orders. FINAL_TEST LOCKED; DEMO DISABLED; LIVE_TRADING=false. Full suite: 190 tests, 9 native skips. NEXT_STATE=HARD_BLOCKER.

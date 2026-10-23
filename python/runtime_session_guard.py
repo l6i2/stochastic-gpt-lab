@@ -9,6 +9,8 @@ import math
 from pathlib import Path
 import re
 
+from temporal_causality import utc_milliseconds, validate_decision_times
+
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = ROOT / "configs/xm_session_probe_evidence_20261023.json"
 DAYS = ("MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY")
@@ -155,8 +157,15 @@ class RuntimeSessionGuard:
             return result("HOLIDAY_UNKNOWN_REQUIRE_RUNTIME_GUARD")
         if observation.broker_market_state != "OPEN":
             return result("BROKER_MARKET_STATE_UNKNOWN")
-        if not 0 <= (now - quote_time).total_seconds() <= 5:
-            return result("NO_FRESH_QUOTE")
+        if quote_time > now:
+            return result("FUTURE_QUOTE")
+        if (now - quote_time).total_seconds() > 5:
+            return result("STALE_QUOTE")
+        temporal_ok, temporal_reason = validate_decision_times(
+            feature_max_time_msc=utc_milliseconds(now), decision_time_msc=utc_milliseconds(now),
+            quote_time_msc=utc_milliseconds(quote_time))
+        if not temporal_ok:
+            return result(temporal_reason)
         if not (all(type(v) in (int, float) and math.isfinite(v) for v in (observation.bid, observation.ask))
                 and 0 < observation.bid <= observation.ask):
             return result("INVALID_RUNTIME_QUOTE")

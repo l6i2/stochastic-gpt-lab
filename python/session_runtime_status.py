@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from runtime_session_guard import RuntimeSessionGuard, SessionObservation
+from temporal_causality import utc_milliseconds, validate_decision_times
 
 
 def read_session_runtime(*, environment_status=None, mt5_module=None, now_utc=None) -> dict:
@@ -37,6 +38,10 @@ def read_session_runtime(*, environment_status=None, mt5_module=None, now_utc=No
                 or Path(terminal.data_path).resolve() != Path(environment["DATA_FOLDER"]).resolve()):
             return {**result, "reason": "ATTACHED_ENVIRONMENT_MISMATCH", "allowed": False}
         info, tick = mt5.symbol_info("US30Cash"), mt5.symbol_info_tick("US30Cash")
+        # Establish decision time after the reads, rather than before environment/IPC latency.
+        if now_utc is None:
+            now = datetime.now(timezone.utc)
+        result["decision_time_utc"] = now.isoformat()
         quote_time = now
         bid = ask = 0.0
         state = "UNKNOWN"
@@ -48,6 +53,11 @@ def read_session_runtime(*, environment_status=None, mt5_module=None, now_utc=No
             bid, ask = float(tick.bid), float(tick.ask)
             age = (now - quote_time).total_seconds()
             result["quote_age_seconds"] = age
+            result["quote_time_utc"] = quote_time.isoformat()
+            result["quote_time_msc"] = int(tick.time_msc)
+            result["quote_temporal_reason"] = validate_decision_times(
+                feature_max_time_msc=utc_milliseconds(now), decision_time_msc=utc_milliseconds(now),
+                quote_time_msc=int(tick.time_msc))[1]
             if not (math.isfinite(bid) and math.isfinite(ask) and 0 < bid <= ask and age >= 0):
                 result["quote_market_state"] = "INVALID_OR_FUTURE_QUOTE"
             elif age > 5:

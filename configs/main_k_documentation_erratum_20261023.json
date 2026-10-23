@@ -1,0 +1,15 @@
+{
+  "authoritative_strategy": "native MT5 iStochastic: 5/3/3 MODE_SMA STO_LOWHIGH, MAIN_LINE, production shift 1 closed bar",
+  "candidate_or_maturity_threshold_changes": false,
+  "cohort_recount_performed": false,
+  "historical_rebuild_required": false,
+  "historical_sample_values_matched": 128,
+  "incorrect_auxiliary_statement": "3-period arithmetic SMA of per-bar Fast %K",
+  "max_error": 2.842170943040401e-14,
+  "native_fixture_execution_complete": false,
+  "old_metadata_spec_preserved_sha256": "52ec66925013e88df5252c3b46bac2f405d96d2051ad73c6d5b3bddd5a08c340",
+  "production_code_changes": false,
+  "reference_semantics": "100*sum(close-lowest5)/sum(highest5-lowest5) over slowing=3; zero denominator reference returns 100",
+  "schema_version": "main-k-documentation-erratum/1.0",
+  "status": "DOCUMENTED_NOT_ACTIVATED_PENDING_NATIVE_FIXTURE_EXPORT"
+}

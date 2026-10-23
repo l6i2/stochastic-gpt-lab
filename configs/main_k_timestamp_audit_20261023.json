@@ -1,0 +1,160 @@
+{
+  "accepted_datasets_rebuilt": false,
+  "accepted_producer_hashes_match": {
+    "HeikinAshiCore.mqh": true,
+    "ResearchCore.mqh": true,
+    "StochasticBarDecisionResearchEA.mq5": true,
+    "StochasticIntratradeResearchEA.mq5": true,
+    "StochasticResearchEA.mq5": true
+  },
+  "causal_audit": "FAIL",
+  "cohort_scored": false,
+  "collector_health": {
+    "LIVE_TRADING": false,
+    "account_mode": "DEMO",
+    "bars_rows": 1104,
+    "capture_data_health": "HEALTHY",
+    "cohort_id": "us30cash_m5_future_20261019_v1",
+    "collector_scheduled": true,
+    "collector_status": "HEALTHY",
+    "duplicate_day_segments": false,
+    "errors": [],
+    "evaluation_authorized": false,
+    "last_attempt_utc": "2026-10-23T10:15:01.429245Z",
+    "last_success_utc": "2026-10-23T02:02:25.523647Z",
+    "latest_timestamp_utc": "2026-10-22T23:59:57.051000Z",
+    "legacy_discovery_validation_used": false,
+    "legacy_final_test_used": false,
+    "manifest_exists": true,
+    "manifest_sha256": "d3d97be38ed2963e838cea3e5784c9bcfcbf6efb2b96d9aa1bd2dddbc4c1af17",
+    "missing_utc_days": [],
+    "mt5_connected": true,
+    "runtime_ready": true,
+    "runtime_status": "READY",
+    "start_utc": "2026-10-19T00:00:00Z",
+    "symbol_status": "AVAILABLE",
+    "ticks_rows": 545461,
+    "train_access_allowed": false
+  },
+  "demo": "DISABLED",
+  "discovery_validation": "BLOCKED",
+  "execution_blockers": [
+    "Windows capture timeout after recovery",
+    "Terminal MCP HTTP 401",
+    "MetaEditor MCP HTTP 401",
+    "Offline terminal loaded script but produced no result; owned copies terminated"
+  ],
+  "final_test": "LOCKED",
+  "generated_utc": "2026-10-23T10:22:11.753245+00:00",
+  "hard_blocker": "No native fixture CSV/result or MQL clock export exists; manual start of compiled pk_41a2e93f required",
+  "historical_dataset_impact": "NONE",
+  "historical_feature_audit": {
+    "dataset_rebuilt": false,
+    "feature_time_checks_pass": true,
+    "historical_ohlc_comparison": "PASS",
+    "historical_ohlc_rows": 1104,
+    "labels_read": false,
+    "matched_native_values": 128,
+    "max_native_ratio_reference_error": 2.842170943040401e-14,
+    "old_metadata_max_error": 13.77381051482606,
+    "pnl_read": false,
+    "prehistory_scope": "Allowed December 2023 OHLC context only; no research/outcome reuse",
+    "protected_split_read": false,
+    "query_end_utc": "2024-01-04T00:00:00+00:00",
+    "query_start_utc": "2023-12-28T00:00:00+00:00",
+    "returned_ohlc_sha256": "c19c9593f29a2f2bb2d4096e67289d0b0acb730a6408b01c6ea546538dccde67",
+    "rows": 64,
+    "run_id": "r20261016T155802_b5bf64eb",
+    "source_csv_sha256": "7213f52c1ac48701e95af046cc1a42150f9c2cc46e06fdd95874e7f9d9f79753",
+    "trigger_parameters_and_crossings_match": true
+  },
+  "labels_read": false,
+  "live_trading": false,
+  "local_clock_timezone": "America/Chicago; explicit UTC conversion verified; Windows Time service not running",
+  "main_k_parity": {
+    "compiled": {
+      "compile_log_sha256": "95c6dad78f8bfe7e1a0c1ab90f82d10caa3fcbfddaac438966e60ebfd796416d",
+      "errors": 0,
+      "ex5_sha256": "a4e7a00d4dd0ad617a566a04a65eeb6c21a1cb8a0e1f06645ca95f0356bac0d2",
+      "harness_sha256": "5d8e5b06d8eaae90e6e7a9ba6e7a931f07a540b8e9b10a3cccd47ba934ae2075",
+      "status": "PASS",
+      "warnings": 0
+    },
+    "reason": "NATIVE_EXECUTION_NOT_EVIDENCED",
+    "run_id": "pk_41a2e93f",
+    "status": "FAIL",
+    "strategy_modified": false
+  },
+  "main_k_root_cause": "metadata; legacy synthetic adapter shares arithmetic Fast-K approximation; production uses frozen native iStochastic",
+  "native_clock_export_available": false,
+  "next_state": "HARD_BLOCKER_NATIVE_PARITY_AND_CLOCK_EXPORT_PENDING",
+  "orchestrator_clock_reference_utc": "2026-10-23T10:24:28Z",
+  "parity_builder_sha256": "620ea47ecce21c88963c94580e749c34e655d9dfef11d54f2ea6cdbeb32be080",
+  "parity_template_sha256": "0f68313a47217295f7161fe22921487d819e399802b7c627ad86945b7ebbb9b8",
+  "pnl_read": false,
+  "session_calendar": "PASS_WITH_RUNTIME_GUARD",
+  "temporal_causality": "PASS_ENFORCED_INVARIANTS",
+  "tests": {
+    "duration_seconds": 103.318,
+    "failures": 0,
+    "passed": 189,
+    "skip_reason": "g++ unavailable",
+    "skipped": 9,
+    "total": 198
+  },
+  "timestamp_bounded_probe": [
+    {
+      "bounded_max_msc": 1792749664541,
+      "bounded_min_msc": 1792749660156,
+      "bounded_query_from_msc": 1792749660813,
+      "bounded_query_rows": 9,
+      "bounded_query_to_msc": 1792749665813,
+      "checked_at_utc": "2026-10-23T10:01:05.813662+00:00",
+      "latest_after_msc": 1792799997469,
+      "latest_before_msc": 1792799997469,
+      "symbol": "US30Cash"
+    },
+    {
+      "bounded_max_msc": null,
+      "bounded_min_msc": null,
+      "bounded_query_from_msc": 1792749662475,
+      "bounded_query_rows": 0,
+      "bounded_query_to_msc": 1792749667475,
+      "checked_at_utc": "2026-10-23T10:01:07.475659+00:00",
+      "latest_after_msc": 1792799879688,
+      "latest_before_msc": 1792799879688,
+      "symbol": "EURUSD"
+    }
+  ],
+  "timestamp_category": "C_FUTURE_AT_NATIVE_API_BOUNDARY",
+  "timestamp_latest_quote_samples": [
+    {
+      "future_delta_msc": 48923330,
+      "query_after_utc_msc": 1792751074139,
+      "query_before_utc_msc": 1792751074137,
+      "query_latency_msc": 2,
+      "quote_time_msc": 1792799997469,
+      "quote_time_seconds": 1792799997,
+      "seconds_millis_agree": true
+    },
+    {
+      "future_delta_msc": 48923225,
+      "query_after_utc_msc": 1792751074244,
+      "query_before_utc_msc": 1792751074244,
+      "query_latency_msc": 0,
+      "quote_time_msc": 1792799997469,
+      "quote_time_seconds": 1792799997,
+      "seconds_millis_agree": true
+    },
+    {
+      "future_delta_msc": 48923095,
+      "query_after_utc_msc": 1792751074374,
+      "query_before_utc_msc": 1792751074374,
+      "query_latency_msc": 0,
+      "quote_time_msc": 1792799997469,
+      "quote_time_seconds": 1792799997,
+      "seconds_millis_agree": true
+    }
+  ],
+  "timestamp_root_cause": "native latest-quote state is future/inconsistent relative to query UTC and bounded ticks; raw API cache provenance not yet resolved by MQL clock export"
+}

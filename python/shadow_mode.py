@@ -11,6 +11,7 @@ import time
 from typing import Any, Callable
 
 from runtime_session_guard import RuntimeSessionGuard, SessionObservation
+from temporal_causality import utc_milliseconds, validate_decision_times
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -95,6 +96,9 @@ class ShadowMode:
         feature_time = _parse_utc(signal["feature_max_time_utc"])
         stale_age = (now - quote_time).total_seconds()
         spread = float(quote["ask"]) - float(quote["bid"])
+        temporal_ok, temporal_reason = validate_decision_times(
+            feature_max_time_msc=utc_milliseconds(feature_time), decision_time_msc=utc_milliseconds(now),
+            quote_time_msc=utc_milliseconds(quote_time), max_quote_age_msc=int(self.max_quote_age_seconds * 1000))
         reason = "OK"
         decision = "NO_DECISION"
         if signal_time > now:
@@ -105,8 +109,12 @@ class ShadowMode:
             reason = "FEATURE_LOOKAHEAD"
         elif not (0 < float(quote["bid"]) <= float(quote["ask"])):
             reason = "INVALID_QUOTE"
-        elif stale_age < 0 or stale_age > self.max_quote_age_seconds:
+        elif quote_time > now:
+            reason = "FUTURE_QUOTE"
+        elif stale_age > self.max_quote_age_seconds:
             reason = "STALE_QUOTE"
+        elif not temporal_ok:
+            reason = temporal_reason
         elif not candidate_sha256:
             reason = "NO_FROZEN_CANDIDATE"
         elif not re.fullmatch(r"[0-9a-f]{64}", candidate_sha256.lower()):
