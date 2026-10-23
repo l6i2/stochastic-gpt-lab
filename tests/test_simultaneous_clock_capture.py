@@ -76,6 +76,14 @@ class SimultaneousCaptureTests(unittest.TestCase):
         bad=deepcopy(base);bad['paired_frames'][0]['native'][0]['tick_time_msc']='2000'
         self.assertIn('SECONDS_MILLISECONDS_MISMATCH',audit_overlap(bad,end_marker_present=True)['errors'])
 
+    def test_auditor_rejects_equal_coarse_boundaries_independently(self):
+        for side,field,value in [('windows_before','end_tick_ms',10),
+                                  ('windows_after','start_tick_ms',20)]:
+            capture=self.capture()
+            capture['paired_frames'][0][side][field]=value
+            self.assertIn('WINDOWS_NATIVE_BRACKET_INVALID',
+                          audit_overlap(capture,end_marker_present=True)['errors'])
+
     def test_finalizer_preserves_raw_hash_and_does_not_unlock_failed_clock(self):
         with tempfile.TemporaryDirectory() as directory:
             folder=Path(directory);capture=self.capture()

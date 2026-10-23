@@ -19,9 +19,9 @@ def audit_overlap(capture: dict, *, end_marker_present: bool) -> dict:
             errors.append('NATIVE_FRAME_MEMBERSHIP')
         before, after = pair['windows_before'], pair['windows_after']
         if (before['start_tick_ms'] > before['end_tick_ms']
-                or before['end_tick_ms'] > pair['native_start_ms']
+                or before['end_tick_ms'] >= pair['native_start_ms']
                 or pair['native_start_ms'] > pair['native_end_ms']
-                or pair['native_end_ms'] > after['start_tick_ms']
+                or pair['native_end_ms'] >= after['start_tick_ms']
                 or after['start_tick_ms'] > after['end_tick_ms']
                 or before['qpc_start_ns'] > before['qpc_end_ns']
                 or before['qpc_end_ns'] > after['qpc_start_ns']

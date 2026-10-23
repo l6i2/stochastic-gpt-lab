@@ -1,3 +1,5 @@
+> Revisión adicional: reloj Windows sigue inválido; 35 tests relevantes PASS, auditoría operacional FAIL. Ver [CLOCK_RECHECK](CLOCK_RECHECK.md). Sin nuevas ejecuciones del probe ni apertura de gates.
+
 > Actualización 2026-10-23: nueva captura completada (50/150), CLOCK_PROBE PASS; sincronización Windows, overlap, mapping y causalidad FAIL. Ver [revisión de evidencia](CLOCK_SYNC_COMPLETED_REVIEW.md). Gates permanecen bloqueados.
 
 # Intra-trade research status

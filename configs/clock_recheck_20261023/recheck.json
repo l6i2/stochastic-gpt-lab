@@ -1,0 +1,288 @@
+{
+  "before": {
+    "start_tick_ms": 52786500,
+    "qpc_start_ns": 52786662396500,
+    "precise_utc_ns": 1792780959803987800,
+    "precise_read_tick_ms": 52786531,
+    "standard_utc_ns": 1792780959803137600,
+    "standard_read_tick_ms": 52786531,
+    "local_time_fields": {
+      "year": 2026,
+      "month": 10,
+      "weekday": 5,
+      "day": 23,
+      "hour": 13,
+      "minute": 42,
+      "second": 39,
+      "millisecond": 803
+    },
+    "local_read_tick_ms": 52786531,
+    "windows_timezone": "Central Standard Time",
+    "timezone_read_tick_ms": 52786546,
+    "python_time_ns": 1792780959813137900,
+    "python_local": "2026-10-23T13:42:39.813137-05:00",
+    "qpc_end_ns": 52786706979300,
+    "end_tick_ms": 52786546
+  },
+  "w32": {
+    "source": {
+      "returncode": 2147943462,
+      "stdout": "Error: No se ha iniciado el servicio. (0x80070426)\n",
+      "stderr": "",
+      "qpc_start_ns": 52786707011300,
+      "qpc_end_ns": 52787390907500
+    },
+    "status": {
+      "returncode": 2147943462,
+      "stdout": "Error: No se ha iniciado el servicio. (0x80070426)\n",
+      "stderr": "",
+      "qpc_start_ns": 52787390912700,
+      "qpc_end_ns": 52787646066700
+    },
+    "offset": {
+      "returncode": 0,
+      "stdout": "Seguimiento time.windows.com [40.119.6.228:123].\nRecopilando 3 muestras.\nLa hora actual es 23/10/2026 13:42:40.\n13:42:40, +207999.9329221s\n13:42:43, +207999.9313892s\n13:42:45, +207999.9307056s\n",
+      "stderr": "",
+      "qpc_start_ns": 52787646071100,
+      "qpc_end_ns": 52792135750800
+    }
+  },
+  "external_reference": {
+    "samples": [
+      {
+        "host": "time.windows.com",
+        "server_transmit_ns": 1792988965326456999,
+        "server_transmit_utc": "2026-10-26T04:29:25.326457+00:00",
+        "rtt_ns": 187000000,
+        "received_monotonic_ns": 52792171000000,
+        "stratum": 4,
+        "nonce_echo_verified": true
+      },
+      {
+        "host": "time.cloudflare.com",
+        "server_transmit_ns": 1792988965389754959,
+        "server_transmit_utc": "2026-10-26T04:29:25.389755+00:00",
+        "rtt_ns": 16000000,
+        "received_monotonic_ns": 52792187000000,
+        "stratum": 3,
+        "nonce_echo_verified": true
+      },
+      {
+        "host": "time.google.com",
+        "server_transmit_ns": 1792988965440962560,
+        "server_transmit_utc": "2026-10-26T04:29:25.440963+00:00",
+        "rtt_ns": 94000000,
+        "received_monotonic_ns": 52792281000000,
+        "stratum": 1,
+        "nonce_echo_verified": true
+      }
+    ],
+    "errors": [],
+    "anchor_monotonic_ns": 52792281000000,
+    "local_utc_ns": 1792780965555144700,
+    "local_utc": "2026-10-23T18:42:45.555145+00:00",
+    "comparison": {
+      "status": "REFERENCE_QUORUM",
+      "authority_scope": "diagnostic only; unauthenticated NTP",
+      "utc_lower_ns": 1792988965483754959,
+      "utc_upper_ns": 1792988965499754959,
+      "local_clock_within_network_interval": false,
+      "local_lag_lower_ns": 207999928610259,
+      "local_lag_upper_ns": 207999944610259
+    },
+    "tls_corroboration": [
+      {
+        "url": "https://www.microsoft.com/",
+        "date": "Mon, 26 Oct 2026 04:29:27 GMT",
+        "age": null,
+        "agrees_with_ntp_interval": true
+      },
+      {
+        "url": "https://www.google.com/generate_204",
+        "date": "Mon, 26 Oct 2026 04:29:27 GMT",
+        "age": null,
+        "agrees_with_ntp_interval": true
+      },
+      {
+        "url": "https://www.bing.com/",
+        "date": "Mon, 26 Oct 2026 04:29:28 GMT",
+        "age": null,
+        "agrees_with_ntp_interval": true
+      }
+    ],
+    "tls_corroborated": true,
+    "clock_changed": false,
+    "orders_sent": 0
+  },
+  "after": {
+    "start_tick_ms": 52794890,
+    "qpc_start_ns": 52795043180900,
+    "precise_utc_ns": 1792780968155561500,
+    "precise_read_tick_ms": 52794890,
+    "standard_utc_ns": 1792780968155141100,
+    "standard_read_tick_ms": 52794890,
+    "local_time_fields": {
+      "year": 2026,
+      "month": 10,
+      "weekday": 5,
+      "day": 23,
+      "hour": 13,
+      "minute": 42,
+      "second": 48,
+      "millisecond": 155
+    },
+    "local_read_tick_ms": 52794890,
+    "windows_timezone": "Central Standard Time",
+    "timezone_read_tick_ms": 52794890,
+    "python_time_ns": 1792780968155141100,
+    "python_local": "2026-10-23T13:42:48.155141-05:00",
+    "qpc_end_ns": 52795043395200,
+    "end_tick_ms": 52794890
+  },
+  "old_capture_reaudit": {
+    "clock_probe": "PASS",
+    "simultaneous_overlap": "FAIL",
+    "errors": [
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID",
+      "WINDOWS_NATIVE_BRACKET_INVALID"
+    ],
+    "paired_frames": 50,
+    "native_rows": 150,
+    "windows_clock_sync": "FAIL",
+    "independent_reference_available": true,
+    "precise_windows_inside_reference_intervals": false,
+    "w32_source_status_offset_available": false,
+    "observed_estimated_server_minus_host_gmt_seconds": [
+      7200
+    ],
+    "broker_server_offset": "OBSERVED_ONLY_NOT_CERTIFIED",
+    "broker_dst": "PARTIAL",
+    "authoritative_clock": "NONE_OPERATIONALLY_ATTESTED",
+    "native_to_utc_mapping": "FAIL",
+    "temporal_causality": "FAIL",
+    "causal_audit": "FAIL",
+    "authorized_mapping_segments": [],
+    "future_quote_policy": "REJECT",
+    "future_tolerance_ms": 0,
+    "clock_changed": false,
+    "orders_sent": 0
+  },
+  "prior_hashes_verified": true,
+  "orders_sent": 0,
+  "clock_changed": false,
+  "native_comparison": {
+    "US30Cash": {
+      "time_local": {
+        "min": 1792753364,
+        "max": 1792753413
+      },
+      "time_gmt": {
+        "min": 1792771364,
+        "max": 1792771413
+      },
+      "time_current": {
+        "min": 1792986563,
+        "max": 1792986613
+      },
+      "time_trade_server": {
+        "min": 1792778564,
+        "max": 1792778613
+      },
+      "tick_time": {
+        "min": 1792986563,
+        "max": 1792986613
+      },
+      "tick_time_msc": {
+        "min": 1792986563531,
+        "max": 1792986613527
+      }
+    },
+    "EURUSD": {
+      "time_local": {
+        "min": 1792753364,
+        "max": 1792753413
+      },
+      "time_gmt": {
+        "min": 1792771364,
+        "max": 1792771413
+      },
+      "time_current": {
+        "min": 1792986563,
+        "max": 1792986613
+      },
+      "time_trade_server": {
+        "min": 1792778564,
+        "max": 1792778613
+      },
+      "tick_time": {
+        "min": 1792986551,
+        "max": 1792986609
+      },
+      "tick_time_msc": {
+        "min": 1792986551489,
+        "max": 1792986609240
+      }
+    },
+    "USDCHF": {
+      "time_local": {
+        "min": 1792753364,
+        "max": 1792753413
+      },
+      "time_gmt": {
+        "min": 1792771364,
+        "max": 1792771413
+      },
+      "time_current": {
+        "min": 1792986563,
+        "max": 1792986613
+      },
+      "time_trade_server": {
+        "min": 1792778564,
+        "max": 1792778613
+      },
+      "tick_time": {
+        "min": 1792986557,
+        "max": 1792986611
+      },
+      "tick_time_msc": {
+        "min": 1792986557987,
+        "max": 1792986611939
+      }
+    }
+  },
+  "validation": {
+    "relevant_tests": 35,
+    "passed": 35,
+    "compileall": "PASS",
+    "diff_check": "PASS",
+    "native_probe_rerun": false,
+    "source_ex5_reinstalled": false
+  },
+  "root_cause": "Host UTC behind independent reference by ~207999.94 seconds; client-derived TimeGMT/TimeTradeServer unsuitable as independent UTC authority. Coarse GetTickCount64 pairing caused 26 invalid brackets; original evidence retained."
+}
