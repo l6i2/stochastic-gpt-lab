@@ -1,10 +1,13 @@
 # Prospective data drift monitor
 
-> Latest evidence: [session probe captured — 2026-10-23](XM_SESSION_CAPTURE_20261023.md). Probe execution is complete and hash-pinned. Current snapshot shows UTC+02:00 with weekday-dependent sessions; DST/holiday reconciliation is still pending. Calendar remains unverified; no scoring or orders.
+## Authoritative operational checkpoint — 2026-10-23
 
-> Latest operational check: [XM reopened — 2026-10-23](XM_REOPEN_CHECK_20261023.md). XM is connected in DEMO, US30Cash is available, and collector runtime is READY. Session-probe execution and calendar evidence remain pending; no scoring or orders.
+[Current addendum and evidence](PROSPECTIVE_OPERATIONAL_ADDENDUM_20261023.md): `SESSION_CALENDAR=PASS_WITH_RUNTIME_GUARD` for operational containment; historical UTC calendar remains unverified. Guard READY, DST PARTIAL, holidays UNKNOWN. Causal audit FAIL (frozen metadata/native-trigger non-equivalence), manifest chain PARTIAL, drift NOT_READY. Collector active/HEALTHY, cohort NOT_MATURE, evaluator READY_BUT_GATED. DEMO executor and shadow READY_BUT_DISABLED; no orders. FINAL_TEST LOCKED; DEMO DISABLED; LIVE_TRADING=false. Full suite: 190 tests, 9 native skips. NEXT_STATE=HARD_BLOCKER.
 
-> Current operational checkpoint: [2026-10-22 continuation audit](CONTINUATION_AUDIT_20261022.md). It supersedes older operational snapshots: capture data healthy, XM runtime unavailable, cohort not mature; calendar/causal/drift gates remain unresolved. No scoring or orders.
+All operational snapshots below are historical and superseded by the linked addendum; sealed scientific protocols remain unchanged.
+
+
+
 
 **Status:** `PREPARED/NOT_READY`; implementation is fixture-tested, but no baseline is fitted and no real-cohort drift comparison has run. `LIVE_TRADING=false`.
 

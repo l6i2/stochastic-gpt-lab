@@ -9,6 +9,7 @@ from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "python"))
+from runtime_session_guard import RuntimeSessionGuard, SessionObservation
 from demo_safety import DemoLimits, RuntimeState, authorize_demo_decision
 from shadow_mode import ReadOnlyMT5Adapter, ShadowMode, ShadowRecorder, sha256_bytes
 from demo_mock_executor import MockShadowExecutor
@@ -17,7 +18,7 @@ from demo_mock_executor import MockShadowExecutor
 class DemoShadowSafetyTests(unittest.TestCase):
     def setUp(self):
         self.limits = DemoLimits(0.1, 1, 100.0, 3, 5.0, 2.0, 4, 150.0)
-        self.state = RuntimeState("DEMO", "US30Cash", True, False, 1, 1, 0, 0, 0, 1, 0, "s1", 0.1, 0.0)
+        self.state = RuntimeState("DEMO", "US30Cash", True, False, 1, 1, 0, 0, 0, 1, 0, "s1", 0.1, 0.0, session_guard_pass=True)
 
     def test_real_unknown_account_and_disabled_mode_fail_closed(self):
         for mode in ("REAL", "UNKNOWN"):
@@ -28,6 +29,7 @@ class DemoShadowSafetyTests(unittest.TestCase):
 
     def test_kill_switch_duplicates_staleness_and_risk_limits(self):
         cases = [
+            (RuntimeState(**{**self.state.__dict__, "session_guard_pass": False}), "SESSION_GUARD_REQUIRED"),
             (RuntimeState(**{**self.state.__dict__, "kill_switch": True}), "KILL_SWITCH"),
             (RuntimeState(**{**self.state.__dict__, "quote_age_seconds": 99}), "STALE_QUOTE"),
             (RuntimeState(**{**self.state.__dict__, "heartbeat_age_seconds": 99}), "STALE_HEARTBEAT"),
@@ -81,32 +83,56 @@ class DemoShadowSafetyTests(unittest.TestCase):
             self.assertEqual(disabled.observe(signal={}, quote={}, candidate_sha256="",
                 policy_version="v1", decision_fn=lambda _: "FOLLOW")["status"], "DISABLED")
             self.assertFalse(path.exists())
-            mode = ShadowMode(ShadowRecorder(path), enabled=True)
+            mode = ShadowMode(ShadowRecorder(path), enabled=True, session_guard=RuntimeSessionGuard())
             signal = {"signal_id": "s1", "symbol": "US30Cash",
-                      "signal_time_utc": "2026-10-19T00:00:08Z",
-                      "feature_max_time_utc": "2026-10-19T00:00:05Z", "features": {"k": 22}}
-            quote = {"symbol": "US30Cash", "time_utc": "2026-10-19T00:00:09Z",
+                      "signal_time_utc": "2026-10-23T07:00:08Z",
+                      "feature_max_time_utc": "2026-10-23T07:00:05Z", "features": {"k": 22}}
+            quote = {"symbol": "US30Cash", "time_utc": "2026-10-23T07:00:09Z",
                      "bid": 40000.0, "ask": 40000.5}
             result = mode.observe(signal=signal, quote=quote, candidate_sha256="c" * 64,
                 policy_version="candidate-v1", decision_fn=lambda _: "FOLLOW",
-                now_utc=datetime(2026, 10, 19, 0, 0, 10, tzinfo=timezone.utc))
+                session_observation=SessionObservation(datetime(2026, 10, 23, 7, 0, 10, tzinfo=timezone.utc),
+                    datetime(2026, 10, 23, 7, 0, 9, tzinfo=timezone.utc), True, "DEMO", "XMGlobal-MT5 10",
+                    "US30Cash", 40000, 40001, 7200, True, True, "NORMAL", "OPEN"),
+                now_utc=datetime(2026, 10, 23, 7, 0, 10, tzinfo=timezone.utc))
             self.assertEqual(result["decision"], "FOLLOW")
             self.assertEqual(result["orders_sent"], 0)
             event = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual(event["order_count"], 0)
             self.assertEqual(event["spread"], 0.5)
-            stale_quote = {**quote, "time_utc": "2026-10-19T00:00:00Z"}
+            stale_quote = {**quote, "time_utc": "2026-10-23T07:00:00Z"}
             stale = mode.observe(signal=signal, quote=stale_quote, candidate_sha256="c" * 64,
                 policy_version="candidate-v1", decision_fn=lambda _: "INVERT",
-                now_utc=datetime(2026, 10, 19, 0, 0, 10, tzinfo=timezone.utc))
+                now_utc=datetime(2026, 10, 23, 7, 0, 10, tzinfo=timezone.utc))
             self.assertEqual(stale["decision"], "NO_DECISION")
             self.assertEqual(mode.order_count, 0)
             no_candidate = mode.observe(
                 signal={**signal, "signal_id": "s2"}, quote=quote, candidate_sha256=None,
                 policy_version="NO_CANDIDATE", decision_fn=lambda _: self.fail("policy must not run without a candidate"),
-                now_utc=datetime(2026, 10, 19, 0, 0, 10, tzinfo=timezone.utc))
+                now_utc=datetime(2026, 10, 23, 7, 0, 10, tzinfo=timezone.utc))
             self.assertEqual(no_candidate["status"], "NO_FROZEN_CANDIDATE")
             self.assertEqual(no_candidate["orders_sent"], 0)
+
+    def test_shadow_refuses_missing_ambiguous_and_closed_sessions_before_policy(self):
+        now = datetime(2026, 10, 23, 8, 0, tzinfo=timezone.utc)
+        signal = {"signal_id": "guard-fixture", "symbol": "US30Cash",
+                  "signal_time_utc": "2026-10-23T08:00:00Z", "feature_max_time_utc": "2026-10-23T07:59:59Z",
+                  "features": {"x": 1}}
+        quote = {"symbol": "US30Cash", "time_utc": "2026-10-23T08:00:00Z", "bid": 40000, "ask": 40001}
+        observation = SessionObservation(now, now, True, "DEMO", "XMGlobal-MT5 10", "US30Cash",
+                                         40000, 40001, 7200, True, True, "NORMAL", "CLOSED")
+        with tempfile.TemporaryDirectory() as tmp:
+            for guard, context, reason in (
+                    (None, None, "SESSION_GUARD_UNAVAILABLE"),
+                    (RuntimeSessionGuard(), None, "SESSION_RUNTIME_MISSING"),
+                    (RuntimeSessionGuard(), observation, "BROKER_MARKET_CLOSED")):
+                mode = ShadowMode(ShadowRecorder(Path(tmp) / "shadow.jsonl"), enabled=True, session_guard=guard)
+                result = mode.observe(signal=signal, quote=quote, candidate_sha256="a" * 64,
+                    policy_version="fixture-only", now_utc=now, session_observation=context,
+                    decision_fn=lambda _: self.fail("policy must not execute behind a failed session gate"))
+                self.assertEqual(result["status"], reason)
+                self.assertEqual(result["decision"], "NO_DECISION")
+                self.assertEqual(result["orders_sent"], 0)
 
     def test_read_only_mt5_adapter_exposes_no_order_methods(self):
         class FakeMT5:

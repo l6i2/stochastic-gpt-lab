@@ -10,6 +10,8 @@ import re
 import time
 from typing import Any, Callable
 
+from runtime_session_guard import RuntimeSessionGuard, SessionObservation
+
 
 def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
@@ -71,16 +73,19 @@ class ShadowMode:
     """Read-only signal-to-hypothetical-decision runner, disabled by default."""
 
     def __init__(self, recorder: ShadowRecorder, *, enabled: bool = False,
-                 max_quote_age_seconds: float = 5.0):
+                 max_quote_age_seconds: float = 5.0,
+                 session_guard: RuntimeSessionGuard | None = None):
         self.recorder = recorder
         self.enabled = enabled is True
         self.max_quote_age_seconds = max_quote_age_seconds
         self.order_count = 0
+        self.session_guard = session_guard
 
     def observe(self, *, signal: dict[str, Any], quote: dict[str, Any],
                 candidate_sha256: str, policy_version: str,
                 decision_fn: Callable[[dict[str, Any]], str],
-                now_utc: datetime | None = None) -> dict[str, Any]:
+                now_utc: datetime | None = None,
+                session_observation: SessionObservation | None = None) -> dict[str, Any]:
         if not self.enabled:
             return {"status": "DISABLED", "orders_sent": 0, "order_count": self.order_count}
         now = (now_utc or datetime.now(timezone.utc)).astimezone(timezone.utc)
@@ -106,6 +111,10 @@ class ShadowMode:
             reason = "NO_FROZEN_CANDIDATE"
         elif not re.fullmatch(r"[0-9a-f]{64}", candidate_sha256.lower()):
             reason = "CANDIDATE_HASH_INVALID"
+        elif self.session_guard is None:
+            reason = "SESSION_GUARD_UNAVAILABLE"
+        elif not (session_result := self.session_guard.check(session_observation, now_utc=now)).allowed:
+            reason = session_result.reason
         else:
             proposed = decision_fn(features)
             if proposed in {"FOLLOW", "INVERT"}:

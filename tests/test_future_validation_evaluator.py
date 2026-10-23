@@ -57,7 +57,28 @@ class FutureValidationEvaluatorTests(unittest.TestCase):
             "evaluator_sha256": sha256(Path(__file__).resolve().parents[1] / "python/future_validation_evaluator.py"),
             "health_report_sha256": sha256(health),
         }), encoding="utf-8")
+        self._bind_causal_fixture(cohort, candidate, table, manifest, authorization)
         return cohort, candidate, table, manifest, authorization
+
+    def _bind_causal_fixture(self, cohort, candidate, table, manifest, authorization):
+        # Synthetic fixture only: no real causal PASS artifact is generated.
+        audit = cohort / "evaluation/causality_audit.json"
+        audit.write_text(json.dumps({
+            "status": "PASS", "cohort_manifest_sha256": sha256(cohort / "cohort_manifest.json"),
+            "evaluation_table_sha256": sha256(table), "candidate_sha256": sha256(candidate),
+            "metadata_spec_sha256": sha256(Path(__file__).resolve().parents[1] / "configs/future_cohort_metadata_spec.json"),
+            "pnl_read": False, "labels_read": False, "base_trigger_parity_pass": True,
+            "feature_timestamps_pass": True, "target_feature_separation_pass": True,
+            "independent_replay_parity_pass": True}), encoding="utf-8")
+        audit.with_name(audit.name + ".sha256").write_text(sha256(audit))
+        health = cohort / "cohort_health_report.json"
+        data = json.loads(health.read_text())
+        data.update(causality_audit_pass=True, causality_audit_sha256=sha256(audit))
+        health.write_text(json.dumps(data)); health.with_name(health.name + ".sha256").write_text(sha256(health))
+        for path in (manifest, authorization):
+            data = json.loads(path.read_text())
+            data.update(causality_audit_sha256=sha256(audit), health_report_sha256=sha256(health))
+            path.write_text(json.dumps(data))
 
     def test_evaluation_is_one_time_hash_bound_and_never_tunes(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -90,6 +111,7 @@ class FutureValidationEvaluatorTests(unittest.TestCase):
             auth = json.loads(authorization.read_text(encoding="utf-8"))
             auth["evaluation_table_sha256"] = sha256(table)
             authorization.write_text(json.dumps(auth), encoding="utf-8")
+            self._bind_causal_fixture(cohort, candidate, table, manifest, authorization)
             with self.assertRaisesRegex(ValueError, "lacks required columns"):
                 evaluate(candidate_path=candidate, eval_csv=table,
                          eval_manifest_path=manifest, authorization_path=authorization,
@@ -98,6 +120,32 @@ class FutureValidationEvaluatorTests(unittest.TestCase):
                 evaluate(candidate_path=candidate, eval_csv=table,
                          eval_manifest_path=manifest, authorization_path=authorization,
                          cohort_root=cohort, ledger_root=cohort / "ledger")
+
+    def test_self_reported_causal_pass_cannot_bypass_missing_or_failed_audit(self):
+        for kind in ("missing", "failed", "wrong_table", "native_trigger_failure"):
+            with self.subTest(kind=kind), tempfile.TemporaryDirectory() as tmp:
+                cohort, candidate, table, manifest, authorization = self._fixture(Path(tmp))
+                audit = cohort / "evaluation/causality_audit.json"
+                if kind == "missing":
+                    audit.unlink()
+                else:
+                    data = json.loads(audit.read_text())
+                    if kind == "failed":
+                        data["status"] = "FAIL"
+                    elif kind == "wrong_table":
+                        data["evaluation_table_sha256"] = "0" * 64
+                    else:
+                        data["base_trigger_parity_pass"] = False
+                    audit.write_text(json.dumps(data))
+                    audit.with_name(audit.name + ".sha256").write_text(sha256(audit))
+                    # Even a resealed health claim must not rescue a failed audit.
+                    health = cohort / "cohort_health_report.json"
+                    data = json.loads(health.read_text()); data["causality_audit_sha256"] = sha256(audit)
+                    health.write_text(json.dumps(data)); health.with_name(health.name + ".sha256").write_text(sha256(health))
+                with self.assertRaisesRegex(ValueError, "[Cc]ausality audit"):
+                    evaluate(candidate_path=candidate, eval_csv=table, eval_manifest_path=manifest,
+                             authorization_path=authorization, cohort_root=cohort, ledger_root=cohort / "ledger")
+                self.assertFalse((cohort / "ledger").exists())
 
     def test_immature_or_unauthorized_inputs_are_refused(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import csv
+import hashlib
+import re
 import json
 import math
 from pathlib import Path
@@ -31,6 +33,9 @@ def _validate_edges(edges: list[float], name: str) -> None:
 def _validate_summary(summary: dict[str, Any]) -> None:
     if summary.get("feature_only") is not True:
         raise ValueError("Drift monitor accepts feature-only summaries")
+    for key in ("feature_definition_sha256", "feature_producer_sha256"):
+        if not re.fullmatch(r"[0-9a-f]{64}", str(summary.get(key, ""))):
+            raise ValueError("Drift summary requires hash-bound feature definitions and producer")
     rows = summary.get("rows")
     features = summary.get("features")
     if type(rows) is not int or rows <= 0 or not isinstance(features, dict) or not features:
@@ -51,7 +56,9 @@ def _validate_summary(summary: dict[str, Any]) -> None:
             raise ValueError(f"Invalid missing rate for {name}")
 
 
-def summarize_feature_csv(path: Path, *, whitelist: set[str], bins: dict[str, list[float]]) -> dict[str, Any]:
+def summarize_feature_csv(path: Path, *, whitelist: set[str], bins: dict[str, list[float]],
+                          feature_definition_sha256: str | None = None,
+                          feature_producer_sha256: str | None = None) -> dict[str, Any]:
     """Summarize a feature-only matrix against fixed bins from a prior baseline."""
     path = Path(path)
     with path.open("r", encoding="utf-8-sig", newline="") as stream:
@@ -92,7 +99,8 @@ def summarize_feature_csv(path: Path, *, whitelist: set[str], bins: dict[str, li
                 counts[name][index] += 1
     if rows == 0:
         raise ValueError("Feature matrix is empty")
-    return {"rows": rows, "feature_only": True, "labels_read": False, "pnl_read": False,
+    return {"rows": rows, "feature_definition_sha256": feature_definition_sha256,
+            "feature_producer_sha256": feature_producer_sha256, "feature_only": True, "labels_read": False, "pnl_read": False,
             "features": {name: {"edges": list(bins[name]), "counts": counts[name], "missing": missing[name],
                                 "missing_rate": missing[name] / rows}
                           for name in fields}}
@@ -102,6 +110,9 @@ def compare_drift(baseline: dict[str, Any], current: dict[str, Any], *, psi_limi
                   missing_rate_delta_limit: float = 0.10) -> dict[str, Any]:
     _validate_summary(baseline)
     _validate_summary(current)
+    for key in ("feature_definition_sha256", "feature_producer_sha256"):
+        if baseline[key] != current[key]:
+            raise ValueError("Feature definitions or producer changed from frozen baseline")
     if set(baseline["features"]) != set(current["features"]):
         raise ValueError("Feature set changed from frozen baseline")
     for limit in (psi_limit, missing_rate_delta_limit):
@@ -196,11 +207,25 @@ def main() -> int:
     parser.add_argument("--whitelist", type=Path, required=True)
     parser.add_argument("--baseline", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--feature-definition", type=Path, required=True)
+    parser.add_argument("--producer-source", type=Path, required=True)
     args = parser.parse_args()
     whitelist_data = json.loads(args.whitelist.read_text(encoding="utf-8"))
     baseline = json.loads(args.baseline.read_text(encoding="utf-8"))
     bins = {name: item["edges"] for name, item in baseline["features"].items()}
-    current = summarize_feature_csv(args.features, whitelist=set(whitelist_data["features"]), bins=bins)
+    definition_raw = args.feature_definition.read_bytes()
+    definition_hash = hashlib.sha256(definition_raw).hexdigest()
+    sidecar = args.feature_definition.with_name(args.feature_definition.name + ".sha256")
+    if not sidecar.is_file() or sidecar.read_text(encoding="ascii").split()[0] != definition_hash:
+        raise ValueError("Feature definition requires a frozen SHA-256 sidecar")
+    definition = json.loads(definition_raw)
+    producer_hash = hashlib.sha256(args.producer_source.read_bytes()).hexdigest()
+    if (definition.get("producer_sha256") != producer_hash
+            or set(definition.get("features", [])) != set(bins)):
+        raise ValueError("Feature producer/schema does not match frozen definition")
+    current = summarize_feature_csv(args.features, whitelist=set(whitelist_data["features"]), bins=bins,
+                                    feature_definition_sha256=definition_hash,
+                                    feature_producer_sha256=producer_hash)
     report = compare_drift(baseline, current)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")

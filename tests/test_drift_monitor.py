@@ -21,8 +21,9 @@ class DriftMonitorTests(unittest.TestCase):
                 writer = csv.DictWriter(stream, fieldnames=["spread", "atr_ratio"])
                 writer.writeheader(); writer.writerows([{"spread": 0.5, "atr_ratio": 1.0}, {"spread": 4, "atr_ratio": ""}])
             now = summarize_feature_csv(path, whitelist={"spread", "atr_ratio"},
-                                        bins={"spread": [1, 2, 5], "atr_ratio": [0.8, 1.25]})
-            baseline = {"rows": 2, "feature_only": True, "features": {
+                                        bins={"spread": [1, 2, 5], "atr_ratio": [0.8, 1.25]},
+                                        feature_definition_sha256="f"*64, feature_producer_sha256="e"*64)
+            baseline = {"rows": 2, "feature_definition_sha256": "f"*64, "feature_producer_sha256": "e"*64, "feature_only": True, "features": {
                 "spread": {"edges": [1, 2, 5], "counts": [1, 0, 1, 0], "missing": 0, "missing_rate": 0},
                 "atr_ratio": {"edges": [0.8, 1.25], "counts": [0, 1, 1], "missing": 0, "missing_rate": 0},
             }}
@@ -33,7 +34,7 @@ class DriftMonitorTests(unittest.TestCase):
             self.assertFalse(report["threshold_tuning"])
 
     def test_changed_bins_missing_features_and_invalid_counts_fail_closed(self):
-        baseline = {"rows": 2, "feature_only": True, "features": {
+        baseline = {"rows": 2, "feature_definition_sha256": "f"*64, "feature_producer_sha256": "e"*64, "feature_only": True, "features": {
             "spread": {"edges": [1], "counts": [1, 1], "missing": 0, "missing_rate": 0}}}
         for mutation in ("edges", "counts", "missing_rate", "features", "rows"):
             current = copy.deepcopy(baseline)
@@ -60,6 +61,17 @@ class DriftMonitorTests(unittest.TestCase):
                 path.write_text(content, encoding="utf-8")
                 with self.subTest(content=content, bins=bins), self.assertRaises(ValueError):
                     summarize_feature_csv(path, whitelist={"spread"}, bins=bins)
+
+    def test_same_bins_different_or_missing_feature_contracts_are_refused(self):
+        ref = {"rows": 2, "feature_definition_sha256": "f"*64, "feature_producer_sha256": "e"*64,
+               "feature_only": True, "features": {
+                   "spread": {"edges": [1], "counts": [1, 1], "missing": 0, "missing_rate": 0}}}
+        for key in ("feature_definition_sha256", "feature_producer_sha256"):
+            for value in (None, "a"*64):
+                current = copy.deepcopy(ref)
+                current[key] = value
+                with self.subTest(key=key, value=value), self.assertRaises(ValueError):
+                    compare_drift(ref, current)
 
     def test_outcome_columns_are_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:

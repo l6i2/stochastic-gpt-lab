@@ -37,6 +37,7 @@ class RuntimeState:
     reconnect_pending: bool = False
     persistent_state_valid: bool = True
     audit_log_writable: bool = True
+    session_guard_pass: bool = False
 
 
 def authorize_demo_decision(state: RuntimeState, limits: DemoLimits,
@@ -57,6 +58,8 @@ def authorize_demo_decision(state: RuntimeState, limits: DemoLimits,
         return False, "PERSISTENT_STATE_UNAVAILABLE"
     if state.audit_log_writable is not True:
         return False, "AUDIT_LOG_UNAVAILABLE"
+    if state.session_guard_pass is not True:
+        return False, "SESSION_GUARD_REQUIRED"
     if any(value <= 0 for value in (limits.max_lot, limits.max_positions,
                                     limits.max_daily_loss, limits.max_consecutive_losses,
                                     limits.max_spread, limits.max_slippage,

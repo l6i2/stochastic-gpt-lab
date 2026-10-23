@@ -148,6 +148,25 @@ def evaluate(*, candidate_path: Path, eval_csv: Path, eval_manifest_path: Path,
             or health.get("cohort_manifest_sha256") != cohort_hash
             or health.get("scoring_performed") is not False):
         raise ValueError("Hash-bound cohort health report is not mature and score-free")
+    audit_path = eval_root / "causality_audit.json"
+    audit_sidecar = audit_path.with_name(audit_path.name + ".sha256")
+    if (not audit_path.is_file() or not audit_sidecar.is_file()
+            or audit_sidecar.read_text(encoding="ascii").split()[0] != sha256(audit_path)):
+        raise ValueError("Independent hash-verified causality audit is required")
+    audit_hash = sha256(audit_path)
+    audit = _read_json(audit_path)
+    if (health.get("causality_audit_pass") is not True
+            or health.get("causality_audit_sha256") != audit_hash
+            or audit.get("status") != "PASS"
+            or audit.get("cohort_manifest_sha256") != cohort_hash
+            or audit.get("evaluation_table_sha256") != table_hash
+            or audit.get("candidate_sha256") != candidate_hash
+            or audit.get("metadata_spec_sha256") != sha256(ROOT / "configs/future_cohort_metadata_spec.json")
+            or audit.get("pnl_read") is not False or audit.get("labels_read") is not False
+            or any(audit.get(key) is not True for key in (
+                "base_trigger_parity_pass", "feature_timestamps_pass", "target_feature_separation_pass",
+                "independent_replay_parity_pass"))):
+        raise ValueError("Causality audit does not prove this candidate/table and native-trigger parity")
     health_hash = sha256(health_path)
     protocol_hash = sha256(PROTOCOL_PATH)
     protocol_sidecar = PROTOCOL_PATH.with_name(PROTOCOL_PATH.name + ".sha256")
@@ -165,6 +184,7 @@ def evaluate(*, candidate_path: Path, eval_csv: Path, eval_manifest_path: Path,
     expected["protocol_sha256"] = protocol_hash
     expected["evaluator_sha256"] = evaluator_hash
     expected["health_report_sha256"] = health_hash
+    expected["causality_audit_sha256"] = audit_hash
     for key, value in expected.items():
         if manifest.get(key) != value:
             raise ValueError(f"Evaluation manifest hash mismatch: {key}")
@@ -179,7 +199,8 @@ def evaluate(*, candidate_path: Path, eval_csv: Path, eval_manifest_path: Path,
             or authorization.get("evaluation_table_sha256") != table_hash
             or authorization.get("protocol_sha256") != protocol_hash
             or authorization.get("evaluator_sha256") != evaluator_hash
-            or authorization.get("health_report_sha256") != health_hash):
+            or authorization.get("health_report_sha256") != health_hash
+            or authorization.get("causality_audit_sha256") != audit_hash):
         raise ValueError("Explicit matching one-time authorization is required")
 
     ledger_root = (ledger_root or eval_root / "evaluation_ledger").resolve()

@@ -4,6 +4,8 @@
   "source_split": "TRAIN_ONLY",
   "source_sha256": null,
   "feature_only": true,
+  "feature_definition_sha256": null,
+  "feature_producer_sha256": null,
   "alert_limits": {"psi": 0.25, "missing_rate_delta": 0.1},
   "features": {
     "stoch_main_k": {"edges": [20, 50, 80], "counts": [], "missing": null, "missing_rate": null},
