@@ -81,8 +81,8 @@ def native_frames(content: str) -> list[list[dict]]:
 def bracket(group: list[dict], windows: list[dict]) -> dict | None:
     start = min(int(r['mono_start_ms']) for r in group)
     end = max(int(r['mono_end_ms']) for r in group)
-    before = [row for row in windows if row['end_tick_ms'] <= start]
-    after = [row for row in windows if row['start_tick_ms'] >= end]
+    before = [row for row in windows if row['end_tick_ms'] < start]
+    after = [row for row in windows if row['start_tick_ms'] > end]
     if not before or not after:
         return None
     return {'frame': int(group[0]['frame']), 'native': group,

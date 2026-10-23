@@ -33,6 +33,17 @@ class SimultaneousCaptureTests(unittest.TestCase):
         self.assertEqual(pair['bracket_width_ms'],30)
         self.assertEqual(pair['windows_before'],before)
 
+    def test_coarse_tick_equality_cannot_prove_bracketing(self):
+        group=native()
+        for row in group:
+            row['mono_start_ms']='10';row['mono_end_ms']='10'
+        same=windows(10,10)
+        self.assertIsNone(bracket(group,[same]))
+        pair=bracket(group,[windows(0,9),same,windows(11,12)])
+        self.assertNotEqual(pair['windows_before'],pair['windows_after'])
+        self.assertEqual(pair['windows_before']['end_tick_ms'],9)
+        self.assertEqual(pair['windows_after']['start_tick_ms'],11)
+
     def test_uses_monotonic_bounds_not_wall_clock_order(self):
         a,b=windows(0,9),windows(21,30)
         a['precise_utc_ns']=9999999999999999999

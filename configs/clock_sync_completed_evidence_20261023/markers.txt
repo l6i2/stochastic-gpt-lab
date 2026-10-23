@@ -1,0 +1,2 @@
+CLOCK_ATTESTATION_BEGIN|run=attest_20261023_a2|capture_gmt_label=1792771364|monotonic_ms=43190750
+CLOCK_ATTESTATION_END|run=attest_20261023_a2|frames=50|records=150|capture_gmt_label=1792771413|monotonic_ms=43240578|orders_sent=0

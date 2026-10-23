@@ -1,3 +1,5 @@
+> Actualización 2026-10-23: nueva captura completada (50/150), CLOCK_PROBE PASS; sincronización Windows, overlap, mapping y causalidad FAIL. Ver [revisión de evidencia](CLOCK_SYNC_COMPLETED_REVIEW.md). Gates permanecen bloqueados.
+
 # Controller verification status
 
 ## Simultaneous capture automation - client case 2026-10-23
