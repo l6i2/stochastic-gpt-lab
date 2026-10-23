@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import csv
 import tempfile
 from pathlib import Path
@@ -21,15 +22,44 @@ class DriftMonitorTests(unittest.TestCase):
                 writer.writeheader(); writer.writerows([{"spread": 0.5, "atr_ratio": 1.0}, {"spread": 4, "atr_ratio": ""}])
             now = summarize_feature_csv(path, whitelist={"spread", "atr_ratio"},
                                         bins={"spread": [1, 2, 5], "atr_ratio": [0.8, 1.25]})
-            baseline = {"feature_only": True, "features": {
-                "spread": {"counts": [1, 0, 1, 0], "missing": 0, "missing_rate": 0},
-                "atr_ratio": {"counts": [0, 1, 1], "missing": 0, "missing_rate": 0},
+            baseline = {"rows": 2, "feature_only": True, "features": {
+                "spread": {"edges": [1, 2, 5], "counts": [1, 0, 1, 0], "missing": 0, "missing_rate": 0},
+                "atr_ratio": {"edges": [0.8, 1.25], "counts": [0, 1, 1], "missing": 0, "missing_rate": 0},
             }}
             report = compare_drift(baseline, now)
             self.assertFalse(report["labels_read"])
             self.assertFalse(report["pnl_read"])
             self.assertFalse(report["candidate_scored"])
             self.assertFalse(report["threshold_tuning"])
+
+    def test_changed_bins_missing_features_and_invalid_counts_fail_closed(self):
+        baseline = {"rows": 2, "feature_only": True, "features": {
+            "spread": {"edges": [1], "counts": [1, 1], "missing": 0, "missing_rate": 0}}}
+        for mutation in ("edges", "counts", "missing_rate", "features", "rows"):
+            current = copy.deepcopy(baseline)
+            if mutation == "edges":
+                current["features"]["spread"]["edges"] = [2]
+            elif mutation == "counts":
+                current["features"]["spread"]["counts"] = [-1, 3]
+            elif mutation == "missing_rate":
+                current["features"]["spread"]["missing_rate"] = float("nan")
+            elif mutation == "features":
+                current["features"] = {}
+            else:
+                current["rows"] = 3
+            with self.subTest(mutation=mutation), self.assertRaises(ValueError):
+                compare_drift(baseline, current)
+
+    def test_malformed_csv_and_invalid_bins_are_rejected_even_when_missing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "features.csv"
+            for content, bins in (("spread,spread\n1,2\n", {"spread": [1]}),
+                                  ("spread\n1,2\n", {"spread": [1]}),
+                                  ("spread\n\"\"\n", {"spread": [1, 1]}),
+                                  ("spread\n1\n", {"spread": [float("nan")]})):
+                path.write_text(content, encoding="utf-8")
+                with self.subTest(content=content, bins=bins), self.assertRaises(ValueError):
+                    summarize_feature_csv(path, whitelist={"spread"}, bins=bins)
 
     def test_outcome_columns_are_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -1,5 +1,7 @@
 # Project status
 
+> Current operational checkpoint: [2026-10-22 continuation audit](CONTINUATION_AUDIT_20261022.md). It supersedes older operational snapshots: capture data healthy, XM runtime unavailable, cohort not mature; calendar/causal/drift gates remain unresolved. No scoring or orders.
+
 ## Current checkpoint — 2026-10-21 (prospective gate and safety tooling prepared)
 
 The prospective scoring rule is frozen in [`PROSPECTIVE_EVALUATION_PROTOCOL.md`](PROSPECTIVE_EVALUATION_PROTOCOL.md); thresholds inherit the unchanged readiness rule. The new raw-only health checker is [`future_cohort_health.py`](../python/future_cohort_health.py), and its fixture tests prove no outcome/scoring fields are produced. The existing cohort health audit reports 2 days, 263,727 ticks, 552 M5 bars, 29 BUY and 26 SELL support signals, 0 invalid ticks/bars, and latest UTC tick `2026-10-20T23:59:58.880Z`. This is metadata only; no performance was opened. Maturity is NO because support/duration gates are unmet, there is no frozen candidate or causal audit, the XM server calendar is unverified, and pre-archive manifest history cannot be reconstructed.

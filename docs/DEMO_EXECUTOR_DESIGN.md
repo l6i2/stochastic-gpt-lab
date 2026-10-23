@@ -1,5 +1,7 @@
 # DEMO executor design — full mock safety path, disabled
 
+> Current operational checkpoint: [2026-10-22 continuation audit](CONTINUATION_AUDIT_20261022.md). It supersedes older operational snapshots: capture data healthy, XM runtime unavailable, cohort not mature; calendar/causal/drift gates remain unresolved. No scoring or orders.
+
 Status: **READY_BUT_DISABLED_FULL** for mock/shadow safety and idempotent intent
 recording only. There is no candidate and no broker order adapter. The module
 contains no `order_send`/CTrade capability, and even a test-accepted intent is

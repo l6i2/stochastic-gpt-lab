@@ -20,6 +20,37 @@ def _validate_feature_names(names: list[str], whitelist: set[str]) -> None:
             raise ValueError(f"Forbidden outcome/label field: {name}")
 
 
+def _validate_edges(edges: list[float], name: str) -> None:
+    if (not isinstance(edges, list)
+            or any(isinstance(edge, bool) or not isinstance(edge, (int, float))
+                   or not math.isfinite(edge) for edge in edges)
+            or any(a >= b for a, b in zip(edges, edges[1:]))):
+        raise ValueError(f"Invalid frozen bin edges for {name}")
+
+
+def _validate_summary(summary: dict[str, Any]) -> None:
+    if summary.get("feature_only") is not True:
+        raise ValueError("Drift monitor accepts feature-only summaries")
+    rows = summary.get("rows")
+    features = summary.get("features")
+    if type(rows) is not int or rows <= 0 or not isinstance(features, dict) or not features:
+        raise ValueError("Summary requires positive row count and features")
+    _validate_feature_names(list(features), set(features))
+    for name, item in features.items():
+        edges = item.get("edges")
+        _validate_edges(edges, name)
+        counts, missing = item.get("counts"), item.get("missing")
+        if (not isinstance(counts, list) or len(counts) != len(edges) + 1
+                or any(type(n) is not int or n < 0 for n in counts)
+                or type(missing) is not int or missing < 0
+                or sum(counts) + missing != rows):
+            raise ValueError(f"Invalid summary counts for {name}")
+        rate = item.get("missing_rate")
+        if (isinstance(rate, bool) or not isinstance(rate, (int, float))
+                or not math.isfinite(rate) or not math.isclose(rate, missing / rows, abs_tol=1e-12)):
+            raise ValueError(f"Invalid missing rate for {name}")
+
+
 def summarize_feature_csv(path: Path, *, whitelist: set[str], bins: dict[str, list[float]]) -> dict[str, Any]:
     """Summarize a feature-only matrix against fixed bins from a prior baseline."""
     path = Path(path)
@@ -28,13 +59,19 @@ def summarize_feature_csv(path: Path, *, whitelist: set[str], bins: dict[str, li
         fields = list(reader.fieldnames or [])
         if not fields:
             raise ValueError("Feature matrix has no header")
+        if len(set(fields)) != len(fields):
+            raise ValueError("Duplicate feature columns")
         _validate_feature_names(fields, whitelist)
+        for name, edges in bins.items():
+            _validate_edges(edges, name)
         if set(fields) != set(bins):
             raise ValueError("Every feature requires a frozen baseline bin definition")
         counts = {name: [0] * (len(bins[name]) + 1) for name in fields}
         missing = {name: 0 for name in fields}
         rows = 0
         for row in reader:
+            if None in row or any(value is None for value in row.values()):
+                raise ValueError("Feature row does not match header width")
             rows += 1
             for name in fields:
                 value = row.get(name, "")
@@ -49,8 +86,6 @@ def summarize_feature_csv(path: Path, *, whitelist: set[str], bins: dict[str, li
                     missing[name] += 1
                     continue
                 edges = bins[name]
-                if any(not math.isfinite(float(edge)) for edge in edges) or sorted(edges) != edges:
-                    raise ValueError(f"Invalid frozen bin edges for {name}")
                 index = 0
                 while index < len(edges) and numeric > edges[index]:
                     index += 1
@@ -58,22 +93,27 @@ def summarize_feature_csv(path: Path, *, whitelist: set[str], bins: dict[str, li
     if rows == 0:
         raise ValueError("Feature matrix is empty")
     return {"rows": rows, "feature_only": True, "labels_read": False, "pnl_read": False,
-            "features": {name: {"counts": counts[name], "missing": missing[name],
+            "features": {name: {"edges": list(bins[name]), "counts": counts[name], "missing": missing[name],
                                 "missing_rate": missing[name] / rows}
                           for name in fields}}
 
 
 def compare_drift(baseline: dict[str, Any], current: dict[str, Any], *, psi_limit: float = 0.25,
                   missing_rate_delta_limit: float = 0.10) -> dict[str, Any]:
-    if baseline.get("feature_only") is not True or current.get("feature_only") is not True:
-        raise ValueError("Drift monitor accepts feature-only summaries")
+    _validate_summary(baseline)
+    _validate_summary(current)
+    if set(baseline["features"]) != set(current["features"]):
+        raise ValueError("Feature set changed from frozen baseline")
+    for limit in (psi_limit, missing_rate_delta_limit):
+        if not math.isfinite(limit) or limit < 0:
+            raise ValueError("Drift alert limits must be finite and nonnegative")
     results = {}
     for name, now in current["features"].items():
         if name not in baseline.get("features", {}):
             raise ValueError(f"Feature missing from frozen baseline: {name}")
         ref = baseline["features"][name]
-        if len(now["counts"]) != len(ref["counts"]):
-            raise ValueError(f"Frozen bin count changed for {name}")
+        if now["edges"] != ref["edges"]:
+            raise ValueError(f"Frozen bin definition changed for {name}")
         smoothing = 1e-6
         ref_total, now_total = sum(ref["counts"]), sum(now["counts"])
         psi = 0.0

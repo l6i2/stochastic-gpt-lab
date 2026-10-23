@@ -1,5 +1,7 @@
 # Controller verification status
 
+> Current operational checkpoint: [2026-10-22 continuation audit](CONTINUATION_AUDIT_20261022.md). It supersedes older operational snapshots: capture data healthy, XM runtime unavailable, cohort not mature; calendar/causal/drift gates remain unresolved. No scoring or orders.
+
 ## Current checkpoint — 2026-10-21 (collector health metadata; no MT5 UI/trading)
 
 The Windows scheduled collector task was rechecked at 2026-10-21 15:50 CDT: state `Ready`, last scheduled result `0` at 15:45:45, next run 16:00:00. Its action invokes the project Python environment and `scripts/run_future_validation_collector.py`; the wrapper archives manifest snapshots and refreshes the health report only when inputs change. It does not run candidate evaluation. The latest wrapper log exited `0` with `CAUGHT_UP_WAITING_FOR_CLOSED_DAY`. Latest integrity-only report: 2 days, 263,727 ticks, 552 M5 bars, 29 BUY / 26 SELL support signals, no invalid quotes/bars, latest UTC tick `2026-10-20T23:59:58.880Z`; `COHORT_MATURE=NO`. Health report SHA-256 is `a42ecdc9142807d1a2b9ad32c4f347d0fa76d4e2adcb0d0b250b2d12706101ce`, with the metadata specification hash pinned. Session calendar and complete pre-archive manifest chain remain unverified. No MT5 UI was opened, no capture/backfill was forced, and no order was sent.

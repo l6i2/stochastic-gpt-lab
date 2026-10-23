@@ -1,5 +1,7 @@
 # Prospective data drift monitor
 
+> Current operational checkpoint: [2026-10-22 continuation audit](CONTINUATION_AUDIT_20261022.md). It supersedes older operational snapshots: capture data healthy, XM runtime unavailable, cohort not mature; calendar/causal/drift gates remain unresolved. No scoring or orders.
+
 **Status:** `PREPARED/NOT_READY`; implementation is fixture-tested, but no baseline is fitted and no real-cohort drift comparison has run. `LIVE_TRADING=false`.
 
 The monitor accepts only an explicit feature whitelist and fixed numeric bin edges from a separately hashed baseline summary. It reports missingness rate, population-stability index (PSI), spread distribution, session coverage, causal regime/volatility coverage, shadow decision-latency distribution, and capture-gap/quality changes. Default alerts are PSI `>0.25` and absolute missingness-rate change `>0.10`; both are descriptive data-quality alerts, never policy or threshold updates.

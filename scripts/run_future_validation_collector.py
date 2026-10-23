@@ -62,16 +62,18 @@ def _archive_current_manifest(cohort_root: Path) -> None:
     if snapshot.exists():
         if _digest(snapshot) != digest:
             raise ValueError("Existing immutable manifest snapshot was altered")
-        if not records or records[-1].get("sha256") != digest:
-            raise ValueError("Existing manifest snapshot is not the latest hash-chain entry")
-        return
+        if records and records[-1].get("sha256") == digest:
+            return
+        # A crash may occur after the atomic snapshot write but before the ledger append.
+        # Recover only this exact current snapshot; parent checks below still fail closed.
     previous = manifest.get("previous_manifest_sha256")
     anchor = not records
     if records and previous != records[-1].get("sha256"):
         raise ValueError("Manifest hash chain does not link to its previous archived state")
-    temp = snapshot.with_suffix(".tmp")
-    temp.write_bytes(source.read_bytes())
-    os.replace(temp, snapshot)
+    if not snapshot.exists():
+        temp = snapshot.with_suffix(".tmp")
+        temp.write_bytes(source.read_bytes())
+        os.replace(temp, snapshot)
     record = {"sha256": digest, "previous_manifest_sha256": previous,
               "snapshot": snapshot.name, "baseline_anchor": anchor}
     with ledger.open("a", encoding="utf-8", newline="\n") as stream:

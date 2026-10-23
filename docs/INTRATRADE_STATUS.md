@@ -1,5 +1,7 @@
 # Intra-trade research status
 
+> Current operational checkpoint: [2026-10-22 continuation audit](CONTINUATION_AUDIT_20261022.md). It supersedes older operational snapshots: capture data healthy, XM runtime unavailable, cohort not mature; calendar/causal/drift gates remain unresolved. No scoring or orders.
+
 ## Current checkpoint — 2026-10-21 (prospective evaluation frozen; no scoring)
 
 [`PROSPECTIVE_EVALUATION_PROTOCOL.md`](PROSPECTIVE_EVALUATION_PROTOCOL.md) now fixes the one-shot outcome metrics and PASS/FAIL/INCONCLUSIVE gates before prospective results. The raw-only maturity auditor found 2 days, 263,727 ticks, 552 bars, 29 BUY and 26 SELL support signals, zero invalid ticks/bars, and no missing capture days. These are counts/coverage metadata only. The cohort is not mature: minimum duration/support are unmet, and the verified XM server calendar, causal audit, frozen candidate, and complete pre-archive manifest chain are absent. No outcome, ranking, or candidate score was read.

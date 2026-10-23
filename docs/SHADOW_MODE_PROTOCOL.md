@@ -1,5 +1,7 @@
 # Shadow mode protocol — ready, disabled
 
+> Current operational checkpoint: [2026-10-22 continuation audit](CONTINUATION_AUDIT_20261022.md). It supersedes older operational snapshots: capture data healthy, XM runtime unavailable, cohort not mature; calendar/causal/drift gates remain unresolved. No scoring or orders.
+
 Status: **READY_BUT_DISABLED**. The no-order decision pipeline and narrow
 read-only MT5 adapter are implemented; it is not currently connected to MT5.
 `LIVE_TRADING=false`, `DEMO=DISABLED`. Shadow mode consumes read-only market
