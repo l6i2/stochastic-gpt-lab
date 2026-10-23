@@ -45,4 +45,4 @@ scripts/Watch-ClockAttestation.ps1 -text whitespace=blank-at-eol,blank-at-eof,sp
 configs/clock_sync_block_evidence_20261023/* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 python/finalize_clock_capture.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 
-configs/clock_sync_completed_evidence_20261023/* -text
+configs/clock_sync_completed_evidence_20261023/* -text whitespace=cr-at-eol
