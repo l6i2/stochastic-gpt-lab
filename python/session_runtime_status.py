@@ -1,8 +1,8 @@
 """Read-only quote availability diagnostic; never infer execution permission from ticks."""
 from __future__ import annotations
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 import json
-import math
+import hashlib
 from pathlib import Path
 import sys
 
@@ -10,8 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from runtime_session_guard import RuntimeSessionGuard, SessionObservation
-from temporal_causality import utc_milliseconds, validate_decision_times
-from quote_clock_audit import validate_quote_clock
+from native_time_mapping import NativeTimestamp, load_mapping, native_to_utc
 
 
 def read_session_runtime(*, environment_status=None, mt5_module=None, now_utc=None) -> dict:
@@ -21,6 +20,8 @@ def read_session_runtime(*, environment_status=None, mt5_module=None, now_utc=No
               "orders_sent": 0, "live_trading": False}
     result.update(decision_clock_source="LOCAL_UTC_UNATTESTED", clock_reference_status="UNVERIFIED",
                   quote_clock_basis="UNVERIFIED_NATIVE", timestamp_normalization="BLOCKED_PENDING_CLOCK_MAPPING")
+    result.update(native_mt5_time=None, normalized_utc=None, ecuador_time=None,
+                  new_york_time=None, xm_server_time=None)
     if environment_status is None:
         from controller.mt5_env import status
         environment_status = status
@@ -44,7 +45,8 @@ def read_session_runtime(*, environment_status=None, mt5_module=None, now_utc=No
         # Establish decision time after the reads, rather than before environment/IPC latency.
         if now_utc is None:
             now = datetime.now(timezone.utc)
-        result["decision_time_utc"] = now.isoformat()
+        result["system_utc_observed"] = now.isoformat()
+        result["decision_time_utc"] = None
         quote_time = now
         bid = ask = 0.0
         state = "UNKNOWN"
@@ -52,26 +54,28 @@ def read_session_runtime(*, environment_status=None, mt5_module=None, now_utc=No
             result["quote_market_state"] = "SYMBOL_UNAVAILABLE_OR_DISABLED"
             state = "CLOSED"
         elif tick is not None:
-            _, time_reason = validate_quote_clock(seconds=getattr(tick, 'time', None),
-                milliseconds=int(tick.time_msc), decision=now)
-            if time_reason == 'SECONDS_MILLISECONDS_MISMATCH':
+            seconds, milliseconds = getattr(tick, 'time', None), getattr(tick, 'time_msc', None)
+            if (type(seconds) is not int or type(milliseconds) is not int or seconds < 0
+                    or milliseconds < 0 or milliseconds // 1000 != seconds):
+                time_reason = 'SECONDS_MILLISECONDS_MISMATCH'
                 return {**result, "allowed": False, "reason": time_reason,
                         "quote_market_state": "INVALID_TIMESTAMP_UNITS"}
-            quote_time = datetime(1970, 1, 1, tzinfo=timezone.utc) + timedelta(milliseconds=int(tick.time_msc))
             bid, ask = float(tick.bid), float(tick.ask)
-            age = (now - quote_time).total_seconds()
-            result["quote_age_seconds"] = age
-            result["quote_time_utc"] = quote_time.isoformat()
-            result["quote_time_msc"] = int(tick.time_msc)
-            result["quote_temporal_reason"] = validate_decision_times(
-                feature_max_time_msc=utc_milliseconds(now), decision_time_msc=utc_milliseconds(now),
-                quote_time_msc=int(tick.time_msc))[1]
-            if not (math.isfinite(bid) and math.isfinite(ask) and 0 < bid <= ask and age >= 0):
-                result["quote_market_state"] = "INVALID_OR_FUTURE_QUOTE"
-            elif age > 5:
-                result["quote_market_state"] = "NO_FRESH_QUOTES"
-            else:
-                result["quote_market_state"] = "FRESH_QUOTES_OBSERVED"
+            raw = {'time': int(tick.time), 'time_msc': int(tick.time_msc), 'bid': bid, 'ask': ask}
+            result['native_mt5_time'] = raw
+            raw_sha = hashlib.sha256(json.dumps(raw, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+            result['captured_native_record_sha256'] = raw_sha
+            try:
+                mapping = load_mapping(ROOT / 'configs/native_time_mapping_v1.prepared.json')
+                normalized = native_to_utc(NativeTimestamp(int(tick.time), int(tick.time_msc),
+                    'US30Cash', account.server, raw_sha), mapping)
+            except ValueError as exc:
+                return {**result, 'allowed': False, 'reason': str(exc),
+                        'quote_market_state': 'NATIVE_TIME_UNMAPPED'}
+            result.update(normalized.views)
+            # A valid historical mapping does not attest the current decision clock.
+            return {**result, 'allowed': False, 'reason': 'CURRENT_AUTHORITATIVE_CLOCK_UNATTESTED',
+                    'quote_market_state': 'DECISION_CLOCK_UNVERIFIED'}
         result["execution_market_state"] = state
         observation = SessionObservation(now, quote_time, True, "DEMO", account.server, "US30Cash", bid, ask,
                                          holiday_status="UNKNOWN", broker_market_state=state)

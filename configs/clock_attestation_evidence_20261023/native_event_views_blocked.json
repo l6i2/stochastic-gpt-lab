@@ -1,0 +1,2702 @@
+[
+  {
+    "ecuador_time": null,
+    "frame": 0,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764964,
+      "last_market_watch_label": 1792972964
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 0,
+    "native_mt5_time": {
+      "time": 1792972962,
+      "time_msc": 1792972962089
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764964,
+      "last_market_watch_label": 1792972964
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 0,
+    "native_mt5_time": {
+      "time": 1792972960,
+      "time_msc": 1792972960115
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764964,
+      "last_market_watch_label": 1792972964
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 1,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764965,
+      "last_market_watch_label": 1792972964
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 1,
+    "native_mt5_time": {
+      "time": 1792972962,
+      "time_msc": 1792972962089
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764965,
+      "last_market_watch_label": 1792972964
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 1,
+    "native_mt5_time": {
+      "time": 1792972960,
+      "time_msc": 1792972960115
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764965,
+      "last_market_watch_label": 1792972964
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 2,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764966,
+      "last_market_watch_label": 1792972964
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 2,
+    "native_mt5_time": {
+      "time": 1792972962,
+      "time_msc": 1792972962089
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764966,
+      "last_market_watch_label": 1792972964
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 2,
+    "native_mt5_time": {
+      "time": 1792972960,
+      "time_msc": 1792972960115
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764966,
+      "last_market_watch_label": 1792972964
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 3,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764967,
+      "last_market_watch_label": 1792972966
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 3,
+    "native_mt5_time": {
+      "time": 1792972962,
+      "time_msc": 1792972962089
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764967,
+      "last_market_watch_label": 1792972966
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 3,
+    "native_mt5_time": {
+      "time": 1792972960,
+      "time_msc": 1792972960115
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764967,
+      "last_market_watch_label": 1792972966
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 4,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764968,
+      "last_market_watch_label": 1792972967
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 4,
+    "native_mt5_time": {
+      "time": 1792972967,
+      "time_msc": 1792972967988
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764968,
+      "last_market_watch_label": 1792972967
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 4,
+    "native_mt5_time": {
+      "time": 1792972960,
+      "time_msc": 1792972960115
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764968,
+      "last_market_watch_label": 1792972967
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 5,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764969,
+      "last_market_watch_label": 1792972967
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 5,
+    "native_mt5_time": {
+      "time": 1792972967,
+      "time_msc": 1792972967988
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764969,
+      "last_market_watch_label": 1792972967
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 5,
+    "native_mt5_time": {
+      "time": 1792972960,
+      "time_msc": 1792972960115
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764969,
+      "last_market_watch_label": 1792972967
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 6,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764970,
+      "last_market_watch_label": 1792972967
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 6,
+    "native_mt5_time": {
+      "time": 1792972967,
+      "time_msc": 1792972967988
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764970,
+      "last_market_watch_label": 1792972967
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 6,
+    "native_mt5_time": {
+      "time": 1792972960,
+      "time_msc": 1792972960115
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764970,
+      "last_market_watch_label": 1792972967
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 7,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764971,
+      "last_market_watch_label": 1792972970
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 7,
+    "native_mt5_time": {
+      "time": 1792972967,
+      "time_msc": 1792972967988
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764971,
+      "last_market_watch_label": 1792972970
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 7,
+    "native_mt5_time": {
+      "time": 1792972970,
+      "time_msc": 1792972970417
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764971,
+      "last_market_watch_label": 1792972970
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 8,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764972,
+      "last_market_watch_label": 1792972970
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 8,
+    "native_mt5_time": {
+      "time": 1792972967,
+      "time_msc": 1792972967988
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764972,
+      "last_market_watch_label": 1792972970
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 8,
+    "native_mt5_time": {
+      "time": 1792972970,
+      "time_msc": 1792972970417
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764972,
+      "last_market_watch_label": 1792972970
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 9,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764973,
+      "last_market_watch_label": 1792972970
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 9,
+    "native_mt5_time": {
+      "time": 1792972967,
+      "time_msc": 1792972967988
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764973,
+      "last_market_watch_label": 1792972970
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 9,
+    "native_mt5_time": {
+      "time": 1792972970,
+      "time_msc": 1792972970417
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764973,
+      "last_market_watch_label": 1792972970
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 10,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764974,
+      "last_market_watch_label": 1792972973
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 10,
+    "native_mt5_time": {
+      "time": 1792972973,
+      "time_msc": 1792972973386
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764974,
+      "last_market_watch_label": 1792972973
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 10,
+    "native_mt5_time": {
+      "time": 1792972970,
+      "time_msc": 1792972970417
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764974,
+      "last_market_watch_label": 1792972973
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 11,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764975,
+      "last_market_watch_label": 1792972975
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 11,
+    "native_mt5_time": {
+      "time": 1792972975,
+      "time_msc": 1792972975138
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764975,
+      "last_market_watch_label": 1792972975
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 11,
+    "native_mt5_time": {
+      "time": 1792972975,
+      "time_msc": 1792972975050
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764975,
+      "last_market_watch_label": 1792972975
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 12,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764976,
+      "last_market_watch_label": 1792972976
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 12,
+    "native_mt5_time": {
+      "time": 1792972975,
+      "time_msc": 1792972975638
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764976,
+      "last_market_watch_label": 1792972976
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 12,
+    "native_mt5_time": {
+      "time": 1792972975,
+      "time_msc": 1792972975930
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764976,
+      "last_market_watch_label": 1792972976
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 13,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764977,
+      "last_market_watch_label": 1792972976
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 13,
+    "native_mt5_time": {
+      "time": 1792972975,
+      "time_msc": 1792972975638
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764977,
+      "last_market_watch_label": 1792972976
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 13,
+    "native_mt5_time": {
+      "time": 1792972975,
+      "time_msc": 1792972975930
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764977,
+      "last_market_watch_label": 1792972976
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 14,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764978,
+      "last_market_watch_label": 1792972976
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 14,
+    "native_mt5_time": {
+      "time": 1792972975,
+      "time_msc": 1792972975638
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764978,
+      "last_market_watch_label": 1792972976
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 14,
+    "native_mt5_time": {
+      "time": 1792972975,
+      "time_msc": 1792972975930
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764978,
+      "last_market_watch_label": 1792972976
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 15,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764979,
+      "last_market_watch_label": 1792972979
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 15,
+    "native_mt5_time": {
+      "time": 1792972978,
+      "time_msc": 1792972978937
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764979,
+      "last_market_watch_label": 1792972979
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 15,
+    "native_mt5_time": {
+      "time": 1792972975,
+      "time_msc": 1792972975930
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764979,
+      "last_market_watch_label": 1792972979
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 16,
+    "native_mt5_time": {
+      "time": 1792972961,
+      "time_msc": 1792972961365
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764980,
+      "last_market_watch_label": 1792972980
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 16,
+    "native_mt5_time": {
+      "time": 1792972978,
+      "time_msc": 1792972978937
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764980,
+      "last_market_watch_label": 1792972980
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 16,
+    "native_mt5_time": {
+      "time": 1792972975,
+      "time_msc": 1792972975930
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764980,
+      "last_market_watch_label": 1792972980
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 17,
+    "native_mt5_time": {
+      "time": 1792972981,
+      "time_msc": 1792972981048
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764981,
+      "last_market_watch_label": 1792972981
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 17,
+    "native_mt5_time": {
+      "time": 1792972978,
+      "time_msc": 1792972978937
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764981,
+      "last_market_watch_label": 1792972981
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 17,
+    "native_mt5_time": {
+      "time": 1792972975,
+      "time_msc": 1792972975930
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764981,
+      "last_market_watch_label": 1792972981
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 18,
+    "native_mt5_time": {
+      "time": 1792972981,
+      "time_msc": 1792972981048
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764982,
+      "last_market_watch_label": 1792972982
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 18,
+    "native_mt5_time": {
+      "time": 1792972978,
+      "time_msc": 1792972978937
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764982,
+      "last_market_watch_label": 1792972982
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 18,
+    "native_mt5_time": {
+      "time": 1792972982,
+      "time_msc": 1792972982040
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764982,
+      "last_market_watch_label": 1792972982
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 19,
+    "native_mt5_time": {
+      "time": 1792972982,
+      "time_msc": 1792972982444
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764983,
+      "last_market_watch_label": 1792972982
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 19,
+    "native_mt5_time": {
+      "time": 1792972978,
+      "time_msc": 1792972978937
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764983,
+      "last_market_watch_label": 1792972982
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 19,
+    "native_mt5_time": {
+      "time": 1792972982,
+      "time_msc": 1792972982040
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764983,
+      "last_market_watch_label": 1792972982
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 20,
+    "native_mt5_time": {
+      "time": 1792972982,
+      "time_msc": 1792972982444
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764984,
+      "last_market_watch_label": 1792972984
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 20,
+    "native_mt5_time": {
+      "time": 1792972978,
+      "time_msc": 1792972978937
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764984,
+      "last_market_watch_label": 1792972984
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 20,
+    "native_mt5_time": {
+      "time": 1792972983,
+      "time_msc": 1792972983790
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764984,
+      "last_market_watch_label": 1792972984
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 21,
+    "native_mt5_time": {
+      "time": 1792972982,
+      "time_msc": 1792972982444
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764985,
+      "last_market_watch_label": 1792972985
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 21,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985038
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764985,
+      "last_market_watch_label": 1792972985
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 21,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985004
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764985,
+      "last_market_watch_label": 1792972985
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 22,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985619
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764986,
+      "last_market_watch_label": 1792972985
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 22,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985493
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764986,
+      "last_market_watch_label": 1792972985
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 22,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985695
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764986,
+      "last_market_watch_label": 1792972985
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 23,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985619
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764987,
+      "last_market_watch_label": 1792972986
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 23,
+    "native_mt5_time": {
+      "time": 1792972986,
+      "time_msc": 1792972986445
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764987,
+      "last_market_watch_label": 1792972986
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 23,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985695
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764987,
+      "last_market_watch_label": 1792972986
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 24,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985619
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764988,
+      "last_market_watch_label": 1792972987
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 24,
+    "native_mt5_time": {
+      "time": 1792972986,
+      "time_msc": 1792972986445
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764988,
+      "last_market_watch_label": 1792972987
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 24,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985695
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764988,
+      "last_market_watch_label": 1792972987
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 25,
+    "native_mt5_time": {
+      "time": 1792972989,
+      "time_msc": 1792972989228
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764989,
+      "last_market_watch_label": 1792972989
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 25,
+    "native_mt5_time": {
+      "time": 1792972986,
+      "time_msc": 1792972986445
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764989,
+      "last_market_watch_label": 1792972989
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 25,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985695
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764989,
+      "last_market_watch_label": 1792972989
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 26,
+    "native_mt5_time": {
+      "time": 1792972990,
+      "time_msc": 1792972990127
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764990,
+      "last_market_watch_label": 1792972990
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 26,
+    "native_mt5_time": {
+      "time": 1792972986,
+      "time_msc": 1792972986445
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764990,
+      "last_market_watch_label": 1792972990
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 26,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985695
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764990,
+      "last_market_watch_label": 1792972990
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 27,
+    "native_mt5_time": {
+      "time": 1792972990,
+      "time_msc": 1792972990439
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764991,
+      "last_market_watch_label": 1792972990
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 27,
+    "native_mt5_time": {
+      "time": 1792972986,
+      "time_msc": 1792972986445
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764991,
+      "last_market_watch_label": 1792972990
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 27,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985695
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764991,
+      "last_market_watch_label": 1792972990
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 28,
+    "native_mt5_time": {
+      "time": 1792972990,
+      "time_msc": 1792972990439
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764992,
+      "last_market_watch_label": 1792972990
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 28,
+    "native_mt5_time": {
+      "time": 1792972986,
+      "time_msc": 1792972986445
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764992,
+      "last_market_watch_label": 1792972990
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 28,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985695
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764992,
+      "last_market_watch_label": 1792972990
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 29,
+    "native_mt5_time": {
+      "time": 1792972992,
+      "time_msc": 1792972992461
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764993,
+      "last_market_watch_label": 1792972992
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 29,
+    "native_mt5_time": {
+      "time": 1792972986,
+      "time_msc": 1792972986445
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764993,
+      "last_market_watch_label": 1792972992
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 29,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985695
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764993,
+      "last_market_watch_label": 1792972992
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 30,
+    "native_mt5_time": {
+      "time": 1792972994,
+      "time_msc": 1792972994252
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764994,
+      "last_market_watch_label": 1792972994
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 30,
+    "native_mt5_time": {
+      "time": 1792972986,
+      "time_msc": 1792972986445
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764994,
+      "last_market_watch_label": 1792972994
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 30,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985695
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764994,
+      "last_market_watch_label": 1792972994
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 31,
+    "native_mt5_time": {
+      "time": 1792972994,
+      "time_msc": 1792972994941
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764995,
+      "last_market_watch_label": 1792972994
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 31,
+    "native_mt5_time": {
+      "time": 1792972986,
+      "time_msc": 1792972986445
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764995,
+      "last_market_watch_label": 1792972994
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 31,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985695
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764995,
+      "last_market_watch_label": 1792972994
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 32,
+    "native_mt5_time": {
+      "time": 1792972994,
+      "time_msc": 1792972994941
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764996,
+      "last_market_watch_label": 1792972996
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 32,
+    "native_mt5_time": {
+      "time": 1792972996,
+      "time_msc": 1792972996287
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764996,
+      "last_market_watch_label": 1792972996
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 32,
+    "native_mt5_time": {
+      "time": 1792972985,
+      "time_msc": 1792972985695
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764996,
+      "last_market_watch_label": 1792972996
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 33,
+    "native_mt5_time": {
+      "time": 1792972994,
+      "time_msc": 1792972994941
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764997,
+      "last_market_watch_label": 1792972997
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 33,
+    "native_mt5_time": {
+      "time": 1792972997,
+      "time_msc": 1792972997288
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764997,
+      "last_market_watch_label": 1792972997
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 33,
+    "native_mt5_time": {
+      "time": 1792972997,
+      "time_msc": 1792972997073
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764997,
+      "last_market_watch_label": 1792972997
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 34,
+    "native_mt5_time": {
+      "time": 1792972998,
+      "time_msc": 1792972998192
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764998,
+      "last_market_watch_label": 1792972998
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 34,
+    "native_mt5_time": {
+      "time": 1792972997,
+      "time_msc": 1792972997288
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764998,
+      "last_market_watch_label": 1792972998
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 34,
+    "native_mt5_time": {
+      "time": 1792972997,
+      "time_msc": 1792972997073
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764998,
+      "last_market_watch_label": 1792972998
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 35,
+    "native_mt5_time": {
+      "time": 1792972999,
+      "time_msc": 1792972999316
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764999,
+      "last_market_watch_label": 1792972999
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 35,
+    "native_mt5_time": {
+      "time": 1792972999,
+      "time_msc": 1792972999436
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764999,
+      "last_market_watch_label": 1792972999
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 35,
+    "native_mt5_time": {
+      "time": 1792972997,
+      "time_msc": 1792972997073
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792764999,
+      "last_market_watch_label": 1792972999
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 36,
+    "native_mt5_time": {
+      "time": 1792973000,
+      "time_msc": 1792973000192
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765000,
+      "last_market_watch_label": 1792973000
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 36,
+    "native_mt5_time": {
+      "time": 1792973000,
+      "time_msc": 1792973000191
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765000,
+      "last_market_watch_label": 1792973000
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 36,
+    "native_mt5_time": {
+      "time": 1792972997,
+      "time_msc": 1792972997073
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765000,
+      "last_market_watch_label": 1792973000
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 37,
+    "native_mt5_time": {
+      "time": 1792973000,
+      "time_msc": 1792973000192
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765001,
+      "last_market_watch_label": 1792973001
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 37,
+    "native_mt5_time": {
+      "time": 1792973000,
+      "time_msc": 1792973000191
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765001,
+      "last_market_watch_label": 1792973001
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 37,
+    "native_mt5_time": {
+      "time": 1792972997,
+      "time_msc": 1792972997073
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765001,
+      "last_market_watch_label": 1792973001
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 38,
+    "native_mt5_time": {
+      "time": 1792973000,
+      "time_msc": 1792973000192
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765002,
+      "last_market_watch_label": 1792973002
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 38,
+    "native_mt5_time": {
+      "time": 1792973002,
+      "time_msc": 1792973002636
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765002,
+      "last_market_watch_label": 1792973002
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 38,
+    "native_mt5_time": {
+      "time": 1792973002,
+      "time_msc": 1792973002506
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765002,
+      "last_market_watch_label": 1792973002
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 39,
+    "native_mt5_time": {
+      "time": 1792973003,
+      "time_msc": 1792973003450
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765004,
+      "last_market_watch_label": 1792973003
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 39,
+    "native_mt5_time": {
+      "time": 1792973003,
+      "time_msc": 1792973003039
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765004,
+      "last_market_watch_label": 1792973003
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 39,
+    "native_mt5_time": {
+      "time": 1792973002,
+      "time_msc": 1792973002506
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765004,
+      "last_market_watch_label": 1792973003
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 40,
+    "native_mt5_time": {
+      "time": 1792973004,
+      "time_msc": 1792973004528
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765005,
+      "last_market_watch_label": 1792973004
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 40,
+    "native_mt5_time": {
+      "time": 1792973003,
+      "time_msc": 1792973003039
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765005,
+      "last_market_watch_label": 1792973004
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 40,
+    "native_mt5_time": {
+      "time": 1792973002,
+      "time_msc": 1792973002506
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765005,
+      "last_market_watch_label": 1792973004
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 41,
+    "native_mt5_time": {
+      "time": 1792973005,
+      "time_msc": 1792973005479
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765006,
+      "last_market_watch_label": 1792973005
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 41,
+    "native_mt5_time": {
+      "time": 1792973004,
+      "time_msc": 1792973004938
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765006,
+      "last_market_watch_label": 1792973005
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 41,
+    "native_mt5_time": {
+      "time": 1792973002,
+      "time_msc": 1792973002506
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765006,
+      "last_market_watch_label": 1792973005
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 42,
+    "native_mt5_time": {
+      "time": 1792973006,
+      "time_msc": 1792973006663
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765007,
+      "last_market_watch_label": 1792973006
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 42,
+    "native_mt5_time": {
+      "time": 1792973006,
+      "time_msc": 1792973006814
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765007,
+      "last_market_watch_label": 1792973006
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 42,
+    "native_mt5_time": {
+      "time": 1792973006,
+      "time_msc": 1792973006790
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765007,
+      "last_market_watch_label": 1792973006
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 43,
+    "native_mt5_time": {
+      "time": 1792973007,
+      "time_msc": 1792973007533
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765008,
+      "last_market_watch_label": 1792973007
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 43,
+    "native_mt5_time": {
+      "time": 1792973007,
+      "time_msc": 1792973007539
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765008,
+      "last_market_watch_label": 1792973007
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 43,
+    "native_mt5_time": {
+      "time": 1792973006,
+      "time_msc": 1792973006984
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765008,
+      "last_market_watch_label": 1792973007
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 44,
+    "native_mt5_time": {
+      "time": 1792973008,
+      "time_msc": 1792973008081
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765009,
+      "last_market_watch_label": 1792973008
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 44,
+    "native_mt5_time": {
+      "time": 1792973007,
+      "time_msc": 1792973007539
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765009,
+      "last_market_watch_label": 1792973008
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 44,
+    "native_mt5_time": {
+      "time": 1792973006,
+      "time_msc": 1792973006984
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765009,
+      "last_market_watch_label": 1792973008
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 45,
+    "native_mt5_time": {
+      "time": 1792973009,
+      "time_msc": 1792973009918
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765010,
+      "last_market_watch_label": 1792973009
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 45,
+    "native_mt5_time": {
+      "time": 1792973007,
+      "time_msc": 1792973007539
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765010,
+      "last_market_watch_label": 1792973009
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 45,
+    "native_mt5_time": {
+      "time": 1792973006,
+      "time_msc": 1792973006984
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765010,
+      "last_market_watch_label": 1792973009
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 46,
+    "native_mt5_time": {
+      "time": 1792973010,
+      "time_msc": 1792973010817
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765011,
+      "last_market_watch_label": 1792973010
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 46,
+    "native_mt5_time": {
+      "time": 1792973007,
+      "time_msc": 1792973007539
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765011,
+      "last_market_watch_label": 1792973010
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 46,
+    "native_mt5_time": {
+      "time": 1792973010,
+      "time_msc": 1792973010738
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765011,
+      "last_market_watch_label": 1792973010
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 47,
+    "native_mt5_time": {
+      "time": 1792973011,
+      "time_msc": 1792973011274
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765012,
+      "last_market_watch_label": 1792973011
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 47,
+    "native_mt5_time": {
+      "time": 1792973010,
+      "time_msc": 1792973010987
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765012,
+      "last_market_watch_label": 1792973011
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 47,
+    "native_mt5_time": {
+      "time": 1792973010,
+      "time_msc": 1792973010962
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765012,
+      "last_market_watch_label": 1792973011
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 48,
+    "native_mt5_time": {
+      "time": 1792973012,
+      "time_msc": 1792973012492
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765013,
+      "last_market_watch_label": 1792973012
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 48,
+    "native_mt5_time": {
+      "time": 1792973010,
+      "time_msc": 1792973010987
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765013,
+      "last_market_watch_label": 1792973012
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 48,
+    "native_mt5_time": {
+      "time": 1792973010,
+      "time_msc": 1792973010962
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765013,
+      "last_market_watch_label": 1792973012
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 49,
+    "native_mt5_time": {
+      "time": 1792973012,
+      "time_msc": 1792973012974
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "US30Cash",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765014,
+      "last_market_watch_label": 1792973012
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 49,
+    "native_mt5_time": {
+      "time": 1792973010,
+      "time_msc": 1792973010987
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "EURUSD",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765014,
+      "last_market_watch_label": 1792973012
+    }
+  },
+  {
+    "ecuador_time": null,
+    "frame": 49,
+    "native_mt5_time": {
+      "time": 1792973010,
+      "time_msc": 1792973010962
+    },
+    "new_york_time": null,
+    "normalized_utc": null,
+    "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "source_raw_sha256": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "symbol": "USDCHF",
+    "xm_server_time": {
+      "basis": "UNVERIFIED_NATIVE_LABELS",
+      "client_estimate_label": 1792765014,
+      "last_market_watch_label": 1792973012
+    }
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "ecuador_time": "2026-01-15T07:00:00.000-05:00",
+    "ecuador_timezone": "America/Guayaquil",
+    "example_type": "synthetic UTC instant for zone tests; not broker evidence",
+    "new_york_abbreviation": "EST",
+    "new_york_fold": 0,
+    "new_york_time": "2026-01-15T07:00:00.000-05:00",
+    "new_york_timezone": "America/New_York",
+    "normalized_utc": "2026-01-15T12:00:00.000+00:00",
+    "tzdata_version": "2026.5"
+  },
+  {
+    "ecuador_time": "2026-07-15T07:00:00.000-05:00",
+    "ecuador_timezone": "America/Guayaquil",
+    "example_type": "synthetic UTC instant for zone tests; not broker evidence",
+    "new_york_abbreviation": "EDT",
+    "new_york_fold": 0,
+    "new_york_time": "2026-07-15T08:00:00.000-04:00",
+    "new_york_timezone": "America/New_York",
+    "normalized_utc": "2026-07-15T12:00:00.000+00:00",
+    "tzdata_version": "2026.5"
+  },
+  {
+    "ecuador_time": "2026-03-08T01:59:59.999-05:00",
+    "ecuador_timezone": "America/Guayaquil",
+    "example_type": "synthetic UTC instant for zone tests; not broker evidence",
+    "new_york_abbreviation": "EST",
+    "new_york_fold": 0,
+    "new_york_time": "2026-03-08T01:59:59.999-05:00",
+    "new_york_timezone": "America/New_York",
+    "normalized_utc": "2026-03-08T06:59:59.999+00:00",
+    "tzdata_version": "2026.5"
+  },
+  {
+    "ecuador_time": "2026-03-08T02:00:00.000-05:00",
+    "ecuador_timezone": "America/Guayaquil",
+    "example_type": "synthetic UTC instant for zone tests; not broker evidence",
+    "new_york_abbreviation": "EDT",
+    "new_york_fold": 0,
+    "new_york_time": "2026-03-08T03:00:00.000-04:00",
+    "new_york_timezone": "America/New_York",
+    "normalized_utc": "2026-03-08T07:00:00.000+00:00",
+    "tzdata_version": "2026.5"
+  },
+  {
+    "ecuador_time": "2026-11-01T00:59:59.999-05:00",
+    "ecuador_timezone": "America/Guayaquil",
+    "example_type": "synthetic UTC instant for zone tests; not broker evidence",
+    "new_york_abbreviation": "EDT",
+    "new_york_fold": 0,
+    "new_york_time": "2026-11-01T01:59:59.999-04:00",
+    "new_york_timezone": "America/New_York",
+    "normalized_utc": "2026-11-01T05:59:59.999+00:00",
+    "tzdata_version": "2026.5"
+  },
+  {
+    "ecuador_time": "2026-11-01T01:00:00.000-05:00",
+    "ecuador_timezone": "America/Guayaquil",
+    "example_type": "synthetic UTC instant for zone tests; not broker evidence",
+    "new_york_abbreviation": "EST",
+    "new_york_fold": 1,
+    "new_york_time": "2026-11-01T01:00:00.000-05:00",
+    "new_york_timezone": "America/New_York",
+    "normalized_utc": "2026-11-01T06:00:00.000+00:00",
+    "tzdata_version": "2026.5"
+  }
+]

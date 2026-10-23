@@ -1,0 +1,27 @@
+{
+  "allowed": false,
+  "captured_native_record_sha256": "b67df58270e6112b31fe824e47e828b1596beb630bf792b934f595d40e676593",
+  "clock_reference_status": "UNVERIFIED",
+  "decision_clock_source": "LOCAL_UTC_UNATTESTED",
+  "decision_time_utc": null,
+  "ecuador_time": null,
+  "execution_market_state": "UNKNOWN",
+  "holiday_status": "UNKNOWN",
+  "live_trading": false,
+  "native_mt5_time": {
+    "ask": 52344.14,
+    "bid": 52338.14,
+    "time": 1792973430,
+    "time_msc": 1792973430752
+  },
+  "new_york_time": null,
+  "normalized_utc": null,
+  "orders_sent": 0,
+  "quote_clock_basis": "UNVERIFIED_NATIVE",
+  "quote_market_state": "NATIVE_TIME_UNMAPPED",
+  "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+  "runtime_session_guard": "READY",
+  "system_utc_observed": "2026-10-23T12:23:51.112597+00:00",
+  "timestamp_normalization": "BLOCKED_PENDING_CLOCK_MAPPING",
+  "xm_server_time": null
+}

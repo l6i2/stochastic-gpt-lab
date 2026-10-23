@@ -1,5 +1,11 @@
 # Project status
 
+## Paired clock attestation - client case 2026-10-23
+
+[Clock attestation](CLOCK_ATTESTATION.md): 50 paired frames / 150 native readings, capture integrity PASS, native/Windows separation 0-125 ms. Host clock still differs from independent UTC quorum by about 207999.8 s. CLOCK_ATTESTATION FAIL; NATIVE_TO_UTC_MAPPING FAIL; no authorized segments. The unique converter preserves raw hashes, rejects ambiguity and double conversion, and exposes Ecuador/New York only from explicit UTC. ECUADOR_TIME_MAPPING PASS; NEW_YORK_TIME_MAPPING PASS; DST_HANDLING PASS for IANA views/ambiguity rejection, native DST evidence UNKNOWN. Runtime leaves normalized event/decision times null until independently attested. FUTURE_QUOTE_GUARD PASS with zero future tolerance. TEMPORAL_CAUSALITY FAIL under the stricter end-to-end evidence scope; CAUSAL_AUDIT FAIL. MAIN_K_PARITY PASS from existing exports; no script rerun or dataset rebuild. SESSION_CALENDAR PASS_WITH_RUNTIME_GUARD; DISCOVERY_VALIDATION BLOCKED; FINAL_TEST LOCKED; DEMO DISABLED; LIVE_TRADING=false. NEXT_STATE HARD_BLOCKER_CLOCK_ATTESTATION_AND_MAPPING.
+
+This supersedes earlier clock snapshots; all sealed earlier evidence remains unchanged.
+
 ## Clock provenance diagnosed - host date 2026-10-23
 
 [Timestamp/clock provenance audit](TIMESTAMP_CLOCK_PROVENANCE_AUDIT.md): primary cause A, local reference clock behind independent NTP + TLS UTC by about 207999.8 s (57 h 46 min 40 s). Retained US30Cash tick is past against independent UTC. Native clock export validated (24 rows, tester=0); FX raw labels track server time about UTC+2, mapping to UTC remains unverified. TimeCurrent follows Market Watch; TimeTradeServer depends on the bad client clock. No automatic time correction, quote offset, tolerance or dataset change. TIMESTAMP_NORMALIZATION FAIL; FUTURE_QUOTE_GUARD PASS; TEMPORAL_CAUSALITY PASS (invariants only); MAIN_K_PARITY PASS from existing exports. CAUSAL_AUDIT FAIL until trusted host clock and explicit native/UTC mapping are attested. SESSION_CALENDAR PASS_WITH_RUNTIME_GUARD; DISCOVERY_VALIDATION BLOCKED; FINAL_TEST LOCKED; DEMO DISABLED; LIVE_TRADING=false. NEXT_STATE HARD_BLOCKER_CLOCK_ATTESTATION_AND_MAPPING.

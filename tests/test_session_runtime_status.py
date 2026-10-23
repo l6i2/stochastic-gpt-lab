@@ -11,7 +11,7 @@ from session_runtime_status import read_session_runtime
 class SessionRuntimeStatusTests(unittest.TestCase):
     def test_read_only_runtime_never_treats_fresh_quotes_as_permission(self):
         now=datetime(2026,10,23,8,tzinfo=timezone.utc)
-        for mode,delta,expected in ((4,0,'FRESH_QUOTES_OBSERVED'),(4,60,'NO_FRESH_QUOTES'),(0,0,'SYMBOL_UNAVAILABLE_OR_DISABLED'),(4,-1,'INVALID_TIMESTAMP_UNITS')):
+        for mode,delta,expected in ((4,0,'NATIVE_TIME_UNMAPPED'),(4,60,'NATIVE_TIME_UNMAPPED'),(0,0,'SYMBOL_UNAVAILABLE_OR_DISABLED'),(4,-1,'INVALID_TIMESTAMP_UNITS')):
             with self.subTest(mode=mode,delta=delta):
                 class Fake:
                     initialize=lambda self,**kw: True
@@ -26,6 +26,9 @@ class SessionRuntimeStatusTests(unittest.TestCase):
                 self.assertEqual(result['quote_market_state'],expected)
                 self.assertEqual(result['orders_sent'],0)
                 self.assertEqual(result['clock_reference_status'],'UNVERIFIED')
+                self.assertIsNone(result['normalized_utc'])
+                self.assertIsNone(result['ecuador_time'])
+                self.assertIsNone(result['new_york_time'])
 
     def test_unverified_environment_does_not_attach(self):
         class Forbidden:

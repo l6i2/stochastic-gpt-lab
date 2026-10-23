@@ -1,0 +1,78 @@
+{
+  "change_reason": "Evidence-gated native->UTC converter and IANA reporting views; unverified labels/decision clocks remain null and blocked. No timestamp correction activated.",
+  "clock_provenance": {
+    "approved_mapping_segments": 0,
+    "automatic_clock_adjustment": false,
+    "automatic_tick_offset": false,
+    "decision_time_unattested_action": "REJECT",
+    "diagnostic_ntp_quorum_authorizes_execution": false,
+    "future_quote": "REJECT",
+    "host_clock": "UNTRUSTED",
+    "mapping_config_sha256": "5c612a1ec4cbdc618e34df02993f8544469ad1741614b94e34548632d5b5aa21",
+    "mapping_file": "configs/native_time_mapping_v1.prepared.json",
+    "mapping_status": "FAIL",
+    "native_utc_mapping": "UNVERIFIED",
+    "normalized_quote_time_unknown_action": "REJECT"
+  },
+  "code_hashes": {
+    "python/clock_attestation_audit.py": "bcd2b3e921aa79d959de77a7e7e68657359680447c05b67023976d6b30c9329a",
+    "python/clock_attestation_capture.py": "412073dd4bf4902c5808da7d7bb6c54ce4101d34629e0f2c7839ae9d7f69a600",
+    "python/demo_safety.py": "5b4241db69b5ab6bcd2475bd393637b5fe3838beb4845f68ea3460ba9141c3bb",
+    "python/independent_clock_reference.py": "fef692e9ccb372cd2bf35b9d197bddd2d591e1ca88f66554148d9d0196da03d8",
+    "python/native_time_mapping.py": "bdb2ab4601e130fc09beecde86dbdb6e0590cac57f328c8d68be0c14afa06549",
+    "python/quote_clock_audit.py": "16379e5544d78c1a245627677586295cbb9dba393933ca0ac86f5e231e707a5d",
+    "python/runtime_session_guard.py": "74610f090bb5ac09521256acb76c24eac2967fb73bf0dc4f743fc20a9c89de3d",
+    "python/session_runtime_status.py": "c77e5d1b318432b3de2c385cd82f75e052901b65d4eeb9e53dddc59ef8497384",
+    "python/shadow_mode.py": "fc94ca4a5a009ad33803186e2cad41b0056778a6da26fd04ceb92fb3a467d342",
+    "python/temporal_causality.py": "08c6beeab4fa24350fdfb13cb417b25c366b2dbf9748bb31ffabc2f074190a6d"
+  },
+  "cohort_calendar_verified": false,
+  "cohort_maturity_override": false,
+  "demo_enabled": false,
+  "dst_change_action": "BLOCK_AND_REQUIRE_RECONCILIATION",
+  "dst_rules": "PARTIAL",
+  "eu_expected_offset_at_capture_seconds": 10800,
+  "freshness_seconds": 5,
+  "holiday_exceptions": "UNKNOWN",
+  "holiday_policy": "UNKNOWN_REQUIRE_RUNTIME_GUARD",
+  "input_time_contract": {
+    "feature_max_time": "<= decision_time",
+    "future_quote_policy": "REJECT_NOT_TIMEZONE_SHIFT",
+    "maximum_quote_age_msc": 5000,
+    "quote_time": "<= decision_time",
+    "submillisecond_future": "REJECT"
+  },
+  "live_trading": false,
+  "maximum_snapshot_age_days": 7,
+  "observed_offset_seconds": 7200,
+  "reporting_timezones": {
+    "ecuador": "America/Guayaquil",
+    "new_york": "America/New_York",
+    "tzdata": "2026.5",
+    "unknown_normalized_utc": "null; no guessed human views"
+  },
+  "runtime_attestations_required": [
+    "verified current clock",
+    "reconciled active-server date/session",
+    "independent holiday/normal-day evidence",
+    "independent broker-open evidence",
+    "fresh valid quotes"
+  ],
+  "runtime_guard": "READY",
+  "schema_version": "xm-session-runtime-policy/4.0",
+  "scope": "operational fail-closed containment only; not historical maturity-calendar acceptance",
+  "server": "XMGlobal-MT5 10",
+  "session_evidence_sha256": "835ff42202c9ae9308e9431db6bb79e980b7285c9f12cab802ba28e656cf15f3",
+  "shadow_enabled": false,
+  "sources": [
+    "https://www.xm.com/se/help-center/trading-platforms/faq-can-i-change-the-time-zone-on-my-trading-terminal",
+    "https://www.xm.com/equity-indices",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=oj%3AJOC_2021_149_R",
+    "https://www.mql5.com/en/docs/dateandtime/timetradeserver",
+    "https://www.mql5.com/en/docs/dateandtime/timegmt",
+    "https://www.mql5.com/en/docs/marketinformation/symbolinfosessiontrade"
+  ],
+  "status": "PASS_WITH_RUNTIME_GUARD",
+  "supersedes": "xm_runtime_session_policy_v3.json",
+  "symbol": "US30Cash"
+}

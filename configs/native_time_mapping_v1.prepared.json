@@ -1,0 +1,19 @@
+{
+  "candidate_offset_authorized": false,
+  "candidate_offset_seconds": 7200,
+  "evidence_file": "clock_attestation_evidence_20261023/audit.json",
+  "evidence_sha256": "2c5d63fdea6fce7ff097ad7e83fd003ded513e9313942bc6a162df8bc0f22370",
+  "future_tolerance_milliseconds": 0,
+  "live_trading": false,
+  "mapping_id": "xm-native-utc-v1-prepared",
+  "reason": "50-frame attestation and independent native/UTC mapping required; host clock untrusted; no automatic subtraction",
+  "schema_version": "native-clock-mapping/1.0",
+  "segments": [],
+  "server": "XMGlobal-MT5 10",
+  "status": "FAIL",
+  "symbols": [
+    "US30Cash",
+    "EURUSD",
+    "USDCHF"
+  ]
+}
