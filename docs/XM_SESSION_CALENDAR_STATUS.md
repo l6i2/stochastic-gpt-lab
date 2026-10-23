@@ -1,5 +1,7 @@
 # XM `US30Cash` session calendar status
 
+> Latest operational check: [XM reopened — 2026-10-23](XM_REOPEN_CHECK_20261023.md). XM is connected in DEMO, US30Cash is available, and collector runtime is READY. Session-probe execution and calendar evidence remain pending; no scoring or orders.
+
 **Calendar status: UNVERIFIED; maturity fails closed.**
 
 XM's official help page says MT4/MT5 server clocks are GMT+2 in winter and

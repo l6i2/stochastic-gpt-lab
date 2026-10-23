@@ -1,5 +1,7 @@
 # Shadow mode protocol — ready, disabled
 
+> Latest operational check: [XM reopened — 2026-10-23](XM_REOPEN_CHECK_20261023.md). XM is connected in DEMO, US30Cash is available, and collector runtime is READY. Session-probe execution and calendar evidence remain pending; no scoring or orders.
+
 > Current operational checkpoint: [2026-10-22 continuation audit](CONTINUATION_AUDIT_20261022.md). It supersedes older operational snapshots: capture data healthy, XM runtime unavailable, cohort not mature; calendar/causal/drift gates remain unresolved. No scoring or orders.
 
 Status: **READY_BUT_DISABLED**. The no-order decision pipeline and narrow
