@@ -20,3 +20,5 @@ configs/main_k_timestamp_audit_20261023.json -text whitespace=blank-at-eol,blank
 configs/main_k_documentation_erratum_20261023.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 configs/xm_runtime_session_policy_v2.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 configs/future_cohort_metadata_spec_v2.prepared.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+configs/main_k_native_evidence_20261023/* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

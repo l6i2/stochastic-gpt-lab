@@ -1,0 +1,62 @@
+{
+  "absolute_tolerance": 1e-10,
+  "artifacts_sha256": {
+    "pk_41a2e93f_clock.json": "99e28559c4a33c9c370a157b974367adf2102bbaff3393c5c740ad956820b766",
+    "pk_41a2e93f_native.csv": "b6ea2c5f52edb7d5dc40ec79b8ef045557362f9b395edc3a03c76e41ecae927e",
+    "pk_41a2e93f_result.json": "94eeb36bf392e1c11548ec130453a33a49891db34c9ab5096973666078a4a504"
+  },
+  "causal_audit": "FAIL",
+  "clock": {
+    "daylight_savings_seconds": -3600,
+    "gmt_offset_seconds": 18000,
+    "orders_sent": 0,
+    "quote_ok": true,
+    "quote_time": 1792799997,
+    "quote_time_msc": 1792799997469,
+    "run_id": "pk_41a2e93f",
+    "time_current": 1792799997,
+    "time_gmt": 1792753785,
+    "time_local": 1792735785,
+    "time_trade_server": 1792760985
+  },
+  "hard_blocker": "FUTURE_NATIVE_QUOTE_PROVENANCE_UNRESOLVED",
+  "harness_sha256": "5d8e5b06d8eaae90e6e7a9ba6e7a931f07a540b8e9b10a3cccd47ba934ae2075",
+  "historical_dataset_rebuilt": false,
+  "max_reference_error": 1.4210854715202004e-14,
+  "native_output_sha256": "b6ea2c5f52edb7d5dc40ec79b8ef045557362f9b395edc3a03c76e41ecae927e",
+  "next_state": "HARD_BLOCKER_FUTURE_NATIVE_QUOTE",
+  "old_metadata_non_equivalence_confirmed": true,
+  "orders_sent": 0,
+  "production_source_sha256": "f2e9bf43cbbdc716148847fe53e1f3dd14b21393775ccc809d05cb5e134cb88d",
+  "protections": {
+    "DEMO": "DISABLED",
+    "DISCOVERY_VALIDATION": "BLOCKED",
+    "FINAL_TEST": "LOCKED",
+    "LIVE_TRADING": false
+  },
+  "quote_minus_gmt_milliseconds": 46212469,
+  "raw_clock_fields_rendered_as_epoch_not_timezone_conversion": {
+    "quote_time": "2026-10-23T23:59:57+00:00",
+    "time_current": "2026-10-23T23:59:57+00:00",
+    "time_gmt": "2026-10-23T11:09:45+00:00",
+    "time_local": "2026-10-23T06:09:45+00:00",
+    "time_trade_server": "2026-10-23T13:09:45+00:00"
+  },
+  "ready_rows": 930,
+  "rows": 960,
+  "run_id": "pk_41a2e93f",
+  "server_minus_gmt_seconds": 7200,
+  "status": "PASS",
+  "terminal_build": 6257,
+  "timestamp_root_cause": "Native latest-quote state and TimeCurrent share future timestamp; server wall-clock offset +7200s does not explain anomaly. Upstream cache/feed provenance remains unverified.",
+  "verification": {
+    "compileall": "PASS",
+    "diff_check": "PASS",
+    "logic_changed_since_full_suite": false,
+    "native_parity": "PASS",
+    "previous_full_suite_skipped": 9,
+    "previous_full_suite_total": 198,
+    "targeted_tests_passed": 19
+  },
+  "warmup_rows": 30
+}

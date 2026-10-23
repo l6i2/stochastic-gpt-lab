@@ -1,5 +1,11 @@
 # Intra-trade research status
 
+## Native parity execution validated — 2026-10-23
+
+Native execution pk_41a2e93f is now validated: MAIN_K_PARITY PASS, 960 closed-bar rows (930 ready, 30 warmup), five fixtures; maximum independent reference error 1.4210854715202004e-14 at fixed tolerance 1e-10. Historical impact NONE. Native clocks confirm TimeCurrent=quote_time=1792799997, TimeGMT=1792753785, TimeTradeServer=1792760985 (+7200s). The quote is 46,212,469 ms ahead of capture GMT; this is not explained by server/local timezone or units. Feed/cache provenance remains unverified; quote rejection stays fail-closed. TEMPORAL_CAUSALITY PASS; CAUSAL_AUDIT FAIL. SESSION_CALENDAR PASS_WITH_RUNTIME_GUARD; DISCOVERY_VALIDATION BLOCKED; FINAL_TEST LOCKED; DEMO DISABLED; LIVE_TRADING=false. NEXT_STATE HARD_BLOCKER_FUTURE_NATIVE_QUOTE. Evidence: [native validation](../configs/main_k_native_evidence_20261023/validated_audit.json). No dataset, strategy, sealed metadata or earlier evidence was overwritten.
+
+This checkpoint supersedes the pending-export checkpoint below.
+
 ## Latest MAIN_K / temporal audit — 2026-10-23
 
 [Authoritative audit](MAIN_K_NATIVE_PARITY_AND_TIME_AUDIT.md): frozen production still uses native iStochastic 5/3/3 SMA Low/High MAIN_K, shift 1. All 128 native historical values in the 64-event TRAIN sample match the ratio-of-sums reference (max error 2.84e-14); historical impact NONE, no rebuild. Auxiliary metadata/legacy indicator fixture use an incompatible arithmetic Fast-K mean. Native five-fixture harness compiled 0 errors/0 warnings and deployed as `ResearchDiagnostics/pk_41a2e93f/MainKNativeParity`, but execution/clock exports are still absent. MAIN_K_PARITY FAIL (not yet evidenced); CAUSAL_AUDIT FAIL. Temporal invariants PASS; a future-dated native latest quote is quarantined, backend clock/cache origin pending MQL capture. Full suite 198 tests, 9 native skips. SESSION_CALENDAR PASS_WITH_RUNTIME_GUARD; Validation BLOCKED; FINAL_TEST LOCKED; DEMO DISABLED; LIVE_TRADING=false. NEXT_STATE HARD_BLOCKER_NATIVE_PARITY_AND_CLOCK_EXPORT_PENDING.
