@@ -37,3 +37,5 @@ configs/native_time_mapping_v1.prepared.json -text whitespace=blank-at-eol,blank
 configs/xm_runtime_session_policy_v4.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 configs/clock_attestation_evidence_20261023/* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 requirements.txt -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/mql5/ClockAttestationProbeV2.mq5 -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/clock_probe_a2_build.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

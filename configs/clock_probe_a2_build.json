@@ -1,0 +1,30 @@
+{
+  "authoritative_clock": "PENDING",
+  "broker_dst": "PARTIAL",
+  "causal_audit": "FAIL",
+  "clock_probe": "NEEDS_MANUAL_RUN",
+  "compile_errors": 0,
+  "compile_log_sha256": "f6050cf58839ef23de3bf35f86d033b96728e4f109f38d7635221387d835274a",
+  "compile_warnings": 0,
+  "demo": "DISABLED",
+  "ex5_sha256": "077f43ebf61cfe1ccfe9c034ba9cb3985dde0b88989dac82b707851326b6d9d9",
+  "final_test": "LOCKED",
+  "frames": 50,
+  "live_trading": false,
+  "native_to_utc_mapping": "PENDING",
+  "navigator_path": "Navigator -> Scripts -> ResearchDiagnostics -> attest_20261023_a2 -> ClockAttestationProbeV2",
+  "orders_sent": 0,
+  "output_files": [
+    "attest_20261023_a2_native.csv",
+    "attest_20261023_a2_markers.txt"
+  ],
+  "previous_probe_and_evidence_modified": false,
+  "records": 150,
+  "script_name": "ClockAttestationProbeV2",
+  "source_sha256": "e63202fc1fd637242b91295660a7cc634c955d87ab1e34bf81a86fa6c9de50cd",
+  "symbols": [
+    "US30Cash",
+    "EURUSD",
+    "USDCHF"
+  ]
+}
