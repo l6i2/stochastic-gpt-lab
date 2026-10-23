@@ -1,5 +1,7 @@
 # DEMO executor design — full mock safety path, disabled
 
+> Latest evidence: [session probe captured — 2026-10-23](XM_SESSION_CAPTURE_20261023.md). Probe execution is complete and hash-pinned. Current snapshot shows UTC+02:00 with weekday-dependent sessions; DST/holiday reconciliation is still pending. Calendar remains unverified; no scoring or orders.
+
 > Latest operational check: [XM reopened — 2026-10-23](XM_REOPEN_CHECK_20261023.md). XM is connected in DEMO, US30Cash is available, and collector runtime is READY. Session-probe execution and calendar evidence remain pending; no scoring or orders.
 
 > Current operational checkpoint: [2026-10-22 continuation audit](CONTINUATION_AUDIT_20261022.md). It supersedes older operational snapshots: capture data healthy, XM runtime unavailable, cohort not mature; calendar/causal/drift gates remain unresolved. No scoring or orders.

@@ -1,5 +1,7 @@
 # XM `US30Cash` session calendar status
 
+> Latest evidence: [session probe captured — 2026-10-23](XM_SESSION_CAPTURE_20261023.md). Probe execution is complete and hash-pinned. Current snapshot shows UTC+02:00 with weekday-dependent sessions; DST/holiday reconciliation is still pending. Calendar remains unverified; no scoring or orders.
+
 > Latest operational check: [XM reopened — 2026-10-23](XM_REOPEN_CHECK_20261023.md). XM is connected in DEMO, US30Cash is available, and collector runtime is READY. Session-probe execution and calendar evidence remain pending; no scoring or orders.
 
 **Calendar status: UNVERIFIED; maturity fails closed.**

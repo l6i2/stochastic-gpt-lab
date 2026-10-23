@@ -1,0 +1,32 @@
+{
+  "complete_blocks_captured": 10,
+  "dst_transition_rule_verified": false,
+  "holiday_exceptions_verified": false,
+  "labels_read": false,
+  "orders_sent": 0,
+  "pnl_read": false,
+  "probe_source_sha256": "ba10164dcde167e8f9d3c027a97a7f1fdcce25273d74d801332dc798d3fafde0",
+  "records": [
+    "XM_SESSION_PROBE|START|symbol=US30Cash|symbol_selected=YES|server=XMGlobal-MT5 10",
+    "XM_SESSION_PROBE|CLOCK|server_time=2026.10.23 08:48:20|utc_time=2026.10.23 06:48:20|offset_seconds=7200",
+    "XM_SESSION_PROBE|QUOTE|day=MONDAY|index=0|from=00:00|to=23:00",
+    "XM_SESSION_PROBE|TRADE|day=MONDAY|index=0|from=00:05|to=22:55",
+    "XM_SESSION_PROBE|QUOTE|day=TUESDAY|index=0|from=00:00|to=23:00",
+    "XM_SESSION_PROBE|TRADE|day=TUESDAY|index=0|from=00:05|to=22:55",
+    "XM_SESSION_PROBE|QUOTE|day=WEDNESDAY|index=0|from=00:00|to=23:00",
+    "XM_SESSION_PROBE|TRADE|day=WEDNESDAY|index=0|from=00:05|to=22:55",
+    "XM_SESSION_PROBE|QUOTE|day=THURSDAY|index=0|from=01:00|to=00:00",
+    "XM_SESSION_PROBE|TRADE|day=THURSDAY|index=0|from=01:05|to=23:55",
+    "XM_SESSION_PROBE|QUOTE|day=FRIDAY|index=0|from=01:00|to=00:00",
+    "XM_SESSION_PROBE|TRADE|day=FRIDAY|index=0|from=01:05|to=23:50",
+    "XM_SESSION_PROBE|END"
+  ],
+  "schema_version": "xm-session-probe-evidence/1.0",
+  "server": "XMGlobal-MT5 10",
+  "source_log_basename": "20261023.log",
+  "source_log_sha256_at_capture": "6ef446174750353bc7ef42cd753cb28d609955f3a59477d9c5cd079dd7ba4c45",
+  "status": "WEEKLY_SNAPSHOT_CAPTURED_CALENDAR_UNVERIFIED",
+  "symbol": "US30Cash",
+  "utc_calendar_generated": false,
+  "verified": false
+}
