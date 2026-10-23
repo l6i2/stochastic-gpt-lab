@@ -1,0 +1,53 @@
+[
+  {
+    "host": "time.windows.com",
+    "local_before": "2026-10-23T11:44:42.446393+00:00",
+    "local_after": "2026-10-23T11:44:42.589397+00:00",
+    "monotonic_rtt_seconds": 0.14100000000325963,
+    "ntp_transmit_utc": "2026-10-25T21:31:22.331662+00:00",
+    "stratum": 4,
+    "leap": 0,
+    "mode": 4
+  },
+  {
+    "host": "time.cloudflare.com",
+    "local_before": "2026-10-23T11:44:42.589397+00:00",
+    "local_after": "2026-10-23T11:44:42.616396+00:00",
+    "monotonic_rtt_seconds": 0.030999999999039574,
+    "ntp_transmit_utc": "2026-10-25T21:31:22.409744+00:00",
+    "stratum": 3,
+    "leap": 0,
+    "mode": 4
+  },
+  {
+    "host": "time.google.com",
+    "local_before": "2026-10-23T11:44:42.616396+00:00",
+    "local_after": "2026-10-23T11:44:42.710393+00:00",
+    "monotonic_rtt_seconds": 0.09400000000096043,
+    "ntp_transmit_utc": "2026-10-25T21:31:22.455715+00:00",
+    "stratum": 1,
+    "leap": 0,
+    "mode": 4
+  },
+  {
+    "url": "https://www.microsoft.com/?clockaudit=20261023a",
+    "local_before": "2026-10-23T11:44:42.710393+00:00",
+    "local_after": "2026-10-23T11:44:43.245395+00:00",
+    "date": "Sun, 25 Oct 2026 21:31:23 GMT",
+    "age": null
+  },
+  {
+    "url": "https://www.google.com/generate_204?clockaudit=20261023a",
+    "local_before": "2026-10-23T11:44:43.253393+00:00",
+    "local_after": "2026-10-23T11:44:43.540401+00:00",
+    "date": "Sun, 25 Oct 2026 21:31:23 GMT",
+    "age": null
+  },
+  {
+    "url": "https://www.bing.com/?clockaudit=20261023a",
+    "local_before": "2026-10-23T11:44:43.545394+00:00",
+    "local_after": "2026-10-23T11:44:44.056394+00:00",
+    "date": "Sun, 25 Oct 2026 21:31:23 GMT",
+    "age": null
+  }
+]

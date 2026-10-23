@@ -1,0 +1,20 @@
+{
+  "allowed": false,
+  "clock_reference_status": "UNVERIFIED",
+  "decision_clock_source": "LOCAL_UTC_UNATTESTED",
+  "decision_time_utc": "2026-10-23T11:54:21.470061+00:00",
+  "evidence_sha256": "835ff42202c9ae9308e9431db6bb79e980b7285c9f12cab802ba28e656cf15f3",
+  "execution_market_state": "UNKNOWN",
+  "holiday_status": "UNKNOWN",
+  "live_trading": false,
+  "orders_sent": 0,
+  "quote_age_seconds": -43535.998939,
+  "quote_clock_basis": "UNVERIFIED_NATIVE",
+  "quote_market_state": "INVALID_OR_FUTURE_QUOTE",
+  "quote_temporal_reason": "FUTURE_QUOTE",
+  "quote_time_msc": 1792799997469,
+  "quote_time_utc": "2026-10-23T23:59:57.469000+00:00",
+  "reason": "CLOCK_OR_CALENDAR_AMBIGUOUS",
+  "runtime_session_guard": "READY",
+  "timestamp_normalization": "BLOCKED_PENDING_CLOCK_MAPPING"
+}

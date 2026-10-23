@@ -1,0 +1,368 @@
+{
+  "clock_changed": false,
+  "fixture": false,
+  "independent_reference": {
+    "anchor_monotonic_ns": 27898171000000,
+    "clock_changed": false,
+    "comparison": {
+      "authority_scope": "diagnostic only; unauthenticated NTP",
+      "local_clock_within_network_interval": false,
+      "local_lag_lower_ns": 207999795587146,
+      "local_lag_upper_ns": 207999811587146,
+      "status": "REFERENCE_QUORUM",
+      "utc_lower_ns": 1792964071231509646,
+      "utc_upper_ns": 1792964071247509646
+    },
+    "errors": [],
+    "local_utc": "2026-10-23T11:47:51.435922+00:00",
+    "local_utc_ns": 1792756071435922500,
+    "orders_sent": 0,
+    "samples": [
+      {
+        "host": "time.windows.com",
+        "nonce_echo_verified": true,
+        "received_monotonic_ns": 27898062000000,
+        "rtt_ns": 109000000,
+        "server_transmit_ns": 1792964071078518499,
+        "server_transmit_utc": "2026-10-25T21:34:31.078519+00:00",
+        "stratum": 4
+      },
+      {
+        "host": "time.cloudflare.com",
+        "nonce_echo_verified": true,
+        "received_monotonic_ns": 27898078000000,
+        "rtt_ns": 16000000,
+        "server_transmit_ns": 1792964071138509646,
+        "server_transmit_utc": "2026-10-25T21:34:31.138510+00:00",
+        "stratum": 3
+      },
+      {
+        "host": "time.google.com",
+        "nonce_echo_verified": true,
+        "received_monotonic_ns": 27898171000000,
+        "rtt_ns": 93000000,
+        "server_transmit_ns": 1792964071178496475,
+        "server_transmit_utc": "2026-10-25T21:34:31.178497+00:00",
+        "stratum": 1
+      }
+    ],
+    "tls_corroborated": true,
+    "tls_corroboration": [
+      {
+        "age": null,
+        "agrees_with_ntp_interval": true,
+        "date": "Sun, 25 Oct 2026 21:34:35 GMT",
+        "url": "https://www.microsoft.com/"
+      },
+      {
+        "age": null,
+        "agrees_with_ntp_interval": true,
+        "date": "Sun, 25 Oct 2026 21:34:35 GMT",
+        "url": "https://www.google.com/generate_204"
+      },
+      {
+        "age": null,
+        "agrees_with_ntp_interval": true,
+        "date": "Sun, 25 Oct 2026 21:34:36 GMT",
+        "url": "https://www.bing.com/"
+      }
+    ]
+  },
+  "market_open": "UNKNOWN; ticks alone do not attest open market",
+  "native_clock_fields": "not exposed by Python API; use paired MQL export",
+  "orders_sent": 0,
+  "package_version": "5.0.5572",
+  "samples": [
+    {
+      "api": "symbol_info_tick",
+      "future_delta_msc": 43928944,
+      "guard": "FUTURE_QUOTE",
+      "history_api": "copy_ticks_range",
+      "history_first": {
+        "ask": 52676.0,
+        "bid": 52670.0,
+        "flags": 1254,
+        "last": 0.0,
+        "time": 1792756065,
+        "time_msc": 1792756065375,
+        "volume": 0,
+        "volume_real": 0.0
+      },
+      "history_last": {
+        "ask": 52675.5,
+        "bid": 52669.5,
+        "flags": 1254,
+        "last": 0.0,
+        "time": 1792756067,
+        "time_msc": 1792756067163,
+        "volume": 0,
+        "volume_real": 0.0
+      },
+      "history_query_end_utc": "2026-10-23T11:47:48.525920+00:00",
+      "history_query_start_utc": "2026-10-23T11:47:45.525920+00:00",
+      "history_rows": 6,
+      "index": 0,
+      "monotonic_latency_ns": 0,
+      "read_after_utc": "2026-10-23T11:47:48.525920+00:00",
+      "read_before_utc": "2026-10-23T11:47:48.525920+00:00",
+      "symbol": "US30Cash",
+      "tick": {
+        "ask": 52277.09,
+        "bid": 52271.09,
+        "flags": 6,
+        "last": 0.0,
+        "time": 1792799997,
+        "time_msc": 1792799997469,
+        "volume": 0,
+        "volume_real": 0.0
+      }
+    },
+    {
+      "api": "symbol_info_tick",
+      "future_delta_msc": 215197798,
+      "guard": "FUTURE_QUOTE",
+      "history_api": "copy_ticks_range",
+      "history_first": null,
+      "history_last": null,
+      "history_query_end_utc": "2026-10-23T11:47:48.525920+00:00",
+      "history_query_start_utc": "2026-10-23T11:47:45.525920+00:00",
+      "history_rows": 0,
+      "index": 0,
+      "monotonic_latency_ns": 0,
+      "read_after_utc": "2026-10-23T11:47:48.525920+00:00",
+      "read_before_utc": "2026-10-23T11:47:48.525920+00:00",
+      "symbol": "EURUSD",
+      "tick": {
+        "ask": 1.1222,
+        "bid": 1.12161,
+        "flags": 1124,
+        "last": 0.0,
+        "time": 1792971266,
+        "time_msc": 1792971266323,
+        "volume": 0,
+        "volume_real": 0.0
+      }
+    },
+    {
+      "api": "symbol_info_tick",
+      "future_delta_msc": 215188061,
+      "guard": "FUTURE_QUOTE",
+      "history_api": "copy_ticks_range",
+      "history_first": null,
+      "history_last": null,
+      "history_query_end_utc": "2026-10-23T11:47:48.525920+00:00",
+      "history_query_start_utc": "2026-10-23T11:47:45.525920+00:00",
+      "history_rows": 0,
+      "index": 0,
+      "monotonic_latency_ns": 0,
+      "read_after_utc": "2026-10-23T11:47:48.525920+00:00",
+      "read_before_utc": "2026-10-23T11:47:48.525920+00:00",
+      "symbol": "USDCHF",
+      "tick": {
+        "ask": 0.82579,
+        "bid": 0.82381,
+        "flags": 1126,
+        "last": 0.0,
+        "time": 1792971256,
+        "time_msc": 1792971256586,
+        "volume": 0,
+        "volume_real": 0.0
+      }
+    },
+    {
+      "api": "symbol_info_tick",
+      "future_delta_msc": 43927939,
+      "guard": "FUTURE_QUOTE",
+      "history_api": "copy_ticks_range",
+      "history_first": {
+        "ask": 52675.5,
+        "bid": 52669.5,
+        "flags": 1254,
+        "last": 0.0,
+        "time": 1792756066,
+        "time_msc": 1792756066359,
+        "volume": 0,
+        "volume_real": 0.0
+      },
+      "history_last": {
+        "ask": 52675.0,
+        "bid": 52669.0,
+        "flags": 1254,
+        "last": 0.0,
+        "time": 1792756068,
+        "time_msc": 1792756068176,
+        "volume": 0,
+        "volume_real": 0.0
+      },
+      "history_query_end_utc": "2026-10-23T11:47:49.530924+00:00",
+      "history_query_start_utc": "2026-10-23T11:47:46.530924+00:00",
+      "history_rows": 6,
+      "index": 1,
+      "monotonic_latency_ns": 0,
+      "read_after_utc": "2026-10-23T11:47:49.530924+00:00",
+      "read_before_utc": "2026-10-23T11:47:49.530924+00:00",
+      "symbol": "US30Cash",
+      "tick": {
+        "ask": 52277.09,
+        "bid": 52271.09,
+        "flags": 6,
+        "last": 0.0,
+        "time": 1792799997,
+        "time_msc": 1792799997469,
+        "volume": 0,
+        "volume_real": 0.0
+      }
+    },
+    {
+      "api": "symbol_info_tick",
+      "future_delta_msc": 215196793,
+      "guard": "FUTURE_QUOTE",
+      "history_api": "copy_ticks_range",
+      "history_first": null,
+      "history_last": null,
+      "history_query_end_utc": "2026-10-23T11:47:49.530924+00:00",
+      "history_query_start_utc": "2026-10-23T11:47:46.530924+00:00",
+      "history_rows": 0,
+      "index": 1,
+      "monotonic_latency_ns": 0,
+      "read_after_utc": "2026-10-23T11:47:49.530924+00:00",
+      "read_before_utc": "2026-10-23T11:47:49.530924+00:00",
+      "symbol": "EURUSD",
+      "tick": {
+        "ask": 1.1222,
+        "bid": 1.12161,
+        "flags": 1124,
+        "last": 0.0,
+        "time": 1792971266,
+        "time_msc": 1792971266323,
+        "volume": 0,
+        "volume_real": 0.0
+      }
+    },
+    {
+      "api": "symbol_info_tick",
+      "future_delta_msc": 215187056,
+      "guard": "FUTURE_QUOTE",
+      "history_api": "copy_ticks_range",
+      "history_first": null,
+      "history_last": null,
+      "history_query_end_utc": "2026-10-23T11:47:49.530924+00:00",
+      "history_query_start_utc": "2026-10-23T11:47:46.530924+00:00",
+      "history_rows": 0,
+      "index": 1,
+      "monotonic_latency_ns": 0,
+      "read_after_utc": "2026-10-23T11:47:49.530924+00:00",
+      "read_before_utc": "2026-10-23T11:47:49.530924+00:00",
+      "symbol": "USDCHF",
+      "tick": {
+        "ask": 0.82579,
+        "bid": 0.82381,
+        "flags": 1126,
+        "last": 0.0,
+        "time": 1792971256,
+        "time_msc": 1792971256586,
+        "volume": 0,
+        "volume_real": 0.0
+      }
+    },
+    {
+      "api": "symbol_info_tick",
+      "future_delta_msc": 43926937,
+      "guard": "FUTURE_QUOTE",
+      "history_api": "copy_ticks_range",
+      "history_first": {
+        "ask": 52675.5,
+        "bid": 52669.5,
+        "flags": 1254,
+        "last": 0.0,
+        "time": 1792756067,
+        "time_msc": 1792756067163,
+        "volume": 0,
+        "volume_real": 0.0
+      },
+      "history_last": {
+        "ask": 52675.5,
+        "bid": 52669.5,
+        "flags": 1254,
+        "last": 0.0,
+        "time": 1792756069,
+        "time_msc": 1792756069421,
+        "volume": 0,
+        "volume_real": 0.0
+      },
+      "history_query_end_utc": "2026-10-23T11:47:50.532921+00:00",
+      "history_query_start_utc": "2026-10-23T11:47:47.532921+00:00",
+      "history_rows": 3,
+      "index": 2,
+      "monotonic_latency_ns": 0,
+      "read_after_utc": "2026-10-23T11:47:50.532921+00:00",
+      "read_before_utc": "2026-10-23T11:47:50.532921+00:00",
+      "symbol": "US30Cash",
+      "tick": {
+        "ask": 52277.09,
+        "bid": 52271.09,
+        "flags": 6,
+        "last": 0.0,
+        "time": 1792799997,
+        "time_msc": 1792799997469,
+        "volume": 0,
+        "volume_real": 0.0
+      }
+    },
+    {
+      "api": "symbol_info_tick",
+      "future_delta_msc": 215195791,
+      "guard": "FUTURE_QUOTE",
+      "history_api": "copy_ticks_range",
+      "history_first": null,
+      "history_last": null,
+      "history_query_end_utc": "2026-10-23T11:47:50.532921+00:00",
+      "history_query_start_utc": "2026-10-23T11:47:47.532921+00:00",
+      "history_rows": 0,
+      "index": 2,
+      "monotonic_latency_ns": 0,
+      "read_after_utc": "2026-10-23T11:47:50.532921+00:00",
+      "read_before_utc": "2026-10-23T11:47:50.532921+00:00",
+      "symbol": "EURUSD",
+      "tick": {
+        "ask": 1.1222,
+        "bid": 1.12161,
+        "flags": 1124,
+        "last": 0.0,
+        "time": 1792971266,
+        "time_msc": 1792971266323,
+        "volume": 0,
+        "volume_real": 0.0
+      }
+    },
+    {
+      "api": "symbol_info_tick",
+      "future_delta_msc": 215186054,
+      "guard": "FUTURE_QUOTE",
+      "history_api": "copy_ticks_range",
+      "history_first": null,
+      "history_last": null,
+      "history_query_end_utc": "2026-10-23T11:47:50.532921+00:00",
+      "history_query_start_utc": "2026-10-23T11:47:47.532921+00:00",
+      "history_rows": 0,
+      "index": 2,
+      "monotonic_latency_ns": 0,
+      "read_after_utc": "2026-10-23T11:47:50.532921+00:00",
+      "read_before_utc": "2026-10-23T11:47:50.532921+00:00",
+      "symbol": "USDCHF",
+      "tick": {
+        "ask": 0.82579,
+        "bid": 0.82381,
+        "flags": 1126,
+        "last": 0.0,
+        "time": 1792971256,
+        "time_msc": 1792971256586,
+        "volume": 0,
+        "volume_real": 0.0
+      }
+    }
+  ],
+  "source": "terminal_live_python_native_API",
+  "strategy_tester": false,
+  "terminal_build": 6257
+}

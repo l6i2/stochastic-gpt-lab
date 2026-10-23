@@ -1,0 +1,63 @@
+{
+  "change_reason": "Reject inconsistent seconds/ms; explicitly expose untrusted local clock and native/UTC mapping. No quote tolerance or execution permission added.",
+  "clock_provenance": {
+    "automatic_clock_adjustment": false,
+    "automatic_tick_offset": false,
+    "diagnostic_ntp_quorum_authorizes_execution": false,
+    "future_quote": "REJECT",
+    "host_clock": "UNTRUSTED",
+    "native_utc_mapping": "UNVERIFIED"
+  },
+  "code_hashes": {
+    "python/demo_safety.py": "5b4241db69b5ab6bcd2475bd393637b5fe3838beb4845f68ea3460ba9141c3bb",
+    "python/independent_clock_reference.py": "fef692e9ccb372cd2bf35b9d197bddd2d591e1ca88f66554148d9d0196da03d8",
+    "python/quote_clock_audit.py": "16379e5544d78c1a245627677586295cbb9dba393933ca0ac86f5e231e707a5d",
+    "python/runtime_session_guard.py": "74610f090bb5ac09521256acb76c24eac2967fb73bf0dc4f743fc20a9c89de3d",
+    "python/session_runtime_status.py": "b380ac5d51a08988898011506d962bdd0de862c810a5a9ea7d1fa985451b73de",
+    "python/shadow_mode.py": "fc94ca4a5a009ad33803186e2cad41b0056778a6da26fd04ceb92fb3a467d342",
+    "python/temporal_causality.py": "08c6beeab4fa24350fdfb13cb417b25c366b2dbf9748bb31ffabc2f074190a6d"
+  },
+  "cohort_calendar_verified": false,
+  "cohort_maturity_override": false,
+  "demo_enabled": false,
+  "dst_change_action": "BLOCK_AND_REQUIRE_RECONCILIATION",
+  "dst_rules": "PARTIAL",
+  "eu_expected_offset_at_capture_seconds": 10800,
+  "freshness_seconds": 5,
+  "holiday_exceptions": "UNKNOWN",
+  "holiday_policy": "UNKNOWN_REQUIRE_RUNTIME_GUARD",
+  "input_time_contract": {
+    "feature_max_time": "<= decision_time",
+    "future_quote_policy": "REJECT_NOT_TIMEZONE_SHIFT",
+    "maximum_quote_age_msc": 5000,
+    "quote_time": "<= decision_time",
+    "submillisecond_future": "REJECT"
+  },
+  "live_trading": false,
+  "maximum_snapshot_age_days": 7,
+  "observed_offset_seconds": 7200,
+  "runtime_attestations_required": [
+    "verified current clock",
+    "reconciled active-server date/session",
+    "independent holiday/normal-day evidence",
+    "independent broker-open evidence",
+    "fresh valid quotes"
+  ],
+  "runtime_guard": "READY",
+  "schema_version": "xm-session-runtime-policy/3.0",
+  "scope": "operational fail-closed containment only; not historical maturity-calendar acceptance",
+  "server": "XMGlobal-MT5 10",
+  "session_evidence_sha256": "835ff42202c9ae9308e9431db6bb79e980b7285c9f12cab802ba28e656cf15f3",
+  "shadow_enabled": false,
+  "sources": [
+    "https://www.xm.com/se/help-center/trading-platforms/faq-can-i-change-the-time-zone-on-my-trading-terminal",
+    "https://www.xm.com/equity-indices",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=oj%3AJOC_2021_149_R",
+    "https://www.mql5.com/en/docs/dateandtime/timetradeserver",
+    "https://www.mql5.com/en/docs/dateandtime/timegmt",
+    "https://www.mql5.com/en/docs/marketinformation/symbolinfosessiontrade"
+  ],
+  "status": "PASS_WITH_RUNTIME_GUARD",
+  "supersedes": "xm_runtime_session_policy_v2.json",
+  "symbol": "US30Cash"
+}

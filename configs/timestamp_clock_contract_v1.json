@@ -1,0 +1,24 @@
+{
+  "automatic_broker_offset_correction": false,
+  "automatic_host_offset_correction": false,
+  "current_host_clock": "UNTRUSTED",
+  "decision_authority": "independently attested UTC, unavailable on this host",
+  "diagnostic_reference_authorizes_execution": false,
+  "feature_max_time": "<= decision_time",
+  "future_quote_action": "REJECT",
+  "future_tolerance_milliseconds": 0,
+  "maximum_quote_age_milliseconds": 5000,
+  "native_to_utc_mapping": "UNVERIFIED",
+  "protected_states": {
+    "DEMO": "DISABLED",
+    "DISCOVERY_VALIDATION": "BLOCKED",
+    "FINAL_TEST": "LOCKED",
+    "LIVE_TRADING": false
+  },
+  "quote_time": "<= decision_time",
+  "replay_domain": "frozen native event timestamps and sequence; no current wall-clock conversion",
+  "schema_version": "timestamp-clock-contract/1.0",
+  "scope": "No permission to execute; freeze before re-audit",
+  "seconds_milliseconds_rule": "time_msc // 1000 == time",
+  "unknown_mapping_action": "BLOCK"
+}

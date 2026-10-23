@@ -1,6 +1,6 @@
 """Read-only quote availability diagnostic; never infer execution permission from ticks."""
 from __future__ import annotations
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import json
 import math
 from pathlib import Path
@@ -11,6 +11,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from runtime_session_guard import RuntimeSessionGuard, SessionObservation
 from temporal_causality import utc_milliseconds, validate_decision_times
+from quote_clock_audit import validate_quote_clock
 
 
 def read_session_runtime(*, environment_status=None, mt5_module=None, now_utc=None) -> dict:
@@ -18,6 +19,8 @@ def read_session_runtime(*, environment_status=None, mt5_module=None, now_utc=No
     result = {"runtime_session_guard": "READY", "quote_market_state": "UNKNOWN",
               "execution_market_state": "UNKNOWN", "holiday_status": "UNKNOWN",
               "orders_sent": 0, "live_trading": False}
+    result.update(decision_clock_source="LOCAL_UTC_UNATTESTED", clock_reference_status="UNVERIFIED",
+                  quote_clock_basis="UNVERIFIED_NATIVE", timestamp_normalization="BLOCKED_PENDING_CLOCK_MAPPING")
     if environment_status is None:
         from controller.mt5_env import status
         environment_status = status
@@ -49,7 +52,12 @@ def read_session_runtime(*, environment_status=None, mt5_module=None, now_utc=No
             result["quote_market_state"] = "SYMBOL_UNAVAILABLE_OR_DISABLED"
             state = "CLOSED"
         elif tick is not None:
-            quote_time = datetime.fromtimestamp(tick.time_msc / 1000, timezone.utc)
+            _, time_reason = validate_quote_clock(seconds=getattr(tick, 'time', None),
+                milliseconds=int(tick.time_msc), decision=now)
+            if time_reason == 'SECONDS_MILLISECONDS_MISMATCH':
+                return {**result, "allowed": False, "reason": time_reason,
+                        "quote_market_state": "INVALID_TIMESTAMP_UNITS"}
+            quote_time = datetime(1970, 1, 1, tzinfo=timezone.utc) + timedelta(milliseconds=int(tick.time_msc))
             bid, ask = float(tick.bid), float(tick.ask)
             age = (now - quote_time).total_seconds()
             result["quote_age_seconds"] = age

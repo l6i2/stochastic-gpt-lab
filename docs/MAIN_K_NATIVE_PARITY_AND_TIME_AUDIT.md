@@ -1,5 +1,9 @@
 # AuditorÃ­a de MAIN_K y causalidad temporal â€” 2026-10-23
 
+## Actualización posterior de procedencia temporal
+
+La [auditoría de relojes](TIMESTAMP_CLOCK_PROVENANCE_AUDIT.md) identifica la referencia local atrasada frente a tres NTP y tres HTTPS independientes. La hipótesis previa de un tick US30Cash físicamente futuro queda sustituida: su última marca es pasada frente a UTC externo. MAIN_K sigue PASS; reloj operativo y correspondencia nativo/UTC permanecen bloqueados. No se alteran evidencias anteriores.
+
 ## ActualizaciÃ³n: ejecuciÃ³n nativa validada
 
 Native execution pk_41a2e93f is now validated: MAIN_K_PARITY PASS, 960 closed-bar rows (930 ready, 30 warmup), five fixtures; maximum independent reference error 1.4210854715202004e-14 at fixed tolerance 1e-10. Historical impact NONE. Native clocks confirm TimeCurrent=quote_time=1792799997, TimeGMT=1792753785, TimeTradeServer=1792760985 (+7200s). The quote is 46,212,469 ms ahead of capture GMT; this is not explained by server/local timezone or units. Feed/cache provenance remains unverified; quote rejection stays fail-closed. TEMPORAL_CAUSALITY PASS; CAUSAL_AUDIT FAIL. SESSION_CALENDAR PASS_WITH_RUNTIME_GUARD; DISCOVERY_VALIDATION BLOCKED; FINAL_TEST LOCKED; DEMO DISABLED; LIVE_TRADING=false. NEXT_STATE HARD_BLOCKER_FUTURE_NATIVE_QUOTE. Evidence: [native validation](../configs/main_k_native_evidence_20261023/validated_audit.json). No dataset, strategy, sealed metadata or earlier evidence was overwritten.

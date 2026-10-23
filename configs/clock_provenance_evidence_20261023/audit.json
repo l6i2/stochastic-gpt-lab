@@ -1,0 +1,270 @@
+{
+  "authoritative_clock": "Independently attested UTC for wall-clock decisions; unavailable for operational acceptance on this host. Native event domain and sequence retained for historical replay.",
+  "automatic_quote_shift": false,
+  "case_date_is_verified_utc": false,
+  "case_id": "host_date_20261023_clock_provenance",
+  "causal_audit": "FAIL_OPERATIONAL_CLOCK_AND_MAPPING_UNATTESTED",
+  "clock_changed": false,
+  "code_hashes": {
+    "python/future_validation_collector.py": "e8427c2a2d6156231105abc1f374329abcde0bca02098d0542333e95c0a32d89",
+    "python/independent_clock_reference.py": "fef692e9ccb372cd2bf35b9d197bddd2d591e1ca88f66554148d9d0196da03d8",
+    "python/quote_clock_audit.py": "16379e5544d78c1a245627677586295cbb9dba393933ca0ac86f5e231e707a5d",
+    "python/quote_replay.py": "5fa808f8207dc837fd492915b59923af03e4ac4402e81aae9439298c02edaeac",
+    "python/runtime_session_guard.py": "74610f090bb5ac09521256acb76c24eac2967fb73bf0dc4f743fc20a9c89de3d",
+    "python/session_runtime_status.py": "b380ac5d51a08988898011506d962bdd0de862c810a5a9ea7d1fa985451b73de",
+    "tests/mql5/ClockProvenanceProbe.mq5": "f86073580904a391b0a9d6e14365f26d66a040ce4c40edaa54631f7591ff83ae"
+  },
+  "cohort_scored": false,
+  "collector_modified": false,
+  "dataset_rebuilt": false,
+  "demo": "DISABLED",
+  "discovery_validation": "BLOCKED",
+  "evidence_hashes": {
+    "clock_20261023_a1_native.csv": "68ca156844b80b22b6eb09b0888caf4229d83443c0e855955fc6b5c22c70cd0c",
+    "clock_independent_references.json": "c6dd3f1daf8f120f1526078d3cf2c28f91fd826e1cbd5428a3018fb6a1ae7497",
+    "main_k_existing_parity_reaudit.json": "cadc7ec30586e0d8573cf4307ae822cfccf15334270eb5fb3ad1d10ed5000029",
+    "quote_clock_monotonic_20261023.json": "cecca6941c9faf20b80f12d06f88188873f14987131d0bfdf87d09fbcddca220",
+    "quote_clock_tls_verified_20261023.json": "721a562b8bf547244274e087d5be357b0f89d725df27b68757e4dc155b3d2c70",
+    "runtime_readonly.json": "5d3e1610ae8c4c16f2890a1022d2216adc2ec96ea48aabea91fa541dd93f53a0"
+  },
+  "final_test": "LOCKED",
+  "future_quote_guard": "PASS",
+  "future_tolerance_milliseconds": 0,
+  "hard_blocker": "HOST_CLOCK_UNTRUSTED_AND_NATIVE_UTC_MAPPING_UNVERIFIED",
+  "host_gmt_minus_local_seconds": 18000,
+  "labels_read": false,
+  "live_trading": false,
+  "main_k_parity": "PASS_EXISTING_EXPORT_REVALIDATED",
+  "main_k_script_rerun": false,
+  "market_execution_availability": "UNKNOWN",
+  "native_clock_rows": 24,
+  "native_compile": {
+    "compile_log_sha256": "24febf16659bb194f4ba551c2135bc3bee764eda9063ccf05fc93f7afb6ab556",
+    "errors": 0,
+    "ex5_sha256": "d7d60c0d2e82b1924a04b833cec6fa9e207e545c36706536d8e14c73f7521372",
+    "source_sha256": "f86073580904a391b0a9d6e14365f26d66a040ce4c40edaa54631f7591ff83ae",
+    "warnings": 0
+  },
+  "native_connected": true,
+  "native_tester": false,
+  "next_state": "HARD_BLOCKER_CLOCK_ATTESTATION_AND_MAPPING",
+  "orders_sent": 0,
+  "pnl_read": false,
+  "primary_category": "A_LOCAL_REFERENCE_CLOCK_INCORRECT",
+  "quote_provenance": {
+    "CopyTicksRange_MQL": true,
+    "CopyTicks_not_used": true,
+    "SymbolInfoTick_MQL": true,
+    "collector_generated_quote": false,
+    "copy_ticks_range_python": true,
+    "fixture": false,
+    "latest_tick_source": "native terminal latest-update state",
+    "physical_cache_layer": "UNKNOWN",
+    "strategy_tester": false,
+    "symbol_info_tick_python": true
+  },
+  "reference": {
+    "anchor_monotonic_ns": 27977875000000,
+    "clock_changed": false,
+    "comparison": {
+      "authority_scope": "diagnostic only; unauthenticated NTP",
+      "local_clock_within_network_interval": false,
+      "local_lag_lower_ns": 207999786100578,
+      "local_lag_upper_ns": 207999801100578,
+      "status": "REFERENCE_QUORUM",
+      "utc_lower_ns": 1792964150939023078,
+      "utc_upper_ns": 1792964150954023078
+    },
+    "errors": [],
+    "local_utc": "2026-10-23T11:49:11.152923+00:00",
+    "local_utc_ns": 1792756151152922500,
+    "orders_sent": 0,
+    "samples": [
+      {
+        "host": "time.windows.com",
+        "nonce_echo_verified": true,
+        "received_monotonic_ns": 27977781000000,
+        "rtt_ns": 94000000,
+        "server_transmit_ns": 1792964150808064199,
+        "server_transmit_utc": "2026-10-25T21:35:50.808064+00:00",
+        "stratum": 4
+      },
+      {
+        "host": "time.cloudflare.com",
+        "nonce_echo_verified": true,
+        "received_monotonic_ns": 27977796000000,
+        "rtt_ns": 15000000,
+        "server_transmit_ns": 1792964150860023078,
+        "server_transmit_utc": "2026-10-25T21:35:50.860023+00:00",
+        "stratum": 3
+      },
+      {
+        "host": "time.google.com",
+        "nonce_echo_verified": true,
+        "received_monotonic_ns": 27977875000000,
+        "rtt_ns": 79000000,
+        "server_transmit_ns": 1792964150899318309,
+        "server_transmit_utc": "2026-10-25T21:35:50.899318+00:00",
+        "stratum": 1
+      }
+    ],
+    "tls_corroborated": true,
+    "tls_corroboration": [
+      {
+        "age": null,
+        "agrees_with_ntp_interval": true,
+        "date": "Sun, 25 Oct 2026 21:35:51 GMT",
+        "url": "https://www.microsoft.com/"
+      },
+      {
+        "age": null,
+        "agrees_with_ntp_interval": true,
+        "date": "Sun, 25 Oct 2026 21:35:51 GMT",
+        "url": "https://www.google.com/generate_204"
+      },
+      {
+        "age": null,
+        "agrees_with_ntp_interval": true,
+        "date": "Sun, 25 Oct 2026 21:35:52 GMT",
+        "url": "https://www.bing.com/"
+      }
+    ]
+  },
+  "root_cause": "Local UTC reference lags independent NTP corroborated by TLS by about 207999.8 seconds. US30Cash last tick is past against independent UTC, but appears future against that host reference. Native FX labels additionally track server calendar near UTC+2; not accepted as UTC without certified mapping.",
+  "secondary_categories": [
+    "B_CLOCK_SEMANTICS",
+    "F_RETAINED_LAST_TICK"
+  ],
+  "server_minus_host_gmt_seconds": 7200,
+  "session_calendar": "PASS_WITH_RUNTIME_GUARD",
+  "session_transition_dependence": "UNKNOWN_NOT_OBSERVED",
+  "startup_dependence": "UNKNOWN_NO_TERMINAL_RESTART",
+  "symbols": {
+    "EURUSD": {
+      "deltas": [
+        {
+          "raw_tick_minus_reference_lower_ms": 7197929,
+          "raw_tick_minus_reference_upper_ms": 7197944
+        },
+        {
+          "raw_tick_minus_reference_lower_ms": 7196913,
+          "raw_tick_minus_reference_upper_ms": 7196928
+        },
+        {
+          "raw_tick_minus_reference_lower_ms": 7199311,
+          "raw_tick_minus_reference_upper_ms": 7199326
+        },
+        {
+          "raw_tick_minus_reference_lower_ms": 7198311,
+          "raw_tick_minus_reference_upper_ms": 7198326
+        },
+        {
+          "raw_tick_minus_reference_lower_ms": 7199458,
+          "raw_tick_minus_reference_upper_ms": 7199473
+        }
+      ],
+      "distinct_tick_milliseconds": 3,
+      "last_tick": {
+        "ask": 1.1221700000000001,
+        "bid": 1.12162,
+        "flags": 1124,
+        "last": 0.0,
+        "time": 1792971350,
+        "time_msc": 1792971350162,
+        "volume": 0,
+        "volume_real": 0.0
+      },
+      "samples": 5
+    },
+    "US30Cash": {
+      "deltas": [
+        {
+          "raw_tick_minus_reference_lower_ms": -164149203,
+          "raw_tick_minus_reference_upper_ms": -164149188
+        },
+        {
+          "raw_tick_minus_reference_lower_ms": -164150235,
+          "raw_tick_minus_reference_upper_ms": -164150220
+        },
+        {
+          "raw_tick_minus_reference_lower_ms": -164151235,
+          "raw_tick_minus_reference_upper_ms": -164151220
+        },
+        {
+          "raw_tick_minus_reference_lower_ms": -164152235,
+          "raw_tick_minus_reference_upper_ms": -164152220
+        },
+        {
+          "raw_tick_minus_reference_lower_ms": -164153235,
+          "raw_tick_minus_reference_upper_ms": -164153220
+        }
+      ],
+      "distinct_tick_milliseconds": 1,
+      "last_tick": {
+        "ask": 52277.09,
+        "bid": 52271.09,
+        "flags": 6,
+        "last": 0.0,
+        "time": 1792799997,
+        "time_msc": 1792799997469,
+        "volume": 0,
+        "volume_real": 0.0
+      },
+      "samples": 5
+    },
+    "USDCHF": {
+      "deltas": [
+        {
+          "raw_tick_minus_reference_lower_ms": 7150933,
+          "raw_tick_minus_reference_upper_ms": 7150948
+        },
+        {
+          "raw_tick_minus_reference_lower_ms": 7149933,
+          "raw_tick_minus_reference_upper_ms": 7149948
+        },
+        {
+          "raw_tick_minus_reference_lower_ms": 7148933,
+          "raw_tick_minus_reference_upper_ms": 7148948
+        },
+        {
+          "raw_tick_minus_reference_lower_ms": 7147933,
+          "raw_tick_minus_reference_upper_ms": 7147948
+        },
+        {
+          "raw_tick_minus_reference_lower_ms": 7146933,
+          "raw_tick_minus_reference_upper_ms": 7146948
+        }
+      ],
+      "distinct_tick_milliseconds": 1,
+      "last_tick": {
+        "ask": 0.82578,
+        "bid": 0.8238,
+        "flags": 1126,
+        "last": 0.0,
+        "time": 1792971297,
+        "time_msc": 1792971297637,
+        "volume": 0,
+        "volume_real": 0.0
+      },
+      "samples": 5
+    }
+  },
+  "temporal_causality": "PASS_ENFORCED_REJECTION_INVARIANTS_ONLY",
+  "tests": {
+    "compileall": "PASS",
+    "full_duration_seconds": 124.254,
+    "full_passed": 197,
+    "full_skipped": 9,
+    "full_total": 206,
+    "git_diff_check": "PASS",
+    "post_final_runtime_change_targeted_tests": 10,
+    "post_final_temporal_parity_session_tests": 15,
+    "skip_reason": "g++ unavailable"
+  },
+  "timestamp_normalization": "FAIL_NATIVE_UTC_MAPPING_UNVERIFIED",
+  "windows_time_service": {
+    "caused_skew": "NOT_PROVEN",
+    "start_type": "DISABLED",
+    "state": "STOPPED"
+  }
+}

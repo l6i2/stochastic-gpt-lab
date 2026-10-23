@@ -1,5 +1,11 @@
 # Intra-trade research status
 
+## Clock provenance diagnosed - host date 2026-10-23
+
+[Timestamp/clock provenance audit](TIMESTAMP_CLOCK_PROVENANCE_AUDIT.md): primary cause A, local reference clock behind independent NTP + TLS UTC by about 207999.8 s (57 h 46 min 40 s). Retained US30Cash tick is past against independent UTC. Native clock export validated (24 rows, tester=0); FX raw labels track server time about UTC+2, mapping to UTC remains unverified. TimeCurrent follows Market Watch; TimeTradeServer depends on the bad client clock. No automatic time correction, quote offset, tolerance or dataset change. TIMESTAMP_NORMALIZATION FAIL; FUTURE_QUOTE_GUARD PASS; TEMPORAL_CAUSALITY PASS (invariants only); MAIN_K_PARITY PASS from existing exports. CAUSAL_AUDIT FAIL until trusted host clock and explicit native/UTC mapping are attested. SESSION_CALENDAR PASS_WITH_RUNTIME_GUARD; DISCOVERY_VALIDATION BLOCKED; FINAL_TEST LOCKED; DEMO DISABLED; LIVE_TRADING=false. NEXT_STATE HARD_BLOCKER_CLOCK_ATTESTATION_AND_MAPPING.
+
+This supersedes earlier future-quote/cache hypotheses; earlier sealed evidence is preserved.
+
 ## Native parity execution validated — 2026-10-23
 
 Native execution pk_41a2e93f is now validated: MAIN_K_PARITY PASS, 960 closed-bar rows (930 ready, 30 warmup), five fixtures; maximum independent reference error 1.4210854715202004e-14 at fixed tolerance 1e-10. Historical impact NONE. Native clocks confirm TimeCurrent=quote_time=1792799997, TimeGMT=1792753785, TimeTradeServer=1792760985 (+7200s). The quote is 46,212,469 ms ahead of capture GMT; this is not explained by server/local timezone or units. Feed/cache provenance remains unverified; quote rejection stays fail-closed. TEMPORAL_CAUSALITY PASS; CAUSAL_AUDIT FAIL. SESSION_CALENDAR PASS_WITH_RUNTIME_GUARD; DISCOVERY_VALIDATION BLOCKED; FINAL_TEST LOCKED; DEMO DISABLED; LIVE_TRADING=false. NEXT_STATE HARD_BLOCKER_FUTURE_NATIVE_QUOTE. Evidence: [native validation](../configs/main_k_native_evidence_20261023/validated_audit.json). No dataset, strategy, sealed metadata or earlier evidence was overwritten.

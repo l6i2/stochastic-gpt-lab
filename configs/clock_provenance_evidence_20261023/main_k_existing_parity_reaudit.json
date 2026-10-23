@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "run_id": "pk_41a2e93f",
+  "rows": 960,
+  "ready_rows": 930,
+  "warmup_rows": 30,
+  "max_reference_error": 1.4210854715202004e-14,
+  "absolute_tolerance": 1e-10,
+  "terminal_build": 6257,
+  "old_metadata_non_equivalence_confirmed": true,
+  "harness_sha256": "5d8e5b06d8eaae90e6e7a9ba6e7a931f07a540b8e9b10a3cccd47ba934ae2075",
+  "native_output_sha256": "b6ea2c5f52edb7d5dc40ec79b8ef045557362f9b395edc3a03c76e41ecae927e",
+  "production_source_sha256": "f2e9bf43cbbdc716148847fe53e1f3dd14b21393775ccc809d05cb5e134cb88d",
+  "historical_dataset_rebuilt": false,
+  "orders_sent": 0
+}

@@ -22,3 +22,10 @@ configs/xm_runtime_session_policy_v2.json -text whitespace=blank-at-eol,blank-at
 configs/future_cohort_metadata_spec_v2.prepared.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 
 configs/main_k_native_evidence_20261023/* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+python/quote_clock_audit.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+python/independent_clock_reference.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/mql5/ClockProvenanceProbe.mq5 -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/xm_runtime_session_policy_v3.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/clock_provenance_evidence_20261023/* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/timestamp_clock_contract_v1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
