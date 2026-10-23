@@ -1,15 +1,15 @@
 # Hash-bound payloads must retain their exact audited bytes on every checkout.
-docs/FUTURE_VALIDATION_PROTOCOL.md -text
-docs/PROSPECTIVE_EVALUATION_PROTOCOL.md -text
-configs/future_cohort_metadata_spec.json -text
-configs/xm_us30cash_sessions_utc.json -text
-configs/xm_session_probe_evidence_20261023.json -text
-configs/xm_runtime_session_policy.json -text
-configs/technical_readiness_audit_20261023.json -text
-python/future_validation_collector.py -text
-python/future_cohort_health.py -text
-python/runtime_session_guard.py -text
-python/session_runtime_status.py -text
-python/shadow_mode.py -text
-python/demo_safety.py -text
-python/future_validation_evaluator.py -text
+docs/FUTURE_VALIDATION_PROTOCOL.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/PROSPECTIVE_EVALUATION_PROTOCOL.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/future_cohort_metadata_spec.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/xm_us30cash_sessions_utc.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/xm_session_probe_evidence_20261023.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/xm_runtime_session_policy.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/technical_readiness_audit_20261023.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+python/future_validation_collector.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+python/future_cohort_health.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+python/runtime_session_guard.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+python/session_runtime_status.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+python/shadow_mode.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+python/demo_safety.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+python/future_validation_evaluator.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
