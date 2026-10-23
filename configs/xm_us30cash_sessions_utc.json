@@ -2,11 +2,24 @@
   "schema_version": "xm-us30cash-session-calendar/1.0",
   "verified": false,
   "symbol": "US30Cash",
-  "server": "XM server identity required",
-  "timezone_and_dst": "not yet verified for the active server",
+  "server": "XM account server name still requires local read-only probe",
+  "timezone_and_dst": "XM officially documents GMT+2 in winter and GMT+3 in summer and says terminal time follows EU time; exact transition dates for this account server remain unverified",
+  "timezone_evidence": [
+    {
+      "url": "https://www.xm.com/help-center/trading-platforms/faq-can-i-change-the-time-zone-on-my-trading-terminal",
+      "claim": "XM MT4/MT5 servers use GMT+2 in winter and GMT+3 in summer; platform time follows EU time",
+      "verified_on": "2026-10-22"
+    },
+    {
+      "url": "https://www.xm.com/equity-indices",
+      "claim": "XM directs clients to the logged-in account to view trading hours for index instruments",
+      "verified_on": "2026-10-22"
+    }
+  ],
   "weekly_sessions_utc": [],
+  "daily_exceptions_utc": {},
   "holidays_and_early_closes": [],
   "source": null,
   "source_sha256": null,
-  "verification_note": "Fail maturity closed until an authoritative schedule for this exact XM server and symbol is recorded and hashed. Do not infer open hours from observed cohort bars."
+  "verification_note": "Timezone rule is documented, but the exact server-specific US30Cash quote/trade sessions and current holiday/early-close exceptions are not. Fail maturity closed until those are captured from the active server and authoritative XM schedule, converted to UTC, and hashed. Never infer open hours from observed cohort bars."
 }

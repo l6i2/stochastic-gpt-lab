@@ -64,6 +64,9 @@ class FutureCohortHealthTests(unittest.TestCase):
             self.assertFalse(report["cohort_mature"])
             self.assertFalse(report["maturity_gates"]["session_calendar_verified"])
             self.assertFalse(report["maturity_gates"]["candidate_frozen"])
+            self.assertTrue(report["maturity_gates"]["session_calendar_config_frozen"])
+            self.assertFalse(report["maturity_gates"]["session_calendar_verified"])
+            self.assertIn("session_calendar_config_sha256", report)
             self.assertNotIn("candidate_pnl", json.dumps(report).lower())
 
 

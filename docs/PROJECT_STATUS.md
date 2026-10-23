@@ -8,6 +8,12 @@ The evaluator now binds candidate, cohort, health report, table, protocol, and e
 
 The collector task is enabled (`Ready`; last scheduled result 0 at 2026-10-21 15:45:45 CDT; next run 16:00:00). The latest wrapper log also exited 0 with `CAUGHT_UP_WAITING_FOR_CLOSED_DAY`. Its wrapper archives manifest snapshots and refreshes only integrity/maturity metadata after changed inputs; it does not authorize evaluation. The fresh health report SHA-256 is `a42ecdc9142807d1a2b9ad32c4f347d0fa76d4e2adcb0d0b250b2d12706101ce`; the metadata spec is hash-pinned. No protected split was opened.
 
+## Current checkpoint — 2026-10-22 (collection, calendar gate, no scoring)
+
+The collector is still enabled and the Oct 22 scheduled invocation succeeded. The sealed cohort now contains 3 complete UTC days, 382,317 ticks, 828 M5 bars, 42 BUY / 45 SELL support signals, 0 invalid ticks/bars, and latest tick `2026-10-21T23:59:58.331Z`. This is support/integrity metadata only; `scoring_performed=false`, `pnl_read=false`, and `labels_read=false`. `COHORT_MATURE=NO`.
+
+The prospective report SHA-256 is `9784caae9af3d6f4c03065d68944e0658aa996684efdebb19cba040e46329941`. Collector health refresh now binds the session-calendar configuration hash, so changing the calendar invalidates the report. XM publicly confirms seasonal GMT+2/GMT+3 server time, while exact active-server `US30Cash` quote hours and holiday overrides remain unverified. The read-only `SessionCalendarProbe.mq5` is prepared for a one-time run in the active MT5; native window automation is unavailable in this desktop session. The old manifest prefix remains explicitly unverified.
+
 Verification after this update: `python -m unittest discover -s tests -v` passed 163 tests with 9 native-toolchain skips (`g++` unavailable); `python -m compileall -q python tests` and `git diff --check` passed. The repository `.venv` now has the already-declared `numba` dependency installed; global Python was not changed.
 
 ## Current checkpoint — 2026-10-21 (V2 failure analysis closed; no new round)
@@ -453,3 +459,34 @@ has not been evaluated because paired quote-tape/fold inputs are not verified;
 no best candidate exists. `DEMO_EXECUTOR=NOT_READY`,
 `SHADOW_MODE=READY_BUT_DISABLED`, legacy `DISCOVERY_VALIDATION=BLOCKED`,
 `FINAL_TEST=LOCKED`, `DEMO=DISABLED`, and `LIVE_TRADING=false`.
+## Authoritative checkpoint — 2026-10-22
+
+This is the current status; older dated checkpoints below are historical.
+
+- Future collection: active; Windows task is Ready, the 21:00 local run
+  completed with result 0, and next run is 21:15. XM terminal is connected in DEMO with
+  `US30Cash` available.
+- Cohort: 4 complete UTC days, 545,461 ticks, 1,104 M5 bars, 60 BUY / 61 SELL
+  metadata support signals; latest tick `2026-10-22T23:59:57.410Z`. Health
+  report SHA-256 `0a6b90a8d0f8091681976b0881bd0d58951c7d17ce4f5be26b2e1fc792e5ca61`.
+  No backfill, scoring, labels, PnL, or outcomes were read. `COHORT_MATURE=NO`.
+- Maturity blockers: exact active-server quote/trade sessions and current
+  holiday exceptions are unverified; the hash chain is verified only from its
+  audit anchor forward, and the pre-anchor prefix cannot be reconstructed.
+  The calendar probe compiled in the active XM MetaEditor (0 errors,
+  0 warnings) and is staged under the active terminal's
+  `MQL5\\Scripts\\ResearchDiagnostics`, but requires one manual Navigator run.
+- Causality: the future-perturbation test covers only the raw health metadata
+  producer. It is not the full MQL EA/feature-table parity audit; that
+  independent audit remains absent and its maturity gate stays false.
+- Research: 17 hypotheses tested, 0 survived, no candidate. Do not continue
+  adaptive search on the same TRAIN data. Drift monitor remains
+  `PREPARED/NOT_READY`: its baseline is an unfitted template and its feature
+  whitelist does not yet match an identically defined feature stream from
+  cohort health output. No drift comparison has run.
+- DEMO executor: mock safety path `READY_BUT_DISABLED_FULL`; broker order
+  adapter absent. Shadow pipeline `READY_BUT_DISABLED`, not connected to MT5.
+- `DISCOVERY_VALIDATION=BLOCKED`; `FINAL_TEST=LOCKED`; `DEMO=DISABLED`;
+  `LIVE_TRADING=false`.
+- Verification on this continuation: full suite 166 PASS / 9 SKIPPED
+  (`g++` unavailable), `compileall` PASS, `git diff --check` PASS.

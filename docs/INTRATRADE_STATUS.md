@@ -6,6 +6,8 @@
 
 The prospective protocol and metadata specification are SHA-256 pinned. Full verification passes: 163 unit tests, 9 skipped because `g++` is unavailable, plus compileall. No scoring or protected-split access occurred.
 
+As of 2026-10-22, the prospective cohort has four complete UTC days, 545,461 raw ticks, 1,104 M5 bars, and 60 BUY / 61 SELL support signals. It is still `NOT_MATURE`; the hash-pinned health report reports no labels or PnL read. Calendar hash changes now force a new health report. No hypotheses were created and no cohort scoring occurred.
+
 The evaluator is `READY_BUT_GATED`; the hash-bound candidate packaging path is available but there is no candidate. Drift monitoring and shadow recording are fixture-tested; shadow is disabled and cannot send orders. `FINAL_TEST=LOCKED`, `DEMO=DISABLED`, `LIVE_TRADING=false`.
 
 ## Current checkpoint — 2026-10-21 (formal V2 failure analysis; research paused on current TRAIN)
@@ -339,3 +341,14 @@ new, methodologically distinct entry quote-friction router has been frozen in
 not been run. Required verified quote-tape/fold pairing is not yet established;
 there is no candidate and no basis to open any holdout. `FINAL_TEST=LOCKED`,
 `DEMO=DISABLED`, `LIVE_TRADING=false`.
+## Current project gate — 2026-10-22
+
+Historical TRAIN work has tested 17 hypotheses total; none survived and no
+candidate is frozen. No further hypothesis search is permitted without a
+methodologically distinct preregistration or genuinely new permitted data.
+The independent prospective cohort is still collection-only: 4 complete UTC
+days, 545,461 ticks, 1,104 M5 bars, and 60 BUY / 61 SELL support signals in its
+metadata health report. No labels or outcomes were read. The report is
+`NOT_MATURE`; the calendar is unverified and the hash-chain prefix before its
+audit anchor is unverifiable. Discovery Validation remains blocked and
+FINAL_TEST remains locked. `DEMO=DISABLED`; `LIVE_TRADING=false`.

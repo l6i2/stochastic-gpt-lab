@@ -122,8 +122,48 @@ require. The health report confirms `metadata_spec_frozen=true`; it remains
 wrapper log entry also exited `0` with `CAUGHT_UP_WAITING_FOR_CLOSED_DAY`;
 it collected no new segment because the next UTC day is not yet eligible.
 
+XM's official help center documents GMT+2 in winter, GMT+3 in summer, and EU
+terminal time; XM says exact index hours are shown after login. The calendar
+artifact records these source claims but remains `verified=false`: exact
+`US30Cash` quote/trade sessions and current holiday exceptions are not public
+in the sources checked. `controller/mql5/SessionCalendarProbe.mq5` is a
+read-only script that prints the active symbol's quote/trade sessions and
+server offset. A one-time manual run in the active terminal is still required
+because this desktop's UI-control surface does not expose native windows.
+
 Future snapshots will be checked against an immutable chain from the current
 audit anchor. This does not claim to reconstruct overwritten pre-deployment
 versions; the frozen maturity gate remains closed while that prefix is
 unverified. The calendar template is intentionally unverified and therefore
 fails gap acceptance until the exact XM server schedule is sourced and hashed.
+## Current collection and maturity status — 2026-10-22
+
+The collector task remains Enabled/Ready at a 15-minute cadence. The 21:00
+local instance completed with result 0; the next run is 21:15.
+The active XM DEMO terminal is connected and `US30Cash` is available. Current
+metadata-only health: 4 complete UTC days, 545,461 ticks, 1,104 M5 bars, 60 BUY
+and 61 SELL support signals, latest tick `2026-10-22T23:59:57.410Z`, zero
+invalid ticks/time/bars, zero missing capture days, and 41 duplicate-millisecond
+ticks reported without removal. Health SHA-256:
+`0a6b90a8d0f8091681976b0881bd0d58951c7d17ce4f5be26b2e1fc792e5ca61`.
+
+The collector refreshes this integrity/coverage health report when the
+manifest, metadata spec, calendar, candidate, causality audit, code, or chain
+status changes. It does not score, read labels/PnL, or access protected splits.
+Collection remains no-backfill. Maturity is `NO`: calendar validity is false
+and the old manifest prefix predating the current immutable audit anchor is
+unverifiable. Do not repair either condition by inferring sessions or
+rewriting historical chain claims.
+
+The future-perturbation regression test exercises only the health metadata
+producer. It is not a substitute for the missing independent causal parity
+audit of the MQL EA and any separately derived evaluation feature table; that
+maturity gate also remains false.
+
+The weekly session probe is compiled 0/0 and staged in the active terminal's
+`MQL5\\Scripts\\ResearchDiagnostics`; it has not run. A manual Navigator run
+is needed because native MT5 windows are unavailable to desktop automation.
+Current authoritative 2026 holiday/early-close exceptions remain a separate
+calendar evidence requirement. Drift status is `PREPARED/NOT_READY`: no
+baseline has been fitted and the current TRAIN whitelist has not been shown to
+match cohort-health feature definitions. No comparison has occurred.

@@ -14,7 +14,8 @@ if str(ROOT / "python") not in sys.path:
 
 from future_validation_collector import COHORT_ROOT, collect_once  # noqa: E402
 from future_cohort_health import (  # noqa: E402
-    HEALTH_NAME, HEALTH_PROTOCOL, _manifest_chain_status, build_health_report, write_health_report,
+    HEALTH_NAME, HEALTH_PROTOCOL, SESSION_CALENDAR, _manifest_chain_status, build_health_report,
+    write_health_report,
 )
 from future_cohort_health import __file__ as health_module_file  # noqa: E402
 
@@ -25,6 +26,21 @@ def _digest(path: Path) -> str:
         for block in iter(lambda: stream.read(1024 * 1024), b""):
             h.update(block)
     return h.hexdigest()
+
+
+def _health_report_matches(current_health: dict, *, manifest_hash: str,
+                           metadata_hash: str, health_code_hash: str,
+                           calendar_hash: str, candidate_hash: str | None,
+                           causality_audit_hash: str | None,
+                           manifest_chain_status: str) -> bool:
+    """Do not let a changed calendar or gate input reuse a stale maturity report."""
+    return (current_health.get("cohort_manifest_sha256") == manifest_hash
+            and current_health.get("metadata_spec_sha256") == metadata_hash
+            and current_health.get("health_code_sha256") == health_code_hash
+            and current_health.get("session_calendar_config_sha256") == calendar_hash
+            and current_health.get("candidate_sha256") == candidate_hash
+            and current_health.get("causality_audit_sha256") == causality_audit_hash
+            and current_health.get("manifest_chain_status") == manifest_chain_status)
 
 
 def _archive_current_manifest(cohort_root: Path) -> None:
@@ -81,6 +97,7 @@ def main() -> int:
         if (COHORT_ROOT / "cohort_manifest.json").is_file():
             _archive_current_manifest(COHORT_ROOT)
             manifest_hash = _digest(COHORT_ROOT / "cohort_manifest.json")
+            calendar_hash = _digest(SESSION_CALENDAR) if SESSION_CALENDAR.is_file() else ""
             health_path = COHORT_ROOT / HEALTH_NAME
             candidate_path = _frozen_candidate_path()
             candidate_hash = _digest(candidate_path) if candidate_path else None
@@ -93,13 +110,16 @@ def main() -> int:
                     health_sidecar = health_path.with_name(health_path.name + ".sha256")
                     health_is_current = (health_sidecar.is_file()
                                          and health_sidecar.read_text(encoding="ascii").strip() == _digest(health_path)
-                                         and current_health.get("cohort_manifest_sha256") == manifest_hash
-                                         and current_health.get("metadata_spec_sha256") == _digest(HEALTH_PROTOCOL)
-                                         and current_health.get("health_code_sha256") == _digest(Path(health_module_file))
-                                         and current_health.get("candidate_sha256") == candidate_hash
-                                         and current_health.get("causality_audit_sha256") == audit_path_hash
-                                         and current_health.get("manifest_chain_status") ==
-                                         _manifest_chain_status(COHORT_ROOT, manifest_hash)[0])
+                                         and _health_report_matches(
+                                             current_health,
+                                             manifest_hash=manifest_hash,
+                                             metadata_hash=_digest(HEALTH_PROTOCOL),
+                                             health_code_hash=_digest(Path(health_module_file)),
+                                             calendar_hash=calendar_hash,
+                                             candidate_hash=candidate_hash,
+                                             causality_audit_hash=audit_path_hash,
+                                             manifest_chain_status=_manifest_chain_status(
+                                                 COHORT_ROOT, manifest_hash)[0]))
                 except (OSError, json.JSONDecodeError):
                     health_is_current = False
             if not health_is_current:

@@ -317,14 +317,20 @@ def build_health_report(*, cohort_root: Path = COHORT_ROOT,
             expected_days.append(cursor.strftime("%Y%m%d")); cursor += timedelta(days=1)
         cursor = d + timedelta(days=1)
     gaps = expected_days
-    calendar_exists = Path(session_calendar_path).is_file()
+    calendar_path = Path(session_calendar_path)
+    calendar_exists = calendar_path.is_file()
+    calendar_hash = _sha256(calendar_path) if calendar_exists else None
+    calendar_sidecar = calendar_path.with_name(calendar_path.name + ".sha256")
+    calendar_config_frozen = (calendar_hash is not None and calendar_sidecar.is_file()
+                              and calendar_sidecar.read_text(encoding="ascii").split()[0] == calendar_hash)
     calendar_valid = False
     if calendar_exists:
         try:
-            calendar = json.loads(Path(session_calendar_path).read_text(encoding="utf-8"))
-            calendar_valid = (calendar.get("verified") is True
+            calendar = json.loads(calendar_path.read_text(encoding="utf-8"))
+            calendar_valid = (calendar_config_frozen and calendar.get("verified") is True
                               and bool(calendar.get("source_sha256"))
-                              and bool(calendar.get("weekly_sessions_utc")))
+                              and bool(calendar.get("weekly_sessions_utc"))
+                              and bool(calendar.get("daily_exceptions_utc") is not None))
         except (OSError, json.JSONDecodeError):
             calendar_valid = False
     expected_bar_times: set[int] = set()
@@ -408,6 +414,7 @@ def build_health_report(*, cohort_root: Path = COHORT_ROOT,
         "bar_segment_counts_match": not bars_audit["bar_count_mismatches"],
         "manifest_chain_verified": chain_pass,
         "metadata_spec_frozen": metadata_spec_frozen,
+        "session_calendar_config_frozen": calendar_config_frozen,
         "session_calendar_verified": calendar_valid,
         "candidate_frozen": candidate_frozen,
         "causality_audit_pass": causality_audit_pass,
@@ -421,6 +428,8 @@ def build_health_report(*, cohort_root: Path = COHORT_ROOT,
         "cohort_id": manifest["cohort_id"],
         "cohort_manifest_sha256": manifest_hash,
         "metadata_spec_sha256": _sha256(HEALTH_PROTOCOL),
+        "session_calendar_config_sha256": calendar_hash,
+        "session_calendar_config_frozen": calendar_config_frozen,
         "metadata_spec_frozen": metadata_spec_frozen,
         "health_code_sha256": _sha256(Path(__file__).resolve()),
         "cohort_start_utc": manifest["cohort_start_utc"],

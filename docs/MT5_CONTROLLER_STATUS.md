@@ -6,6 +6,8 @@ The Windows scheduled collector task was rechecked at 2026-10-21 15:50 CDT: stat
 
 Verification: 163 tests passed, 9 native tests skipped because `g++` is unavailable, and Python compileall passed. `numba` was installed only in this repository's `.venv`, enabling the TRAIN-router tests.
 
+At the 2026-10-22 checkpoint, the scheduled collector remains enabled; the latest sealed health report covers 3 complete UTC days, 382,317 ticks, and 828 M5 bars with zero invalid quote/bar rows. The active terminal read-only probe still identifies XM DEMO and connected `US30Cash`. The exact quote schedule is pending a local MQL session query; `controller/mql5/SessionCalendarProbe.mq5` is prepared for that one-time read. No order was sent and no account settings were changed.
+
 `FUTURE_EVALUATOR=READY_BUT_GATED`, `DEMO_EXECUTOR=READY_BUT_DISABLED_FULL` (mock only), `SHADOW_MODE=READY_BUT_DISABLED`, `FINAL_TEST=LOCKED`, `DEMO=DISABLED`, `LIVE_TRADING=false`.
 
 ## Current checkpoint — 2026-10-21 (offline failure analysis; collection unchanged)
@@ -272,3 +274,27 @@ backfill. Health: `HEALTHY`, 263,727 ticks, 552 M5 bars, latest timestamp
 `77fd6d09235144590183897211db6efbc8d8871e5451ef56728028974f1f26d3`.
 Segment files and their recorded hashes match. No scoring, training,
 backfill, order placement, or protected-split access occurred.
+## Current controller and cohort checkpoint — 2026-10-22
+
+This block is authoritative over older dated snapshots below. The local
+collector task `StochasticGptLabFutureValidationCollector` is Enabled/Ready,
+runs on its 15-minute schedule, and completed its 21:00 local run with result
+0; next run is 21:15. The active XM terminal is connected in DEMO and
+`US30Cash` is available. Health was generated at 2026-10-23 02:05:37 UTC:
+4 settled UTC days, 545,461 ticks, 1,104 M5 bars, 60 BUY and 61 SELL metadata
+signals, 0 invalid ticks/times/bars, 0 missing UTC capture days, and 41
+duplicate millisecond timestamps reported without deduplication. Latest tick:
+`2026-10-22T23:59:57.410Z`; report SHA-256:
+`0a6b90a8d0f8091681976b0881bd0d58951c7d17ce4f5be26b2e1fc792e5ca61`.
+
+`COHORT_MATURE=NO`: the XM server session calendar is not verified and the
+manifest chain only proves integrity from its audit anchor forward; its older
+prefix cannot be reconstructed. The read-only `SessionCalendarProbe.mq5` has
+been compiled by the active XM MetaEditor with 0 errors and 0 warnings, and
+copied to that terminal's `MQL5\\Scripts\\ResearchDiagnostics` directory.
+It has not been run. The local desktop automation surface cannot operate
+native MT5 windows, so a one-time manual run is required to capture the server
+weekly session output. This does not supply holiday exceptions; those still
+need a current authoritative XM schedule. No data has been scored and no
+orders were sent. `FINAL_TEST=LOCKED`, `DEMO=DISABLED`,
+`LIVE_TRADING=false`.
