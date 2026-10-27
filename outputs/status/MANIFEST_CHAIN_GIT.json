@@ -1,0 +1,140 @@
+{
+  "artifacts": [
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/clock_attestation_evidence_20261023/audit.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/clock_probe_a2_build.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/clock_provenance_evidence_20261023/audit.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/clock_recheck_20261023/recheck.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/clock_sync_block_evidence_20261023/status.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/clock_sync_completed_evidence_20261023/audit.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/drift_feature_whitelist.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/future_cohort_metadata_spec.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/future_cohort_metadata_spec_v2.prepared.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/main_k_documentation_erratum_20261023.json.sha256"
+    },
+    {
+      "classification": "PARTIAL",
+      "reason": "NONSTANDARD_OR_MISSING_TARGET",
+      "seal": "configs/main_k_native_evidence_20261023/validated_audit.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/main_k_timestamp_audit_20261023.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/native_time_mapping_v1.prepared.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/technical_readiness_audit_20261023.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/timestamp_clock_contract_v1.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/xm_runtime_session_policy.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/xm_runtime_session_policy_v2.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/xm_runtime_session_policy_v3.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/xm_runtime_session_policy_v4.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/xm_session_probe_evidence_20261023.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "configs/xm_us30cash_sessions_utc.json.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "docs/FUTURE_VALIDATION_PROTOCOL.md.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "docs/FUTURE_VALIDATION_READINESS_RULE.md.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "docs/PROSPECTIVE_EVALUATION_PROTOCOL.md.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "docs/RESEARCH_PROTOCOL_V2.md.sha256"
+    },
+    {
+      "classification": "VERIFIED",
+      "reason": "GIT_BYTES_MATCH",
+      "seal": "docs/archive/pre_cloud_20261027/PROSPECTIVE_EVALUATION_PROTOCOL.md.sha256"
+    }
+  ],
+  "history_reconstructed": false,
+  "labels_read": false,
+  "main_k_nonstandard_seal": "VERIFIED_BY_tools/verify_cloud_safety.py",
+  "pnl_read": false,
+  "pre_anchor": "UNVERIFIABLE_PRE_ANCHOR",
+  "scope": "GIT_ARTIFACT_BYTES_ONLY"
+}
