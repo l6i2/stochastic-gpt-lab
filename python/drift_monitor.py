@@ -14,11 +14,11 @@ FORBIDDEN = {"pnl", "profit", "win_rate", "profit_factor", "mfe", "mae", "exit_p
 
 
 def _validate_feature_names(names: list[str], whitelist: set[str]) -> None:
-    if not set(names).issubset(whitelist):
+    if set(names) != whitelist:
         raise ValueError("Input contains columns outside the frozen feature whitelist")
     for name in names:
         parts = name.casefold().replace("-", "_").split("_")
-        if any(part in FORBIDDEN for part in parts):
+        if name.casefold() in FORBIDDEN or any(part in FORBIDDEN | {"outcome", "outcomes", "labels", "pf", "win", "future"} for part in parts):
             raise ValueError(f"Forbidden outcome/label field: {name}")
 
 
@@ -141,6 +141,8 @@ def compare_drift(baseline: dict[str, Any], current: dict[str, Any], *, psi_limi
 
 
 def _count_psi(reference: dict[str, int], current: dict[str, int]) -> float:
+    if any(type(n) is not int or n < 0 for values in (reference, current) for n in values.values()):
+        raise ValueError("Distribution counts must be nonnegative integers")
     categories = sorted(set(reference) | set(current))
     if not categories or sum(reference.values()) == 0 or sum(current.values()) == 0:
         return 0.0

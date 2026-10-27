@@ -1,19 +1,12 @@
-# DEMO executor design — full mock safety path, disabled
+# DEMO executor — READY_BUT_DISABLED_FULL
 
-## Authoritative operational checkpoint — 2026-10-23
+`DEMO=DISABLED`, `LIVE_TRADING=false`. FULL describe la cobertura de mocks y
+persistencia, no órdenes broker. No se implementa ni habilita order_send.
 
-[Current addendum and evidence](PROSPECTIVE_OPERATIONAL_ADDENDUM_20261023.md): `SESSION_CALENDAR=PASS_WITH_RUNTIME_GUARD` for operational containment; historical UTC calendar remains unverified. Guard READY, DST PARTIAL, holidays UNKNOWN. Causal audit FAIL (frozen metadata/native-trigger non-equivalence), manifest chain PARTIAL, drift NOT_READY. Collector active/HEALTHY, cohort NOT_MATURE, evaluator READY_BUT_GATED. DEMO executor and shadow READY_BUT_DISABLED; no orders. FINAL_TEST LOCKED; DEMO DISABLED; LIVE_TRADING=false. Full suite: 190 tests, 9 native skips. NEXT_STATE=HARD_BLOCKER.
-
-All operational snapshots below are historical and superseded by the linked addendum; sealed scientific protocols remain unchanged.
-
-
-
-
-Status: **READY_BUT_DISABLED_FULL** for mock/shadow safety and idempotent intent
-recording only. There is no candidate and no broker order adapter. The module
-contains no `order_send`/CTrade capability, and even a test-accepted intent is
-persisted only as `MOCK_ONLY_ACCEPTED` with `orders_sent=0`. `LIVE_TRADING=false`;
-no orders were sent.
+Las pruebas cubren DEMO obligatorio; REAL/UNKNOWN rechazados; US30Cash; max lot,
+posiciones, pérdida diaria, pérdidas consecutivas, spread, slippage y trades/día;
+kill switch, heartbeat, datos stale, reconnect, idempotencia, intent persistente,
+crash recovery y audit log. Se usa SQLite WAL, synchronous FULL y quick_check.
 
 Any future executor must fail closed unless all gates pass simultaneously:
 
@@ -44,3 +37,5 @@ This status does not mean broker execution is implemented or enabled. Any
 future real DEMO order adapter would be separate work requiring a frozen,
 prospectively validated candidate and explicit user authorization. It never
 authorizes LIVE, and `LIVE_TRADING=false` is invariant.
+
+[Estado actual](PROJECT_STATUS.md).

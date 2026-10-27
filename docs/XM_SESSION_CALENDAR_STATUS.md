@@ -1,3 +1,5 @@
+> HISTORICAL SNAPSHOT: preserved evidence, not current operational authority. Current status: [PROJECT_STATUS.md](PROJECT_STATUS.md); Cloud audit: [CLOUD_PREPARATION_AUDIT.md](CLOUD_PREPARATION_AUDIT.md).
+
 # XM `US30Cash` session calendar status
 
 ## Authoritative operational checkpoint — 2026-10-23

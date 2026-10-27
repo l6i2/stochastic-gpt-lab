@@ -1,3 +1,5 @@
+> HISTORICAL SNAPSHOT: preserved evidence, not current operational authority. Current status: [PROJECT_STATUS.md](PROJECT_STATUS.md); Cloud audit: [CLOUD_PREPARATION_AUDIT.md](CLOUD_PREPARATION_AUDIT.md).
+
 # Preparación de captura simultánea Windows + MT5
 
 Expediente del cliente 2026-10-23. Este checkpoint conserva el bloqueo científico y no modifica el reloj, la estrategia ni datos aceptados.

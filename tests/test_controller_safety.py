@@ -13,6 +13,18 @@ from controller.profiles import BASE_EA, BAR_EA, profile
 
 
 class ControllerSafetyTests(unittest.TestCase):
+    def setUp(self):
+        # No private split manifest or protected data is needed for unit tests.
+        from unittest.mock import patch
+        from datetime import datetime, timezone
+        boundary = lambda value: int(datetime.fromisoformat(value).replace(tzinfo=timezone.utc).timestamp()*1000)
+        limits = {'validation_start_signal_time_msc': boundary('2025-04-01'),
+                  'final_test_start_signal_time_msc': boundary('2026-03-20')}
+        for target in ('controller.safety_gate.boundaries', 'controller.history_orchestrator.boundaries'):
+            mocked = patch(target, return_value=limits)
+            mocked.start()
+            self.addCleanup(mocked.stop)
+
     def test_bar_export_is_explicitly_allowed_and_isolates_evidence(self):
         self.assertNotEqual(profile(BASE_EA)['namespace'], profile(BAR_EA)['namespace'])
         self.assertIn('bar_execution_quotes.csv', profile(BAR_EA)['outputs'])

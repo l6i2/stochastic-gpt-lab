@@ -1,3 +1,5 @@
+> HISTORICAL SNAPSHOT: preserved evidence, not current operational authority. Current status: [PROJECT_STATUS.md](PROJECT_STATUS.md); Cloud audit: [CLOUD_PREPARATION_AUDIT.md](CLOUD_PREPARATION_AUDIT.md).
+
 # Captura simultánea completada — 2026-10-23
 
 Nueva ejecución nativa: BEGIN 11:02:44 y END 11:03:33 (etiquetas Windows locales); 50 frames / 150 registros. Fuente y EX5 originales verificados por el finalizador. Sin órdenes ni cambios de reloj, estrategia o datasets.

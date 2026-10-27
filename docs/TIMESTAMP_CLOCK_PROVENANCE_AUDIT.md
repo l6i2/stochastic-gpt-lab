@@ -1,3 +1,5 @@
+> HISTORICAL SNAPSHOT: preserved evidence, not current operational authority. Current status: [PROJECT_STATUS.md](PROJECT_STATUS.md); Cloud audit: [CLOUD_PREPARATION_AUDIT.md](CLOUD_PREPARATION_AUDIT.md).
+
 # Procedencia de la quote y auditoría de relojes
 
 Identificador del expediente: 20261023, fecha del host investigado. **No equivale a una fecha UTC certificada.** Las referencias externas sitúan la captura en 2026-10-25; se conservan ambos valores sin corregir artefactos anteriores.

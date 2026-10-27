@@ -6,7 +6,7 @@ EPOCH=datetime(1970,1,1,tzinfo=timezone.utc)
 
 
 def utc_milliseconds(value:datetime)->int:
-    if not isinstance(value,datetime) or value.tzinfo is None:
+    if not isinstance(value,datetime) or value.tzinfo is None or value.utcoffset() is None:
         raise ValueError('Explicit timezone is required; server/local wall time is not UTC evidence')
     delta=value.astimezone(timezone.utc)-EPOCH
     return delta.days*86400000+delta.seconds*1000+delta.microseconds//1000

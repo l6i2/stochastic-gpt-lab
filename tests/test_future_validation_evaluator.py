@@ -25,7 +25,7 @@ class FutureValidationEvaluatorTests(unittest.TestCase):
                                       "scoring_performed": False}), encoding="utf-8")
         health.with_name(health.name + ".sha256").write_text(sha256(health) + "\n", encoding="ascii")
         candidate = root / "candidate.json"
-        candidate.write_text('{"candidate_id":"fixture-v1","status":"FROZEN"}\n', encoding="utf-8")
+        candidate.write_text('{"candidate_id":"fixture-v1","status":"FROZEN","candidate_frozen":true}\n', encoding="utf-8")
         candidate.with_name(candidate.name + ".sha256").write_text(sha256(candidate) + "  candidate.json\n", encoding="ascii")
         table = evaluation / "evaluation.csv"
         with table.open("w", newline="", encoding="utf-8") as stream:

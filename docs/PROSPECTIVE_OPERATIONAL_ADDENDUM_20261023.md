@@ -1,3 +1,5 @@
+> HISTORICAL SNAPSHOT: preserved evidence, not current operational authority. Current status: [PROJECT_STATUS.md](PROJECT_STATUS.md); Cloud audit: [CLOUD_PREPARATION_AUDIT.md](CLOUD_PREPARATION_AUDIT.md).
+
 # Prospective operational addendum â€” 2026-10-23
 
 This is the current authoritative operational checkpoint. It supersedes earlier operational status notes, including claims that XM is closed or that the session probe has not run. It does not amend the sealed research/maturity/evaluation protocols, collector identity, cohort start, splits, rejected hypotheses, candidate rules or scientific thresholds.

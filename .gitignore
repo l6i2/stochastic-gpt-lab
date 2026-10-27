@@ -8,3 +8,11 @@ outputs/*
 !outputs/.gitkeep
 # The sealed prospective cohort contains broker market data and is never committed.
 outputs/future_validation_cohort/
+
+# Only explicitly reviewed small Cloud status artifacts are publishable.
+!outputs/status/
+outputs/status/*
+!outputs/status/CLOUD_HANDOFF.json
+!outputs/status/CLOUD_VERIFICATION.json
+!outputs/status/MANIFEST_CHAIN_GIT.json
+!outputs/status/CLOUD_SOURCE_HASHES.json

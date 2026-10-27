@@ -94,6 +94,7 @@ def bracket(group: list[dict], windows: list[dict]) -> dict | None:
 def w32_snapshot() -> dict:
     result = {}
     for name, args in (('source', ['/query', '/source']), ('status', ['/query', '/status']),
+                       ('configuration', ['/query', '/configuration']),
                        ('offset', ['/stripchart', '/computer:time.windows.com', '/dataonly', '/samples:3'])):
         start = time.perf_counter_ns()
         try:
@@ -119,7 +120,7 @@ def atomic_json(path: Path, value: dict):
     temp.replace(path)
 
 
-def watch(native: Path, output: Path):
+def watch(native: Path, output: Path, timeout_seconds: float = 300):
     output.mkdir(parents=True, exist_ok=True)
     if (output / 'capture.json').exists() or native.exists():
         raise FileExistsError('Existing evidence must be archived and hashed before arming')
@@ -135,7 +136,11 @@ def watch(native: Path, output: Path):
         atomic_json(output / 'ready.json', {'state': 'ARMED_NO_EXPIRY', 'start': start,
                     'native_filename': native.name, 'orders_sent': 0, 'clock_changed': False})
         print('ARMED_NO_EXPIRY', flush=True)
+        deadline = time.monotonic() + timeout_seconds
         while len(seen) < 50:
+            if time.monotonic() >= deadline:
+                atomic_json(output / "partial_capture.json", {"status": "TIMEOUT", "paired_frames": paired, "orders_sent": 0})
+                raise TimeoutError("NATIVE_CAPTURE_TIMEOUT; preserve evidence and use a new run")
             ring.append(clocks.read())
             if reference_job is not None and reference_job.done():
                 references.append(reference_job.result())

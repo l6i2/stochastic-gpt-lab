@@ -56,3 +56,19 @@ FINAL_TEST=LOCKED
 DEMO=DISABLED
 LIVE_TRADING=false
 ```
+
+## Cloud operational addendum — 2026-10-27
+
+Scientific rules, cohort boundaries, thresholds and authorization remain unchanged.
+The byte-exact prior protocol and seal are retained in
+`archive/pre_cloud_20261027/PROSPECTIVE_EVALUATION_PROTOCOL.md`.
+This documentation addition creates a new protocol hash; any later candidate and
+manual authorization must bind the current seal. No candidate currently exists.
+
+The frozen package now explicitly carries `candidate_frozen=true` as well as
+status FROZEN. Nonce and candidate/cohort consumption are durable in the canonical
+cohort evaluation ledger even when a separate audit ledger is selected. An output
+is exclusive-create and cannot be overwritten. A crash or malformed table after
+consumption never authorizes retry. Clock preparation/local-finalize never calls
+the evaluator, reads outcome rows, creates tokens or opens any research/trading gate.
+Current operational state: [PROJECT_STATUS.md](PROJECT_STATUS.md).

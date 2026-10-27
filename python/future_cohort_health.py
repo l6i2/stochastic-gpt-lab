@@ -43,16 +43,9 @@ def _nth_weekday(year: int, month: int, weekday: int, occurrence: int) -> date:
 
 
 def _ny_wall_time(utc_dt: datetime) -> datetime:
-    """Convert UTC to New York with the US DST rule, without optional packages."""
-    dt = utc_dt.astimezone(timezone.utc)
-    year = dt.year
-    # Since 2007: DST starts 02:00 local standard time (07:00 UTC) on the
-    # second Sunday in March and ends 02:00 local daylight time (06:00 UTC) on
-    # the first Sunday in November.
-    start = datetime.combine(_nth_weekday(year, 3, 6, 2), time(7), timezone.utc)
-    end = datetime.combine(_nth_weekday(year, 11, 6, 1), time(6), timezone.utc)
-    offset = timedelta(hours=-4 if start <= dt < end else -5)
-    return (dt + offset).replace(tzinfo=None)
+    """Pinned IANA display view; causal ordering always uses normalized UTC."""
+    from time_semantics import utc_to_new_york
+    return utc_to_new_york(utc_dt).replace(tzinfo=None)
 
 
 def _session(utc_dt: datetime) -> str:

@@ -141,7 +141,7 @@ def causal_event(event: NormalizedEvent, *, feature_max_time: datetime, decision
     feature_msc, decision_msc = utc_milliseconds(feature_max_time), utc_milliseconds(decision_time)
     if previous and (previous.mapping_id != event.mapping_id or previous.utc_msc > event.utc_msc):
         return False, 'NORMALIZED_ORDER_VIOLATION'
-    if feature_max_time > decision_time:
+    if feature_max_time.astimezone(timezone.utc) > decision_time.astimezone(timezone.utc):
         return False, 'FEATURE_LOOKAHEAD'
     return validate_decision_times(feature_max_time_msc=feature_msc,
         decision_time_msc=decision_msc, quote_time_msc=event.utc_msc)

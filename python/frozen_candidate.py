@@ -77,6 +77,7 @@ def freeze_candidate(candidate_path: Path, evidence_path: Path, output_dir: Path
     validate_candidate(candidate, evidence_path)
     payload = dict(candidate)
     payload["status"] = "FROZEN"
+    payload["candidate_frozen"] = True
     payload["evidence_path"] = "TRAIN_REPORT_HASH_BOUND"
     destination_dir = Path(output_dir)
     destination_dir.mkdir(parents=True, exist_ok=True)

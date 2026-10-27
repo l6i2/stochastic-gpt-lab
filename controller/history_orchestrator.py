@@ -1,6 +1,6 @@
 import json
 from datetime import datetime, timedelta, timezone
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 from .artifact_collector import atomic_json
 from .safety_gate import ROOT, boundaries, assert_research_range_allowed
 from .tester_config import tester_end
@@ -54,7 +54,7 @@ def is_validated_smoke(record, ea):
               and record.get('model') == 'real_ticks'
               and record.get('optimization') is False
               and record.get('ea_hash')
-              and Path(record.get('ea_path', '')).stem == ea
+              and PureWindowsPath(record.get('ea_path', '')).stem == ea
               and 1 <= span <= 31)
     if not common:
         return False

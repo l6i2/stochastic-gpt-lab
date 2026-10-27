@@ -174,7 +174,7 @@ def evaluate(*, candidate_path: Path, eval_csv: Path, eval_manifest_path: Path,
             or protocol_sidecar.read_text(encoding="ascii").split()[0] != protocol_hash):
         raise ValueError("Frozen prospective evaluation protocol sidecar is missing or invalid")
     evaluator_hash = sha256(Path(__file__).resolve())
-    if candidate.get("status") != "FROZEN" or not candidate.get("candidate_id"):
+    if candidate.get("status") != "FROZEN" or candidate.get("candidate_frozen") is not True or not candidate.get("candidate_id"):
         raise ValueError("Only a frozen candidate may be evaluated")
     expected = {
         "candidate_sha256": candidate_hash,
@@ -204,11 +204,13 @@ def evaluate(*, candidate_path: Path, eval_csv: Path, eval_manifest_path: Path,
         raise ValueError("Explicit matching one-time authorization is required")
 
     ledger_root = (ledger_root or eval_root / "evaluation_ledger").resolve()
+    canonical_ledger = eval_root / "evaluation_ledger"
+    canonical_ledger.mkdir(parents=True, exist_ok=True)
     ledger_root.mkdir(parents=True, exist_ok=True)
     ledger_key = hashlib.sha256(f"{candidate_hash}:{cohort_hash}".encode()).hexdigest()
     lock_path = ledger_root / f"{ledger_key}.consumed"
     nonce_hash = hashlib.sha256(authorization["single_use_nonce"].encode("ascii")).hexdigest()
-    nonce_path = ledger_root / f"{nonce_hash}.token-consumed"
+    nonce_path = canonical_ledger / f"{nonce_hash}.token-consumed"
     audit_path = ledger_root / "evaluation_audit.jsonl"
     consume_record = {
         "status": "AUTHORIZATION_CONSUMED_BEFORE_OUTCOME_READ",
@@ -216,20 +218,31 @@ def evaluate(*, candidate_path: Path, eval_csv: Path, eval_manifest_path: Path,
         "single_use_nonce_sha256": nonce_hash,
         **expected,
     }
-    try:
-        token_fd = os.open(nonce_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
-    except FileExistsError as exc:
-        raise ValueError("This one-use authorization token has already been consumed") from exc
-    with os.fdopen(token_fd, "w", encoding="utf-8") as stream:
-        stream.write(json.dumps(consume_record, sort_keys=True))
-    try:
-        pair_fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
-    except FileExistsError as exc:
-        raise ValueError("This candidate/cohort pair has already been consumed") from exc
-    with os.fdopen(pair_fd, "w", encoding="utf-8") as stream:
-        stream.write(json.dumps(consume_record, sort_keys=True))
+    result_path = eval_root / f"evaluation_{ledger_key}.json"
+    canonical_pair = canonical_ledger / f"{ledger_key}.consumed"
+    if canonical_pair.exists() or result_path.exists():
+        raise ValueError("This candidate/cohort pair has already been consumed")
+    # Reserve the pair first: even a crash before nonce/audit persistence cannot
+    # authorize this pair under a fresh token or an alternate audit directory.
+    for claim_path, reason in ((canonical_pair, "candidate/cohort pair"),
+                               (nonce_path, "one-use authorization token")):
+        try:
+            claim_fd = os.open(claim_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
+        except FileExistsError as exc:
+            raise ValueError(f"This {reason} has already been consumed") from exc
+        with os.fdopen(claim_fd, "w", encoding="utf-8") as stream:
+            stream.write(json.dumps(consume_record, sort_keys=True))
+            stream.flush()
+            os.fsync(stream.fileno())
+    if canonical_pair != lock_path:
+        with lock_path.open("x", encoding="utf-8") as stream:
+            stream.write(json.dumps(consume_record, sort_keys=True))
+            stream.flush()
+            os.fsync(stream.fileno())
     with audit_path.open("a", encoding="utf-8") as stream:
         stream.write(json.dumps(consume_record, sort_keys=True) + "\n")
+        stream.flush()
+        os.fsync(stream.fileno())
 
     with eval_csv.open("r", encoding="utf-8-sig", newline="") as stream:
         reader = csv.DictReader(stream)
@@ -287,9 +300,10 @@ def evaluate(*, candidate_path: Path, eval_csv: Path, eval_manifest_path: Path,
         "live_trading": False,
     }
     result_path = eval_root / f"evaluation_{ledger_key}.json"
-    temp = result_path.with_suffix(".tmp")
-    temp.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    os.replace(temp, result_path)
+    with result_path.open("x", encoding="utf-8") as stream:
+        stream.write(json.dumps(result, indent=2, sort_keys=True) + "\n")
+        stream.flush()
+        os.fsync(stream.fileno())
     with audit_path.open("a", encoding="utf-8") as stream:
         stream.write(json.dumps({"status": "EVALUATION_COMPLETE", "evaluation_status": evaluation_status,
                                  "result_sha256": sha256(result_path), **expected}, sort_keys=True) + "\n")

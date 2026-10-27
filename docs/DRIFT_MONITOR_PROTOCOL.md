@@ -1,18 +1,39 @@
-# Prospective data drift monitor
+# Drift monitor — READY (tooling)
 
-## Authoritative operational checkpoint — 2026-10-23
+Sin baseline real ajustado, sin stream conectado, sin comparación de cohorte.
+READY significa productor compartido y comparador probados con fixtures. No es
+validación de distribución real ni activación automática.
 
-[Current addendum and evidence](PROSPECTIVE_OPERATIONAL_ADDENDUM_20261023.md): `SESSION_CALENDAR=PASS_WITH_RUNTIME_GUARD` for operational containment; historical UTC calendar remains unverified. Guard READY, DST PARTIAL, holidays UNKNOWN. Causal audit FAIL (frozen metadata/native-trigger non-equivalence), manifest chain PARTIAL, drift NOT_READY. Collector active/HEALTHY, cohort NOT_MATURE, evaluator READY_BUT_GATED. DEMO executor and shadow READY_BUT_DISABLED; no orders. FINAL_TEST LOCKED; DEMO DISABLED; LIVE_TRADING=false. Full suite: 190 tests, 9 native skips. NEXT_STATE=HARD_BLOCKER.
+`python/drift_feature_stream.py` es el único productor para baseline TRAIN y
+stream futuro. Ambos consumen el mismo esquema de barras cerradas, quote
+normalizado y decision_time UTC explícito. Rechaza inputs extra, timestamps
+futuros, quotes stale, barras duplicadas/no monotónicas y OHLC inválido.
+Warmup produce missingness; se declara el mismo origen de warmup y source hash.
+MAIN_K usa ratio-of-sums 5/3/3, ATR14 simple, referencia mediana de los 288 ATR
+anteriores, volumen relativo a 20 barras anteriores y cuerpo HA/ATR causal.
+No modifica señales de estrategia ni el metadata de maturity congelado.
 
-All operational snapshots below are historical and superseded by the linked addendum; sealed scientific protocols remain unchanged.
+Whitelist v2 exacta en `configs/drift_feature_whitelist.json`: stoch_main_k,
+spread, atr14_over_previous_288_bar_median, relative_tick_volume_20, ha_body_atr.
+El whitelist v1 no implementado se conserva como `drift_feature_whitelist_v1.archived.json`.
+Se excluyen distances de Volume Profile sin productor común probado; no se
+sustituyen por cifras inventadas. Baseline, CSV futuro y bins deben tener
+exactamente el mismo conjunto; definiciones y productor están ligados por hash.
 
+El builder `python/drift_baseline.py` exige matriz feature-only TRAIN, provenance
+con split=TRAIN, feature_only=true, normalized_utc_verified=true, matrix_sha256 y
+producer_sha256. No es un permiso para generar o leer TRAIN/stream automáticamente.
+Crear el baseline solo tras disponer del input normalizado autorizado:
 
+```text
+python python/drift_baseline.py --matrix <TRAIN_features.csv> --provenance <TRAIN_features_provenance.json> --output <baseline.json>
+python python/drift_monitor.py <future_features_only.csv> --whitelist configs/drift_feature_whitelist.json --baseline <baseline.json> --feature-definition configs/drift_feature_whitelist.json --producer-source python/drift_feature_stream.py --output <drift_report.json>
+```
 
+Los bins están fijados en el productor; no hay ajuste a outcomes. Comparación
+PSI/missingness, cobertura de sesión/régimen/volatilidad, spread, latencia y gaps
+usan solo features o metadata. PnL, labels, outcomes, win rate, PF y future_return
+son prohibidos incluso si se intentan añadir al whitelist. Los conteos deben ser
+enteros no negativos. No hay scoring, ranking ni tuning.
 
-**Status:** `PREPARED/NOT_READY`; implementation is fixture-tested, but no baseline is fitted and no real-cohort drift comparison has run. `LIVE_TRADING=false`.
-
-The monitor accepts only an explicit feature whitelist and fixed numeric bin edges from a separately hashed baseline summary. It reports missingness rate, population-stability index (PSI), spread distribution, session coverage, causal regime/volatility coverage, shadow decision-latency distribution, and capture-gap/quality changes. Default alerts are PSI `>0.25` and absolute missingness-rate change `>0.10`; both are descriptive data-quality alerts, never policy or threshold updates.
-
-The reference summary must be frozen before comparing a future cohort and must contain distribution counts only. Candidate outcomes, labels, PnL, win rate, profit factor, MFE/MAE, exit results, and candidate ranking are prohibited inputs. A missing feature, changed bin definition, malformed quality report, or protected column causes a fail-closed error. Reports state `candidate_scored=false` and `threshold_tuning=false`.
-
-Implementation: `python/drift_monitor.py`; synthetic tests: `tests/test_drift_monitor.py`. No baseline was generated from FUTURE_VALIDATION_COHORT, and no real-data drift comparison has run. The current whitelist (`stoch_main_k`, `atr14_over_previous_288_bar_median`, relative volume, Heikin Ashi and Volume Profile features) has not been proven schema-equivalent to any identically computed, allowed future-cohort feature stream. The health report currently emits only fixed eligibility/coverage metadata and is not such a stream. Do not fit the baseline or compare distributions until a TRAIN-only baseline builder and a causally identical, separately governed feature-only future stream are implemented and tested. This state is intentionally NOT_READY; it does not justify using cohort data for hypothesis generation or scoring.
+[Estado actual](PROJECT_STATUS.md) · [protocolo anterior](archive/pre_cloud_20261027/DRIFT_MONITOR_PROTOCOL.md).

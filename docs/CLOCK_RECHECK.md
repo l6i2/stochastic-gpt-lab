@@ -1,3 +1,5 @@
+> HISTORICAL SNAPSHOT: preserved evidence, not current operational authority. Current status: [PROJECT_STATUS.md](PROJECT_STATUS.md); Cloud audit: [CLOUD_PREPARATION_AUDIT.md](CLOUD_PREPARATION_AUDIT.md).
+
 # Revisión adicional del bloqueo de reloj
 
 Se reutilizaron los 150 registros originales y se verificaron todos sus hashes. No se repitió, reinstaló ni recompiló el probe. Las rutas automáticas previas permanecen documentadas en CLOCK_SYNC_AUTOMATION.md; repetirlas no resolvería el reloj del host.

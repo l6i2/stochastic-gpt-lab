@@ -5,6 +5,8 @@ from datetime import datetime, timezone
 import hashlib
 import json
 import math
+import os
+import sqlite3
 from pathlib import Path
 import re
 import time
@@ -30,6 +32,17 @@ class ShadowRecorder:
 
     def __init__(self, path: Path):
         self.path = Path(path)
+
+    def claim(self, signal_id: str) -> bool:
+        """Durably reserve before policy execution; a crash cannot replay a signal."""
+        if not signal_id:
+            raise ValueError("Signal identity required")
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        with sqlite3.connect(str(self.path) + ".sqlite3") as connection:
+            connection.execute("PRAGMA synchronous=FULL")
+            connection.execute("CREATE TABLE IF NOT EXISTS claims (signal_id TEXT PRIMARY KEY)")
+            cursor = connection.execute("INSERT OR IGNORE INTO claims VALUES (?)", (signal_id,))
+            return cursor.rowcount == 1
 
     def record(self, event: dict[str, Any]) -> None:
         required = {"timestamp_utc", "signal_id", "candidate_sha256", "decision", "reason",
@@ -68,6 +81,7 @@ class ShadowRecorder:
         with self.path.open("a", encoding="utf-8", newline="\n") as stream:
             stream.write(json.dumps(payload, sort_keys=True, separators=(",", ":"), allow_nan=False) + "\n")
             stream.flush()
+            os.fsync(stream.fileno())
 
 
 class ShadowMode:
@@ -89,7 +103,9 @@ class ShadowMode:
                 session_observation: SessionObservation | None = None) -> dict[str, Any]:
         if not self.enabled:
             return {"status": "DISABLED", "orders_sent": 0, "order_count": self.order_count}
-        now = (now_utc or datetime.now(timezone.utc)).astimezone(timezone.utc)
+        now = now_utc or datetime.now(timezone.utc)
+        utc_milliseconds(now)  # Reject naive clocks before astimezone can infer a local zone.
+        now = now.astimezone(timezone.utc)
         signal_time = _parse_utc(signal["signal_time_utc"])
         quote_time = _parse_utc(quote["time_utc"])
         features = dict(signal.get("features", {}))
@@ -123,6 +139,8 @@ class ShadowMode:
             reason = "SESSION_GUARD_UNAVAILABLE"
         elif not (session_result := self.session_guard.check(session_observation, now_utc=now)).allowed:
             reason = session_result.reason
+        elif not self.recorder.claim(str(signal.get("signal_id", ""))):
+            reason = "DUPLICATE_SIGNAL_OR_CRASH_RECOVERY"
         else:
             proposed = decision_fn(features)
             if proposed in {"FOLLOW", "INVERT"}:
