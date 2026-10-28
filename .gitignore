@@ -16,3 +16,6 @@ outputs/status/*
 !outputs/status/CLOUD_VERIFICATION.json
 !outputs/status/MANIFEST_CHAIN_GIT.json
 !outputs/status/CLOUD_SOURCE_HASHES.json
+
+# Only reviewed machine status, never credentials or broker data.
+!outputs/status/PC_A_HANDOFF.json

@@ -1,3 +1,4 @@
+* text=auto eol=lf
 # Hash-bound payloads must retain their exact audited bytes on every checkout.
 docs/FUTURE_VALIDATION_PROTOCOL.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 docs/PROSPECTIVE_EVALUATION_PROTOCOL.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
@@ -48,3 +49,8 @@ python/finalize_clock_capture.py -text whitespace=blank-at-eol,blank-at-eof,spac
 configs/clock_sync_completed_evidence_20261023/* -text whitespace=cr-at-eol
 
 configs/clock_recheck_20261023/* -text whitespace=cr-at-eol
+
+# Preserve source bytes bound by retained native MAIN_K audit.
+mt5/StochasticBarDecisionResearchEA.mq5 -text
+
+research/hypotheses_round2/manifest.json -text

@@ -33,6 +33,26 @@ def validate_handoff(data):
     return data
 
 
+def verify_source_manifest(path, root=ROOT):
+    root = Path(root).resolve()
+    path = Path(path).resolve()
+    if root not in path.parents:
+        raise ValueError('SOURCE_MANIFEST_OUTSIDE_REPOSITORY')
+    manifest = json.loads(path.read_text(encoding='utf-8-sig'))
+    baseline_path = root / 'outputs/status/CLOUD_SOURCE_HASHES.json'
+    baseline = json.loads(baseline_path.read_text(encoding='utf-8-sig'))
+    files = manifest.get('files', {})
+    if not files or not set(baseline['files']).issubset(files):
+        raise ValueError('SOURCE_MANIFEST_OMITS_BASELINE_FILES')
+    if path != baseline_path.resolve() and manifest.get('parent_manifest_sha256') != sha(baseline_path):
+        raise ValueError('SOURCE_MANIFEST_PARENT_MISMATCH')
+    for relative, expected in files.items():
+        source = (root / relative).resolve()
+        if root not in source.parents or sha(source) != expected:
+            raise ValueError('CLOUD_SOURCE_HASH_MISMATCH:' + relative)
+    return manifest
+
+
 def discover_terminal(requested=None):
     import psutil
     paths = set()
@@ -128,17 +148,15 @@ def main():
     parser.add_argument('--mapping', type=Path)
     parser.add_argument('--resume-folder', type=Path)
     parser.add_argument('--check-handoff', action='store_true')
+    parser.add_argument('--source-manifest', type=Path,
+                        default=ROOT / 'outputs/status/CLOUD_SOURCE_HASHES.json')
     args = parser.parse_args()
     handoff = validate_handoff(json.loads((ROOT / 'outputs/status/CLOUD_HANDOFF.json').read_text()))
     branch = subprocess.check_output(['git', 'branch', '--show-current'], cwd=ROOT, text=True).strip()
     if branch != handoff['branch']:
         raise ValueError('WRONG_BRANCH')
     subprocess.run(['git', 'merge-base', '--is-ancestor', handoff['head'], 'HEAD'], cwd=ROOT, check=True)
-    source_manifest = json.loads((ROOT / 'outputs/status/CLOUD_SOURCE_HASHES.json').read_text())
-    for relative, expected in source_manifest['files'].items():
-        path = (ROOT / relative).resolve()
-        if ROOT not in path.parents or sha(path) != expected:
-            raise ValueError('CLOUD_SOURCE_HASH_MISMATCH:' + relative)
+    verify_source_manifest(args.source_manifest)
     if args.check_handoff:
         print('HANDOFF_VALID; LOCAL_REQUIRED; no terminal connection')
         return 0

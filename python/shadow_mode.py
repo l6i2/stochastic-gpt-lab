@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone
+from contextlib import closing
 import hashlib
 import json
 import math
@@ -38,11 +39,12 @@ class ShadowRecorder:
         if not signal_id:
             raise ValueError("Signal identity required")
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        with sqlite3.connect(str(self.path) + ".sqlite3") as connection:
-            connection.execute("PRAGMA synchronous=FULL")
-            connection.execute("CREATE TABLE IF NOT EXISTS claims (signal_id TEXT PRIMARY KEY)")
-            cursor = connection.execute("INSERT OR IGNORE INTO claims VALUES (?)", (signal_id,))
-            return cursor.rowcount == 1
+        with closing(sqlite3.connect(str(self.path) + ".sqlite3")) as connection:
+            with connection:
+                connection.execute("PRAGMA synchronous=FULL")
+                connection.execute("CREATE TABLE IF NOT EXISTS claims (signal_id TEXT PRIMARY KEY)")
+                cursor = connection.execute("INSERT OR IGNORE INTO claims VALUES (?)", (signal_id,))
+                return cursor.rowcount == 1
 
     def record(self, event: dict[str, Any]) -> None:
         required = {"timestamp_utc", "signal_id", "candidate_sha256", "decision", "reason",

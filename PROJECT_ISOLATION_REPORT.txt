@@ -1,0 +1,17 @@
+PROJECT_ISOLATION_REPORT
+Scope: new exclusive checkout at C:\Users\DELL 2022\Documents\Codex\stochastic-gpt-lab-full-pipeline
+Repository: https://github.com/l6i2/stochastic-gpt-lab.git
+Branch: research/full-pipeline
+Python env: <repo>\.venv
+Outputs/logs: <repo>\outputs (local machine evidence under outputs/pc_a)
+MT5: not yet identified; deployment prohibited until dedicated instance is verified.
+Scheduler: no project task created. Ports/processes: none started.
+Other project: no writes performed. Existing WSL Ubuntu-24.04 must not be reused.
+LOW_MEMORY_MODE=true. All gates remain closed. Clock is UNSYNCHRONIZED.
+
+Current dedicated MT5 installation: C:\Program Files\XM Global SC MT5 Terminal
+Current dedicated MT5 Data Folder: C:\Users\DELL 2022\AppData\Roaming\MetaQuotes\Terminal\20C285FE08971A9A2E814AAC44AFC9D2
+Deployed by this migration: MQL5/Experts/StochasticBarDecisionResearch and MQL5/Scripts/ResearchDiagnostics/PC_A only.
+All deployment paths pinned; unrelated source drift is refused. No scheduler entries or collector processes created.
+Shared-system change: Windows Time startup Manual -> Automatic via normal UAC, resync only; previous configuration retained locally. Other project files/WSL unchanged.
+Windows sync observed; clock attestation and cohort continuity pending. Vendor MT5 local MCP observed on 127.0.0.1:22346; not created by research code. No externally listening service configured by this migration.

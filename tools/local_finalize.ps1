@@ -1,4 +1,5 @@
-param([string]$TerminalPath = '', [string]$Mapping = '', [string]$ResumeFolder = '')
+param([string]$TerminalPath = '', [string]$Mapping = '', [string]$ResumeFolder = '',
+      [string]$SourceManifest = '')
 $ErrorActionPreference = 'Stop'
 $repo = Split-Path -Parent $PSScriptRoot
 Set-Location $repo
@@ -8,5 +9,6 @@ $arguments = @('python\local_finalize.py')
 if ($TerminalPath) { $arguments += @('--terminal', $TerminalPath) }
 if ($Mapping) { $arguments += @('--mapping', $Mapping) }
 if ($ResumeFolder) { $arguments += @('--resume-folder', $ResumeFolder) }
+if ($SourceManifest) { $arguments += @('--source-manifest', $SourceManifest) }
 & $python @arguments
 exit $LASTEXITCODE

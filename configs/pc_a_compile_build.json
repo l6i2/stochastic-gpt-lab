@@ -1,0 +1,26 @@
+{
+  "scope": "Compilation only; no account, clock, controller or trading acceptance",
+  "builds": [
+    {
+      "source": "StochasticBarDecisionResearchEA.mq5",
+      "status": "PASS",
+      "source_sha256": "f2e9bf43cbbdc716148847fe53e1f3dd14b21393775ccc809d05cb5e134cb88d",
+      "ex5_sha256": "e32f059ea80618a41c5a32b056d1bfa3147dd820e5348e4be1d0e08f0c296bb2",
+      "compile_log_sha256": "86a5cc5ef94eb7afec72c7c300f7f6d08abff028b474f5edf11a359ebc264f6b"
+    },
+    {
+      "source": "FullClockAndTimeSemanticsProbe.mq5",
+      "status": "PASS",
+      "source_sha256": "4b23fa262596439b9057df254c6f1276cc6bcee8167346297e70000e15cf5324",
+      "ex5_sha256": "fb3383e35e912d2491e41cafe700ae7dd0dd77abe46c24da8eaf85e7b5a81e33",
+      "compile_log_sha256": "0d392bcaca24bfa354dae500b0f2a54522b762528f0a33257479c81fa7899ffe"
+    }
+  ],
+  "sources": {
+    "mt5\\StochasticBarDecisionResearchEA.mq5": "f2e9bf43cbbdc716148847fe53e1f3dd14b21393775ccc809d05cb5e134cb88d",
+    "mt5\\ResearchCore.mqh": "99a5328d58bf613d5cc9b354ddfee936a0e23427b8a16792a19d6e63b0011283",
+    "mt5\\HeikinAshiCore.mqh": "d9a1e525a99e66f855bc49c3a696030c5e12ef534a1aeff5012b63a462a3e8ef",
+    "tests\\mql5\\FullClockAndTimeSemanticsProbe.mq5": "4b23fa262596439b9057df254c6f1276cc6bcee8167346297e70000e15cf5324"
+  },
+  "orders_sent": 0
+}
