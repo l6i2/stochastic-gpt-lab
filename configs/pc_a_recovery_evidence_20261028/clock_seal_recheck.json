@@ -1,0 +1,12 @@
+{
+  "hashes": {
+    "capture_sha256": "04e5dc378c64bdfde901be5fd4249119c5190e9bb203efdb4fa1c08b82e71ce3",
+    "ex5_sha256": "7e8a8f0fd40064524461859af2988d7b9d9fa4c17306f9dd20db3c4835b61573",
+    "markers_sha256": "4b1a3e70c5a05022a8c8d972d22f3e4cec9a0b24fa202a4412ad1927e5e91c17",
+    "native_csv_sha256": "7920d7a121e2478bc5394903ad900d3d4a23c9cd707ab224a056a27e403588d1",
+    "source_sha256": "b43627683b0a83b275bbea144b18c29733e527a97b17a032902200803d0a13b9"
+  },
+  "interval_only": true,
+  "native_to_utc_mapping": "UNVERIFIED",
+  "status": "PASS"
+}

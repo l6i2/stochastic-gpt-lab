@@ -1,4 +1,4 @@
 param()
-# Recovery remains read-only until the original cohort and cursor are verified.
+# Resume the new raw quarantine archive; scientific acceptance remains blocked.
 & "$PSScriptRoot\start_research_station.ps1"
 exit $LASTEXITCODE

@@ -1,0 +1,119 @@
+{
+  "BEST_CANDIDATE": "NONE",
+  "CAUSAL_AUDIT": "FAIL",
+  "CLOCK_ATTESTATION": "PASS",
+  "COLLECTOR": "RUNNING_RAW_QUARANTINE_ONLY",
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "FINAL_TEST": "LOCKED",
+  "GITHUB_SYNC": "PENDING_PUBLICATION",
+  "HISTORICAL_DATA": "BLOCKED",
+  "HISTORICAL_DATA_VERSION": "historical_20261028T175047_e97ee981",
+  "HISTORICAL_VERSION_CLASS": "NEW_HISTORICAL_DATA_VERSION_RAW_QUARANTINE",
+  "LIVE_TRADING": false,
+  "LOW_MEMORY_MODE": true,
+  "MANUAL_ACTION_REQUIRED": "NONE",
+  "METADATA_COMPATIBILITY": "FAIL",
+  "NATIVE_TO_UTC_MAPPING": "FAIL",
+  "NEW_COHORT": "BLOCKED",
+  "NEW_COHORT_ID": "prospective_20261028T175047_3ac8b527",
+  "NEW_COLLECTOR_VERSION": "pc_a_native_quarantine_v1",
+  "NEW_START_UTC": "2026-10-28T17:50:47.091197+00:00",
+  "NEXT_STATE": "AUTONOMOUS_RAW_QUARANTINE_MAPPING_METADATA_AND_RESEARCH_GOVERNANCE_GATED",
+  "ORDERS_SENT": 0,
+  "PC_A_STATUS": "PARTIAL",
+  "PREVIOUS_COHORT_CONTINUITY": "UNVERIFIED",
+  "PUSH_STATUS": "PENDING_PUBLICATION",
+  "REMOTE_HEAD_BEFORE": "6abac62be37e48e8a8844c10512ae4f787d4495f",
+  "TRAINING_PIPELINE": "BLOCKED",
+  "TRAINING_READINESS": "BLOCKED_BY_RESEARCH_GOVERNANCE",
+  "archives": {
+    "historical": {
+      "archive_id": "historical_20261028T175047_e97ee981",
+      "chain_head": "1a7e965bf7fa5291f0ef13d8bd7fefa95ecce7b1d0ec3a40d3e6919026a746ee",
+      "m5_bars": 0,
+      "manifest_sha256": "3bef4fcbff070041c72dfd72e1bd838c213649db4c95adb82ea79b598c2044e5",
+      "new_start_utc": null,
+      "scientific_acceptance": false,
+      "segments": 96,
+      "ticks": 79211
+    },
+    "prospective": {
+      "archive_id": "prospective_20261028T175047_3ac8b527",
+      "chain_head": "59e5612f3582154ced8785124ec8de83b54a7c2e6bdef290508c3d63b16e18c4",
+      "m5_bars": 9,
+      "manifest_sha256": "76d9f54c67222e8c1f4e6349cd28b45a0686c7462ad10238ce756fbc1dc055f3",
+      "new_start_utc": "2026-10-28T17:50:47.091197+00:00",
+      "scientific_acceptance": false,
+      "segments": 11,
+      "ticks": 6575
+    }
+  },
+  "backup": {
+    "files": 214,
+    "independent_failure_domain": false,
+    "status": "VERIFIED_LOCAL_COPY"
+  },
+  "controller": {
+    "C1_ENV": "PASS",
+    "C2_COMPILE": "PASS_HASH_REVERIFIED",
+    "C3_HEADLESS_TESTER": "BLOCKED_NO_SEALED_SPLIT_MANIFEST_AND_TERMINAL_RUNNING",
+    "C4_ARTIFACTS": "PARTIAL_COMPILE_ONLY_NO_ACCEPTED_TESTER_DATASETS",
+    "C5_HISTORY": "PARTIAL_TICKS_ACQUIRED_M5_EMPTY"
+  },
+  "historical_independence": false,
+  "inventory": [
+    {
+      "artifact": "Git source, clock capture, native MAIN_K parity and exact compiled binaries",
+      "classification": "VERIFIED"
+    },
+    {
+      "artifact": "Legacy frozen metadata arithmetic Fast-K approximation",
+      "classification": "FOUND_BUT_INVALID",
+      "reason": "Native MAIN_K non-equivalence; original unchanged"
+    },
+    {
+      "artifact": "Old raw history, master datasets, sealed split membership and old cohort segments/state",
+      "classification": "MISSING",
+      "scope": "Accessible PC A project/chat, relevant backup names, GitHub branch/releases/Actions"
+    },
+    {
+      "artifact": "Broker native historical quotes",
+      "classification": "REGENERABLE",
+      "result": "2024-01-02 diagnostic acquired; M5 empty and UTC mapping unverified"
+    },
+    {
+      "artifact": "Original prospective receipt times if not recoverable from a sealed backup",
+      "classification": "IRRECOVERABLE",
+      "reason": "Cannot regenerate past receipt evidence by redownloading broker history; no global absence claim"
+    },
+    {
+      "artifact": "New raw historical/prospective archives and verified same-disk copy",
+      "classification": "LOCAL_ONLY"
+    }
+  ],
+  "missing_original_split_manifest": true,
+  "observed_utc": "2026-10-28T17:58:30.863195+00:00",
+  "old_pc_required_for_new_raw_capture": false,
+  "scheduler": {
+    "enabled": true,
+    "last_result": 0,
+    "last_run": "2026-10-28T17:57:37.0000000Z",
+    "state": "Ready"
+  },
+  "scientific_backfill_absence_utc_proven": false,
+  "tests": {
+    "archive_safety_tests": 9,
+    "compileall": "PASS",
+    "failed": 0,
+    "git_diff_check": "PASS",
+    "passed": 246,
+    "pip_check": "PASS",
+    "scheduled_execution": "PASS_LAST_RESULT_0",
+    "skip_reason": "g++ unavailable",
+    "skipped": 9,
+    "stop_resume_same_identity": "PASS",
+    "suite_log_sha256": "9952ec71dcb156bcfcedec70f3af593ab2bb272c72f051a4b0fcd595f099841c",
+    "total": 255
+  }
+}

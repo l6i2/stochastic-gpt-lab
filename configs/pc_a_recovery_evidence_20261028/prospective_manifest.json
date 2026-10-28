@@ -1,0 +1,253 @@
+{
+  "activation_quote_native_msc": 1793214549497,
+  "archive_id": "prospective_20261028T175047_3ac8b527",
+  "chain_head": "59e5612f3582154ced8785124ec8de83b54a7c2e6bdef290508c3d63b16e18c4",
+  "collector_sha256": "ac2dd0201fc0f0048d2c103a57adb9783998e592944d2acb702d3526b8cb19de",
+  "collector_version": "pc_a_native_quarantine_v1",
+  "completeness": "UNPROVEN_BROKER_QUERY_SEMANTICS_AND_LATE_ARRIVALS",
+  "created_utc": "2026-10-28T17:50:47.091197+00:00",
+  "evaluation_authorized": false,
+  "gaps": [],
+  "kind": "prospective",
+  "last_attempt_utc": null,
+  "last_success_utc": "2026-10-28T17:58:25.698131+00:00",
+  "live_trading": false,
+  "low_memory_mode": true,
+  "maturity_eligible": false,
+  "native_end_exclusive_msc": null,
+  "native_start_msc": 1793214549498,
+  "native_to_utc_mapping": "UNVERIFIED",
+  "new_start_utc": "2026-10-28T17:50:47.091197+00:00",
+  "next_bar_native_msc": 1793217300000,
+  "next_native_msc": 1793217504966,
+  "orders_sent": 0,
+  "previous_cohort_continuity": "UNVERIFIED",
+  "schema_version": 1,
+  "scientific_acceptance": false,
+  "segments": [
+    {
+      "bar_end_native_msc": 1793215200000,
+      "bar_start_native_msc": 1793214600000,
+      "bars": {
+        "file": "a75c30c830c743d5a7424e27c858a275_m5.csv.gz",
+        "rows": 2,
+        "sha256": "ccde0145d07a376c18c08441c6bfb72d611e59e6c1f61d4ba1a307f8f704d281"
+      },
+      "end_native_msc": 1793215449498,
+      "entry_sha256": "6cad9a9d57aaad804cea9e6f54a308d332e525837203ac9d813eedb18489e3b8",
+      "previous": null,
+      "receipt_end_utc": "2026-10-28T17:52:30.753214+00:00",
+      "receipt_start_utc": "2026-10-28T17:52:30.748218+00:00",
+      "start_native_msc": 1793214549498,
+      "ticks": {
+        "file": "a75c30c830c743d5a7424e27c858a275_ticks.csv.gz",
+        "rows": 1993,
+        "sha256": "efff4e0705224c59c58bbdee2efb27c76a05d6b92ef698903ec71baf7151b6b8"
+      }
+    },
+    {
+      "bar_end_native_msc": 1793216100000,
+      "bar_start_native_msc": 1793215200000,
+      "bars": {
+        "file": "244e509a67e54f559ad921b7c3eab549_m5.csv.gz",
+        "rows": 3,
+        "sha256": "44ddda9d50f6890b7826429e78fd52583cc5ddd06c85e8ae18ebef793635cc39"
+      },
+      "end_native_msc": 1793216349498,
+      "entry_sha256": "d1399622984357515ed68f872ce2c024dc0530e5cd4ccdcba21235b6a2cefe1c",
+      "previous": "6cad9a9d57aaad804cea9e6f54a308d332e525837203ac9d813eedb18489e3b8",
+      "receipt_end_utc": "2026-10-28T17:52:30.812228+00:00",
+      "receipt_start_utc": "2026-10-28T17:52:30.807220+00:00",
+      "start_native_msc": 1793215449498,
+      "ticks": {
+        "file": "244e509a67e54f559ad921b7c3eab549_ticks.csv.gz",
+        "rows": 2180,
+        "sha256": "22f2ec97a9113c32dfa2255e70765bc35040cd806d9996e434f3c06d8a2ec140"
+      }
+    },
+    {
+      "bar_end_native_msc": 1793217000000,
+      "bar_start_native_msc": 1793216100000,
+      "bars": {
+        "file": "9fc4911d918647158218417e93f88ffd_m5.csv.gz",
+        "rows": 3,
+        "sha256": "67e9f06f7a15e102fb207b4a6be5ce56eed6bd75c45e8a07b22e1bc8aa3d8696"
+      },
+      "end_native_msc": 1793217149931,
+      "entry_sha256": "56b3237f62727b1f3cc671c73e23fef4aa19866ceaa3856f91b97b84ecccbab2",
+      "previous": "d1399622984357515ed68f872ce2c024dc0530e5cd4ccdcba21235b6a2cefe1c",
+      "receipt_end_utc": "2026-10-28T17:52:30.871547+00:00",
+      "receipt_start_utc": "2026-10-28T17:52:30.866548+00:00",
+      "start_native_msc": 1793216349498,
+      "ticks": {
+        "file": "9fc4911d918647158218417e93f88ffd_ticks.csv.gz",
+        "rows": 1804,
+        "sha256": "ed442997c97bc415059bdb5b9b1d689879d6b62b015bcfcc9af0095a1191dbd1"
+      }
+    },
+    {
+      "bar_end_native_msc": 1793217000000,
+      "bar_start_native_msc": 1793217000000,
+      "bars": {
+        "file": "687ee9972d2c4c61bf42b8a3e6dcd8a5_m5.csv.gz",
+        "rows": 0,
+        "sha256": "8cd180427ef1460574c0916b60189b5aafe57c93e21162bb364ff6bc580af7c8"
+      },
+      "end_native_msc": 1793217167541,
+      "entry_sha256": "cdf0775961afa5bfc8828a4e7604455cdbccb75441825819974352704d46a276",
+      "previous": "56b3237f62727b1f3cc671c73e23fef4aa19866ceaa3856f91b97b84ecccbab2",
+      "receipt_end_utc": "2026-10-28T17:52:48.497201+00:00",
+      "receipt_start_utc": "2026-10-28T17:52:48.496280+00:00",
+      "start_native_msc": 1793217149931,
+      "ticks": {
+        "file": "687ee9972d2c4c61bf42b8a3e6dcd8a5_ticks.csv.gz",
+        "rows": 42,
+        "sha256": "3b48ae90cb1bf01d5cff406b57865cf95b569f176f7535950ff53b81726e0e6e"
+      }
+    },
+    {
+      "bar_end_native_msc": 1793217000000,
+      "bar_start_native_msc": 1793217000000,
+      "bars": {
+        "file": "f770506e3adf466d924f6c45d0cfa46b_m5.csv.gz",
+        "rows": 0,
+        "sha256": "384669ed5515b5378be5de1f0a90b0dc14b3c2e5a6111cef918d9da3496a82fc"
+      },
+      "end_native_msc": 1793217228626,
+      "entry_sha256": "41b51306ea7f654794c2c523350f2d06c848de3e972618e956286d7cf14bdc7b",
+      "previous": "cdf0775961afa5bfc8828a4e7604455cdbccb75441825819974352704d46a276",
+      "receipt_end_utc": "2026-10-28T17:53:49.381864+00:00",
+      "receipt_start_utc": "2026-10-28T17:53:49.380863+00:00",
+      "start_native_msc": 1793217167541,
+      "ticks": {
+        "file": "f770506e3adf466d924f6c45d0cfa46b_ticks.csv.gz",
+        "rows": 132,
+        "sha256": "c7a90a297c315baa85568d5985ae5c9ab63c8bf15ffb360768cbdd951aef3c91"
+      }
+    },
+    {
+      "bar_end_native_msc": 1793217000000,
+      "bar_start_native_msc": 1793217000000,
+      "bars": {
+        "file": "c08f1de5d2ee4f0fadb2748b76de7540_m5.csv.gz",
+        "rows": 0,
+        "sha256": "a4a0372467d3f2d1b713feaa028d567865772f5406af42c6f838472b50722edb"
+      },
+      "end_native_msc": 1793217235063,
+      "entry_sha256": "0c1f4830165b5b91b9016be766316b998633265fe6a0b29db25bfaf2417da1a8",
+      "previous": "41b51306ea7f654794c2c523350f2d06c848de3e972618e956286d7cf14bdc7b",
+      "receipt_end_utc": "2026-10-28T17:53:55.783050+00:00",
+      "receipt_start_utc": "2026-10-28T17:53:55.782060+00:00",
+      "start_native_msc": 1793217228626,
+      "ticks": {
+        "file": "c08f1de5d2ee4f0fadb2748b76de7540_ticks.csv.gz",
+        "rows": 15,
+        "sha256": "be9a57374306e90bfd34afeb3656656ee29cbdd6eac171a969112ecf3a41fb3e"
+      }
+    },
+    {
+      "bar_end_native_msc": 1793217000000,
+      "bar_start_native_msc": 1793217000000,
+      "bars": {
+        "file": "86cc55594231438c95770935e3a5ef3a_m5.csv.gz",
+        "rows": 0,
+        "sha256": "8e61c9fe71de7075d91e61af908d1d2366b3020f1579746288e2b293ee529c1d"
+      },
+      "end_native_msc": 1793217294190,
+      "entry_sha256": "4bfa3e8310c1d60e47d598e6810a9193335414c5b46033ec0db8370859dae4e4",
+      "previous": "0c1f4830165b5b91b9016be766316b998633265fe6a0b29db25bfaf2417da1a8",
+      "receipt_end_utc": "2026-10-28T17:54:56.354025+00:00",
+      "receipt_start_utc": "2026-10-28T17:54:56.354025+00:00",
+      "start_native_msc": 1793217235063,
+      "ticks": {
+        "file": "86cc55594231438c95770935e3a5ef3a_ticks.csv.gz",
+        "rows": 143,
+        "sha256": "99af9304fba5d7c10f79902ed7eebe4e59a0dd0a0e2bdf3aa8d31de3cabdc732"
+      }
+    },
+    {
+      "bar_end_native_msc": 1793217300000,
+      "bar_start_native_msc": 1793217000000,
+      "bars": {
+        "file": "aa1ca2b063d84760ac4aa1d85f8a3519_m5.csv.gz",
+        "rows": 1,
+        "sha256": "6259191ec87c2749c3897bc9c6d7dc736c8eb5cb521a145259faac90c68d7d59"
+      },
+      "end_native_msc": 1793217356416,
+      "entry_sha256": "2abcc48e3846d57a5d7aaa6287de4c832a7262cf63fe45b14a843a9558879c65",
+      "previous": "4bfa3e8310c1d60e47d598e6810a9193335414c5b46033ec0db8370859dae4e4",
+      "receipt_end_utc": "2026-10-28T17:55:57.396419+00:00",
+      "receipt_start_utc": "2026-10-28T17:55:57.396419+00:00",
+      "start_native_msc": 1793217294190,
+      "ticks": {
+        "file": "aa1ca2b063d84760ac4aa1d85f8a3519_ticks.csv.gz",
+        "rows": 81,
+        "sha256": "4d59f9c41d0075666026f6a817e03a367cf38315f133273d45a9250916b53835"
+      }
+    },
+    {
+      "bar_end_native_msc": 1793217300000,
+      "bar_start_native_msc": 1793217300000,
+      "bars": {
+        "file": "1df44a55523e4e5f98e60a75507ef623_m5.csv.gz",
+        "rows": 0,
+        "sha256": "85fa7f9d7cd6d856b7ebaefd12d1d8ecaf905838b8836ab62dc1700514f81b57"
+      },
+      "end_native_msc": 1793217397472,
+      "entry_sha256": "010b69335e1a190fef7d943a3ddefa5fe4b285b1b10143f4401c47724044ac01",
+      "previous": "2abcc48e3846d57a5d7aaa6287de4c832a7262cf63fe45b14a843a9558879c65",
+      "receipt_end_utc": "2026-10-28T17:56:38.141915+00:00",
+      "receipt_start_utc": "2026-10-28T17:56:38.140915+00:00",
+      "start_native_msc": 1793217356416,
+      "ticks": {
+        "file": "1df44a55523e4e5f98e60a75507ef623_ticks.csv.gz",
+        "rows": 71,
+        "sha256": "4290fcb0d12d1d7edc23e3c5e52a297d10bb9fc6231dae2d8b68b947b8986c9d"
+      }
+    },
+    {
+      "bar_end_native_msc": 1793217300000,
+      "bar_start_native_msc": 1793217300000,
+      "bars": {
+        "file": "d72ebdf15c7145e98cc37d71d381cc72_m5.csv.gz",
+        "rows": 0,
+        "sha256": "1e8d5354023efe08fc512a0bf74c3c2df54a4b3d50dd0763b05b1e86242a5297"
+      },
+      "end_native_msc": 1793217457470,
+      "entry_sha256": "ac62da0a509d57e18071a0af1c5a59d3a392a42b0404ceb0f39876705d6d0979",
+      "previous": "010b69335e1a190fef7d943a3ddefa5fe4b285b1b10143f4401c47724044ac01",
+      "receipt_end_utc": "2026-10-28T17:57:38.210453+00:00",
+      "receipt_start_utc": "2026-10-28T17:57:38.209456+00:00",
+      "start_native_msc": 1793217397472,
+      "ticks": {
+        "file": "d72ebdf15c7145e98cc37d71d381cc72_ticks.csv.gz",
+        "rows": 83,
+        "sha256": "a56943d3761100180dc3f083e8998f7b1bf273a019d31f5785f5c9630e7cb5b4"
+      }
+    },
+    {
+      "bar_end_native_msc": 1793217300000,
+      "bar_start_native_msc": 1793217300000,
+      "bars": {
+        "file": "f1be4d65483a475c9dd5ee3bd6ef1bf6_m5.csv.gz",
+        "rows": 0,
+        "sha256": "10c5f92ba12b6506f8f9b8feca7638dcb484ead45fd2a0fcbd5317a2042c9c8e"
+      },
+      "end_native_msc": 1793217504966,
+      "entry_sha256": "59e5612f3582154ced8785124ec8de83b54a7c2e6bdef290508c3d63b16e18c4",
+      "previous": "ac62da0a509d57e18071a0af1c5a59d3a392a42b0404ceb0f39876705d6d0979",
+      "receipt_end_utc": "2026-10-28T17:58:25.694088+00:00",
+      "receipt_start_utc": "2026-10-28T17:58:25.694088+00:00",
+      "start_native_msc": 1793217457470,
+      "ticks": {
+        "file": "f1be4d65483a475c9dd5ee3bd6ef1bf6_ticks.csv.gz",
+        "rows": 31,
+        "sha256": "6cdb39d16f9b07a4a076d7a53b1708f8fb193764cacb04eb90e883986ffdf98c"
+      }
+    }
+  ],
+  "server": "XMGlobalSC-MT5 5",
+  "status": "RAW_QUARANTINE",
+  "symbol": "US30Cash",
+  "train_access_allowed": false
+}
