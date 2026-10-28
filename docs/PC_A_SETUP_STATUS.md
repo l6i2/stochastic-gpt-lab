@@ -6,7 +6,7 @@ Windows 11 Home x64, Intel i5-1135G7 (4 cores/8 threads), RAM visible 7.74 GiB. 
 
 Python 3.12.14 en .venv con requirements.txt y configs/controller_requirements.txt; pip check y compileall correctos. Suite final: 245 tests, 9 omitidos por g++ ausente. Se corrigió el cierre de SQLite en ShadowRecorder conservando la transacción durable; shadow sigue deshabilitado. MAIN_K: evidencia retenida con hashes verificados, sin repetir parity. Se preservan los bytes LF del EA sellado.
 
-XM MT5 instalado desde el sitio oficial, instalador con firma MetaQuotes válida. Cuenta DEMO, conexión y US30Cash todavía sin verificar. Compilación local y hashes: outputs/pc_a/compile_manifest.json (verificar el resultado completo antes de aceptación C2). C3/C4/C5 pendientes de una sesión DEMO verificada; no se ejecutaron históricos.
+XM MT5 instalado desde el sitio oficial, instalador con firma MetaQuotes válida. Cuenta DEMO, conexión y US30Cash todavía sin verificar. Compilación local y hashes: outputs/pc_a/compile_verified.json (dos artefactos verificados; C2 completo pendiente). C3/C4/C5 pendientes de una sesión DEMO verificada; no se ejecutaron históricos.
 
 Reloj Windows inicial: leap indicator 3, stratum 0, Local CMOS Clock, sin sincronización previa. Resync sin elevar: acceso denegado. CLOCK_ATTESTATION, NATIVE_TO_UTC_MAPPING, TEMPORAL_CAUSALITY y CAUSAL_AUDIT pendientes. No basta corregir Windows: faltan captura simultánea y mapping externo revisado.
 
@@ -16,7 +16,7 @@ Launcher y resume son preflight read-only; retornan BLOCKED. El arranque de comp
 
 FUTURE_EVALUATOR=READY_BUT_GATED; DRIFT_MONITOR=READY (tooling, sin baseline real); SHADOW_MODE=READY_BUT_DISABLED; SHADOW_ORDER_COUNT=0; DEMO_EXECUTOR=READY_BUT_DISABLED_FULL (mocks, sin adaptador de órdenes); DISCOVERY_VALIDATION=BLOCKED; FINAL_TEST=LOCKED; DEMO=DISABLED; LIVE_TRADING=false.
 
-GitHub CLI instalado por winget en alcance de usuario; autenticación pendiente. Commit y push pendientes. Supervisión móvil pendiente de configuración oficial y verificación de cuenta, sin ampliar permisos de acceso por métodos alternativos.
+GitHub CLI instalado por winget en alcance de usuario; autenticación pendiente. Implementación publicada por el conector GitHub con fast-forward; CLI sin sesión propia. Supervisión móvil pendiente de configuración oficial y verificación de cuenta, sin ampliar permisos de acceso por métodos alternativos.
 
 OTHER_PROJECT_TOUCHED=NO: no escrituras intencionales fuera del proyecto salvo instalación de herramientas, nueva instancia XM y sus carpetas oficiales. Ningún proyecto ajeno fue modificado. La búsqueda fue acotada, no una auditoría completa de todo el disco.
 
@@ -31,3 +31,5 @@ Se restauraron exactamente los bytes LF auditados de 219 archivos que Git había
 Compilación revalidada con bytes actuales del repo e includes: EA StochasticBarDecisionResearchEA y FullClockAndTimeSemanticsProbe, ambos PASS (0 errores, 0 advertencias), EX5 recién generados y hashes. Resumen actualizado: outputs/pc_a/compile_verified.json. Los logs iniciales fallidos de plantillas se conservan como evidencia, sin copias inválidas en Navigator.
 
 XM tiene un formulario de apertura de cuenta pendiente; no se ha enviado, no se han introducido credenciales ni documentos mediante automatización. Cuenta UNKNOWN, API attach timeout -10005; XM_DEMO y US30Cash pendientes. No se ejecuta ningún probe mientras la cuenta sea UNKNOWN/REAL. C1/C3/C4/C5 siguen pendientes y C2 solo cubre los dos artefactos compilados.
+
+Publicación: implementación f99222b0e8fd676c3f5da1901c31d07f9531addb publicada y verificada mediante el conector GitHub autenticado como l6i2, actualización fast-forward con expected SHA y force=false. Checkout actualizado con git fetch y git merge --ff-only, sin conflictos. GitHub CLI permanece sin sesión propia; no bloquea la publicación mediante el conector. Fuente custom PC_A_SOURCE_HASHES revalidada tras publicación. La estación todavía no está aceptada para continuar colección; ver PC_A_HANDOFF.json.
