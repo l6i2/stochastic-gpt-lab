@@ -1,0 +1,25 @@
+{
+  "attempts": 3,
+  "causal_audit": "FAIL_MAPPING_AND_CALENDAR_UNVERIFIED",
+  "completed": true,
+  "historical_result": {
+    "archive_id": "historical_20261028T175047_e97ee981",
+    "compared_bars": 276,
+    "derived_bars": 276,
+    "differences": [],
+    "missing_derived": [],
+    "missing_native": [],
+    "native_bars_in_range": 276,
+    "native_bars_outside_range": 0,
+    "scientific_acceptance": false,
+    "scope": "NATIVE_BAR_RECONSTRUCTION_ONLY_NOT_UTC_OR_CAUSAL_ACCEPTANCE",
+    "source_chain_head": "1a7e965bf7fa5291f0ef13d8bd7fefa95ecce7b1d0ec3a40d3e6919026a746ee",
+    "status": "PASS_EXACT_NATIVE_OHLC_AND_TICK_VOLUME",
+    "ticks_read": 79211,
+    "tolerance": 0
+  },
+  "observed_maxbars": 500000,
+  "observed_utc": "2026-10-28T18:46:13.883203+00:00",
+  "scientific_acceptance": false,
+  "status": "DIAGNOSTIC_COMPLETED_REVIEW_AUDIT"
+}

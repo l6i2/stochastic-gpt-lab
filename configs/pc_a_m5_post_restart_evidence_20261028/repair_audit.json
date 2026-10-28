@@ -1,0 +1,108 @@
+{
+  "observed_utc": "2026-10-28T18:48:15.739627+00:00",
+  "server": "XMGlobalSC-MT5 5",
+  "chart_mode": "BID",
+  "tick_size": 0.01,
+  "maxbars": 500000,
+  "archives": {
+    "historical": {
+      "status": "PASS_EXACT_NATIVE_OHLC_AND_TICK_VOLUME",
+      "compared_bars": 276,
+      "differences": [],
+      "missing_native": [],
+      "missing_derived": [],
+      "tolerance": 0,
+      "scope": "NATIVE_BAR_RECONSTRUCTION_ONLY_NOT_UTC_OR_CAUSAL_ACCEPTANCE",
+      "archive_id": "historical_20261028T175047_e97ee981",
+      "derived_bars": 276,
+      "native_bars_in_range": 276,
+      "native_bars_outside_range": 0,
+      "ticks_read": 79211,
+      "source_chain_head": "1a7e965bf7fa5291f0ef13d8bd7fefa95ecce7b1d0ec3a40d3e6919026a746ee",
+      "scientific_acceptance": false
+    },
+    "prospective": {
+      "status": "FAIL_OR_INCOMPLETE",
+      "compared_bars": 19,
+      "differences": [
+        {
+          "time": 1793217000,
+          "fields": [
+            "tick_volume"
+          ]
+        },
+        {
+          "time": 1793218200,
+          "fields": [
+            "tick_volume"
+          ]
+        },
+        {
+          "time": 1793219100,
+          "fields": [
+            "tick_volume"
+          ]
+        }
+      ],
+      "missing_native": [],
+      "missing_derived": [],
+      "tolerance": 0,
+      "scope": "NATIVE_BAR_RECONSTRUCTION_ONLY_NOT_UTC_OR_CAUSAL_ACCEPTANCE",
+      "archive_id": "prospective_20261028T175047_3ac8b527",
+      "derived_bars": 19,
+      "native_bars_in_range": 19,
+      "native_bars_outside_range": 0,
+      "ticks_read": 19558,
+      "source_chain_head": "7e032e22e7ec7bc8ff1e71fa83d731f76d767364f02c782264bd9f3c83b9eabf",
+      "scientific_acceptance": false
+    }
+  },
+  "producer_sha256": {
+    "tools\\pc_a_data_repair.py": "2ae7b6f179fe1e91a2f6f0bb45be2e701618cc165e1b6f4558fdddd0849464ce",
+    "python\\native_m5_rebuild.py": "3af0361f9d9724c297b6ea957a993bb389f17db2b2a1148ca3434108ae92bf0f",
+    "python\\native_metadata_v3.py": "e5017bd62aa2b1724472fd9f07c9228a27902bd7059d2f403ed0a2dae1a057ad",
+    "python\\pc_a_raw_archive.py": "ac2dd0201fc0f0048d2c103a57adb9783998e592944d2acb702d3526b8cb19de"
+  },
+  "metadata": {
+    "status": "PASS_NATIVE_MAIN_K_V3",
+    "ready_rows": 930,
+    "warmup_rows": 30,
+    "families": [
+      "equality",
+      "extremes",
+      "range",
+      "trend",
+      "warmup"
+    ],
+    "max_absolute_error": 1.1102230246251565e-16,
+    "absolute_tolerance": 1e-10,
+    "legacy_metadata_status": "FAIL_UNCHANGED",
+    "activation": "BLOCKED_CLOCK_MAPPING_CALENDAR",
+    "audit_sha256": "b8b59007a412b8e09cc859406de41397abfef05612ef778e4c31764b7b1c3644",
+    "adapter_sha256": "e5017bd62aa2b1724472fd9f07c9228a27902bd7059d2f403ed0a2dae1a057ad",
+    "scientific_acceptance": false,
+    "maturity_counts_derived": false
+  },
+  "clock_mapping": {
+    "native_to_utc_mapping": "FAIL_INDEPENDENT_EVENT_TIME_PROVENANCE_UNRESOLVED",
+    "frames": 50,
+    "observed_server_minus_gmt_seconds": [
+      7200
+    ],
+    "raw_quotes_after_receipt_upper_bound": 150,
+    "candidate_7200_quotes_after_receipt_upper_bound": 0,
+    "candidate_scope": "DIAGNOSTIC_ONLY_NOT_AUTHORIZED_MAPPING",
+    "authorized_segments": [],
+    "raw_timestamps_changed": false,
+    "future_tolerance_ms": 0,
+    "reason": "Consistent observed wall-clock offset does not certify event UTC provenance, stale/replayed quotes, or historical DST transitions",
+    "capture_sha256": "04e5dc378c64bdfde901be5fd4249119c5190e9bb203efdb4fa1c08b82e71ce3"
+  },
+  "causal_audit": "FAIL_MAPPING_AND_CALENDAR_UNVERIFIED",
+  "training_readiness": "BLOCKED_BY_RESEARCH_GOVERNANCE",
+  "discovery_validation": "BLOCKED",
+  "final_test": "LOCKED",
+  "demo": "DISABLED",
+  "live_trading": false,
+  "orders_sent": 0
+}
