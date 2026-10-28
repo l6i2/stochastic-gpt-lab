@@ -1,0 +1,74 @@
+{
+  "access": {
+    "candidate_scoring": false,
+    "final_test_access_allowed": false,
+    "labels_read": false,
+    "live_trading": false,
+    "pnl_read": false,
+    "ranking": false,
+    "threshold_tuning": false,
+    "train_access_allowed": false
+  },
+  "activation_requires": [
+    "Retained five native fixture families plus v3 adapter pass fixed 1e-10 absolute parity",
+    "Independent event UTC provenance and bounded verified mapping; raw future quotes quarantined",
+    "Authoritative versioned session/holiday calendar and causal audit bind this spec before any maturity use",
+    "A new cohort starts only at actual activation; no old raw staging or previous cohort segments adopted"
+  ],
+  "causal_regimes": {
+    "ATR": "14-period simple mean of true range through the closed signal bar",
+    "EMA": "standard recursive EMA on closed M5 close values, spans 20 and 50",
+    "downtrend": "EMA20 < EMA50 and EMA50 change over 12 bars / ATR14 < -0.1",
+    "high_volatility": "current ATR14 / reference > 1.25",
+    "low_volatility": "current ATR14 / reference < 0.8",
+    "medium_volatility": "0.8 <= current ATR14 / reference <= 1.25",
+    "range": "abs((EMA20-EMA50)/ATR14) <= 0.1 and 20-bar high-low range / ATR14 <= 3.0",
+    "transition": "all remaining finite states",
+    "uptrend": "EMA20 > EMA50 and EMA50 change over 12 bars / ATR14 > 0.1",
+    "volatility_reference": "median ATR14 over the preceding 288 closed M5 bars; current bar excluded",
+    "warmup_missing_policy": "no regime bucket until every required lookback is finite; maturity cannot pass while required signals are unclassified"
+  },
+  "correction_scope": "MAIN_K semantics only; no strategy, split, support/duration threshold or regime threshold changes",
+  "native_adapter": {
+    "activation_allowed": false,
+    "file": "python/native_metadata_v3.py",
+    "legacy_maturity_counts_reusable": false,
+    "native_evidence_file": "configs/main_k_native_evidence_20261023/validated_audit.json",
+    "native_evidence_sha256": "b8b59007a412b8e09cc859406de41397abfef05612ef778e4c31764b7b1c3644",
+    "sha256": "e5017bd62aa2b1724472fd9f07c9228a27902bd7059d2f403ed0a2dae1a057ad"
+  },
+  "purpose": "eligibility and data-health metadata only; never candidate scoring",
+  "quality": {
+    "duplicate_ticks": "count and report; never silently deduplicate",
+    "segment_hashes": "must match immutable cohort manifest",
+    "session_calendar": "separate authoritative XM US30Cash UTC weekly schedule and holiday/early-close artifact required for gap acceptance",
+    "valid_bar": "finite positive OHLC and low <= open/close <= high",
+    "valid_tick": "finite time/time_msc, finite bid and ask, 0 < bid <= ask"
+  },
+  "schema_version": "future-cohort-metadata/3.0-PREPARED-NATIVE-VERIFIED",
+  "sessions": {
+    "Asia": "19:00-03:00 local, crossing midnight",
+    "London": "03:00-08:00 local",
+    "New_York": "08:00-17:00 local",
+    "Other": "17:00-19:00 local",
+    "timezone": "America/New_York using US DST rules"
+  },
+  "signal_contract": {
+    "BUY": "previous MAIN_K <= 20 and current MAIN_K > 20",
+    "SELL": "previous MAIN_K >= 80 and current MAIN_K < 80",
+    "bar_time": "closed-bar UTC close time (bar open + 300 seconds)",
+    "outputs": "counts and coverage only; no entries, exits, labels, PnL, or replay",
+    "stochastic": {
+      "D": 3,
+      "K": 5,
+      "main_line": "MT5 native MAIN_LINE of iStochastic(5,3,3,MODE_SMA,STO_LOWHIGH); ratio of sums across slowing window, not arithmetic SMA of per-bar Fast %K",
+      "slowing": 3,
+      "warmup_reference": "No valid MAIN_K before seven closed bars; verified against all 30 warmup rows in sealed native pk_41a2e93f export",
+      "zero_denominator_reference": 100.0
+    },
+    "symbol": "US30Cash",
+    "timeframe": "M5"
+  },
+  "status": "PREPARED_NATIVE_MAIN_K_VERIFIED_NOT_ACTIVE_PENDING_UTC_AND_CALENDAR",
+  "supersedes_sha256": "132b8b2b0e585356d2b38c8ffcd99355f9a1eb227888b47b33503783a3bd10b7"
+}

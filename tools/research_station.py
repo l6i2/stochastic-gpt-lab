@@ -116,6 +116,10 @@ def main():
             archive('verify')
         result = report(scheduling=scheduling)
         result['backup'] = backup()
+        if args.action in ('start', 'resume', 'collect'):
+            retry = subprocess.run([str(ROOT / '.venv/Scripts/python.exe'), str(ROOT / 'tools/retry_m5_repair.py')],
+                                   cwd=ROOT, capture_output=True, text=True, timeout=330, creationflags=NO_WINDOW)
+            result['m5_repair_retry_exit_code'] = retry.returncode
         raw.atomic(REPORT, result)
     except Exception as exc:
         result = report(error=str(exc), scheduling=scheduling)

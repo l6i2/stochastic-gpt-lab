@@ -1,0 +1,38 @@
+{
+  "api_version": "5.0.6231",
+  "clock_msc": 1793212167791,
+  "historical_m1": {
+    "elapsed_s": 0.157,
+    "error": [
+      1,
+      "Success"
+    ],
+    "first_native": 1784528040,
+    "last_native": 1784528040,
+    "rows": 1
+  },
+  "historical_m5": {
+    "elapsed_s": 0.0,
+    "error": [
+      1,
+      "Success"
+    ],
+    "first_native": 1748623500,
+    "last_native": 1748623500,
+    "rows": 1
+  },
+  "maxbars": 100000,
+  "observed_utc": "2026-10-28T18:29:27.791887+00:00",
+  "recent_m5": {
+    "elapsed_s": 0.0,
+    "error": [
+      1,
+      "Success"
+    ],
+    "first_native": 1793189400,
+    "last_native": 1793219100,
+    "rows": 100
+  },
+  "server": "XMGlobalSC-MT5 5",
+  "tick_native_msc": 1793219367189
+}

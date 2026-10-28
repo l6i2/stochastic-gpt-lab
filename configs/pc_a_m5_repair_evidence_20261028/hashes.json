@@ -1,0 +1,9 @@
+{
+  "historical_derived_native_m5.json": "93130db8f90ee0d8c71a4f174cb2bdada132be2fbede07c78a3293dc62e53a8d",
+  "historical_native_m5_query.json": "bf3339903ba5ed657e045f4548dd9ed8d2726494f8f343d94f1ab2f949757d4b",
+  "historical_source_manifest.json": "3bef4fcbff070041c72dfd72e1bd838c213649db4c95adb82ea79b598c2044e5",
+  "prospective_derived_native_m5.json": "60635eca8005da6479b98d217e0b065bbca289bffb2b76942d6e136f9441abed",
+  "prospective_native_m5_query.json": "1d9ec2f47669d788209b36a6aca6fca05cee85c2e2f180966633b51fa203116c",
+  "prospective_source_manifest.json": "ee36ac59a813aec74992a7735aa50aa3d7d662d75bfe19aa93c346bd66858388",
+  "repair_audit.json": "d02ea59fb36aee5a73c6f19c0bdeb5b8fa63a6d82195313cb9a6775362803a98"
+}

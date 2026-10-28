@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "status": "PREPARED_NOT_ACTIVE",
+  "purpose": "A future separate cohort with actual activation UTC, never adoption of raw staging",
+  "new_cohort_id": "ALLOCATE_UNIQUE_ID_ONLY_AT_ACTUAL_ACTIVATION",
+  "new_start_utc": "RECORD_INDEPENDENTLY_ATTESTED_UTC_AT_ACTUAL_ACTIVATION",
+  "previous_cohort_continuity": "UNVERIFIED",
+  "old_pc_required": false,
+  "adopt_previous_cohort_segments": false,
+  "adopt_pc_a_raw_quarantine_segments": false,
+  "historical_backfill_allowed": false,
+  "settlement_rule": "Frozen closed UTC day plus 2-hour lag; no incomplete-day acceptance",
+  "metadata_spec": "configs/future_cohort_metadata_spec_v3.prepared.json",
+  "maturity_definition": "Retain original frozen duration/support and regime thresholds unchanged; no prior counts reused",
+  "activation_requires": [
+    "Independent event UTC provenance for this server/symbol and bounded evidence-authorized native mapping",
+    "Actual activation later than evidence verification; first complete bar after activation only",
+    "Versioned official session and holiday/early-close calendar",
+    "Causal audit binding new collector code, mapping evidence and v3 metadata seals",
+    "Frozen closed-day collector adapted and separately tested for arbitrary actual activation; never run legacy hardcoded start",
+    "No new adaptive TRAIN search or validation/holdout access"
+  ],
+  "manifest_required_fields": ["cohort_id", "start_utc", "collector_version", "collector_sha256", "mapping_sha256", "metadata_sha256", "segment_sha256", "previous_chain_head", "receipt_bounds"],
+  "scientific_acceptance": false,
+  "evaluation_authorized": false,
+  "train_access_allowed": false,
+  "candidate_scoring": false,
+  "discovery_validation": "BLOCKED",
+  "final_test": "LOCKED",
+  "demo": "DISABLED",
+  "live_trading": false
+}

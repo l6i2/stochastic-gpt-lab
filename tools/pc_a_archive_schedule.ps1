@@ -20,7 +20,8 @@ $python = Join-Path $repo '.venv\Scripts\pythonw.exe'
 $script = Join-Path $repo 'tools\research_station.py'
 $taskAction = New-ScheduledTaskAction -Execute $python -Argument ('"' + $script + '" collect') -WorkingDirectory $repo
 $trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 1)
+$logonTrigger = New-ScheduledTaskTrigger -AtLogOn -User ([System.Security.Principal.WindowsIdentity]::GetCurrent().Name)
 $principal = New-ScheduledTaskPrincipal -UserId ([System.Security.Principal.WindowsIdentity]::GetCurrent().Name) -LogonType Interactive -RunLevel Limited
 $settings = New-ScheduledTaskSettingsSet -MultipleInstances IgnoreNew -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Minutes 12)
-Register-ScheduledTask -TaskName $taskName -Action $taskAction -Trigger $trigger -Principal $principal -Settings $settings -Force | Out-Null
+Register-ScheduledTask -TaskName $taskName -Action $taskAction -Trigger @($trigger, $logonTrigger) -Principal $principal -Settings $settings -Force | Out-Null
 Write-Output 'REGISTERED_EVERY_MINUTE_INTERACTIVE_USER'

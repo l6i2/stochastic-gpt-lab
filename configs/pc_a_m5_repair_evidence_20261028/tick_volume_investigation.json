@@ -1,0 +1,69 @@
+[
+  {
+    "archive_flags": {
+      "1126": 567,
+      "1254": 129
+    },
+    "archive_ticks": 696,
+    "fresh_flags": {
+      "1126": 699
+    },
+    "fresh_ticks": 699,
+    "native_bar_time": 1793217000,
+    "native_tick_volume": 699
+  },
+  {
+    "archive_flags": {
+      "1124": 3,
+      "1126": 330
+    },
+    "archive_ticks": 333,
+    "fresh_flags": {
+      "1124": 3,
+      "1126": 330
+    },
+    "fresh_ticks": 333,
+    "native_bar_time": 1793217300,
+    "native_tick_volume": 330
+  },
+  {
+    "archive_flags": {
+      "1122": 5,
+      "1124": 6,
+      "1126": 1236
+    },
+    "archive_ticks": 1247,
+    "fresh_flags": {
+      "1122": 5,
+      "1124": 6,
+      "1126": 1236
+    },
+    "fresh_ticks": 1247,
+    "native_bar_time": 1793217600,
+    "native_tick_volume": 1241
+  },
+  {
+    "archive_flags": {
+      "1126": 1131
+    },
+    "archive_ticks": 1131,
+    "fresh_flags": {
+      "1126": 1132
+    },
+    "fresh_ticks": 1132,
+    "native_bar_time": 1793218200,
+    "native_tick_volume": 1132
+  },
+  {
+    "archive_flags": {
+      "1126": 1223
+    },
+    "archive_ticks": 1223,
+    "fresh_flags": {
+      "1126": 1223
+    },
+    "fresh_ticks": 1223,
+    "native_bar_time": 1793219100,
+    "native_tick_volume": 1225
+  }
+]
