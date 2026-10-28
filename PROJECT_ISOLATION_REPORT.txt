@@ -15,3 +15,4 @@ Deployed by this migration: MQL5/Experts/StochasticBarDecisionResearch and MQL5/
 All deployment paths pinned; unrelated source drift is refused. No scheduler entries or collector processes created.
 Shared-system change: Windows Time startup Manual -> Automatic via normal UAC, resync only; previous configuration retained locally. Other project files/WSL unchanged.
 Windows sync observed; clock attestation and cohort continuity pending. Vendor MT5 local MCP observed on 127.0.0.1:22346; not created by research code. No externally listening service configured by this migration.
+Additional canonical repo-version deployment: MQL5/Experts/StochasticIntratradeResearch; includes identical to repository hashes. No orders or tester runs.

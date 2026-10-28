@@ -26,13 +26,13 @@ No abrir FINAL_TEST, no activar DEMO, shadow, evaluator u órdenes. No crear tar
 Para esta migración, después de verificar XM DEMO, ejecutar la captura con el sello específico de PC A:
 
 ```powershell
-powershell -NoProfile -File tools/local_finalize.ps1 -SourceManifest configs/pc_a_source_hashes.json
+powershell -NoProfile -File tools/local_finalize.ps1 -SourceManifest configs/pc_a_source_hashes_20261028_v4.json
 ```
 
 Comprobar el sello sin conectar MT5:
 
 ```powershell
-.venv\Scripts\python.exe python/local_finalize.py --check-handoff --source-manifest configs/pc_a_source_hashes.json
+.venv\Scripts\python.exe python/local_finalize.py --check-handoff --source-manifest configs/pc_a_source_hashes_20261028_v4.json
 ```
 
 Cada cambio posterior en código sellado exige revisión y un manifiesto nuevo. El sello es integridad de fuentes; no certifica mapping, continuidad, causalidad, DEMO ni permisos de evaluación.
@@ -44,3 +44,6 @@ Recompilar exclusivamente los dos artefactos necesarios de esta PC sin ejecutar 
 ```
 
 Windows Time quedó en inicio automático. Su configuración anterior se conserva en outputs/pc_a/clock_repair_*/service_before.json. No inferir PASS de attestación de una resincronización exitosa.
+
+
+El capturador actual espera sin caducidad antes del inicio nativo, con caché acotada. No repitas el script si ya creó archivos: conserva la evidencia y prepara un nonce nuevo. El proceso de análisis espera capture.json y verifica el sello antes de procesarlo; no cambia gates. Ruta de captura activa: outputs/pc_a/active_clock_capture.json. Después de reinicio, no supongas que estos procesos sobrevivieron; exige una captura nueva si no existe una completa.

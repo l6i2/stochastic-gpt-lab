@@ -136,9 +136,10 @@ def watch(native: Path, output: Path, timeout_seconds: float = 300):
         atomic_json(output / 'ready.json', {'state': 'ARMED_NO_EXPIRY', 'start': start,
                     'native_filename': native.name, 'orders_sent': 0, 'clock_changed': False})
         print('ARMED_NO_EXPIRY', flush=True)
-        deadline = time.monotonic() + timeout_seconds
+        # Human preparation has no expiry. Bound only the native capture itself.
+        deadline = None
         while len(seen) < 50:
-            if time.monotonic() >= deadline:
+            if deadline is not None and time.monotonic() >= deadline:
                 atomic_json(output / "partial_capture.json", {"status": "TIMEOUT", "paired_frames": paired, "orders_sent": 0})
                 raise TimeoutError("NATIVE_CAPTURE_TIMEOUT; preserve evidence and use a new run")
             ring.append(clocks.read())
@@ -146,6 +147,8 @@ def watch(native: Path, output: Path, timeout_seconds: float = 300):
                 references.append(reference_job.result())
                 reference_job = None
             if native.exists():
+                if deadline is None:
+                    deadline = time.monotonic() + timeout_seconds
                 try:
                     groups = native_frames(native.read_text(encoding='utf-8-sig'))
                 except PermissionError:

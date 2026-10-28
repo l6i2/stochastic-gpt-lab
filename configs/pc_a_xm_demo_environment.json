@@ -1,0 +1,15 @@
+{
+  "account_mode": "DEMO",
+  "company": "XM (SC) Limited",
+  "connected": true,
+  "symbol": "US30Cash",
+  "digits": 2,
+  "tick_size": 0.01,
+  "trade_mode": 4,
+  "visible": null,
+  "recent_m5_rows": 2,
+  "history_scope": "two recent bars only; no historical rebuild",
+  "orders_sent": 0,
+  "mapping": "UNVERIFIED",
+  "session_calendar": "PASS_WITH_RUNTIME_GUARD_PENDING_FRESH_SESSION_SNAPSHOT"
+}

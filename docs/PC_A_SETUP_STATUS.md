@@ -4,7 +4,7 @@ Checkout exclusivo en Documents/Codex/stochastic-gpt-lab-full-pipeline, rama res
 
 Windows 11 Home x64, Intel i5-1135G7 (4 cores/8 threads), RAM visible 7.74 GiB. Menos de 1 GiB libre en la auditoría inicial: LOW_MEMORY_MODE=true, ejecución secuencial y límites de threads locales al launcher.
 
-Python 3.12.14 en .venv con requirements.txt y configs/controller_requirements.txt; pip check y compileall correctos. Suite final: 245 tests, 9 omitidos por g++ ausente. Se corrigió el cierre de SQLite en ShadowRecorder conservando la transacción durable; shadow sigue deshabilitado. MAIN_K: evidencia retenida con hashes verificados, sin repetir parity. Se preservan los bytes LF del EA sellado.
+Python 3.12.14 en .venv con requirements.txt y configs/controller_requirements.txt; pip check y compileall correctos. Suite final: 246 tests, 9 omitidos por g++ ausente. Se corrigió el cierre de SQLite en ShadowRecorder conservando la transacción durable; shadow sigue deshabilitado. MAIN_K: evidencia retenida con hashes verificados, sin repetir parity. Se preservan los bytes LF del EA sellado.
 
 XM MT5 instalado desde el sitio oficial, instalador con firma MetaQuotes válida. Cuenta DEMO, conexión y US30Cash todavía sin verificar. Compilación local y hashes: outputs/pc_a/compile_verified.json (dos artefactos verificados; C2 completo pendiente). C3/C4/C5 pendientes de una sesión DEMO verificada; no se ejecutaron históricos.
 
@@ -33,3 +33,12 @@ Compilación revalidada con bytes actuales del repo e includes: EA StochasticBar
 XM tiene un formulario de apertura de cuenta pendiente; no se ha enviado, no se han introducido credenciales ni documentos mediante automatización. Cuenta UNKNOWN, API attach timeout -10005; XM_DEMO y US30Cash pendientes. No se ejecuta ningún probe mientras la cuenta sea UNKNOWN/REAL. C1/C3/C4/C5 siguen pendientes y C2 solo cubre los dos artefactos compilados.
 
 Publicación: implementación f99222b0e8fd676c3f5da1901c31d07f9531addb publicada y verificada mediante el conector GitHub autenticado como l6i2, actualización fast-forward con expected SHA y force=false. Checkout actualizado con git fetch y git merge --ff-only, sin conflictos. GitHub CLI permanece sin sesión propia; no bloquea la publicación mediante el conector. Fuente custom PC_A_SOURCE_HASHES revalidada tras publicación. La estación todavía no está aceptada para continuar colección; ver PC_A_HANDOFF.json.
+
+
+## Verificación XM DEMO y captura preparada
+
+XM DEMO, conexión y US30Cash verificados programáticamente; Market Watch habilitado. Símbolo: digits=2, tick_size=0.01, trade_mode=4; dos barras M5 recientes disponibles. No se reconstruyó historia ni se enviaron órdenes. C1_ENV=PASS. El controlador compila tanto StochasticBarDecisionResearchEA como StochasticIntratradeResearchEA con 0 errores y 0 advertencias. C3/C4/C5 operativos siguen pendientes; no se ejecutó backtest.
+
+Se corrigieron los argumentos con espacios y el retorno de MetaEditor, que puede ser 1 en builds correctos. Se exige log limpio y EX5 nuevo. La espera manual ahora no consume el timeout de la captura: la captura nativa sigue limitada después de arrancar el probe. La prueba de regresión simula una demora humana superior al timeout.
+
+Capturador Windows armado mediante UAC normal, proceso elevado verificado; lectura de Windows Time solamente. Ruta activa en outputs/pc_a/active_clock_capture.json. Analizador de finalización preparado para generar final_report.json automáticamente al completarse la captura. No se mezclan los intentos incompletos anteriores. Fuente sellada actual: configs/pc_a_source_hashes_20261028_v4.json. 246 pruebas: 237 correctas, 9 omitidas por g++ ausente; compileall y verificación estática sin órdenes correctos. Reloj científico, mapping, causalidad y continuidad de cohorte continúan bloqueados a falta de evidencia real.

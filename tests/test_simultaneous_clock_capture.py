@@ -11,6 +11,7 @@ import csv
 import json
 import hashlib
 import tempfile
+from unittest.mock import patch
 
 
 def native(frame=0):
@@ -25,6 +26,29 @@ def windows(start, end):
 
 
 class SimultaneousCaptureTests(unittest.TestCase):
+    def test_manual_wait_does_not_consume_native_capture_timeout(self):
+        from simultaneous_clock_capture import watch
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source, output = root / 'native.csv', root / 'capture'
+            waits = []
+            def waiting(_seconds):
+                waits.append(True)
+                if len(waits) == 3:
+                    source.write_text('synthetic')
+            groups = [[{'frame': str(i)}] for i in range(50)]
+            with patch('simultaneous_clock_capture.WindowsClocks') as clocks, \
+                 patch('simultaneous_clock_capture.reference_snapshot', return_value={}), \
+                 patch('simultaneous_clock_capture.w32_snapshot', return_value={}), \
+                 patch('simultaneous_clock_capture.time.monotonic', side_effect=range(0, 100000, 1000)), \
+                 patch('simultaneous_clock_capture.time.sleep', side_effect=waiting), \
+                 patch('simultaneous_clock_capture.native_frames', return_value=groups), \
+                 patch('simultaneous_clock_capture.bracket', side_effect=lambda group, rows: {'frame': group[0]['frame']}):
+                clocks.return_value.read.return_value = windows(0, 1)
+                watch(source, output, timeout_seconds=1)
+            self.assertGreaterEqual(len(waits), 3)
+            self.assertEqual(json.loads((output / 'ready.json').read_text())['frames'], 50)
+
     def test_requires_windows_observations_before_and_after_native(self):
         before,after=windows(0,9),windows(21,30)
         self.assertIsNone(bracket(native(),[after]))

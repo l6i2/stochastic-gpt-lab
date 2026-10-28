@@ -63,7 +63,7 @@ def compile_ea(environment, run_dir, ea=EA):
     startup=subprocess.STARTUPINFO()
     startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW
     startup.wShowWindow=0
-    subprocess.run([str(editor), '/compile:' + str(source), '/log:' + str(log.resolve())],
+    subprocess.run(f'"{editor}" /compile:"{source}" /log:"{log.resolve()}"',
                    timeout=600, check=False,startupinfo=startup)
     raw = log.read_bytes()
     text = raw.decode('utf-16' if raw.startswith(b'\xff\xfe') else 'utf-8-sig', errors='replace')

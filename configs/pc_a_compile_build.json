@@ -22,5 +22,23 @@
     "mt5\\HeikinAshiCore.mqh": "d9a1e525a99e66f855bc49c3a696030c5e12ef534a1aeff5012b63a462a3e8ef",
     "tests\\mql5\\FullClockAndTimeSemanticsProbe.mq5": "4b23fa262596439b9057df254c6f1276cc6bcee8167346297e70000e15cf5324"
   },
-  "orders_sent": 0
+  "orders_sent": 0,
+  "controller_builds": [
+    {
+      "source": "StochasticBarDecisionResearchEA.mq5",
+      "status": "PASS",
+      "errors": 0,
+      "warnings": 0,
+      "source_sha256": "f2e9bf43cbbdc716148847fe53e1f3dd14b21393775ccc809d05cb5e134cb88d",
+      "ex5_sha256": "2b7657180663ad643483c92aa02d7cbc6c15701338c859b60472f6c5c88a3651"
+    },
+    {
+      "source": "StochasticIntratradeResearchEA.mq5",
+      "status": "PASS",
+      "errors": 0,
+      "warnings": 0,
+      "source_sha256": "981a895d497be2f6bf3bf164dbefc39b4e63e1090fd27f3fda3ba12d0d3d08f1",
+      "ex5_sha256": "8d2ca302321a330f4c09a2c7e51b505c4b36fd633be516d0b687dad4c9284628"
+    }
+  ]
 }

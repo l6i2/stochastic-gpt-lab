@@ -96,13 +96,19 @@ def prepare_probe(terminal, folder, run_id):
     source = source.replace('input string RunId="LOCAL_RUN_ID";', f'input string RunId="{run_id}";')
     script.write_text(source, encoding='utf-8')
     log = folder / 'compile.log'
-    subprocess.run([str(editor), f'/compile:{script}', f'/log:{log}'], timeout=90, check=True)
+    started = time.time()
+    # MetaEditor requires quotes after ':' for paths with spaces; return code 1
+    # can accompany a successful build. Trust only a fresh binary and clean log.
+    subprocess.run(f'"{editor}" /compile:"{script}" /log:"{log}"', timeout=90,
+                   check=False, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
     if not script.with_suffix('.ex5').is_file() or not log.is_file():
         raise RuntimeError('COMPILE_OUTPUT_MISSING')
     raw = log.read_bytes()
     text = raw.decode('utf-16' if raw.startswith((b'\xff\xfe', b'\xfe\xff')) else 'utf-8-sig')
     if '0 errors, 0 warnings' not in text:
         raise RuntimeError('COMPILE_NOT_ZERO_ERRORS_ZERO_WARNINGS_SEE_LOCAL_LOG')
+    if script.with_suffix('.ex5').stat().st_mtime < started - 2:
+        raise RuntimeError('COMPILE_BINARY_NOT_FRESH')
     manifest = {'run_id': run_id, 'script': str(script),
                 'native': str(data / 'MQL5/Files' / f'{run_id}_native.csv'),
                 'markers': str(data / 'MQL5/Files' / f'{run_id}_markers.txt'),
@@ -120,7 +126,7 @@ def run_capture(folder, manifest, timeout=360):
     with (folder / 'watcher.log').open('x', encoding='utf-8') as log:
         process = subprocess.Popen([sys.executable, str(ROOT / 'tools/windows_clock_capture.py'),
                                     '--native', str(native), '--output', str(folder)], stdout=log, stderr=log)
-        deadline = time.monotonic() + timeout
+        deadline = time.monotonic() + 90
         try:
             while not (folder / 'ready.json').exists():
                 if process.poll() is not None or time.monotonic() >= deadline:
@@ -128,7 +134,12 @@ def run_capture(folder, manifest, timeout=360):
                 time.sleep(.2)
             # Only unavoidable human action. No key input required afterwards.
             print(f"Navigator -> Scripts -> ResearchDiagnostics -> {manifest['run_id']} -> FullClockAndTimeSemanticsProbe", flush=True)
-            while time.monotonic() < deadline:
+            deadline = None
+            while True:
+                if deadline is None and native.exists():
+                    deadline = time.monotonic() + timeout
+                if deadline is not None and time.monotonic() >= deadline:
+                    break
                 ended = markers.exists() and f"CLOCK_ATTESTATION_END|run={manifest['run_id']}|" in markers.read_text(encoding='utf-8-sig')
                 if ended and process.poll() == 0 and (folder / 'capture.json').exists():
                     return

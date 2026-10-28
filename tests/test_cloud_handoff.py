@@ -171,8 +171,13 @@ class CloudEvidenceTests(unittest.TestCase):
                 terminal_info=lambda:types.SimpleNamespace(connected=True,company='XM',data_path=str(data)),
                 account_info=lambda:types.SimpleNamespace(trade_mode=0),ACCOUNT_TRADE_MODE_DEMO=0)
             def compile_fake(args, **kwargs):
-                source=Path(args[1].split(':',1)[1]);source.with_suffix('.ex5').write_bytes(b'SYNTHETIC_EX5')
-                Path(args[2].split(':',1)[1]).write_text('0 errors, 0 warnings',encoding='utf-16')
+                import re
+                self.assertIsInstance(args, str)
+                self.assertFalse(kwargs['check'])
+                source=Path(re.search(r'/compile:"([^"]+)"',args)[1])
+                source.with_suffix('.ex5').write_bytes(b'SYNTHETIC_EX5')
+                Path(re.search(r'/log:"([^"]+)"',args)[1]).write_text('0 errors, 0 warnings',encoding='utf-16')
+                return types.SimpleNamespace(returncode=1)
             with patch.dict(sys.modules, {'MetaTrader5':fake}), patch('local_finalize.subprocess.run',side_effect=compile_fake):
                 manifest=prepare_probe(terminal,folder,'fixture_nonce')
             source=Path(manifest['script']).read_text()
