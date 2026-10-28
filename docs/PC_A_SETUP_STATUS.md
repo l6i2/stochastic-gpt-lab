@@ -42,3 +42,15 @@ XM DEMO, conexión y US30Cash verificados programáticamente; Market Watch habil
 Se corrigieron los argumentos con espacios y el retorno de MetaEditor, que puede ser 1 en builds correctos. Se exige log limpio y EX5 nuevo. La espera manual ahora no consume el timeout de la captura: la captura nativa sigue limitada después de arrancar el probe. La prueba de regresión simula una demora humana superior al timeout.
 
 Capturador Windows armado mediante UAC normal, proceso elevado verificado; lectura de Windows Time solamente. Ruta activa en outputs/pc_a/active_clock_capture.json. Analizador de finalización preparado para generar final_report.json automáticamente al completarse la captura. No se mezclan los intentos incompletos anteriores. Fuente sellada actual: configs/pc_a_source_hashes_20261028_v4.json. 246 pruebas: 237 correctas, 9 omitidas por g++ ausente; compileall y verificación estática sin órdenes correctos. Reloj científico, mapping, causalidad y continuidad de cohorte continúan bloqueados a falta de evidencia real.
+
+## Captura local completada
+
+CLOCK_ATTESTATION=PASS, WINDOWS_CLOCK_SYNC=PASS y SIMULTANEOUS_OVERLAP=PASS para el intervalo capturado por cloud_c0c00e95d42c41ee. 50 frames / 150 registros, sin errores y 0 órdenes. Referencias independientes disponibles, Windows UTC dentro de sus intervalos y consultas privilegiadas w32tm válidas. Sellos de audit, fuente, EX5, CSV, markers y snapshot de sesiones revalidados. Resumen publicable: configs/pc_a_clock_attestation_20261028.json; evidencia cruda solo local.
+
+El probe genérico anterior LOCAL_RUN_ID se conserva sin emparejar y no fundamenta este PASS. Navigator PC_A usa alias NTFS al mismo archivo/hash del probe preparado. El capturador y el analizador terminaron. No repetir la captura completada ni sobrescribir sus artefactos.
+
+El servidor observado es XMGlobalSC-MT5 5, US30Cash; +7200 segundos es solo una observación, no certifica mapping ni DST. NATIVE_TO_UTC_MAPPING continúa bloqueado; el preparado fue probado y rechazado con NATIVE_UTC_MAPPING_UNVERIFIED. El snapshot de sesiones pasó estructura, con holidays UNKNOWN y mapping UNVERIFIED, sin activación.
+
+La auditoría causal reprodujo FROZEN_METADATA_NATIVE_TRIGGER_PARITY_NOT_ESTABLISHED. Contraejemplo sintético: metadata congelada 30.6667 frente a cálculo nativo 5.2381; caso plano 50 frente a 100. Los soportes de madurez existentes no son utilizables para afirmar paridad con el trigger nativo. No se modificaron la especificación sellada, la estrategia ni la cohorte. No se leyeron labels, PnL u outcomes. MAIN_K de la estrategia conserva su PASS nativo independiente; el fallo corresponde al contrato de metadata/health congelado.
+
+PC_A_READY=false: mapping externo revisado, contrato causal y continuidad de cohorte siguen pendientes. Collector, scoring, evaluación, shadow, demo executor y órdenes no se activaron. FINAL_TEST=LOCKED, DISCOVERY_VALIDATION=BLOCKED, DEMO=DISABLED, LIVE_TRADING=false.

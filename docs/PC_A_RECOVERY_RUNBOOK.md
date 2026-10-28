@@ -47,3 +47,7 @@ Windows Time quedó en inicio automático. Su configuración anterior se conserv
 
 
 El capturador actual espera sin caducidad antes del inicio nativo, con caché acotada. No repitas el script si ya creó archivos: conserva la evidencia y prepara un nonce nuevo. El proceso de análisis espera capture.json y verifica el sello antes de procesarlo; no cambia gates. Ruta de captura activa: outputs/pc_a/active_clock_capture.json. Después de reinicio, no supongas que estos procesos sobrevivieron; exige una captura nueva si no existe una completa.
+
+La captura de PC A ya terminó y fue auditada. No repetir el probe para resolver mapping/metadata: son bloqueos distintos. Para revalidar los bytes locales sin ejecutar MT5 de nuevo, usar --resume-folder con la carpeta de outputs/pc_a/active_clock_capture.json y --source-manifest configs/pc_a_source_hashes_20261028_v4.json; el wrapper creará otro informe sin sobrescribir el original.
+
+Antes de colección hacen falta un contrato externo revisado native/UTC con segmentos acotados y evidencia SHA-256, y resolver la no equivalencia del metadata congelado sin reescribir la cohorte. La captura actual no autoriza extender offsets a otras fechas o servidores ni rellenar gaps. Solicitud para recuperar evidencia: docs/PC_A_EXTERNAL_EVIDENCE_REQUEST.md.

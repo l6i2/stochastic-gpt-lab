@@ -1,0 +1,76 @@
+{
+  "broker_offset_scope": "OBSERVED_ONLY_NOT_CERTIFIED",
+  "broker_server": "XMGlobalSC-MT5 5",
+  "causal_metadata_check": {
+    "cohort_read": false,
+    "existing_support_counts_usable_for_native_trigger_maturity": false,
+    "frozen_definition_found": true,
+    "health_code_sha256": "93318edcf2dd1a69551ef637493e6f22c9b682b5209ad4836ee23e3c6daeead0",
+    "labels_read": false,
+    "metadata_spec_sha256": "52ec66925013e88df5252c3b46bac2f405d96d2051ad73c6d5b3bddd5a08c340",
+    "native_indicator_binary_parity_verified": false,
+    "pnl_read": false,
+    "reason": "FROZEN_METADATA_NATIVE_TRIGGER_PARITY_NOT_ESTABLISHED",
+    "reference_example_recognized": false,
+    "reference_example_sha256": null,
+    "sealed_spec_modified": false,
+    "status": "FAIL",
+    "synthetic_counterexample": {
+      "frozen_flat_main_k": 50.0,
+      "frozen_main_k": 30.666666666666668,
+      "native_example_flat_main_k": 100.0,
+      "native_example_main_k": 5.238095238095238
+    },
+    "threshold_tuning": false
+  },
+  "clock_attestation": "PASS",
+  "clock_probe": "PASS",
+  "collector_started": false,
+  "demo": "DISABLED",
+  "errors": [],
+  "files_sha256": {
+    "analysis.json": "c94c877105fd2c63136622a2d6b2d8eb94724ae2ebfc5ba3ef40a521b5d78b36",
+    "audit.json": "56f1e97a0eac1c35787e99c4bf2d16281d50ccd0a926cc9aee0c8f36969b3032",
+    "capture.json": "04e5dc378c64bdfde901be5fd4249119c5190e9bb203efdb4fa1c08b82e71ce3",
+    "compile.log": "1a34653197b7dccea6214d0c49de42cd3a13637f6f663699da1d3829ab248bb4",
+    "final_report.json": "54778af30c03d1f4894cfe3c3beccec495fd01d9252a4910b580bf031b1d1f28",
+    "hashes.json": "17f823bcd8ad3b35b626a99dd842d0ad0baada66894442bef88c2ccc445e6ff5",
+    "markers.txt": "4b1a3e70c5a05022a8c8d972d22f3e4cec9a0b24fa202a4412ad1927e5e91c17",
+    "native.csv": "7920d7a121e2478bc5394903ad900d3d4a23c9cd707ab224a056a27e403588d1",
+    "run.json": "510bf4d7d8c8a46eb1125fbafab29265d4130ad09fa9a44e02a5bee9f1e92628"
+  },
+  "final_test": "LOCKED",
+  "independent_reference_available": true,
+  "live_trading": false,
+  "local_evidence_relative_path": "outputs/local_clock_attestation/cloud_c0c00e95d42c41ee/admin_python_fac7f89f",
+  "native_build_sha256": {
+    "capture_sha256": "04e5dc378c64bdfde901be5fd4249119c5190e9bb203efdb4fa1c08b82e71ce3",
+    "ex5_sha256": "7e8a8f0fd40064524461859af2988d7b9d9fa4c17306f9dd20db3c4835b61573",
+    "markers_sha256": "4b1a3e70c5a05022a8c8d972d22f3e4cec9a0b24fa202a4412ad1927e5e91c17",
+    "native_csv_sha256": "7920d7a121e2478bc5394903ad900d3d4a23c9cd707ab224a056a27e403588d1",
+    "source_sha256": "b43627683b0a83b275bbea144b18c29733e527a97b17a032902200803d0a13b9"
+  },
+  "native_rows": 150,
+  "native_to_utc_mapping": "BLOCKED_EXTERNAL_REVIEWED_EVIDENCE_REQUIRED",
+  "observed_server_minus_host_gmt_seconds": [
+    7200
+  ],
+  "orders_sent": 0,
+  "paired_frames": 50,
+  "precise_windows_inside_reference_intervals": true,
+  "raw_evidence_in_git": false,
+  "run_id": "cloud_c0c00e95d42c41ee",
+  "scope": "This captured interval only; no operational broker mapping or permanent clock acceptance",
+  "session_observations_sha256": "d13b3b168c627dcf659d16d00151bc0a6b730b7f7fd9e9c1b3bb48106ca1b731",
+  "session_snapshot": {
+    "activated": false,
+    "holiday_schedule": "UNKNOWN",
+    "native_to_utc_mapping": "UNVERIFIED",
+    "status": "STRUCTURE_PASS_RUNTIME_GUARD_REQUIRED"
+  },
+  "simultaneous_overlap": "PASS",
+  "symbol": "US30Cash",
+  "temporal_causality": "FAIL_MAPPING_UNVERIFIED",
+  "w32_source_status_offset_available": true,
+  "windows_clock_sync": "PASS"
+}
