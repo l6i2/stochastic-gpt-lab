@@ -1,0 +1,27 @@
+{
+  "COMPILE_STATUS": "PASS_ZERO_ERRORS_ZERO_WARNINGS",
+  "INSTALL_STATUS": "VERIFIED_FILES_AND_HASHES",
+  "MANUAL_ACTION_REQUIRED": "Right-click Scripts -> Refresh",
+  "MT5_DATA_FOLDER": "C:\\Users\\DELL 2022\\AppData\\Roaming\\MetaQuotes\\Terminal\\20C285FE08971A9A2E814AAC44AFC9D2",
+  "SCRIPT_EX5_PATH": "C:\\Users\\DELL 2022\\AppData\\Roaming\\MetaQuotes\\Terminal\\20C285FE08971A9A2E814AAC44AFC9D2\\MQL5\\Scripts\\ResearchDiagnostics\\PC_A\\StartProspectiveUtcObserver.ex5",
+  "SCRIPT_MQ5_PATH": "C:\\Users\\DELL 2022\\AppData\\Roaming\\MetaQuotes\\Terminal\\20C285FE08971A9A2E814AAC44AFC9D2\\MQL5\\Scripts\\ResearchDiagnostics\\PC_A\\StartProspectiveUtcObserver.mq5",
+  "SCRIPT_NAME": "StartProspectiveUtcObserver",
+  "binary_sha256": "41c4acc8f3c87dfb0c30b7971d01d7c3222a0d7b5bd5818c1ddbbec7b3552d09",
+  "compile_log_sha256": "d8c624e741f3e14808cbc2a5b1f140cee86e288339a2af53a0a9d0dbeaefc477",
+  "existing_ea_binary_sha256": "c3dc91cca9b0b76f647a81da3dea5a1682692b87de7564f8100e56bedd9d59b0",
+  "existing_ea_source_sha256": "fd1bd10716a19010f544343e29e51a0f2d393ff80c28e3238c5b5ab437b84767",
+  "independent_utc_authorized": false,
+  "installed_source_sha256": "6cbc03652a011b38b2ee0c6de99700e9c9e499f3d8f5aceff178e5d1477bf637",
+  "live_trading": false,
+  "navigator_refreshed": false,
+  "orders_sent": 0,
+  "previous_scripts_verified": {
+    "FullClockAndTimeSemanticsProbe.ex5": "7e8a8f0fd40064524461859af2988d7b9d9fa4c17306f9dd20db3c4835b61573",
+    "FullClockAndTimeSemanticsProbe.mq5": "b43627683b0a83b275bbea144b18c29733e527a97b17a032902200803d0a13b9"
+  },
+  "script_executed": false,
+  "source_sha256": "6cbc03652a011b38b2ee0c6de99700e9c9e499f3d8f5aceff178e5d1477bf637",
+  "template_path": "C:\\Users\\DELL 2022\\AppData\\Roaming\\MetaQuotes\\Terminal\\20C285FE08971A9A2E814AAC44AFC9D2\\MQL5\\Profiles\\Templates\\PC_A_ProspectiveUtcObserver.tpl",
+  "template_runtime_verified": false,
+  "template_sha256": "4a4f6347f7f99888d793aa65f18d7d8ca524a811a87e8d94cda9814cb63f0cf1"
+}
