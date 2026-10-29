@@ -1,0 +1,18 @@
+{
+  "applicable_native_interval": null,
+  "dated_exceptions": null,
+  "event_binding": null,
+  "evidence_kind": "bar_time",
+  "historical_transitions": null,
+  "independent_authority": null,
+  "retrieved_utc": null,
+  "schema_version": 1,
+  "scientific_acceptance": false,
+  "server": "XMGlobalSC-MT5 5",
+  "sessions": null,
+  "source_file": null,
+  "source_sha256": null,
+  "source_url": null,
+  "symbol": "US30Cash",
+  "utc_interval": null
+}

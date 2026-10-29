@@ -1,0 +1,74 @@
+[
+  {
+    "claim": "time_msc // 1000 == time in sealed records",
+    "domain": "ticks",
+    "evidence": "configs/pc_a_remaining_blockers_evidence_20261028/status.json",
+    "status": "PASS_CAPTURED_RECORD_UNITS_ONLY"
+  },
+  {
+    "claim": "Python tick API documents UTC",
+    "domain": "tick_API",
+    "source": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksrange_py",
+    "status": "DOCUMENTED_GENERIC_NOT_EXACT_SERVER_CERTIFICATION"
+  },
+  {
+    "claim": "Python rate API documents UTC bar opens",
+    "domain": "bar_API",
+    "source": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesrange_py",
+    "status": "DOCUMENTED_GENERIC_NOT_EXACT_SERVER_CERTIFICATION"
+  },
+  {
+    "claim": "276 native M5 aggregations match tick-derived bars",
+    "domain": "native_bars",
+    "evidence": "configs/pc_a_m5_post_restart_evidence_20261028/repair_audit.json",
+    "status": "PASS_NATIVE_DOMAIN_ONLY_NOT_UTC"
+  },
+  {
+    "claim": "TimeCurrent is last known server quote time",
+    "domain": "server_quote_clock",
+    "source": "https://www.mql5.com/en/docs/dateandtime/timecurrent",
+    "status": "DOCUMENTED_NOT_AUTHENTICATED_UTC"
+  },
+  {
+    "claim": "TimeTradeServer is calculated in the terminal and depends on PC time",
+    "domain": "calculated_clock",
+    "source": "https://www.mql5.com/en/docs/dateandtime/timetradeserver",
+    "status": "NOT_AN_INDEPENDENT_UTC_ANCHOR"
+  },
+  {
+    "claim": "TimeGMT is derived from local computer time and DST; tester uses simulated server time",
+    "domain": "host_clock",
+    "source": "https://www.mql5.com/en/docs/dateandtime/timegmt",
+    "status": "NOT_AN_INDEPENDENT_BROKER_EVENT_ANCHOR"
+  },
+  {
+    "claim": "MqlTick update times do not provide independently authenticated event identity",
+    "domain": "tick_structure",
+    "source": "https://www.mql5.com/en/docs/constants/structures/mqltick",
+    "status": "INDEPENDENT_EVENT_BINDING_REQUIRED"
+  },
+  {
+    "claim": "Session API provides weekday times of day, with date component disregarded",
+    "domain": "weekly_sessions",
+    "source": "https://www.mql5.com/en/docs/marketinformation/symbolinfosessionquote",
+    "status": "NOT_A_HISTORICAL_EXCEPTION_CALENDAR"
+  },
+  {
+    "claim": "Current native weekly sessions were observed for exact server",
+    "domain": "server_snapshot",
+    "evidence": "configs/pc_a_remaining_blockers_evidence_20261028/current_server_native_sessions.json",
+    "status": "OBSERVED_NATIVE_ONLY_UTC_AND_HOLIDAYS_UNVERIFIED"
+  },
+  {
+    "claim": "IANA Europe and New York DST dates identify broker historical offset",
+    "domain": "historical_mapping",
+    "evidence": "configs/pc_a_remaining_blockers_evidence_20261028/scope_audit.json",
+    "status": "UNPROVEN_BROKER_APPLICABILITY_NOT_INFERRED"
+  },
+  {
+    "claim": "Later history equals original prospective receipt evidence",
+    "domain": "tick_requery",
+    "evidence": "configs/pc_a_remaining_blockers_evidence_20261028/scope_audit.json",
+    "status": "FALSE_EQUIVALENCE_NOT_ACCEPTED"
+  }
+]

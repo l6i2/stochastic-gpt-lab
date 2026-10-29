@@ -1,0 +1,17 @@
+{
+  "calendar_authorized": false,
+  "cohort_activation_allowed": false,
+  "event_mapping_authorized": false,
+  "evidence_kind": "tick_event",
+  "input_sha256": "f42872bc9d2260809eadcfe2f4a1846a6b1a855a267415c41ea5264289712eae",
+  "missing": [
+    "HTTPS_SOURCE_WITHOUT_CREDENTIALS_REQUIRED",
+    "INDEPENDENT_AUTHORITY_IDENTITY_AND_AUTHENTICATION_REQUIRED",
+    "IMMUTABLE_SOURCE_ARTIFACT_REQUIRED",
+    "EXPLICIT_BOUNDED_UTC_INTERVAL_REQUIRED",
+    "UNIQUE_NATIVE_TO_INDEPENDENT_RECORD_BINDING_REQUIRED"
+  ],
+  "scientific_acceptance": false,
+  "semantic_authenticity_verified": false,
+  "status": "INCOMPLETE"
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "bytes": 51876,
+    "event_mapping_authorized": false,
+    "http_status": 200,
+    "resolved_url": "https://www.mql5.com/en/docs/dateandtime/timetradeserver",
+    "retrieved_utc": "2026-10-29T03:08:41.910485+00:00",
+    "scientific_acceptance": false,
+    "source_sha256": "ecfbf72eb2c9201a8e563bf8bb8e686502a823f1044728883b94cf705d3ce57d",
+    "status": "DOWNLOADED_NOT_SEMANTICALLY_VERIFIED",
+    "url": "https://www.mql5.com/en/docs/dateandtime/timetradeserver"
+  },
+  {
+    "bytes": 61296,
+    "event_mapping_authorized": false,
+    "http_status": 200,
+    "resolved_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesrange_py",
+    "retrieved_utc": "2026-10-29T03:10:49.006113+00:00",
+    "scientific_acceptance": false,
+    "source_sha256": "75a46390cef55d8a03ce365d106160eb24301688030cf6b713c49f557bc59080",
+    "status": "DOWNLOADED_NOT_SEMANTICALLY_VERIFIED",
+    "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesrange_py"
+  },
+  {
+    "bytes": 48415,
+    "event_mapping_authorized": false,
+    "http_status": 200,
+    "resolved_url": "https://www.mql5.com/en/docs/dateandtime/timecurrent",
+    "retrieved_utc": "2026-10-29T03:10:49.000587+00:00",
+    "scientific_acceptance": false,
+    "source_sha256": "6836eee227e61c8de86eddcc7889d1af917da8d7a691c5e04a9ee72e6b09c7cf",
+    "status": "DOWNLOADED_NOT_SEMANTICALLY_VERIFIED",
+    "url": "https://www.mql5.com/en/docs/dateandtime/timecurrent"
+  },
+  {
+    "error": "HTTPError",
+    "event_mapping_authorized": false,
+    "retrieved_utc": "2026-10-29T03:10:49.031659+00:00",
+    "scientific_acceptance": false,
+    "status": "UNAVAILABLE_NO_BYPASS",
+    "url": "https://www.mql5.com/en/docs/marketinformation/symbolinfosessionquote"
+  },
+  {
+    "bytes": 61159,
+    "event_mapping_authorized": false,
+    "http_status": 200,
+    "resolved_url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksrange_py",
+    "retrieved_utc": "2026-10-29T03:10:48.999591+00:00",
+    "scientific_acceptance": false,
+    "source_sha256": "42b5b8d6ac5b10c399c8140a561864864444de26f4a5d2238eca6d2cf4e59add",
+    "status": "DOWNLOADED_NOT_SEMANTICALLY_VERIFIED",
+    "url": "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksrange_py"
+  },
+  {
+    "error": "HTTPError",
+    "event_mapping_authorized": false,
+    "retrieved_utc": "2026-10-29T03:10:49.070312+00:00",
+    "scientific_acceptance": false,
+    "status": "UNAVAILABLE_NO_BYPASS",
+    "url": "https://www.xm.com/equity-indices"
+  }
+]

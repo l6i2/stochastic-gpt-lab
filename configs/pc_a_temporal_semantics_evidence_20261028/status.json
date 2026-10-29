@@ -1,0 +1,46 @@
+{
+  "BROKER_CALENDAR": "PARTIAL_WEEKLY_NATIVE_OBSERVATION_NO_CERTIFIED_DATED_UTC_EXCEPTIONS",
+  "CAUSAL_AUDIT": "FAIL",
+  "COLLECTOR_HEALTH": "ACTIVE_RAW_QUARANTINE_HASH_AND_CURSOR_VERIFIED_COMPLETENESS_NOT_CERTIFIED",
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "FINAL_TEST": "LOCKED",
+  "HARD_BLOCKER": [
+    "Independent authenticated UTC binding to the same exact-server event",
+    "Bounded historical timestamp semantics and evidenced transition intervals",
+    "Exact-server authoritative dated sessions and exceptions",
+    "Current precise clock acceptance still unverified"
+  ],
+  "HISTORICAL_TIME_MAPPING": "UNVERIFIED_NO_INDEPENDENT_EVENT_ANCHORS_OR_DATED_TRANSITION_RULE",
+  "LIVE_TRADING": false,
+  "LOCAL_HEAD_BEFORE": "22dae909ca3b3a2df175bc74de83b097219b469e",
+  "METADATA_V3_PARITY": "PASS_RETAINED_NOT_ACTIVATED",
+  "NEXT_STATE": "KEEP_RAW_CAPTURE_STAGE_VERIFIABLE_EXTERNAL_EVIDENCE_WITH_NO_AUTOMATIC_COHORT_OR_TRAINING",
+  "ORDERS_SENT": 0,
+  "PROSPECTIVE_COHORT_READINESS": "BLOCKED_NO_ACTIVATION",
+  "PUSH_STATUS": "PENDING_PUBLICATION",
+  "REMOTE_HEAD_BEFORE": "22dae909ca3b3a2df175bc74de83b097219b469e",
+  "TICK_REQUERY_DIFFERENCES": "FOUR_WINDOWS_CLASSIFIED_PRESERVED_NO_EQUIVALENCE_OR_RETROACTIVE_REPAIR",
+  "TRAINING_READINESS": "BLOCKED_BY_RESEARCH_GOVERNANCE",
+  "UTC_EVENT_PROVENANCE": "UNVERIFIED_GENERIC_API_DOCUMENTATION_NOT_EXACT_SERVER_EVENT_PROOF",
+  "bounded_connected_notice_search": "No qualifying exact-server dated calendar established from bounded searches; headers only, no private bodies retained or published",
+  "documentary_dependency_finding": "TimeTradeServer and TimeGMT are host-dependent calculations, not independent event UTC references",
+  "fixed_offset_installed": false,
+  "new_probes_run": false,
+  "new_tick_requeries_run": false,
+  "new_tools": [
+    "tools/prepare_temporal_evidence.py",
+    "python/temporal_evidence_intake.py"
+  ],
+  "raw_timestamps_modified": false,
+  "scientific_acceptance": false,
+  "tests": {
+    "affected_failed": 0,
+    "affected_regression_passed": 44,
+    "affected_skipped": 0,
+    "full_suite_rerun": false,
+    "log_sha256": "292fa0e7a162b0f52767e75dad67df14d9b70a3726a2a9785b86eaed73173dc7",
+    "previous_full_suite_passed": 259,
+    "previous_full_suite_skipped": 9
+  }
+}

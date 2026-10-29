@@ -1,0 +1,11 @@
+{
+  "previous_manifest_sha256": "645e513e01aa5dc4e4d798693bdfea1c7905c27cc618833acdbee64f9a53a850",
+  "reviewed_guard_hardening": [
+    {
+      "current_sha256": "c380f5403b8ac02a979a1ae046f0348834196a39caf099fe2412ce059bdd72b8",
+      "file": "python/train_event_source.py",
+      "previous_sha256": "557b01a89bcb1cd275a432c327e414b2f70264d4b25f9bad4d9f7375cb1cd7d0"
+    }
+  ],
+  "verified_unchanged": 363
+}
