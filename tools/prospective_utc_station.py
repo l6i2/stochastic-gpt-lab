@@ -100,8 +100,10 @@ def locked_observe(network):
             same_event_binding=False,clock_changed=False,orders_sent=0)
         append_witness(witness)
     ticks=sum(s['tick_callbacks'] for s in sessions.values())
+    active=any(s['tick_callbacks'] and s['last_connected'] and s['liveness']=='RECENT' for s in sessions.values())
+    capture_status='ACTIVE_CALLBACKS_QUARANTINED' if active else 'INACTIVE_CALLBACKS_RETAINED' if ticks else 'STALLED_START_ONLY' if sessions else 'PREPARED_NOT_OBSERVED'
     status=dict(observed=instant_display(datetime.now(timezone.utc),basis='HOST_RECEIPT_UNATTESTED'),
-        REALTIME_CAPTURE='CALLBACKS_OBSERVED' if ticks else 'PREPARED_NOT_OBSERVED',
+        REALTIME_CAPTURE=capture_status,
         native_sessions=sessions,session_count=len(sessions),session_boundaries_observed=max(0,len(sessions)-1),
         restart_interpretation='NEW_SESSION_CAN_BE_REINIT_RESTART_OR_ANOTHER_CHART_NO_AUTOMATIC_EQUIVALENCE',
         total_tick_callbacks=ticks,EXTERNAL_UTC_SOURCE='NTP_AND_TLS_REFERENCES_DIAGNOSTIC_ONLY',

@@ -1,5 +1,5 @@
 #property strict
-#property version "1.00"
+#property version "1.01"
 #property description "Read-only native callback observer. No historical queries or trading."
 input string CaptureId="pc_a_prospective_utc_v1";
 int handle=INVALID_HANDLE;
@@ -30,8 +30,12 @@ void Record(const string kind,const ulong callback_ms,const ulong callback_us,co
       DoubleToString(tick.bid,16),DoubleToString(tick.ask,16),tick.flags);
    string digest=Digest(previous+"\n"+body);
    if(StringLen(digest)!=64) {FileClose(handle);handle=INVALID_HANDLE;return;}
-   string line="{\"previous\":\""+previous+"\",\"sha256\":\""+digest+"\",\"payload\":"+body+"}\n";
-   if(FileWriteString(handle,line)!=StringLen(line)) {FileClose(handle);handle=INVALID_HANDLE;return;}
+   // TXT expands lone LF to CRLF. Use explicit CRLF so the ASCII byte count
+   // matches the actual write; the hash still covers the unchanged payload.
+   string line="{\"previous\":\""+previous+"\",\"sha256\":\""+digest+"\",\"payload\":"+body+"}\r\n";
+   uint written=FileWriteString(handle,line);
+   if(written!=(uint)StringLen(line))
+     {PrintFormat("PROSPECTIVE_OBSERVER|WRITE_FAILED|bytes=%u|expected=%d|error=%d",written,StringLen(line),GetLastError());FileClose(handle);handle=INVALID_HANDLE;return;}
    FileFlush(handle);
    previous=digest;sequence++;
   }
@@ -57,6 +61,7 @@ int OnInit()
    handle=FileOpen(file,FILE_WRITE|FILE_TXT|FILE_ANSI|FILE_SHARE_READ,0,CP_UTF8);
    if(handle==INVALID_HANDLE) return INIT_FAILED;
    MqlTick empty={};Record("SESSION_START",GetTickCount64(),GetMicrosecondCount(),empty);
+   if(handle==INVALID_HANDLE) return INIT_FAILED;
    if(!EventSetTimer(5)) return INIT_FAILED;
    return INIT_SUCCEEDED;
   }

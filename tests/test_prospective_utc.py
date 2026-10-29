@@ -67,3 +67,13 @@ class ProspectiveTests(unittest.TestCase):
             path=Path(d)/'external_witness.jsonl';rows=path.read_bytes().splitlines(keepends=True)
             path.write_bytes(rows[0])
             with self.assertRaises(ValueError):station.append_witness({'test':3})
+
+    def test_native_crlf_lines_preserve_payload_chain(self):
+        with tempfile.TemporaryDirectory() as d:
+            path=Path(d)/'native.jsonl';self.write(path,[self.row(0,'SESSION_START'),self.row(1)])
+            before=verify_callback(path)
+            path.write_bytes(path.read_bytes().replace(b'\n',b'\r\n'))
+            after=verify_callback(path)
+            self.assertEqual(after['chain_head'],before['chain_head'])
+            self.assertEqual(after['rows'],before['rows'])
+            self.assertEqual(after['bytes_verified'],before['bytes_verified']+2)

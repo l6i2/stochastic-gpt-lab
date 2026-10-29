@@ -1,5 +1,5 @@
 #property strict
-#property version "1.00"
+#property version "1.01"
 #property script_show_inputs
 #property description "Launch the read-only callback observer on a dedicated chart."
 
@@ -15,7 +15,15 @@ void OnStart()
      {Print("PROSPECTIVE_LAUNCH|REFUSED|Algo Trading must remain disabled");return;}
    for(long id=ChartFirst();id>=0;id=ChartNext(id))
       if(StringFind(ChartGetString(id,CHART_EXPERT_NAME),"ProspectiveUtcObserver")>=0)
-        {Print("PROSPECTIVE_LAUNCH|ALREADY_ATTACHED|runtime evidence requires monitor");return;}
+        {
+         if(ChartSymbol(id)!="US30Cash")
+           {Print("PROSPECTIVE_LAUNCH|REFUSED|observer chart symbol mismatch");return;}
+         // Reload only our read-only observer. Never replace an unrelated EA.
+         if(!ChartApplyTemplate(id,"\\Profiles\\Templates\\PC_A_ProspectiveUtcObserver.tpl"))
+           PrintFormat("PROSPECTIVE_LAUNCH|RELOAD_QUEUE_FAILED|error=%d",GetLastError());
+         else Print("PROSPECTIVE_LAUNCH|RELOAD_QUEUED_NOT_CERTIFIED|new native session required");
+         return;
+        }
    long dedicated=ChartOpen("US30Cash",PERIOD_M1);
    if(dedicated==0)
      {PrintFormat("PROSPECTIVE_LAUNCH|CHART_OPEN_FAILED|error=%d",GetLastError());return;}

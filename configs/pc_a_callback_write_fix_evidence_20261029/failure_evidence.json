@@ -1,0 +1,10 @@
+{
+  "bytes": 579,
+  "complete_records": 1,
+  "ends_crlf": true,
+  "finding": "TXT inserts CR before LF; v1 checked shorter input length and closed after successful SESSION_START",
+  "native_file": "pc_a_prospective_utc_v1_6617828_86572951924106_12102.jsonl",
+  "original_preserved": true,
+  "runtime_reload_verified": false,
+  "sha256": "5cbee97fb8e2a8ac5ba2fe196fc37c112ee6528cfd992d4b4bff356612505445"
+}

@@ -1,0 +1,10 @@
+{
+  "failed": 0,
+  "launcher_compile": "0 errors 0 warnings",
+  "log_sha256": "dec66ccdeec1b371561ef9239993a4b236d0572adc0ab431716d0841c58fd595",
+  "native_callback_runtime": "PENDING_RELOAD",
+  "observer_compile": "0 errors 0 warnings",
+  "passed": 22,
+  "skipped": 0,
+  "static_no_order_calls": "PASS"
+}

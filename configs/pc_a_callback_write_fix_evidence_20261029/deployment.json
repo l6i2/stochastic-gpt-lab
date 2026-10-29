@@ -1,0 +1,41 @@
+{
+  "launcher": {
+    "COMPILE_STATUS": "PASS_ZERO_ERRORS_ZERO_WARNINGS",
+    "INSTALL_STATUS": "VERIFIED_FILES_AND_HASHES",
+    "MANUAL_ACTION_REQUIRED": "Right-click Scripts -> Refresh",
+    "MT5_DATA_FOLDER": "C:\\Users\\DELL 2022\\AppData\\Roaming\\MetaQuotes\\Terminal\\20C285FE08971A9A2E814AAC44AFC9D2",
+    "SCRIPT_EX5_PATH": "C:\\Users\\DELL 2022\\AppData\\Roaming\\MetaQuotes\\Terminal\\20C285FE08971A9A2E814AAC44AFC9D2\\MQL5\\Scripts\\ResearchDiagnostics\\PC_A\\StartProspectiveUtcObserver.ex5",
+    "SCRIPT_MQ5_PATH": "C:\\Users\\DELL 2022\\AppData\\Roaming\\MetaQuotes\\Terminal\\20C285FE08971A9A2E814AAC44AFC9D2\\MQL5\\Scripts\\ResearchDiagnostics\\PC_A\\StartProspectiveUtcObserver.mq5",
+    "SCRIPT_NAME": "StartProspectiveUtcObserver",
+    "binary_sha256": "fa4c5b9576922db9b9344a48fabf50904395ee8b5d305e292b1cda762f2f59a9",
+    "compile_log_sha256": "facadbb7e0431f905aeb39106f11e97180063c71f9f90f1b4897cac15a0c9a81",
+    "existing_ea_binary_sha256": "5cf9fb463f0be82d46680a3b5e6af83f501033ad83b5cf1bc2795692262f1fc0",
+    "existing_ea_source_sha256": "b275430e62a04c4c89302dcfb7e7e5e6dcd4ecbdbb68b1e1c84298cf74e6faa7",
+    "independent_utc_authorized": false,
+    "installed_source_sha256": "d5b6e1afcd709613a4034fb80055096847d512381e17a61dd994005702ceef8d",
+    "live_trading": false,
+    "navigator_refreshed": false,
+    "orders_sent": 0,
+    "previous_scripts_verified": {
+      "FullClockAndTimeSemanticsProbe.ex5": "7e8a8f0fd40064524461859af2988d7b9d9fa4c17306f9dd20db3c4835b61573",
+      "FullClockAndTimeSemanticsProbe.mq5": "b43627683b0a83b275bbea144b18c29733e527a97b17a032902200803d0a13b9"
+    },
+    "script_executed": false,
+    "source_sha256": "d5b6e1afcd709613a4034fb80055096847d512381e17a61dd994005702ceef8d",
+    "template_path": "C:\\Users\\DELL 2022\\AppData\\Roaming\\MetaQuotes\\Terminal\\20C285FE08971A9A2E814AAC44AFC9D2\\MQL5\\Profiles\\Templates\\PC_A_ProspectiveUtcObserver.tpl",
+    "template_runtime_verified": false,
+    "template_sha256": "4a4f6347f7f99888d793aa65f18d7d8ca524a811a87e8d94cda9814cb63f0cf1"
+  },
+  "observer": {
+    "attached": false,
+    "auto_trading_changed": false,
+    "binary_sha256": "5cf9fb463f0be82d46680a3b5e6af83f501033ad83b5cf1bc2795692262f1fc0",
+    "compile": "PASS_ZERO_ERRORS_ZERO_WARNINGS",
+    "compile_log_sha256": "2a47f7dd801338230d1957e957d09e2f65b6f378898af515702732237b7734ae",
+    "deployed_source_sha256": "b275430e62a04c4c89302dcfb7e7e5e6dcd4ecbdbb68b1e1c84298cf74e6faa7",
+    "dll_enabled": false,
+    "native_callbacks_observed": false,
+    "orders_sent": 0,
+    "source_sha256": "b275430e62a04c4c89302dcfb7e7e5e6dcd4ecbdbb68b1e1c84298cf74e6faa7"
+  }
+}
