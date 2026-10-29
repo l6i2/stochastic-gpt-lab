@@ -1,0 +1,12 @@
+{
+  "affected_tests_passed": 47,
+  "failed": 0,
+  "full_suite_rerun": false,
+  "pip_check": "PASS",
+  "previous_full_suite_passed": 259,
+  "previous_full_suite_skipped": 9,
+  "regression_log_sha256": "a459fa10384709a1e6aa551d0041059fb337618620fc9c119b301a16da60da03",
+  "skipped": 0,
+  "source_v10": "VERIFIED",
+  "static_no_order_calls": "PASS"
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "claim": "Source seals, collector chains and captured tick units",
+    "evidence": "Source v9 verified before reviewed TRAIN guard change; both raw snapshots streamed",
+    "status": "VERIFIED"
+  },
+  {
+    "claim": "Historical 276 M5 OHLC and BID-update volume",
+    "evidence": "Retained sealed exact native comparison; no UTC certification",
+    "status": "VERIFIED"
+  },
+  {
+    "claim": "MAIN_K and prepared metadata V3",
+    "evidence": "Retained native parity; V3 not activated",
+    "status": "VERIFIED"
+  },
+  {
+    "claim": "Native quote/receipt correlation",
+    "evidence": "50 samples, 21 distinct payloads; API duration is not event latency",
+    "status": "PARTIAL"
+  },
+  {
+    "claim": "Precise current Windows UTC",
+    "evidence": "Local clock 193-225 ms ahead of unauthenticated NTP quorum; TLS corroborated",
+    "status": "PARTIAL"
+  },
+  {
+    "claim": "Independent same-event UTC identity",
+    "evidence": "No authenticated external record bound uniquely to exact XM event",
+    "status": "MISSING"
+  },
+  {
+    "claim": "Historical offset and DST intervals",
+    "evidence": "IANA diagnostics do not prove broker rules",
+    "status": "MISSING"
+  },
+  {
+    "claim": "Exact-server dated sessions and exceptions",
+    "evidence": "Native weekly observations only; historical exceptions absent",
+    "status": "PARTIAL"
+  },
+  {
+    "claim": "Direct native-as-UTC and constant-offset certification",
+    "evidence": "Not authorized by independent event evidence",
+    "status": "REJECTED"
+  },
+  {
+    "claim": "Original versus later tick equivalence",
+    "evidence": "Three requested plus one additional window have undercoverage",
+    "status": "REJECTED"
+  },
+  {
+    "claim": "Raw staging completeness and prior cohort continuity",
+    "evidence": "Preserved quarantine; no prospective adoption",
+    "status": "PARTIAL"
+  },
+  {
+    "claim": "Causal feature and quote inequalities",
+    "evidence": "Zero normalized rows admitted; audit FAIL closed",
+    "status": "MISSING"
+  }
+]

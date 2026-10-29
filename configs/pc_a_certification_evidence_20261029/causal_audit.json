@@ -1,0 +1,7 @@
+{
+  "feature_max_time <= decision_time": "NOT_EVALUABLE",
+  "normalized_rows_admitted": 0,
+  "quote_time <= decision_time": "NOT_EVALUABLE",
+  "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+  "status": "FAIL"
+}

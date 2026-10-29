@@ -12,6 +12,7 @@ _PROTECTED_SPLIT_NAMES = {
     "future_validation_cohort", "future-validation-cohort", "futurevalidationcohort",
     "pc_a_raw_archive", "pc_a_raw_backup", "pc_a_data_repair",
     "pc_a_remaining_blockers", "pc_a_evidence_backup", "pc_a_temporal_intake",
+    "pc_a_certification",
 }
 
 

@@ -1,0 +1,48 @@
+{
+  "BROKER_CALENDAR": "PARTIAL",
+  "CAUSAL_AUDIT": "FAIL_CLOSED_NO_AUTHORIZED_NORMALIZATION",
+  "HISTORICAL_TIME_MAPPING": "UNVERIFIED",
+  "NATIVE_TO_UTC_MAPPING": "UNVERIFIED",
+  "UTC_EVENT_PROVENANCE": "MISSING_INDEPENDENT_SAME_EVENT_UTC_BINDING",
+  "clock_status_sha256": "47ea28149777ce6a2fd2dc88a176a2dbc6e43dfa4a859c18b5ce439e68c7dc84",
+  "correlation_sha256": "38365218b6d1305e5e5844d27d0412ca44c8152cf62e761149280981310dedea",
+  "distinct_payloads": 21,
+  "head": "8caa91e4a195e8286cb1a03c611a259e8d7ca217",
+  "inventory": {
+    "active.json": {
+      "adjacent_identical_rows": 0,
+      "backwards_native_timestamps": 0,
+      "empty_query_windows": 3,
+      "gap_interpretation": "UNVERIFIED_WITHOUT_DATED_CALENDAR",
+      "manifest_sha256": "970c8489f2ced098129dc9f7f0d037cfaf3b47c9866ccd61fa97a6e0a770b9c3",
+      "multiplicity_preserved": true,
+      "ticks": 135277,
+      "unit_errors": 0
+    },
+    "historical_active.json": {
+      "adjacent_identical_rows": 0,
+      "backwards_native_timestamps": 0,
+      "empty_query_windows": 4,
+      "gap_interpretation": "UNVERIFIED_WITHOUT_DATED_CALENDAR",
+      "manifest_sha256": "3bef4fcbff070041c72dfd72e1bd838c213649db4c95adb82ea79b598c2044e5",
+      "multiplicity_preserved": true,
+      "ticks": 79211,
+      "unit_errors": 0
+    }
+  },
+  "orders_sent": 0,
+  "reference_status": {
+    "authority_scope": "diagnostic only; unauthenticated NTP",
+    "local_clock_within_network_interval": false,
+    "local_lag_lower_ns": -224617977,
+    "local_lag_upper_ns": -192617977,
+    "status": "REFERENCE_QUORUM",
+    "utc_lower_ns": 1793282659325823223,
+    "utc_upper_ns": 1793282659357823223
+  },
+  "samples": 50,
+  "scientific_acceptance": false,
+  "source_manifest": "VERIFIED",
+  "tls_corroborated": true,
+  "train_access_allowed": false
+}

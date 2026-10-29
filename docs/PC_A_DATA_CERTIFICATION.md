@@ -1,0 +1,19 @@
+# PC A: certificación de datos
+
+La certificación integral no se concede. La integridad nativa demostrada se conserva; no se convierte en prueba de UTC ni de causalidad.
+
+Se verificaron los 380 sellos de fuentes v9 y las cadenas de los dos archivos, sin alterar originales. El snapshot contiene 79.211 ticks históricos y 135.277 ticks en cuarentena: cero errores de unidades, retrocesos o filas adyacentes idénticas. Esto no equivale a una prueba global de ausencia de duplicados semánticos. Cuatro ventanas históricas y tres prospectivas no contienen ticks; su interpretación permanece desconocida sin calendario fechado.
+
+Se reutiliza el contraste exacto de 276 barras M5 (OHLC y volumen BID), MAIN_K y metadata V3. No se repiten consultas históricas aprobadas. Las cuatro ventanas de volumen conservan subcobertura original y una inconsistencia entre referencias; no se corrigen valores ni se incorporan consultas posteriores como captura prospectiva.
+
+Una sola herramienta diagnóstica adicional registra payload completo, hash, recepción Windows, contador monotónico, duración de llamada y referencia externa. La captura contiene 50 lecturas y 21 payloads distintos. Tres NTP coinciden y TLS corrobora; Windows queda aproximadamente 193-225 ms adelantado. NTP no autenticado y HTTP Date no certifican el evento del broker. La proyección monotónica no tiene un límite de deriva calibrado; sus intervalos son diagnósticos. No se confunde duración API con latencia de evento.
+
+MqlTick.time/time_msc describen actualizaciones de precio; CopyTicks y CopyRates entregan eventos/barras con distinta semántica. TimeCurrent representa la última hora conocida de cotización del servidor. TimeTradeServer depende del cálculo del terminal y del reloj del equipo; TimeGMT y TimeLocal también dependen del equipo. Se mantienen las pruebas documentales y capturas anteriores por separado. Ninguno proporciona por sí solo una identidad externa UTC del mismo evento XM.
+
+Fuentes oficiales: [MqlTick](https://www.mql5.com/en/docs/constants/structures/mqltick), [CopyTicks](https://www.mql5.com/en/docs/series/copyticks), [CopyRates Python](https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesrange_py), [TimeCurrent](https://www.mql5.com/en/docs/dateandtime/timecurrent), [TimeTradeServer](https://www.mql5.com/en/docs/dateandtime/timetradeserver), [TimeGMT](https://www.mql5.com/en/docs/dateandtime/timegmt), [TimeLocal](https://www.mql5.com/en/docs/dateandtime/timelocal). La página oficial [XM índices](https://www.xm.com/equity-indices) remite al acceso de cuenta para horarios y no certifica excepciones históricas del servidor. Revisados nuevamente MqlTick, TimeTradeServer y XM; se conserva el resto del expediente documental previamente sellado.
+
+La auditoría causal completa se detiene en su prerrequisito: NATIVE_UTC_MAPPING_UNVERIFIED. Cero filas normalizadas admitidas; ambas desigualdades no evaluables. No se sustituye esa falta con un PASS de tests unitarios. Calendario, DST y offsets quedan fail-closed. La evidencia faltante debe identificar servidor/símbolo, evento y UTC independiente, intervalos históricos y excepciones fechadas. Las plantillas de ingreso ya preparadas validan estructura sin conceder autorización científica.
+
+Collector activo, última ejecución y copia local verificadas; copia en mismo disco no es backup independiente. No se declara prueba de reinicio de Windows. Preparación de entrenamiento solo documental y de componentes; no se abren datos protegidos, no se activa cohorte ni metadata V3. TRAIN agotado, Discovery bloqueado, Final Test cerrado, DEMO deshabilitado y LIVE_TRADING=false.
+
+El nuevo directorio de certificación queda protegido antes de I/O de TRAIN. Los datos correlacionados completos permanecen locales; se publican inventario, resumen y hashes sin cuentas ni credenciales. No se modifica el otro proyecto.
