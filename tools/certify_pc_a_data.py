@@ -52,7 +52,7 @@ def scan(folder, manifest):
 
 
 def main():
-    manifest_path = ROOT / 'configs/pc_a_source_hashes_20261029_v10.json'
+    manifest_path = ROOT / 'configs/pc_a_source_hashes_20261029_v11.json'
     verify_source_manifest(manifest_path)
     folder = ROOT / 'outputs/pc_a_certification' / uuid.uuid4().hex
     folder.mkdir(parents=True)

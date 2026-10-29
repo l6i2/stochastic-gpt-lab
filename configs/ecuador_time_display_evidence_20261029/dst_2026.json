@@ -1,0 +1,42 @@
+[
+  {
+    "offset_after_seconds": -14400,
+    "offset_before_seconds": -18000,
+    "transition": {
+      "Ecuador": "2026-03-08T02:00:00.000-05:00",
+      "Nueva York": "2026-03-08T03:00:00.000-04:00",
+      "UTC": "2026-03-08T07:00:00.000+00:00",
+      "XM": null,
+      "mapping_id": null,
+      "new_york_abbreviation": "EDT",
+      "new_york_fold": 0,
+      "primary_time": "2026-03-08T02:00:00.000-05:00",
+      "primary_timezone": "America/Guayaquil",
+      "scientific_authorization": false,
+      "time_basis": "REFERENCE_SESSION",
+      "tzdata_version": "2026.5",
+      "xm_server_offset_seconds": null,
+      "xm_status": "UNVERIFIED_NO_CONVERSION"
+    }
+  },
+  {
+    "offset_after_seconds": -18000,
+    "offset_before_seconds": -14400,
+    "transition": {
+      "Ecuador": "2026-11-01T01:00:00.000-05:00",
+      "Nueva York": "2026-11-01T01:00:00.000-05:00",
+      "UTC": "2026-11-01T06:00:00.000+00:00",
+      "XM": null,
+      "mapping_id": null,
+      "new_york_abbreviation": "EST",
+      "new_york_fold": 1,
+      "primary_time": "2026-11-01T01:00:00.000-05:00",
+      "primary_timezone": "America/Guayaquil",
+      "scientific_authorization": false,
+      "time_basis": "REFERENCE_SESSION",
+      "tzdata_version": "2026.5",
+      "xm_server_offset_seconds": null,
+      "xm_status": "UNVERIFIED_NO_CONVERSION"
+    }
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "failed": 0,
+  "initial_invocation_note": "Cloud handoff fixtures require tests on PYTHONPATH; corrected invocation passes",
+  "invocation": "PYTHONPATH=python;tests python -m unittest tests.test_unified_time tests.test_native_time_mapping tests.test_cloud_handoff tests.test_temporal_causality tests.test_runtime_session_guard tests.test_session_runtime_status -v",
+  "log_sha256": "ab62af09de3460a5c9a065ba971534e0525946a74f6d37d4237259cc62f5fc0b",
+  "passed": 49,
+  "skipped": 0,
+  "static_no_order_calls": "PASS"
+}

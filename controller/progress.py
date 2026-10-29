@@ -3,10 +3,15 @@ import csv
 import json
 from datetime import datetime
 from pathlib import Path
+import sys
+import hashlib
 
 import psutil
 
 from .safety_gate import ROOT, assert_research_range_allowed
+sys.path.insert(0, str(ROOT / 'python'))
+from time_semantics import event_display
+from native_time_mapping import NativeTimestamp, load_mapping
 
 
 def last_event_time(path):
@@ -37,6 +42,10 @@ def last_event_time(path):
 
 
 def progress():
+    try:
+        display_mapping = load_mapping(ROOT / 'configs/native_time_mapping_v1.prepared.json')
+    except ValueError:
+        display_mapping = None
     state = json.loads((ROOT/'outputs/controller/checkpoints/history_state.json').read_text())
     records = []
     for path in (ROOT/'outputs/controller/runs').glob('r*/run_manifest.json'):
@@ -65,10 +74,17 @@ def progress():
             for path in folder.glob(prefix + '_*.csv'):
                 artifacts.append(dict(name=path.name, bytes=path.stat().st_size))
             last = last_event_time(folder/(prefix + '_stochastic_events.csv')) or last
+        # The native signal number is preserved. No UTC inference from its name.
+        signal_display = None
+        if last is not None:
+            source = {'signal_time_msc': last, 'run_id': record.get('run_id')}
+            digest = hashlib.sha256(json.dumps(source, sort_keys=True).encode()).hexdigest()
+            signal_display = event_display(NativeTimestamp(last // 1000, last, 'US30Cash',
+                record.get('environment', {}).get('SERVER', 'UNVERIFIED_SERVER'), digest), display_mapping)
         blocks.append(dict(block=block['BLOCK_ID'], checkpoint_status=block['STATUS'],
                            run_id=record.get('run_id'), tester_status=record.get('tester_status'),
                            process_active=active, last_observed_at=record.get('last_observed_at'),
-                           last_exported_signal_time_msc=last, live_artifacts=artifacts))
+                           last_exported_signal_time_msc=last, signal_display=signal_display, live_artifacts=artifacts))
     return dict(blocks=blocks, FINAL_TEST='LOCKED', LIVE_TRADING=False)
 
 

@@ -11,6 +11,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'python'))
 import pc_a_raw_archive as raw
+from time_semantics import instant_display, new_york_reference_session, ECUADOR
 
 TASK = 'StochasticGPTLab_PC_A_RawQuarantine_v1'
 REPORT = ROOT / 'outputs/pc_a/raw_station_status.json'
@@ -88,6 +89,10 @@ def report(error=None, scheduling=None):
                   low_memory_mode=True, best_candidate='NONE', discovery_validation='BLOCKED',
                   final_test='LOCKED', demo='DISABLED', live_trading=False,
                   orders_sent=0, error=error, scheduler_action=scheduling, scheduler=task_status)
+    result['time_display'] = {key: instant_display(datetime.fromisoformat(result[key]),
+        basis='HOST_RECEIPT_UNATTESTED') for key in ('observed_utc', 'new_start_utc', 'last_success_utc') if result.get(key)}
+    result['primary_timezone'] = 'America/Guayaquil'
+    result['new_york_reference_session'] = new_york_reference_session(datetime.now(ECUADOR).date())
     raw.atomic(REPORT, result)
     return result
 

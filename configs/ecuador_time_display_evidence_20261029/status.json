@@ -1,0 +1,19 @@
+{
+  "CAUSAL_AUDIT": "FAIL",
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "ECUADOR_DISPLAY": "PASS",
+  "FINAL_TEST": "LOCKED",
+  "LIVE_TRADING": false,
+  "NEW_YORK_DST": "PASS",
+  "SESSION_TIME_ECUADOR": "READY_REFERENCE_DISPLAY_ONLY_XM_OPERATING_CALENDAR_UNVERIFIED",
+  "UTC_CAUSAL_CERTIFICATION": "BLOCKED",
+  "XM_SERVER_MAPPING": "PARTIAL_NO_AUTHORIZED_PERIODS",
+  "cohort_activated": false,
+  "frozen_dataset_files_changed": false,
+  "full_suite_rerun": false,
+  "orders_sent": 0,
+  "raw_collector_code_unchanged": true,
+  "tests_failed": 0,
+  "tests_passed": 49
+}

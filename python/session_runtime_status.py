@@ -11,6 +11,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from runtime_session_guard import RuntimeSessionGuard, SessionObservation
 from native_time_mapping import NativeTimestamp, load_mapping, native_to_utc
+from time_semantics import instant_display, event_display
 
 
 def read_session_runtime(*, environment_status=None, mt5_module=None, now_utc=None) -> dict:
@@ -22,6 +23,7 @@ def read_session_runtime(*, environment_status=None, mt5_module=None, now_utc=No
                   quote_clock_basis="UNVERIFIED_NATIVE", timestamp_normalization="BLOCKED_PENDING_CLOCK_MAPPING")
     result.update(native_mt5_time=None, normalized_utc=None, ecuador_time=None,
                   new_york_time=None, xm_server_time=None)
+    result['receipt_display'] = instant_display(now, basis='HOST_RECEIPT_UNATTESTED')
     if environment_status is None:
         from controller.mt5_env import status
         environment_status = status
@@ -46,6 +48,7 @@ def read_session_runtime(*, environment_status=None, mt5_module=None, now_utc=No
         if now_utc is None:
             now = datetime.now(timezone.utc)
         result["system_utc_observed"] = now.isoformat()
+        result['receipt_display'] = instant_display(now, basis='HOST_RECEIPT_UNATTESTED')
         result["decision_time_utc"] = None
         quote_time = now
         bid = ask = 0.0
@@ -65,10 +68,13 @@ def read_session_runtime(*, environment_status=None, mt5_module=None, now_utc=No
             result['native_mt5_time'] = raw
             raw_sha = hashlib.sha256(json.dumps(raw, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
             result['captured_native_record_sha256'] = raw_sha
+            native = NativeTimestamp(int(tick.time), int(tick.time_msc), 'US30Cash', account.server, raw_sha)
+            result['event_display'] = event_display(native)
             try:
                 mapping = load_mapping(ROOT / 'configs/native_time_mapping_v1.prepared.json')
                 normalized = native_to_utc(NativeTimestamp(int(tick.time), int(tick.time_msc),
                     'US30Cash', account.server, raw_sha), mapping)
+                result['event_display'] = event_display(native, mapping)
             except ValueError as exc:
                 return {**result, 'allowed': False, 'reason': str(exc),
                         'quote_market_state': 'NATIVE_TIME_UNMAPPED'}
