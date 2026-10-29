@@ -1,0 +1,22 @@
+{
+  "after.json": {
+    "kind": "AFTER_WINDOWS_TIME_MAINTENANCE",
+    "monotonic_ms": null,
+    "scientific_acceptance": false,
+    "utc": "2026-10-29T02:44:54.2514242Z"
+  },
+  "before.json": {
+    "kind": "BEFORE_WINDOWS_TIME_MAINTENANCE",
+    "monotonic_ms": null,
+    "scientific_acceptance": false,
+    "utc": "2026-10-29T02:44:36.6349837Z"
+  },
+  "monotonic_first_invocation": "UNAVAILABLE_NULL_NOT_RECONSTRUCTED",
+  "repair_script": "tools/repair_pc_a_clock.ps1",
+  "result.json": {
+    "event_mapping_authorized": false,
+    "normalized_timestamps_rewritten": false,
+    "repair_exit": 0
+  },
+  "scope": "MAINTENANCE_BOUNDARY_ONLY_NOT_PRECISE_ATTESTATION"
+}

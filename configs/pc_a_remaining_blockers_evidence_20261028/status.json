@@ -1,0 +1,455 @@
+{
+  "BROKER_CALENDAR": "PARTIAL_NATIVE_WEEKLY_OBSERVATION_UTC_DST_AND_EXCEPTIONS_UNVERIFIED",
+  "CAUSAL_AUDIT": "FAIL_TIME_PROVENANCE_CALENDAR_AND_STAGING_COMPLETENESS",
+  "CLOCK_ATTESTATION": "PASS_RETAINED_SEALED_INTERVAL_ONLY",
+  "COLLECTOR_HEALTH": "READ_ONLY_CAPTURE_ACTIVE_HASH_CHAIN_VERIFIED_NO_RETROACTIVE_REPAIR",
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "FINAL_TEST": "LOCKED",
+  "HARD_BLOCKER": [
+    "Independent broker-event UTC provenance and bounded mapping intervals",
+    "Exact-server authoritative historical session and holiday exceptions",
+    "Raw staging undercoverage cannot be repaired as original prospective receipt evidence",
+    "New precise clock attestation after clock maintenance is not established"
+  ],
+  "LIVE_TRADING": false,
+  "M5_DATA_INTEGRITY": "PASS_HISTORICAL_276_NATIVE_CONTRAST_RAW_STAGING_PARTIAL",
+  "MAIN_K_PARITY": "PASS_RETAINED_NATIVE_EVIDENCE",
+  "METADATA_V3_PARITY": "PASS_NATIVE_ADAPTER_NOT_ACTIVE",
+  "NATIVE_TO_UTC_MAPPING": "FAIL_EVENT_PROVENANCE_NOT_DEMONSTRATED",
+  "NEXT_STATE": "CONTINUE_NATIVE_QUARANTINE_CAPTURE_AWAIT_INDEPENDENT_TIME_AND_CALENDAR_EVIDENCE",
+  "ORDERS_SENT": 0,
+  "PROSPECTIVE_COHORT_READINESS": "BLOCKED_NEW_COHORT_PLAN_NOT_ACTIVE_NO_STAGING_ADOPTION",
+  "PUSH_STATUS": "PENDING_PUBLICATION",
+  "REMOTE_HEAD_BEFORE": "a4fe0763dddfade87209779c7bd90b69600efe22",
+  "TRAINING_READINESS": "BLOCKED_BY_RESEARCH_GOVERNANCE",
+  "VOLUME_DISCREPANCIES": "THREE_REQUESTED_PLUS_ONE_ADDITIONAL_UNDERCOVERAGE_WINDOWS_ONE_REFERENCE_INCONSISTENCY",
+  "backup": {
+    "independent_failure_domain": false,
+    "status": "VERIFIED_SAME_DISK_COPY"
+  },
+  "calendar": {
+    "active_server": "XMGlobalSC-MT5 5",
+    "approved_utc_sessions": [],
+    "broker_dst_rule_certified": false,
+    "historical_exceptions": "UNKNOWN",
+    "iana_diagnostic_only": {
+      "2024": {
+        "America/New_York": [
+          {
+            "offset_after_seconds": -14400,
+            "offset_before_seconds": -18000,
+            "utc": "2024-03-10T07:00:00+00:00"
+          },
+          {
+            "offset_after_seconds": -18000,
+            "offset_before_seconds": -14400,
+            "utc": "2024-11-03T06:00:00+00:00"
+          }
+        ],
+        "Europe/Nicosia": [
+          {
+            "offset_after_seconds": 10800,
+            "offset_before_seconds": 7200,
+            "utc": "2024-03-31T01:00:00+00:00"
+          },
+          {
+            "offset_after_seconds": 7200,
+            "offset_before_seconds": 10800,
+            "utc": "2024-10-27T01:00:00+00:00"
+          }
+        ]
+      },
+      "2026": {
+        "America/New_York": [
+          {
+            "offset_after_seconds": -14400,
+            "offset_before_seconds": -18000,
+            "utc": "2026-03-08T07:00:00+00:00"
+          },
+          {
+            "offset_after_seconds": -18000,
+            "offset_before_seconds": -14400,
+            "utc": "2026-11-01T06:00:00+00:00"
+          }
+        ],
+        "Europe/Nicosia": [
+          {
+            "offset_after_seconds": 10800,
+            "offset_before_seconds": 7200,
+            "utc": "2026-03-29T01:00:00+00:00"
+          },
+          {
+            "offset_after_seconds": 7200,
+            "offset_before_seconds": 10800,
+            "utc": "2026-10-25T01:00:00+00:00"
+          }
+        ]
+      }
+    },
+    "legacy_policy_reusable": false,
+    "legacy_policy_server": "XMGlobal-MT5 10",
+    "native_session_clock_basis": "OBSERVED_NATIVE_LABELS",
+    "public_source": "https://www.xm.com/equity-indices",
+    "public_source_scope": "Directs account login for exact hours; no usable historical server calendar",
+    "tzdata": "2026.5"
+  },
+  "current_clock_diagnostic": {
+    "authority": "DIAGNOSTIC_ONLY_NO_CURRENT_ATTESTATION_OR_EVENT_MAPPING",
+    "local_inside_quorum_interval": false,
+    "local_lag_lower_ns": 207534411,
+    "local_lag_upper_ns": 351183199,
+    "quorum": "REFERENCE_QUORUM",
+    "tls_corroborated": true
+  },
+  "current_precise_clock_attestation": "UNVERIFIED_POST_MAINTENANCE_DIAGNOSTIC_OUTSIDE_NTP_INTERVAL",
+  "current_windows_time_service": "SYNCHRONIZED_AFTER_RESYNC_EXIT_0",
+  "measurement_folder": "20261029T023719_cef8ac0e",
+  "measurement_hashes_sha256": "20383802b330eb646d51aab1e61e0fb2425551adb973a65d4a24203456fe06b3",
+  "native_mapping_evidence": {
+    "additional_native_units_consistent": true,
+    "additional_receipt_samples": 50,
+    "approved_native_csv_sha256": "7920d7a121e2478bc5394903ad900d3d4a23c9cd707ab224a056a27e403588d1",
+    "approved_native_units_consistent": true,
+    "approved_probe_frames": 50,
+    "approved_probe_rows": 150,
+    "authorized_mapping_segments": [],
+    "event_utc_identity_proven": false,
+    "fixed_offset_installed": false,
+    "future_tolerance_ms": 0,
+    "historical_dst_offsets_proven": false,
+    "observed_gmt_minus_local_seconds": [
+      18000
+    ],
+    "observed_server_gmt_relationship_seconds": [
+      7200
+    ],
+    "raw_timestamps_changed": false
+  },
+  "observed_utc": "2026-10-29T02:47:32.373245+00:00",
+  "scientific_acceptance": false,
+  "supplementary_hashes_sha256": "d04575c7b10f21b5d8d1d1084f16c33db16c47949a6111a827a656233c01cb7e",
+  "supplementary_measurement_folder": "supplement_8f36a3d4",
+  "supplementary_window_count": 1,
+  "tests": {
+    "failed": 0,
+    "passed": 259,
+    "skipped": 9,
+    "suite_log_sha256": "fd4e705374a6b1131457602e1639d431ea3980d229865b2d7c054b15fdfcc6b7",
+    "total": 268
+  },
+  "volume": [
+    {
+      "added_payload_multiplicity": 2,
+      "changed_native_time_msc": [
+        1793217096323,
+        1793217096884
+      ],
+      "classification": "ARCHIVE_UNDERCOVERAGE_RELATIVE_TO_LATER_BROKER_HISTORY",
+      "coverage_affected": true,
+      "event_causality_proven": false,
+      "flag_sensitive_equal": false,
+      "interval_scope": "THIS_NATIVE_FIVE_MINUTE_BUCKET_ONLY_UTC_UNVERIFIED",
+      "iteration": 0,
+      "later_bid_updates": 698,
+      "later_rows": 698,
+      "native_bar_tick_reference_consistent": false,
+      "native_bar_time": 1793217000,
+      "native_tick_volume": 699,
+      "ohlc_affected": false,
+      "original_bid_updates": 696,
+      "original_receipt_evidence_recoverable_by_redownload": false,
+      "original_rows": 696,
+      "quality_affected": true,
+      "remaining_native_bar_tick_difference": 1,
+      "removed_payload_multiplicity": 0,
+      "repair_action": "PRESERVE_BOTH_VERSIONS_QUARANTINE_ORIGINAL_NO_BACKFILL"
+    },
+    {
+      "added_payload_multiplicity": 1,
+      "changed_native_time_msc": [
+        1793218432048
+      ],
+      "classification": "ARCHIVE_UNDERCOVERAGE_RELATIVE_TO_LATER_BROKER_HISTORY",
+      "coverage_affected": true,
+      "event_causality_proven": false,
+      "flag_sensitive_equal": false,
+      "interval_scope": "THIS_NATIVE_FIVE_MINUTE_BUCKET_ONLY_UTC_UNVERIFIED",
+      "iteration": 0,
+      "later_bid_updates": 1132,
+      "later_rows": 1132,
+      "native_bar_tick_reference_consistent": true,
+      "native_bar_time": 1793218200,
+      "native_tick_volume": 1132,
+      "ohlc_affected": false,
+      "original_bid_updates": 1131,
+      "original_receipt_evidence_recoverable_by_redownload": false,
+      "original_rows": 1131,
+      "quality_affected": true,
+      "remaining_native_bar_tick_difference": 0,
+      "removed_payload_multiplicity": 0,
+      "repair_action": "PRESERVE_BOTH_VERSIONS_QUARANTINE_ORIGINAL_NO_BACKFILL"
+    },
+    {
+      "added_payload_multiplicity": 2,
+      "changed_native_time_msc": [
+        1793219306913,
+        1793219307070
+      ],
+      "classification": "ARCHIVE_UNDERCOVERAGE_RELATIVE_TO_LATER_BROKER_HISTORY",
+      "coverage_affected": true,
+      "event_causality_proven": false,
+      "flag_sensitive_equal": false,
+      "interval_scope": "THIS_NATIVE_FIVE_MINUTE_BUCKET_ONLY_UTC_UNVERIFIED",
+      "iteration": 0,
+      "later_bid_updates": 1225,
+      "later_rows": 1225,
+      "native_bar_tick_reference_consistent": true,
+      "native_bar_time": 1793219100,
+      "native_tick_volume": 1225,
+      "ohlc_affected": false,
+      "original_bid_updates": 1223,
+      "original_receipt_evidence_recoverable_by_redownload": false,
+      "original_rows": 1223,
+      "quality_affected": true,
+      "remaining_native_bar_tick_difference": 0,
+      "removed_payload_multiplicity": 0,
+      "repair_action": "PRESERVE_BOTH_VERSIONS_QUARANTINE_ORIGINAL_NO_BACKFILL"
+    },
+    {
+      "added_payload_multiplicity": 2,
+      "changed_native_time_msc": [
+        1793217096323,
+        1793217096884
+      ],
+      "classification": "ARCHIVE_UNDERCOVERAGE_RELATIVE_TO_LATER_BROKER_HISTORY",
+      "coverage_affected": true,
+      "event_causality_proven": false,
+      "flag_sensitive_equal": false,
+      "interval_scope": "THIS_NATIVE_FIVE_MINUTE_BUCKET_ONLY_UTC_UNVERIFIED",
+      "iteration": 1,
+      "later_bid_updates": 698,
+      "later_rows": 698,
+      "native_bar_tick_reference_consistent": false,
+      "native_bar_time": 1793217000,
+      "native_tick_volume": 699,
+      "ohlc_affected": false,
+      "original_bid_updates": 696,
+      "original_receipt_evidence_recoverable_by_redownload": false,
+      "original_rows": 696,
+      "quality_affected": true,
+      "remaining_native_bar_tick_difference": 1,
+      "removed_payload_multiplicity": 0,
+      "repair_action": "PRESERVE_BOTH_VERSIONS_QUARANTINE_ORIGINAL_NO_BACKFILL"
+    },
+    {
+      "added_payload_multiplicity": 1,
+      "changed_native_time_msc": [
+        1793218432048
+      ],
+      "classification": "ARCHIVE_UNDERCOVERAGE_RELATIVE_TO_LATER_BROKER_HISTORY",
+      "coverage_affected": true,
+      "event_causality_proven": false,
+      "flag_sensitive_equal": false,
+      "interval_scope": "THIS_NATIVE_FIVE_MINUTE_BUCKET_ONLY_UTC_UNVERIFIED",
+      "iteration": 1,
+      "later_bid_updates": 1132,
+      "later_rows": 1132,
+      "native_bar_tick_reference_consistent": true,
+      "native_bar_time": 1793218200,
+      "native_tick_volume": 1132,
+      "ohlc_affected": false,
+      "original_bid_updates": 1131,
+      "original_receipt_evidence_recoverable_by_redownload": false,
+      "original_rows": 1131,
+      "quality_affected": true,
+      "remaining_native_bar_tick_difference": 0,
+      "removed_payload_multiplicity": 0,
+      "repair_action": "PRESERVE_BOTH_VERSIONS_QUARANTINE_ORIGINAL_NO_BACKFILL"
+    },
+    {
+      "added_payload_multiplicity": 2,
+      "changed_native_time_msc": [
+        1793219306913,
+        1793219307070
+      ],
+      "classification": "ARCHIVE_UNDERCOVERAGE_RELATIVE_TO_LATER_BROKER_HISTORY",
+      "coverage_affected": true,
+      "event_causality_proven": false,
+      "flag_sensitive_equal": false,
+      "interval_scope": "THIS_NATIVE_FIVE_MINUTE_BUCKET_ONLY_UTC_UNVERIFIED",
+      "iteration": 1,
+      "later_bid_updates": 1225,
+      "later_rows": 1225,
+      "native_bar_tick_reference_consistent": true,
+      "native_bar_time": 1793219100,
+      "native_tick_volume": 1225,
+      "ohlc_affected": false,
+      "original_bid_updates": 1223,
+      "original_receipt_evidence_recoverable_by_redownload": false,
+      "original_rows": 1223,
+      "quality_affected": true,
+      "remaining_native_bar_tick_difference": 0,
+      "removed_payload_multiplicity": 0,
+      "repair_action": "PRESERVE_BOTH_VERSIONS_QUARANTINE_ORIGINAL_NO_BACKFILL"
+    },
+    {
+      "added_payload_multiplicity": 2,
+      "changed_native_time_msc": [
+        1793217096323,
+        1793217096884
+      ],
+      "classification": "ARCHIVE_UNDERCOVERAGE_RELATIVE_TO_LATER_BROKER_HISTORY",
+      "coverage_affected": true,
+      "event_causality_proven": false,
+      "flag_sensitive_equal": false,
+      "interval_scope": "THIS_NATIVE_FIVE_MINUTE_BUCKET_ONLY_UTC_UNVERIFIED",
+      "iteration": 2,
+      "later_bid_updates": 698,
+      "later_rows": 698,
+      "native_bar_tick_reference_consistent": false,
+      "native_bar_time": 1793217000,
+      "native_tick_volume": 699,
+      "ohlc_affected": false,
+      "original_bid_updates": 696,
+      "original_receipt_evidence_recoverable_by_redownload": false,
+      "original_rows": 696,
+      "quality_affected": true,
+      "remaining_native_bar_tick_difference": 1,
+      "removed_payload_multiplicity": 0,
+      "repair_action": "PRESERVE_BOTH_VERSIONS_QUARANTINE_ORIGINAL_NO_BACKFILL"
+    },
+    {
+      "added_payload_multiplicity": 1,
+      "changed_native_time_msc": [
+        1793218432048
+      ],
+      "classification": "ARCHIVE_UNDERCOVERAGE_RELATIVE_TO_LATER_BROKER_HISTORY",
+      "coverage_affected": true,
+      "event_causality_proven": false,
+      "flag_sensitive_equal": false,
+      "interval_scope": "THIS_NATIVE_FIVE_MINUTE_BUCKET_ONLY_UTC_UNVERIFIED",
+      "iteration": 2,
+      "later_bid_updates": 1132,
+      "later_rows": 1132,
+      "native_bar_tick_reference_consistent": true,
+      "native_bar_time": 1793218200,
+      "native_tick_volume": 1132,
+      "ohlc_affected": false,
+      "original_bid_updates": 1131,
+      "original_receipt_evidence_recoverable_by_redownload": false,
+      "original_rows": 1131,
+      "quality_affected": true,
+      "remaining_native_bar_tick_difference": 0,
+      "removed_payload_multiplicity": 0,
+      "repair_action": "PRESERVE_BOTH_VERSIONS_QUARANTINE_ORIGINAL_NO_BACKFILL"
+    },
+    {
+      "added_payload_multiplicity": 2,
+      "changed_native_time_msc": [
+        1793219306913,
+        1793219307070
+      ],
+      "classification": "ARCHIVE_UNDERCOVERAGE_RELATIVE_TO_LATER_BROKER_HISTORY",
+      "coverage_affected": true,
+      "event_causality_proven": false,
+      "flag_sensitive_equal": false,
+      "interval_scope": "THIS_NATIVE_FIVE_MINUTE_BUCKET_ONLY_UTC_UNVERIFIED",
+      "iteration": 2,
+      "later_bid_updates": 1225,
+      "later_rows": 1225,
+      "native_bar_tick_reference_consistent": true,
+      "native_bar_time": 1793219100,
+      "native_tick_volume": 1225,
+      "ohlc_affected": false,
+      "original_bid_updates": 1223,
+      "original_receipt_evidence_recoverable_by_redownload": false,
+      "original_rows": 1223,
+      "quality_affected": true,
+      "remaining_native_bar_tick_difference": 0,
+      "removed_payload_multiplicity": 0,
+      "repair_action": "PRESERVE_BOTH_VERSIONS_QUARANTINE_ORIGINAL_NO_BACKFILL"
+    },
+    {
+      "added_payload_multiplicity": 3,
+      "changed_native_time_msc": [
+        1793220360747,
+        1793220360920,
+        1793220361091
+      ],
+      "classification": "ARCHIVE_UNDERCOVERAGE_RELATIVE_TO_LATER_BROKER_HISTORY",
+      "coverage_affected": true,
+      "event_causality_proven": false,
+      "flag_sensitive_equal": false,
+      "interval_scope": "ADDITIONAL_NATIVE_BUCKET_UTC_UNVERIFIED",
+      "iteration": 0,
+      "later_bid_updates": 1546,
+      "later_rows": 1546,
+      "native_bar_tick_reference_consistent": true,
+      "native_bar_time": 1793220300,
+      "native_tick_volume": 1546,
+      "ohlc_evidence": "SEPARATE_NATIVE_M5_RECHECK",
+      "original_bid_updates": 1543,
+      "original_receipt_evidence_recoverable_by_redownload": false,
+      "original_rows": 1543,
+      "quality_affected": true,
+      "remaining_native_bar_tick_difference": 0,
+      "removed_payload_multiplicity": 0,
+      "repair_action": "PRESERVE_BOTH_VERSIONS_QUARANTINE_ORIGINAL_NO_BACKFILL"
+    },
+    {
+      "added_payload_multiplicity": 3,
+      "changed_native_time_msc": [
+        1793220360747,
+        1793220360920,
+        1793220361091
+      ],
+      "classification": "ARCHIVE_UNDERCOVERAGE_RELATIVE_TO_LATER_BROKER_HISTORY",
+      "coverage_affected": true,
+      "event_causality_proven": false,
+      "flag_sensitive_equal": false,
+      "interval_scope": "ADDITIONAL_NATIVE_BUCKET_UTC_UNVERIFIED",
+      "iteration": 1,
+      "later_bid_updates": 1546,
+      "later_rows": 1546,
+      "native_bar_tick_reference_consistent": true,
+      "native_bar_time": 1793220300,
+      "native_tick_volume": 1546,
+      "ohlc_evidence": "SEPARATE_NATIVE_M5_RECHECK",
+      "original_bid_updates": 1543,
+      "original_receipt_evidence_recoverable_by_redownload": false,
+      "original_rows": 1543,
+      "quality_affected": true,
+      "remaining_native_bar_tick_difference": 0,
+      "removed_payload_multiplicity": 0,
+      "repair_action": "PRESERVE_BOTH_VERSIONS_QUARANTINE_ORIGINAL_NO_BACKFILL"
+    },
+    {
+      "added_payload_multiplicity": 3,
+      "changed_native_time_msc": [
+        1793220360747,
+        1793220360920,
+        1793220361091
+      ],
+      "classification": "ARCHIVE_UNDERCOVERAGE_RELATIVE_TO_LATER_BROKER_HISTORY",
+      "coverage_affected": true,
+      "event_causality_proven": false,
+      "flag_sensitive_equal": false,
+      "interval_scope": "ADDITIONAL_NATIVE_BUCKET_UTC_UNVERIFIED",
+      "iteration": 2,
+      "later_bid_updates": 1546,
+      "later_rows": 1546,
+      "native_bar_tick_reference_consistent": true,
+      "native_bar_time": 1793220300,
+      "native_tick_volume": 1546,
+      "ohlc_evidence": "SEPARATE_NATIVE_M5_RECHECK",
+      "original_bid_updates": 1543,
+      "original_receipt_evidence_recoverable_by_redownload": false,
+      "original_rows": 1543,
+      "quality_affected": true,
+      "remaining_native_bar_tick_difference": 0,
+      "removed_payload_multiplicity": 0,
+      "repair_action": "PRESERVE_BOTH_VERSIONS_QUARANTINE_ORIGINAL_NO_BACKFILL"
+    }
+  ]
+}

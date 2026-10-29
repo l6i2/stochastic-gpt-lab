@@ -1,0 +1,27 @@
+{
+  "canonical_observation": {
+    "clock_basis": "UNVERIFIED_NATIVE_LABELS",
+    "holiday_schedule": "UNKNOWN",
+    "raw_sha256": "3e1e0de1e75fcff5bf98cdf481741df9e82db2656588bed5ce86990ae1d51dfb",
+    "records": [
+      "XM_SESSION_PROBE|START|symbol=US30Cash|symbol_selected=YES|server=XMGlobalSC-MT5 5",
+      "XM_SESSION_PROBE|CLOCK|server_time=2026.10.28 18:35:22|utc_time=2026.10.28 16:35:22|offset_seconds=7200",
+      "XM_SESSION_PROBE|QUOTE|day=MONDAY|index=0|from=00:00|to=23:00",
+      "XM_SESSION_PROBE|TRADE|day=MONDAY|index=0|from=00:05|to=22:55",
+      "XM_SESSION_PROBE|QUOTE|day=TUESDAY|index=0|from=00:00|to=23:00",
+      "XM_SESSION_PROBE|TRADE|day=TUESDAY|index=0|from=00:05|to=22:55",
+      "XM_SESSION_PROBE|QUOTE|day=WEDNESDAY|index=0|from=00:00|to=23:00",
+      "XM_SESSION_PROBE|TRADE|day=WEDNESDAY|index=0|from=00:05|to=22:55",
+      "XM_SESSION_PROBE|QUOTE|day=THURSDAY|index=0|from=00:00|to=23:00",
+      "XM_SESSION_PROBE|TRADE|day=THURSDAY|index=0|from=00:05|to=22:55",
+      "XM_SESSION_PROBE|QUOTE|day=FRIDAY|index=0|from=00:00|to=23:00",
+      "XM_SESSION_PROBE|TRADE|day=FRIDAY|index=0|from=00:05|to=22:50",
+      "XM_SESSION_PROBE|END"
+    ],
+    "server": "XMGlobalSC-MT5 5",
+    "status": "OBSERVED_ONLY_NOT_ACTIVATED",
+    "symbol": "US30Cash"
+  },
+  "original_source_sha256": "d13b3b168c627dcf659d16d00151bc0a6b730b7f7fd9e9c1b3bb48106ca1b731",
+  "status": "OBSERVED_NATIVE_ONLY_NOT_UTC_CALENDAR"
+}

@@ -1,0 +1,10 @@
+{
+  "additional_clock_measurement.json": "f58174408ec55b465e967f987f38f6bae28197728abd45890033f0345e208881",
+  "clock_maintenance.json": "deb8f17cef1f2102192e52e9ed4ea587acd63bd963716e5f45e729a5a310f8f9",
+  "current_server_native_sessions.json": "cc80aae82f6f50d4f940e0d609907405a0e1b8be0ef0b528ebc0cabff0633ef9",
+  "measurement_hashes.json": "20383802b330eb646d51aab1e61e0fb2425551adb973a65d4a24203456fe06b3",
+  "post_maintenance_reference.json": "f196a710a4485bbc9668bb8be66204886a49b6eb9ab46bcce8397c304a1cb986",
+  "scope_audit.json": "dcf5591466ac0242188396b36957d2cbf05199ffe06ec9fe69bb76b58b4f902c",
+  "status.json": "bb8affb60b41ff168b14bb1b16db729f033d72d4cdd4092f9a970e5d01af7c90",
+  "supplement_hashes.json": "d04575c7b10f21b5d8d1d1084f16c33db16c47949a6111a827a656233c01cb7e"
+}
