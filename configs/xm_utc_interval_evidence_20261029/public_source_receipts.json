@@ -1,0 +1,29 @@
+[
+  {
+    "bytes": 61281,
+    "event_mapping_authorized": false,
+    "http_status": 200,
+    "resolved_url": "https://www.mql5.com/en/docs/series/copyrates",
+    "retrieved_utc": "2026-10-29T14:32:01.148903+00:00",
+    "scientific_acceptance": false,
+    "source_sha256": "eb4996f907ccfb8a5ae3e334a5581c4e5abe8002a39482b71da0ac91fdb3c5d0",
+    "status": "DOWNLOADED_NOT_SEMANTICALLY_VERIFIED",
+    "url": "https://www.mql5.com/en/docs/series/copyrates"
+  },
+  {
+    "error": "HTTPError",
+    "event_mapping_authorized": false,
+    "retrieved_utc": "2026-10-29T14:32:00.292251+00:00",
+    "scientific_acceptance": false,
+    "status": "UNAVAILABLE_NO_BYPASS",
+    "url": "https://www.mql5.com/en/docs/series/copyticks"
+  },
+  {
+    "error": "HTTPError",
+    "event_mapping_authorized": false,
+    "retrieved_utc": "2026-10-29T14:32:01.988830+00:00",
+    "scientific_acceptance": false,
+    "status": "UNAVAILABLE_NO_BYPASS",
+    "url": "https://www.xm.com/assets/pdf/new/holiday_schedule/2022/XM_Stocks/EN_XM-holiday-trading-hours-2022.pdf"
+  }
+]

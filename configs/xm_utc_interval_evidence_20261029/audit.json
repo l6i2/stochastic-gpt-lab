@@ -1,0 +1,154 @@
+{
+  "CAUSAL_AUDIT": {
+    "admitted_normalized_rows": 0,
+    "feature_max_time_le_decision_time": "NOT_EVALUABLE",
+    "guard_reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+    "prerequisite": "EXACT_SERVER_EVENT_NORMALIZATION_UNVERIFIED",
+    "quote_time_le_decision_time": "NOT_EVALUABLE",
+    "status": "FAIL"
+  },
+  "CERTIFIED_INTERVALS": [],
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "FINAL_TEST": "LOCKED",
+  "HARD_BLOCKER": [
+    "Independent exact-server same-event UTC binding",
+    "Historical bounded mapping evidence",
+    "Dated exact-server sessions and exceptions"
+  ],
+  "LIVE_TRADING": false,
+  "MANUAL_ACTION_REQUIRED": "NONE_FOR_CAPTURE_EXTERNAL_BROKER_EVIDENCE_REQUIRED_FOR_CERTIFICATION",
+  "NEXT_STATE": "KEEP_QUARANTINE_COLLECTOR_ACTIVE_ACCEPT_EVIDENCE_WITHOUT_AUTOMATIC_AUTHORIZATION",
+  "QUARANTINED_INTERVALS": [
+    {
+      "archive_id": "historical_20261028T175047_e97ee981",
+      "canonical_manifest_sha256": "a347588647a0e8e0d189fe91362835d932802bb0a5316948995de551deee88ab",
+      "chain_head": "1a7e965bf7fa5291f0ef13d8bd7fefa95ecce7b1d0ec3a40d3e6919026a746ee",
+      "interval_basis": "ORIGINAL_NATIVE_QUERY_DOMAIN_NOT_UTC",
+      "kind": "historical",
+      "native_end_exclusive_msc": 1704240000000,
+      "native_start_msc": 1704153600000,
+      "original_modified": false,
+      "reason": "NO_INDEPENDENT_EVENT_UTC_BINDING_NO_AUTHORIZED_BOUNDED_MAPPING",
+      "scientific_acceptance": false,
+      "segments": 96,
+      "snapshot_file_sha256": "3bef4fcbff070041c72dfd72e1bd838c213649db4c95adb82ea79b598c2044e5",
+      "status": "QUARANTINED",
+      "stored_m5_bars": 0,
+      "ticks": 79211
+    },
+    {
+      "archive_id": "prospective_20261028T175047_3ac8b527",
+      "canonical_manifest_sha256": "90bf53db66ab3b9fa4b75ed157224e5af4dd04d236d2378efab3b198643edea0",
+      "chain_head": "08835a1b1e0f33e980636dab98691e58a67106b1c5080b590b45fc51266f9bf8",
+      "interval_basis": "ORIGINAL_NATIVE_QUERY_DOMAIN_NOT_UTC",
+      "kind": "prospective",
+      "native_end_exclusive_msc": 1793291519641,
+      "native_start_msc": 1793214549498,
+      "original_modified": false,
+      "reason": "NO_INDEPENDENT_EVENT_UTC_BINDING_NO_AUTHORIZED_BOUNDED_MAPPING",
+      "scientific_acceptance": false,
+      "segments": 234,
+      "snapshot_file_sha256": "ea4c04146812937e9a37e38c63963fe190b2c111e1d59352f03b9a1bb1b9e3d1",
+      "status": "QUARANTINED",
+      "stored_m5_bars": 228,
+      "ticks": 142686
+    }
+  ],
+  "TRAINING_READINESS": "BLOCKED_BY_RESEARCH_GOVERNANCE",
+  "US30CASH_SESSION_CALENDAR": "PARTIAL_NATIVE_WEEKLY_OBSERVATIONS_EXCEPTIONS_UNVERIFIED",
+  "XM_HISTORICAL_MAPPING": "UNVERIFIED_NO_AUTHORIZED_INTERVALS",
+  "XM_NATIVE_TIMESTAMP_SEMANTICS": "DOCUMENTED_UNITS_AND_FIELDS_EXACT_SERVER_UTC_UNVERIFIED",
+  "XM_UTC_EVENT_PROVENANCE": "PARTIAL_RECEIPT_CORRELATION_NOT_SAME_EVENT_UTC_PROOF",
+  "clock_counter_metadata_now": {
+    "implementation": "GetTickCount64()",
+    "resolution": 0.015625,
+    "scope": "CURRENT_RUNTIME_NOT_RETROACTIVE_CALIBRATION"
+  },
+  "correlation": {
+    "certified_intervals": [],
+    "diagnostic_only": true,
+    "distinct_payloads": 21,
+    "event_latency": "UNVERIFIED",
+    "independently_identified_same_event": false,
+    "indistinguishable_monotonic_readings": 50,
+    "limitations": [
+      "NTP unauthenticated; TLS Date corroboration is not an event record",
+      "Projection has no calibrated oscillator drift bound",
+      "Latest-quote polling is not a broker arrival callback",
+      "Payload differences do not guarantee global event uniqueness"
+    ],
+    "native_after_external_receipt_if_direct_utc": 50,
+    "native_minus_external_receipt_ns_envelope": [
+      7199053176777,
+      7199900176777
+    ],
+    "observed_api_duration_ns": {
+      "max": 0,
+      "min": 0
+    },
+    "offsets_authorized": [],
+    "samples": 50,
+    "source_sha256": "38365218b6d1305e5e5844d27d0412ca44c8152cf62e761149280981310dedea",
+    "zero_duration_interpretation": "COUNTER_CANNOT_RESOLVE_CALL_NOT_ZERO_LATENCY"
+  },
+  "mapping_installed": false,
+  "observed": {
+    "Ecuador": "2026-10-29T09:32:23.873-05:00",
+    "Nueva York": "2026-10-29T10:32:23.873-04:00",
+    "UTC": "2026-10-29T14:32:23.873+00:00",
+    "XM": null,
+    "mapping_id": null,
+    "new_york_abbreviation": "EDT",
+    "new_york_fold": 0,
+    "primary_time": "2026-10-29T09:32:23.873-05:00",
+    "primary_timezone": "America/Guayaquil",
+    "scientific_authorization": false,
+    "time_basis": "HOST_RECEIPT_UNATTESTED",
+    "tzdata_version": "2026.5",
+    "xm_server_offset_seconds": null,
+    "xm_status": "UNVERIFIED_NO_CONVERSION"
+  },
+  "orders_sent": 0,
+  "probes_repeated": false,
+  "retained_evidence": [
+    {
+      "authority": "RETAINED_DIAGNOSTIC_NOT_EVENT_PROOF",
+      "files_verified": 12,
+      "pointer": "latest.json",
+      "seals_sha256": "20383802b330eb646d51aab1e61e0fb2425551adb973a65d4a24203456fe06b3"
+    },
+    {
+      "authority": "RETAINED_DIAGNOSTIC_NOT_EVENT_PROOF",
+      "files_verified": 5,
+      "pointer": "supplement_latest.json",
+      "seals_sha256": "d04575c7b10f21b5d8d1d1084f16c33db16c47949a6111a827a656233c01cb7e"
+    },
+    {
+      "authority": "CLOCK_ATTESTATION_SEALED_INTERVAL_ONLY_NOT_EVENT_MAPPING",
+      "native_probe_sha256": "7920d7a121e2478bc5394903ad900d3d4a23c9cd707ab224a056a27e403588d1"
+    }
+  ],
+  "sessions": {
+    "clock_line_scope": "HOST_DEPENDENT_NOT_INDEPENDENT_UTC",
+    "dated_exception_coverage": "UNKNOWN_NOT_AN_EMPTY_HOLIDAY_CALENDAR",
+    "dated_exceptions": [],
+    "native_records": [
+      "XM_SESSION_PROBE|START|symbol=US30Cash|symbol_selected=YES|server=XMGlobalSC-MT5 5",
+      "XM_SESSION_PROBE|CLOCK|server_time=2026.10.28 18:35:22|utc_time=2026.10.28 16:35:22|offset_seconds=7200",
+      "XM_SESSION_PROBE|QUOTE|day=MONDAY|index=0|from=00:00|to=23:00",
+      "XM_SESSION_PROBE|TRADE|day=MONDAY|index=0|from=00:05|to=22:55",
+      "XM_SESSION_PROBE|QUOTE|day=TUESDAY|index=0|from=00:00|to=23:00",
+      "XM_SESSION_PROBE|TRADE|day=TUESDAY|index=0|from=00:05|to=22:55",
+      "XM_SESSION_PROBE|QUOTE|day=WEDNESDAY|index=0|from=00:00|to=23:00",
+      "XM_SESSION_PROBE|TRADE|day=WEDNESDAY|index=0|from=00:05|to=22:55",
+      "XM_SESSION_PROBE|QUOTE|day=THURSDAY|index=0|from=00:00|to=23:00",
+      "XM_SESSION_PROBE|TRADE|day=THURSDAY|index=0|from=00:05|to=22:55",
+      "XM_SESSION_PROBE|QUOTE|day=FRIDAY|index=0|from=00:00|to=23:00",
+      "XM_SESSION_PROBE|TRADE|day=FRIDAY|index=0|from=00:05|to=22:50",
+      "XM_SESSION_PROBE|END"
+    ],
+    "new_probe_run": false,
+    "source_sha256": "cc80aae82f6f50d4f940e0d609907405a0e1b8be0ef0b528ebc0cabff0633ef9"
+  }
+}

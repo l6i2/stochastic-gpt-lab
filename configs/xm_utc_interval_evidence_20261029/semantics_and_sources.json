@@ -1,0 +1,41 @@
+[
+  {
+    "domain": "MqlTick.time_msc",
+    "finding": "Price update milliseconds; time is seconds; no independently authenticated same-event UTC identity in this structure",
+    "source": "https://www.mql5.com/en/docs/constants/structures/mqltick",
+    "status": "VERIFIED_DOCUMENTARY_UNITS_ONLY"
+  },
+  {
+    "domain": "CopyTicks",
+    "finding": "Oldest-to-newest ticks; from uses milliseconds since 1970; missing local ticks may synchronize from server. Requery is not receipt provenance.",
+    "source": "https://www.mql5.com/en/docs/series/copyticks",
+    "status": "VERIFIED_DOCUMENTARY_RETRIEVAL_SEMANTICS"
+  },
+  {
+    "domain": "CopyRates",
+    "finding": "Bars include opening time, OHLC and volume; current bar may be incomplete, history may download/build. Bar open differs from quote event and local receipt.",
+    "source": "https://www.mql5.com/en/docs/series/copyrates",
+    "status": "VERIFIED_DOCUMENTARY_BAR_DOMAIN"
+  },
+  {
+    "domain": "Python wrappers",
+    "finding": "Docs explicitly describe returned ticks and bar opens as UTC. Contemporaneous local evidence conflicts with direct UTC interpretation for this exact server; preserve contradiction and quarantine.",
+    "sources": [
+      "https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksrange_py",
+      "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesrange_py"
+    ],
+    "status": "GENERIC_UTC_CONTRACT_NOT_EXACT_SERVER_ATTESTATION"
+  },
+  {
+    "domain": "Session API",
+    "finding": "Weekday time-of-day sessions, date ignored; cannot certify dated historical exceptions.",
+    "source": "https://www.mql5.com/en/docs/marketinformation/symbolinfosessiontrade",
+    "status": "WEEKDAY_OBSERVATION_ONLY"
+  },
+  {
+    "domain": "XM dated calendar",
+    "finding": "Official 2022 holiday table found; not a server-5 2024/2026 certificate. Direct download unavailable; browser search contents reviewed; no fabricated local source hash.",
+    "source": "https://www.xm.com/assets/pdf/new/holiday_schedule/2022/XM_Stocks/EN_XM-holiday-trading-hours-2022.pdf",
+    "status": "OUTSIDE_TARGET_SCOPE"
+  }
+]
