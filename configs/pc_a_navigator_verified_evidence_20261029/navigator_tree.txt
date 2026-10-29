@@ -1,0 +1,34 @@
+		2 panel Navigator ID: 32845
+			3 tabulación ID: 10002
+				4 elemento de la pestaña (selectable) Common
+				5 elemento de la pestaña (selectable) Favorites
+				6 elemento de la pestaña (selectable) Chats
+			7 árbol ID: 10064
+				8 barra de desplazamiento (settable, float) Vertical Value: 71 ID: NonClientVerticalScrollBar
+					9 botón Línea arriba ID: UpButton
+					10 botón Re Pág ID: UpPageButton
+					11 miniatura Posición ID: ScrollbarThumb
+					12 botón Av Pág ID: DownPageButton
+					13 botón Línea abajo ID: DownButton
+				14 elemento del árbol (selectable, settable, string) XM Global SC MT5 Value: XM Global SC MT5
+					15 elemento del árbol (selectable, settable, string) Accounts Value: Accounts
+					16 elemento del árbol (selectable, settable, string) Indicators Value: Indicators
+					17 elemento del árbol (selectable, settable, string) Expert Advisors Value: Expert Advisors
+						18 elemento del árbol (selectable, settable, string) Advisors Value: Advisors
+						19 elemento del árbol (selectable, settable, string) Examples Value: Examples
+						20 elemento del árbol (selectable, settable, string) Free Robots Value: Free Robots
+						21 elemento del árbol (selectable, settable, string) ResearchDiagnostics Value: ResearchDiagnostics
+							22 elemento del árbol (selectable, settable, string) ProspectiveUtcObserver Value: ProspectiveUtcObserver
+						23 elemento del árbol (selectable, settable, string) StochasticBarDecisionResearch Value: StochasticBarDecisionResearch
+						24 elemento del árbol (selectable, settable, string) StochasticIntratradeResearch Value: StochasticIntratradeResearch
+					25 elemento del árbol (selectable, settable, string) Scripts Value: Scripts
+						366 elemento del árbol (selectable, settable, string) Examples Value: Examples
+						367 elemento del árbol (selectable, settable, string) ResearchDiagnostics Value: ResearchDiagnostics
+							368 elemento del árbol (selectable, settable, string) cloud_c0c00e95d42c41ee Value: cloud_c0c00e95d42c41ee
+								369 elemento del árbol (selectable, settable, string) FullClockAndTimeSemanticsProbe Value: FullClockAndTimeSemanticsProbe
+							370 elemento del árbol (selectable, settable, string) PC_A Value: PC_A
+								371 elemento del árbol (selectable, settable, string) FullClockAndTimeSemanticsProbe Value: FullClockAndTimeSemanticsProbe
+								372 elemento del árbol (selectable, settable, string) StartProspectiveUtcObserver Value: StartProspectiveUtcObserver
+					32 elemento del árbol (selectable, settable, string) Services Value: Services
+					33 elemento del árbol (selectable, settable, string) Market Value: Market
+					34 elemento del árbol (selectable, settable, string) VPS Value: VPS

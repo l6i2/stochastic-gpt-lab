@@ -46,7 +46,8 @@ def main():
     for name,digest in baseline.items():
         if raw.sha(target/name)!=digest:raise ValueError('PREVIOUS_SCRIPT_CHANGED')
     report=dict(SCRIPT_NAME='StartProspectiveUtcObserver',SCRIPT_MQ5_PATH=str(destination),SCRIPT_EX5_PATH=str(binary),
-        COMPILE_STATUS='PASS_ZERO_ERRORS_ZERO_WARNINGS',MT5_DATA_FOLDER=str(data),INSTALL_STATUS='VERIFIED_FILES_AND_HASHES',
+        COMPILE_STATUS='PASS_ZERO_ERRORS_ZERO_WARNINGS',MT5_DATA_FOLDER=str(data),INSTALL_STATUS='FILES_VERIFIED_NAVIGATOR_NOT_CHECKED',
+        COMPONENT_TYPE='SCRIPT_ONSTART',NAVIGATOR_EXPECTED_LOCATION='Scripts/ResearchDiagnostics/PC_A/StartProspectiveUtcObserver',
         MANUAL_ACTION_REQUIRED='Right-click Scripts -> Refresh',navigator_refreshed=False,
         source_sha256=raw.sha(source),installed_source_sha256=raw.sha(destination),binary_sha256=raw.sha(binary),
         template_path=str(template),template_sha256=raw.sha(template),compile_log_sha256=raw.sha(log),

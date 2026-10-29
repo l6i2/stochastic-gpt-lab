@@ -1,0 +1,50 @@
+{
+  "ACTIVE_MT5_DATA_FOLDER": "C:\\Users\\DELL 2022\\AppData\\Roaming\\MetaQuotes\\Terminal\\20C285FE08971A9A2E814AAC44AFC9D2",
+  "ACTIVE_MT5_PROCESS": {
+    "exe": "C:\\Program Files\\XM Global SC MT5 Terminal\\terminal64.exe",
+    "name": "terminal64.exe",
+    "pid": 12688
+  },
+  "ALL_MT5_METAEDITOR_PROCESSES": [
+    {
+      "exe": "C:\\Program Files\\XM Global SC MT5 Terminal\\terminal64.exe",
+      "name": "terminal64.exe",
+      "pid": 12688
+    }
+  ],
+  "COMPILE_STATUS": "PASS_ZERO_ERRORS_ZERO_WARNINGS",
+  "COMPONENT_NAME": "StartProspectiveUtcObserver",
+  "COMPONENT_TYPE": "SCRIPT_ONSTART",
+  "DEMO": "DISABLED",
+  "EX5_HASH": "1502152f32ca19259d098528e887f2ee88dd3cc62dc073318f4c6c0aa17723e9",
+  "EX5_MODIFIED": {
+    "Ecuador": "2026-10-29T13:50:05.694-05:00",
+    "Nueva York": "2026-10-29T14:50:05.694-04:00",
+    "UTC": "2026-10-29T18:50:05.694+00:00",
+    "XM": null,
+    "mapping_id": null,
+    "new_york_abbreviation": "EDT",
+    "new_york_fold": 0,
+    "primary_time": "2026-10-29T13:50:05.694-05:00",
+    "primary_timezone": "America/Guayaquil",
+    "scientific_authorization": false,
+    "time_basis": "HOST_RECEIPT_UNATTESTED",
+    "tzdata_version": "2026.5",
+    "xm_server_offset_seconds": null,
+    "xm_status": "UNVERIFIED_NO_CONVERSION"
+  },
+  "FINAL_EX5_PATH": "C:\\Users\\DELL 2022\\AppData\\Roaming\\MetaQuotes\\Terminal\\20C285FE08971A9A2E814AAC44AFC9D2\\MQL5\\Scripts\\ResearchDiagnostics\\PC_A\\StartProspectiveUtcObserver.ex5",
+  "FINAL_MQ5_PATH": "C:\\Users\\DELL 2022\\AppData\\Roaming\\MetaQuotes\\Terminal\\20C285FE08971A9A2E814AAC44AFC9D2\\MQL5\\Scripts\\ResearchDiagnostics\\PC_A\\StartProspectiveUtcObserver.mq5",
+  "FINAL_TEST": "LOCKED",
+  "INSTALL_STATUS": "PASS_ACTIVE_INSTANCE_PATH_COMPILE_HASH_AND_NAVIGATOR_VERIFIED",
+  "LIVE_TRADING": false,
+  "MANUAL_ACTION_REQUIRED": "NONE",
+  "NAVIGATOR_EXPECTED_LOCATION": "Scripts -> ResearchDiagnostics -> PC_A -> StartProspectiveUtcObserver",
+  "independent_utc_authorized": false,
+  "navigator_refreshed": true,
+  "navigator_tree_sha256": "50460ad488a10e351f64dfc2d21d41be74d45071078224ee1db1ec16dd3ed5d5",
+  "other_project_modified": false,
+  "script_executed": false,
+  "source_sha256": "d5b6e1afcd709613a4034fb80055096847d512381e17a61dd994005702ceef8d",
+  "terminal_restarted": false
+}
