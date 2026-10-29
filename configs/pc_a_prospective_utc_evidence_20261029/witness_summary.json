@@ -1,0 +1,135 @@
+{
+  "records": 8,
+  "records_summary": [
+    {
+      "authenticated_utc_bound": false,
+      "ntp_samples": 3,
+      "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+      "record_sha256": "982b664f2de2662139da33be243c1ab5419148290ceea175cb7d8c3b84eb803c",
+      "reference_status": {
+        "authority_scope": "diagnostic only; unauthenticated NTP",
+        "local_clock_within_network_interval": false,
+        "local_lag_lower_ns": -160052782,
+        "local_lag_upper_ns": -128052782,
+        "status": "REFERENCE_QUORUM",
+        "utc_lower_ns": 1793285312892310518,
+        "utc_upper_ns": 1793285312924310518
+      },
+      "tls_corroborated": true
+    },
+    {
+      "authenticated_utc_bound": false,
+      "ntp_samples": 3,
+      "previous": "982b664f2de2662139da33be243c1ab5419148290ceea175cb7d8c3b84eb803c",
+      "record_sha256": "59517bc0b6d1a7e5ee9066d370fd751b51055708da85b4d7752b7ad52bdfde5f",
+      "reference_status": {
+        "authority_scope": "diagnostic only; unauthenticated NTP",
+        "local_clock_within_network_interval": false,
+        "local_lag_lower_ns": -157576714,
+        "local_lag_upper_ns": -141576714,
+        "status": "REFERENCE_QUORUM",
+        "utc_lower_ns": 1793285380353111086,
+        "utc_upper_ns": 1793285380369111086
+      },
+      "tls_corroborated": true
+    },
+    {
+      "authenticated_utc_bound": false,
+      "ntp_samples": 3,
+      "previous": "59517bc0b6d1a7e5ee9066d370fd751b51055708da85b4d7752b7ad52bdfde5f",
+      "record_sha256": "e333cbd46bb43239cbffe966b67bc6d13e2bc2537259cbbce0d357aae2bf93ff",
+      "reference_status": {
+        "authority_scope": "diagnostic only; unauthenticated NTP",
+        "local_clock_within_network_interval": false,
+        "local_lag_lower_ns": -152461886,
+        "local_lag_upper_ns": -136461886,
+        "status": "REFERENCE_QUORUM",
+        "utc_lower_ns": 1793285440990263814,
+        "utc_upper_ns": 1793285441006263814
+      },
+      "tls_corroborated": true
+    },
+    {
+      "authenticated_utc_bound": false,
+      "ntp_samples": 3,
+      "previous": "e333cbd46bb43239cbffe966b67bc6d13e2bc2537259cbbce0d357aae2bf93ff",
+      "record_sha256": "e37e9e0a8dc9e3fd55dbcd25691626cd2ef36f0f04d4d86601546189a5b01a42",
+      "reference_status": {
+        "authority_scope": "diagnostic only; unauthenticated NTP",
+        "local_clock_within_network_interval": false,
+        "local_lag_lower_ns": -162148589,
+        "local_lag_upper_ns": -131148589,
+        "status": "REFERENCE_QUORUM",
+        "utc_lower_ns": 1793285501094363211,
+        "utc_upper_ns": 1793285501125363211
+      },
+      "tls_corroborated": true
+    },
+    {
+      "authenticated_utc_bound": false,
+      "ntp_samples": 3,
+      "previous": "e37e9e0a8dc9e3fd55dbcd25691626cd2ef36f0f04d4d86601546189a5b01a42",
+      "record_sha256": "37f604a5e3e6068c3a6dc692323ccf86b2b3afd8555433ca9a4f8417cd9b2d46",
+      "reference_status": {
+        "authority_scope": "diagnostic only; unauthenticated NTP",
+        "local_clock_within_network_interval": false,
+        "local_lag_lower_ns": -162368971,
+        "local_lag_upper_ns": -131368971,
+        "status": "REFERENCE_QUORUM",
+        "utc_lower_ns": 1793285601631049529,
+        "utc_upper_ns": 1793285601662049529
+      },
+      "tls_corroborated": true
+    },
+    {
+      "authenticated_utc_bound": false,
+      "ntp_samples": 3,
+      "previous": "37f604a5e3e6068c3a6dc692323ccf86b2b3afd8555433ca9a4f8417cd9b2d46",
+      "record_sha256": "cea847012bf9ca0199dc541dbeace3f78803e2a559444c3f7dc61cdbd5ac7330",
+      "reference_status": {
+        "authority_scope": "diagnostic only; unauthenticated NTP",
+        "local_clock_within_network_interval": false,
+        "local_lag_lower_ns": -154202075,
+        "local_lag_upper_ns": -139202075,
+        "status": "REFERENCE_QUORUM",
+        "utc_lower_ns": 1793285619373749025,
+        "utc_upper_ns": 1793285619388749025
+      },
+      "tls_corroborated": true
+    },
+    {
+      "authenticated_utc_bound": false,
+      "ntp_samples": 3,
+      "previous": "cea847012bf9ca0199dc541dbeace3f78803e2a559444c3f7dc61cdbd5ac7330",
+      "record_sha256": "091a4e42bac0fdc596a353e7a22ce4a59f7264547be90dd9deb08fb1ebfa11e7",
+      "reference_status": {
+        "authority_scope": "diagnostic only; unauthenticated NTP",
+        "local_clock_within_network_interval": false,
+        "local_lag_lower_ns": -173166428,
+        "local_lag_upper_ns": -142166428,
+        "status": "REFERENCE_QUORUM",
+        "utc_lower_ns": 1793285681161715772,
+        "utc_upper_ns": 1793285681192715772
+      },
+      "tls_corroborated": true
+    },
+    {
+      "authenticated_utc_bound": false,
+      "ntp_samples": 3,
+      "previous": "091a4e42bac0fdc596a353e7a22ce4a59f7264547be90dd9deb08fb1ebfa11e7",
+      "record_sha256": "3dff00e435af8037832ba5fd05e712025750edfff6ad9c9d8ec1a2b0937cff07",
+      "reference_status": {
+        "authority_scope": "diagnostic only; unauthenticated NTP",
+        "local_clock_within_network_interval": false,
+        "local_lag_lower_ns": -170789403,
+        "local_lag_upper_ns": -138789403,
+        "status": "REFERENCE_QUORUM",
+        "utc_lower_ns": 1793285738631823297,
+        "utc_upper_ns": 1793285738663823297
+      },
+      "tls_corroborated": true
+    }
+  ],
+  "scientific_acceptance": false,
+  "source_snapshot_sha256": "5be7167b37b7b8b9b9606c7cd80d754aab41d1a245be0d14cd4059dc00cdf9c7"
+}

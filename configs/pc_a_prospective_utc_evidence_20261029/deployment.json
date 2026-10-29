@@ -1,0 +1,12 @@
+{
+  "attached": false,
+  "auto_trading_changed": false,
+  "binary_sha256": "c3dc91cca9b0b76f647a81da3dea5a1682692b87de7564f8100e56bedd9d59b0",
+  "compile": "PASS_ZERO_ERRORS_ZERO_WARNINGS",
+  "compile_log_sha256": "04dfa381e0e9784db6eaea21e76c1df1d35519e7f5b0c597b96425acbb273b71",
+  "deployed_source_sha256": "fd1bd10716a19010f544343e29e51a0f2d393ff80c28e3238c5b5ab437b84767",
+  "dll_enabled": false,
+  "native_callbacks_observed": false,
+  "orders_sent": 0,
+  "source_sha256": "fd1bd10716a19010f544343e29e51a0f2d393ff80c28e3238c5b5ab437b84767"
+}

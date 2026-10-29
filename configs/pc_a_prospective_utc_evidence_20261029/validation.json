@@ -1,0 +1,11 @@
+{
+  "failed": 0,
+  "full_suite_rerun": false,
+  "native_compile_errors": 0,
+  "native_compile_warnings": 0,
+  "native_runtime_observed": false,
+  "skipped": 0,
+  "static_no_order_calls": "PASS",
+  "tests_log_sha256": "1f1928f6dc90adfe19a35a6aa880c478409bd8f5284a92f5465e4aa6da833596",
+  "tests_passed": 31
+}

@@ -1,0 +1,22 @@
+{
+  "authenticated_ntp_packet_verified": false,
+  "clock_changed": false,
+  "keys_requested": false,
+  "python_stdlib_tls_exporter_available": false,
+  "routes": [
+    {
+      "elapsed_ns": 207421500,
+      "error": "SSLCertVerificationError",
+      "host": "time.cloudflare.com",
+      "port": 4460,
+      "status": "UNAVAILABLE"
+    },
+    {
+      "elapsed_ns": 4316219400,
+      "error": "TimeoutError",
+      "host": "nts.netnod.se",
+      "port": 4460,
+      "status": "UNAVAILABLE"
+    }
+  ]
+}
