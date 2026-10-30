@@ -43,7 +43,13 @@ def locked_run(folder,force):
     state=json.loads(state_path.read_text()) if state_path.exists() else {}
     verify_history(folder,state)
     now=kernel();previous=state.get('chain_head','0'*64)
-    if not force and state.get('last_uptime_ms',0)<=now<state.get('next_due_uptime_ms',0):return {'status':'NOT_DUE','last_record':state.get('last_record')}
+    import winreg
+    try:
+        with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, r'SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters') as key:
+            boot_identity='WINDOWS_PREFETCH_BOOT_ID:'+str(winreg.QueryValueEx(key,'BootId')[0])
+    except OSError:
+        boot_identity=None
+    if not force and state.get('boot_identity')==boot_identity and state.get('last_uptime_ms',0)<=now<state.get('next_due_uptime_ms',0):return {'status':'NOT_DUE','last_record':state.get('last_record')}
     if state.get('last_record'):
         old=json.loads((folder/state['last_record']).read_text())
         if old['sha256']!=previous or hashlib.sha256(raw.canonical(old['payload'])).hexdigest()!=previous:raise ValueError('NTS_PREVIOUS_RECORD_CHANGED')
@@ -78,6 +84,9 @@ def locked_run(folder,force):
                 event_utc_inferred=False,certified=False))
         models[name]=dict(native_tick=tick,native_chain_head=session['chain_head'],models=values)
     payload=dict(record_id=uuid.uuid4().hex,observed_host_utc=raw.utc(),previous=previous,
+        run_started_kernel_uptime_ms=now,run_finished_kernel_uptime_ms=kernel(),
+        boot_identity=boot_identity,trigger='FORCED' if force else 'BOOT_EPOCH_REVALIDATION' if state.get('boot_identity')!=boot_identity else 'PERIODIC_DUE',
+        nominal_interval_ms=300000,prior_due_kernel_uptime_ms=state.get('next_due_uptime_ms'),
         dependency_manifest_sha256=raw.sha(manifest_path),source_sha256=raw.sha(ROOT/'python/nts_external.py'),
         results=results,native_receipt_correlations=models,
         NATIVE_TO_UTC_MAPPING='UNVERIFIED',certified_segments=[],clock_adjusted=False,orders_sent=0)
@@ -86,7 +95,7 @@ def locked_run(folder,force):
     success=any(r['status']=='AUTHENTICATED_MEASUREMENT' for r in results)
     failures=0 if success else state.get('failures',0)+1
     interval=300 if success else min(432000,max(300,10*1.5**min(failures-1,26)))
-    raw.atomic(state_path,dict(chain_head=digest,last_record=name,last_uptime_ms=now,next_due_uptime_ms=now+int(interval*1000),failures=failures))
+    raw.atomic(state_path,dict(chain_head=digest,last_record=name,last_uptime_ms=now,next_due_uptime_ms=now+int(interval*1000),failures=failures,boot_identity=boot_identity))
     return dict(status='AUTHENTICATED_MEASUREMENTS_ONLY' if success else 'BLOCKED_NO_AUTHENTICATED_MEASUREMENT',
         record=name,sha256=digest,results=results,certified_segments=[],clock_adjusted=False)
 

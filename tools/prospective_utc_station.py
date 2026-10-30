@@ -129,11 +129,14 @@ def locked_observe(network):
             for name,s in sessions.items() if s['liveness']=='RECENT' and s['continuity'].get('last_tick_observation')}
         append_witness(witness)
         # Isolate cryptographic dependencies and failures from native ingestion.
-        nts=subprocess.run([sys.executable,str(ROOT/'tools/authenticated_utc_station.py')],
-            cwd=ROOT,capture_output=True,text=True,timeout=40)
-        witness['nts_station_exit']=nts.returncode
-        raw.atomic(BASE/'nts_station_status.json',json.loads(nts.stdout) if nts.returncode==0 and nts.stdout.strip() else
-            dict(status='BLOCKED',error='ISOLATED_NTS_STATION_FAILED'))
+        try:
+            nts=subprocess.run([sys.executable,str(ROOT/'tools/authenticated_utc_station.py')],
+                cwd=ROOT,capture_output=True,text=True,timeout=40)
+            witness['nts_station_exit']=nts.returncode
+            nts_status=json.loads(nts.stdout) if nts.returncode==0 and nts.stdout.strip() else dict(status='BLOCKED',error='ISOLATED_NTS_STATION_FAILED')
+        except (subprocess.TimeoutExpired,ValueError,OSError) as exc:
+            nts_status=dict(status='BLOCKED',error=type(exc).__name__)
+        raw.atomic(BASE/'nts_station_status.json',nts_status)
     ticks=sum(s['tick_callbacks'] for s in sessions.values())
     active=any(s['tick_callbacks'] and s['last_connected'] and s['liveness']=='RECENT' for s in sessions.values())
     capture_status='ACTIVE_CALLBACKS_QUARANTINED' if active else 'INACTIVE_CALLBACKS_RETAINED' if ticks else 'STALLED_START_ONLY' if sessions else 'PREPARED_NOT_OBSERVED'
@@ -162,6 +165,12 @@ def locked_observe(network):
         status['local_clock_continuous_authentication']='UNVERIFIED_BETWEEN_MEASUREMENTS'
     raw.atomic(checkpoint_path,sessions)
     raw.atomic(BASE/'status.json',status)
+    # Derived diagnostics fail independently; capture and its status are durable.
+    try:
+        from correlate_nts_xm import run as correlate_nts
+        raw.atomic(BASE/'correlation_monitor_status.json',correlate_nts())
+    except Exception as exc:
+        raw.atomic(BASE/'correlation_monitor_status.json',dict(status='QUARANTINED',error=type(exc).__name__,reason=str(exc),scientific_acceptance=False))
     return status
 
 

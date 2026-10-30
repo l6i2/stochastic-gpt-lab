@@ -1,0 +1,26 @@
+{
+  "archive_id": "prospective_20261028T175047_3ac8b527",
+  "backup": {
+    "files": 1460,
+    "independent_failure_domain": false,
+    "status": "VERIFIED_LOCAL_COPY"
+  },
+  "error": null,
+  "last_success_utc": "2026-10-30T03:42:00.327656+00:00",
+  "observed_utc": "2026-10-30T03:42:04.936421+00:00",
+  "raw_capture": "ACTIVE",
+  "scheduler": {
+    "enabled": true,
+    "last_result": 267009,
+    "last_run": "2026-10-30T03:41:58.0000000Z",
+    "state": "Running"
+  },
+  "scheduler_snapshot_note": "Scheduler result and independently verified archive advancement are separate observations. No restart or forced collection performed.",
+  "scope": "RAW_COPYTICKS_ARCHIVE_SEPARATE_FROM_NATIVE_CALLBACK_OBSERVER",
+  "segments": 634,
+  "verified_last_success_utc": "2026-10-30T03:42:00.327656+00:00",
+  "verified_manifest_chain_head": "35da83ef3666c816cae87a726344e6edb6e2ca9ec6327847e9f70aef86e3a6b7",
+  "verified_manifest_object_sha256": "6d442948ef8dafb4ad1dea733303ade566123586197b53d830c8cfa39a3bf24b",
+  "verified_next_native_msc": 1793338918726,
+  "verified_segments": 634
+}

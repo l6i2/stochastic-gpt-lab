@@ -1,0 +1,720 @@
+{
+  "CAUSAL_AUDIT": "FAIL",
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "FINAL_TEST": "LOCKED",
+  "LIVE_TRADING": false,
+  "TRAINING_READINESS": "BLOCKED_BY_RESEARCH_GOVERNANCE",
+  "broker_calendar": "PARTIAL",
+  "certified_segments": [],
+  "derived_local_report_sha256": "d6fd96eade327c251adf4afa734e5f4552463ac5c1fdc66af8e24b6237660aea",
+  "measurement_primary_times": [
+    {
+      "Ecuador": "2026-10-29T22:10:01.181326-05:00",
+      "record_sha256": "da5deea0584559efe17cb647d1da9aa26258f83c5cee4e271d56f5c59e7b4ac4"
+    },
+    {
+      "Ecuador": "2026-10-29T22:11:51.570410-05:00",
+      "record_sha256": "2e174362ff8402dfb39fba689098f0e4230384cf2b00d470af418782502c9433"
+    },
+    {
+      "Ecuador": "2026-10-29T22:14:09.311501-05:00",
+      "record_sha256": "754648878c26612820c3bf8ead6ddbc949b786d94ef3de2861a91f58c0df121e"
+    },
+    {
+      "Ecuador": "2026-10-29T22:19:46.585885-05:00",
+      "record_sha256": "594e3ef37e2b0d0b9ced9dfd0e1227540e31dd0ce146c4cce44c98ef41633014"
+    },
+    {
+      "Ecuador": "2026-10-29T22:24:43.415848-05:00",
+      "record_sha256": "737d98fe5b15332d63eb64571a960e9f36fdcbbb7977da105042c246e0b41a9e"
+    },
+    {
+      "Ecuador": "2026-10-29T22:29:47.015733-05:00",
+      "record_sha256": "d291821e205e73df47511d1f7c1202dbe92b3082ddb8da032eb930b236d387f9"
+    },
+    {
+      "Ecuador": "2026-10-29T22:33:52.040699-05:00",
+      "record_sha256": "bc7b5974be67497610c5e566e625dec09635f7e80d162b81bcb73dc367b44c49"
+    },
+    {
+      "Ecuador": "2026-10-29T22:39:22.252850-05:00",
+      "record_sha256": "c570ee4c75d1185fe6e81fbce4b6c7ac43d08eed22c4a0ed68254859ad80d253"
+    }
+  ],
+  "measurements": [
+    {
+      "observed_host_utc": "2026-10-30T03:10:01.181326+00:00",
+      "prior_due_uptime_ms": null,
+      "record_sha256": "da5deea0584559efe17cb647d1da9aa26258f83c5cee4e271d56f5c59e7b4ac4",
+      "results": [
+        {
+          "offset_ns": [
+            -865547001,
+            -759252226
+          ],
+          "origin": "time.cloudflare.com",
+          "receive_uptime": [
+            3151140,
+            3151140
+          ],
+          "rtt_ns": 13307500,
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "offset_ns": [
+            -906558857,
+            -680089655
+          ],
+          "origin": "ntppool2.time.nl",
+          "receive_uptime": [
+            3152437,
+            3152437
+          ],
+          "rtt_ns": 226481100,
+          "status": "AUTHENTICATED_MEASUREMENT"
+        }
+      ],
+      "start_uptime_ms": null,
+      "trigger": "LEGACY_NOT_RECORDED"
+    },
+    {
+      "observed_host_utc": "2026-10-30T03:11:51.570410+00:00",
+      "prior_due_uptime_ms": null,
+      "record_sha256": "2e174362ff8402dfb39fba689098f0e4230384cf2b00d470af418782502c9433",
+      "results": [
+        {
+          "offset_ns": [
+            -867796588,
+            -760713758
+          ],
+          "origin": "time.cloudflare.com",
+          "receive_uptime": [
+            3261625,
+            3261625
+          ],
+          "rtt_ns": 13953600,
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "offset_ns": [
+            -922243271,
+            -721571040
+          ],
+          "origin": "ntppool2.time.nl",
+          "receive_uptime": [
+            3262828,
+            3262828
+          ],
+          "rtt_ns": 200026400,
+          "status": "AUTHENTICATED_MEASUREMENT"
+        }
+      ],
+      "start_uptime_ms": null,
+      "trigger": "LEGACY_NOT_RECORDED"
+    },
+    {
+      "observed_host_utc": "2026-10-30T03:14:09.311501+00:00",
+      "prior_due_uptime_ms": null,
+      "record_sha256": "754648878c26612820c3bf8ead6ddbc949b786d94ef3de2861a91f58c0df121e",
+      "results": [
+        {
+          "offset_ns": [
+            -870198187,
+            -760394955
+          ],
+          "origin": "time.cloudflare.com",
+          "receive_uptime": [
+            3395390,
+            3395390
+          ],
+          "rtt_ns": 16112500,
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "offset_ns": null,
+          "origin": "ntppool2.time.nl",
+          "receive_uptime": null,
+          "rtt_ns": null,
+          "status": "UNAVAILABLE"
+        }
+      ],
+      "start_uptime_ms": null,
+      "trigger": "LEGACY_NOT_RECORDED"
+    },
+    {
+      "observed_host_utc": "2026-10-30T03:19:46.585885+00:00",
+      "prior_due_uptime_ms": null,
+      "record_sha256": "594e3ef37e2b0d0b9ced9dfd0e1227540e31dd0ce146c4cce44c98ef41633014",
+      "results": [
+        {
+          "offset_ns": [
+            -875209509,
+            -769504705
+          ],
+          "origin": "time.cloudflare.com",
+          "receive_uptime": [
+            3732734,
+            3732734
+          ],
+          "rtt_ns": 13175800,
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "offset_ns": null,
+          "origin": "ntppool2.time.nl",
+          "receive_uptime": null,
+          "rtt_ns": null,
+          "status": "UNAVAILABLE"
+        }
+      ],
+      "start_uptime_ms": null,
+      "trigger": "LEGACY_NOT_RECORDED"
+    },
+    {
+      "observed_host_utc": "2026-10-30T03:24:43.415848+00:00",
+      "prior_due_uptime_ms": null,
+      "record_sha256": "737d98fe5b15332d63eb64571a960e9f36fdcbbb7977da105042c246e0b41a9e",
+      "results": [
+        {
+          "offset_ns": [
+            -885264123,
+            -766326315
+          ],
+          "origin": "time.cloudflare.com",
+          "receive_uptime": [
+            4033359,
+            4033359
+          ],
+          "rtt_ns": 26254400,
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "offset_ns": [
+            -918992494,
+            -723179051
+          ],
+          "origin": "ntppool2.time.nl",
+          "receive_uptime": [
+            4034671,
+            4034671
+          ],
+          "rtt_ns": 195267300,
+          "status": "AUTHENTICATED_MEASUREMENT"
+        }
+      ],
+      "start_uptime_ms": null,
+      "trigger": "LEGACY_NOT_RECORDED"
+    },
+    {
+      "observed_host_utc": "2026-10-30T03:29:47.015733+00:00",
+      "prior_due_uptime_ms": null,
+      "record_sha256": "d291821e205e73df47511d1f7c1202dbe92b3082ddb8da032eb930b236d387f9",
+      "results": [
+        {
+          "offset_ns": [
+            -885117784,
+            -777379052
+          ],
+          "origin": "time.cloudflare.com",
+          "receive_uptime": [
+            4333187,
+            4333187
+          ],
+          "rtt_ns": 14906200,
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "offset_ns": null,
+          "origin": "ntppool2.time.nl",
+          "receive_uptime": null,
+          "rtt_ns": null,
+          "status": "UNAVAILABLE"
+        }
+      ],
+      "start_uptime_ms": null,
+      "trigger": "LEGACY_NOT_RECORDED"
+    },
+    {
+      "observed_host_utc": "2026-10-30T03:33:52.040699+00:00",
+      "prior_due_uptime_ms": 4632515,
+      "record_sha256": "bc7b5974be67497610c5e566e625dec09635f7e80d162b81bcb73dc367b44c49",
+      "results": [
+        {
+          "offset_ns": [
+            -894521509,
+            -783070218
+          ],
+          "origin": "time.cloudflare.com",
+          "receive_uptime": [
+            4578171,
+            4578171
+          ],
+          "rtt_ns": 18495000,
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "offset_ns": null,
+          "origin": "ntppool2.time.nl",
+          "receive_uptime": null,
+          "rtt_ns": null,
+          "status": "UNAVAILABLE"
+        }
+      ],
+      "start_uptime_ms": 4577453,
+      "trigger": "PERIODIC_DUE"
+    },
+    {
+      "observed_host_utc": "2026-10-30T03:39:22.252850+00:00",
+      "prior_due_uptime_ms": 4877453,
+      "record_sha256": "c570ee4c75d1185fe6e81fbce4b6c7ac43d08eed22c4a0ed68254859ad80d253",
+      "results": [
+        {
+          "offset_ns": [
+            -906751311,
+            -743470881
+          ],
+          "origin": "time.cloudflare.com",
+          "receive_uptime": [
+            4907906,
+            4907906
+          ],
+          "rtt_ns": 70395000,
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "offset_ns": null,
+          "origin": "ntppool2.time.nl",
+          "receive_uptime": null,
+          "rtt_ns": null,
+          "status": "UNAVAILABLE"
+        }
+      ],
+      "start_uptime_ms": 4901484,
+      "trigger": "PERIODIC_DUE"
+    }
+  ],
+  "native_sessions": {
+    "pc_a_prospective_utc_v1_268328_86572951924106_6708.jsonl": {
+      "examples": [
+        {
+          "callback_read_elapsed_ms": 0,
+          "callback_uptime_ms": 4578234,
+          "certified_receipt_bounds_ns": null,
+          "conditional_models": [
+            {
+              "capture_id": "c7b35d6e6cdc4af4ba29b8b5f2153969",
+              "conditional_receipt_ns": [
+                1793331226068839891,
+                1793331226180291182
+              ],
+              "conditional_width_ns": 111451291,
+              "native_minus_receipt_coordinate_ns": [
+                7199843708818,
+                7199955160109
+              ],
+              "network_rtt_ns": 18495000,
+              "observed_offset_server_minus_host_ns": [
+                -894521509,
+                -783070218
+              ]
+            },
+            {
+              "capture_id": "a5e6512390bd41babfedc5f373be9cbc",
+              "conditional_receipt_ns": [
+                1793331226054827189,
+                1793331226218107619
+              ],
+              "conditional_width_ns": 163280430,
+              "native_minus_receipt_coordinate_ns": [
+                7199805892381,
+                7199969172811
+              ],
+              "network_rtt_ns": 70395000,
+              "observed_offset_server_minus_host_ns": [
+                -906751311,
+                -743470881
+              ]
+            }
+          ],
+          "event_utc_certified": false,
+          "generation_latency_ns": null,
+          "missing": [
+            "OSCILLATOR_AND_COUNTER_ERROR_BOUND",
+            "INDEPENDENT_GENERATION_EVENT_BINDING",
+            "BROKER_GENERATION_TO_CALLBACK_DELAY_BOUND"
+          ],
+          "reasons": [],
+          "scientific_acceptance": false,
+          "scope": "OBSERVATIONAL_BRACKETING_NOT_CONTINUOUS_NTS_VALIDITY",
+          "sequence": 5459,
+          "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+          "status": "PARTIAL"
+        },
+        {
+          "callback_read_elapsed_ms": 0,
+          "callback_uptime_ms": 268328,
+          "certified_receipt_bounds_ns": null,
+          "conditional_models": [],
+          "event_utc_certified": false,
+          "generation_latency_ns": null,
+          "missing": [
+            "OSCILLATOR_AND_COUNTER_ERROR_BOUND",
+            "INDEPENDENT_GENERATION_EVENT_BINDING",
+            "BROKER_GENERATION_TO_CALLBACK_DELAY_BOUND"
+          ],
+          "reasons": [
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scientific_acceptance": false,
+          "scope": "OBSERVATIONAL_BRACKETING_NOT_CONTINUOUS_NTS_VALIDITY",
+          "sequence": 1,
+          "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+          "status": "QUARANTINED"
+        }
+      ],
+      "segments": [
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            250
+          ],
+          "callbacks": 700,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 268328,
+          "first_sequence": 1,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 912437,
+          "last_sequence": 828,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            0
+          ],
+          "callbacks": 2,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 918171,
+          "first_sequence": 830,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 927593,
+          "last_sequence": 832,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "HEARTBEAT_GAP_TWO_TIMER_PERIODS",
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            171
+          ],
+          "callbacks": 70,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 971437,
+          "first_sequence": 834,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 1044546,
+          "last_sequence": 918,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            16
+          ],
+          "callbacks": 2,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 1048765,
+          "first_sequence": 920,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 1048781,
+          "last_sequence": 921,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "HEARTBEAT_GAP_TWO_TIMER_PERIODS",
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            79
+          ],
+          "callbacks": 2291,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 1063953,
+          "first_sequence": 924,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 3146015,
+          "last_sequence": 3630,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            31
+          ],
+          "callbacks": 1542,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": [
+            105704804,
+            226469202
+          ],
+          "first_callback_uptime_ms": 3152906,
+          "first_sequence": 3632,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 4576703,
+          "last_sequence": 5458,
+          "native_minus_receipt_coordinate_ns_envelope": [
+            7197916235040,
+            7200009907271
+          ],
+          "nts_network_rtt_ns_range": [
+            13175800,
+            226481100
+          ],
+          "nts_server_minus_host_offset_ns_envelope": [
+            -922243271,
+            -680089655
+          ],
+          "reasons": [
+            "KERNEL_EPOCH_UNVERIFIED_OR_CHANGED"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            0
+          ],
+          "callbacks": 340,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": [
+            111451291,
+            163280430
+          ],
+          "first_callback_uptime_ms": 4578234,
+          "first_sequence": 5459,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 4907718,
+          "last_sequence": 5864,
+          "native_minus_receipt_coordinate_ns_envelope": [
+            7198205892381,
+            7199985172811
+          ],
+          "nts_network_rtt_ns_range": [
+            18495000,
+            70395000
+          ],
+          "nts_server_minus_host_offset_ns_envelope": [
+            -906751311,
+            -743470881
+          ],
+          "reasons": [],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "PARTIAL"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            0
+          ],
+          "callbacks": 233,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 4908078,
+          "first_sequence": 5865,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 5109234,
+          "last_sequence": 6138,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        }
+      ],
+      "verified_prefix": {
+        "adjacent_duplicate_quotes": 12,
+        "bytes_verified": 3780079,
+        "capture_id": "pc_a_prospective_utc_v1",
+        "chain_head": "3628c8a6c0a0a1369d5268740536fa7a48a7e43649e7e9f37190d20d4ba43506",
+        "completeness": "UNPROVEN_ONTICK_CAN_COALESCE",
+        "disconnected_records": 0,
+        "future_event_timestamps": "NOT_EVALUABLE_WITHOUT_MAPPING",
+        "host_clock_delta_scope": "DIAGNOSTIC_SECOND_RESOLUTION_NOT_CERTIFIED_CLOCK_STEP",
+        "host_clock_vs_uptime_delta_ms_envelope": [
+          -984,
+          1156
+        ],
+        "largest_heartbeat_interval_ms": 46469,
+        "last_callback_uptime_ms": 5109234,
+        "last_connected": true,
+        "last_kind": "ONTICK_LATEST_QUOTE",
+        "native_timestamp_regressions": 0,
+        "partial_tail": false,
+        "rows": 6139,
+        "scientific_acceptance": false,
+        "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+        "tick_callbacks": 5180
+      }
+    },
+    "pc_a_prospective_utc_v1_50343_86572951924106_1553.jsonl": {
+      "examples": [
+        null,
+        {
+          "callback_read_elapsed_ms": 0,
+          "callback_uptime_ms": 50765,
+          "certified_receipt_bounds_ns": null,
+          "conditional_models": [],
+          "event_utc_certified": false,
+          "generation_latency_ns": null,
+          "missing": [
+            "OSCILLATOR_AND_COUNTER_ERROR_BOUND",
+            "INDEPENDENT_GENERATION_EVENT_BINDING",
+            "BROKER_GENERATION_TO_CALLBACK_DELAY_BOUND"
+          ],
+          "reasons": [
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scientific_acceptance": false,
+          "scope": "OBSERVATIONAL_BRACKETING_NOT_CONTINUOUS_NTS_VALIDITY",
+          "sequence": 1,
+          "session_id": "pc_a_prospective_utc_v1_50343_86572951924106_1553",
+          "status": "QUARANTINED"
+        }
+      ],
+      "segments": [
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            16
+          ],
+          "callbacks": 234,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 50765,
+          "first_sequence": 1,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 267640,
+          "last_sequence": 277,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        }
+      ],
+      "verified_prefix": {
+        "adjacent_duplicate_quotes": 1,
+        "bytes_verified": 170195,
+        "capture_id": "pc_a_prospective_utc_v1",
+        "chain_head": "d89845df198008427d4253ceb0bf838ddb8e06fb2a9037de8c7d01da0473ba8c",
+        "completeness": "UNPROVEN_ONTICK_CAN_COALESCE",
+        "disconnected_records": 0,
+        "future_event_timestamps": "NOT_EVALUABLE_WITHOUT_MAPPING",
+        "host_clock_delta_scope": "DIAGNOSTIC_SECOND_RESOLUTION_NOT_CERTIFIED_CLOCK_STEP",
+        "host_clock_vs_uptime_delta_ms_envelope": [
+          -969,
+          906
+        ],
+        "largest_heartbeat_interval_ms": 6734,
+        "last_callback_uptime_ms": 268171,
+        "last_connected": true,
+        "last_kind": "SESSION_END",
+        "native_timestamp_regressions": 0,
+        "partial_tail": false,
+        "rows": 279,
+        "scientific_acceptance": false,
+        "session_id": "pc_a_prospective_utc_v1_50343_86572951924106_1553",
+        "tick_callbacks": 234
+      }
+    },
+    "pc_a_prospective_utc_v1_6617828_86572951924106_12102.jsonl": {
+      "examples": [
+        null,
+        null
+      ],
+      "segments": [],
+      "verified_prefix": {
+        "adjacent_duplicate_quotes": 0,
+        "bytes_verified": 579,
+        "capture_id": "pc_a_prospective_utc_v1",
+        "chain_head": "26b169447961843dcf7cb47aa7c64163268d4bcafb98cf5e20af840114ac4e78",
+        "completeness": "UNPROVEN_ONTICK_CAN_COALESCE",
+        "disconnected_records": 0,
+        "future_event_timestamps": "NOT_EVALUABLE_WITHOUT_MAPPING",
+        "host_clock_delta_scope": "DIAGNOSTIC_SECOND_RESOLUTION_NOT_CERTIFIED_CLOCK_STEP",
+        "host_clock_vs_uptime_delta_ms_envelope": null,
+        "largest_heartbeat_interval_ms": 0,
+        "last_callback_uptime_ms": 6617828,
+        "last_connected": true,
+        "last_kind": "SESSION_START",
+        "native_timestamp_regressions": 0,
+        "partial_tail": false,
+        "rows": 1,
+        "scientific_acceptance": false,
+        "session_id": "pc_a_prospective_utc_v1_6617828_86572951924106_12102",
+        "tick_callbacks": 0
+      }
+    }
+  },
+  "nts_chain_head": "c570ee4c75d1185fe6e81fbce4b6c7ac43d08eed22c4a0ed68254859ad80d253",
+  "nts_records": 8,
+  "observed_host_utc": "2026-10-30T03:42:42.903545+00:00",
+  "original_data_changed": false,
+  "primary_time": "2026-10-29T22:42:42.903-05:00",
+  "primary_timezone": "America/Guayaquil",
+  "receipt_bounds": "CONDITIONAL_ZERO_DRIFT_MODELS_ONLY_NO_CERTIFIED_BOUNDS",
+  "schema_version": 1,
+  "scientific_acceptance": false,
+  "segment_counts": {
+    "CERTIFIED": 0,
+    "PARTIAL": 1,
+    "QUARANTINED": 8
+  }
+}
