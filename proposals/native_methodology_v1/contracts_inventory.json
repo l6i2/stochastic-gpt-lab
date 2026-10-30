@@ -1,0 +1,570 @@
+{
+  "base_head": "ca7bab3d366d6a95575f54b57a923762fb234f5e",
+  "contracts": [
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 6764,
+      "git_content_sha256": "ba752f220e5a40e262bb6b9476fdf78836c0e136d59ef29936bac562da66bc52",
+      "path": "docs/RESEARCH_PROTOCOL.md",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "ba752f220e5a40e262bb6b9476fdf78836c0e136d59ef29936bac562da66bc52",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 6093,
+      "git_content_sha256": "c02b58504567ca444dda89ad423c24122395c4ad41974037a7aa227aeaa03217",
+      "path": "docs/RESEARCH_PROTOCOL_V2.md",
+      "seal": "VERIFIED",
+      "sha256": "c02b58504567ca444dda89ad423c24122395c4ad41974037a7aa227aeaa03217",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 5471,
+      "git_content_sha256": "041a9257d487cf2f0ce8b4ddb90b11997acca1d70541279d17615d5ab5ef6ab8",
+      "path": "docs/STRATEGY_SPEC.md",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "041a9257d487cf2f0ce8b4ddb90b11997acca1d70541279d17615d5ab5ef6ab8",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 23176,
+      "git_content_sha256": "13f5ffe4559992e567847b7c9edaee8d0a4ef33f878e172ad0f9b611804860ef",
+      "path": "docs/DATA_DICTIONARY.md",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "13f5ffe4559992e567847b7c9edaee8d0a4ef33f878e172ad0f9b611804860ef",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 3946,
+      "git_content_sha256": "95588b0def3c29471a31a74a1ebc57dfbd9e79d2fdd30037d66d173f201367a6",
+      "path": "docs/INTRATRADE_DATA_DICTIONARY.md",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "95588b0def3c29471a31a74a1ebc57dfbd9e79d2fdd30037d66d173f201367a6",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1401,
+      "git_content_sha256": "8b7e1bd7aefb2c62e118c63d2e03971950402ee4f0945ed610f3c336aa715a07",
+      "path": "docs/DATASET_FREEZE.md",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "8b7e1bd7aefb2c62e118c63d2e03971950402ee4f0945ed610f3c336aa715a07",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 6934,
+      "git_content_sha256": "850e07f019e73c03180511cb9b9e40b42a6bebf161d2a4b6ef1f107536fcd1e2",
+      "path": "docs/INTRATRADE_RESEARCH_PROTOCOL.md",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "850e07f019e73c03180511cb9b9e40b42a6bebf161d2a4b6ef1f107536fcd1e2",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 3061,
+      "git_content_sha256": "9aa59ec678e74314b185b865b13f9affcd4fee7ea451fde59f67c45fd57c5a99",
+      "path": "docs/INTRATRADE_R2_PROTOCOL.md",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "9aa59ec678e74314b185b865b13f9affcd4fee7ea451fde59f67c45fd57c5a99",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 2392,
+      "git_content_sha256": "0c8c4d8ad128788e6bf0d50299615e98fd32ab69480ad4a3fef26a2ce3a77bd0",
+      "path": "docs/INTRATRADE_R3_PROTOCOL.md",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "0c8c4d8ad128788e6bf0d50299615e98fd32ab69480ad4a3fef26a2ce3a77bd0",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1688,
+      "git_content_sha256": "38bea5ebbdef879cb2f7db69d8eeb138f6e9ff669abb54f62250b00bd45ac6c0",
+      "path": "docs/INTRATRADE_R4_PROTOCOL.md",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "38bea5ebbdef879cb2f7db69d8eeb138f6e9ff669abb54f62250b00bd45ac6c0",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 7025,
+      "git_content_sha256": "c35f7308a9eed981b35256601747295f100339b1663c2516d251dac2cce75bc1",
+      "path": "docs/FUTURE_VALIDATION_PROTOCOL.md",
+      "seal": "VERIFIED",
+      "sha256": "c35f7308a9eed981b35256601747295f100339b1663c2516d251dac2cce75bc1",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 2513,
+      "git_content_sha256": "cfe458fa0122f70a4f18361c996a3ce317621f6e4bf9e68257a9d29613c0f7ea",
+      "path": "docs/FUTURE_VALIDATION_READINESS_RULE.md",
+      "seal": "VERIFIED",
+      "sha256": "cfe458fa0122f70a4f18361c996a3ce317621f6e4bf9e68257a9d29613c0f7ea",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 8591,
+      "git_content_sha256": "f9406cd6cdc0312ecc62071fc4db9c10b90f63af5feebc49bc38179ddb93a7e1",
+      "path": "docs/PROSPECTIVE_EVALUATION_PROTOCOL.md",
+      "seal": "VERIFIED",
+      "sha256": "f9406cd6cdc0312ecc62071fc4db9c10b90f63af5feebc49bc38179ddb93a7e1",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 2593,
+      "git_content_sha256": "ebf9483b8d1dd9000042e746a3d0d022225ceedfdec2e0e79e132b4d6cb0770b",
+      "path": "docs/DRIFT_MONITOR_PROTOCOL.md",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "ebf9483b8d1dd9000042e746a3d0d022225ceedfdec2e0e79e132b4d6cb0770b",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1235,
+      "git_content_sha256": "bb1f29507fffd749d5158a8819eb0af3adf9a3058addc7a02d2b727972a0b8d3",
+      "path": "docs/SHADOW_MODE_PROTOCOL.md",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "bb1f29507fffd749d5158a8819eb0af3adf9a3058addc7a02d2b727972a0b8d3",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "PENDING_PROPOSAL",
+      "bytes": 13276,
+      "git_content_sha256": "4dd014e1af4a5848edc6a7310170f198cbf5977a9ac0ffe862dc01145a57e3ce",
+      "path": "docs/PC_A_NATIVE_TESTER_CAPABILITIES.md",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "4dd014e1af4a5848edc6a7310170f198cbf5977a9ac0ffe862dc01145a57e3ce",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 13581,
+      "git_content_sha256": "d1cfbd67ef000367b97b00f55160761df603a3a89d91464c660a50bc79b991fb",
+      "path": "docs/PROSPECTIVE_OPERATIONAL_ADDENDUM_20261023.md",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "d1cfbd67ef000367b97b00f55160761df603a3a89d91464c660a50bc79b991fb",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 981,
+      "git_content_sha256": "ada74c16034f0929805a273e89397845819f06ce81815160cb6cb25bc9c20b0e",
+      "path": "configs/timestamp_clock_contract_v1.json",
+      "seal": "VERIFIED",
+      "sha256": "ada74c16034f0929805a273e89397845819f06ce81815160cb6cb25bc9c20b0e",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 959,
+      "git_content_sha256": "f28c2f460617115beca0183cf7a7d7bb737faa7d06c2f38fd50ce8c03376fb0a",
+      "path": "configs/drift_feature_whitelist.json",
+      "seal": "VERIFIED",
+      "sha256": "f28c2f460617115beca0183cf7a7d7bb737faa7d06c2f38fd50ce8c03376fb0a",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 599,
+      "git_content_sha256": "d3714c3eccd84cae29875a8d2a79fa4123fc0d674336c05c12a225854782751e",
+      "path": "configs/drift_feature_whitelist_v1.archived.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "d3714c3eccd84cae29875a8d2a79fa4123fc0d674336c05c12a225854782751e",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1019,
+      "git_content_sha256": "fdba4ef99e42ac7252bc96f8102ec5302251c3931c86a689a1a9c132ba789d06",
+      "path": "configs/prospective_candidate.template.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "fdba4ef99e42ac7252bc96f8102ec5302251c3931c86a689a1a9c132ba789d06",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1001,
+      "git_content_sha256": "c1675bd21e3560908cfe6be70c0b5a2fbe18757bf6df02343d35578443187f08",
+      "path": "configs/future_validation_cohort_manifest.template.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "c1675bd21e3560908cfe6be70c0b5a2fbe18757bf6df02343d35578443187f08",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1870,
+      "git_content_sha256": "ec3f785d44e0700f086360a4c40e6bb29092ccbf67125bcccb8f27d114ce3d47",
+      "path": "research/hypotheses/HYP-20261013-001.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "9227692cb12cd073eb4c3944d5b69010f51083784d41156241f6825b6b520de7",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 3154,
+      "git_content_sha256": "c92db486d4ad5f4c7d1321568908db91863ebfd566486238db61d95a618442a7",
+      "path": "research/hypotheses/HYP-20261017-DYN-001.json",
+      "seal": "VERIFIED",
+      "sha256": "92ba1f88a7a826c41b04275fadeefa334eeee4d8d92d4eabbe4bd704c5f1118f",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1772,
+      "git_content_sha256": "bf8d2f1c5d1ab7fdd775f00a01833c9b355e5b3c5062a52ff376898af592b50e",
+      "path": "research/hypotheses/HYP-20261018-R2-001.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "f68b34a61ee9e61a1d25d7dde4194fd219bebabe787dffd8dcda0a9069509604",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1767,
+      "git_content_sha256": "6967d2d80e840a1d5c00f180c62aaf1c891baa099398e048818debb10a929551",
+      "path": "research/hypotheses/HYP-20261018-R2-002.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "dc2c8259a193bb3a000a5ae8eb6ebf41125ef7f0228367ab4b991f9e2e4f5f90",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1748,
+      "git_content_sha256": "abfed4eac54421015922b7dbd86905da6a2e0f63e8af6d562d9fd44d4740e27c",
+      "path": "research/hypotheses/HYP-20261018-R2-003.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "d49f192f7463f632274e7bef1bcac02ff18833b4582d90a6485d5bafcdfaab1b",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1740,
+      "git_content_sha256": "11f72c438eb5818c03b5524d519eb3e1122420b55c29cb9c8dc20e5951624ab7",
+      "path": "research/hypotheses/HYP-20261018-R2-004.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "cb9149a8581cedbe26bf1202806d569692c6fd0016176e34d61fe55a5434a579",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1810,
+      "git_content_sha256": "e0634f52eba3f9bcde79a9a9fb49ade71b281d81fdcc6a6d00862d8490110d19",
+      "path": "research/hypotheses/HYP-20261018-R2-005.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "4e81d74630d605e5b27c9f974486b6d85dfa0c5113eccd8ddcb898e48484472a",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1823,
+      "git_content_sha256": "4cee56607423f6409b2eebf0811e4972022a966076422c7e72dfdf1d5f786fad",
+      "path": "research/hypotheses/HYP-20261018-R2-006.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "e543ee673d0cc8f23c78495cf5a1a4cebb464c4f33b00da9f906505c5234022f",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1932,
+      "git_content_sha256": "2d5dbaf9e8d05f3519f3aebe771b3a09546902f2389d2e8232ce35f431e014dc",
+      "path": "research/hypotheses/HYP-20261018-R2-007.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "58a859555b1718987ea51f42840bc8b28edff8a72742c6ad16a4359ae14e9dd3",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1761,
+      "git_content_sha256": "fdbde0215d978756adc0ad6d70fe4748ef39f314d7b239d9101b56f762b9d2fe",
+      "path": "research/hypotheses/HYP-20261018-R2-008.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "a2c8280c1a795b5e1851009630652d80d7aa6e24670dd5f8f7794e6be23e7a79",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1484,
+      "git_content_sha256": "67053c6eef4ed854dd82d14fc40865ba3dd2f2588ca571cd2b5fc3dc02a64d67",
+      "path": "research/hypotheses/HYP-20261018-R3-001.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "4f11859afcb5b6df55a226f45977109a64f8c014cb87c402a7de1a2ccde0fcb8",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1436,
+      "git_content_sha256": "57aa4725eb2e47eafa68d685f13e23c3faa40bbda447a15ff7685b0076f80913",
+      "path": "research/hypotheses/HYP-20261018-R3-002.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "930853e430141c5e22a5db4c5e3bd8e0664b9cdcbea56c616f00623e75899755",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1501,
+      "git_content_sha256": "6d5e02a2b2edc748f64776f59fc6f0ce10551b5d3570a1baa14d2ec755d8eb8b",
+      "path": "research/hypotheses/HYP-20261018-R3-003.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "51cde5381c2e08ff325343921bca4d968623e2a0d65ab04000ce87ebe2ca663f",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1605,
+      "git_content_sha256": "ef00cc2f1be142f767bfeac793356b1f96a2cf72f8b47afa300e6eed7384c9c5",
+      "path": "research/hypotheses/HYP-20261018-R3-004.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "5d9f07c65e881ce4368336b1a898482ff3501e8d9212db794d4242df1b7345fe",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1505,
+      "git_content_sha256": "a5f4e683cdff2c82b80f11a125a1ff07354e0c44cb764368bfac5ba62b877b0e",
+      "path": "research/hypotheses/HYP-20261018-R4-001.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "4399333e5783af17704ddf2858ed29f9da85fe8f00e59832128479bc6bcec5bf",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1468,
+      "git_content_sha256": "9fe7e1653ab8b4e223ebd8ca960c1cbbcbae19aeac6da700417be4d2c3dd5526",
+      "path": "research/hypotheses/HYP-20261018-R4-002.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "8775a52827ee22b762bcf5a879d699e8bae08c5a66318f92a563dccc75863689",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1513,
+      "git_content_sha256": "f4c4ba90fb40f543d7a01522d895bcbfddcf66517777f0f1426c4da3d3c1e791",
+      "path": "research/hypotheses/HYP-20261018-R4-003.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "49c2ecf3483f726591f0fdd863b6c9695cc9195983c6e983896ee6817772550d",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1545,
+      "git_content_sha256": "d72077428848fbad53667977533c8563f7ab05e38413faf5a394b6d5991f535c",
+      "path": "research/hypotheses/HYP-20261018-R4-004.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "fecf210fa043cfcfe540cc99e758c4cf56ca276f3868ce851a2b08c6775d20e0",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 812,
+      "git_content_sha256": "415b526f8c14ec7f144acc4e0630a259a50da4c5dbfc8673114f4ad17782be7a",
+      "path": "research/hypotheses/hypothesis_template.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "15ce3f1c88ac4d281409f81e492dbf8eac907706ad70160159de63acc81f7e88",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1262,
+      "git_content_sha256": "107fa3e336bb6711974d042c9e866f80e89a65bb1d9afbee4bdd4cf10531eac3",
+      "path": "research/hypotheses_round2/manifest.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "107fa3e336bb6711974d042c9e866f80e89a65bb1d9afbee4bdd4cf10531eac3",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1698,
+      "git_content_sha256": "6237623fb8fe8844a1af43d7959296232ee2a615bd2472ac15a94279bf50d1e1",
+      "path": "research/hypotheses_round2/R2-BUY-ha_alignment.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "0d16fe5d2783aa19cd74291336dd619aedb17cf548c6fbd438dfe48a42ef96f5",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1831,
+      "git_content_sha256": "17dc1999facf9e6568a61696f33d476ec1b9f03f1f3c5fefbd0ddfe1c82ec78d",
+      "path": "research/hypotheses_round2/R2-BUY-ha_alignment_and_outside_value_area.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "0ee145016540b24a69e875afd35a40fa192daee80f086398753c8b5592a854ba",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1808,
+      "git_content_sha256": "623670922c03a938492d54e572fad40276bdc73d4cd1516a45dea500765ab15d",
+      "path": "research/hypotheses_round2/R2-BUY-ha_alignment_and_volume.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "e714fba5e66147f96f82ec065ac05d7a2289648cf34a4c8d20f07181397a6ff6",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1832,
+      "git_content_sha256": "83f6e6c644792532015a70855d0b4c5a657aa372e52b6a8abb8d8e28017bc774",
+      "path": "research/hypotheses_round2/R2-BUY-ha_transition_and_volume.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "bc6400da33fca2d63bed47987a44e391deed78b3422b9505ee290dcb07b7d766",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1716,
+      "git_content_sha256": "dcd99bd8e9d8a9178aa367f515d1a46896ca478bf278acb1af372bd679abba55",
+      "path": "research/hypotheses_round2/R2-BUY-volume_at_or_above_baseline.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "ec334137a46295e871af56f1aeaecd7a1440582e82a003ee90b8b9b1ab350d2d",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1703,
+      "git_content_sha256": "642272f24e090b146ca62300b1f3d4fb9f530572ee1e37701498855ac8a3b9fa",
+      "path": "research/hypotheses_round2/R2-SELL-ha_alignment.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "715786ef1ed9d1841ce08a30bdf5a8770b193c1d2175c94fdcfa9b966b3b22ba",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1854,
+      "git_content_sha256": "d28ff9d87631621b22cf31310d53b05a7847ffd12ece1d2efa0c9f6e93b269fb",
+      "path": "research/hypotheses_round2/R2-SELL-ha_alignment_and_outside_value_area.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "d738617c3acabe1817f71df474701493e21ae3c29731317a7076c0e9470ba07c",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1814,
+      "git_content_sha256": "8a08538d3cd46d9c23590a206a235f82f2c0275fca9681d231ff97bffc63c5ff",
+      "path": "research/hypotheses_round2/R2-SELL-ha_alignment_and_volume.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "a8de156bfbf0ff4b1a09c2e092b60c12bc1f765f27bac44e2e37504716d57466",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1838,
+      "git_content_sha256": "b81769e6ec7d26686b4f847781b8ca5bbfc8876e57f02fc581e74bd4a51e662e",
+      "path": "research/hypotheses_round2/R2-SELL-ha_transition_and_volume.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "a88014a71271fae71229208fe2be9139c3c3a87f63321cf6c23c00ecb2cbe26d",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 1705,
+      "git_content_sha256": "dda50ba4fe036d94af7b83212aa15386582c683ef40c3528e21fc107d6ef2069",
+      "path": "research/hypotheses_round2/R2-SELL-volume_at_or_above_baseline.json",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "b3b7a2c45c61264fa9b31f914f0a91672b8b31ed9c247b22192d85f73e9878fc",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "REVIEWED_FROZEN_OR_OPERATIONAL_SOURCE",
+      "bytes": 2035,
+      "git_content_sha256": "1a174f672fc10693a246a32ef9bb4c18ad97f8eaf89f80f993a779195349d535",
+      "path": "research/hypotheses_v2/HV2_ENTRY_SPREAD_ATR_ROUTER.json",
+      "seal": "PARTIAL_LOCAL_CRLF_GIT_SEAL_VERIFIED",
+      "sha256": "b439b0b4d1d5cd66b2f09f2caba6bccd25b5b40d0795a001b087093f5172a688",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "ARCHIVED",
+      "bytes": 2731,
+      "git_content_sha256": "328033a8eff242bd3ec6df97e93be841f23a3c578aa29602d64f491a3c83e776",
+      "path": "docs/archive/pre_cloud_20261027/DRIFT_MONITOR_PROTOCOL.md",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "328033a8eff242bd3ec6df97e93be841f23a3c578aa29602d64f491a3c83e776",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "ARCHIVED",
+      "bytes": 7622,
+      "git_content_sha256": "904e1097106e9b0bd3b5dcc87417e5f51fb9ef34af366321d995599529f1eb53",
+      "path": "docs/archive/pre_cloud_20261027/PROSPECTIVE_EVALUATION_PROTOCOL.md",
+      "seal": "VERIFIED",
+      "sha256": "904e1097106e9b0bd3b5dcc87417e5f51fb9ef34af366321d995599529f1eb53",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    },
+    {
+      "authority": "ARCHIVED",
+      "bytes": 2104,
+      "git_content_sha256": "680a1a7020ff0af5b7d647dd8502d55c68b0bef16b7f42489102cdf1c70be279",
+      "path": "docs/archive/pre_cloud_20261027/SHADOW_MODE_PROTOCOL.md",
+      "seal": "NOT_PRESENT_NOT_INVENTED",
+      "sha256": "680a1a7020ff0af5b7d647dd8502d55c68b0bef16b7f42489102cdf1c70be279",
+      "status": "VERIFIED_CONTENT_NOT_SCIENTIFIC_AUTHORIZATION",
+      "unchanged_from_reviewed_head": true
+    }
+  ],
+  "missing": [
+    "outputs/splits/split_manifest.json"
+  ],
+  "new_contract_activated": false,
+  "original_contracts_modified": false
+}

@@ -1,0 +1,24 @@
+{
+  "CAUSAL_AUDIT": "FAIL_GLOBAL_UNCHANGED",
+  "arrival_chronology": "PASS_NATIVE_ORDER_THIS_DIAGNOSTIC",
+  "baseline_fill": "UNCHANGED_SAME_TRIGGERING_QUOTE_VIRTUAL_ASSUMPTION",
+  "cutoff_to_callback_native_label_delta_ms": {
+    "max": 49327,
+    "min": 5
+  },
+  "delta_is_network_or_compute_latency": false,
+  "feature_values_all_prefix_invariant": "NOT_PROVEN_BY_THIS_CHECK",
+  "fixed_native_date": "2024-01-02",
+  "historical_data_vintage": "UNVERIFIED",
+  "independent_utc_generation_time": "BLOCKED",
+  "proposal_status": "DRAFT_NOT_ACTIVE",
+  "quotes": 79211,
+  "signals": 28,
+  "snapshots_checked": 3279,
+  "source_run": "diag_fd4e5bf3d468",
+  "source_stages": "INFERRED_FROM_FROZEN_ON_TICK_CODE_NOT_CPU_INSTRUMENTATION",
+  "split_membership": "UNVERIFIED_NOT_ADMITTED",
+  "training_authorized": false,
+  "training_readiness": "BLOCKED_BY_RESEARCH_GOVERNANCE",
+  "virtual_entries_checked": 56
+}
