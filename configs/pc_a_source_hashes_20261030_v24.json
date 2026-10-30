@@ -1,0 +1,1070 @@
+{
+  "collector_version": "pc_a_native_quarantine_v1",
+  "files": {
+    ".gitattributes": "9a8b2544d79bc3d8e9c0412a107cb9cb615253165482263880333e19d6c7e729",
+    ".gitignore": "84dd5403806517e0c4446855893726b0decc715e6aa24109e64e00aca5620f71",
+    "configs/clock_attestation_evidence_20261023/attest_20261023_a1_native.csv": "0a22b844189ca22fab4afe0df58b5520824bdb08d5f263f3a74a854e6c627a72",
+    "configs/clock_attestation_evidence_20261023/audit.json": "2c5d63fdea6fce7ff097ad7e83fd003ded513e9313942bc6a162df8bc0f22370",
+    "configs/clock_attestation_evidence_20261023/audit.json.sha256": "a045ef771f0d7d63379f4ad8c9f3295d6a46bc564150a70293f37806cc98ee54",
+    "configs/clock_attestation_evidence_20261023/existing_main_k_parity.json": "e9af3335363e0bda8f197924f349a8959695720915975d7602314bcd2876eeba",
+    "configs/clock_attestation_evidence_20261023/native_event_views_blocked.json": "d184f0bfb4312e06253ed7e45a3fc3eb4a18a193aae15ee0c7e74ca1e5d7c54e",
+    "configs/clock_attestation_evidence_20261023/paired_capture.json": "b8f7ac433516e95431c3966eb10be47848057c6e48dd54376c55995c9647b74f",
+    "configs/clock_attestation_evidence_20261023/runtime_blocked.json": "f19ccf18695dac5bc585d2f835bdf2a980bf6feefc75f3d3fafe9d91c46d36ee",
+    "configs/clock_attestation_evidence_20261023/zone_examples.json": "22cf338bb20a8eb372d966f2d29c25b6de0810612ddff1c2422095bec2e8fbe2",
+    "configs/clock_probe_a2_build.json": "a84de511223437e502f09b9466a1f13a52b2471518747e41a9f01a147da26a03",
+    "configs/clock_probe_a2_build.json.sha256": "3406e95a35c10194af2138ee0d43a68092d4cb7b7360d9e362f0690df3693ce8",
+    "configs/clock_provenance_evidence_20261023/audit.json": "4a64e213b133a099f115ae1ba927410e9c64cfaec3ccf90f917de2acc558986f",
+    "configs/clock_provenance_evidence_20261023/audit.json.sha256": "6785b0944b3128cfa2e7e8bc07639f7d97cd48fdb6db96de22640f004ed60543",
+    "configs/clock_provenance_evidence_20261023/clock_20261023_a1_native.csv": "68ca156844b80b22b6eb09b0888caf4229d83443c0e855955fc6b5c22c70cd0c",
+    "configs/clock_provenance_evidence_20261023/clock_independent_references.json": "c6dd3f1daf8f120f1526078d3cf2c28f91fd826e1cbd5428a3018fb6a1ae7497",
+    "configs/clock_provenance_evidence_20261023/main_k_existing_parity_reaudit.json": "cadc7ec30586e0d8573cf4307ae822cfccf15334270eb5fb3ad1d10ed5000029",
+    "configs/clock_provenance_evidence_20261023/quote_clock_monotonic_20261023.json": "cecca6941c9faf20b80f12d06f88188873f14987131d0bfdf87d09fbcddca220",
+    "configs/clock_provenance_evidence_20261023/quote_clock_tls_verified_20261023.json": "721a562b8bf547244274e087d5be357b0f89d725df27b68757e4dc155b3d2c70",
+    "configs/clock_provenance_evidence_20261023/runtime_readonly.json": "5d3e1610ae8c4c16f2890a1022d2216adc2ec96ea48aabea91fa541dd93f53a0",
+    "configs/clock_recheck_20261023/recheck.json": "9aa0706f7aaa0d6ba221ab242b92f5d2cb915fede78e7072e8d4d5e7c2454d48",
+    "configs/clock_recheck_20261023/recheck.json.sha256": "8db9b73b90313a1b578fa69af748bf863bdae921671cf398e8e9a18342fdd7fd",
+    "configs/clock_sync_block_evidence_20261023/archive_proof.json": "246b9d989aad8ca076349a1858b82cca5553a4d26665334a6bf61bb106b09684",
+    "configs/clock_sync_block_evidence_20261023/automatic_routes.json": "b634ec592e206657a182dabe763170faf7262c6a92452ac6a20970ae20acd125",
+    "configs/clock_sync_block_evidence_20261023/existing_main_k_parity.json": "e9af3335363e0bda8f197924f349a8959695720915975d7602314bcd2876eeba",
+    "configs/clock_sync_block_evidence_20261023/mcp_attempt.json": "9cf8241de4dfcaf37e8f4bb7a049d29439dc90883870a264c45676f70a496457",
+    "configs/clock_sync_block_evidence_20261023/previous_a2_markers.txt": "abbcf95b7f96d2edbdc8edfd7169fd82e60dbed589b46421c03a01aaa3ecca1e",
+    "configs/clock_sync_block_evidence_20261023/previous_a2_native.csv": "3e019ac5acf18a93db974a8123f6eb05858440275c87b350e0a4f74d255e5a24",
+    "configs/clock_sync_block_evidence_20261023/python_watcher_ready.json": "1e6a78a68eb2c85c12691f3760e8f06335a0632b1c49f0b966d340a238717f91",
+    "configs/clock_sync_block_evidence_20261023/startup_attempt.json": "ebf1b7480f3aa88fc4becce69432c46aeb924eadb555ffcabc81c532657a971f",
+    "configs/clock_sync_block_evidence_20261023/status.json": "0600c5d7052db8e4b7e56de15554d1366cfa759bae7abec39c8f9aada42c7238",
+    "configs/clock_sync_block_evidence_20261023/status.json.sha256": "42327d56380fb93e4a84346a2cb1a039e55218fdee6001fa2b3ab3294b330d18",
+    "configs/clock_sync_block_evidence_20261023/temporary_task_cleanup.json": "b4902add159439d4445d9dd4bf19b828a038bfb99ed28cf239146b42b687b35e",
+    "configs/clock_sync_block_evidence_20261023/temporary_task_final_state.json": "6b08d4085dcc2e888f94d152a5370bb91f4e334226d787b2c534e69422d54ee7",
+    "configs/clock_sync_block_evidence_20261023/w32tm_readonly.json": "4d8b29f058158515e9cf18df3cbc396958234cfc1197d91a013af5ac8cc052b8",
+    "configs/clock_sync_block_evidence_20261023/win32_precise_initial.json": "d9c08bd7c6ac93be5ca485a0cefbbb06c2d51aa4020cec8828042c27e8525c32",
+    "configs/clock_sync_completed_evidence_20261023/audit.json": "4827a5965cde66a70514d88bb278c61bb8f1bf6c715ff3b12505fba697613003",
+    "configs/clock_sync_completed_evidence_20261023/audit.json.sha256": "3f64185e367d31ef3b31dc337cbf469908340c5cce8bf3076fa098686307e9f4",
+    "configs/clock_sync_completed_evidence_20261023/capture.json": "8bfce9e3b0bb4de0e6ec2dde6252cb4d6c09a5157b3d8925d3ec91933760913e",
+    "configs/clock_sync_completed_evidence_20261023/hashes.json": "b902b597a3dceef02b180a7ac02a14f997913dfbc613b203811051512ba132bb",
+    "configs/clock_sync_completed_evidence_20261023/markers.txt": "5e4e3bdb2926e77653691ba3ef986c2fdf6092c9627b1327bd7c08c4573ec5ba",
+    "configs/clock_sync_completed_evidence_20261023/native.csv": "1a1fea07c46803c97e21c6130e3ba42764b29834e5d46c34587c6876b543d1b9",
+    "configs/clock_sync_completed_evidence_20261023/published_hashes.json": "8acd228e04c132dd264bab0a298a70d38f3750ed3271e070411e7d0e87000b2f",
+    "configs/clock_sync_completed_evidence_20261023/ready.json": "c0c27d57371081ebd2a7839c81dc03b9b68109cc49cf2f322cb10c7c3899f0b0",
+    "configs/cloud_continuation_source_hashes_20261029.json": "ff3308abe603b7a30f723eb6fbda5551a641138c2998def09659b71128970687",
+    "configs/cloud_handoff_20261027.archived.json": "623ebdce8cdc491bae4430082cd2dbb339695fc3c072a507b7d0da96073b447b",
+    "configs/cloud_verification_20261027.archived.json": "d19fdf71d0abac4a27718c7b1812f8df40ab2b18bf63784c0b909f787d2b4df9",
+    "configs/controller_defaults.json": "23153130359eefafb05b220b720c7354d864ef43531bd6d122bc55a789155afc",
+    "configs/controller_requirements.txt": "8f716be18f94c1b8fa09d8618e79d009303e32669e90f8a28d8f11026c121ade",
+    "configs/drift_baseline.template.json": "580de5e1f9f086f80a1a78cfcc9c8fc9c363df11abe6d26122f8d26a246edd0e",
+    "configs/drift_feature_whitelist.json": "f28c2f460617115beca0183cf7a7d7bb737faa7d06c2f38fd50ce8c03376fb0a",
+    "configs/drift_feature_whitelist.json.sha256": "b3dc1f52bee31aad768d956026df58c1a74c35ecd74df1743d1e442ad7931da4",
+    "configs/drift_feature_whitelist_v1.archived.json": "d3714c3eccd84cae29875a8d2a79fa4123fc0d674336c05c12a225854782751e",
+    "configs/ecuador_time_display_evidence_20261029/dst_2026.json": "3913b66067690a4d0f55cb137700ed966d596d9d4aca512cffb10d9dc2a88e78",
+    "configs/ecuador_time_display_evidence_20261029/reference_sessions.json": "2a95542ab69a9c42ebf27aabdd729d90de569d5a6cbf81b1f18929248073334d",
+    "configs/ecuador_time_display_evidence_20261029/status.json": "24667f5c0ae4f91a342bf8b3c70b3962dfe00b12291fd67c524d4b7e6ef628c2",
+    "configs/ecuador_time_display_evidence_20261029/tests.json": "14d9434976defcb87cb3c1fe60f15bb6285664c4c99d4315f4be1734c192734c",
+    "configs/future_cohort_metadata_spec.json": "52ec66925013e88df5252c3b46bac2f405d96d2051ad73c6d5b3bddd5a08c340",
+    "configs/future_cohort_metadata_spec.json.sha256": "7a15f01c4af295364e98e8706d0e0803356965d1e7cd2b2c5251e463e7c0256b",
+    "configs/future_cohort_metadata_spec_v2.prepared.json": "132b8b2b0e585356d2b38c8ffcd99355f9a1eb227888b47b33503783a3bd10b7",
+    "configs/future_cohort_metadata_spec_v2.prepared.json.sha256": "a050b22a89c43a1a19043e410d994aadca0c5548f2953258eb226e903e73a0fd",
+    "configs/future_cohort_metadata_spec_v3.prepared.json": "a285f2dc3d6519eee4421b5cfecd01e7522a5f2e24df5facf797b3769aaa2119",
+    "configs/future_cohort_metadata_spec_v3.prepared.json.sha256": "214b9c8aca460bac782a96e29d7c55ec2c732a2fa30a909db57b18610ed8533b",
+    "configs/future_validation_cohort_manifest.template.json": "c1675bd21e3560908cfe6be70c0b5a2fbe18757bf6df02343d35578443187f08",
+    "configs/main_k_documentation_erratum_20261023.json": "060b6f94fe8de570d1997633cc802261b87e91cc5b72547ed59dacaab8521beb",
+    "configs/main_k_documentation_erratum_20261023.json.sha256": "713b26a6758f1ee5b7d9643b3710c80cd1cdccc415996110afee0939fdf9b8f5",
+    "configs/main_k_native_evidence_20261023/pk_41a2e93f_clock.json": "99e28559c4a33c9c370a157b974367adf2102bbaff3393c5c740ad956820b766",
+    "configs/main_k_native_evidence_20261023/pk_41a2e93f_native.csv": "b6ea2c5f52edb7d5dc40ec79b8ef045557362f9b395edc3a03c76e41ecae927e",
+    "configs/main_k_native_evidence_20261023/pk_41a2e93f_result.json": "94eeb36bf392e1c11548ec130453a33a49891db34c9ab5096973666078a4a504",
+    "configs/main_k_native_evidence_20261023/validated_audit.json": "b8b59007a412b8e09cc859406de41397abfef05612ef778e4c31764b7b1c3644",
+    "configs/main_k_native_evidence_20261023/validated_audit.sha256": "20623725cb6516c7a867b9c9a7b22302ef1bde21ccb83aadeb5b142ee1b393da",
+    "configs/main_k_timestamp_audit_20261023.json": "7f5f1ab8f1e181a5d84ec57a9ea4ec8e376302bf7b2df2e395c50937eb1c8898",
+    "configs/main_k_timestamp_audit_20261023.json.sha256": "c08fe86674c673bd41447799dc5308cdac3bf962c2e9bcc1ab52288d34eb9c35",
+    "configs/native_time_mapping_v1.prepared.json": "5c612a1ec4cbdc618e34df02993f8544469ad1741614b94e34548632d5b5aa21",
+    "configs/native_time_mapping_v1.prepared.json.sha256": "01a855f2c150d39a74a785bf12143c7ff121fd73d8e825aafcdf3a8588405b47",
+    "configs/nts_runtime_dependencies_20261029.json": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+    "configs/pc_a_callback_runtime_evidence_20261029/growth_and_recovery.json": "88b3626e2ec53f0e203c9135885ac5754d56286837ef3e8789239a5b3a80e45d",
+    "configs/pc_a_callback_runtime_evidence_20261029/runtime_observation.json": "090b90ed6b4b047452e9df929b4009b52930061bbc48c1cdddf773b556e0560e",
+    "configs/pc_a_callback_runtime_evidence_20261029/sealed_prefixes.json": "8ca0619a16738ae87a0608f1715e1e8d574d5f36d974bf351def6885aa536adc",
+    "configs/pc_a_callback_write_fix_evidence_20261029/deployment.json": "f5b86460708327f46d66a4e6a684f3defc89ee31b7a008e2ba167d20277967c5",
+    "configs/pc_a_callback_write_fix_evidence_20261029/failure_evidence.json": "099c6b0eda2a96aa9f6970c8b6592f9a1ff36ecc3743d0c04ba3c18416be0d0d",
+    "configs/pc_a_callback_write_fix_evidence_20261029/status.json": "a16327d22586fd3ff44064d5171fc554c30116384f9b99ebad4d7f6ee1fd7826",
+    "configs/pc_a_callback_write_fix_evidence_20261029/validation.json": "577ddb72985b492e6d6dcd193ab340bb94640ec6e5af2eaef7bdb97a869ee141",
+    "configs/pc_a_certification_evidence_20261029/causal_audit.json": "5efc2b235e15f9cc8949f369e2519fd5b12e7b9de8632a605e257a75d98c6a3c",
+    "configs/pc_a_certification_evidence_20261029/inventory.json": "df03a53774a93d76b8f93080b295f030a9552a141c8eb385479f74cf46399233",
+    "configs/pc_a_certification_evidence_20261029/measurement_summary.json": "f84dcaccbd91fc43fb68fbfae0c30a3329d961f817aa6518d88ebf5649cc56ce",
+    "configs/pc_a_certification_evidence_20261029/raw_measurement_seals.json": "f1667b8709142ccb293b2ca2900521874fcfa6be90a8706d4e9e9b895daba426",
+    "configs/pc_a_certification_evidence_20261029/status.json": "d9a388b1cb17926bf3e22f952c72ae1bcfbbdf399be9f3aa13d353bff0dfd382",
+    "configs/pc_a_certification_evidence_20261029/validation.json": "a9382da3c9425325210146e15a370494a549d3c3fb512f2f3581c949dde67f08",
+    "configs/pc_a_clock_calibration_evidence_20261030/calibration.json": "39eceb6fa0a630549f25f076bf97cadb24d5aac384643b8f4e15fe7e066affb6",
+    "configs/pc_a_clock_calibration_evidence_20261030/causal_audit.json": "4d1b95341d0e52433fd34d39815ab67f854b238fa42ac1847551ae8622fb43a5",
+    "configs/pc_a_clock_calibration_evidence_20261030/clock_steps.json": "8698bb0d0626aa56e29b325cf05aedf758942671d52e6853e1680d48e0b0f700",
+    "configs/pc_a_clock_calibration_evidence_20261030/correlation_summary.json": "ddc4d2a65cdc5ae11ff04e1973eed2b5cb300794927030b82e5fa11c36a2c8c2",
+    "configs/pc_a_clock_calibration_evidence_20261030/hashes.json": "82d1b42f1f89c8d21e3564b1618540d70e78b7908d597cde5c98ee0a91187be1",
+    "configs/pc_a_clock_calibration_evidence_20261030/nts_observations.json": "c7a79341b29b81a8796bef6231ef7565059ebe74cabd6c85a898b017550ce590",
+    "configs/pc_a_clock_calibration_evidence_20261030/status.json": "6fa7f44336d27dbb31fc2d3a7364f6314b82eba943f3619062c175af977afe6b",
+    "configs/pc_a_clock_calibration_evidence_20261030/system_context.json": "808a1bbed14ffe58b1ad9320b6bf26f9f136a33660773e7032605fa70443be48",
+    "configs/pc_a_clock_calibration_evidence_20261030/validation.json": "897338cabd411f11ecc77fec7139c31ff76c8e1e219a6638e85aee1e9a0427f0",
+    "configs/pc_a_clock_calibration_evidence_20261030/windows_clock_observation.json": "6923f51d2920e977303539bd48d77d2d98bc937d96b569ad4d3637953d3d1f13",
+    "configs/pc_a_continuity_evidence_20261029/external_reproduction.json": "139e2e21dd14726d06f54e4ae3890fe67ebb61ed56bcbc18a8d749a56d27539a",
+    "configs/pc_a_continuity_evidence_20261029/gap_46469ms.json": "0f87af6ca5a3e875591c2bbe349018198f97ddd518441d9a05de568a2ee7b970",
+    "configs/pc_a_continuity_evidence_20261029/runtime_snapshot.json": "9e92d9e002e401b45b8227f0927c7e0eee6264745284ac3d046e98d065773c86",
+    "configs/pc_a_continuity_evidence_20261029/scientific_preparation.json": "5723549e1b3b9891fc442a283b70fa2c057bd3d2371341feab24e2fa4e0f1417",
+    "configs/pc_a_continuity_evidence_20261029/status.json": "e07c69f65e69d4964d5dfc8d0a6bc2cc749adcc578e2a507f13bf4b71a0ba680",
+    "configs/pc_a_continuity_evidence_20261029/system_contexts.json": "deedf09c470ddf6c4508b21d7861419623df7feb7853ad19b0cbc98fc510ee0c",
+    "configs/pc_a_continuity_evidence_20261029/terminal_log_review.json": "a7aa55ee89a16238d64aafef83a66e1ea23c412c4cbfa2d4aaa2d8ca6a192d3c",
+    "configs/pc_a_continuity_evidence_20261029/validation.json": "f4af34177f1e9e96b359445a23bf04c5acc1aa12a099004e6add0b9773bbdb79",
+    "configs/pc_a_launcher_install_evidence_20261029/installation.json": "d2e6b244357ce3edd801938bfa4dc97a616e20891937da8e96d4d3abb9b541dc",
+    "configs/pc_a_m5_post_restart_evidence_20261028/automatic_retry.json": "320fdb711f003f90914d49ff6f77864409fa5a65015e783192b08e4292a3554d",
+    "configs/pc_a_m5_post_restart_evidence_20261028/bundle_hashes.json": "aa59a536af5946829c25d374132f4147f538f1e25652c39c819ca459f428b01c",
+    "configs/pc_a_m5_post_restart_evidence_20261028/repair_audit.json": "1bd579a1edbc8bc49fc899849ba901c22ee8c5fdee799125c38b3d92633b746c",
+    "configs/pc_a_m5_post_restart_evidence_20261028/status.json": "c1179f710a734cd19ba754b9f9eb1dcf82f6494282437ec4121a9ba239e95fd6",
+    "configs/pc_a_m5_repair_evidence_20261028/hashes.json": "9aec4c3360759b2df6ab9230ea2ee8ecbd0af15b06a160fdb6127c9b79fb963b",
+    "configs/pc_a_m5_repair_evidence_20261028/initial_m5_diagnosis.json": "bd3b8dd4197793370ed3340aef2836ff34cadaae61bcb04596d8ace043c980f3",
+    "configs/pc_a_m5_repair_evidence_20261028/published_bundle_hashes.json": "b6f49c6d1c5c9eb24b36bca1ee9edae2e504a5d16fed028fa2aad4b39bf25821",
+    "configs/pc_a_m5_repair_evidence_20261028/repair_audit.json": "d02ea59fb36aee5a73c6f19c0bdeb5b8fa63a6d82195313cb9a6775362803a98",
+    "configs/pc_a_m5_repair_evidence_20261028/repair_status.json": "50dbef3b1e3ca73d2a786c5ff3d4ffc1ab618cf4843e5082b202208eb1d5e9e6",
+    "configs/pc_a_m5_repair_evidence_20261028/tick_volume_investigation.json": "646effb5748a6d1369a08593852f5b1e438f946454f790fef3400084599d6e42",
+    "configs/pc_a_native_tester_evidence_20261030/capabilities.json": "9504d5ac8c0a741aadff18ed52986bfb9def1aa01ae847827e9edd9f51f0d220",
+    "configs/pc_a_native_tester_evidence_20261030/collector_health.json": "4f3beba93f3144aa19d5f3cb66f963db5017f4bcb1803a46a02e136da4ed4363",
+    "configs/pc_a_native_tester_evidence_20261030/contract_review.json": "7a5ca17c5949b09aeeab911cfb060aa164e33f0ef22a9b7c6d2c76b2c6bb4db9",
+    "configs/pc_a_native_tester_evidence_20261030/hashes.json": "20ab108956a491925939bc8d9a6d9b77d19780d9caf6bc303bd5f6ca809f2372",
+    "configs/pc_a_native_tester_evidence_20261030/native_runs.json": "4bade6e18468ac4434abd3a7e57774706594142267ce63352b31f3808bd99eac",
+    "configs/pc_a_native_tester_evidence_20261030/reconciliation.json": "ccd6e445583612116ca4a6bb0a176f57873998d26ddc201732b55f8e649123fe",
+    "configs/pc_a_native_tester_evidence_20261030/status.json": "5408fb0cad69440072553717ad82996ad10dc7eaf7cb71735fb11891008b6c30",
+    "configs/pc_a_native_tester_evidence_20261030/validation.json": "9d230ea8042180a1791a9844f8d675177c6b217ab765bf7247cb822469bb13a9",
+    "configs/pc_a_navigator_verified_evidence_20261029/installation_verified.json": "61e43bb1a214433dcdfeff2751ce045ae485221ad392f66439dfb996bf7bc62d",
+    "configs/pc_a_navigator_verified_evidence_20261029/navigator_tree.txt": "50460ad488a10e351f64dfc2d21d41be74d45071078224ee1db1ec16dd3ed5d5",
+    "configs/pc_a_navigator_verified_evidence_20261029/retained_scripts.json": "b9e85745bc33cefb2fab21c5e121b2096fe427845996b713eefc684b6a1356eb",
+    "configs/pc_a_new_cohort_activation_plan_v1.json": "0573ba4cbea26925e6dbf4867e5e5adbb9b5d13561476dd8924a465a85c9d928",
+    "configs/pc_a_nts_evidence_20261029/authenticated_records.json": "ed4484043abbbed32007e85fc39ec662ba43c8ccd587a6c711cffd31544227ac",
+    "configs/pc_a_nts_evidence_20261029/causal_audit.json": "4034ca25293d3fafaa97bdec3a9156678b728f727398b6b671aa0be977250589",
+    "configs/pc_a_nts_evidence_20261029/native_snapshot.json": "9547068b0f5c0a1de5de23ca10b37b202517ae4bbffb9cfbb65ef0d2a4c73151",
+    "configs/pc_a_nts_evidence_20261029/routes_and_trust.json": "400c975369a5f3d82f10438ab8174951570498cb762a822eb984641aec7995b1",
+    "configs/pc_a_nts_evidence_20261029/status.json": "764fcf817fd89bab4113638d7ce32b65c1dc21d047a3cd3921c3d41cdfc9a353",
+    "configs/pc_a_nts_evidence_20261029/validation.json": "65f7a6e462b351817599dc28345a7c1f36573513292d3471db31e0f802db29f7",
+    "configs/pc_a_nts_xm_evidence_20261029/causal_audit.json": "7d2f7ac796e0ce745c838f3268df948f8e11cda8f4aea16e612ac7e5488d6147",
+    "configs/pc_a_nts_xm_evidence_20261029/correlation_summary.json": "09d572f0560cc48fc62cdb8569319d6daa1ad41bdf77de353ec4adf12d6b781b",
+    "configs/pc_a_nts_xm_evidence_20261029/hashes.json": "aeb98febb1c35fb4c835db4cc1735b56b59b1d4d7f0b27c4f2e12ec69b3914e5",
+    "configs/pc_a_nts_xm_evidence_20261029/raw_collector_health.json": "564f4f74543a69aadd567513ec84a9c221311854334720bb3c09639327eb7b34",
+    "configs/pc_a_nts_xm_evidence_20261029/status.json": "9206e6f1c0648cc24b1b3989a109c34017db99460ad125cca2e94e2ac5fba3cc",
+    "configs/pc_a_nts_xm_evidence_20261029/task_runtime.json": "9551a4d8ed4bcf29f7109c27a29a83fd02bf2df88a8ad893667654c96ef5e7d4",
+    "configs/pc_a_nts_xm_evidence_20261029/validation.json": "af510c82c154abbaf70c7cae37a0a3e451e10099b2808c8d3610cc1d7b7de415",
+    "configs/pc_a_prospective_utc_evidence_20261029/deployment.json": "f4634304d719d3da889bbdddb90986894daeeffd497722cbf0f960ee90e978cd",
+    "configs/pc_a_prospective_utc_evidence_20261029/nts_route_check.json": "bf966665a49fd6ae6e64619d80aeba8d1ef329035529ec4bd144050bd6766334",
+    "configs/pc_a_prospective_utc_evidence_20261029/raw_collector_health.json": "e271a1dc652e43a6e2dc392ae0bacef9c1dbbf289ef1fd849199b13e392aae62",
+    "configs/pc_a_prospective_utc_evidence_20261029/status.json": "491d39c0adcaf61ffff85aad528335c908cd8dd16ba6a610e0ad2dabcbe75967",
+    "configs/pc_a_prospective_utc_evidence_20261029/validation.json": "f177f9a2e5c01d2ab5deb0bff53f06a8fa3f88e46152a9d057beac11d9c970f2",
+    "configs/pc_a_prospective_utc_evidence_20261029/witness_summary.json": "14d693dc1077fb8f13f5fe1b8b9cebf9cdc2b4e1a33499399f5288afa19fdf02",
+    "configs/pc_a_recovery_evidence_20261028/bundle_hashes.json": "c9d19c0ee7183860d922c1f7fb5a6f09163814cf9027f4156ffed2b16f56f2ab",
+    "configs/pc_a_recovery_evidence_20261028/clock_seal_recheck.json": "3c53bca83e0d0fdfca8a800b3da6053ecb32e789d143829f1b8ccd293c6ab8d6",
+    "configs/pc_a_recovery_evidence_20261028/historical_manifest.json": "3bef4fcbff070041c72dfd72e1bd838c213649db4c95adb82ea79b598c2044e5",
+    "configs/pc_a_recovery_evidence_20261028/prospective_manifest.json": "76d9f54c67222e8c1f4e6349cd28b45a0686c7462ad10238ce756fbc1dc055f3",
+    "configs/pc_a_recovery_evidence_20261028/recovery_status.json": "e52cb9b2d49a42604b1a15e94ded9435697398e0df3ef2bff18fb4647ce59a89",
+    "configs/pc_a_remaining_blockers_evidence_20261028/additional_clock_measurement.json": "f58174408ec55b465e967f987f38f6bae28197728abd45890033f0345e208881",
+    "configs/pc_a_remaining_blockers_evidence_20261028/bundle_hashes.json": "de057a62b2d9e2fe9ec186f717f2f8771d9a1f1da43160601cd68f523bd8a466",
+    "configs/pc_a_remaining_blockers_evidence_20261028/clock_maintenance.json": "deb8f17cef1f2102192e52e9ed4ea587acd63bd963716e5f45e729a5a310f8f9",
+    "configs/pc_a_remaining_blockers_evidence_20261028/current_server_native_sessions.json": "cc80aae82f6f50d4f940e0d609907405a0e1b8be0ef0b528ebc0cabff0633ef9",
+    "configs/pc_a_remaining_blockers_evidence_20261028/measurement_hashes.json": "20383802b330eb646d51aab1e61e0fb2425551adb973a65d4a24203456fe06b3",
+    "configs/pc_a_remaining_blockers_evidence_20261028/post_maintenance_reference.json": "f196a710a4485bbc9668bb8be66204886a49b6eb9ab46bcce8397c304a1cb986",
+    "configs/pc_a_remaining_blockers_evidence_20261028/scope_audit.json": "dcf5591466ac0242188396b36957d2cbf05199ffe06ec9fe69bb76b58b4f902c",
+    "configs/pc_a_remaining_blockers_evidence_20261028/status.json": "bb8affb60b41ff168b14bb1b16db729f033d72d4cdd4092f9a970e5d01af7c90",
+    "configs/pc_a_remaining_blockers_evidence_20261028/supplement_hashes.json": "d04575c7b10f21b5d8d1d1084f16c33db16c47949a6111a827a656233c01cb7e",
+    "configs/pc_a_source_hashes_20261028_v4.json": "3a0aad5dfeedc789e5fd1f3be42d5ce609ad175f9e328e435d4eb3b9f0e2e36e",
+    "configs/pc_a_source_hashes_20261028_v5.json": "8079fc88aa32f9d4497e1547b792537a3e5d95ed4179788c31c1af9c973e3368",
+    "configs/pc_a_source_hashes_20261028_v6.json": "4480376a1911016ee29895d93bf6817f5e1255d69cb8e0c1143af79367bec09c",
+    "configs/pc_a_source_hashes_20261028_v7.json": "39a4ddf993413adc1154a0fb001f588ca3ff30db589031a7cc7c79031c448f82",
+    "configs/pc_a_source_hashes_20261028_v8.json": "645e513e01aa5dc4e4d798693bdfea1c7905c27cc618833acdbee64f9a53a850",
+    "configs/pc_a_source_hashes_20261029_v19.json": "e2bf84568198f538bbef460d169a0fb85ff7de0cd45401f64d34f7c4c1c0ab1e",
+    "configs/pc_a_source_hashes_20261029_v20.json": "66302b3ac4ba8dabd80015b8d8025c531d6619de626aa4e4d06d7b287e82c5bf",
+    "configs/pc_a_source_hashes_20261030_v21.json": "31bc0641cf7be7dd45ba57dc33736861320a5485736afae6d6d30d0ed6fa49db",
+    "configs/pc_a_source_hashes_20261030_v22.json": "19e379191be1bce8237a47c2e4ca8a84f4baad45dd4b5f3ef8ae6ab047ccac09",
+    "configs/pc_a_source_hashes_20261030_v23.json": "c11abb0ee7a9555cc670eef6663c6cf9bc6bc04689b0c8dec8b55bc0f8c30299",
+    "configs/pc_a_temporal_semantics_evidence_20261028/bar_time.template.json": "137a277a6b0cb31cd72f7405768dc56923fc1667cb744e605c2ace1a8777c373",
+    "configs/pc_a_temporal_semantics_evidence_20261028/bundle_hashes.json": "00db3275e902c879288f13fc4f6105a0b72253b11a7dbbe548f4528587680acc",
+    "configs/pc_a_temporal_semantics_evidence_20261028/calendar.template.json": "730a6e843187f445b2f096245900cd393b3ab9232d1b90b7bd2ecb45e1490391",
+    "configs/pc_a_temporal_semantics_evidence_20261028/claim_matrix.json": "e962986e1dd623f98e264e975df05a3b131da3a8ae5bfed65053f0dd669704fb",
+    "configs/pc_a_temporal_semantics_evidence_20261028/historical_mapping.template.json": "7708ac7adc3f7f6314f54964a8c7707f9066be781beaac28b5c9669c2ff50d6e",
+    "configs/pc_a_temporal_semantics_evidence_20261028/intake_missing.json": "e0286fcec76e0b084556ebe4e67c0d8949f364deaa38429f3758c9a434248864",
+    "configs/pc_a_temporal_semantics_evidence_20261028/primary_source_receipts.json": "87072476c758d8826f60fd57cb5fc19fe1317e2f69338b7d60dc2416ef80e3a8",
+    "configs/pc_a_temporal_semantics_evidence_20261028/research_preparation.json": "f33a47a5460958a3319c7a37f88a7580b1ca1301285bf683406ac7a0d88acdf4",
+    "configs/pc_a_temporal_semantics_evidence_20261028/source_audit.json": "39185be69727caa009705769e2d5f0d6a9f74d86ef3693136ba17722fa7534b0",
+    "configs/pc_a_temporal_semantics_evidence_20261028/status.json": "a76a17cba2224918823e994847e99aadc6eb98541c6c0521058db26c59b6ae10",
+    "configs/pc_a_temporal_semantics_evidence_20261028/tick_event.template.json": "f42872bc9d2260809eadcfe2f4a1846a6b1a855a267415c41ea5264289712eae",
+    "configs/prospective_candidate.template.json": "fdba4ef99e42ac7252bc96f8102ec5302251c3931c86a689a1a9c132ba789d06",
+    "configs/technical_readiness_audit_20261023.json": "95e36f36ea3b258c24356f7b7eac022053f6e56b92172aeb6d84e23327bf5e1a",
+    "configs/technical_readiness_audit_20261023.json.sha256": "25c6c4b9a952e7ff0719cb33474eb4db93fce43a590ab97bc5ad648c98f74c3f",
+    "configs/timestamp_clock_contract_v1.json": "ada74c16034f0929805a273e89397845819f06ce81815160cb6cb25bc9c20b0e",
+    "configs/timestamp_clock_contract_v1.json.sha256": "55f6e850ea49da9ce0eb3f409dc7b87e49cb677015fafc280501acd0ec00db11",
+    "configs/xm_runtime_session_policy.json": "5afd149e743fa2495bd082cf747950fbe8dd609bbb3794a2a69936a1b739d316",
+    "configs/xm_runtime_session_policy.json.sha256": "fdf0e2112d3576b2d14143b9a3e1b34551376ba6c6f3fd150bdd9cb3238243ea",
+    "configs/xm_runtime_session_policy_v2.json": "77173ca573f2c4525df8d81a05a68f711ac97abac97a484607a13c51e20b3d1b",
+    "configs/xm_runtime_session_policy_v2.json.sha256": "f6b6ee38435771c5b7766a954e9069d0d34f8bf9c0168f280a3cb413e39103a2",
+    "configs/xm_runtime_session_policy_v3.json": "5fef8d48ae17a32f21b336ebc097c16265a063e6179613b010819f6f011e6d1b",
+    "configs/xm_runtime_session_policy_v3.json.sha256": "10d70435f92dc31c4587905d30bcb23fe90b1d8e20d2cd79ecdc46f2e7baea1e",
+    "configs/xm_runtime_session_policy_v4.json": "bc364abc62f65e489dc98822f0387a53a8790e71247c0fe955c82498e1f20836",
+    "configs/xm_runtime_session_policy_v4.json.sha256": "19802379b080cee40f0e3ce3fbcd88b8c51886287fa880547bd4f4d9d6167edf",
+    "configs/xm_session_probe_evidence_20261023.json": "835ff42202c9ae9308e9431db6bb79e980b7285c9f12cab802ba28e656cf15f3",
+    "configs/xm_session_probe_evidence_20261023.json.sha256": "c5f62382225a42299f44f5eb157f333ba7428ef1c9443a7348b301b0896d9e75",
+    "configs/xm_us30cash_sessions_utc.json": "c07d35db58bc3870b4e97ddab30bda15e52e9e907acd5271dfc76e9d683ef55b",
+    "configs/xm_us30cash_sessions_utc.json.sha256": "b46638fdd0efe1fecef6e4c0f4291983a35eaddf5e27b7d35834c1f2b500c67b",
+    "configs/xm_utc_interval_evidence_20261029/audit.json": "f3f7d22c3c6b9acdc07d5626b9455149f11df5479f6758cfe2b59cdb0e89a943",
+    "configs/xm_utc_interval_evidence_20261029/collector_health.json": "683f4b7fb40e0ef4d8936181112b81f90fa98f9eeb55d0c38a5d9bdc8da5a5d5",
+    "configs/xm_utc_interval_evidence_20261029/local_snapshot_seals.json": "be5318a03c69c8e5c06db310609d59a1a5453ddb291b8f51cd967a56c70101c9",
+    "configs/xm_utc_interval_evidence_20261029/public_source_receipts.json": "09b73b101e57e4d6d092af6ebfb08b1f1b045aed53a77d71396946c0725b591e",
+    "configs/xm_utc_interval_evidence_20261029/semantics_and_sources.json": "c0e8031705775ca0fc82226cdd09f3238c8845df2e610d71c17e10032546ab35",
+    "configs/xm_utc_interval_evidence_20261029/tests.json": "8acd4787c889ca9ea8c3c5f49f94f6ed577b560caeebf6caa33783e13356039d",
+    "controller/__init__.py": "8ab10a39c7b9bae7e164094df76d4033f2b41f9b7d5c95b29e4e25e2c51c5b01",
+    "controller/artifact_collector.py": "d9fdd6890389c70d01605c4c327a61300ae92086b472ca623dcd0ad576e74886",
+    "controller/causal_probe.py": "f08fb799b17d82ad5ccb1dbe85d5d8755e44df3014f08ae357487fca9afadba5",
+    "controller/cold_start.py": "1e160a80e63ee10793ae4cfa610b80999fd267b1e15ed58225b55c1960ccece1",
+    "controller/compile_runner.py": "fcc75ba3ca340407bda5631d4573b697f0c3f7391a28c20d035e678792a78796",
+    "controller/controller.py": "b9dd205bff2985b321acb7f133c6ebf5fb5f874452a5f17eeda72284d1cfd0bf",
+    "controller/data_quality.py": "9a993e7f34951c3c5d1e046d4995bc4c77bedb877a922465fecff4825c636c3f",
+    "controller/history_orchestrator.py": "21f5c83d229ce7d094d518683c4c349a3bf881c12d7ca9bf619e4b7bb17db9ba",
+    "controller/mql5/SessionCalendarProbe.mq5": "ba10164dcde167e8f9d3c027a97a7f1fdcce25273d74d801332dc798d3fafde0",
+    "controller/mt5_env.py": "b3181e179ae14ce6d435cb6deb4b4fc3eef09190a126fdff6624bc9a3e66a397",
+    "controller/native_diagnostic.py": "3bac82c90a7afb4298ef8d27d089c3b9cd78ac2fc8dcee132882bfb95559a69e",
+    "controller/native_feature_diagnostic.py": "f14c5466c8cc7aa1f323c46ea41e4c50772fbbf816cd567365db4ec26b87bdf2",
+    "controller/native_independence.py": "6a9c646ca1bfbd0b85563c3ae37879450ff9f94d966e326f8a5f3f127f12f71a",
+    "controller/native_reconciliation.py": "9b42ab06a104d9ca21379f33fabab506fe56360445ec6d77bdfa72bee5f5d3c4",
+    "controller/native_study_design.py": "46906cf2bf0333c500bb6a7950d37c87a8ed01e9362dfd20ed41f51232fff6ed",
+    "controller/postprocess.py": "31a2afb51ccd870c42f656956755ae58c47137786aad80eec811dfa4a32655b4",
+    "controller/profiles.py": "fe13206d5fa43ce319cca0ad0d6854d3089e8a9fb2364574414c791cbc158917",
+    "controller/progress.py": "ad50012ea8f79be6acc3a5555433acfbd37cdb8a95980c2e67bee28e9de8212e",
+    "controller/safety_gate.py": "a1f9d8a0ec123ee353c6da96bc7d7590010c688355c313dfee3f0179b45b6d87",
+    "controller/tester_config.py": "b35577e8843b4e2ba71808f9ae849ded79aebe2bbba771c9b068080f64b316b1",
+    "controller/tester_runner.py": "082b1a50f2b90ede4c1f01b265d708f034a0ac850522b2d1d75082f5f2702a86",
+    "controller/validation.py": "fc988d8142999a520747132c14c994119efae53aa7c00c356f7101c04f3b6d92",
+    "docs/AUTOMATION_POLICY.md": "ca26b0c572f80d2745e29ed2bc93e33b86bbf2638e2017182c9bc0a17696e2b7",
+    "docs/BAR_REPLAY_PREPARATION.json": "c53089d5269f41f1da39bc2010bca278c882f8e88ed880f946f842547966d9c1",
+    "docs/CENSORED_MEMBERSHIP_QUARANTINE.json": "e932d86933958cf5edfad715625bbab35f47c995cf1c13fdfaafdecb20838836",
+    "docs/CLOCK_ATTESTATION.md": "d422c4baa7ad1a8d232783b2806355e3e962196dd9932b4028b546f00f33a023",
+    "docs/CLOCK_ATTESTATION_RUNBOOK.md": "1843621267404e924a8187b4fbc19f849f7dd503da976e5e0ab5cb4b27b95e2a",
+    "docs/CLOCK_RECHECK.md": "5a2df95c7ee4fdf9685eac8c6218f430687cf9d2992278d3f24e2fb60d5ef98a",
+    "docs/CLOCK_SYNC_AUTOMATION.md": "919779d3bd20d4c167faf09dc5a7fc71f495d4000a09bdc12b898310742d8f08",
+    "docs/CLOCK_SYNC_COMPLETED_REVIEW.md": "b1a605c401e9629eab8460f91245ea3bf64e81a4b6088c7b14f8882bf257b8a7",
+    "docs/CLOUD_PREPARATION_AUDIT.md": "7b42be1416514f06d726249ae19feb4d818dbbc73c91ff8279155d879575e2f8",
+    "docs/CONTINUATION_AUDIT_20261022.md": "ee10d758a55609124564e47caedc2d07082a06f79b2d036dd3a62bd8b00580e0",
+    "docs/DATASET_FREEZE.md": "8b7e1bd7aefb2c62e118c63d2e03971950402ee4f0945ed610f3c336aa715a07",
+    "docs/DATA_DICTIONARY.md": "13f5ffe4559992e567847b7c9edaee8d0a4ef33f878e172ad0f9b611804860ef",
+    "docs/DEMO_EXECUTOR_DESIGN.md": "212c8a9fadb0d3aa4653528b8960f24a2a61918d89ddbbef5ca3d5f213a7a36b",
+    "docs/DRIFT_MONITOR_PROTOCOL.md": "ebf9483b8d1dd9000042e746a3d0d022225ceedfdec2e0e79e132b4d6cb0770b",
+    "docs/DYNAMIC_EXIT_TRAIN_REPORT.md": "876e66954b49ed1a2cc0b0dc860b33efee35d69e40b5356aab9841b622f02ea0",
+    "docs/DYNAMIC_REPLAY_REQUIREMENTS.md": "6ed506eb142e61e162b2668285450dc426c04b5c41de1b602f46f360a2e9fd6b",
+    "docs/ECUADOR_TIME_SYSTEM.md": "366b93e8629bdea774ed2ce2678293ae2edc57460eff23196d7cd24d88dbf744",
+    "docs/FROZEN_UNIVERSE_COVERAGE.json": "ace112516d74aaccad5473000df8f2cf12ac5810ca0c624cff60646d17c247da",
+    "docs/FUTURE_VALIDATION_COLLECTOR_PLAN.md": "3ada624b2a65ece685b5942984ea6754b5c5b8d5617154ffa3474f70e7a6e5ba",
+    "docs/FUTURE_VALIDATION_PROTOCOL.md": "c35f7308a9eed981b35256601747295f100339b1663c2516d251dac2cce75bc1",
+    "docs/FUTURE_VALIDATION_PROTOCOL.md.sha256": "b24c4910f4b3bf5d896f909d6c57bd8662b5fa907a9e0f41bc8c0892e4d42cb9",
+    "docs/FUTURE_VALIDATION_READINESS_RULE.md": "cfe458fa0122f70a4f18361c996a3ce317621f6e4bf9e68257a9d29613c0f7ea",
+    "docs/FUTURE_VALIDATION_READINESS_RULE.md.sha256": "56451ad6ba937d90dc36d6c293ac6b57f0523a4eeb63ac2dd4006a30c9f985a4",
+    "docs/GPT_RESEARCH_PROMPT.md": "338247837bd3b98d5520a81a12be2e0ebc4ef0e75ad603b37346d7adfac85634",
+    "docs/INTRATRADE_DATA_DICTIONARY.md": "95588b0def3c29471a31a74a1ebc57dfbd9e79d2fdd30037d66d173f201367a6",
+    "docs/INTRATRADE_NEXT_RESEARCH_PROPOSAL.md": "d87e5208f94a8c389c76e02846e56debf1893820300353f9b71924447d15eccc",
+    "docs/INTRATRADE_R2_PROTOCOL.md": "9aa59ec678e74314b185b865b13f9affcd4fee7ea451fde59f67c45fd57c5a99",
+    "docs/INTRATRADE_R3_PROTOCOL.md": "0c8c4d8ad128788e6bf0d50299615e98fd32ab69480ad4a3fef26a2ce3a77bd0",
+    "docs/INTRATRADE_R4_PROTOCOL.md": "38bea5ebbdef879cb2f7db69d8eeb138f6e9ff669abb54f62250b00bd45ac6c0",
+    "docs/INTRATRADE_RESEARCH_PROTOCOL.md": "850e07f019e73c03180511cb9b9e40b42a6bebf161d2a4b6ef1f107536fcd1e2",
+    "docs/INTRATRADE_STATUS.md": "5c544cbeb2cafc5a90227d0e21ca0ead2b7a848b55bc5b21ce789432f169fe13",
+    "docs/INTRATRADE_TRAIN_ROUNDS_REPORT.md": "c0a4a6699cf25a9b70b55e1f30d095b971587c93ef985102fd08ba8fef133562",
+    "docs/ISOLATION_INCIDENT_AUDIT.md": "e742dc62883c07179d379f866ed77948729715ba5041312448ad016e81d5bbd4",
+    "docs/LOCAL_PC_FINAL_STEPS.md": "171de8f4bf67474409d5cef84d39f83d14c30ceacfd023cdaa10766db4674c83",
+    "docs/MAIN_K_NATIVE_PARITY_AND_TIME_AUDIT.md": "1cfb628c670378721835d98c396169f3a8009d38fbc2278722ac375af52bcac8",
+    "docs/MT5_ACCEPTANCE.md": "cce8c8708a496f8ff8e35232481dff12926f76d50afa1800f589fd40ac110b86",
+    "docs/MT5_CONTROLLER.md": "174cc1a57c1812e44cbf4b246595d4b5563ce0cf3b2e01b29b03f15cd11d291d",
+    "docs/MT5_CONTROLLER_SECURITY.md": "f49041b9325870b3def4fd8d46e09f9a9001ea68a54858ad07d9655c74bb7191",
+    "docs/MT5_CONTROLLER_STATUS.md": "5c544cbeb2cafc5a90227d0e21ca0ead2b7a848b55bc5b21ce789432f169fe13",
+    "docs/PC_A_AUTHENTICATED_EXTERNAL_UTC.md": "43969104810c6e3a788b5ec043e84e60678d2f6e7d3b1d5c1f73e88f9a9a6ef2",
+    "docs/PC_A_CALLBACK_CONTINUITY_AND_UTC.md": "80a418309268800a493d2ea71245d2939fb73fe357db3275dea80c8ab96c886e",
+    "docs/PC_A_CALLBACK_RUNTIME_VERIFIED.md": "9d23438502ca7a08360b225713731b5b6c0e64c0fee29682e423b0a4fced7c1e",
+    "docs/PC_A_CALLBACK_WRITE_FIX.md": "0002793b06550992c882f25271c2616d3f09addf2de3abea18e98065325cafdd",
+    "docs/PC_A_CLOCK_CALIBRATION.md": "67812df0c465ae5248f516f9c24a0f6f3aac8ce9677443cc3047e128ac4fde86",
+    "docs/PC_A_DATA_CERTIFICATION.md": "c734deac894eafd4e2702472c01d90e10d75928463a04aa085ca5552c7d86e2d",
+    "docs/PC_A_DATA_RECOVERY_20261028.md": "03d46cc35c7cf423cc858336f37323fd21a5e5f3a486ee7721f1fbfbb378ef72",
+    "docs/PC_A_M5_CAUSAL_REPAIR.md": "02666d4f557fa59d9d4cecb7f3c2382010247686fd6bec08501826c10d8446cb",
+    "docs/PC_A_M5_POST_RESTART_VERIFICATION.md": "7073cc98396590ffd2995800f428cc1c3889601106bbb7c136047e85ea91d59c",
+    "docs/PC_A_NATIVE_TESTER_CAPABILITIES.md": "4dd014e1af4a5848edc6a7310170f198cbf5977a9ac0ffe862dc01145a57e3ce",
+    "docs/PC_A_NAVIGATOR_INSTALL_VERIFIED.md": "0a005bd495dae901432bedad700d0b0ed046d14a33c2f20fb691e2c53a837fb2",
+    "docs/PC_A_NTS_XM_CORRELATION.md": "702c8632d7e7c1400df8dd59a5b81d7a8c0d1a1184ca3d6f3c288ff6c90cc604",
+    "docs/PC_A_PROSPECTIVE_LAUNCHER_INSTALL.md": "eb5ad0b5f804e498dfc1c2924b786c9ce4f769a5e9bb529cf75d0faa66e7787f",
+    "docs/PC_A_PROSPECTIVE_UTC_ROUTE.md": "57027650be8a1d18fa2c76a39bcfee5a2b4075629bba97b04a6240d01ddd7831",
+    "docs/PC_A_REMAINING_BLOCKERS_AUDIT.md": "5fe6e3fce81edc258e5c2ff6bb3c3e194a8117dcc81256b122fd889047bf918f",
+    "docs/PC_A_TEMPORAL_SEMANTICS_AND_INTAKE.md": "4fc6c988c38dcbd95871cab315a40b68bb12eb60c6cf8aa0c2149970a501d4e7",
+    "docs/PC_A_TIME_PROVENANCE_REQUIREMENTS.md": "38691fa593b044d5e9bd1bb99f19fcd481d4526751e22664dd06fb4324defa24",
+    "docs/PROJECT_STATUS.md": "f4f61bcc71b6ea7389f01bc06e99e353800ef9ec3e356ce0286e59ef843500a6",
+    "docs/PROMOTION_CRITERIA.md": "a2d1b10ddbcf55fa8c3907668c1c10d00446456b2036cc6363187c0934bc3ddf",
+    "docs/PROSPECTIVE_EVALUATION_PROTOCOL.md": "f9406cd6cdc0312ecc62071fc4db9c10b90f63af5feebc49bc38179ddb93a7e1",
+    "docs/PROSPECTIVE_EVALUATION_PROTOCOL.md.sha256": "2585c6597ccb14c4403cd13592ab3a01887ad91e1ffe53d4256d45bad47c6982",
+    "docs/PROSPECTIVE_OPERATIONAL_ADDENDUM_20261023.md": "d1cfbd67ef000367b97b00f55160761df603a3a89d91464c660a50bc79b991fb",
+    "docs/QUALITY_DIRECTION_MODEL_REPORT.md": "a8c08cf803c8242ea7f94015c81335fcc4e555c5a9ecdb285484f94679804d4e",
+    "docs/R2_R4_FAILURE_ANALYSIS.md": "7b6afc4225329f8e005924fb2991e8e9d85b1a7563959c6e3b598bc7d7675cbe",
+    "docs/RESEARCH_PROTOCOL.md": "ba752f220e5a40e262bb6b9476fdf78836c0e136d59ef29936bac562da66bc52",
+    "docs/RESEARCH_PROTOCOL_V2.md": "c02b58504567ca444dda89ad423c24122395c4ad41974037a7aa227aeaa03217",
+    "docs/RESEARCH_PROTOCOL_V2.md.sha256": "ddf929d47595c46d2523a348e48c2acc4e28919e74234874e8f5f1b4b56b64d7",
+    "docs/RESEARCH_READINESS_AUDIT.md": "1e5c5e66894aa3209f7feb6edde34415ab99fd2b43850967587d442000d18073",
+    "docs/ROUND2_STATUS.md": "e2b07c39e3eb4bf39971fae91725e414de9c92d7bc0a8327a896c2f079ecdc1d",
+    "docs/SHADOW_MODE_PROTOCOL.md": "bb1f29507fffd749d5158a8819eb0af3adf9a3058addc7a02d2b727972a0b8d3",
+    "docs/STRATEGY_SPEC.md": "041a9257d487cf2f0ce8b4ddb90b11997acca1d70541279d17615d5ab5ef6ab8",
+    "docs/TIMESTAMP_CLOCK_PROVENANCE_AUDIT.md": "f57464e3ebd408c1f62c0b013fd4c8487c8201303fe7773c3fd77deb30557b2e",
+    "docs/TRAIN_V2_LOW_MEMORY_BENCHMARK.md": "3ad5c89891ced3121a70db572b315590de81f93700ea7a8e216ff7661a062a50",
+    "docs/V2_FAILURE_ANALYSIS.md": "7820cb4f17fc7078d0ffb41807e2857b8492f2312f7de2305a408f0a073d9957",
+    "docs/VERIFICATION.md": "9ae8ec41aa566f75883f997f208d4315316ca86d66aab83735fa61cd50ceccb4",
+    "docs/XM_REOPEN_CHECK_20261023.md": "75d7cb6a39ed6beb822c6bcab152374fcef9bfc0e55a0012db76fa1591f09059",
+    "docs/XM_SESSION_CALENDAR_STATUS.md": "05f0bbdd17f47ed1e475e54ec0d66a80fc1e4df82fa4b49765395d51f7bef96d",
+    "docs/XM_SESSION_CAPTURE_20261023.md": "b0da33d41e34ddb7244001cb5b00a9e48239bc3bc23b4ad98a07815acbfd93b3",
+    "docs/XM_UTC_INTERVAL_CERTIFICATION.md": "b39d3ee791214a1d3ed27ade29b65d3a2239e3109e6b63b44529fbb8de972aa9",
+    "docs/archive/pre_cloud_20261027/CLOCK_ATTESTATION.md": "ce6ce3efb7a5648f2b07a850ea3ec454939917a2b104879ce8d2fe0c20e78dad",
+    "docs/archive/pre_cloud_20261027/DEMO_EXECUTOR_DESIGN.md": "3301b9e20a75ad85bdc3edb935542a138567b62e593a4e0d044c9ab1cb70c3c3",
+    "docs/archive/pre_cloud_20261027/DRIFT_MONITOR_PROTOCOL.md": "328033a8eff242bd3ec6df97e93be841f23a3c578aa29602d64f491a3c83e776",
+    "docs/archive/pre_cloud_20261027/INTRATRADE_STATUS.md": "7863136e3e986556912d2b41062ed58465623c77b7d96a52c384b9b48c8c190a",
+    "docs/archive/pre_cloud_20261027/MT5_CONTROLLER_STATUS.md": "ea060bebc823360418b4e7204c9140fdf06dbb5898230517de7532b85f19dc69",
+    "docs/archive/pre_cloud_20261027/PROJECT_STATUS.md": "b9c12141565ca0a7702c7061153c25e0a5bb1f3d02c5b406d08b3ce0f586f89e",
+    "docs/archive/pre_cloud_20261027/PROSPECTIVE_EVALUATION_PROTOCOL.md": "904e1097106e9b0bd3b5dcc87417e5f51fb9ef34af366321d995599529f1eb53",
+    "docs/archive/pre_cloud_20261027/PROSPECTIVE_EVALUATION_PROTOCOL.md.sha256": "efac96f195069687c61b0ea0893998b8ed2ab992901df8ba268ace7fad34cf05",
+    "docs/archive/pre_cloud_20261027/SHADOW_MODE_PROTOCOL.md": "680a1a7020ff0af5b7d647dd8502d55c68b0bef16b7f42489102cdf1c70be279",
+    "docs/dataset_schema.json": "43b4df09ad9176033c36b5cea343846ee55a0f3b2bc5333f9c7ae87e55e65251",
+    "mt5/HeikinAshiCore.mqh": "d9a1e525a99e66f855bc49c3a696030c5e12ef534a1aeff5012b63a462a3e8ef",
+    "mt5/NativeTesterDiagnosticEA.mq5": "9a979f09a22e9328af1eb1603dbeabdd1974b35410930efdccd8e881138a6b1e",
+    "mt5/PC_A_ProspectiveUtcObserver.tpl": "4a4f6347f7f99888d793aa65f18d7d8ca524a811a87e8d94cda9814cb63f0cf1",
+    "mt5/ProspectiveUtcObserver.mq5": "b275430e62a04c4c89302dcfb7e7e5e6dcd4ecbdbb68b1e1c84298cf74e6faa7",
+    "mt5/ResearchCore.mqh": "99a5328d58bf613d5cc9b354ddfee936a0e23427b8a16792a19d6e63b0011283",
+    "mt5/StartProspectiveUtcObserver.mq5": "d5b6e1afcd709613a4034fb80055096847d512381e17a61dd994005702ceef8d",
+    "mt5/StochasticBarDecisionResearchEA.manifest.json": "fdccf145b762a8b4f959a79b11881e5a8dc175f029f883076d88094f4d868ae3",
+    "mt5/StochasticBarDecisionResearchEA.mq5": "f2e9bf43cbbdc716148847fe53e1f3dd14b21393775ccc809d05cb5e134cb88d",
+    "outputs/status/CLOUD_HANDOFF.json": "50dac0b818e8e56b683b081b1846827fba1d791070da92f16622e74c7064b72c",
+    "outputs/status/CLOUD_VERIFICATION.json": "efc58a2996a9b4237bdf3d67456d2539e026376d2e7c49fefb4dc5a63099d1b0",
+    "proposals/native_methodology_v1/REVIEW_ES.md": "c8ddaac2a6aeac7d25826b59226dde23256e560771eebfda96d5e493d41cb8b5",
+    "proposals/native_methodology_v1/__init__.py": "9113f5999a07548117dd77d4dc4208d6acab41a172097eecd9b2b1b7c81e9f19",
+    "proposals/native_methodology_v1/arrival_review.json": "b9f764d2f6402e7acfe6d9725d1ff60aa68024ecc761e0de70a1f07420748a92",
+    "proposals/native_methodology_v1/availability.py": "7a3b1a99ec10a4ad2ddd39fd4f28c41abf77a306524b665b7da83508159f3580",
+    "proposals/native_methodology_v1/build_evidence.py": "7bcf45e9c82e043888c2c9bc187fb54dd8f90ed20fd8f17a9d3514f35962a5b3",
+    "proposals/native_methodology_v1/contracts_inventory.json": "d2999007c7c12d52b8b0c3a8519058a62e22d73abb3b9a77adcd0a7cece25570",
+    "proposals/native_methodology_v1/evidence_hashes.json": "e1bcb5ce5cc8d1f051521f4c1ebf2e3f3d9164cf380ad3fe488b17ceaf6fd9d0",
+    "proposals/native_methodology_v1/review.py": "9a91c5ad3dcdf06ee949475967a6f7ea408359461a56697cfead7941fd604a62",
+    "proposals/native_methodology_v1/validation.json": "2d4b2b029c41fbf92d08ae3b096e8295d30e9560f1d975ebb59100c31f70e8d1",
+    "python/analyze_clock_attestation.py": "49174343ace2cb09a25e820af98808ec3f6e7f95cd7f790960c39723d0d5494a",
+    "python/analyze_dataset.py": "d61133f58974914028139f933f75235f66a0643a24a4569615c01b9bbd224c92",
+    "python/analyze_intratrade.py": "1a63f35c024e1aea602a22be2ca26e78f2d6ab9ffc0ec28dcad85848ce892dbb",
+    "python/analyze_schema3_train.py": "5d41c93956235a8ebec55b161c90cfccb0cd5b457ab7163de070c84c3f8c6123",
+    "python/build_bar_replay_producer.py": "76bf888f34569b445dff03d182328bab72a134811926eece59cf732a8502c085",
+    "python/build_intratrade_master.py": "fecb51f032d93bf0ae0b48cdf9a00202b0af87aabcd743bb9ad35f950dabd62f",
+    "python/build_master_dataset.py": "8d24742c057faba932adb8f6ac1b728d62b8599e34632b4cea3ba6bf607360c2",
+    "python/callback_continuity.py": "094869ee0da7940caf1b8c41ac83034518a4f4124d6ac4ce330fc1fbbb1ac7a6",
+    "python/causal_metadata_audit.py": "b5e5fbfa704c51d59d671fabf37ab5ba16329c3f93bb56d10994528f8c62335f",
+    "python/censored_membership_contract.py": "0bf8168897b82459fcef456b300b522d3745ef2eb8d5abdbe0bddf465bc945c3",
+    "python/clock_attestation_audit.py": "bcd2b3e921aa79d959de77a7e7e68657359680447c05b67023976d6b30c9329a",
+    "python/clock_attestation_capture.py": "412073dd4bf4902c5808da7d7bb6c54ce4101d34629e0f2c7839ae9d7f69a600",
+    "python/collector_operational_health.py": "01bc8445003795a6427ae107e7dc10cc0de5c8f965663bba72dacf25787dcd4a",
+    "python/demo_mock_executor.py": "f62c1bf8b2c95aebe41508c16bbbdc87fe88c7d4b789b670640eaee2003bee23",
+    "python/demo_safety.py": "5b4241db69b5ab6bcd2475bd393637b5fe3838beb4845f68ea3460ba9141c3bb",
+    "python/drift_baseline.py": "ba630f9efa93db0e534ef2482eb9472d7499fad630ee8e44680ff9e3df378d89",
+    "python/drift_feature_stream.py": "bf2cb3a831d505e45adf7990edd43dda6b0d9c9dc18fd6d678df705643f60e42",
+    "python/drift_monitor.py": "528f7a1441c10dc40edea50c9314e2e4838a634890d8e71a6b9cacc05ed9dd9b",
+    "python/evaluate_hypotheses.py": "b250f9759483e3d86e456517f9a03ff6be369aa3064e77a7cd19254d80001c54",
+    "python/evaluate_train_exit_walkforward.py": "ee79d09af468e5b7e472781ac04ae13101406fe52eb76c7df059e4937366c561",
+    "python/evaluate_train_intratrade_round2_wf.py": "6134500fe6e9893f25749e3e3696ffec8e564b0cea4990740f20a8f47fb15f35",
+    "python/explore_train_intratrade_exits.py": "a2ad6e2992c17464a1b3e2ee2f02d3249d146332b3e857eaf8a585b2c01dbed4",
+    "python/explore_train_intratrade_round2.py": "c5f4ba60bd1989386d276413b7d377f98a3f93f430486fefaa5b0ff0b951704e",
+    "python/finalize_clock_capture.py": "4c3673337fcfd0b53641b24d6c4321ce09653b775b75c179e47a77a82be92fd8",
+    "python/frozen_candidate.py": "74c66d99246686c39eedada1f789e61dd02515e6407ea82d14d1a034ac2de89a",
+    "python/future_cohort_health.py": "93318edcf2dd1a69551ef637493e6f22c9b682b5209ad4836ee23e3c6daeead0",
+    "python/future_validation_collector.py": "e8427c2a2d6156231105abc1f374329abcde0bca02098d0542333e95c0a32d89",
+    "python/future_validation_evaluator.py": "899080eb3ed396ca0df4c615e3eb32b0c7c64e461c367d9a1d3adf5279d74f83",
+    "python/heikin_ashi.py": "e3af419a61943a890589ce05005276e72efec06d2a485caff2769feb3554605c",
+    "python/independent_clock_reference.py": "3e9e077f1d7a7b22e8e38624fc34524d072c64743e2924d41bc22ef009481d7d",
+    "python/intratrade_export_plan.py": "6fcf16a96ea27a99a569f33cae5bac150f5b79109d8dac2421cef1be4f0ee1d9",
+    "python/intratrade_hypotheses.py": "56d7cc0f53b9066c5224d3e8987775c6c43dcc6a321a7a91beb370ed269cb98c",
+    "python/local_finalize.py": "eb1bd0bac936351cf11a6699f649b99cd16ece88c2fdcd4786b10289e4aad2e3",
+    "python/main_k_native_parity.py": "620ea47ecce21c88963c94580e749c34e655d9dfef11d54f2ea6cdbeb32be080",
+    "python/manifest_chain_audit.py": "79c3e62b79958f48fe2f2e4bc2362b1ce5b3e6ae9bd5dac4b8582e8ca4b3addc",
+    "python/manifest_chain_handoff.py": "89e11836ba20c77288d7b8f0fb10717c9694a8d769590a7cff0e1d9b946ddd04",
+    "python/membership_contract.py": "e6a9d895488d542cb41e68aeb1a3cf064d0626de32fca547ff010b5bd459274c",
+    "python/native_m5_rebuild.py": "3af0361f9d9724c297b6ea957a993bb389f17db2b2a1148ca3434108ae92bf0f",
+    "python/native_metadata_v3.py": "e5017bd62aa2b1724472fd9f07c9228a27902bd7059d2f403ed0a2dae1a057ad",
+    "python/native_time_mapping.py": "d83e05c104f642080722a1703b31732706c43eea8a66402a2c0282b61ad454ed",
+    "python/nts_clock_calibration.py": "2e1cd1692dc565a4c63927226b08310d71406f9b5e6297c54d59833b80b23c40",
+    "python/nts_external.py": "1b9bb08565f0b24d07d7a037ba1bfd8098b9c66f76aac5cf206bcfb724d2702e",
+    "python/nts_xm_correlation.py": "d71516333e3a4634ae0a584003befe5f19b2b7cb6b6e7be905cd5b417e8d1798",
+    "python/parquet_io.py": "5a176f8294b545f54e3c51c5fb582e3a7b3ac3ffb9092d79e990d4d471692057",
+    "python/pc_a_raw_archive.py": "ac2dd0201fc0f0048d2c103a57adb9783998e592944d2acb702d3526b8cb19de",
+    "python/pipeline.py": "fe997c2c293e910f9332c3bdb4d5bf3b3b86354727ce52f50f7a1893382fe6bd",
+    "python/prospective_utc.py": "0fc0604a4fd5b985bb1ec7c0e4b7b9060442791980afd59761c2b2b25637d7d1",
+    "python/quote_clock_audit.py": "16379e5544d78c1a245627677586295cbb9dba393933ca0ac86f5e231e707a5d",
+    "python/quote_replay.py": "5fa808f8207dc837fd492915b59923af03e4ac4402e81aae9439298c02edaeac",
+    "python/remediation.py": "70090c0643a2329b18c948d6a2e1d2896abd603cd7110dde893d65ba56011667",
+    "python/replay_quality_train_baseline.py": "cdfdc3d3299802633d9b4732a68a3fea496bf9632d18c146803eecf6ffcb210d",
+    "python/research.py": "1ea951f95d7011daf4060fa50677bd552b6cebd929868d41f3aeb8f1141cfeee",
+    "python/round2_entry_research.py": "4096fd99415f591781bdfee71923173411fdd87ef386291638bd180c20c967af",
+    "python/runtime_session_guard.py": "74610f090bb5ac09521256acb76c24eac2967fb73bf0dc4f743fc20a9c89de3d",
+    "python/session_evidence_parser.py": "f0b21526ad913995b5c0f2dd6f715b9562df3323a411fc66cdcc9abde5c8165e",
+    "python/session_runtime_status.py": "a46a7413f73e0ba8909a7cbdb2ee40c99d3e349833ac0b438177f111b7a5e9d9",
+    "python/shadow_mode.py": "a95323c5de08970ffc08530b96f052ed586e79cb68ebe3b4bffb3767a8931d20",
+    "python/simultaneous_clock_audit.py": "e6d248d6b25db433a631aa0b16f27694944f5c4793d0450a68e79188f8a6e63d",
+    "python/simultaneous_clock_capture.py": "3ca133b840de2f895f4bba69c1fff38468407512bc1af8b87f39f360fde4635d",
+    "python/stream_bar_master.py": "9ef88d59278ce59761e21302f664c64e00bc985ab02bfa0fd7c2d9e54528fd62",
+    "python/temporal_causality.py": "8cd94422d6b9d80b11ca1a47e9685ce8d9587cb9f99565e6f1593d23f20e004b",
+    "python/temporal_evidence_intake.py": "d1e2f6d9094eabc7f9782933be0aad41778ff733788daf47d3a68e0ed5575006",
+    "python/tick_quality_gate.py": "9999647c26054e583bb9ad9ef530878fe35211838cdf0b1c54a23de2459d17f2",
+    "python/time_semantics.py": "ef09a09cdfa92bc48e5ed016f4b2616609e3e82be932e5c3f338a8750f02fdc9",
+    "python/train_direction_model.py": "36ac2458984c14d0a438d04ef9cf296936f324e07a8aecdcb8757b587df25869",
+    "python/train_entry_spread_atr_router.py": "0abf63be758be06b15e0dfb84f3ce880050de48e3ec39c77b37248eaa0eeccc1",
+    "python/train_event_source.py": "e3a08d6666a68aae6999ae7ea9172fe9dfadee6c1902d450bf9b94cbc509618b",
+    "python/train_intratrade_models.py": "9b3dc5d5968834df82a6525b3646552c770414a2999436860717fd471c63e651",
+    "python/train_quality_direction_model.py": "67da98f269f4d7361f759b45d57e54b7f8eccd9e357b98a70c7a9642cc36eaa3",
+    "python/validate_bar_path.py": "461f4f342e7d6b521dd19c20bb3631db0c7ff09faf4ce9905c1ca4b95d0b07be",
+    "python/validate_clock_mapping.py": "42a0b6efa02c2f29325b4953602677d2f7cdd26e5c0be890b0283c425a9fa49a",
+    "python/validate_dataset.py": "efe575d744d0a893432bbf010fee54b158513fead04f76250864624cfb1fbc09",
+    "python/validate_intratrade_dataset.py": "73fc3b61c5de40ec7916fca3d3356243fdc5a52b5065deac71fd89dd5261a0a3",
+    "python/volume_forensics.py": "2290c7c82364c85962697fdd7451670b595c399b194db8930a4835b7617d0e19",
+    "python/walk_forward_intratrade.py": "43325f84f7256331c2ac5020c62a06880153a7127d036dae5032c0c2ec592744",
+    "requirements-cloud.txt": "41e33ebee029a7b26282fa17e1d4988b50a8c7c80651bec018594a0bbe9183e5",
+    "requirements.txt": "6b66697fe503793b27a0cf8c5a04ab5e660248069debd4b5602fc7291c1b31ab",
+    "research/native_methodology_v1/ANNEX_ES.md": "fc7a358674ea997d5421d2dc75201496104d62c51bbb99b4799c092086a4f195",
+    "research/native_methodology_v1/STATISTICAL_PROTOCOL_ES.md": "43d98f14af7f81235887c8ad81c0c23e8ffd7ea9740ecf62452454fa2ed2abf7",
+    "research/native_methodology_v1/STATISTICAL_PROTOCOL_ES.md.sha256": "63bc6574b8f769270f67f9b23c7de1443e50248daa42da7edbfcd031251b16ff",
+    "research/native_methodology_v1/adoption.json": "747816c08c02d19edcd978a8fe8d596019229af7f60e265e61422980929a8d41",
+    "research/native_methodology_v1/design_manifest.json": "fa82dd80e2f6a95256eae0c228bbd27a0dcd16cdf0169bab1bff268c2ac2a74b",
+    "research/native_methodology_v1/evidence/NativeFeaturePrefixProbe.mq5": "fbdb37bbd4d1309c69190fe4a0f765aaae762e5bd9c597b260fb7e3e37319c81",
+    "research/native_methodology_v1/evidence/availability.json": "298f7644dd75fa9c4b612abc9215b9c0c0cf89ed5634d9688b3d4b39494cc708",
+    "research/native_methodology_v1/evidence/execution.json": "d0add1e91167ed31121ee6ef04abfb4f30ecd149af6ff5c00dc68f6f494adcdb",
+    "research/native_methodology_v1/evidence/hashes.json": "35cb2277dc09cf37b01dbd0fb35be4d54cda009d9cbd56eb45372dd60c23b9fe",
+    "research/native_methodology_v1/evidence/short_history_failure.json": "595a9a216f801d84d839936de7b816f41e71ed58c7a31d5e999cfc9164fd903c",
+    "research/native_methodology_v1/evidence/status.json": "70884b14333f77e3a88dfc455f9f57d220fb1c198841ff21463ba2ff4287ff3c",
+    "research/native_methodology_v1/evidence/validation.json": "66edf5047f539d7e0308130daeb327d4485c2fa85f8dc96fc0b6524ef0c4854e",
+    "scripts/Watch-ClockAttestation.ps1": "8da7768e070624ce7ad4aba874211697219d13abcce30047847a80e299db41d3",
+    "scripts/register_future_validation_task.ps1": "179d7b21d531de0ff377510ec4d535af680f7b5742709f3a8e10f8ce0f5a121b",
+    "scripts/run_future_validation_collector.ps1": "25ec3d91a5ba3535869a4affc48efd4ca5f0aa63e7854eca7c70bb9882f08a15",
+    "scripts/run_future_validation_collector.py": "4d595dfc4d9428ab707080d136e821a005b1dc9c2b347778516dff32fc21883e",
+    "tests/core_test.cpp": "13fa501ea4a376e64d1a70da1e03258e5f211cae8437910455259c942b56257d",
+    "tests/fixtures.py": "c721da22d619869918b078ed765e1aa6dab437fe0a6222deb1560697526aad53",
+    "tests/ha_native.cpp": "e4160ae3ae3ece7b1974ec28125d558a39915860675ebf440f80608c0596f098",
+    "tests/ha_reference.py": "e77abb0e60bddd52e411efb6c0c633f31faf7d8f50382275287c43fa7527da30",
+    "tests/mql5/ClockAttestationProbe.mq5": "a068d49a7061ca3f7ad3d0e47bb165befd4e808650db4860a031f43ce83974d6",
+    "tests/mql5/ClockAttestationProbeV2.mq5": "e63202fc1fd637242b91295660a7cc634c955d87ab1e34bf81a86fa6c9de50cd",
+    "tests/mql5/ClockProvenanceProbe.mq5": "f86073580904a391b0a9d6e14365f26d66a040ce4c40edaa54631f7591ff83ae",
+    "tests/mql5/FullClockAndTimeSemanticsProbe.mq5": "4b23fa262596439b9057df254c6f1276cc6bcee8167346297e70000e15cf5324",
+    "tests/mql5/MainKNativeParity.mq5": "0f68313a47217295f7161fe22921487d819e399802b7c627ad86945b7ebbb9b8",
+    "tests/mql5/SnapshotCausalProbe.mq5": "7e961e56d8636b9dc87af85ad6456d6d51b6e63bdf4c7a5fc358727ffb9b58d0",
+    "tests/test_bar_path.py": "3fe90bcc6a6632817d89ab9dfba72d172634fe1129595d04b737d12c0e4d65d9",
+    "tests/test_bar_replay_producer.py": "50f241fd2af27bda65e3e286d634586404e76ced51ee77274d0e763b6f6b453c",
+    "tests/test_callback_continuity.py": "04803accc0dc4d01a74c821526b3b3f2a4afc8e6ede9099836ebecfae1f9a59f",
+    "tests/test_causal_metadata_audit.py": "6305541e4b44661e8c3b06e775336bdac434c8b72aaa484b3f38a1d11b0b69eb",
+    "tests/test_censored_membership.py": "2e76f6ff2a5a800e68d8699058cd93c12fe21659dcc3ff3208cc4f00429ef9d2",
+    "tests/test_cloud_handoff.py": "3001f369822da3ff419ee2bb52e5d39a5f5396d0b5dfdb0fbf209d13bcb7cc6e",
+    "tests/test_collector_health_refresh.py": "4caf6af23e059a45c8963e9b6b3d388c92230216bf11d8cd7285b8633d0fc902",
+    "tests/test_collector_operational_health.py": "3bd8cf41c06a807b9b2d2a27b71f062b669e4c65a07aae471c944fa787a54143",
+    "tests/test_controller_causal.py": "82183fe5de4f811f2d9170e197b8da41b16eb69248897f663ff847bbd75be3e2",
+    "tests/test_controller_data_quality.py": "a591a5c3cd846ed50ff4cfe81172bdba2053e82786ba203aad37da8f3305998c",
+    "tests/test_controller_env.py": "9fb80f1a5c4c6a2499a46719b187ebe3a041867fd2f36476807970beef93cadb",
+    "tests/test_controller_safety.py": "9b0f86c3a776e6fdb0562f8b2bb23e66ffc7e2c8ae520592128cdfd23f212270",
+    "tests/test_demo_shadow_safety.py": "45f910ed0adaf367df623d47539d62c0a017b58b6bf43ea9541f9d249f403050",
+    "tests/test_direction_model.py": "62af004b25b6b8f284441461bcc249fc47d36da01dcea34f7eefcb41f698baa9",
+    "tests/test_drift_monitor.py": "9a41586526459118905342c2aeaee35ca31bb07372cfd7d3fd8359ba54318219",
+    "tests/test_frozen_candidate.py": "ea52ebb654d3128425b01ae3632af1ff08156501aafb269f2ea77aaa2e6507c8",
+    "tests/test_future_cohort_causality.py": "f4d102d50a50469c0b691e38f4f2a291049ad87817c2c89dc55b46b1cf397552",
+    "tests/test_future_cohort_health.py": "010cc6d0b161b5b29a61d14db97b9f48d703c2b9dd7c85248f9ac85e8f2365d4",
+    "tests/test_future_manifest_archive.py": "27b93a4c1db32e6c7a8e84072f11c744af63e0ce3745daa58f36fb82c81e0946",
+    "tests/test_future_validation_cohort.py": "75f9604ec01530460c8eaa23a5d9bc8837698b15868d684df46672871ef8705b",
+    "tests/test_future_validation_evaluator.py": "a11031e53d2ce66dd3051b811b7ecabbf273c4caa3aaaa5c048a39b5987c958d",
+    "tests/test_heikin_ashi.py": "52b978d88a9130e11973354d360ccf47e8019fc33f794acf23d1dd361d192081",
+    "tests/test_hypotheses.py": "9b491ef558de45645535b7f0b822e543f15e2de1ec76e35cd18f9035be3ca84f",
+    "tests/test_intratrade_dataset.py": "2dfe8d0a404ca94bc39a9531084bb1dbf44660c26675052d6c27131255dbeea5",
+    "tests/test_intratrade_exit_exploration.py": "ae3420babad65bdb4b61420409da67b29bc5624e7ddd5350a90337f26b62252d",
+    "tests/test_intratrade_hypotheses.py": "1742d680fabdf5d377723ff1f07b1a7038b9816ac36e2a0dc912ba8b1b10d77b",
+    "tests/test_intratrade_instrumentation.py": "55e6de327cba402c5a29c107a6564050bcb5ffd7cbb7bfeac00920a47b6f40bc",
+    "tests/test_intratrade_models.py": "fc518803c7797b3a9a3638fe3cd1f9408e1c1f62d4d4d82f153324c33043084a",
+    "tests/test_main_k_native_parity.py": "430bac235dba89d130d406cdc4143397f38fc19f8f73061018968adc2a21f2ff",
+    "tests/test_manifest_chain_audit.py": "a737d06e6a59570291a8439fce4b701ca1fd03ad77d296bd84e67ae2fc9b5473",
+    "tests/test_master.py": "827166955aaadadd7efe5f80016bb32d9b60f4dabc1d1b6e277812f8ff71056f",
+    "tests/test_membership_contract.py": "58809cf7d2ba90485b69df5aaa37d6b267732cc40d8e40e9b6567305668c3063",
+    "tests/test_native_data_repair.py": "250e16f20e3ede5ca199e4563414beb0fee9dfa09b0ed86ada4ede2ad02ef2fb",
+    "tests/test_native_diagnostic.py": "bd11660301433c8cf4aaef8dccc08e228fc0fbccf07e8faedd80fd22cfdca98e",
+    "tests/test_native_feature_diagnostic.py": "932bb7b5a9754f50f114e13294cce7917d9d8a7deb31c13e83d529da900ee352",
+    "tests/test_native_independence.py": "e27b34faf0c3859cf69a16d73d64c2e4c8ba103006326973e9e3ec10eade56ac",
+    "tests/test_native_methodology_proposal.py": "b7b5bebce1f947c32b5fb917f6ab1e0ce2df2158e55e9a470a8e52a1487bc802",
+    "tests/test_native_study_design.py": "4f506d9563dae9de31db50ce036a6f4233baf1b2e4646f224facc5d1c4eb8655",
+    "tests/test_native_time_mapping.py": "b4822d8a584d1ec187c0cd7df83f7c173ed379aa9e342ee8cd4164a8d918b422",
+    "tests/test_nts_clock_calibration.py": "69c5aeecfc023658d0fc012c86330592e8bdbd73b5096400e03366b9455ad01c",
+    "tests/test_nts_external.py": "00befe7a5e9183d9c916ad310a639022820445991f1b4fc399e71e955a3d509e",
+    "tests/test_nts_xm_correlation.py": "9173e8b7980f6e9ebdc05a45613b5dab540db5270b447ac9016b10f258aeecd8",
+    "tests/test_parquet.py": "a7d3ceda2694f7d59af4d6c0155e25a0efc0e28d5fbbda59f469832f77435db0",
+    "tests/test_pc_a_certification.py": "dd4fab76f7c364d6957e769bb5ca1033c9dd6f21874fd1e287d930e94b5fd503",
+    "tests/test_pc_a_manifest.py": "e6efd8ccab2881ee079df76f16789cce175bffe63257b6be5621d27dde64bac9",
+    "tests/test_pc_a_raw_archive.py": "d0bfd7dcd7db80ef3b809cfbdc46db3b34ee8e8f62e54fa17e294d1fb01708a2",
+    "tests/test_prospective_utc.py": "db15d740b9ef23c978e5094681e412af96fbffb10b0c86f9d0b6d6e95032a781",
+    "tests/test_quality_direction_model.py": "0b7d391332acbbc491b3ee2a451dda411d177a2994feb92bbfd18ee27ffb8292",
+    "tests/test_quote_clock_audit.py": "04c335f72b9379620eb2f0b0f51c855dcf2d3ca1455353fc40394d26a160e06d",
+    "tests/test_quote_replay.py": "211c14b630efa8d9e88f8f96cc02af23ff6d6b917ee5c9c002da2d853e5e80ba",
+    "tests/test_research.py": "1ac382dc72f3491a5f2e5b46b24853828b8836ab35ec3ad8f2068715acb50042",
+    "tests/test_round2_entry.py": "b6617e7d50df07cecb81769da2e9665888dd02dc1879cc932dccac203811e726",
+    "tests/test_runtime_session_guard.py": "a99e7d324a630d8170b9215d1e2c92bba7afe4a1a9651f19fd593883de10e403",
+    "tests/test_schema3_train_profile.py": "0f6cc17dcabc6b4391073f2c3eb9c0af682072ca13acdc18af775a6bbebcee97",
+    "tests/test_session_calendar_probe.py": "d5f668ce281fc9cd58792390872446d6b462d8492840be299b9bbe9affe1fda1",
+    "tests/test_session_runtime_status.py": "f72b1f103210bf4a6a31218d1749831c6b666c4658dd751e089e0efe8508efc1",
+    "tests/test_simultaneous_clock_capture.py": "9e26c5e80b23de41e194ca0a9d06f6c414b8c247877a551e8281b146b0d359a0",
+    "tests/test_stream_bar_master.py": "20801e4ab496fc2e20be65a0404ae8c39079034f0b910c4fda2e64f6b1acb3d6",
+    "tests/test_temporal_causality.py": "93e5fe160fcb8d327ebe297a3bd3c69af8d9eb211d70ba3c4a338a429701702a",
+    "tests/test_temporal_evidence_intake.py": "6708401d60479091b10c71a5e112a7f6a37bbf9e45a9d3a1ca6a200a27cd7455",
+    "tests/test_tick_quality_gate.py": "e0b3c2b2cb25a3570c840c5aca3db7c560ec710232b17ceb7a216a9e7d48c226",
+    "tests/test_train_entry_spread_atr_router.py": "8fbf468ecab3943718065145cf093de73a41a2f6416401e68fba07f055ab6eb6",
+    "tests/test_train_event_source.py": "a4267fad4f4b52ffaac826f79480a07c52e48d24d165cc2d60e118785942dcb7",
+    "tests/test_train_exit_walkforward.py": "3e1b4d7d1e2c26d3b678e9eea9066a61ceeaa4eae6c63d75f7ea609cb4eba125",
+    "tests/test_train_intratrade_round2.py": "9f198906bb8c8e3a93fc7d2a84fa5aadf9e351bc593f68233188bac216a65edd",
+    "tests/test_unified_time.py": "bd9090f462fa3911de262e465612c0547848b489988c8d318ac2ae1de6318c97",
+    "tests/test_volume_forensics.py": "8f644851c9112ba0a7044d90792df53513f04f6a12b1492b69cba9a59e9c7ee8",
+    "tests/test_xm_utc_intervals.py": "cd175a4b4354b6eb809a9e0514c207dc8c47a43d03ddb0016d514182c7488928",
+    "tools/audit_xm_utc_intervals.py": "f5d6b5a178aeb75c2783f773ea6374116af4e5a77ae512b4167ec20c824b5f72",
+    "tools/authenticated_utc_station.py": "8fb0d4dd520ca5ca14b8caee75a9f9cf9799ac3c655fad953ede2ea269692fb8",
+    "tools/build_pc_a_recovery_report.py": "d28c11fc84380c59671a55a39f64892e84a26281df7deefc40721b44bee0f38e",
+    "tools/certify_pc_a_data.py": "a8909162e174b32d8d777535e121026e6666fcb8fbf0cdbb36e87485d21b5ced",
+    "tools/correlate_nts_xm.py": "e7f33d6a6150abed0392e4c3053de18976a04db0c31bffac59c5a600754f8966",
+    "tools/deploy_pc_a_diagnostics.py": "d32c248c9e079f28f9b25186374222e1a09f79499e9223bb9d5539033d5c04e4",
+    "tools/finalize_remaining_blockers.py": "4a03524446fa9fc358acd3448bcc3eea223b9c89e71123ed903f9430bafd1eb5",
+    "tools/install_prospective_launcher.py": "768a0e40998c33f7cb613591cb662b6b0ee4159b2b1ebd7d15cffaf028ecec4a",
+    "tools/install_prospective_utc.py": "e9721e42609bb7b8713933284cc7c04e62d4fab462b3fb3a64f5ccee6416498b",
+    "tools/local_finalize.ps1": "1507ed806071fe1274f32483c0488e12b53baa476a1bcae314fd73174810b371",
+    "tools/native_methodology_review.py": "335bb81ed5b6198062f9fec23ceefedb3e08247789f16e7a2402296f37b1e8ce",
+    "tools/pc_a_archive_schedule.ps1": "0df61e4d665de160c8ec5e5ac2e85583c06bedbbae6036dfe4168fdfe5b4753f",
+    "tools/pc_a_data_repair.py": "2ae7b6f179fe1e91a2f6f0bb45be2e701618cc165e1b6f4558fdddd0849464ce",
+    "tools/pc_a_remaining_blockers.py": "1124eb2a44ec4b7f012597c87400e4a73ee4280a0c757ba1f3a4409565e5094f",
+    "tools/prepare_nts_runtime.py": "1897bc0588a4f9401a791bd59e5b43eb6cd6cdee0049b0975a32fe5a740ee36f",
+    "tools/prepare_temporal_evidence.py": "ca17d9b4e5147c8fbd08e0e3b84bec2bfba360ec8fa8b38b898e3eb6f9c92c9e",
+    "tools/prospective_utc_schedule.ps1": "95c2a604265f6041616a11c2284a42ab4e33aa620d71fc0471846553f5e3ff2f",
+    "tools/prospective_utc_station.py": "b6efd7dcec46d83ab5ec5286dd7381d738cbb5cda87bf87e2f523a64ea280c82",
+    "tools/repair_clock_with_capture_boundary.ps1": "0befcb449a8d7b7b3484672a16f5bdf3106ff71c8882ad8afe65f78d1933f248",
+    "tools/repair_pc_a_clock.ps1": "684e37dedba755712d311c29bb78684af43a47b1e30f2a591af172ec5869c295",
+    "tools/research_station.ps1": "04f9286caf16fff43e9eda21fc7c8cb741bc9576d8b2a65a1a064f032625c424",
+    "tools/research_station.py": "96ba35d455b6e60fd07e5816ae660b5d703b0c22112a55d3b6018f48220dd0fc",
+    "tools/research_station_status.py": "3b7b7851ce72a7e12fac96ae16810951f1d4364219311774dc06dedae97b82a6",
+    "tools/resume_research_station.ps1": "ab72ee54abaa152149d0a841803279a5892ed06f30da18b5176e499cc5adb5d8",
+    "tools/retry_m5_repair.py": "8dbf0e68d64046b877af991591a81e44035739a1dcf86ee072ac7e2fda222169",
+    "tools/run_local_clock_attestation.ps1": "057dca94d689efada490d816973e3b58219e0766fc5ecbbb95ed6ba5a2200d6c",
+    "tools/start_research_station.ps1": "37e1a5e1870bf122c5203352da96f05491e6bd8a6755da6891cd866193562d14",
+    "tools/time_report.py": "19567f64d3a569d52079be280f8185145f6955f74aac40bded706e80d8d46ca0",
+    "tools/verify_cloud_safety.py": "44208af915ed45ad1d6aab05840da3ba62aa408410e3c9fc837a7c63528ef8eb",
+    "tools/wait_prepared_clock_result.py": "57e1705ad639e06f35d77cbaa2b729e18439f581490ec7082feb9f28ef8c20f4",
+    "tools/windows_clock_capture.ps1": "90bb7b53315f2e622131d156bb8271998efde2b29b4303706c62bb03a4b2f821",
+    "tools/windows_clock_capture.py": "0959ec870750a98cd412e44ff6da4bddef56f9a5a6931cd1e4d8b3ab0eeeb9e4"
+  },
+  "implementation_head": "5e2973723e307e29479f0419163df54e547a8e94",
+  "parent_manifest_sha256": "7ab3db59472de092769b3e181d9081a085439379a372ea32fef07ff5ccd7e583",
+  "previous_pc_a_manifest_sha256": "c11abb0ee7a9555cc670eef6663c6cf9bc6bc04689b0c8dec8b55bc0f8c30299",
+  "reviewed_changes": {
+    ".gitignore": {
+      "baseline_sha256": "6eb17d227b2151cc88b50e62e58b4ec59ae8aafb4bc2a2f6d068714206dec885",
+      "pc_a_sha256": "84dd5403806517e0c4446855893726b0decc715e6aa24109e64e00aca5620f71"
+    },
+    "python/local_finalize.py": {
+      "baseline_sha256": "ecc6475824238e9e1ab3df011825d78758c6dfb14d9607e28451ff5a695b5624",
+      "pc_a_sha256": "59ca13ef51893cde5668376d53b2e193d0759f31bc6216c3758754798342224a"
+    },
+    "python/shadow_mode.py": {
+      "baseline_sha256": "edeb657fb83811f700bafb252fe4e68e971b66b03fb8c4a50cd58928d441f466",
+      "pc_a_sha256": "a95323c5de08970ffc08530b96f052ed586e79cb68ebe3b4bffb3767a8931d20"
+    },
+    "tools/local_finalize.ps1": {
+      "baseline_sha256": "867fb42bfceb6e67b6fc9ff6229c006eb80845993b3399aeb06a262b860ddcae",
+      "pc_a_sha256": "1507ed806071fe1274f32483c0488e12b53baa476a1bcae314fd73174810b371"
+    }
+  },
+  "reviewed_local_changes": {
+    "configs/cloud_continuation_source_hashes_20261029.json": {
+      "current_sha256": "ff3308abe603b7a30f723eb6fbda5551a641138c2998def09659b71128970687",
+      "previous_sha256": null,
+      "reason": "Preserve reviewed upstream fast-forward d26656105ff7b7e0f73406529a50f7608ae6d376; documentation/handoff refresh and portable witness guard, no strategy or timestamp change"
+    },
+    "configs/cloud_handoff_20261027.archived.json": {
+      "current_sha256": "623ebdce8cdc491bae4430082cd2dbb339695fc3c072a507b7d0da96073b447b",
+      "previous_sha256": null,
+      "reason": "Preserve reviewed upstream fast-forward d26656105ff7b7e0f73406529a50f7608ae6d376; documentation/handoff refresh and portable witness guard, no strategy or timestamp change"
+    },
+    "configs/cloud_verification_20261027.archived.json": {
+      "current_sha256": "d19fdf71d0abac4a27718c7b1812f8df40ab2b18bf63784c0b909f787d2b4df9",
+      "previous_sha256": null,
+      "reason": "Preserve reviewed upstream fast-forward d26656105ff7b7e0f73406529a50f7608ae6d376; documentation/handoff refresh and portable witness guard, no strategy or timestamp change"
+    },
+    "configs/pc_a_clock_calibration_evidence_20261030/calibration.json": {
+      "current_sha256": "39eceb6fa0a630549f25f076bf97cadb24d5aac384643b8f4e15fe7e066affb6",
+      "previous_sha256": null,
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "configs/pc_a_clock_calibration_evidence_20261030/causal_audit.json": {
+      "current_sha256": "4d1b95341d0e52433fd34d39815ab67f854b238fa42ac1847551ae8622fb43a5",
+      "previous_sha256": null,
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "configs/pc_a_clock_calibration_evidence_20261030/clock_steps.json": {
+      "current_sha256": "8698bb0d0626aa56e29b325cf05aedf758942671d52e6853e1680d48e0b0f700",
+      "previous_sha256": null,
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "configs/pc_a_clock_calibration_evidence_20261030/correlation_summary.json": {
+      "current_sha256": "ddc4d2a65cdc5ae11ff04e1973eed2b5cb300794927030b82e5fa11c36a2c8c2",
+      "previous_sha256": null,
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "configs/pc_a_clock_calibration_evidence_20261030/hashes.json": {
+      "current_sha256": "82d1b42f1f89c8d21e3564b1618540d70e78b7908d597cde5c98ee0a91187be1",
+      "previous_sha256": null,
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "configs/pc_a_clock_calibration_evidence_20261030/nts_observations.json": {
+      "current_sha256": "c7a79341b29b81a8796bef6231ef7565059ebe74cabd6c85a898b017550ce590",
+      "previous_sha256": null,
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "configs/pc_a_clock_calibration_evidence_20261030/status.json": {
+      "current_sha256": "6fa7f44336d27dbb31fc2d3a7364f6314b82eba943f3619062c175af977afe6b",
+      "previous_sha256": null,
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "configs/pc_a_clock_calibration_evidence_20261030/system_context.json": {
+      "current_sha256": "808a1bbed14ffe58b1ad9320b6bf26f9f136a33660773e7032605fa70443be48",
+      "previous_sha256": null,
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "configs/pc_a_clock_calibration_evidence_20261030/validation.json": {
+      "current_sha256": "897338cabd411f11ecc77fec7139c31ff76c8e1e219a6638e85aee1e9a0427f0",
+      "previous_sha256": null,
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "configs/pc_a_clock_calibration_evidence_20261030/windows_clock_observation.json": {
+      "current_sha256": "6923f51d2920e977303539bd48d77d2d98bc937d96b569ad4d3637953d3d1f13",
+      "previous_sha256": null,
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "configs/pc_a_native_tester_evidence_20261030/capabilities.json": {
+      "current_sha256": "9504d5ac8c0a741aadff18ed52986bfb9def1aa01ae847827e9edd9f51f0d220",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "configs/pc_a_native_tester_evidence_20261030/collector_health.json": {
+      "current_sha256": "4f3beba93f3144aa19d5f3cb66f963db5017f4bcb1803a46a02e136da4ed4363",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "configs/pc_a_native_tester_evidence_20261030/contract_review.json": {
+      "current_sha256": "7a5ca17c5949b09aeeab911cfb060aa164e33f0ef22a9b7c6d2c76b2c6bb4db9",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "configs/pc_a_native_tester_evidence_20261030/hashes.json": {
+      "current_sha256": "20ab108956a491925939bc8d9a6d9b77d19780d9caf6bc303bd5f6ca809f2372",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "configs/pc_a_native_tester_evidence_20261030/native_runs.json": {
+      "current_sha256": "4bade6e18468ac4434abd3a7e57774706594142267ce63352b31f3808bd99eac",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "configs/pc_a_native_tester_evidence_20261030/reconciliation.json": {
+      "current_sha256": "ccd6e445583612116ca4a6bb0a176f57873998d26ddc201732b55f8e649123fe",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "configs/pc_a_native_tester_evidence_20261030/status.json": {
+      "current_sha256": "5408fb0cad69440072553717ad82996ad10dc7eaf7cb71735fb11891008b6c30",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "configs/pc_a_native_tester_evidence_20261030/validation.json": {
+      "current_sha256": "9d230ea8042180a1791a9844f8d675177c6b217ab765bf7247cb822469bb13a9",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "configs/pc_a_nts_xm_evidence_20261029/causal_audit.json": {
+      "current_sha256": "7d2f7ac796e0ce745c838f3268df948f8e11cda8f4aea16e612ac7e5488d6147",
+      "previous_sha256": null,
+      "reason": "Reviewed NTS/XM observational correlation and permitted sanitized evidence; no event UTC certification or scientific authorization"
+    },
+    "configs/pc_a_nts_xm_evidence_20261029/correlation_summary.json": {
+      "current_sha256": "09d572f0560cc48fc62cdb8569319d6daa1ad41bdf77de353ec4adf12d6b781b",
+      "previous_sha256": null,
+      "reason": "Reviewed NTS/XM observational correlation and permitted sanitized evidence; no event UTC certification or scientific authorization"
+    },
+    "configs/pc_a_nts_xm_evidence_20261029/hashes.json": {
+      "current_sha256": "aeb98febb1c35fb4c835db4cc1735b56b59b1d4d7f0b27c4f2e12ec69b3914e5",
+      "previous_sha256": null,
+      "reason": "Reviewed NTS/XM observational correlation and permitted sanitized evidence; no event UTC certification or scientific authorization"
+    },
+    "configs/pc_a_nts_xm_evidence_20261029/raw_collector_health.json": {
+      "current_sha256": "564f4f74543a69aadd567513ec84a9c221311854334720bb3c09639327eb7b34",
+      "previous_sha256": null,
+      "reason": "Reviewed NTS/XM observational correlation and permitted sanitized evidence; no event UTC certification or scientific authorization"
+    },
+    "configs/pc_a_nts_xm_evidence_20261029/status.json": {
+      "current_sha256": "9206e6f1c0648cc24b1b3989a109c34017db99460ad125cca2e94e2ac5fba3cc",
+      "previous_sha256": null,
+      "reason": "Reviewed NTS/XM observational correlation and permitted sanitized evidence; no event UTC certification or scientific authorization"
+    },
+    "configs/pc_a_nts_xm_evidence_20261029/task_runtime.json": {
+      "current_sha256": "9551a4d8ed4bcf29f7109c27a29a83fd02bf2df88a8ad893667654c96ef5e7d4",
+      "previous_sha256": null,
+      "reason": "Reviewed NTS/XM observational correlation and permitted sanitized evidence; no event UTC certification or scientific authorization"
+    },
+    "configs/pc_a_nts_xm_evidence_20261029/validation.json": {
+      "current_sha256": "af510c82c154abbaf70c7cae37a0a3e451e10099b2808c8d3610cc1d7b7de415",
+      "previous_sha256": null,
+      "reason": "Reviewed NTS/XM observational correlation and permitted sanitized evidence; no event UTC certification or scientific authorization"
+    },
+    "configs/pc_a_source_hashes_20261029_v19.json": {
+      "current_sha256": "e2bf84568198f538bbef460d169a0fb85ff7de0cd45401f64d34f7c4c1c0ab1e",
+      "previous_sha256": null,
+      "reason": "Reviewed NTS/XM observational correlation and permitted sanitized evidence; no event UTC certification or scientific authorization"
+    },
+    "configs/pc_a_source_hashes_20261029_v20.json": {
+      "current_sha256": "66302b3ac4ba8dabd80015b8d8025c531d6619de626aa4e4d06d7b287e82c5bf",
+      "previous_sha256": null,
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "configs/pc_a_source_hashes_20261030_v21.json": {
+      "current_sha256": "31bc0641cf7be7dd45ba57dc33736861320a5485736afae6d6d30d0ed6fa49db",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "controller/native_diagnostic.py": {
+      "current_sha256": "3bac82c90a7afb4298ef8d27d089c3b9cd78ac2fc8dcee132882bfb95559a69e",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "controller/native_feature_diagnostic.py": {
+      "current_sha256": "f14c5466c8cc7aa1f323c46ea41e4c50772fbbf816cd567365db4ec26b87bdf2",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "controller/native_independence.py": {
+      "current_sha256": "6a9c646ca1bfbd0b85563c3ae37879450ff9f94d966e326f8a5f3f127f12f71a",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "controller/native_reconciliation.py": {
+      "current_sha256": "9b42ab06a104d9ca21379f33fabab506fe56360445ec6d77bdfa72bee5f5d3c4",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "controller/native_study_design.py": {
+      "current_sha256": "46906cf2bf0333c500bb6a7950d37c87a8ed01e9362dfd20ed41f51232fff6ed",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "controller/progress.py": {
+      "current_sha256": "ad50012ea8f79be6acc3a5555433acfbd37cdb8a95980c2e67bee28e9de8212e",
+      "previous_sha256": "fcd17cbacad0e2323b4b0ce318360ac31361b00bbf2a21854868d26bf3e55006",
+      "reason": "Ecuador-first derived presentation; causal/raw contracts preserved"
+    },
+    "docs/CLOCK_ATTESTATION.md": {
+      "current_sha256": "d422c4baa7ad1a8d232783b2806355e3e962196dd9932b4028b546f00f33a023",
+      "previous_sha256": "f0fa91d9ffe7159b99cb9de6c0d1f0f8ba2d2ec77ad0a7dde1d857a6ec1d418b",
+      "reason": "Preserve reviewed upstream fast-forward d26656105ff7b7e0f73406529a50f7608ae6d376; documentation/handoff refresh and portable witness guard, no strategy or timestamp change"
+    },
+    "docs/CLOCK_ATTESTATION_RUNBOOK.md": {
+      "current_sha256": "1843621267404e924a8187b4fbc19f849f7dd503da976e5e0ab5cb4b27b95e2a",
+      "previous_sha256": "dbe8af0b3beef164e72a274a7fae845c42c7bcd3a0f58b55032d40cb67445192",
+      "reason": "Preserve reviewed upstream fast-forward d26656105ff7b7e0f73406529a50f7608ae6d376; documentation/handoff refresh and portable witness guard, no strategy or timestamp change"
+    },
+    "docs/CLOUD_PREPARATION_AUDIT.md": {
+      "current_sha256": "7b42be1416514f06d726249ae19feb4d818dbbc73c91ff8279155d879575e2f8",
+      "previous_sha256": "9c41d8e8e8fa1285f4d2b5f31d1199a860a2d33b281e547c6f74fd3cf2ac391e",
+      "reason": "Preserve reviewed upstream fast-forward d26656105ff7b7e0f73406529a50f7608ae6d376; documentation/handoff refresh and portable witness guard, no strategy or timestamp change"
+    },
+    "docs/INTRATRADE_STATUS.md": {
+      "current_sha256": "5c544cbeb2cafc5a90227d0e21ca0ead2b7a848b55bc5b21ce789432f169fe13",
+      "previous_sha256": "e7c802928b77e46e35bcc9a652f89bfea4f1655424068333e1e2d643c7c92f22",
+      "reason": "Preserve reviewed upstream fast-forward d26656105ff7b7e0f73406529a50f7608ae6d376; documentation/handoff refresh and portable witness guard, no strategy or timestamp change"
+    },
+    "docs/LOCAL_PC_FINAL_STEPS.md": {
+      "current_sha256": "171de8f4bf67474409d5cef84d39f83d14c30ceacfd023cdaa10766db4674c83",
+      "previous_sha256": "0e2b16eb782a4be2cf45b57a18b0bfc5985b7b238ab67fe50e28d48fbfde67a3",
+      "reason": "Preserve reviewed upstream fast-forward d26656105ff7b7e0f73406529a50f7608ae6d376; documentation/handoff refresh and portable witness guard, no strategy or timestamp change"
+    },
+    "docs/MT5_CONTROLLER_STATUS.md": {
+      "current_sha256": "5c544cbeb2cafc5a90227d0e21ca0ead2b7a848b55bc5b21ce789432f169fe13",
+      "previous_sha256": "fcfceb94e64a7be96aede1f3f88cf8f904dbb4f2967cd18475c671f1ff5d5b6b",
+      "reason": "Preserve reviewed upstream fast-forward d26656105ff7b7e0f73406529a50f7608ae6d376; documentation/handoff refresh and portable witness guard, no strategy or timestamp change"
+    },
+    "docs/PC_A_CLOCK_CALIBRATION.md": {
+      "current_sha256": "67812df0c465ae5248f516f9c24a0f6f3aac8ce9677443cc3047e128ac4fde86",
+      "previous_sha256": null,
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "docs/PC_A_NATIVE_TESTER_CAPABILITIES.md": {
+      "current_sha256": "4dd014e1af4a5848edc6a7310170f198cbf5977a9ac0ffe862dc01145a57e3ce",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "docs/PC_A_NTS_XM_CORRELATION.md": {
+      "current_sha256": "702c8632d7e7c1400df8dd59a5b81d7a8c0d1a1184ca3d6f3c288ff6c90cc604",
+      "previous_sha256": null,
+      "reason": "Reviewed NTS/XM observational correlation and permitted sanitized evidence; no event UTC certification or scientific authorization"
+    },
+    "docs/PROJECT_STATUS.md": {
+      "current_sha256": "f4f61bcc71b6ea7389f01bc06e99e353800ef9ec3e356ce0286e59ef843500a6",
+      "previous_sha256": "5c544cbeb2cafc5a90227d0e21ca0ead2b7a848b55bc5b21ce789432f169fe13",
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "mt5/HeikinAshiCore.mqh": {
+      "current_sha256": "d9a1e525a99e66f855bc49c3a696030c5e12ef534a1aeff5012b63a462a3e8ef",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "mt5/NativeTesterDiagnosticEA.mq5": {
+      "current_sha256": "9a979f09a22e9328af1eb1603dbeabdd1974b35410930efdccd8e881138a6b1e",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "mt5/ProspectiveUtcObserver.mq5": {
+      "current_sha256": "b275430e62a04c4c89302dcfb7e7e5e6dcd4ecbdbb68b1e1c84298cf74e6faa7",
+      "previous_sha256": "fd1bd10716a19010f544343e29e51a0f2d393ff80c28e3238c5b5ab437b84767",
+      "reason": "Fix native TXT CRLF write accounting, safe observer-only reload and truthful capture liveness"
+    },
+    "mt5/ResearchCore.mqh": {
+      "current_sha256": "99a5328d58bf613d5cc9b354ddfee936a0e23427b8a16792a19d6e63b0011283",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "mt5/StartProspectiveUtcObserver.mq5": {
+      "current_sha256": "d5b6e1afcd709613a4034fb80055096847d512381e17a61dd994005702ceef8d",
+      "previous_sha256": "6cbc03652a011b38b2ee0c6de99700e9c9e499f3d8f5aceff178e5d1477bf637",
+      "reason": "Fix native TXT CRLF write accounting, safe observer-only reload and truthful capture liveness"
+    },
+    "mt5/StochasticBarDecisionResearchEA.manifest.json": {
+      "current_sha256": "fdccf145b762a8b4f959a79b11881e5a8dc175f029f883076d88094f4d868ae3",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "mt5/StochasticBarDecisionResearchEA.mq5": {
+      "current_sha256": "f2e9bf43cbbdc716148847fe53e1f3dd14b21393775ccc809d05cb5e134cb88d",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "outputs/status/CLOUD_HANDOFF.json": {
+      "current_sha256": "50dac0b818e8e56b683b081b1846827fba1d791070da92f16622e74c7064b72c",
+      "previous_sha256": null,
+      "reason": "Preserve reviewed upstream fast-forward d26656105ff7b7e0f73406529a50f7608ae6d376; documentation/handoff refresh and portable witness guard, no strategy or timestamp change"
+    },
+    "outputs/status/CLOUD_VERIFICATION.json": {
+      "current_sha256": "efc58a2996a9b4237bdf3d67456d2539e026376d2e7c49fefb4dc5a63099d1b0",
+      "previous_sha256": null,
+      "reason": "Preserve reviewed upstream fast-forward d26656105ff7b7e0f73406529a50f7608ae6d376; documentation/handoff refresh and portable witness guard, no strategy or timestamp change"
+    },
+    "proposals/native_methodology_v1/REVIEW_ES.md": {
+      "current_sha256": "c8ddaac2a6aeac7d25826b59226dde23256e560771eebfda96d5e493d41cb8b5",
+      "previous_sha256": null,
+      "reason": "Inactive native-methodology governance proposal, preserved-contract inventory and offline arrival chronology; no active contract, strategy, data, collector, training or gate changes."
+    },
+    "proposals/native_methodology_v1/__init__.py": {
+      "current_sha256": "9113f5999a07548117dd77d4dc4208d6acab41a172097eecd9b2b1b7c81e9f19",
+      "previous_sha256": null,
+      "reason": "Inactive native-methodology governance proposal, preserved-contract inventory and offline arrival chronology; no active contract, strategy, data, collector, training or gate changes."
+    },
+    "proposals/native_methodology_v1/arrival_review.json": {
+      "current_sha256": "b9f764d2f6402e7acfe6d9725d1ff60aa68024ecc761e0de70a1f07420748a92",
+      "previous_sha256": null,
+      "reason": "Inactive native-methodology governance proposal, preserved-contract inventory and offline arrival chronology; no active contract, strategy, data, collector, training or gate changes."
+    },
+    "proposals/native_methodology_v1/availability.py": {
+      "current_sha256": "7a3b1a99ec10a4ad2ddd39fd4f28c41abf77a306524b665b7da83508159f3580",
+      "previous_sha256": null,
+      "reason": "Inactive native-methodology governance proposal, preserved-contract inventory and offline arrival chronology; no active contract, strategy, data, collector, training or gate changes."
+    },
+    "proposals/native_methodology_v1/build_evidence.py": {
+      "current_sha256": "7bcf45e9c82e043888c2c9bc187fb54dd8f90ed20fd8f17a9d3514f35962a5b3",
+      "previous_sha256": null,
+      "reason": "Inactive native-methodology governance proposal, preserved-contract inventory and offline arrival chronology; no active contract, strategy, data, collector, training or gate changes."
+    },
+    "proposals/native_methodology_v1/contracts_inventory.json": {
+      "current_sha256": "d2999007c7c12d52b8b0c3a8519058a62e22d73abb3b9a77adcd0a7cece25570",
+      "previous_sha256": null,
+      "reason": "Inactive native-methodology governance proposal, preserved-contract inventory and offline arrival chronology; no active contract, strategy, data, collector, training or gate changes."
+    },
+    "proposals/native_methodology_v1/evidence_hashes.json": {
+      "current_sha256": "e1bcb5ce5cc8d1f051521f4c1ebf2e3f3d9164cf380ad3fe488b17ceaf6fd9d0",
+      "previous_sha256": null,
+      "reason": "Inactive native-methodology governance proposal, preserved-contract inventory and offline arrival chronology; no active contract, strategy, data, collector, training or gate changes."
+    },
+    "proposals/native_methodology_v1/review.py": {
+      "current_sha256": "9a91c5ad3dcdf06ee949475967a6f7ea408359461a56697cfead7941fd604a62",
+      "previous_sha256": null,
+      "reason": "Inactive native-methodology governance proposal, preserved-contract inventory and offline arrival chronology; no active contract, strategy, data, collector, training or gate changes."
+    },
+    "proposals/native_methodology_v1/validation.json": {
+      "current_sha256": "2d4b2b029c41fbf92d08ae3b096e8295d30e9560f1d975ebb59100c31f70e8d1",
+      "previous_sha256": null,
+      "reason": "Inactive native-methodology governance proposal, preserved-contract inventory and offline arrival chronology; no active contract, strategy, data, collector, training or gate changes."
+    },
+    "python/independent_clock_reference.py": {
+      "current_sha256": "3e9e077f1d7a7b22e8e38624fc34524d072c64743e2924d41bc22ef009481d7d",
+      "previous_sha256": "fef692e9ccb372cd2bf35b9d197bddd2d591e1ca88f66554148d9d0196da03d8",
+      "reason": "Append-only callback incident context and reproducible diagnostic external clock headers; no authorizing conversion"
+    },
+    "python/local_finalize.py": {
+      "current_sha256": "eb1bd0bac936351cf11a6699f649b99cd16ece88c2fdcd4786b10289e4aad2e3",
+      "previous_sha256": "200e8c61183d6fadedaf1efca5bcc23638f65c05325ffcffc0e19f1929b38508",
+      "reason": "Preserve reviewed upstream fast-forward d26656105ff7b7e0f73406529a50f7608ae6d376; documentation/handoff refresh and portable witness guard, no strategy or timestamp change"
+    },
+    "python/nts_clock_calibration.py": {
+      "current_sha256": "2e1cd1692dc565a4c63927226b08310d71406f9b5e6297c54d59833b80b23c40",
+      "previous_sha256": null,
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "python/nts_external.py": {
+      "current_sha256": "1b9bb08565f0b24d07d7a037ba1bfd8098b9c66f76aac5cf206bcfb724d2702e",
+      "previous_sha256": "d271d12a87553f86e2685437fb08abb71781f9c86279f13e256c6e2f8089e993",
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "python/nts_xm_correlation.py": {
+      "current_sha256": "d71516333e3a4634ae0a584003befe5f19b2b7cb6b6e7be905cd5b417e8d1798",
+      "previous_sha256": null,
+      "reason": "Reviewed NTS/XM observational correlation and permitted sanitized evidence; no event UTC certification or scientific authorization"
+    },
+    "python/session_runtime_status.py": {
+      "current_sha256": "a46a7413f73e0ba8909a7cbdb2ee40c99d3e349833ac0b438177f111b7a5e9d9",
+      "previous_sha256": "c77e5d1b318432b3de2c385cd82f75e052901b65d4eeb9e53dddc59ef8497384",
+      "reason": "Ecuador-first derived presentation; causal/raw contracts preserved"
+    },
+    "python/time_semantics.py": {
+      "current_sha256": "ef09a09cdfa92bc48e5ed016f4b2616609e3e82be932e5c3f338a8750f02fdc9",
+      "previous_sha256": "562cfba59ac827b2060e4f80dd8f5539361caf0cc1a3645f43366966b9432d87",
+      "reason": "Ecuador-first derived presentation; causal/raw contracts preserved"
+    },
+    "python/train_event_source.py": {
+      "current_sha256": "e3a08d6666a68aae6999ae7ea9172fe9dfadee6c1902d450bf9b94cbc509618b",
+      "previous_sha256": "7a37bb4f65455ec4d224fd6e8af51dea18fdf6651da5678082698825d366fcd0",
+      "reason": "Reject new prospective callback and external witness quarantine before TRAIN I/O"
+    },
+    "research/native_methodology_v1/ANNEX_ES.md": {
+      "current_sha256": "fc7a358674ea997d5421d2dc75201496104d62c51bbb99b4799c092086a4f195",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "research/native_methodology_v1/STATISTICAL_PROTOCOL_ES.md": {
+      "current_sha256": "43d98f14af7f81235887c8ad81c0c23e8ffd7ea9740ecf62452454fa2ed2abf7",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "research/native_methodology_v1/STATISTICAL_PROTOCOL_ES.md.sha256": {
+      "current_sha256": "63bc6574b8f769270f67f9b23c7de1443e50248daa42da7edbfcd031251b16ff",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "research/native_methodology_v1/adoption.json": {
+      "current_sha256": "747816c08c02d19edcd978a8fe8d596019229af7f60e265e61422980929a8d41",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "research/native_methodology_v1/design_manifest.json": {
+      "current_sha256": "fa82dd80e2f6a95256eae0c228bbd27a0dcd16cdf0169bab1bff268c2ac2a74b",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "research/native_methodology_v1/evidence/NativeFeaturePrefixProbe.mq5": {
+      "current_sha256": "fbdb37bbd4d1309c69190fe4a0f765aaae762e5bd9c597b260fb7e3e37319c81",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "research/native_methodology_v1/evidence/availability.json": {
+      "current_sha256": "298f7644dd75fa9c4b612abc9215b9c0c0cf89ed5634d9688b3d4b39494cc708",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "research/native_methodology_v1/evidence/execution.json": {
+      "current_sha256": "d0add1e91167ed31121ee6ef04abfb4f30ecd149af6ff5c00dc68f6f494adcdb",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "research/native_methodology_v1/evidence/hashes.json": {
+      "current_sha256": "35cb2277dc09cf37b01dbd0fb35be4d54cda009d9cbd56eb45372dd60c23b9fe",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "research/native_methodology_v1/evidence/short_history_failure.json": {
+      "current_sha256": "595a9a216f801d84d839936de7b816f41e71ed58c7a31d5e999cfc9164fd903c",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "research/native_methodology_v1/evidence/status.json": {
+      "current_sha256": "70884b14333f77e3a88dfc455f9f57d220fb1c198841ff21463ba2ff4287ff3c",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "research/native_methodology_v1/evidence/validation.json": {
+      "current_sha256": "66edf5047f539d7e0308130daeb327d4485c2fa85f8dc96fc0b6524ef0c4854e",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "tests/test_native_diagnostic.py": {
+      "current_sha256": "bd11660301433c8cf4aaef8dccc08e228fc0fbccf07e8faedd80fd22cfdca98e",
+      "previous_sha256": null,
+      "reason": "Reviewed native diagnostic automation and scoped evidence; original strategy/includes newly bound without editing existing CRLF; scientific governance proposal not applied"
+    },
+    "tests/test_native_feature_diagnostic.py": {
+      "current_sha256": "932bb7b5a9754f50f114e13294cce7917d9d8a7deb31c13e83d529da900ee352",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "tests/test_native_independence.py": {
+      "current_sha256": "e27b34faf0c3859cf69a16d73d64c2e4c8ba103006326973e9e3ec10eade56ac",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "tests/test_native_methodology_proposal.py": {
+      "current_sha256": "b7b5bebce1f947c32b5fb917f6ab1e0ce2df2158e55e9a470a8e52a1487bc802",
+      "previous_sha256": null,
+      "reason": "Inactive native-methodology governance proposal, preserved-contract inventory and offline arrival chronology; no active contract, strategy, data, collector, training or gate changes."
+    },
+    "tests/test_native_study_design.py": {
+      "current_sha256": "4f506d9563dae9de31db50ce036a6f4233baf1b2e4646f224facc5d1c4eb8655",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "tests/test_nts_clock_calibration.py": {
+      "current_sha256": "69c5aeecfc023658d0fc012c86330592e8bdbd73b5096400e03366b9455ad01c",
+      "previous_sha256": null,
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "tests/test_nts_xm_correlation.py": {
+      "current_sha256": "9173e8b7980f6e9ebdc05a45613b5dab540db5270b447ac9016b10f258aeecd8",
+      "previous_sha256": null,
+      "reason": "Reviewed NTS/XM observational correlation and permitted sanitized evidence; no event UTC certification or scientific authorization"
+    },
+    "tests/test_prospective_utc.py": {
+      "current_sha256": "db15d740b9ef23c978e5094681e412af96fbffb10b0c86f9d0b6d6e95032a781",
+      "previous_sha256": "6232dae9479deb484c11f191dcae485d92b493796a14654e420a9f52edae7fff",
+      "reason": "Preserve reviewed upstream fast-forward d26656105ff7b7e0f73406529a50f7608ae6d376; documentation/handoff refresh and portable witness guard, no strategy or timestamp change"
+    },
+    "tools/authenticated_utc_station.py": {
+      "current_sha256": "8fb0d4dd520ca5ca14b8caee75a9f9cf9799ac3c655fad953ede2ea269692fb8",
+      "previous_sha256": "8d2578f47500a349e6cf60deebd628872488b8f241f3968cea6ee5d8ff457860",
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "tools/certify_pc_a_data.py": {
+      "current_sha256": "a8909162e174b32d8d777535e121026e6666fcb8fbf0cdbb36e87485d21b5ced",
+      "previous_sha256": "5a796bfb77e07e1c811bcc251e9641d1207de7ecf5d279f7d40e0a34cfb0613c",
+      "reason": "Advance source attestation to reviewed presentation manifest v11"
+    },
+    "tools/correlate_nts_xm.py": {
+      "current_sha256": "e7f33d6a6150abed0392e4c3053de18976a04db0c31bffac59c5a600754f8966",
+      "previous_sha256": "016ee7d20660ba0b9acc721f77de44b345815b9dafb09613efb468003b473246",
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "tools/install_prospective_launcher.py": {
+      "current_sha256": "768a0e40998c33f7cb613591cb662b6b0ee4159b2b1ebd7d15cffaf028ecec4a",
+      "previous_sha256": "8ca00ee76d71b6710e9a76b0c20e57e33cd1ea90484607c61e265a98531b88e1",
+      "reason": "Separate file-only installer status from externally verified Navigator visibility"
+    },
+    "tools/native_methodology_review.py": {
+      "current_sha256": "335bb81ed5b6198062f9fec23ceefedb3e08247789f16e7a2402296f37b1e8ce",
+      "previous_sha256": null,
+      "reason": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes."
+    },
+    "tools/prospective_utc_station.py": {
+      "current_sha256": "b6efd7dcec46d83ab5ec5286dd7381d738cbb5cda87bf87e2f523a64ea280c82",
+      "previous_sha256": "4e564b77b78c05442ebba843b5893328d71f2df10fd9b008ec3e2661a2104435",
+      "reason": "Reviewed temporal calibration observation, conditional rate estimation and sanitized real evidence; no generation-time certification or scientific authorization"
+    },
+    "tools/research_station.py": {
+      "current_sha256": "96ba35d455b6e60fd07e5816ae660b5d703b0c22112a55d3b6018f48220dd0fc",
+      "previous_sha256": "4afdc3a8071db5b592ae57e6841a3e63c61897b6bbecb54ea63a730236a365f9",
+      "reason": "Ecuador-first derived presentation; causal/raw contracts preserved"
+    }
+  },
+  "schema_version": 1,
+  "scope": "User-approved native diagnostics annex only; synthetic frozen-producer prefix tests, negative short-history evidence, independence preflight and unactivated statistical study design. No frozen contract, strategy, dataset, collector, training, scoring or protected gate changes.",
+  "upstream_base_reviewed": "d26656105ff7b7e0f73406529a50f7608ae6d376"
+}

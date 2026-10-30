@@ -1,0 +1,23 @@
+{
+  "capture_id": "nfeat_dbf52a1354b5",
+  "closed_history_at_start": 15,
+  "compile_errors": 0,
+  "compile_log_sha256": "63f2721ae10d86cd14c10720a735f2076b213c0723eabd0fb5ea294213677ee6",
+  "compile_warnings": 0,
+  "completion": false,
+  "earlier_compile_only_attempt": {
+    "capture_id": "nfeat_696afe781bc1",
+    "compile_errors": 0,
+    "compile_log_sha256": "2ae1a13e57df6077e24f62127a04fee0a611efe46f0a72718d7771151b17d0de",
+    "compile_warnings": 0,
+    "compiler_process_code": 1,
+    "producer_executed": false
+  },
+  "error": "array out of range in 'StochasticBarDecisionResearchEA.mq5' (152,1031)",
+  "ex5_sha256": "37f7f698017447cf3dbb268fa5d781474a70f6cd647b5cce9987aa929beacb7c",
+  "frozen_producer_changed": false,
+  "harness_sha256": "68726d878bfdcb1a8257a5a589b70a159c07bddff21b53ace2ebbba9c8cafb07",
+  "producer_sha256": "f2e9bf43cbbdc716148847fe53e1f3dd14b21393775ccc809d05cb5e134cb88d",
+  "remediation": "DIAGNOSTIC_PREFLIGHT_MINIMUM_20_NOT_FULL_WARMUP",
+  "status": "REJECTED_SYNTHETIC_SHORT_HISTORY"
+}

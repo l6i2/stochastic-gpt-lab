@@ -1,0 +1,33 @@
+{
+  "bootstrap_block_bars": 451,
+  "bootstrap_signal_resamples": 10000,
+  "data_manifest_sha256": null,
+  "exposure_ledger_sha256": null,
+  "initial_fraction": "floor(N/2)",
+  "membership_sha256": null,
+  "model_family": "ONE_L2_LOGISTIC_PER_ORIGINAL_SIDE",
+  "next_authorization": "EXPLICIT_NEW_STUDY_WITH_INDEPENDENT_DATA_AND_PROTOCOL_HASH",
+  "predictors": [
+    "stoch_k",
+    "delta_k_1",
+    "ATR",
+    "relative_volume_20",
+    "ha_direction",
+    "range_to_ATR"
+  ],
+  "protected_sets": [
+    "EXHAUSTED_TRAIN",
+    "DISCOVERY_VALIDATION",
+    "HISTORICAL_HOLDOUT",
+    "FINAL_TEST",
+    "PROTECTED_PROSPECTIVE_COHORT"
+  ],
+  "protocol_sha256": "43d98f14af7f81235887c8ad81c0c23e8ffd7ea9740ecf62452454fa2ed2abf7",
+  "purge": "BOTH_LABEL_ENDS_STRICTLY_BEFORE_NEXT_BOUNDARY",
+  "scoring_authorized": false,
+  "seed": 20261030,
+  "status": "DESIGN_FROZEN_STUDY_NOT_REGISTERED",
+  "study_authorized": false,
+  "training_authorized": false,
+  "walk_forward_folds": 4
+}

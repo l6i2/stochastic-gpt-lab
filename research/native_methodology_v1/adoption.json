@@ -1,0 +1,23 @@
+{
+  "schema_version": "native-methodology-adoption/1.0",
+  "status": "ADOPTED_DIAGNOSTICS_ONLY",
+  "approved_proposal_commit": "5e2973723e307e29479f0419163df54e547a8e94",
+  "approved_proposal_path": "proposals/native_methodology_v1/REVIEW_ES.md",
+  "approved_proposal_sha256": "c8ddaac2a6aeac7d25826b59226dde23256e560771eebfda96d5e493d41cb8b5",
+  "authorization_source": "Explicit user message: AUTORIZACION LIMITADA — STOCHASTIC-GPT-LAB; approval of diagnostic annex only",
+  "time_domain": "XM_NATIVE_ORDER",
+  "permitted": ["synthetic tests", "previously authorized fixed diagnostics", "feature availability checks", "future data independence tooling", "statistical protocol preparation"],
+  "frozen_contracts_modified": false,
+  "training_authorized": false,
+  "scoring_authorized": false,
+  "cohort_activation_authorized": false,
+  "global_causal_audit_override": false,
+  "gates": {
+    "TRAIN_EXHAUSTED": true,
+    "DISCOVERY_VALIDATION": "BLOCKED",
+    "HISTORICAL_HOLDOUT": "BLOCKED",
+    "FINAL_TEST": "LOCKED",
+    "DEMO": "DISABLED",
+    "LIVE_TRADING": false
+  }
+}
