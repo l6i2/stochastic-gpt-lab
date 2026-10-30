@@ -6,6 +6,7 @@ from pathlib import Path
 import sys
 import time
 import uuid
+import subprocess
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'outputs/pc_a_prospective_utc'
 sys.path.insert(0,str(ROOT/'python'))
@@ -62,6 +63,14 @@ def locked_run(folder,force):
     if raw.sha(ca)!=manifest['ca_sha256']:raise ValueError('NTS_CA_HASH_MISMATCH')
     sys.path.insert(0,str(runtime))
     from nts_external import measure
+    # Event-record identity avoids depending on a wall-clock query window.
+    clock_event_id=None
+    try:
+        event=subprocess.run(['powershell.exe','-NoProfile','-Command',
+            "(Get-WinEvent -FilterHashtable @{LogName='System';ProviderName='Microsoft-Windows-Kernel-General';Id=1} -MaxEvents 1 -ErrorAction Stop).RecordId"],
+            capture_output=True,text=True,timeout=8,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
+        if event.returncode==0:clock_event_id=int(event.stdout.strip())
+    except (OSError,ValueError,subprocess.TimeoutExpired):pass
     results=[]
     # Fresh sessions: no cookies, exporter keys or access credentials persisted.
     for host in ('time.cloudflare.com','ntppool2.time.nl'):
@@ -86,6 +95,7 @@ def locked_run(folder,force):
     payload=dict(record_id=uuid.uuid4().hex,observed_host_utc=raw.utc(),previous=previous,
         run_started_kernel_uptime_ms=now,run_finished_kernel_uptime_ms=kernel(),
         boot_identity=boot_identity,trigger='FORCED' if force else 'BOOT_EPOCH_REVALIDATION' if state.get('boot_identity')!=boot_identity else 'PERIODIC_DUE',
+        clock_change_event_record_id=clock_event_id,
         nominal_interval_ms=300000,prior_due_kernel_uptime_ms=state.get('next_due_uptime_ms'),
         dependency_manifest_sha256=raw.sha(manifest_path),source_sha256=raw.sha(ROOT/'python/nts_external.py'),
         results=results,native_receipt_correlations=models,

@@ -1,0 +1,47 @@
+{
+  "events": [
+    {
+      "Id": 1,
+      "ProviderName": "Microsoft-Windows-IsolatedUserMode",
+      "RecordId": 207363,
+      "TimeUtc": "2026-10-30T14:01:30.0473740Z"
+    },
+    {
+      "Id": 1,
+      "ProviderName": "Microsoft-Windows-Kernel-General",
+      "RecordId": 207360,
+      "TimeUtc": "2026-10-30T14:01:15.6190989Z"
+    },
+    {
+      "Id": 1,
+      "ProviderName": "Microsoft-Windows-Kernel-General",
+      "RecordId": 207355,
+      "TimeUtc": "2026-10-30T14:01:15.6182643Z"
+    },
+    {
+      "Id": 1,
+      "ProviderName": "Microsoft-Windows-Power-Troubleshooter",
+      "RecordId": 207345,
+      "TimeUtc": "2026-10-30T14:01:00.7672792Z"
+    },
+    {
+      "Id": 1,
+      "ProviderName": "Microsoft-Windows-Kernel-General",
+      "RecordId": 207319,
+      "TimeUtc": "2026-10-30T14:00:58.5003203Z"
+    },
+    {
+      "Id": 107,
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "RecordId": 207318,
+      "TimeUtc": "2026-10-30T03:55:54.3612382Z"
+    },
+    {
+      "Id": 42,
+      "ProviderName": "Microsoft-Windows-Kernel-Power",
+      "RecordId": 207315,
+      "TimeUtc": "2026-10-30T03:55:52.8139838Z"
+    }
+  ],
+  "status": "OBSERVED_CONTEXT_NOT_CAUSE_PROOF"
+}

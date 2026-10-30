@@ -1,0 +1,1149 @@
+{
+  "records": [
+    {
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "clock_change_event_record_id": null,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "observed_host_utc": "2026-10-30T03:39:22.252850+00:00",
+      "original_record_sha256": "c570ee4c75d1185fe6e81fbce4b6c7ac43d08eed22c4a0ed68254859ad80d253",
+      "previous": "bc7b5974be67497610c5e566e625dec09635f7e80d162b81bcb73dc367b44c49",
+      "prior_due_kernel_uptime_ms": 4877453,
+      "record_id": "152f9c54828645d390bfb0e88f59dff6",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "a5e6512390bd41babfedc5f373be9cbc",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 410100,
+            "host_receive_ns": 1793331556633578500,
+            "host_send_ns": 1793331556562773400,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -906751311,
+              -743470881
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "precision_log2_seconds": -25,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              4907906,
+              4907906
+            ],
+            "response_sha256": "df0f06f307a0eae588c054c7b1720359efd07b3512c199ce87421e3ed70ea9f8",
+            "root_delay_ns": 91018676,
+            "root_dispersion_ns": 778198,
+            "rtt_monotonic_ns": 70395000,
+            "server_advertised_error_ns": 46287567,
+            "server_processing_ns": 99804,
+            "server_receive_utc_ns": 1793331555773014952,
+            "server_transmit_utc_ns": 1793331555773114756,
+            "stratum": 3,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "1861ad228612445309dbf420bc3f618bc9898e86e271fc14b4206784a4239794",
+            "utc_receive_interval_model_ns": [
+              1793331555726827189,
+              1793331555890107619
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "error": "TimeoutError",
+          "origin": "ntppool2.time.nl",
+          "status": "UNAVAILABLE"
+        }
+      ],
+      "run_finished_kernel_uptime_ms": 4913515,
+      "run_started_kernel_uptime_ms": 4901484,
+      "source_sha256": "d271d12a87553f86e2685437fb08abb71781f9c86279f13e256c6e2f8089e993",
+      "trigger": "PERIODIC_DUE"
+    },
+    {
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "clock_change_event_record_id": null,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "observed_host_utc": "2026-10-30T03:33:52.040699+00:00",
+      "original_record_sha256": "bc7b5974be67497610c5e566e625dec09635f7e80d162b81bcb73dc367b44c49",
+      "previous": "d291821e205e73df47511d1f7c1202dbe92b3082ddb8da032eb930b236d387f9",
+      "prior_due_kernel_uptime_ms": 4632515,
+      "record_id": "226af85da5f84f268c53af8e0902c8ce",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "c7b35d6e6cdc4af4ba29b8b5f2153969",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 598100,
+            "host_receive_ns": 1793331226900361400,
+            "host_send_ns": 1793331226881268300,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -894521509,
+              -783070218
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "precision_log2_seconds": -25,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              4578171,
+              4578171
+            ],
+            "response_sha256": "24cfffa2e05918d75c9ae4a157c9f55dc3ce5ca8260fd2e5af926970ca741d67",
+            "root_delay_ns": 91018676,
+            "root_dispersion_ns": 717163,
+            "rtt_monotonic_ns": 18495000,
+            "server_advertised_error_ns": 46226532,
+            "server_processing_ns": 94873,
+            "server_receive_utc_ns": 1793331226051971550,
+            "server_transmit_utc_ns": 1793331226052066423,
+            "stratum": 3,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "725135a6c6b9bbd157e3bba779d9f0f73c2e3652d72ce8bea66840a8f41e93e3",
+            "utc_receive_interval_model_ns": [
+              1793331226005839891,
+              1793331226117291182
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "error": "TimeoutError",
+          "origin": "ntppool2.time.nl",
+          "status": "UNAVAILABLE"
+        }
+      ],
+      "run_finished_kernel_uptime_ms": 4583312,
+      "run_started_kernel_uptime_ms": 4577453,
+      "source_sha256": "d271d12a87553f86e2685437fb08abb71781f9c86279f13e256c6e2f8089e993",
+      "trigger": "PERIODIC_DUE"
+    },
+    {
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "clock_change_event_record_id": null,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "observed_host_utc": "2026-10-30T14:07:31.799572+00:00",
+      "original_record_sha256": "b97c22fac76d28c02c8814434fe5671c0b9b11d2431ab13949e845c6a8bc66e5",
+      "previous": "aee72bd975ee51373a538303c48dc77be1e36b50694dd832a24e117470a4d13f",
+      "prior_due_kernel_uptime_ms": 42537046,
+      "record_id": "23b913317b6244ba90a13e254dc48a77",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "541b1deb758a4f589a31e607fb305b28",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 193000,
+            "host_receive_ns": 1793369246491335700,
+            "host_send_ns": 1793369246473392200,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -50721672,
+              61131091
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "precision_log2_seconds": -26,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              42598984,
+              42598984
+            ],
+            "response_sha256": "3ca0a6bcc0fb60b26c98b03d24af01b71492cf0a98776ae42d5d6ce4feb444cf",
+            "root_delay_ns": 90774536,
+            "root_dispersion_ns": 1602172,
+            "rtt_monotonic_ns": 17750500,
+            "server_advertised_error_ns": 46989456,
+            "server_processing_ns": 69649,
+            "server_receive_utc_ns": 1793369246487533835,
+            "server_transmit_utc_ns": 1793369246487603484,
+            "stratum": 3,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "3489ef318a4a16fafd9d36651d8cc5bdd7ff558b2216c6a1c0083fa705fd14ea",
+            "utc_receive_interval_model_ns": [
+              1793369246440614028,
+              1793369246552466791
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "error": "TimeoutError",
+          "origin": "ntppool2.time.nl",
+          "status": "UNAVAILABLE"
+        }
+      ],
+      "run_finished_kernel_uptime_ms": 42604281,
+      "run_started_kernel_uptime_ms": 42592718,
+      "source_sha256": "d271d12a87553f86e2685437fb08abb71781f9c86279f13e256c6e2f8089e993",
+      "trigger": "PERIODIC_DUE"
+    },
+    {
+      "boot_identity": null,
+      "clock_change_event_record_id": null,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "observed_host_utc": "2026-10-30T03:14:09.311501+00:00",
+      "original_record_sha256": "754648878c26612820c3bf8ead6ddbc949b786d94ef3de2861a91f58c0df121e",
+      "previous": "2e174362ff8402dfb39fba689098f0e4230384cf2b00d470af418782502c9433",
+      "prior_due_kernel_uptime_ms": null,
+      "record_id": "4edbb61c64af418f8d77def59cc641f8",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "5af0ba5b48e94ec393304c13f5025f83",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": -295100,
+            "host_receive_ns": 1793330044120177700,
+            "host_send_ns": 1793330044104360300,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -870198187,
+              -760394955
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "precision_log2_seconds": -26,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              3395390,
+              3395390
+            ],
+            "response_sha256": "34c38ae88fdb74d78c36f164e31fc35a97329f4a68737f9c5480793a79572634",
+            "root_delay_ns": 91094970,
+            "root_dispersion_ns": 1480102,
+            "rtt_monotonic_ns": 16112500,
+            "server_advertised_error_ns": 47027603,
+            "server_processing_ns": 69374,
+            "server_receive_utc_ns": 1793330043296937742,
+            "server_transmit_utc_ns": 1793330043297007116,
+            "stratum": 3,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "ed9c2a888e1a170777bebfae18fbe6a5f41ef313435d983c70b11ea28c1c26a5",
+            "utc_receive_interval_model_ns": [
+              1793330043249979513,
+              1793330043359782745
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "error": "TimeoutError",
+          "origin": "ntppool2.time.nl",
+          "status": "UNAVAILABLE"
+        }
+      ],
+      "run_finished_kernel_uptime_ms": null,
+      "run_started_kernel_uptime_ms": null,
+      "source_sha256": "d271d12a87553f86e2685437fb08abb71781f9c86279f13e256c6e2f8089e993",
+      "trigger": null
+    },
+    {
+      "boot_identity": null,
+      "clock_change_event_record_id": null,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "observed_host_utc": "2026-10-30T03:11:51.570410+00:00",
+      "original_record_sha256": "2e174362ff8402dfb39fba689098f0e4230384cf2b00d470af418782502c9433",
+      "previous": "da5deea0584559efe17cb647d1da9aa26258f83c5cee4e271d56f5c59e7b4ac4",
+      "prior_due_kernel_uptime_ms": null,
+      "record_id": "6427fea662104954b1f0aed63d58aebd",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "3d682c3b60a84913b4b978202b9d0d69",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": -110900,
+            "host_receive_ns": 1793329910362601000,
+            "host_send_ns": 1793329910348758300,
+            "offset_server_minus_host_ns": [
+              -867796588,
+              -760713758
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              3261625,
+              3261625
+            ],
+            "response_sha256": "47f740e393f420336436fa3b17fce313d6c72fcc33856b004c885d3c55c4f0f7",
+            "rtt_monotonic_ns": 13953600,
+            "server_advertised_error_ns": 46676665,
+            "server_processing_ns": 113200,
+            "server_receive_utc_ns": 1793329909541367877,
+            "server_transmit_utc_ns": 1793329909541481077,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "5e1a89f6c8d767f79a936f4c5823782b8d5bcb9cd17ef872eb50353eac949383",
+            "utc_receive_interval_model_ns": [
+              1793329909494804412,
+              1793329909601887242
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "b9c805074fa14ba08b97ed58066c395e",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 652900,
+            "host_receive_ns": 1793329911568336000,
+            "host_send_ns": 1793329911367656700,
+            "offset_server_minus_host_ns": [
+              -922243271,
+              -721571040
+            ],
+            "origin": "ntppool2.time.nl",
+            "peer_certificate_sha256": "987c737f98c144280663fe519d851628c4a9697c28f3f7a0aafb87786e847510",
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              3262828,
+              3262828
+            ],
+            "response_sha256": "b1db09a1b05a2c1ea1146d76f6ef55339f12b6f8a6657fa2813190ee380c254c",
+            "rtt_monotonic_ns": 200026400,
+            "server_advertised_error_ns": 22903,
+            "server_processing_ns": 52875,
+            "server_receive_utc_ns": 1793329910646062757,
+            "server_transmit_utc_ns": 1793329910646115632,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "b8b241563eb2b24db4fc281c2032a9f6a829219bc45959b59e6c625b2c9cf933",
+            "utc_receive_interval_model_ns": [
+              1793329910646092729,
+              1793329910846764960
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        }
+      ],
+      "run_finished_kernel_uptime_ms": null,
+      "run_started_kernel_uptime_ms": null,
+      "source_sha256": "3f7f9e7c233419c8ff6eb1d5965b2f3cf302dc3c473623cff26ede8341d033bf",
+      "trigger": null
+    },
+    {
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "clock_change_event_record_id": null,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "observed_host_utc": "2026-10-30T03:49:48.954555+00:00",
+      "original_record_sha256": "b7eff43a1ca39d8239e520fa87dc9741c5fdc28469facd0995addf336302f86c",
+      "previous": "0871596baca54478709f5fca64656deb4fac9c71588bda50a8e248adab653c84",
+      "prior_due_kernel_uptime_ms": 5533218,
+      "record_id": "6bc745bec5874962bf9e287909e99c59",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "7d16d879884b462895ec9797abba8601",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 88000,
+            "host_receive_ns": 1793332183673357100,
+            "host_send_ns": 1793332183647849400,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -905953647,
+              -788090481
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "precision_log2_seconds": -25,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              5534937,
+              5534937
+            ],
+            "response_sha256": "3b857e0e80af3fe3b921c717c17c9395b2a0e86e2f376ea4bc5d77f793a3d9d0",
+            "root_delay_ns": 91018676,
+            "root_dispersion_ns": 717163,
+            "rtt_monotonic_ns": 25419700,
+            "server_advertised_error_ns": 46226532,
+            "server_processing_ns": 97598,
+            "server_receive_utc_ns": 1793332182813532387,
+            "server_transmit_utc_ns": 1793332182813629985,
+            "stratum": 3,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "315c8913cea87e7bac9f88ab0d2295c6521d701288c0a41603398c8c809bfd7c",
+            "utc_receive_interval_model_ns": [
+              1793332182767403453,
+              1793332182885266619
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "error": "TimeoutError",
+          "origin": "ntppool2.time.nl",
+          "status": "UNAVAILABLE"
+        }
+      ],
+      "run_finished_kernel_uptime_ms": 5540218,
+      "run_started_kernel_uptime_ms": 5533875,
+      "source_sha256": "d271d12a87553f86e2685437fb08abb71781f9c86279f13e256c6e2f8089e993",
+      "trigger": "PERIODIC_DUE"
+    },
+    {
+      "boot_identity": null,
+      "clock_change_event_record_id": null,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "observed_host_utc": "2026-10-30T03:10:01.181326+00:00",
+      "original_record_sha256": "da5deea0584559efe17cb647d1da9aa26258f83c5cee4e271d56f5c59e7b4ac4",
+      "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+      "prior_due_kernel_uptime_ms": null,
+      "record_id": "6e62ff5c701e4d61a16a6ba170d5deb2",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "8500094c7b6a4720828d5dce85d22f85",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 110900,
+            "host_receive_ns": 1793329799868426500,
+            "host_send_ns": 1793329799855008100,
+            "offset_server_minus_host_ns": [
+              -865547001,
+              -759252226
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              3151140,
+              3151140
+            ],
+            "response_sha256": "bb09730fd219b641a671ea71c016e983c459c250c4bf9edd1bc4496d07d5dad6",
+            "rtt_monotonic_ns": 13307500,
+            "server_advertised_error_ns": 46485931,
+            "server_processing_ns": 95487,
+            "server_receive_utc_ns": 1793329799049269943,
+            "server_transmit_utc_ns": 1793329799049365430,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "1807d36a3be2da4d0a1740a6f20abfcaf9c0b3146577368ea81d23ca130edfd5",
+            "utc_receive_interval_model_ns": [
+              1793329799002879499,
+              1793329799109174274
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "c815b02890aa4ccd95460b6b63c0ba5e",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 53600,
+            "host_receive_ns": 1793329801178320200,
+            "host_send_ns": 1793329800951785500,
+            "offset_server_minus_host_ns": [
+              -906558857,
+              -680089655
+            ],
+            "origin": "ntppool2.time.nl",
+            "peer_certificate_sha256": "987c737f98c144280663fe519d851628c4a9697c28f3f7a0aafb87786e847510",
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              3152437,
+              3152437
+            ],
+            "response_sha256": "900e9b5ae57f985c396e957e2c65361adba8c786462d3828b531bd628825769c",
+            "rtt_monotonic_ns": 226481100,
+            "server_advertised_error_ns": 22903,
+            "server_processing_ns": 111304,
+            "server_receive_utc_ns": 1793329800271672942,
+            "server_transmit_utc_ns": 1793329800271784246,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "eb690152b3b30060f8165ed77c7b857feb5055a62df5398547ae5849ce6f3d99",
+            "utc_receive_interval_model_ns": [
+              1793329800271761343,
+              1793329800498230545
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        }
+      ],
+      "run_finished_kernel_uptime_ms": null,
+      "run_started_kernel_uptime_ms": null,
+      "source_sha256": "8e813d17b17fef51bee5732fbb73ddc2d030ddfc6db13b20af7eeac61fc98647",
+      "trigger": null
+    },
+    {
+      "boot_identity": null,
+      "clock_change_event_record_id": null,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "observed_host_utc": "2026-10-30T03:19:46.585885+00:00",
+      "original_record_sha256": "594e3ef37e2b0d0b9ced9dfd0e1227540e31dd0ce146c4cce44c98ef41633014",
+      "previous": "754648878c26612820c3bf8ead6ddbc949b786d94ef3de2861a91f58c0df121e",
+      "prior_due_kernel_uptime_ms": null,
+      "record_id": "71a441224adb4a50b867289316618353",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "b1aa28bc6f5c4a509eecd2d10f9e8235",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 150500,
+            "host_receive_ns": 1793330381468299700,
+            "host_send_ns": 1793330381454973400,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -875209509,
+              -769504705
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "precision_log2_seconds": -26,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              3732734,
+              3732734
+            ],
+            "response_sha256": "9f9de76a480bb5a0a9c44fd5caee5150598cb53724042073f2e3f6d37abbcbaa",
+            "root_delay_ns": 91033935,
+            "root_dispersion_ns": 717163,
+            "rtt_monotonic_ns": 13175800,
+            "server_advertised_error_ns": 46234146,
+            "server_processing_ns": 89788,
+            "server_receive_utc_ns": 1793330380639234549,
+            "server_transmit_utc_ns": 1793330380639324337,
+            "stratum": 3,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "a3f52dc3f3672516483be75682eca16185c3b29d10e06c776dae4f03178da6d8",
+            "utc_receive_interval_model_ns": [
+              1793330380593090191,
+              1793330380698794995
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "error": "TimeoutError",
+          "origin": "ntppool2.time.nl",
+          "status": "UNAVAILABLE"
+        }
+      ],
+      "run_finished_kernel_uptime_ms": null,
+      "run_started_kernel_uptime_ms": null,
+      "source_sha256": "d271d12a87553f86e2685437fb08abb71781f9c86279f13e256c6e2f8089e993",
+      "trigger": null
+    },
+    {
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "clock_change_event_record_id": null,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "observed_host_utc": "2026-10-30T03:44:45.504305+00:00",
+      "original_record_sha256": "0871596baca54478709f5fca64656deb4fac9c71588bda50a8e248adab653c84",
+      "previous": "c570ee4c75d1185fe6e81fbce4b6c7ac43d08eed22c4a0ed68254859ad80d253",
+      "prior_due_kernel_uptime_ms": 5201484,
+      "record_id": "97cb229f93cd43079030c81949bdaf36",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "5a5c8ab7b2c84d49b1cfbae5dfed76cd",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 1092600,
+            "host_receive_ns": 1793331882848861700,
+            "host_send_ns": 1793331882808757400,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -901389549,
+              -767898531
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "precision_log2_seconds": -26,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              5234109,
+              5234109
+            ],
+            "response_sha256": "1c039451e27a9052c000f19c86222128fb9e5fd30e94180ff8853e0ec1dd577f",
+            "root_delay_ns": 91033935,
+            "root_dispersion_ns": 1220703,
+            "rtt_monotonic_ns": 39011700,
+            "server_advertised_error_ns": 46737686,
+            "server_processing_ns": 88654,
+            "server_receive_utc_ns": 1793331881994121183,
+            "server_transmit_utc_ns": 1793331881994209837,
+            "stratum": 3,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "7ac8417188aeb4a02733e560fb82076cca67946976e20ef1cd1c3f0fdd0eff9c",
+            "utc_receive_interval_model_ns": [
+              1793331881947472151,
+              1793331882080963169
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "b3002fb0671149979329dced064d099d",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 418600,
+            "host_receive_ns": 1793331885499273700,
+            "host_send_ns": 1793331884250780300,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -1814449247,
+              -565995152
+            ],
+            "origin": "ntppool2.time.nl",
+            "peer_certificate_sha256": "987c737f98c144280663fe519d851628c4a9697c28f3f7a0aafb87786e847510",
+            "precision_log2_seconds": -26,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              5236765,
+              5236765
+            ],
+            "response_sha256": "034ad2f34be5c9f73ec7cc12464965c269bb637cec662b52eb8f19d9a87fbcdd",
+            "root_delay_ns": 15258,
+            "root_dispersion_ns": 15258,
+            "rtt_monotonic_ns": 1248074800,
+            "server_advertised_error_ns": 22903,
+            "server_processing_ns": 85111,
+            "server_receive_utc_ns": 1793331883684762245,
+            "server_transmit_utc_ns": 1793331883684847356,
+            "stratum": 1,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "0c63c4c77d8ca3c6accbfacd6fa882b20ae3e13f2e02c8dbba3041451415eb84",
+            "utc_receive_interval_model_ns": [
+              1793331883684824453,
+              1793331884933278548
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        }
+      ],
+      "run_finished_kernel_uptime_ms": 5236765,
+      "run_started_kernel_uptime_ms": 5233218,
+      "source_sha256": "d271d12a87553f86e2685437fb08abb71781f9c86279f13e256c6e2f8089e993",
+      "trigger": "PERIODIC_DUE"
+    },
+    {
+      "boot_identity": null,
+      "clock_change_event_record_id": null,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "observed_host_utc": "2026-10-30T03:24:43.415848+00:00",
+      "original_record_sha256": "737d98fe5b15332d63eb64571a960e9f36fdcbbb7977da105042c246e0b41a9e",
+      "previous": "594e3ef37e2b0d0b9ced9dfd0e1227540e31dd0ce146c4cce44c98ef41633014",
+      "prior_due_kernel_uptime_ms": null,
+      "record_id": "ad07931c80a2447fa906409dc426b41e",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "280ad44560c5413fb70903e186fb5e7b",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 195200,
+            "host_receive_ns": 1793330682089444400,
+            "host_send_ns": 1793330682062994800,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -885264123,
+              -766326315
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "precision_log2_seconds": -26,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              4033359,
+              4033359
+            ],
+            "response_sha256": "827faf888369a8e1e30e9a3e2e63913466e5950971e60aa3ee26e10081f02853",
+            "root_delay_ns": 91033935,
+            "root_dispersion_ns": 762939,
+            "rtt_monotonic_ns": 26254400,
+            "server_advertised_error_ns": 46279922,
+            "server_processing_ns": 71636,
+            "server_receive_utc_ns": 1793330681250388563,
+            "server_transmit_utc_ns": 1793330681250460199,
+            "stratum": 3,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "48a4d2492f38b618a54c188442a1c6972bb1d00193b1781634104c5d3bc40895",
+            "utc_receive_interval_model_ns": [
+              1793330681204180277,
+              1793330681323118085
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "a80f93a0ef3047cdb58cb6ce23fc4188",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 615700,
+            "host_receive_ns": 1793330683411840700,
+            "host_send_ns": 1793330683215957700,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -918992494,
+              -723179051
+            ],
+            "origin": "ntppool2.time.nl",
+            "peer_certificate_sha256": "987c737f98c144280663fe519d851628c4a9697c28f3f7a0aafb87786e847510",
+            "precision_log2_seconds": -26,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              4034671,
+              4034671
+            ],
+            "response_sha256": "c74a564d469e8aacf54d5c0042cdedc16cf19bca0966f5fedd100d478bf2d26b",
+            "root_delay_ns": 15258,
+            "root_dispersion_ns": 15258,
+            "rtt_monotonic_ns": 195267300,
+            "server_advertised_error_ns": 22903,
+            "server_processing_ns": 115363,
+            "server_receive_utc_ns": 1793330682492755746,
+            "server_transmit_utc_ns": 1793330682492871109,
+            "stratum": 1,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "a4e8c89e2a52e179f087673f6ac8fb4a8cc27ccbee4775d8de47ea77aff023ea",
+            "utc_receive_interval_model_ns": [
+              1793330682492848206,
+              1793330682688661649
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        }
+      ],
+      "run_finished_kernel_uptime_ms": null,
+      "run_started_kernel_uptime_ms": null,
+      "source_sha256": "d271d12a87553f86e2685437fb08abb71781f9c86279f13e256c6e2f8089e993",
+      "trigger": null
+    },
+    {
+      "boot_identity": null,
+      "clock_change_event_record_id": null,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "observed_host_utc": "2026-10-30T03:29:47.015733+00:00",
+      "original_record_sha256": "d291821e205e73df47511d1f7c1202dbe92b3082ddb8da032eb930b236d387f9",
+      "previous": "737d98fe5b15332d63eb64571a960e9f36fdcbbb7977da105042c246e0b41a9e",
+      "prior_due_kernel_uptime_ms": null,
+      "record_id": "b62834f170c5459a878393ab43310335",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "5a50a07e039d4a6f818e6251e9105116",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 205300,
+            "host_receive_ns": 1793330981924190500,
+            "host_send_ns": 1793330981909079000,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -885117784,
+              -777379052
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "precision_log2_seconds": -26,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              4333187,
+              4333187
+            ],
+            "response_sha256": "9f3a0c78a16777a7431490139362cc3afd9fe6f3b97582237ecac7d932f31406",
+            "root_delay_ns": 91033935,
+            "root_dispersion_ns": 839233,
+            "rtt_monotonic_ns": 14906200,
+            "server_advertised_error_ns": 46356216,
+            "server_processing_ns": 85200,
+            "server_receive_utc_ns": 1793330981085343732,
+            "server_transmit_utc_ns": 1793330981085428932,
+            "stratum": 3,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "9ded13d5bc8e2ed94c72bb74657628df517fea7380ff3fd02b189c1e1bcccc81",
+            "utc_receive_interval_model_ns": [
+              1793330981039072716,
+              1793330981146811448
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "error": "TimeoutError",
+          "origin": "ntppool2.time.nl",
+          "status": "UNAVAILABLE"
+        }
+      ],
+      "run_finished_kernel_uptime_ms": null,
+      "run_started_kernel_uptime_ms": null,
+      "source_sha256": "d271d12a87553f86e2685437fb08abb71781f9c86279f13e256c6e2f8089e993",
+      "trigger": null
+    },
+    {
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "clock_change_event_record_id": null,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "observed_host_utc": "2026-10-30T14:12:46.111566+00:00",
+      "original_record_sha256": "4597c033552331b3734fbfb546ec03f5ec7d077fbd04618ef8c6c7c014d50064",
+      "previous": "b97c22fac76d28c02c8814434fe5671c0b9b11d2431ab13949e845c6a8bc66e5",
+      "prior_due_kernel_uptime_ms": 42892718,
+      "record_id": "bb2c0bc7b5c14e6a912a14f4706295b3",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "b6a130a43e5a42dc805f2c41ccdb59b8",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 781300,
+            "host_receive_ns": 1793369564810407000,
+            "host_send_ns": 1793369564790476700,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -59813741,
+              52579567
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "precision_log2_seconds": -25,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_clock_observation": {
+              "qpc_absolute_utc_accuracy": "NOT_IMPLIED_BY_RESOLUTION",
+              "qpc_frequency_hz": 10000000,
+              "qpc_ticks_interval": [
+                429208044552,
+                429208044580
+              ],
+              "scope": "LOCAL_WALL_READ_NOT_PACKET_ARRIVAL",
+              "uptime_resolution_bound": "NOT_CALIBRATED"
+            },
+            "receive_kernel_uptime_ms_interval": [
+              42917296,
+              42917296
+            ],
+            "response_sha256": "4e0ac3b7e03b71d457a495f2e1de5539b2f5df8398240a8dd9854324158e342d",
+            "root_delay_ns": 90728759,
+            "root_dispersion_ns": 915527,
+            "rtt_monotonic_ns": 19149000,
+            "server_advertised_error_ns": 46279937,
+            "server_processing_ns": 96866,
+            "server_receive_utc_ns": 1793369564796776330,
+            "server_transmit_utc_ns": 1793369564796873196,
+            "stratum": 3,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "9cc5b1db30120ebcc7ffabf764c1bde4b9ebff37bd55bec05aa2e05df19fd7ac",
+            "utc_receive_interval_model_ns": [
+              1793369564750593259,
+              1793369564862986567
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "533d389ee4fb41f5800406d10cd9fa63",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": -561400,
+            "host_receive_ns": 1793369566101455000,
+            "host_send_ns": 1793369565906891200,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -92899625,
+              101625569
+            ],
+            "origin": "ntppool2.time.nl",
+            "peer_certificate_sha256": "987c737f98c144280663fe519d851628c4a9697c28f3f7a0aafb87786e847510",
+            "precision_log2_seconds": -26,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_clock_observation": {
+              "qpc_absolute_utc_accuracy": "NOT_IMPLIED_BY_RESOLUTION",
+              "qpc_frequency_hz": 10000000,
+              "qpc_ticks_interval": [
+                429220957297,
+                429220957369
+              ],
+              "scope": "LOCAL_WALL_READ_NOT_PACKET_ARRIVAL",
+              "uptime_resolution_bound": "NOT_CALIBRATED"
+            },
+            "receive_kernel_uptime_ms_interval": [
+              42918593,
+              42918593
+            ],
+            "response_sha256": "d646ca99b2c3557f7de01cae975a6b8ae043548af4346d83507db0cb9c4e2fc2",
+            "root_delay_ns": 15258,
+            "root_dispersion_ns": 15258,
+            "rtt_monotonic_ns": 195125200,
+            "server_advertised_error_ns": 22903,
+            "server_processing_ns": 84412,
+            "server_receive_utc_ns": 1793369566008493866,
+            "server_transmit_utc_ns": 1793369566008578278,
+            "stratum": 1,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "d3ae5a700568b2148d6623ab3863f4dc066ab54137c808ff7afa159ddf93ed3d",
+            "utc_receive_interval_model_ns": [
+              1793369566008555375,
+              1793369566203080569
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        }
+      ],
+      "run_finished_kernel_uptime_ms": 42918593,
+      "run_started_kernel_uptime_ms": 42915765,
+      "source_sha256": "934f64daf708371282810652c76a92a2d9bb3ac5505c25eb0da6aeac38b4a7db",
+      "trigger": "PERIODIC_DUE"
+    },
+    {
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "clock_change_event_record_id": null,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "observed_host_utc": "2026-10-30T03:55:32.871284+00:00",
+      "original_record_sha256": "a0b497ea58765ca60c5fabb0698522c68747aef708c88dcc73ff53924ff1a6f8",
+      "previous": "b7eff43a1ca39d8239e520fa87dc9741c5fdc28469facd0995addf336302f86c",
+      "prior_due_kernel_uptime_ms": 5833875,
+      "record_id": "c24e663c3af24ffcbfee4f2176d0e7af",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "ee993291fa684f8896759168c5e23738",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 29000,
+            "host_receive_ns": 1793332531306251100,
+            "host_send_ns": 1793332531291978700,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -910078834,
+              -802896396
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "precision_log2_seconds": -26,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              5882578,
+              5882578
+            ],
+            "response_sha256": "7c642ef3b7a473df04342a511f2b509d24d4eee28f1a967b1b77537a13c86ac4",
+            "root_delay_ns": 91079711,
+            "root_dispersion_ns": 946044,
+            "rtt_monotonic_ns": 14243400,
+            "server_advertised_error_ns": 46485915,
+            "server_processing_ns": 61792,
+            "server_receive_utc_ns": 1793332530442596389,
+            "server_transmit_utc_ns": 1793332530442658181,
+            "stratum": 3,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "92423f6a0b9ccb60007e3876130bbadd207c28e8b0d7c7fd595714aa16bb2dd9",
+            "utc_receive_interval_model_ns": [
+              1793332530396172266,
+              1793332530503354704
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "13789795d0574cc99c3f19af17056f5f",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 141100,
+            "host_receive_ns": 1793332532868137100,
+            "host_send_ns": 1793332532668925800,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -948484314,
+              -749377385
+            ],
+            "origin": "ntppool2.time.nl",
+            "peer_certificate_sha256": "987c737f98c144280663fe519d851628c4a9697c28f3f7a0aafb87786e847510",
+            "precision_log2_seconds": -26,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              5884140,
+              5884140
+            ],
+            "response_sha256": "c2c6c6de171d3d4ff149eb2a6ab363849274ff3e8fa060a7cb8a9254dcb7bb27",
+            "root_delay_ns": 15258,
+            "root_dispersion_ns": 15258,
+            "rtt_monotonic_ns": 199070200,
+            "server_advertised_error_ns": 22903,
+            "server_processing_ns": 150177,
+            "server_receive_utc_ns": 1793332531919525512,
+            "server_transmit_utc_ns": 1793332531919675689,
+            "stratum": 1,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "f6afa2145ffa096add8eb35a4c99cee23794398282e6e18d1f2a02ad568783f6",
+            "utc_receive_interval_model_ns": [
+              1793332531919652786,
+              1793332532118759715
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        }
+      ],
+      "run_finished_kernel_uptime_ms": 5884140,
+      "run_started_kernel_uptime_ms": 5881890,
+      "source_sha256": "d271d12a87553f86e2685437fb08abb71781f9c86279f13e256c6e2f8089e993",
+      "trigger": "PERIODIC_DUE"
+    },
+    {
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "clock_change_event_record_id": 207360,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "observed_host_utc": "2026-10-30T14:18:49.932333+00:00",
+      "original_record_sha256": "954c164c759159c188c4ca54a28d0cc888edaec4b6aa101a70c84d98021af1e9",
+      "previous": "4597c033552331b3734fbfb546ec03f5ec7d077fbd04618ef8c6c7c014d50064",
+      "prior_due_kernel_uptime_ms": 43215765,
+      "record_id": "db92df33191f4f5cabfcb83764842efd",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "9d62df21246141c1a9eec5196af00eef",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_interval_ns": [
+              -778100,
+              -689300
+            ],
+            "host_elapsed_minus_monotonic_ns": -689300,
+            "host_receive_ns": 1793369924805873400,
+            "host_send_ns": 1793369924791632900,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -59272590,
+              47086046
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "precision_log2_seconds": -25,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_clock_observation": {
+              "qpc_absolute_utc_accuracy": "NOT_IMPLIED_BY_RESOLUTION",
+              "qpc_frequency_hz": 10000000,
+              "qpc_ticks_interval": [
+                432808000089,
+                432808000107
+              ],
+              "scope": "LOCAL_WALL_READ_NOT_PACKET_ARRIVAL",
+              "uptime_resolution_bound": "NOT_CALIBRATED"
+            },
+            "receive_kernel_uptime_ms_interval": [
+              43277296,
+              43277296
+            ],
+            "response_sha256": "a01af25d88572956fa012a751501180b72f73182ded03f5522ea5a11aa6358ed",
+            "root_delay_ns": 90744018,
+            "root_dispersion_ns": 732421,
+            "rtt_local_read_interval_ns": [
+              14929800,
+              15018600
+            ],
+            "rtt_monotonic_ns": 15018600,
+            "rtt_scope": "QUERY_ELAPSED_INCLUDES_LOCAL_PROCESSING_NOT_PURE_NETWORK_DELAY",
+            "server_advertised_error_ns": 46104461,
+            "server_processing_ns": 90786,
+            "server_receive_utc_ns": 1793369924792614485,
+            "server_transmit_utc_ns": 1793369924792705271,
+            "stratum": 3,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "81fd7e77abaeff895438ff3ab832cd81dc98bfceef4ee13948887f3c7e8e5df4",
+            "utc_receive_interval_model_ns": [
+              1793369924746600810,
+              1793369924852959446
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "error": "TimeoutError",
+          "origin": "ntppool2.time.nl",
+          "status": "UNAVAILABLE"
+        }
+      ],
+      "run_finished_kernel_uptime_ms": 43282421,
+      "run_started_kernel_uptime_ms": 43274609,
+      "source_sha256": "1b9bb08565f0b24d07d7a037ba1bfd8098b9c66f76aac5cf206bcfb724d2702e",
+      "trigger": "PERIODIC_DUE"
+    },
+    {
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "clock_change_event_record_id": null,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "observed_host_utc": "2026-10-30T14:01:34.429411+00:00",
+      "original_record_sha256": "aee72bd975ee51373a538303c48dc77be1e36b50694dd832a24e117470a4d13f",
+      "previous": "a0b497ea58765ca60c5fabb0698522c68747aef708c88dcc73ff53924ff1a6f8",
+      "prior_due_kernel_uptime_ms": 6181890,
+      "record_id": "df082baa48a74f3ea8e67c720e4b9980",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "a2ee59170fcb45c08e68ce656e4cf435",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": -826200,
+            "host_receive_ns": 1793368889003890500,
+            "host_send_ns": 1793368888988859100,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -42640287,
+              65498504
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "precision_log2_seconds": -25,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              42241500,
+              42241500
+            ],
+            "response_sha256": "c910f09b11b25d890edc87cdcf4fd116fe5d19bda8c4a270e9dee3ebc3896e7f",
+            "root_delay_ns": 90774536,
+            "root_dispersion_ns": 1220703,
+            "rtt_monotonic_ns": 15857600,
+            "server_advertised_error_ns": 46608002,
+            "server_processing_ns": 108613,
+            "server_receive_utc_ns": 1793368889007749602,
+            "server_transmit_utc_ns": 1793368889007858215,
+            "stratum": 3,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "73f59be491c0716d30dc8b3436ba96c3c9b93249a1daaacde1ed24ae9bcf1600",
+            "utc_receive_interval_model_ns": [
+              1793368888961250213,
+              1793368889069389004
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "error": "TimeoutError",
+          "origin": "ntppool2.time.nl",
+          "status": "UNAVAILABLE"
+        }
+      ],
+      "run_finished_kernel_uptime_ms": 42246921,
+      "run_started_kernel_uptime_ms": 42237046,
+      "source_sha256": "d271d12a87553f86e2685437fb08abb71781f9c86279f13e256c6e2f8089e993",
+      "trigger": "PERIODIC_DUE"
+    }
+  ],
+  "scope": "SANITIZED_VIEWS_ORIGINAL_COMPLETE_RECORDS_RETAINED_LOCALLY"
+}

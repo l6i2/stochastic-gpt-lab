@@ -10,7 +10,20 @@ import pc_a_raw_archive as raw
 from authenticated_utc_station import verify_history
 from prospective_utc import verify_callback
 from nts_xm_correlation import correlate, read_rows
+from nts_clock_calibration import calibrate, project_group
 BASE=ROOT/'outputs/pc_a_prospective_utc'
+
+
+def cached_calibrate(records):
+    key=hashlib.sha256((''.join(r['sha256'] for r in records)+raw.sha(ROOT/'python/nts_clock_calibration.py')).encode()).hexdigest()
+    cache=BASE/'calibration_snapshots'/(key+'.json');cache.parent.mkdir(exist_ok=True)
+    if cache.exists():
+        envelope=json.loads(cache.read_text())
+        if hashlib.sha256(raw.canonical(envelope['payload'])).hexdigest()!=envelope['sha256']:raise ValueError('CALIBRATION_CACHE_HASH_MISMATCH')
+    else:
+        payload=calibrate(records);envelope=dict(payload=payload,sha256=hashlib.sha256(raw.canonical(payload)).hexdigest())
+        with cache.open('x',encoding='utf-8') as stream:json.dump(envelope,stream,sort_keys=True)
+    return key,envelope['payload']
 
 
 def run():
@@ -18,7 +31,12 @@ def run():
     state=json.loads((folder/'state.json').read_text())
     count=verify_history(folder,state)
     records=[json.loads(p.read_text()) for p in folder.glob('*.json') if len(p.stem)==32]
-    records.sort(key=lambda r:r['payload']['observed_host_utc'])
+    by_hash={r['sha256']:r for r in records};ordered=[];head=state['chain_head']
+    while head!='0'*64:
+        ordered.append(by_hash[head]);head=by_hash[head]['payload']['previous']
+    records=list(reversed(ordered))
+    calibration_key,calibration=cached_calibrate(records)
+    raw.atomic(BASE/'clock_calibration.json',dict(input_key=calibration_key,nts_chain_head=state['chain_head'],calibration=calibration))
     sessions={}; totals={'CERTIFIED':0,'PARTIAL':0,'QUARANTINED':0}
     for path in sorted((BASE/'native_mirror').glob('*.jsonl')):
         verified=verify_callback(path)
@@ -35,6 +53,10 @@ def run():
             link=record['payload'].get('native_receipt_correlations',{}).get(path.name)
             if link and link.get('native_chain_head') in heads:linked.append(record)
         observations=correlate(read_rows(path,verified['bytes_verified']),linked)
+        _,linked_calibration=cached_calibrate(linked)
+        for row in observations:
+            row['conditional_calibrated_receipt_models']=[v for g in linked_calibration['groups']
+                if row['status']=='PARTIAL' and (v:=project_group(g,row['callback_uptime_ms'])) is not None]
         segments=[]
         for row in observations:
             signature=(row['status'],tuple(row['reasons']))
@@ -55,7 +77,8 @@ def run():
             segment['native_minus_receipt_coordinate_ns_envelope']=[min(m['native_minus_receipt_coordinate_ns'][0] for m in models),max(m['native_minus_receipt_coordinate_ns'][1] for m in models)] if models else None
             segment['generation_latency_ns']=None
             segment['certified_receipt_bounds_ns']=None
-        sessions[path.name]=dict(verified_prefix=verified,segments=segments,callback_correlations=observations)
+        sessions[path.name]=dict(verified_prefix=verified,segments=segments,callback_correlations=observations,
+            receipt_calibration_scope='CONDITIONAL_AFFINE_MODELS_ONLY_GTC_QUANTIZATION_UNCALIBRATED')
     report=dict(schema_version=1,observed_host_utc=raw.utc(),nts_chain_head=state['chain_head'],nts_records=count,
         measurements=[dict(record_sha256=r['sha256'],observed_host_utc=r['payload']['observed_host_utc'],
             trigger=r['payload'].get('trigger','LEGACY_NOT_RECORDED'),
@@ -65,7 +88,7 @@ def run():
                 receive_uptime=x.get('measurement',{}).get('receive_kernel_uptime_ms_interval'),
                 offset_ns=x.get('measurement',{}).get('offset_server_minus_host_ns'),
                 rtt_ns=x.get('measurement',{}).get('rtt_monotonic_ns')) for x in r['payload']['results']]) for r in records],
-        sessions=sessions,segment_counts=totals,certified_segments=[],
+        sessions=sessions,segment_counts=totals,certified_segments=[],clock_calibration=calibration,
         receipt_bounds='CONDITIONAL_ZERO_DRIFT_MODELS_ONLY_NO_CERTIFIED_BOUNDS',
         broker_calendar='PARTIAL',CAUSAL_AUDIT='FAIL',TRAINING_READINESS='BLOCKED_BY_RESEARCH_GOVERNANCE',
         DISCOVERY_VALIDATION='BLOCKED',FINAL_TEST='LOCKED',DEMO='DISABLED',LIVE_TRADING=False,

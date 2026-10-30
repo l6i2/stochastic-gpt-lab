@@ -1,0 +1,9 @@
+{
+  "feature_max_time_le_decision_time": "NOT_EVALUABLE_UNVERIFIED_GENERATION_UTC",
+  "guard_reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+  "new_material": "Conditional NTS rate estimates and QPC sample brackets; no independent broker event generation binding",
+  "normalized_rows_admitted": 0,
+  "quote_time_le_decision_time": "NOT_EVALUABLE_UNVERIFIED_GENERATION_UTC",
+  "status": "FAIL",
+  "training_readiness": "BLOCKED_BY_RESEARCH_GOVERNANCE"
+}

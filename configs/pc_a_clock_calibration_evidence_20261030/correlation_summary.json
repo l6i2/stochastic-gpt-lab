@@ -1,0 +1,652 @@
+{
+  "native_sessions": {
+    "pc_a_prospective_utc_v1_268328_86572951924106_6708.jsonl": {
+      "calibrated_example": {
+        "callback_read_elapsed_ms": 0,
+        "callback_uptime_ms": 4578234,
+        "certified_receipt_bounds_ns": null,
+        "conditional_calibrated_receipt_models": [
+          {
+            "certified": false,
+            "conditional_receipt_ns": [
+              1793331226068833703,
+              1793331226180295554
+            ],
+            "event_time_inferred": false,
+            "group_id": "7:0",
+            "scope": "CONSTANT_RATE_CONDITIONAL_MODEL_UNCALIBRATED_GTC_QUANTIZATION"
+          }
+        ],
+        "conditional_models": [
+          {
+            "capture_id": "c7b35d6e6cdc4af4ba29b8b5f2153969",
+            "conditional_receipt_ns": [
+              1793331226068839891,
+              1793331226180291182
+            ],
+            "conditional_width_ns": 111451291,
+            "native_minus_receipt_coordinate_ns": [
+              7199843708818,
+              7199955160109
+            ],
+            "network_rtt_ns": 18495000,
+            "observed_offset_server_minus_host_ns": [
+              -894521509,
+              -783070218
+            ]
+          },
+          {
+            "capture_id": "a5e6512390bd41babfedc5f373be9cbc",
+            "conditional_receipt_ns": [
+              1793331226054827189,
+              1793331226218107619
+            ],
+            "conditional_width_ns": 163280430,
+            "native_minus_receipt_coordinate_ns": [
+              7199805892381,
+              7199969172811
+            ],
+            "network_rtt_ns": 70395000,
+            "observed_offset_server_minus_host_ns": [
+              -906751311,
+              -743470881
+            ]
+          }
+        ],
+        "event_utc_certified": false,
+        "generation_latency_ns": null,
+        "missing": [
+          "OSCILLATOR_AND_COUNTER_ERROR_BOUND",
+          "INDEPENDENT_GENERATION_EVENT_BINDING",
+          "BROKER_GENERATION_TO_CALLBACK_DELAY_BOUND"
+        ],
+        "reasons": [],
+        "scientific_acceptance": false,
+        "scope": "OBSERVATIONAL_BRACKETING_NOT_CONTINUOUS_NTS_VALIDITY",
+        "sequence": 5459,
+        "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+        "status": "PARTIAL"
+      },
+      "segments": [
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            250
+          ],
+          "callbacks": 700,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 268328,
+          "first_sequence": 1,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 912437,
+          "last_sequence": 828,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            0
+          ],
+          "callbacks": 2,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 918171,
+          "first_sequence": 830,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 927593,
+          "last_sequence": 832,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "HEARTBEAT_GAP_TWO_TIMER_PERIODS",
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            171
+          ],
+          "callbacks": 70,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 971437,
+          "first_sequence": 834,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 1044546,
+          "last_sequence": 918,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            16
+          ],
+          "callbacks": 2,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 1048765,
+          "first_sequence": 920,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 1048781,
+          "last_sequence": 921,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "HEARTBEAT_GAP_TWO_TIMER_PERIODS",
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            79
+          ],
+          "callbacks": 2291,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 1063953,
+          "first_sequence": 924,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 3146015,
+          "last_sequence": 3630,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            31
+          ],
+          "callbacks": 1542,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": [
+            105704804,
+            226469202
+          ],
+          "first_callback_uptime_ms": 3152906,
+          "first_sequence": 3632,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 4576703,
+          "last_sequence": 5458,
+          "native_minus_receipt_coordinate_ns_envelope": [
+            7197916235040,
+            7200009907271
+          ],
+          "nts_network_rtt_ns_range": [
+            13175800,
+            226481100
+          ],
+          "nts_server_minus_host_offset_ns_envelope": [
+            -922243271,
+            -680089655
+          ],
+          "reasons": [
+            "KERNEL_EPOCH_UNVERIFIED_OR_CHANGED"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            93
+          ],
+          "callbacks": 1140,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": [
+            107182438,
+            1248454095
+          ],
+          "first_callback_uptime_ms": 4578234,
+          "first_sequence": 5459,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 5813109,
+          "last_sequence": 6845,
+          "native_minus_receipt_coordinate_ns_envelope": [
+            7177048721452,
+            7200876175547
+          ],
+          "nts_network_rtt_ns_range": [
+            14243400,
+            1248074800
+          ],
+          "nts_server_minus_host_offset_ns_envelope": [
+            -1814449247,
+            -565995152
+          ],
+          "reasons": [],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "PARTIAL"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            0
+          ],
+          "callbacks": 2,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": [
+            107182438,
+            117863166
+          ],
+          "first_callback_uptime_ms": 5814406,
+          "first_sequence": 6847,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 5814656,
+          "last_sequence": 6848,
+          "native_minus_receipt_coordinate_ns_envelope": [
+            7199168733381,
+            7199730827734
+          ],
+          "nts_network_rtt_ns_range": [
+            14243400,
+            25419700
+          ],
+          "nts_server_minus_host_offset_ns_envelope": [
+            -910078834,
+            -788090481
+          ],
+          "reasons": [
+            "HEARTBEAT_GAP_TWO_TIMER_PERIODS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            0
+          ],
+          "callbacks": 29,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": [
+            107182438,
+            199106929
+          ],
+          "first_callback_uptime_ms": 5833437,
+          "first_sequence": 6851,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 5883843,
+          "last_sequence": 6889,
+          "native_minus_receipt_coordinate_ns_envelope": [
+            7196288733381,
+            7199991347214
+          ],
+          "nts_network_rtt_ns_range": [
+            14243400,
+            199070200
+          ],
+          "nts_server_minus_host_offset_ns_envelope": [
+            -948484314,
+            -749377385
+          ],
+          "reasons": [],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "PARTIAL"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            0
+          ],
+          "callbacks": 1,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": [
+            199106929,
+            199106929
+          ],
+          "first_callback_uptime_ms": 5884140,
+          "first_sequence": 6890,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 5884140,
+          "last_sequence": 6890,
+          "native_minus_receipt_coordinate_ns_envelope": [
+            7199795240285,
+            7199994347214
+          ],
+          "nts_network_rtt_ns_range": [
+            199070200,
+            199070200
+          ],
+          "nts_server_minus_host_offset_ns_envelope": [
+            -948484314,
+            -749377385
+          ],
+          "reasons": [
+            "NOT_TWO_DISTINCT_NTS_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            0
+          ],
+          "callbacks": 1,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 5887437,
+          "first_sequence": 6892,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 5887437,
+          "last_sequence": 6892,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        }
+      ],
+      "verified_prefix": {
+        "adjacent_duplicate_quotes": 15,
+        "bytes_verified": 4243936,
+        "capture_id": "pc_a_prospective_utc_v1",
+        "chain_head": "f936dcb9b217cdb926107533cc448173b951765b6ea62da738f2890a2fdf6642",
+        "completeness": "UNPROVEN_ONTICK_CAN_COALESCE",
+        "disconnected_records": 0,
+        "future_event_timestamps": "NOT_EVALUABLE_WITHOUT_MAPPING",
+        "host_clock_delta_scope": "DIAGNOSTIC_SECOND_RESOLUTION_NOT_CERTIFIED_CLOCK_STEP",
+        "host_clock_vs_uptime_delta_ms_envelope": [
+          -984,
+          1156
+        ],
+        "largest_heartbeat_interval_ms": 46469,
+        "last_callback_uptime_ms": 5889953,
+        "last_connected": true,
+        "last_kind": "SESSION_END",
+        "native_timestamp_regressions": 0,
+        "partial_tail": false,
+        "rows": 6894,
+        "scientific_acceptance": false,
+        "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+        "tick_callbacks": 5780
+      }
+    },
+    "pc_a_prospective_utc_v1_42543593_86572951924106_65753.jsonl": {
+      "calibrated_example": {
+        "callback_read_elapsed_ms": 0,
+        "callback_uptime_ms": 42917515,
+        "certified_receipt_bounds_ns": null,
+        "conditional_calibrated_receipt_models": [
+          {
+            "certified": false,
+            "conditional_receipt_ns": [
+              1793369564969522457,
+              1793369565082048840
+            ],
+            "event_time_inferred": false,
+            "group_id": "0:0",
+            "scope": "CONSTANT_RATE_CONDITIONAL_MODEL_UNCALIBRATED_GTC_QUANTIZATION"
+          }
+        ],
+        "conditional_models": [
+          {
+            "capture_id": "b6a130a43e5a42dc805f2c41ccdb59b8",
+            "conditional_receipt_ns": [
+              1793369564969593259,
+              1793369565081986567
+            ],
+            "conditional_width_ns": 112393308,
+            "native_minus_receipt_coordinate_ns": [
+              7199839013433,
+              7199951406741
+            ],
+            "network_rtt_ns": 19149000,
+            "observed_offset_server_minus_host_ns": [
+              -59813741,
+              52579567
+            ]
+          },
+          {
+            "capture_id": "533d389ee4fb41f5800406d10cd9fa63",
+            "conditional_receipt_ns": [
+              1793369564930555375,
+              1793369565125080569
+            ],
+            "conditional_width_ns": 194525194,
+            "native_minus_receipt_coordinate_ns": [
+              7199795919431,
+              7199990444625
+            ],
+            "network_rtt_ns": 195125200,
+            "observed_offset_server_minus_host_ns": [
+              -92899625,
+              101625569
+            ]
+          }
+        ],
+        "event_utc_certified": false,
+        "generation_latency_ns": null,
+        "missing": [
+          "OSCILLATOR_AND_COUNTER_ERROR_BOUND",
+          "INDEPENDENT_GENERATION_EVENT_BINDING",
+          "BROKER_GENERATION_TO_CALLBACK_DELAY_BOUND"
+        ],
+        "reasons": [],
+        "scientific_acceptance": false,
+        "scope": "OBSERVATIONAL_BRACKETING_NOT_CONTINUOUS_NTS_VALIDITY",
+        "sequence": 1674,
+        "session_id": "pc_a_prospective_utc_v1_42543593_86572951924106_65753",
+        "status": "PARTIAL"
+      },
+      "segments": [
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            187
+          ],
+          "callbacks": 1599,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 42543625,
+          "first_sequence": 1,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 42917281,
+          "last_sequence": 1673,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            47
+          ],
+          "callbacks": 1495,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": [
+            106358636,
+            194525194
+          ],
+          "first_callback_uptime_ms": 42917515,
+          "first_sequence": 1674,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 43277140,
+          "last_sequence": 3240,
+          "native_minus_receipt_coordinate_ns_envelope": [
+            7199468919431,
+            7200003444625
+          ],
+          "nts_network_rtt_ns_range": [
+            15018600,
+            195125200
+          ],
+          "nts_server_minus_host_offset_ns_envelope": [
+            -92899625,
+            101625569
+          ],
+          "reasons": [],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "PARTIAL"
+        },
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            0
+          ],
+          "callbacks": 989,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 43277390,
+          "first_sequence": 3241,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 43512593,
+          "last_sequence": 4276,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        }
+      ],
+      "verified_prefix": {
+        "adjacent_duplicate_quotes": 0,
+        "bytes_verified": 2671665,
+        "capture_id": "pc_a_prospective_utc_v1",
+        "chain_head": "505df04f95b525d502e776e284f157fee39d814fa367a8f7c5cfcf7b5cc5b2fe",
+        "completeness": "UNPROVEN_ONTICK_CAN_COALESCE",
+        "disconnected_records": 0,
+        "future_event_timestamps": "NOT_EVALUABLE_WITHOUT_MAPPING",
+        "host_clock_delta_scope": "DIAGNOSTIC_SECOND_RESOLUTION_NOT_CERTIFIED_CLOCK_STEP",
+        "host_clock_vs_uptime_delta_ms_envelope": [
+          -828,
+          906
+        ],
+        "largest_heartbeat_interval_ms": 5297,
+        "last_callback_uptime_ms": 43512593,
+        "last_connected": true,
+        "last_kind": "ONTICK_LATEST_QUOTE",
+        "native_timestamp_regressions": 0,
+        "partial_tail": false,
+        "rows": 4277,
+        "scientific_acceptance": false,
+        "session_id": "pc_a_prospective_utc_v1_42543593_86572951924106_65753",
+        "tick_callbacks": 4083
+      }
+    },
+    "pc_a_prospective_utc_v1_50343_86572951924106_1553.jsonl": {
+      "calibrated_example": null,
+      "segments": [
+        {
+          "callback_read_elapsed_ms_range": [
+            0,
+            16
+          ],
+          "callbacks": 234,
+          "certified_receipt_bounds_ns": null,
+          "conditional_width_ns_range": null,
+          "first_callback_uptime_ms": 50765,
+          "first_sequence": 1,
+          "generation_latency_ns": null,
+          "last_callback_uptime_ms": 267640,
+          "last_sequence": 277,
+          "native_minus_receipt_coordinate_ns_envelope": null,
+          "nts_network_rtt_ns_range": null,
+          "nts_server_minus_host_offset_ns_envelope": null,
+          "reasons": [
+            "NO_AUTHENTICATED_BRACKETING_MEASUREMENTS"
+          ],
+          "scope": "DISCRETE_OBSERVED_CALLBACKS_NOT_ALL_EVENTS_OR_CONTINUOUS_UTC",
+          "status": "QUARANTINED"
+        }
+      ],
+      "verified_prefix": {
+        "adjacent_duplicate_quotes": 1,
+        "bytes_verified": 170195,
+        "capture_id": "pc_a_prospective_utc_v1",
+        "chain_head": "d89845df198008427d4253ceb0bf838ddb8e06fb2a9037de8c7d01da0473ba8c",
+        "completeness": "UNPROVEN_ONTICK_CAN_COALESCE",
+        "disconnected_records": 0,
+        "future_event_timestamps": "NOT_EVALUABLE_WITHOUT_MAPPING",
+        "host_clock_delta_scope": "DIAGNOSTIC_SECOND_RESOLUTION_NOT_CERTIFIED_CLOCK_STEP",
+        "host_clock_vs_uptime_delta_ms_envelope": [
+          -969,
+          906
+        ],
+        "largest_heartbeat_interval_ms": 6734,
+        "last_callback_uptime_ms": 268171,
+        "last_connected": true,
+        "last_kind": "SESSION_END",
+        "native_timestamp_regressions": 0,
+        "partial_tail": false,
+        "rows": 279,
+        "scientific_acceptance": false,
+        "session_id": "pc_a_prospective_utc_v1_50343_86572951924106_1553",
+        "tick_callbacks": 234
+      }
+    },
+    "pc_a_prospective_utc_v1_6617828_86572951924106_12102.jsonl": {
+      "calibrated_example": null,
+      "segments": [],
+      "verified_prefix": {
+        "adjacent_duplicate_quotes": 0,
+        "bytes_verified": 579,
+        "capture_id": "pc_a_prospective_utc_v1",
+        "chain_head": "26b169447961843dcf7cb47aa7c64163268d4bcafb98cf5e20af840114ac4e78",
+        "completeness": "UNPROVEN_ONTICK_CAN_COALESCE",
+        "disconnected_records": 0,
+        "future_event_timestamps": "NOT_EVALUABLE_WITHOUT_MAPPING",
+        "host_clock_delta_scope": "DIAGNOSTIC_SECOND_RESOLUTION_NOT_CERTIFIED_CLOCK_STEP",
+        "host_clock_vs_uptime_delta_ms_envelope": null,
+        "largest_heartbeat_interval_ms": 0,
+        "last_callback_uptime_ms": 6617828,
+        "last_connected": true,
+        "last_kind": "SESSION_START",
+        "native_timestamp_regressions": 0,
+        "partial_tail": false,
+        "rows": 1,
+        "scientific_acceptance": false,
+        "session_id": "pc_a_prospective_utc_v1_6617828_86572951924106_12102",
+        "tick_callbacks": 0
+      }
+    }
+  },
+  "nts_chain_head": "954c164c759159c188c4ca54a28d0cc888edaec4b6aa101a70c84d98021af1e9",
+  "nts_records": 15,
+  "observed_host_utc": "2026-10-30T14:22:50.711446+00:00",
+  "segment_counts": {
+    "CERTIFIED": 0,
+    "PARTIAL": 3,
+    "QUARANTINED": 12
+  }
+}

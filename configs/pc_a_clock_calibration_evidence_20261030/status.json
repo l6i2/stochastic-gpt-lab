@@ -1,0 +1,71 @@
+{
+  "BROKER_CALENDAR": "PARTIAL",
+  "CAUSAL_AUDIT": "FAIL",
+  "CERTIFIED_SEGMENTS": 0,
+  "CLOCK_DRIFT_ESTIMATE": {
+    "elapsed_counter_ns": [
+      359995550900,
+      359995555500
+    ],
+    "group_id": "8:4",
+    "origin": "time.cloudflare.com",
+    "points": 2,
+    "ppm": [
+      -310.9517750699008,
+      296.7127975136317
+    ],
+    "scope": "OBSERVED_AVERAGE_UTC_MINUS_QPC_CONDITIONAL_NOT_MAX_INSTANTANEOUS_DRIFT"
+  },
+  "CLOCK_UNCERTAINTY": "NO_CERTIFIED_ABSOLUTE_OR_INSTANTANEOUS_DRIFT_BOUND",
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "FINAL_TEST": "LOCKED",
+  "HARD_BLOCKER": [
+    "Unbounded instantaneous oscillator variation and uncalibrated GTC quantization",
+    "NTS server advertised error is conditional, not guaranteed absolute UTC accuracy",
+    "Independent XM generation-time binding and broker/queue delay bounds absent"
+  ],
+  "LIVE_TRADING": false,
+  "MANUAL_ACTION_REQUIRED": "NONE_FOR_ONGOING_OBSERVATION",
+  "MONOTONIC_CLOCK_CONTINUITY": "PARTIAL_BOOT_FENCED_GAPS_AND_CLOCK_EVENTS_SEGMENTED",
+  "NATIVE_CAPTURE_STATUS": "ACTIVE_CALLBACKS_QUARANTINED",
+  "NEXT_STATE": "CONTINUE_300_SECOND_NTS_QPC_AND_XM_QUARANTINE_WITHOUT_AUTOMATIC_AUTHORIZATION",
+  "NTS_CALIBRATION": "PARTIAL_REAL_QPC_SAMPLES_AND_CONDITIONAL_RATE_INTERVALS",
+  "PARTIAL_SEGMENTS": 3,
+  "PUSH_STATUS": "SNAPSHOT_BEFORE_ENCLOSING_COMMIT",
+  "QUARANTINED_SEGMENTS": 12,
+  "REMOTE_HEAD": "RESOLVED_IN_FINAL_PUBLICATION_RECEIPT",
+  "TRAINING_READINESS": "BLOCKED_BY_RESEARCH_GOVERNANCE",
+  "XM_GENERATION_TIME_CERTIFICATION": "BLOCKED_NO_INDEPENDENT_GENERATION_EVENT_BINDING",
+  "XM_RECEIPT_BOUNDS": "CONDITIONAL_AFFINE_MODELS_ONLY_GTC_QUANTIZATION_UNCALIBRATED",
+  "authenticated_measurements": 21,
+  "backfill": false,
+  "nts_records": 15,
+  "observed": {
+    "Ecuador": "2026-10-30T09:22:50.711-05:00",
+    "Nueva York": "2026-10-30T10:22:50.711-04:00",
+    "UTC": "2026-10-30T14:22:50.711+00:00",
+    "XM": null,
+    "mapping_id": null,
+    "new_york_abbreviation": "EDT",
+    "new_york_fold": 0,
+    "primary_time": "2026-10-30T09:22:50.711-05:00",
+    "primary_timezone": "America/Guayaquil",
+    "scientific_authorization": false,
+    "time_basis": "HOST_RECEIPT_UNATTESTED",
+    "tzdata_version": "2026.5",
+    "xm_server_offset_seconds": null,
+    "xm_status": "UNVERIFIED_NO_CONVERSION"
+  },
+  "observer_recompiled": false,
+  "originals_changed": false,
+  "other_project_touched": false,
+  "segment_count_scope": "DISCRETE_CALLBACK_GROUPS_ALL_SCIENTIFICALLY_QUARANTINED",
+  "tests": {
+    "FAIL": 0,
+    "PASS": 60,
+    "SKIPPED": 0
+  },
+  "total_tick_callbacks": 10097,
+  "training_run": false
+}

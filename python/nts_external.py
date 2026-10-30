@@ -11,6 +11,25 @@ import uuid
 EPOCH=2208988800
 
 
+def receive_clock_sample():
+    """Bracket the local wall read, not packet arrival or broker generation."""
+    if __import__('sys').platform!='win32':
+        a=time.perf_counter_ns();host=time.time_ns();b=time.perf_counter_ns()
+        return host,None,dict(perf_counter_ns_interval=[a,b],scope='LOCAL_WALL_READ_NOT_PACKET_ARRIVAL')
+    import ctypes
+    api=ctypes.windll.kernel32;api.GetTickCount64.restype=ctypes.c_ulonglong
+    frequency=ctypes.c_longlong();a=ctypes.c_longlong();b=ctypes.c_longlong()
+    if not api.QueryPerformanceFrequency(ctypes.byref(frequency)) or frequency.value<=0:raise ValueError('QPC_FREQUENCY_UNAVAILABLE')
+    uptime_a=api.GetTickCount64()
+    if not api.QueryPerformanceCounter(ctypes.byref(a)):raise ValueError('QPC_UNAVAILABLE')
+    host=time.time_ns()
+    if not api.QueryPerformanceCounter(ctypes.byref(b)):raise ValueError('QPC_UNAVAILABLE')
+    uptime_b=api.GetTickCount64()
+    return host,[uptime_a,uptime_b],dict(qpc_ticks_interval=[a.value,b.value],qpc_frequency_hz=frequency.value,
+        scope='LOCAL_WALL_READ_NOT_PACKET_ARRIVAL',uptime_resolution_bound='NOT_CALIBRATED',
+        qpc_absolute_utc_accuracy='NOT_IMPLIED_BY_RESOLUTION')
+
+
 def offset_bounds(t1,t2,t3,t4,error):
     if error<0 or t3<t2 or t4<t1:raise ValueError('INVALID_TIME_MODEL')
     lower,upper=t3-t4-error,t2-t1+error
@@ -138,13 +157,7 @@ def measure(host,cafile):
     request=aad+extension(0x404,struct.pack('!HH',len(nonce),len(encrypted))+nonce+encrypted)
     with socket.socket(socket.AF_INET,socket.SOCK_DGRAM) as client:
         client.settimeout(4);client.connect((ntp_host,port));client.send(request);packet=client.recv(8192)
-    kernel_interval=None
-    if __import__('sys').platform=='win32':
-        import ctypes
-        kernel=ctypes.windll.kernel32.GetTickCount64;kernel.restype=ctypes.c_ulonglong
-        kernel_before=kernel()
-    m4=time.perf_counter_ns();t4=time.time_ns()
-    if __import__('sys').platform=='win32':kernel_interval=[kernel_before,kernel()]
+    m4=time.perf_counter_ns();t4,kernel_interval,clock_observation=receive_clock_sample();m4_after=time.perf_counter_ns()
     t2,t3=verify_response(packet,keys[1],uid,request[40:48])
     # Keys/cookies are ephemeral and never serialized or published.
     delay=struct.unpack('!i',packet[4:8])[0]*1000000000//65536
@@ -156,13 +169,16 @@ def measure(host,cafile):
     return dict(capture_id=uuid.uuid4().hex,origin=host,protocol='RFC8915_NTS_AEAD15_TLS13',
         authentication='TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED',peer_certificate_sha256=cert_sha,
         server_receive_utc_ns=t2,server_transmit_utc_ns=t3,host_send_ns=t1,host_receive_ns=t4,
-        rtt_monotonic_ns=m4-m1,server_processing_ns=t3-t2,
+        rtt_monotonic_ns=m4_after-m1,rtt_local_read_interval_ns=[m4-m1,m4_after-m1],
+        rtt_scope='QUERY_ELAPSED_INCLUDES_LOCAL_PROCESSING_NOT_PURE_NETWORK_DELAY',server_processing_ns=t3-t2,
         stratum=packet[1],leap_indicator=packet[0]>>6,root_delay_ns=delay,
         root_dispersion_ns=dispersion,precision_log2_seconds=precision,
         offset_server_minus_host_ns=[lower,upper],server_advertised_error_ns=advertised_error,
         utc_receive_interval_model_ns=[t4+lower,t4+upper],
         receive_kernel_uptime_ms_interval=kernel_interval,
+        receive_clock_observation=clock_observation,
         host_elapsed_minus_monotonic_ns=(t4-t1)-(m4-m1),
+        host_elapsed_minus_monotonic_interval_ns=[(t4-t1)-(m4_after-m1),(t4-t1)-(m4-m1)],
         uncertainty_scope='Conditional on server advertised error and local clock stability; not a metrological absolute bound',
         response_sha256=hashlib.sha256(packet).hexdigest(),unique_id_sha256=hashlib.sha256(uid).hexdigest(),
         broker_mapping_authorized=False,clock_adjusted=False)

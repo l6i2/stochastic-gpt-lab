@@ -1,0 +1,8 @@
+{
+  "date_ecuador": "2026-10-30",
+  "last_success_host_label": "30/10/2026 9:01:16",
+  "leap_indicator": 3,
+  "scope": "READ_ONLY_QUERY_OBSERVED_THIS_SESSION_NOT_EXTERNAL_AUTHENTICATION_NO_LATER_PASS_INFERRED",
+  "source": "time.windows.com,0x9",
+  "stratum": 0
+}

@@ -1,0 +1,924 @@
+{
+  "barriers": [
+    {
+      "reasons": [
+        "BOOT_ID_MISSING"
+      ],
+      "record_id": "6e62ff5c701e4d61a16a6ba170d5deb2"
+    },
+    {
+      "reasons": [
+        "BOOT_ID_MISSING"
+      ],
+      "record_id": "6427fea662104954b1f0aed63d58aebd"
+    },
+    {
+      "reasons": [
+        "BOOT_ID_MISSING"
+      ],
+      "record_id": "4edbb61c64af418f8d77def59cc641f8"
+    },
+    {
+      "origin": "ntppool2.time.nl",
+      "reasons": [
+        "AUTHENTICATED_SOURCE_UNAVAILABLE_OR_INVALID"
+      ],
+      "record_id": "4edbb61c64af418f8d77def59cc641f8"
+    },
+    {
+      "reasons": [
+        "BOOT_ID_MISSING"
+      ],
+      "record_id": "71a441224adb4a50b867289316618353"
+    },
+    {
+      "origin": "ntppool2.time.nl",
+      "reasons": [
+        "AUTHENTICATED_SOURCE_UNAVAILABLE_OR_INVALID"
+      ],
+      "record_id": "71a441224adb4a50b867289316618353"
+    },
+    {
+      "reasons": [
+        "BOOT_ID_MISSING"
+      ],
+      "record_id": "ad07931c80a2447fa906409dc426b41e"
+    },
+    {
+      "reasons": [
+        "BOOT_ID_MISSING"
+      ],
+      "record_id": "b62834f170c5459a878393ab43310335"
+    },
+    {
+      "origin": "ntppool2.time.nl",
+      "reasons": [
+        "AUTHENTICATED_SOURCE_UNAVAILABLE_OR_INVALID"
+      ],
+      "record_id": "b62834f170c5459a878393ab43310335"
+    },
+    {
+      "reasons": [
+        "BOOT_CHANGED"
+      ],
+      "record_id": "226af85da5f84f268c53af8e0902c8ce"
+    },
+    {
+      "origin": "ntppool2.time.nl",
+      "reasons": [
+        "AUTHENTICATED_SOURCE_UNAVAILABLE_OR_INVALID"
+      ],
+      "record_id": "226af85da5f84f268c53af8e0902c8ce"
+    },
+    {
+      "origin": "ntppool2.time.nl",
+      "reasons": [
+        "AUTHENTICATED_SOURCE_UNAVAILABLE_OR_INVALID"
+      ],
+      "record_id": "152f9c54828645d390bfb0e88f59dff6"
+    },
+    {
+      "origin": "ntppool2.time.nl",
+      "reasons": [
+        "AUTHENTICATED_SOURCE_UNAVAILABLE_OR_INVALID"
+      ],
+      "record_id": "6bc745bec5874962bf9e287909e99c59"
+    },
+    {
+      "reasons": [
+        "MISSED_NTS_MONITOR_PERIOD"
+      ],
+      "record_id": "df082baa48a74f3ea8e67c720e4b9980"
+    },
+    {
+      "origin": "ntppool2.time.nl",
+      "reasons": [
+        "AUTHENTICATED_SOURCE_UNAVAILABLE_OR_INVALID"
+      ],
+      "record_id": "df082baa48a74f3ea8e67c720e4b9980"
+    },
+    {
+      "origin": "ntppool2.time.nl",
+      "reasons": [
+        "AUTHENTICATED_SOURCE_UNAVAILABLE_OR_INVALID"
+      ],
+      "record_id": "23b913317b6244ba90a13e254dc48a77"
+    },
+    {
+      "origin": "ntppool2.time.nl",
+      "reasons": [
+        "AUTHENTICATED_SOURCE_UNAVAILABLE_OR_INVALID"
+      ],
+      "record_id": "db92df33191f4f5cabfcb83764842efd"
+    }
+  ],
+  "certified_segments": [],
+  "extrapolation_allowed": false,
+  "frequency_decision": "KEEP_300_SECONDS_NO_JUSTIFIED_PRECISION_GAIN_FROM_FASTER_SAMPLING",
+  "generation_time_certified": false,
+  "groups": [
+    {
+      "adjacent_secants": [
+        {
+          "captures": [
+            "c7b35d6e6cdc4af4ba29b8b5f2153969",
+            "a5e6512390bd41babfedc5f373be9cbc"
+          ],
+          "elapsed_counter_ns": [
+            329735000000,
+            329735000000
+          ],
+          "nts_minus_windows_offset_change_ppm": [
+            -375.09240147391085,
+            458.0970415636799
+          ],
+          "scope": "AVERAGE_SECANT_CONDITIONAL_ON_NTS_ERROR_MODEL_NOT_INSTANTANEOUS_DRIFT",
+          "utc_minus_counter_secant_ppm": [
+            -380.49947078714723,
+            452.68997225044353
+          ],
+          "utc_per_counter_rate": [
+            {
+              "denominator": 329735000000,
+              "numerator": 329609536007
+            },
+            {
+              "denominator": 20608437500,
+              "numerator": 20617766733
+            }
+          ]
+        },
+        {
+          "captures": [
+            "a5e6512390bd41babfedc5f373be9cbc",
+            "5a5c8ab7b2c84d49b1cfbae5dfed76cd"
+          ],
+          "elapsed_counter_ns": [
+            326203000000,
+            326203000000
+          ],
+          "nts_minus_windows_offset_change_ppm": [
+            -484.11163600580005,
+            425.6637124735211
+          ],
+          "scope": "AVERAGE_SECANT_CONDITIONAL_ON_NTS_ERROR_MODEL_NOT_INSTANTANEOUS_DRIFT",
+          "utc_minus_counter_secant_ppm": [
+            -446.4565561935359,
+            463.3187922857852
+          ],
+          "utc_per_counter_rate": [
+            {
+              "denominator": 81550750000,
+              "numerator": 81514341133
+            },
+            {
+              "denominator": 16310150000,
+              "numerator": 16317706799
+            }
+          ]
+        },
+        {
+          "captures": [
+            "5a5c8ab7b2c84d49b1cfbae5dfed76cd",
+            "7d16d879884b462895ec9797abba8601"
+          ],
+          "elapsed_counter_ns": [
+            300828000000,
+            300828000000
+          ],
+          "nts_minus_windows_offset_change_ppm": [
+            -458.91710877976783,
+            376.62407754597314
+          ],
+          "scope": "AVERAGE_SECANT_CONDITIONAL_ON_NTS_ERROR_MODEL_NOT_INSTANTANEOUS_DRIFT",
+          "utc_minus_counter_secant_ppm": [
+            -470.566955203638,
+            364.974231122103
+          ],
+          "utc_per_counter_rate": [
+            {
+              "denominator": 25069000000,
+              "numerator": 25057203357
+            },
+            {
+              "denominator": 25069000000,
+              "numerator": 25078149539
+            }
+          ]
+        },
+        {
+          "captures": [
+            "7d16d879884b462895ec9797abba8601",
+            "ee993291fa684f8896759168c5e23738"
+          ],
+          "elapsed_counter_ns": [
+            347641000000,
+            347641000000
+          ],
+          "nts_minus_windows_offset_change_ppm": [
+            -350.90323926119186,
+            296.4473436677492
+          ],
+          "scope": "AVERAGE_SECANT_CONDITIONAL_ON_NTS_ERROR_MODEL_NOT_INSTANTANEOUS_DRIFT",
+          "utc_minus_counter_secant_ppm": [
+            -374.2203969037024,
+            273.1301860252387
+          ],
+          "utc_per_counter_rate": [
+            {
+              "denominator": 347641000000,
+              "numerator": 347510905647
+            },
+            {
+              "denominator": 347641000000,
+              "numerator": 347735951251
+            }
+          ]
+        }
+      ],
+      "affine_rate_interval": [
+        {
+          "denominator": 326101750000,
+          "numerator": 326069720271
+        },
+        {
+          "denominator": 1304407000000,
+          "numerator": 1304497514813
+        }
+      ],
+      "affine_status": "FEASIBLE_CONDITIONAL_MODEL",
+      "analysis_utc_day": 20756,
+      "baseline_secant": {
+        "captures": [
+          "c7b35d6e6cdc4af4ba29b8b5f2153969",
+          "ee993291fa684f8896759168c5e23738"
+        ],
+        "elapsed_counter_ns": [
+          1304407000000,
+          1304407000000
+        ],
+        "nts_minus_windows_offset_change_ppm": [
+          -97.3688549662797,
+          70.24273328799984
+        ],
+        "scope": "AVERAGE_SECANT_CONDITIONAL_ON_NTS_ERROR_MODEL_NOT_INSTANTANEOUS_DRIFT",
+        "utc_minus_counter_secant_ppm": [
+          -98.22004635056389,
+          69.39154190371563
+        ],
+        "utc_per_counter_rate": [
+          {
+            "denominator": 326101750000,
+            "numerator": 326069720271
+          },
+          {
+            "denominator": 1304407000000,
+            "numerator": 1304497514813
+          }
+        ]
+      },
+      "basis": "KERNEL_UPTIME",
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "certified": false,
+      "counter_quantization": "UNBOUNDED_LEGACY_GTC_RESOLUTION",
+      "group_id": "7:0",
+      "origin": "time.cloudflare.com",
+      "points": [
+        {
+          "capture_id": "c7b35d6e6cdc4af4ba29b8b5f2153969",
+          "frequency_hz": null,
+          "host_ns": 1793331226900361400,
+          "offset_ns": [
+            -894521509,
+            -783070218
+          ],
+          "uptime_ms": [
+            4578171,
+            4578171
+          ],
+          "utc_ns": [
+            1793331226005839891,
+            1793331226117291182
+          ],
+          "x_ns": [
+            4578171000000,
+            4578171000000
+          ]
+        },
+        {
+          "capture_id": "a5e6512390bd41babfedc5f373be9cbc",
+          "frequency_hz": null,
+          "host_ns": 1793331556633578500,
+          "offset_ns": [
+            -906751311,
+            -743470881
+          ],
+          "uptime_ms": [
+            4907906,
+            4907906
+          ],
+          "utc_ns": [
+            1793331555726827189,
+            1793331555890107619
+          ],
+          "x_ns": [
+            4907906000000,
+            4907906000000
+          ]
+        },
+        {
+          "capture_id": "5a5c8ab7b2c84d49b1cfbae5dfed76cd",
+          "frequency_hz": null,
+          "host_ns": 1793331882848861700,
+          "offset_ns": [
+            -901389549,
+            -767898531
+          ],
+          "uptime_ms": [
+            5234109,
+            5234109
+          ],
+          "utc_ns": [
+            1793331881947472151,
+            1793331882080963169
+          ],
+          "x_ns": [
+            5234109000000,
+            5234109000000
+          ]
+        },
+        {
+          "capture_id": "7d16d879884b462895ec9797abba8601",
+          "frequency_hz": null,
+          "host_ns": 1793332183673357100,
+          "offset_ns": [
+            -905953647,
+            -788090481
+          ],
+          "uptime_ms": [
+            5534937,
+            5534937
+          ],
+          "utc_ns": [
+            1793332182767403453,
+            1793332182885266619
+          ],
+          "x_ns": [
+            5534937000000,
+            5534937000000
+          ]
+        },
+        {
+          "capture_id": "ee993291fa684f8896759168c5e23738",
+          "frequency_hz": null,
+          "host_ns": 1793332531306251100,
+          "offset_ns": [
+            -910078834,
+            -802896396
+          ],
+          "uptime_ms": [
+            5882578,
+            5882578
+          ],
+          "utc_ns": [
+            1793332530396172266,
+            1793332530503354704
+          ],
+          "x_ns": [
+            5882578000000,
+            5882578000000
+          ]
+        }
+      ],
+      "scientific_acceptance": false,
+      "unbounded": [
+        "SERVER_ABSOLUTE_ERROR_BEYOND_ADVERTISED_MODEL",
+        "INSTANTANEOUS_OSCILLATOR_VARIATION"
+      ]
+    },
+    {
+      "adjacent_secants": [],
+      "affine_rate_interval": null,
+      "affine_status": "INSUFFICIENT_POINTS",
+      "analysis_utc_day": 20756,
+      "baseline_secant": null,
+      "basis": "KERNEL_UPTIME",
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "certified": false,
+      "counter_quantization": "UNBOUNDED_LEGACY_GTC_RESOLUTION",
+      "group_id": "7:1",
+      "origin": "ntppool2.time.nl",
+      "points": [
+        {
+          "capture_id": "b3002fb0671149979329dced064d099d",
+          "frequency_hz": null,
+          "host_ns": 1793331885499273700,
+          "offset_ns": [
+            -1814449247,
+            -565995152
+          ],
+          "uptime_ms": [
+            5236765,
+            5236765
+          ],
+          "utc_ns": [
+            1793331883684824453,
+            1793331884933278548
+          ],
+          "x_ns": [
+            5236765000000,
+            5236765000000
+          ]
+        }
+      ],
+      "scientific_acceptance": false,
+      "unbounded": [
+        "SERVER_ABSOLUTE_ERROR_BEYOND_ADVERTISED_MODEL",
+        "INSTANTANEOUS_OSCILLATOR_VARIATION"
+      ]
+    },
+    {
+      "adjacent_secants": [],
+      "affine_rate_interval": null,
+      "affine_status": "INSUFFICIENT_POINTS",
+      "analysis_utc_day": 20756,
+      "baseline_secant": null,
+      "basis": "KERNEL_UPTIME",
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "certified": false,
+      "counter_quantization": "UNBOUNDED_LEGACY_GTC_RESOLUTION",
+      "group_id": "7:2",
+      "origin": "ntppool2.time.nl",
+      "points": [
+        {
+          "capture_id": "13789795d0574cc99c3f19af17056f5f",
+          "frequency_hz": null,
+          "host_ns": 1793332532868137100,
+          "offset_ns": [
+            -948484314,
+            -749377385
+          ],
+          "uptime_ms": [
+            5884140,
+            5884140
+          ],
+          "utc_ns": [
+            1793332531919652786,
+            1793332532118759715
+          ],
+          "x_ns": [
+            5884140000000,
+            5884140000000
+          ]
+        }
+      ],
+      "scientific_acceptance": false,
+      "unbounded": [
+        "SERVER_ABSOLUTE_ERROR_BEYOND_ADVERTISED_MODEL",
+        "INSTANTANEOUS_OSCILLATOR_VARIATION"
+      ]
+    },
+    {
+      "adjacent_secants": [
+        {
+          "captures": [
+            "a2ee59170fcb45c08e68ce656e4cf435",
+            "541b1deb758a4f589a31e607fb305b28"
+          ],
+          "elapsed_counter_ns": [
+            357484000000,
+            357484000000
+          ],
+          "nts_minus_windows_offset_change_ppm": [
+            -325.1059515950364,
+            290.28258047912635
+          ],
+          "scope": "AVERAGE_SECANT_CONDITIONAL_ON_NTS_ERROR_MODEL_NOT_INSTANTANEOUS_DRIFT",
+          "utc_minus_counter_secant_ppm": [
+            -315.4685971959584,
+            299.91993487820434
+          ],
+          "utc_per_counter_rate": [
+            {
+              "denominator": 5585687500,
+              "numerator": 5583925391
+            },
+            {
+              "denominator": 178742000000,
+              "numerator": 178795608289
+            }
+          ]
+        },
+        {
+          "captures": [
+            "541b1deb758a4f589a31e607fb305b28",
+            "b6a130a43e5a42dc805f2c41ccdb59b8"
+          ],
+          "elapsed_counter_ns": [
+            318312000000,
+            318312000000
+          ],
+          "nts_minus_windows_offset_change_ppm": [
+            -379.95687250245044,
+            324.52825843826184
+          ],
+          "scope": "AVERAGE_SECANT_CONDITIONAL_ON_NTS_ERROR_MODEL_NOT_INSTANTANEOUS_DRIFT",
+          "utc_minus_counter_secant_ppm": [
+            -357.74187589534796,
+            346.7432550453643
+          ],
+          "utc_per_counter_rate": [
+            {
+              "denominator": 26526000000,
+              "numerator": 26516510539
+            },
+            {
+              "denominator": 318312000000,
+              "numerator": 318422372539
+            }
+          ]
+        },
+        {
+          "captures": [
+            "b6a130a43e5a42dc805f2c41ccdb59b8",
+            "9d62df21246141c1a9eec5196af00eef"
+          ],
+          "elapsed_counter_ns": [
+            360000000000,
+            360000000000
+          ],
+          "nts_minus_windows_offset_change_ppm": [
+            -310.7004361111111,
+            296.94385277777775
+          ],
+          "scope": "AVERAGE_SECANT_CONDITIONAL_ON_NTS_ERROR_MODEL_NOT_INSTANTANEOUS_DRIFT",
+          "utc_minus_counter_secant_ppm": [
+            -323.2937694444444,
+            284.35051944444444
+          ],
+          "utc_per_counter_rate": [
+            {
+              "denominator": 360000000000,
+              "numerator": 359883614243
+            },
+            {
+              "denominator": 360000000000,
+              "numerator": 360102366187
+            }
+          ]
+        }
+      ],
+      "affine_rate_interval": [
+        {
+          "denominator": 517898000000,
+          "numerator": 517838605903
+        },
+        {
+          "denominator": 1035796000000,
+          "numerator": 1035891709233
+        }
+      ],
+      "affine_status": "FEASIBLE_CONDITIONAL_MODEL",
+      "analysis_utc_day": 20756,
+      "baseline_secant": {
+        "captures": [
+          "a2ee59170fcb45c08e68ce656e4cf435",
+          "9d62df21246141c1a9eec5196af00eef"
+        ],
+        "elapsed_counter_ns": [
+          1035796000000,
+          1035796000000
+        ],
+        "nts_minus_windows_offset_change_ppm": [
+          -120.45913867209373,
+          86.62548706502052
+        ],
+        "scope": "AVERAGE_SECANT_CONDITIONAL_ON_NTS_ERROR_MODEL_NOT_INSTANTANEOUS_DRIFT",
+        "utc_minus_counter_secant_ppm": [
+          -114.6830012859675,
+          92.40162445114674
+        ],
+        "utc_per_counter_rate": [
+          {
+            "denominator": 517898000000,
+            "numerator": 517838605903
+          },
+          {
+            "denominator": 1035796000000,
+            "numerator": 1035891709233
+          }
+        ]
+      },
+      "basis": "KERNEL_UPTIME",
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "certified": false,
+      "counter_quantization": "UNBOUNDED_LEGACY_GTC_RESOLUTION",
+      "group_id": "8:3",
+      "origin": "time.cloudflare.com",
+      "points": [
+        {
+          "capture_id": "a2ee59170fcb45c08e68ce656e4cf435",
+          "frequency_hz": null,
+          "host_ns": 1793368889003890500,
+          "offset_ns": [
+            -42640287,
+            65498504
+          ],
+          "uptime_ms": [
+            42241500,
+            42241500
+          ],
+          "utc_ns": [
+            1793368888961250213,
+            1793368889069389004
+          ],
+          "x_ns": [
+            42241500000000,
+            42241500000000
+          ]
+        },
+        {
+          "capture_id": "541b1deb758a4f589a31e607fb305b28",
+          "frequency_hz": null,
+          "host_ns": 1793369246491335700,
+          "offset_ns": [
+            -50721672,
+            61131091
+          ],
+          "uptime_ms": [
+            42598984,
+            42598984
+          ],
+          "utc_ns": [
+            1793369246440614028,
+            1793369246552466791
+          ],
+          "x_ns": [
+            42598984000000,
+            42598984000000
+          ]
+        },
+        {
+          "capture_id": "b6a130a43e5a42dc805f2c41ccdb59b8",
+          "frequency_hz": null,
+          "host_ns": 1793369564810407000,
+          "offset_ns": [
+            -59813741,
+            52579567
+          ],
+          "uptime_ms": [
+            42917296,
+            42917296
+          ],
+          "utc_ns": [
+            1793369564750593259,
+            1793369564862986567
+          ],
+          "x_ns": [
+            42917296000000,
+            42917296000000
+          ]
+        },
+        {
+          "capture_id": "9d62df21246141c1a9eec5196af00eef",
+          "frequency_hz": null,
+          "host_ns": 1793369924805873400,
+          "offset_ns": [
+            -59272590,
+            47086046
+          ],
+          "uptime_ms": [
+            43277296,
+            43277296
+          ],
+          "utc_ns": [
+            1793369924746600810,
+            1793369924852959446
+          ],
+          "x_ns": [
+            43277296000000,
+            43277296000000
+          ]
+        }
+      ],
+      "scientific_acceptance": false,
+      "unbounded": [
+        "SERVER_ABSOLUTE_ERROR_BEYOND_ADVERTISED_MODEL",
+        "INSTANTANEOUS_OSCILLATOR_VARIATION"
+      ]
+    },
+    {
+      "adjacent_secants": [
+        {
+          "captures": [
+            "b6a130a43e5a42dc805f2c41ccdb59b8",
+            "9d62df21246141c1a9eec5196af00eef"
+          ],
+          "elapsed_counter_ns": [
+            359995550900,
+            359995555500
+          ],
+          "nts_minus_windows_offset_change_ppm": [
+            -310.70427598442853,
+            296.94752263673047
+          ],
+          "scope": "AVERAGE_SECANT_CONDITIONAL_ON_NTS_ERROR_MODEL_NOT_INSTANTANEOUS_DRIFT",
+          "utc_minus_counter_secant_ppm": [
+            -310.9517750699008,
+            296.7127975136317
+          ],
+          "utc_per_counter_rate": [
+            {
+              "denominator": 359995555500,
+              "numerator": 359883614243
+            },
+            {
+              "denominator": 359995550900,
+              "numerator": 360102366187
+            }
+          ]
+        }
+      ],
+      "affine_rate_interval": [
+        {
+          "denominator": 359995555500,
+          "numerator": 359883614243
+        },
+        {
+          "denominator": 359995550900,
+          "numerator": 360102366187
+        }
+      ],
+      "affine_status": "FEASIBLE_CONDITIONAL_MODEL",
+      "analysis_utc_day": 20756,
+      "baseline_secant": {
+        "captures": [
+          "b6a130a43e5a42dc805f2c41ccdb59b8",
+          "9d62df21246141c1a9eec5196af00eef"
+        ],
+        "elapsed_counter_ns": [
+          359995550900,
+          359995555500
+        ],
+        "nts_minus_windows_offset_change_ppm": [
+          -310.70427598442853,
+          296.94752263673047
+        ],
+        "scope": "AVERAGE_SECANT_CONDITIONAL_ON_NTS_ERROR_MODEL_NOT_INSTANTANEOUS_DRIFT",
+        "utc_minus_counter_secant_ppm": [
+          -310.9517750699008,
+          296.7127975136317
+        ],
+        "utc_per_counter_rate": [
+          {
+            "denominator": 359995555500,
+            "numerator": 359883614243
+          },
+          {
+            "denominator": 359995550900,
+            "numerator": 360102366187
+          }
+        ]
+      },
+      "basis": "QPC",
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "certified": false,
+      "counter_quantization": "RAW_QPC_READ_BRACKET_OUTWARD_ROUNDED",
+      "group_id": "8:4",
+      "origin": "time.cloudflare.com",
+      "points": [
+        {
+          "capture_id": "b6a130a43e5a42dc805f2c41ccdb59b8",
+          "frequency_hz": 10000000,
+          "host_ns": 1793369564810407000,
+          "offset_ns": [
+            -59813741,
+            52579567
+          ],
+          "uptime_ms": [
+            42917296,
+            42917296
+          ],
+          "utc_ns": [
+            1793369564750593259,
+            1793369564862986567
+          ],
+          "x_ns": [
+            42920804455200,
+            42920804458000
+          ]
+        },
+        {
+          "capture_id": "9d62df21246141c1a9eec5196af00eef",
+          "frequency_hz": 10000000,
+          "host_ns": 1793369924805873400,
+          "offset_ns": [
+            -59272590,
+            47086046
+          ],
+          "uptime_ms": [
+            43277296,
+            43277296
+          ],
+          "utc_ns": [
+            1793369924746600810,
+            1793369924852959446
+          ],
+          "x_ns": [
+            43280800008900,
+            43280800010700
+          ]
+        }
+      ],
+      "scientific_acceptance": false,
+      "unbounded": [
+        "SERVER_ABSOLUTE_ERROR_BEYOND_ADVERTISED_MODEL",
+        "INSTANTANEOUS_OSCILLATOR_VARIATION"
+      ]
+    },
+    {
+      "adjacent_secants": [],
+      "affine_rate_interval": null,
+      "affine_status": "INSUFFICIENT_POINTS",
+      "analysis_utc_day": 20756,
+      "baseline_secant": null,
+      "basis": "KERNEL_UPTIME",
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "certified": false,
+      "counter_quantization": "UNBOUNDED_LEGACY_GTC_RESOLUTION",
+      "group_id": "8:5",
+      "origin": "ntppool2.time.nl",
+      "points": [
+        {
+          "capture_id": "533d389ee4fb41f5800406d10cd9fa63",
+          "frequency_hz": null,
+          "host_ns": 1793369566101455000,
+          "offset_ns": [
+            -92899625,
+            101625569
+          ],
+          "uptime_ms": [
+            42918593,
+            42918593
+          ],
+          "utc_ns": [
+            1793369566008555375,
+            1793369566203080569
+          ],
+          "x_ns": [
+            42918593000000,
+            42918593000000
+          ]
+        }
+      ],
+      "scientific_acceptance": false,
+      "unbounded": [
+        "SERVER_ABSOLUTE_ERROR_BEYOND_ADVERTISED_MODEL",
+        "INSTANTANEOUS_OSCILLATOR_VARIATION"
+      ]
+    },
+    {
+      "adjacent_secants": [],
+      "affine_rate_interval": null,
+      "affine_status": "INSUFFICIENT_POINTS",
+      "analysis_utc_day": 20756,
+      "baseline_secant": null,
+      "basis": "QPC",
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "certified": false,
+      "counter_quantization": "RAW_QPC_READ_BRACKET_OUTWARD_ROUNDED",
+      "group_id": "8:6",
+      "origin": "ntppool2.time.nl",
+      "points": [
+        {
+          "capture_id": "533d389ee4fb41f5800406d10cd9fa63",
+          "frequency_hz": 10000000,
+          "host_ns": 1793369566101455000,
+          "offset_ns": [
+            -92899625,
+            101625569
+          ],
+          "uptime_ms": [
+            42918593,
+            42918593
+          ],
+          "utc_ns": [
+            1793369566008555375,
+            1793369566203080569
+          ],
+          "x_ns": [
+            42922095729700,
+            42922095736900
+          ]
+        }
+      ],
+      "scientific_acceptance": false,
+      "unbounded": [
+        "SERVER_ABSOLUTE_ERROR_BEYOND_ADVERTISED_MODEL",
+        "INSTANTANEOUS_OSCILLATOR_VARIATION"
+      ]
+    }
+  ],
+  "scientific_acceptance": false,
+  "status": "PARTIAL_OBSERVATIONAL_CALIBRATION"
+}

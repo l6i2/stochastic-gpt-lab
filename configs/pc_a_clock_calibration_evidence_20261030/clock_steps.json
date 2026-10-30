@@ -1,0 +1,32 @@
+{
+  "events": [
+    {
+      "Fields": {
+        "NewTime": "2026-10-30T14:01:15.6185659Z",
+        "OldTime": "2026-10-30T14:01:15.6177597Z",
+        "Reason": "1"
+      },
+      "RecordId": 207360,
+      "TimeUtc": "2026-10-30T14:01:15.6190989Z"
+    },
+    {
+      "Fields": {
+        "NewTime": "2026-10-30T14:01:15.6177597Z",
+        "OldTime": "2026-10-30T14:01:16.8405550Z",
+        "Reason": "1"
+      },
+      "RecordId": 207355,
+      "TimeUtc": "2026-10-30T14:01:15.6182643Z"
+    },
+    {
+      "Fields": {
+        "NewTime": "2026-10-30T14:00:58.5000000Z",
+        "OldTime": "2026-10-30T03:55:54.3611195Z",
+        "Reason": "2"
+      },
+      "RecordId": 207319,
+      "TimeUtc": "2026-10-30T14:00:58.5003203Z"
+    }
+  ],
+  "scope": "LOCAL_OS_CLOCK_CHANGE_RECORDS_NOT_EXTERNAL_UTC_PROOF"
+}

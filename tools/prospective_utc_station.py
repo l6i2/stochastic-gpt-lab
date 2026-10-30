@@ -131,7 +131,7 @@ def locked_observe(network):
         # Isolate cryptographic dependencies and failures from native ingestion.
         try:
             nts=subprocess.run([sys.executable,str(ROOT/'tools/authenticated_utc_station.py')],
-                cwd=ROOT,capture_output=True,text=True,timeout=40)
+                cwd=ROOT,capture_output=True,text=True,timeout=50)
             witness['nts_station_exit']=nts.returncode
             nts_status=json.loads(nts.stdout) if nts.returncode==0 and nts.stdout.strip() else dict(status='BLOCKED',error='ISOLATED_NTS_STATION_FAILED')
         except (subprocess.TimeoutExpired,ValueError,OSError) as exc:
