@@ -1,11 +1,12 @@
 {
-  "audited_base_head": "c9ad4aa35a391ca80bd3da371e0393c5c5282d58",
+  "audited_base_head": "e35b05d461baeee1ee9ab65c4bf1b6f484744f6c",
   "automatic_gate_activation": false,
   "best_candidate": "NONE",
   "branch": "research/full-pipeline",
   "candidate_frozen": false,
-  "causal_audit": "READY_FOR_LOCAL_FINALIZATION",
-  "clock_attestation": "READY_FOR_LOCAL_ATTESTATION",
+  "causal_audit": "FAIL_TEMPORAL_PROVENANCE_CALENDAR_AND_COMPLETENESS",
+  "clock_attestation": "PASS_CAPTURE_INTERVAL_ONLY",
+  "clock_evidence_scope": "PUBLISHED_LOCAL_SEALED_CAPTURE_SUMMARY; NOT_CURRENT_CLOCK; RAW_EVIDENCE_NOT_REOPENED_IN_CLOUD",
   "cloud_preparation_complete": true,
   "cohort_outcomes_read": false,
   "cohort_raw_read": false,
@@ -16,50 +17,56 @@
   "drift_monitor": "READY",
   "drift_scope": "TOOLING_ONLY_REAL_BASELINE_NOT_FITTED_STREAM_NOT_CONNECTED",
   "final_test": "LOCKED",
-  "future_collection_active": "YES_LAST_KNOWN_LOCAL_STATE_NOT_REOBSERVED_IN_CLOUD",
+  "future_collection_active": "LAST_KNOWN_RAW_QUARANTINE_COLLECTION; NOT_REOBSERVED_IN_CLOUD",
   "future_evaluator": "READY_BUT_GATED",
-  "head": "45e549a3870652c6a943f83e07363aa6665985ff",
+  "head": "54ea25529c5aed4aa3c9b84330b36fe28a09bdb6",
   "head_scope": "implementation commit; a following status-only commit contains this handoff (avoids self-referential SHA)",
   "hypotheses_survived": 0,
   "hypotheses_tested_total": 17,
+  "launcher_executed": false,
+  "launcher_installation": "PASS_NAVIGATOR_VERIFIED_LOCAL_SNAPSHOT",
   "live_trading": false,
   "local_actions_remaining": [
     {
-      "action": "Actualizar checkout Windows con fetch/checkout research/full-pipeline/pull --ff-only",
+      "action": "Actualizar research/full-pipeline y ejecutar .venv\\Scripts\\python.exe python\\local_finalize.py --check-handoff",
       "step": 1
     },
     {
-      "action": "Instalar dependencias locales, abrir XM DEMO existente y ejecutar tools/local_finalize.ps1",
+      "action": "Ejecutar una vez Navigator -> Scripts -> ResearchDiagnostics -> PC_A -> StartProspectiveUtcObserver con Algo Trading y DLL desactivados",
       "step": 2
     },
     {
-      "action": "Ejecutar en Navigator el FullClockAndTimeSemanticsProbe del nonce impreso; esperar END",
+      "action": "Ejecutar .venv\\Scripts\\python.exe tools\\prospective_utc_station.py --offline; revisar callbacks/heartbeat y mantener cuarentena hasta evidencia temporal externa",
       "step": 3
-    },
-    {
-      "action": "Revisar informe local, correspondencia externa native/UTC y causalidad; incorporar snapshots de manifest disponibles sin inventar antecesores",
-      "step": 4
     }
   ],
-  "local_actions_remaining_count": 4,
-  "local_finalize_command": "powershell -ExecutionPolicy Bypass -File tools/local_finalize.ps1",
+  "local_actions_remaining_count": 3,
+  "local_finalize_command": ".venv\\Scripts\\python.exe python\\local_finalize.py --check-handoff",
+  "local_finalize_command_scope": "SOURCE_PREFLIGHT_ONLY; CURRENT_CLOCK_CAPTURE_ALREADY_COMPLETED",
   "local_finalize_command_status": "READY",
+  "local_observer_verification_command": ".venv\\Scripts\\python.exe tools\\prospective_utc_station.py --offline",
   "local_required": [
-    "Windows clock and independent reference capture",
-    "Native MetaEditor compilation and XM MT5 probe run",
-    "Externally attested native/UTC correspondence",
-    "Versioned causal evidence review including legacy metadata non-equivalence",
-    "Runtime session/holiday verification",
-    "Task Scheduler observation"
+    "Run installed launcher to reload only the corrected observer",
+    "Observe new callbacks and recent heartbeats",
+    "Independent same-event UTC binding and bounded broker mapping",
+    "Authenticated UTC uncertainty and callback coverage/queue bounds",
+    "Dated exact-server calendar evidence"
   ],
   "local_runbook": "READY",
   "main_k_parity": "PASS",
-  "native_to_utc_mapping": "READY_FOR_LOCAL_ATTESTATION",
-  "next_state": "READY_FOR_LOCAL_FINALIZATION",
-  "schema_version": 1,
+  "native_to_utc_mapping": "BLOCKED_EXTERNAL_EVIDENCE_REQUIRED",
+  "next_state": "HARD_BLOCKER",
+  "next_state_detail": "LOCAL_OBSERVER_RELOAD_AND_EXTERNAL_TEMPORAL_EVIDENCE_REQUIRED",
+  "realtime_capture": "STALLED_START_ONLY_LAST_PUBLISHED_LOCAL_OBSERVATION",
+  "schema_version": 2,
   "session_calendar": "PASS_WITH_RUNTIME_GUARD",
   "shadow_mode": "READY_BUT_DISABLED",
   "shadow_order_count": 0,
-  "source_hash_manifest": "outputs/status/CLOUD_SOURCE_HASHES.json",
+  "source_hash_manifest": "configs/cloud_continuation_source_hashes_20261029.json",
+  "status_evidence_files": [
+    "configs/pc_a_clock_attestation_20261028.json",
+    "configs/pc_a_callback_write_fix_evidence_20261029/status.json",
+    "configs/pc_a_navigator_verified_evidence_20261029/installation_verified.json"
+  ],
   "verification_report": "outputs/status/CLOUD_VERIFICATION.json"
 }
