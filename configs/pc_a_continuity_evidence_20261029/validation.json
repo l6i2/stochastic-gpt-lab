@@ -1,0 +1,10 @@
+{
+  "affected_tests_passed": 20,
+  "data_causal_audit_rerun": false,
+  "failed": 0,
+  "native_ea_recompiled_or_restarted": false,
+  "reason": "No newly authorized native-to-UTC normalization; retained fail-closed prerequisite",
+  "skipped": 0,
+  "static_no_order_calls": "PASS",
+  "test_log_sha256": "fa9b5ee42e655a99a8f90e544c6a4dd9c6b6ef12064e0352d6222610cb7e82ac"
+}

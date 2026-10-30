@@ -1,0 +1,46 @@
+{
+  "after": {
+    "ask": 0.0,
+    "bid": 0.0,
+    "callback_program_us": 701513052,
+    "callback_uptime_ms": 969828,
+    "capture_id": "pc_a_prospective_utc_v1",
+    "connected": true,
+    "flags": 0,
+    "kind": "HEARTBEAT",
+    "read_uptime_ms": 969828,
+    "receipt_host_gmt_seconds": 1793327618,
+    "sequence": 833,
+    "server": "XMGlobalSC-MT5 5",
+    "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+    "symbol": "US30Cash",
+    "time": 0,
+    "time_msc": 0
+  },
+  "before": {
+    "ask": 0.0,
+    "bid": 0.0,
+    "callback_program_us": 655035316,
+    "callback_uptime_ms": 923359,
+    "capture_id": "pc_a_prospective_utc_v1",
+    "connected": true,
+    "flags": 0,
+    "kind": "HEARTBEAT",
+    "read_uptime_ms": 923359,
+    "receipt_host_gmt_seconds": 1793327572,
+    "sequence": 831,
+    "server": "XMGlobalSC-MT5 5",
+    "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+    "symbol": "US30Cash",
+    "time": 0,
+    "time_msc": 0
+  },
+  "between_callbacks": 1,
+  "between_sequences": [
+    832
+  ],
+  "cause": "UNDETERMINED",
+  "duration_ms": 46469,
+  "event_loss": "UNVERIFIED",
+  "file": "pc_a_prospective_utc_v1_268328_86572951924106_6708.jsonl"
+}

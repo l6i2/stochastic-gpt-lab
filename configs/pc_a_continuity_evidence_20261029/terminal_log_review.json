@@ -1,0 +1,12 @@
+[
+  {
+    "file": "Logs/20261029.log",
+    "file_sha256": "0a97891c53bb1953d88e1fabbe1f5863e5c9089fad3e27385d3a99b14604331f",
+    "matching_events": []
+  },
+  {
+    "file": "MQL5/Logs/20261029.log",
+    "file_sha256": "7fe8b644841c30b8db4739ef397ae1da8d2542ffb5d665f891e0fb8348756cfa",
+    "matching_events": []
+  }
+]

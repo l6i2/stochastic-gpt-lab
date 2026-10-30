@@ -15,6 +15,7 @@ import pc_a_raw_archive as raw
 from independent_clock_reference import capture_reference
 from prospective_utc import verify_callback,segment_verdict,GENESIS
 from time_semantics import instant_display
+from callback_continuity import analyze as analyze_continuity, receipt_projection
 
 BASE=ROOT/'outputs/pc_a_prospective_utc'
 NATIVE=Path.home()/'AppData/Roaming/MetaQuotes/Terminal'/raw.DATA_NAME/'MQL5/Files/ResearchDiagnostics/ProspectiveUTC'
@@ -61,7 +62,7 @@ def observe(network=True):
 def locked_observe(network):
     checkpoint_path=BASE/'checkpoints.json'
     old=json.loads(checkpoint_path.read_text()) if checkpoint_path.exists() else {}
-    sessions={}
+    sessions={};new_incidents=[]
     for name in old:
         if not (NATIVE/name).is_file():raise ValueError('PREVIOUS_CAPTURE_MISSING')
     for path in NATIVE.glob('pc_a_prospective_utc_v1_*.jsonl'):
@@ -85,6 +86,28 @@ def locked_observe(network):
             destination.flush();__import__('os').fsync(destination.fileno())
         if verify_callback(mirror)['chain_head']!=sessions[path.name]['chain_head']:
             raise ValueError('MIRROR_PREFIX_MISMATCH')
+        continuity=analyze_continuity(mirror)
+        sessions[path.name]['continuity']=continuity
+        for incident in continuity['incidents']:
+            destination=BASE/'incidents'/(incident['incident_id']+'.json')
+            destination.parent.mkdir(parents=True,exist_ok=True)
+            if not destination.exists():
+                new_incidents.append(incident)
+                # Exclusive creation preserves the first observation forever.
+                with destination.open('x',encoding='utf-8') as stream:
+                    json.dump(dict(incident=incident,first_observed_host_utc=raw.utc(),
+                        native_prefix_chain_head=sessions[path.name]['chain_head'],
+                        causal_certification=False),stream,sort_keys=True)
+    if new_incidents:
+        start=min(i['before_host_gmt_seconds'] for i in new_incidents)-300
+        end=max(i['after_host_gmt_seconds'] for i in new_incidents)+300
+        # Host-domain event context, not independent UTC proof or a cause claim.
+        script="$s=[DateTimeOffset]::FromUnixTimeSeconds("+str(start)+").LocalDateTime;$e=[DateTimeOffset]::FromUnixTimeSeconds("+str(end)+").LocalDateTime;try {$v=@(Get-WinEvent -FilterHashtable @{LogName='System';StartTime=$s;EndTime=$e;Id=1,12,13,41,42,107,506,507,6005,6006,6008} -MaxEvents 200 -ErrorAction Stop | Select-Object Id,ProviderName,RecordId,@{N='TimeUtc';E={$_.TimeCreated.ToUniversalTime().ToString('o')}});@{status='OK';events=$v}|ConvertTo-Json -Depth 4 -Compress}catch{if($_.FullyQualifiedErrorId -like '*NoMatchingEventsFound*'){@{status='NO_MATCHING_EVENTS';events=@()}|ConvertTo-Json -Compress}else{@{status='QUERY_FAILED';events=@()}|ConvertTo-Json -Compress}}"
+        context=subprocess.run(['powershell.exe','-NoProfile','-Command',script],capture_output=True,text=True,timeout=20)
+        raw.atomic(BASE/'incident_context'/(__import__('uuid').uuid4().hex+'.json'),dict(
+            incident_ids=[i['incident_id'] for i in new_incidents],host_window_start_seconds=start,
+            host_window_end_seconds=end,system_events=json.loads(context.stdout) if context.returncode==0 and context.stdout.strip() else {'status':'UNAVAILABLE'},
+            cause='UNDETERMINED_EVENTS_ARE_CONTEXT_ONLY',context_may_be_capped_at=200))
     kernel=ctypes.windll.kernel32.GetTickCount64;kernel.restype=ctypes.c_ulonglong
     uptime=kernel()
     for value in sessions.values():
@@ -101,6 +124,9 @@ def locked_observe(network):
             windows_sync_status=clock.stdout,windows_sync_exit=clock.returncode,
             authenticated_utc_bound=False,uncertainty='NOT_CERTIFIED_NTP_UNAUTHENTICATED_NO_OSCILLATOR_BOUND',
             same_event_binding=False,clock_changed=False,orders_sent=0)
+        witness['callback_receipt_models']={name:dict(native_observation=s['continuity']['last_tick_observation'],
+            receipt_projection=receipt_projection(reference,s['continuity']['last_tick_observation']['callback_uptime_ms']))
+            for name,s in sessions.items() if s['liveness']=='RECENT' and s['continuity'].get('last_tick_observation')}
         append_witness(witness)
     ticks=sum(s['tick_callbacks'] for s in sessions.values())
     active=any(s['tick_callbacks'] and s['last_connected'] and s['liveness']=='RECENT' for s in sessions.values())

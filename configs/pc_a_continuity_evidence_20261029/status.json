@@ -1,0 +1,104 @@
+{
+  "CALLBACK_CONTINUITY": "HASH_SEQUENCE_VERIFIED_COVERAGE_UNPROVEN",
+  "CAUSAL_AUDIT": "FAIL",
+  "CERTIFIED_SEGMENTS": [],
+  "COLLECTOR_HEALTH": "NATIVE_MONITOR_SCHEDULED_LAST_RESULT_0_RAW_QUARANTINE_RETAINED",
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "EXTERNAL_UTC_CORRELATION": "REPRODUCIBLE_DIAGNOSTIC_PACKETS_AND_RECEIPT_MODEL_UNCERTIFIED",
+  "FINAL_TEST": "LOCKED",
+  "HARD_BLOCKER": [
+    "Authenticated same-event UTC binding",
+    "Bounded queue delay/oscillator error and native mapping",
+    "Dated exact-server calendar"
+  ],
+  "HEARTBEAT_GAPS": {
+    "cause": "UNDETERMINED",
+    "investigated_ms": 46469,
+    "observed_incidents": 3
+  },
+  "LIVE_TRADING": false,
+  "MANUAL_ACTION_REQUIRED": "NONE",
+  "NATIVE_CAPTURE_STATUS": "ACTIVE_CALLBACKS_QUARANTINED",
+  "NATIVE_TO_UTC_MAPPING": "UNVERIFIED",
+  "NEXT_STATE": "CONTINUE_READ_ONLY_CAPTURE_PRESERVE_NEW_INCIDENTS_AND_EXTERNAL_WITNESSES",
+  "QUARANTINED_SEGMENTS": [
+    {
+      "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+      "end_callback_uptime_ms": 913359,
+      "incident_ids": [],
+      "interval": "[start,end)",
+      "reason": "TEMPORAL_PROVENANCE_UNVERIFIED",
+      "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+      "start_callback_uptime_ms": 268328,
+      "status": "QUARANTINED"
+    },
+    {
+      "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+      "end_callback_uptime_ms": 923359,
+      "incident_ids": [
+        "ee33d18b8245e1f30a96d50284c48b985b3eb9d7661ec4580e212171c9c4dec9"
+      ],
+      "interval": "[start,end)",
+      "reason": "CALLBACK_GAP_AND_TEMPORAL_PROVENANCE",
+      "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+      "start_callback_uptime_ms": 913359,
+      "status": "QUARANTINED"
+    },
+    {
+      "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+      "end_callback_uptime_ms": 969828,
+      "incident_ids": [
+        "5a0489fe1f094c28759d3e500d55d39c661ded08a53f7d61f6827c820265d5d3"
+      ],
+      "interval": "[start,end)",
+      "reason": "CALLBACK_GAP_AND_TEMPORAL_PROVENANCE",
+      "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+      "start_callback_uptime_ms": 923359,
+      "status": "QUARANTINED"
+    },
+    {
+      "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+      "end_callback_uptime_ms": 1048234,
+      "incident_ids": [],
+      "interval": "[start,end)",
+      "reason": "TEMPORAL_PROVENANCE_UNVERIFIED",
+      "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+      "start_callback_uptime_ms": 969828,
+      "status": "QUARANTINED"
+    },
+    {
+      "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+      "end_callback_uptime_ms": 1059828,
+      "incident_ids": [
+        "fbc3ced4a1ecb19e60eaf1c29a082e4db1f9ece601b49423bc96bf005bda0d03"
+      ],
+      "interval": "[start,end)",
+      "reason": "CALLBACK_GAP_AND_TEMPORAL_PROVENANCE",
+      "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+      "start_callback_uptime_ms": 1048234,
+      "status": "QUARANTINED"
+    },
+    {
+      "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+      "end_callback_uptime_ms": 2455656,
+      "incident_ids": [],
+      "interval": "[start,end)",
+      "reason": "TEMPORAL_PROVENANCE_UNVERIFIED",
+      "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+      "start_callback_uptime_ms": 1059828,
+      "status": "QUARANTINED"
+    },
+    {
+      "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+      "end_callback_uptime_ms": 268171,
+      "incident_ids": [],
+      "interval": "[start,end)",
+      "reason": "TEMPORAL_PROVENANCE_UNVERIFIED",
+      "session_id": "pc_a_prospective_utc_v1_50343_86572951924106_1553",
+      "start_callback_uptime_ms": 50343,
+      "status": "QUARANTINED"
+    }
+  ],
+  "TRAINING_READINESS": "BLOCKED_BY_RESEARCH_GOVERNANCE"
+}

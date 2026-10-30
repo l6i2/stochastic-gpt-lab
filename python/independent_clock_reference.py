@@ -54,11 +54,26 @@ def capture_reference() -> dict:
             samples.append({'host': host, 'server_transmit_ns': transmit,
                             'server_transmit_utc': datetime.fromtimestamp(transmit / 1e9, timezone.utc).isoformat(),
                             'rtt_ns': received - started, 'received_monotonic_ns': received,
-                            'stratum': packet[1], 'nonce_echo_verified': True})
+                            'stratum': packet[1], 'nonce_echo_verified': True,
+                            'root_delay_ns': struct.unpack('!i',packet[4:8])[0]*1_000_000_000//65536,
+                            'root_dispersion_ns': struct.unpack('!I',packet[8:12])[0]*1_000_000_000//65536,
+                            'precision_log2_seconds': struct.unpack('!b',packet[3:4])[0],
+                            'leap_indicator': packet[0]>>6,
+                            'response_packet_hex': packet.hex(), 'request_nonce_hex': nonce.hex(),
+                            'authenticated': False,
+                            'uncertainty_scope': 'RTT and unauthenticated server-advertised errors; no calibrated oscillator bound'})
         except (OSError, ValueError) as exc:
             errors.append({'host': host, 'error': type(exc).__name__})
+    kernel_interval = None
+    if __import__('sys').platform == 'win32':
+        import ctypes
+        kernel = ctypes.windll.kernel32.GetTickCount64
+        kernel.restype = ctypes.c_ulonglong
+        kernel_before = kernel()
     anchor = time.monotonic_ns()
     local = time.time_ns()
+    if __import__('sys').platform == 'win32':
+        kernel_interval = [kernel_before, kernel()]
     comparison = reconcile(samples, anchor_monotonic_ns=anchor, local_utc_ns=local)
     tls = []
     for base in ('https://www.microsoft.com/', 'https://www.google.com/generate_204', 'https://www.bing.com/'):
@@ -79,6 +94,8 @@ def capture_reference() -> dict:
         except (OSError, ValueError, TypeError) as exc:
             tls.append({'url': base, 'error': type(exc).__name__, 'agrees_with_ntp_interval': False})
     return {'samples': samples, 'errors': errors, 'anchor_monotonic_ns': anchor,
+            'anchor_kernel_uptime_ms_interval': kernel_interval,
+            'projection_limits': 'No calibrated uptime quantization/drift or broker callback queue-delay bound',
             'local_utc_ns': local, 'local_utc': datetime.fromtimestamp(local / 1e9, timezone.utc).isoformat(),
             'comparison': comparison, 'tls_corroboration': tls,
             'tls_corroborated': sum(row['agrees_with_ntp_interval'] for row in tls) >= 2,

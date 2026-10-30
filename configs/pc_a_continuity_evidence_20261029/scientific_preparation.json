@@ -1,0 +1,65 @@
+{
+  "adaptive_search_exposed": false,
+  "components": {
+    "baseline_replay": {
+      "executed": false,
+      "file": "python/replay_quality_train_baseline.py",
+      "sha256": "cdfdc3d3299802633d9b4732a68a3fea496bf9632d18c146803eecf6ffcb210d",
+      "syntax": "PASS"
+    },
+    "causal_native_metadata_adapter": {
+      "executed": false,
+      "file": "python/native_metadata_v3.py",
+      "sha256": "e5017bd62aa2b1724472fd9f07c9228a27902bd7059d2f403ed0a2dae1a057ad",
+      "syntax": "PASS"
+    },
+    "causal_time_checks": {
+      "executed": false,
+      "file": "python/temporal_causality.py",
+      "sha256": "8cd94422d6b9d80b11ca1a47e9685ce8d9587cb9f99565e6f1593d23f20e004b",
+      "syntax": "PASS"
+    },
+    "legacy_model_runner_not_exposed_or_invoked": {
+      "executed": false,
+      "file": "python/train_intratrade_models.py",
+      "sha256": "9b3dc5d5968834df82a6525b3646552c770414a2999436860717fd471c63e651",
+      "syntax": "PASS"
+    },
+    "purged_walk_forward": {
+      "executed": false,
+      "file": "python/evaluate_train_exit_walkforward.py",
+      "sha256": "ee79d09af468e5b7e472781ac04ae13101406fe52eb76c7df059e4937366c561",
+      "syntax": "PASS"
+    },
+    "separate_buy_sell_walk_forward": {
+      "executed": false,
+      "file": "python/evaluate_train_intratrade_round2_wf.py",
+      "sha256": "6134500fe6e9893f25749e3e3696ffec8e564b0cea4990740f20a8f47fb15f35",
+      "syntax": "PASS"
+    },
+    "streaming_train_membership_filter": {
+      "executed": false,
+      "file": "python/train_event_source.py",
+      "sha256": "e3a08d6666a68aae6999ae7ea9172fe9dfadee6c1902d450bf9b94cbc509618b",
+      "syntax": "PASS"
+    }
+  },
+  "data_opened": false,
+  "demo": "DISABLED",
+  "final_test_opened": false,
+  "labels_read": false,
+  "legacy_train_exhausted": true,
+  "live_trading": false,
+  "low_memory_mode": true,
+  "model_fit_exposed": false,
+  "observed_utc": "2026-10-30T03:00:02.246301+00:00",
+  "requires": [
+    "admissible preregistered independent data",
+    "verified causal mapping and metadata",
+    "sealed chronological membership and purged folds",
+    "frozen BUY/SELL and FOLLOW/INVERT plan"
+  ],
+  "scientific_acceptance": false,
+  "training_readiness": "BLOCKED_BY_RESEARCH_GOVERNANCE",
+  "validation_opened": false
+}

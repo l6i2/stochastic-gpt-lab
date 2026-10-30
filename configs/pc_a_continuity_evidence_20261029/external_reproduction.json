@@ -1,0 +1,63 @@
+{
+  "checks": [
+    {
+      "authenticated": false,
+      "decoded_matches": true,
+      "host": "time.windows.com",
+      "root_delay_ns": 61035,
+      "root_dispersion_ns": 10025024,
+      "rtt_ns": 125000000
+    },
+    {
+      "authenticated": false,
+      "decoded_matches": true,
+      "host": "time.cloudflare.com",
+      "root_delay_ns": 91018676,
+      "root_dispersion_ns": 747680,
+      "rtt_ns": 31000000
+    },
+    {
+      "authenticated": false,
+      "decoded_matches": true,
+      "host": "time.google.com",
+      "root_delay_ns": 0,
+      "root_dispersion_ns": 106811,
+      "rtt_ns": 110000000
+    }
+  ],
+  "comparison": {
+    "authority_scope": "diagnostic only; unauthenticated NTP",
+    "local_clock_within_network_interval": false,
+    "local_lag_lower_ns": -815779076,
+    "local_lag_upper_ns": -784779076,
+    "status": "REFERENCE_QUORUM",
+    "utc_lower_ns": 1793329117873251324,
+    "utc_upper_ns": 1793329117904251324
+  },
+  "receipt_models": {
+    "pc_a_prospective_utc_v1_268328_86572951924106_6708.jsonl": {
+      "native_observation": {
+        "callback_uptime_ms": 2467156,
+        "receipt_host_gmt_seconds": 1793329115,
+        "sequence": 2680,
+        "time": 1793336314,
+        "time_msc": 1793336314976
+      },
+      "receipt_projection": {
+        "authenticated": false,
+        "certified": false,
+        "event_time_inferred": false,
+        "model": "SHARED_KERNEL_UPTIME_ZERO_DRIFT_DIAGNOSTIC_ONLY",
+        "unbounded_components": [
+          "UPTIME_QUANTIZATION",
+          "OSCILLATOR_DRIFT",
+          "SERVER_ABSOLUTE_CLOCK_ERROR",
+          "CALLBACK_QUEUE_DELAY"
+        ],
+        "utc_model_lower_ns": 1793329115076251324,
+        "utc_model_upper_ns": 1793329115107251324
+      }
+    }
+  },
+  "witness_record_sha256": "6192525fbaa2e19f4cb7e5d07e84d4887254aa9bd2d7422a7390715af3b0c58b"
+}
