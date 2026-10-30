@@ -1,4 +1,17 @@
-# Estado actual — continuación Cloud, 2026-10-29 (Ecuador)
+# Actualización local — 2026-10-30 (Ecuador)
+
+El diagnóstico nativo automatizado del 2024-01-02 (calendario del servidor XM)
+pasó reproducibilidad, quotes/OHLC/volumen y replay virtual MQL5/Python. También
+pasaron los cutoffs causales del dominio nativo; esto no certifica UTC ni admite
+datos científicos. Collector y NTS siguen activos en cuarentena. 39 pruebas
+afectadas PASS. No se cambió estrategia, contratos, entrenamiento ni holdouts.
+
+La [revisión de capacidades y propuesta pendiente](PC_A_NATIVE_TESTER_CAPABILITIES.md)
+separa diagnóstico histórico, admisión científica y ejecución UTC. La propuesta
+no está aplicada; TRAIN agotado, DISCOVERY_VALIDATION=BLOCKED, FINAL_TEST=LOCKED,
+DEMO=DISABLED y LIVE_TRADING=false se conservan.
+
+## Snapshot del handoff Cloud conservado — 2026-10-29
 
 Actualizado sobre `e35b05d461baeee1ee9ab65c4bf1b6f484744f6c`, preservando los
 17 commits publicados después del handoff Cloud original. Fuente operativa:

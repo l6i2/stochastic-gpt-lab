@@ -1,0 +1,73 @@
+{
+  "diagnostic_fixed_date_scope": "2024-01-02 only; no general missing-manifest bypass",
+  "finding": "OVERCONSTRAINT_FOR_NATIVE_DIAGNOSTIC_NOT_FOR_UTC_CLAIMS",
+  "frozen_files_verified_unchanged": {
+    "configs/timestamp_clock_contract_v1.json": {
+      "comparison": "EXACT_PREVIOUS_PC_A_SEAL",
+      "git_content_sha256": "ada74c16034f0929805a273e89397845819f06ce81815160cb6cb25bc9c20b0e",
+      "working_bytes_sha256": "ada74c16034f0929805a273e89397845819f06ce81815160cb6cb25bc9c20b0e"
+    },
+    "configs/timestamp_clock_contract_v1.json.sha256": {
+      "comparison": "EXACT_PREVIOUS_PC_A_SEAL",
+      "git_content_sha256": "55f6e850ea49da9ce0eb3f409dc7b87e49cb677015fafc280501acd0ec00db11",
+      "working_bytes_sha256": "55f6e850ea49da9ce0eb3f409dc7b87e49cb677015fafc280501acd0ec00db11"
+    },
+    "docs/FUTURE_VALIDATION_PROTOCOL.md": {
+      "comparison": "EXACT_PREVIOUS_PC_A_SEAL",
+      "git_content_sha256": "c35f7308a9eed981b35256601747295f100339b1663c2516d251dac2cce75bc1",
+      "working_bytes_sha256": "c35f7308a9eed981b35256601747295f100339b1663c2516d251dac2cce75bc1"
+    },
+    "docs/FUTURE_VALIDATION_PROTOCOL.md.sha256": {
+      "comparison": "EXACT_PREVIOUS_PC_A_SEAL",
+      "git_content_sha256": "b24c4910f4b3bf5d896f909d6c57bd8662b5fa907a9e0f41bc8c0892e4d42cb9",
+      "working_bytes_sha256": "b24c4910f4b3bf5d896f909d6c57bd8662b5fa907a9e0f41bc8c0892e4d42cb9"
+    },
+    "docs/PROSPECTIVE_EVALUATION_PROTOCOL.md": {
+      "comparison": "EXACT_PREVIOUS_PC_A_SEAL",
+      "git_content_sha256": "f9406cd6cdc0312ecc62071fc4db9c10b90f63af5feebc49bc38179ddb93a7e1",
+      "working_bytes_sha256": "f9406cd6cdc0312ecc62071fc4db9c10b90f63af5feebc49bc38179ddb93a7e1"
+    },
+    "docs/PROSPECTIVE_EVALUATION_PROTOCOL.md.sha256": {
+      "comparison": "EXACT_PREVIOUS_PC_A_SEAL",
+      "git_content_sha256": "2585c6597ccb14c4403cd13592ab3a01887ad91e1ffe53d4256d45bad47c6982",
+      "working_bytes_sha256": "2585c6597ccb14c4403cd13592ab3a01887ad91e1ffe53d4256d45bad47c6982"
+    },
+    "docs/RESEARCH_PROTOCOL.md": {
+      "comparison": "EXACT_PREVIOUS_PC_A_SEAL",
+      "git_content_sha256": "ba752f220e5a40e262bb6b9476fdf78836c0e136d59ef29936bac562da66bc52",
+      "working_bytes_sha256": "ba752f220e5a40e262bb6b9476fdf78836c0e136d59ef29936bac562da66bc52"
+    },
+    "docs/RESEARCH_PROTOCOL_V2.md": {
+      "comparison": "EXACT_PREVIOUS_PC_A_SEAL",
+      "git_content_sha256": "c02b58504567ca444dda89ad423c24122395c4ad41974037a7aa227aeaa03217",
+      "working_bytes_sha256": "c02b58504567ca444dda89ad423c24122395c4ad41974037a7aa227aeaa03217"
+    },
+    "docs/RESEARCH_PROTOCOL_V2.md.sha256": {
+      "comparison": "EXACT_PREVIOUS_PC_A_SEAL",
+      "git_content_sha256": "ddf929d47595c46d2523a348e48c2acc4e28919e74234874e8f5f1b4b56b64d7",
+      "working_bytes_sha256": "ddf929d47595c46d2523a348e48c2acc4e28919e74234874e8f5f1b4b56b64d7"
+    },
+    "mt5/HeikinAshiCore.mqh": {
+      "comparison": "GIT_CONTENT_IDENTICAL_PRESERVING_EXISTING_CRLF",
+      "git_content_sha256": "654a8f321e8fb3602cd590388c1775f75c6c4104ec4db73a98de259835892078",
+      "working_bytes_sha256": "d9a1e525a99e66f855bc49c3a696030c5e12ef534a1aeff5012b63a462a3e8ef"
+    },
+    "mt5/ResearchCore.mqh": {
+      "comparison": "GIT_CONTENT_IDENTICAL_PRESERVING_EXISTING_CRLF",
+      "git_content_sha256": "61c32cb1279615b166200377199ad2b1f6429c12d9481fa49d62c8d2bf30d774",
+      "working_bytes_sha256": "99a5328d58bf613d5cc9b354ddfee936a0e23427b8a16792a19d6e63b0011283"
+    },
+    "mt5/StochasticBarDecisionResearchEA.mq5": {
+      "comparison": "GIT_CONTENT_IDENTICAL_PRESERVING_EXISTING_CRLF",
+      "git_content_sha256": "f2e9bf43cbbdc716148847fe53e1f3dd14b21393775ccc809d05cb5e134cb88d",
+      "working_bytes_sha256": "f2e9bf43cbbdc716148847fe53e1f3dd14b21393775ccc809d05cb5e134cb88d"
+    }
+  },
+  "legacy_split_manifest_present": false,
+  "original_protocol_origin": "3844d04",
+  "production_EA_matches_frozen_producer_manifest": true,
+  "replay_clause": "frozen native event timestamps and sequence; no current wall-clock conversion",
+  "scientific_proposal_applied": false,
+  "training_authorized": false,
+  "utc_contract_origin": "9068af5"
+}

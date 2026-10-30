@@ -1,0 +1,26 @@
+{
+  "native_observed": {
+    "Ecuador": "2026-10-30T10:46:43.964-05:00",
+    "Nueva York": "2026-10-30T11:46:43.964-04:00",
+    "UTC": "2026-10-30T15:46:43.964+00:00",
+    "XM": null,
+    "mapping_id": null,
+    "new_york_abbreviation": "EDT",
+    "new_york_fold": 0,
+    "primary_time": "2026-10-30T10:46:43.964-05:00",
+    "primary_timezone": "America/Guayaquil",
+    "scientific_authorization": false,
+    "time_basis": "HOST_RECEIPT_UNATTESTED",
+    "tzdata_version": "2026.5",
+    "xm_server_offset_seconds": null,
+    "xm_status": "UNVERIFIED_NO_CONVERSION"
+  },
+  "native_status": "ACTIVE_CALLBACKS_QUARANTINED",
+  "original_terminal_stopped": false,
+  "other_project_modified": false,
+  "raw_error": null,
+  "raw_last_success": "2026-10-30T15:47:00.819053+00:00",
+  "raw_observed": "2026-10-30T15:47:05.844303+00:00",
+  "raw_status": "ACTIVE",
+  "tick_callbacks": 27392
+}

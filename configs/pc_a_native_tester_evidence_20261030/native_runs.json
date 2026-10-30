@@ -1,0 +1,122 @@
+{
+  "agents": "ONE_LOCAL_AGENT_NO_CLOUD",
+  "calendar_reference": {
+    "path": "configs/pc_a_remaining_blockers_evidence_20261028/current_server_native_sessions.json",
+    "sha256": "cc80aae82f6f50d4f940e0d609907405a0e1b8be0ef0b528ebc0cabff0633ef9",
+    "status": "RETAINED_NATIVE_WEEKLY_OBSERVATIONS_NOT_HISTORICAL_CERTIFICATION"
+  },
+  "interval_basis": "SERVER_NATIVE_CALENDAR_NOT_CERTIFIED_UTC",
+  "mode": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "old_api_M1_response": {
+    "cause": "UNDETERMINED_NOT_OFFSET_CORRECTED",
+    "observed_native_epoch": 1748949840,
+    "original_retained": true,
+    "status": "REJECTED_OUT_OF_RANGE"
+  },
+  "period": "M5",
+  "platform": {
+    "binary_sha256": {
+      "metatester64.exe": "7f576d911df5a90cf8d94df08cddde79d92c6b5e8b2701dd7a4f3722fd8df757",
+      "terminal64.exe": "0eb3f34dfc291ff60e3d2629cf3b6f5c903c9979b6b6c2691527989bd71ec466"
+    },
+    "terminal_build": 6290
+  },
+  "private_cache_files_published": false,
+  "repeat_pair_bit_exact": true,
+  "resource_memory_mb": [
+    72,
+    74
+  ],
+  "runs": [
+    {
+      "artifact_sha256": {
+        "diag_fd4e5bf3d468.htm": "0573df7253bb1c4eb2def90ef2e62cab5e3461be1fbf443673bc6c7d568dcfbc",
+        "diag_fd4e5bf3d468_bar_execution_quotes.csv": "575ffacf591e30b78317a03d898731cda728f9fe52a2201b1537ec76f21530fd",
+        "diag_fd4e5bf3d468_bar_quote_path.bin": "f03c643bc26c4cc236706537e49f0e78dd1fdf89eaab4674b5f599d2439c8711",
+        "diag_fd4e5bf3d468_bar_trade_index.csv": "90571e6a85d858f6fdcdb78dfded60065abf804ed3aa70df42a692539412296a",
+        "diag_fd4e5bf3d468_intratrade_snapshot_targets.csv": "1873b7e678f03161d0e6bf00344f6ba04718455d885daa205f8839c8ee6d9463",
+        "diag_fd4e5bf3d468_intratrade_snapshots.csv": "e6d2cde9f88a57a744a70f6147e21d34b4b412ebaf2908acbcc595a8dd3e47f3",
+        "diag_fd4e5bf3d468_intratrade_snapshots.csv.audit.json": "0cd32c8a36f98cad6d37b642d00d602c07d882d33f1256ffe56e1f4c6b91ff53",
+        "diag_fd4e5bf3d468_stochastic_events.csv": "975b374fce187ef4cdf33a02b6a69f743393cc2ef989f352706ae89c8225da81",
+        "diag_fd4e5bf3d468_stochastic_events.csv.audit.json": "5218229b1c757264a09b2c3f69933a01b429062fae01263a7126f0f349f963ce",
+        "diag_fd4e5bf3d468_stochastic_events.csv.native_M1.csv": "12e8af250f76483b28ce90631ccd1dde4786971ffe44d5f118d5f77b4e8a036c",
+        "diag_fd4e5bf3d468_stochastic_events.csv.native_M5.csv": "62e1d0877b3ac9cae68d2f30d17567eff4909d3e7a3417e9bd7f8817b2c208df",
+        "diag_fd4e5bf3d468_stochastic_events.csv.native_main.csv": "13916e70d0f2a3ff099e93186bf28ac8c02a92558c7a9667ba099229c3374a8d"
+      },
+      "compiled": {
+        "compile_log_sha256": "fca1db2534cd9d4ab029dbf64c151f7842db5defbedd5b4a5d9e36586f31f83d",
+        "errors": 0,
+        "ex5_sha256": "183add7338ec34c2a139b338aec477c93e9e59bb170320b060e0d35d57c124b4",
+        "source_sha256": "9a979f09a22e9328af1eb1603dbeabdd1974b35410930efdccd8e881138a6b1e",
+        "warnings": 0
+      },
+      "diagnostics": [
+        "PP\t3\t10:31:23.582\tMCP\tbind error on 127.0.0.1:22346 [Only one usage of each socket address (protocol/network address/port) is normally permitted. (10048)]",
+        "IN\t0\t10:31:31.182\tCore 1\tUS30Cash,M5 (XMGlobalSC-MT5 5): generating based on real ticks",
+        "HJ\t0\t10:31:31.182\tCore 1\tUS30Cash : real ticks begin from 2024.01.02 00:00:00",
+        "CH\t0\t10:31:31.182\tCore 1\tUS30Cash,M5: 79211 ticks, 276 bars generated. Environment synchronized in 0:00:03.043. Test passed in 0:00:00.910.",
+        "FD\t0\t10:31:31.182\tCore 1\t92 Mb memory used including 24 Mb of history data, 64 Mb of tick data",
+        "CS\t0\t10:31:30.319\tTester\tUS30Cash,M5 (XMGlobalSC-MT5 5): generating based on real ticks",
+        "CS\t0\t10:31:30.337\tTicks\tUS30Cash : real ticks begin from 2024.01.02 00:00:00",
+        "CS\t0\t10:31:31.181\tTester\tUS30Cash,M5: 79211 ticks, 276 bars generated. Environment synchronized in 0:00:03.043. Test passed in 0:00:00.910.",
+        "CS\t0\t10:31:31.181\tTester\t92 Mb memory used including 24 Mb of history data, 64 Mb of tick data"
+      ],
+      "end": "2024-01-02",
+      "ini_sha256": "7ce1bacc221c974faa8fd52f59f2e15d4e76ffd3b5da271eb452f4ff39ed68ad",
+      "local_manifest_sha256": "3d64e2f2c5b35141c10b63921c239c614e591d5a1c5a7dcb1807b2047bcc5326",
+      "model": 4,
+      "optimization": false,
+      "orders_sent": 0,
+      "preset_sha256": "a704da27203443d1d2662ff6bb72d566fe546c65eca501d99261911e4733e2d4",
+      "run_id": "diag_fd4e5bf3d468",
+      "start": "2024-01-02",
+      "status": "COMPLETE"
+    },
+    {
+      "artifact_sha256": {
+        "diag_abedbf590923.htm": "1369942c95a27252de0bd4180ce35b13268c7b9c7a4c4650048bd559674ff558",
+        "diag_abedbf590923_bar_execution_quotes.csv": "575ffacf591e30b78317a03d898731cda728f9fe52a2201b1537ec76f21530fd",
+        "diag_abedbf590923_bar_quote_path.bin": "f03c643bc26c4cc236706537e49f0e78dd1fdf89eaab4674b5f599d2439c8711",
+        "diag_abedbf590923_bar_trade_index.csv": "90571e6a85d858f6fdcdb78dfded60065abf804ed3aa70df42a692539412296a",
+        "diag_abedbf590923_intratrade_snapshot_targets.csv": "1873b7e678f03161d0e6bf00344f6ba04718455d885daa205f8839c8ee6d9463",
+        "diag_abedbf590923_intratrade_snapshots.csv": "e6d2cde9f88a57a744a70f6147e21d34b4b412ebaf2908acbcc595a8dd3e47f3",
+        "diag_abedbf590923_intratrade_snapshots.csv.audit.json": "0cd32c8a36f98cad6d37b642d00d602c07d882d33f1256ffe56e1f4c6b91ff53",
+        "diag_abedbf590923_stochastic_events.csv": "975b374fce187ef4cdf33a02b6a69f743393cc2ef989f352706ae89c8225da81",
+        "diag_abedbf590923_stochastic_events.csv.audit.json": "5218229b1c757264a09b2c3f69933a01b429062fae01263a7126f0f349f963ce",
+        "diag_abedbf590923_stochastic_events.csv.native_M1.csv": "12e8af250f76483b28ce90631ccd1dde4786971ffe44d5f118d5f77b4e8a036c",
+        "diag_abedbf590923_stochastic_events.csv.native_M5.csv": "62e1d0877b3ac9cae68d2f30d17567eff4909d3e7a3417e9bd7f8817b2c208df",
+        "diag_abedbf590923_stochastic_events.csv.native_main.csv": "13916e70d0f2a3ff099e93186bf28ac8c02a92558c7a9667ba099229c3374a8d"
+      },
+      "compiled": {
+        "compile_log_sha256": "fca1db2534cd9d4ab029dbf64c151f7842db5defbedd5b4a5d9e36586f31f83d",
+        "errors": 0,
+        "ex5_sha256": "183add7338ec34c2a139b338aec477c93e9e59bb170320b060e0d35d57c124b4",
+        "source_sha256": "9a979f09a22e9328af1eb1603dbeabdd1974b35410930efdccd8e881138a6b1e",
+        "warnings": 0
+      },
+      "diagnostics": [
+        "RP\t3\t10:32:08.128\tMCP\tbind error on 127.0.0.1:22346 [Only one usage of each socket address (protocol/network address/port) is normally permitted. (10048)]",
+        "PL\t0\t10:32:18.442\tCore 1\tUS30Cash,M5 (XMGlobalSC-MT5 5): generating based on real ticks",
+        "QH\t0\t10:32:18.442\tCore 1\tUS30Cash : real ticks begin from 2024.01.02 00:00:00",
+        "JF\t0\t10:32:18.442\tCore 1\tUS30Cash,M5: 79211 ticks, 276 bars generated. Environment synchronized in 0:00:04.057. Test passed in 0:00:00.952 (including ticks preprocessing 0:00:00.015).",
+        "OR\t0\t10:32:18.442\tCore 1\t92 Mb memory used including 24 Mb of history data, 64 Mb of tick data",
+        "CS\t0\t10:32:17.533\tTester\tUS30Cash,M5 (XMGlobalSC-MT5 5): generating based on real ticks",
+        "CS\t0\t10:32:17.551\tTicks\tUS30Cash : real ticks begin from 2024.01.02 00:00:00",
+        "CS\t0\t10:32:18.441\tTester\tUS30Cash,M5: 79211 ticks, 276 bars generated. Environment synchronized in 0:00:04.057. Test passed in 0:00:00.952 (including ticks preprocessing 0:00:00.015).",
+        "CS\t0\t10:32:18.441\tTester\t92 Mb memory used including 24 Mb of history data, 64 Mb of tick data"
+      ],
+      "end": "2024-01-02",
+      "ini_sha256": "11d5cde972d84decb1e5302db2407c160b1dc978b8428495f4d0a428cd32a3b3",
+      "local_manifest_sha256": "1b9f60ddea5e9a9f57fb6e2b50e081d9987dedf5a84cc45a05cc3fed18d99203",
+      "model": 4,
+      "optimization": false,
+      "orders_sent": 0,
+      "preset_sha256": "d3e3add545ca247eaf5e1d13b28072b3a89181733e8a312cefe6c71e23aa6120",
+      "run_id": "diag_abedbf590923",
+      "start": "2024-01-02",
+      "status": "COMPLETE"
+    }
+  ],
+  "server": "XMGlobalSC-MT5 5",
+  "symbol": "US30Cash"
+}

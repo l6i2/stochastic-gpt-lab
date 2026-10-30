@@ -1,0 +1,9 @@
+{
+  "capabilities.json": "9504d5ac8c0a741aadff18ed52986bfb9def1aa01ae847827e9edd9f51f0d220",
+  "collector_health.json": "4f3beba93f3144aa19d5f3cb66f963db5017f4bcb1803a46a02e136da4ed4363",
+  "contract_review.json": "7a5ca17c5949b09aeeab911cfb060aa164e33f0ef22a9b7c6d2c76b2c6bb4db9",
+  "native_runs.json": "4bade6e18468ac4434abd3a7e57774706594142267ce63352b31f3808bd99eac",
+  "reconciliation.json": "ccd6e445583612116ca4a6bb0a176f57873998d26ddc201732b55f8e649123fe",
+  "status.json": "5408fb0cad69440072553717ad82996ad10dc7eaf7cb71735fb11891008b6c30",
+  "validation.json": "9d230ea8042180a1791a9844f8d675177c6b217ab765bf7247cb822469bb13a9"
+}
