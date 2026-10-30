@@ -1,0 +1,12 @@
+{
+  "dependency_install_performed": false,
+  "low_memory_mode": true,
+  "packages": {
+    "MetaTrader5": "5.0.6231",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1"
+  },
+  "packages_imported_for_training": false,
+  "python": "3.12.14"
+}

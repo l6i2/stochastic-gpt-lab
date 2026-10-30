@@ -1,0 +1,120 @@
+{
+  "outcomes_computed": false,
+  "signals": [
+    {
+      "native_cutoff_msc": 1704159299999,
+      "signal_id": "US30Cash_M5_1704159299999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704160799999,
+      "signal_id": "US30Cash_M5_1704160799999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704162299999,
+      "signal_id": "US30Cash_M5_1704162299999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704167699999,
+      "signal_id": "US30Cash_M5_1704167699999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704170399999,
+      "signal_id": "US30Cash_M5_1704170399999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704172799999,
+      "signal_id": "US30Cash_M5_1704172799999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704178499999,
+      "signal_id": "US30Cash_M5_1704178499999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704180599999,
+      "signal_id": "US30Cash_M5_1704180599999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704182699999,
+      "signal_id": "US30Cash_M5_1704182699999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704184199999,
+      "signal_id": "US30Cash_M5_1704184199999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704192899999,
+      "signal_id": "US30Cash_M5_1704192899999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704197999999,
+      "signal_id": "US30Cash_M5_1704197999999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704198599999,
+      "signal_id": "US30Cash_M5_1704198599999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704200399999,
+      "signal_id": "US30Cash_M5_1704200399999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704203699999,
+      "signal_id": "US30Cash_M5_1704203699999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704207899999,
+      "signal_id": "US30Cash_M5_1704207899999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704211799999,
+      "signal_id": "US30Cash_M5_1704211799999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704212999999,
+      "signal_id": "US30Cash_M5_1704212999999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704213599999,
+      "signal_id": "US30Cash_M5_1704213599999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704215999999,
+      "signal_id": "US30Cash_M5_1704215999999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704218699999,
+      "signal_id": "US30Cash_M5_1704218699999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704223499999,
+      "signal_id": "US30Cash_M5_1704223499999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704225299999,
+      "signal_id": "US30Cash_M5_1704225299999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704226799999,
+      "signal_id": "US30Cash_M5_1704226799999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704230999999,
+      "signal_id": "US30Cash_M5_1704230999999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704233699999,
+      "signal_id": "US30Cash_M5_1704233699999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704237899999,
+      "signal_id": "US30Cash_M5_1704237899999_MAIN_K"
+    },
+    {
+      "native_cutoff_msc": 1704238799999,
+      "signal_id": "US30Cash_M5_1704238799999_MAIN_K"
+    }
+  ],
+  "source_run": "diag_fd4e5bf3d468",
+  "source_sha256": "975b374fce187ef4cdf33a02b6a69f743393cc2ef989f352706ae89c8225da81",
+  "status": "DIAGNOSTICALLY_EXPOSED_NOT_NEW_TRAIN_MEMBERSHIP"
+}

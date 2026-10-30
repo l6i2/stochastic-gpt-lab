@@ -1,0 +1,96 @@
+{
+  "expected_original_manifests": {
+    "outputs/future_validation_cohort/cohort_20261019/cohort_manifest.json": "MISSING",
+    "outputs/master/master_manifest.json": "MISSING",
+    "outputs/splits/split_manifest.json": "MISSING"
+  },
+  "groups": {
+    "outputs/local_clock_attestation/cloud_c0c00e95d42c41ee": {
+      "bytes": 34348,
+      "classification": "QUARANTINED_OR_PREVIOUSLY_EXPOSED_NOT_INDEPENDENCE_EVIDENCE",
+      "files": 1,
+      "rows_opened": 0
+    },
+    "outputs/pc_a/unpaired_LOCAL_RUN_ID": {
+      "bytes": 34348,
+      "classification": "QUARANTINED_OR_PREVIOUSLY_EXPOSED_NOT_INDEPENDENCE_EVIDENCE",
+      "files": 1,
+      "rows_opened": 0
+    },
+    "outputs/pc_a_certification/native_features": {
+      "bytes": 246020398,
+      "classification": "QUARANTINED_OR_PREVIOUSLY_EXPOSED_NOT_INDEPENDENCE_EVIDENCE",
+      "files": 72,
+      "rows_opened": 0
+    },
+    "outputs/pc_a_certification/native_tester": {
+      "bytes": 70797167,
+      "classification": "QUARANTINED_OR_PREVIOUSLY_EXPOSED_NOT_INDEPENDENCE_EVIDENCE",
+      "files": 32,
+      "rows_opened": 0
+    },
+    "outputs/pc_a_evidence_backup/public_document_snapshots": {
+      "bytes": 222746,
+      "classification": "QUARANTINED_OR_PREVIOUSLY_EXPOSED_NOT_INDEPENDENCE_EVIDENCE",
+      "files": 4,
+      "rows_opened": 0
+    },
+    "outputs/pc_a_evidence_backup/public_sources": {
+      "bytes": 61281,
+      "classification": "QUARANTINED_OR_PREVIOUSLY_EXPOSED_NOT_INDEPENDENCE_EVIDENCE",
+      "files": 1,
+      "rows_opened": 0
+    },
+    "outputs/pc_a_prospective_utc/external_witness.jsonl": {
+      "bytes": 1802944,
+      "classification": "QUARANTINED_OR_PREVIOUSLY_EXPOSED_NOT_INDEPENDENCE_EVIDENCE",
+      "files": 1,
+      "rows_opened": 0
+    },
+    "outputs/pc_a_prospective_utc/native_mirror": {
+      "bytes": 25752801,
+      "classification": "QUARANTINED_OR_PREVIOUSLY_EXPOSED_NOT_INDEPENDENCE_EVIDENCE",
+      "files": 4,
+      "rows_opened": 0
+    },
+    "outputs/pc_a_prospective_utc/runtime_snapshots": {
+      "bytes": 773742,
+      "classification": "QUARANTINED_OR_PREVIOUSLY_EXPOSED_NOT_INDEPENDENCE_EVIDENCE",
+      "files": 3,
+      "rows_opened": 0
+    },
+    "outputs/pc_a_raw_archive/historical_20261028T175047_e97ee981": {
+      "bytes": 671059,
+      "classification": "QUARANTINED_OR_PREVIOUSLY_EXPOSED_NOT_INDEPENDENCE_EVIDENCE",
+      "files": 192,
+      "rows_opened": 0
+    },
+    "outputs/pc_a_raw_archive/prospective_20261028T175047_3ac8b527": {
+      "bytes": 2837395,
+      "classification": "QUARANTINED_OR_PREVIOUSLY_EXPOSED_NOT_INDEPENDENCE_EVIDENCE",
+      "files": 1702,
+      "rows_opened": 0
+    },
+    "outputs/pc_a_raw_backup/historical_20261028T175047_e97ee981": {
+      "bytes": 671059,
+      "classification": "QUARANTINED_OR_PREVIOUSLY_EXPOSED_NOT_INDEPENDENCE_EVIDENCE",
+      "files": 192,
+      "rows_opened": 0
+    },
+    "outputs/pc_a_raw_backup/prospective_20261028T175047_3ac8b527": {
+      "bytes": 2837395,
+      "classification": "QUARANTINED_OR_PREVIOUSLY_EXPOSED_NOT_INDEPENDENCE_EVIDENCE",
+      "files": 1702,
+      "rows_opened": 0
+    },
+    "outputs/pc_a_temporal_intake/public_sources": {
+      "bytes": 284027,
+      "classification": "QUARANTINED_OR_PREVIOUSLY_EXPOSED_NOT_INDEPENDENCE_EVIDENCE",
+      "files": 5,
+      "rows_opened": 0
+    }
+  },
+  "independent_data_proven": false,
+  "protected_dataset_rows_opened": 0,
+  "scope": "THIS_REPOSITORY_OUTPUTS_FILE_METADATA_ONLY_TERMINAL_AND_DEPENDENCIES_EXCLUDED"
+}

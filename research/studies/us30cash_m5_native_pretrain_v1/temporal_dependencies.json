@@ -1,0 +1,166 @@
+{
+  "UTC_session_fields_permitted": false,
+  "all_warmup_feature_and_label_inputs_must_have_independent_membership": true,
+  "context_350_is_not_proof_of_recursive_seed_isolation": true,
+  "direct_snapshot_array_floor": 20,
+  "execution_fields_are_predictors": false,
+  "features": [
+    {
+      "availability": "NEXT_OBSERVED_M5_CALLBACK_AFTER_SHIFT_1_CONTEXT_COMPUTED",
+      "bar_offsets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "definition": "MT5 MAIN_K 5/3/3 SMA LowHigh ratio-of-sums; closed shift 1",
+      "equal_timestamps": "ARRIVAL_INDEX_AND_COMPUTE_STAGE_REQUIRED",
+      "event_cutoff": "(closed_bar_open+300)*1000-1",
+      "feature": "stoch_k",
+      "forming_bar_allowed": false,
+      "full_seed_required": false,
+      "inputs": [
+        "closed_M5_OHLC"
+      ],
+      "minimum_input_bars": 7,
+      "prospective_old_history_allowed": false,
+      "semantic_evidence": "NATIVE_MAIN_K_PARITY_RETAINED_FIXED_DAY_ONLY",
+      "time_domain": "XM_NATIVE_ORDER",
+      "training_admitted": false
+    },
+    {
+      "availability": "NEXT_OBSERVED_M5_CALLBACK_AFTER_SHIFT_1_CONTEXT_COMPUTED",
+      "bar_offsets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "definition": "closed MAIN_K[0] minus MAIN_K[1]",
+      "equal_timestamps": "ARRIVAL_INDEX_AND_COMPUTE_STAGE_REQUIRED",
+      "event_cutoff": "(closed_bar_open+300)*1000-1",
+      "feature": "delta_k_1",
+      "forming_bar_allowed": false,
+      "full_seed_required": false,
+      "inputs": [
+        "stoch_k",
+        "previous_closed_MAIN_K"
+      ],
+      "minimum_input_bars": 8,
+      "prospective_old_history_allowed": false,
+      "semantic_evidence": "FROZEN_PRODUCER_DIFFERENCE_OF_NATIVE_BUFFERS",
+      "time_domain": "XM_NATIVE_ORDER",
+      "training_admitted": false
+    },
+    {
+      "availability": "NEXT_OBSERVED_M5_CALLBACK_AFTER_SHIFT_1_CONTEXT_COMPUTED",
+      "bar_offsets": null,
+      "definition": "MT5 iATR(14), closed shift 1; no synthetic range adapter substitution",
+      "equal_timestamps": "ARRIVAL_INDEX_AND_COMPUTE_STAGE_REQUIRED",
+      "event_cutoff": "(closed_bar_open+300)*1000-1",
+      "feature": "ATR",
+      "forming_bar_allowed": false,
+      "full_seed_required": true,
+      "inputs": [
+        "closed_M5_OHLC",
+        "native_indicator_initialization"
+      ],
+      "minimum_input_bars": null,
+      "prospective_old_history_allowed": false,
+      "semantic_evidence": "SYNTHETIC_AVAILABILITY_ONLY_NATIVE_INITIALIZATION_NOT_YET_BOUND",
+      "time_domain": "XM_NATIVE_ORDER",
+      "training_admitted": false
+    },
+    {
+      "availability": "NEXT_OBSERVED_M5_CALLBACK_AFTER_SHIFT_1_CONTEXT_COMPUTED",
+      "bar_offsets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "definition": "volume[0]/mean(volume[1:21]); zero denominator -> missing",
+      "equal_timestamps": "ARRIVAL_INDEX_AND_COMPUTE_STAGE_REQUIRED",
+      "event_cutoff": "(closed_bar_open+300)*1000-1",
+      "feature": "relative_volume_20",
+      "forming_bar_allowed": false,
+      "full_seed_required": false,
+      "inputs": [
+        "closed_M5_tick_volume"
+      ],
+      "minimum_input_bars": 21,
+      "prospective_old_history_allowed": false,
+      "semantic_evidence": "BID_UPDATE_VOLUME_PARITY_RETAINED_FIXED_DAY_ONLY",
+      "time_domain": "XM_NATIVE_ORDER",
+      "training_admitted": false
+    },
+    {
+      "availability": "NEXT_OBSERVED_M5_CALLBACK_AFTER_SHIFT_1_CONTEXT_COMPUTED",
+      "bar_offsets": null,
+      "definition": "frozen HeikinAshiCore recurrence from recorded seed; output only when Ready()",
+      "equal_timestamps": "ARRIVAL_INDEX_AND_COMPUTE_STAGE_REQUIRED",
+      "event_cutoff": "(closed_bar_open+300)*1000-1",
+      "feature": "ha_direction",
+      "forming_bar_allowed": false,
+      "full_seed_required": true,
+      "inputs": [
+        "closed_M5_OHLC",
+        "HA_seed_and_entire_recurrence"
+      ],
+      "minimum_input_bars": 276,
+      "prospective_old_history_allowed": false,
+      "semantic_evidence": "HA_WARMUP_256_READY_276_IS_NOT_A_FINITE_HISTORY_TRUNCATION",
+      "time_domain": "XM_NATIVE_ORDER",
+      "training_admitted": false
+    },
+    {
+      "availability": "NEXT_OBSERVED_M5_CALLBACK_AFTER_SHIFT_1_CONTEXT_COMPUTED",
+      "bar_offsets": [
+        0
+      ],
+      "definition": "(closed high-low)/native ATR[0]; zero or missing denominator -> missing",
+      "equal_timestamps": "ARRIVAL_INDEX_AND_COMPUTE_STAGE_REQUIRED",
+      "event_cutoff": "(closed_bar_open+300)*1000-1",
+      "feature": "range_to_ATR",
+      "forming_bar_allowed": false,
+      "full_seed_required": true,
+      "inputs": [
+        "closed_M5_OHLC",
+        "ATR"
+      ],
+      "minimum_input_bars": null,
+      "prospective_old_history_allowed": false,
+      "semantic_evidence": "INHERITS_ENTIRE_ATR_INITIALIZATION_DEPENDENCY",
+      "time_domain": "XM_NATIVE_ORDER",
+      "training_admitted": false
+    }
+  ],
+  "producer_requested_context_bars": 350,
+  "schema_version": "native-temporal-dependencies/1.0",
+  "target_dependency": "FOLLOW_AND_INVERT_FULL_ORDERED_PATHS_UNTIL_FROZEN_EXIT_OR_CENSOR",
+  "target_horizon": "100_OBSERVED_M5_BARS_NOT_500_WALL_CLOCK_MINUTES"
+}

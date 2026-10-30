@@ -1,0 +1,35 @@
+{
+  "acquisition_stop": "FIRST_800_UNFILTERED_BASE_SIGNALS_AFTER_WARMUP_THEN_100_OBSERVED_BARS_FOR_BOTH_LABEL_HORIZONS",
+  "activate_scientific_cohort": false,
+  "activation_sequence": null,
+  "activation_session": null,
+  "actual_start": null,
+  "boundary": "NEW_REAL_SESSION_SEQUENCE_AND_FIRST_COMPLETE_BAR_AFTER_SEPARATELY_AUTHORIZED_ROLE_ALLOCATION",
+  "collector_source_sha256": "ac2dd0201fc0f0048d2c103a57adb9783998e592944d2acb702d3526b8cb19de",
+  "current_archives_adopted": false,
+  "dataset_id": "us30cash_m5_native_new_01_reserved",
+  "existing_read_only_sources": [
+    "StochasticGPTLab_PC_A_ProspectiveUTC_v1",
+    "StochasticGPTLab_PC_A_RawQuarantine_v1"
+  ],
+  "existing_tasks_modified": false,
+  "first_complete_native_bar": null,
+  "gaps": "PRESERVE_AND_QUARANTINE_UNEXPLAINED_LOSS_NO_FILL",
+  "historical_backfill_allowed": false,
+  "new_task_installed": false,
+  "observer_role": "RAW_CALLBACKS_QUARANTINED_NOT_EXHAUSTIVE_FEED_PROOF",
+  "old_cohorts_mixed": false,
+  "requirements": [
+    "EXCLUSIVE_NONOVERLAPPING_ROLE_RESERVATION",
+    "POST_START_NATIVE_BARS_AND_FEATURES_CAPTURED_OR_ADMITTED_CAUSAL_REPLAY_WITH_VINTAGE_LIMITATION",
+    "ISOLATED_TESTER_HISTORY_WITH_NO_PROTECTED_SEED_INPUTS",
+    "OBSERVED_CALLBACKS_NOT_ASSUMED_ALL_BROKER_TICKS",
+    "REAL_SOURCE_IDENTITY_HASHES_MONOTONIC_SEQUENCE_RESTART_AND_RECEIPT_CHAIN"
+  ],
+  "restart": "CLOSE_SEGMENT_AND_REATTEST_CONTINUITY_NO_BACKFILL",
+  "status": "PREPARED_NOT_ACTIVE",
+  "stop_uses_outcomes": false,
+  "study_id": "US30CASH_M5_NATIVE_20261030_01",
+  "training_authorized": false,
+  "warmup": "NEW_POST_START_ONLY_MINIMUM_350_CLOSED_BARS_PLUS_BOUND_NATIVE_INDICATOR_AND_HA_SEEDS"
+}

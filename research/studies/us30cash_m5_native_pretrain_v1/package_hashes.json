@@ -1,0 +1,24 @@
+{
+  "files": {
+    "PROTOCOL_ES.md": "ce5ab48ab95cbf4d6c07cb9b1cc9a13ab7f14ab7d14792b494ae2d19a21d45d9",
+    "PROTOCOL_ES.md.sha256": "7f1031cbbb4b9903a87cdcd5d949f3b90c0bb2f0405306af5d5a01a37354af45",
+    "README_ES.md": "a79ad6c826243386b69778dd9ea83c316a68ee112353cdb7181d9733af245bef",
+    "archive_windows.json": "027fd07316465a183fc0ec1f0cdcd76cb462325cd83b9cb14a82cbd26489a2f6",
+    "code_source_hashes.json": "79191470611503f76a1b62ebe8e952ce541b0aec26affa931f20288f7c7df241",
+    "coverage_audit.json": "e5e254f25bdeae767f438a4ba68e6fd227bf2dbae5ce4ec53480633e5ee2f586",
+    "dataset_inventory.json": "77b7bb3c4e931e307d8310d4fcfca156c6c5dcc737f703dba0ab5f3c13e9fb23",
+    "dataset_membership.json": "5bd99a7a50f9d97a34d6e51bd2e49caeecaa0fb97ebe83c66bd4d1911beae5c0",
+    "environment_versions.json": "31d2dc6d107e19467582349339b9e95c78aa9860b7b80a49c560b86155a89e98",
+    "exposure_ledger.json": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+    "feature_causality.json": "2c93414f2966c9b70ba0b58b73fd400ea1d62d2718582489e1a27953f70b7374",
+    "feature_model_whitelist.json": "7d95930599e9ffa5b98a4f89c99e2862afcb47730c238c66052e6024ef703ec8",
+    "known_exposed_signal_membership.json": "3105b6b8f18776907787aaa30e1ac27afbffd36053d9f657acc57f8b3b30862c",
+    "pre_train_gates.json": "2f79cc78e52c12370ac156b3a35a94ebb4cce221eb3c5bc1242ade829c6e6357",
+    "prospective_collection_plan.json": "87493518847629a62e299b6a5758d07315f54b65fe2d23bb0568861f27307f7c",
+    "research_registry_inventory.json": "f02c55b3b3eaf30369fb5a8875d7a66cc9c9419cd10515903a10b49c1d6cd493",
+    "scientific_authorization_package.json": "e9d6dc857fad11b8df42995c2c9c6d18d70c02f630e3d8ce7ac950581b2f6d61",
+    "temporal_dependencies.json": "608d70cd2fbe2afeec5b3b2de62741ae80c99fbb6d84dd42542a9a638373bfbe",
+    "validation.json": "09ff3d0ce53d5efbe2f396de11b700b4a62665eeffa18a8b3b217d7549dab8aa"
+  },
+  "root_sha256": "c10fce405a0c820193681378b2166f35027180dcf0a7ea789ec091ca806e2349"
+}

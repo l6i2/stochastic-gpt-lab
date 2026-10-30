@@ -1,0 +1,24 @@
+{
+  "expected_session_calendar": "NOT_CERTIFIED",
+  "independence": "NOT_PROVEN",
+  "independent_bars": null,
+  "independent_ticks": null,
+  "original_native_day": "RETAINED_PASS_79211_TICKS_1376_M1_276_M5_NOT_INDEPENDENT",
+  "protected_rows_opened": 0,
+  "query_window_chain": "METADATA_CONTIGUITY_NOT_MARKET_COVERAGE",
+  "raw_manifest_counts": [
+    {
+      "archive_id": "historical_20261028T175047_e97ee981",
+      "declared_bars": 0,
+      "declared_ticks": 79211,
+      "observed_cursor_native_msc": 1704240000000
+    },
+    {
+      "archive_id": "prospective_20261028T175047_3ac8b527",
+      "declared_bars": 545,
+      "declared_ticks": 328891,
+      "observed_cursor_native_msc": 1793390339365
+    }
+  ],
+  "status": "BLOCKED_NO_INDEPENDENT_DATASET"
+}

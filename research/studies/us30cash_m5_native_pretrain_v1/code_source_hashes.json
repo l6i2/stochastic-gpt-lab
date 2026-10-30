@@ -1,0 +1,18 @@
+{
+  "code_set_sha256": "a4dad1ca41a9a8959e55104c1ac9d0ee1c8a1d1c8cf11a95c39f3950aae47254",
+  "files": {
+    "controller/native_feature_diagnostic.py": "f14c5466c8cc7aa1f323c46ea41e4c50772fbbf816cd567365db4ec26b87bdf2",
+    "controller/native_independence.py": "6a9c646ca1bfbd0b85563c3ae37879450ff9f94d966e326f8a5f3f127f12f71a",
+    "controller/native_study_design.py": "46906cf2bf0333c500bb6a7950d37c87a8ed01e9362dfd20ed41f51232fff6ed",
+    "controller/pretrain_contracts.py": "9ee7d1c0bcb17227384e16de26c1f7b203db020b349791529dd3ad3d4962a293",
+    "controller/pretrain_package.py": "99cc769528424e1e38295326042a4341d0fd4ad9be9748093f04a88627897969",
+    "mt5/HeikinAshiCore.mqh": "d9a1e525a99e66f855bc49c3a696030c5e12ef534a1aeff5012b63a462a3e8ef",
+    "mt5/ResearchCore.mqh": "99a5328d58bf613d5cc9b354ddfee936a0e23427b8a16792a19d6e63b0011283",
+    "mt5/StochasticBarDecisionResearchEA.mq5": "f2e9bf43cbbdc716148847fe53e1f3dd14b21393775ccc809d05cb5e134cb88d",
+    "tests/test_pretrain_contracts.py": "508984075be768d94111efa9ca88c1f043818bf3a35c9ebbdea731060120bbe5",
+    "tests/test_pretrain_package.py": "ac6cb5b60c9991774c3584b0190cc5ae19a067fe21ce536854bb915fc6386da9",
+    "tools/pretrain_study_review.py": "acb302a27b70d5c591d2258e9496665f9235e7cf4069688217fba07c6e6f1433"
+  },
+  "implementation_commit": "ENCLOSING_GIT_COMMIT_AND_PUBLICATION_RECEIPT",
+  "reviewed_base_head": "ee68187ef6c1921d8f7c27c839b38f152b6cca17"
+}

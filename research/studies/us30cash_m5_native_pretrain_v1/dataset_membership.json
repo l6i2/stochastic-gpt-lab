@@ -1,0 +1,14 @@
+{
+  "dataset_id": "us30cash_m5_native_new_01_reserved",
+  "independent_membership_verified": false,
+  "intervals": [],
+  "label_intervals": [],
+  "legacy_membership": "PARTIAL_KNOWN_DIAGNOSTIC_IDS_ONLY",
+  "protected_ids_unknown": true,
+  "signal_ids": [],
+  "source_dataset_sha256": null,
+  "source_segments": [],
+  "status": "UNALLOCATED_NO_REAL_DATA",
+  "warmup_intervals": [],
+  "zero_rows_is_not_a_certified_dataset": true
+}

@@ -1,0 +1,162 @@
+{
+  "files": [
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261013-001.json",
+      "source_sha256": "9227692cb12cd073eb4c3944d5b69010f51083784d41156241f6825b6b520de7"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261017-DYN-001.json",
+      "source_sha256": "92ba1f88a7a826c41b04275fadeefa334eeee4d8d92d4eabbe4bd704c5f1118f"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R2-001.json",
+      "source_sha256": "f68b34a61ee9e61a1d25d7dde4194fd219bebabe787dffd8dcda0a9069509604"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R2-002.json",
+      "source_sha256": "dc2c8259a193bb3a000a5ae8eb6ebf41125ef7f0228367ab4b991f9e2e4f5f90"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R2-003.json",
+      "source_sha256": "d49f192f7463f632274e7bef1bcac02ff18833b4582d90a6485d5bafcdfaab1b"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R2-004.json",
+      "source_sha256": "cb9149a8581cedbe26bf1202806d569692c6fd0016176e34d61fe55a5434a579"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R2-005.json",
+      "source_sha256": "4e81d74630d605e5b27c9f974486b6d85dfa0c5113eccd8ddcb898e48484472a"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R2-006.json",
+      "source_sha256": "e543ee673d0cc8f23c78495cf5a1a4cebb464c4f33b00da9f906505c5234022f"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R2-007.json",
+      "source_sha256": "58a859555b1718987ea51f42840bc8b28edff8a72742c6ad16a4359ae14e9dd3"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R2-008.json",
+      "source_sha256": "a2c8280c1a795b5e1851009630652d80d7aa6e24670dd5f8f7794e6be23e7a79"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R3-001.json",
+      "source_sha256": "4f11859afcb5b6df55a226f45977109a64f8c014cb87c402a7de1a2ccde0fcb8"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R3-002.json",
+      "source_sha256": "930853e430141c5e22a5db4c5e3bd8e0664b9cdcbea56c616f00623e75899755"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R3-003.json",
+      "source_sha256": "51cde5381c2e08ff325343921bca4d968623e2a0d65ab04000ce87ebe2ca663f"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R3-004.json",
+      "source_sha256": "5d9f07c65e881ce4368336b1a898482ff3501e8d9212db794d4242df1b7345fe"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R4-001.json",
+      "source_sha256": "4399333e5783af17704ddf2858ed29f9da85fe8f00e59832128479bc6bcec5bf"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R4-002.json",
+      "source_sha256": "8775a52827ee22b762bcf5a879d699e8bae08c5a66318f92a563dccc75863689"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R4-003.json",
+      "source_sha256": "49c2ecf3483f726591f0fdd863b6c9695cc9195983c6e983896ee6817772550d"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/HYP-20261018-R4-004.json",
+      "source_sha256": "fecf210fa043cfcfe540cc99e758c4cf56ca276f3868ce851a2b08c6775d20e0"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses/hypothesis_template.json",
+      "source_sha256": "15ce3f1c88ac4d281409f81e492dbf8eac907706ad70160159de63acc81f7e88"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses_v2/HV2_ENTRY_SPREAD_ATR_ROUTER.json",
+      "source_sha256": "b439b0b4d1d5cd66b2f09f2caba6bccd25b5b40d0795a001b087093f5172a688"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses_round2/manifest.json",
+      "source_sha256": "107fa3e336bb6711974d042c9e866f80e89a65bb1d9afbee4bdd4cf10531eac3"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses_round2/R2-BUY-ha_alignment.json",
+      "source_sha256": "0d16fe5d2783aa19cd74291336dd619aedb17cf548c6fbd438dfe48a42ef96f5"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses_round2/R2-BUY-ha_alignment_and_outside_value_area.json",
+      "source_sha256": "0ee145016540b24a69e875afd35a40fa192daee80f086398753c8b5592a854ba"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses_round2/R2-BUY-ha_alignment_and_volume.json",
+      "source_sha256": "e714fba5e66147f96f82ec065ac05d7a2289648cf34a4c8d20f07181397a6ff6"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses_round2/R2-BUY-ha_transition_and_volume.json",
+      "source_sha256": "bc6400da33fca2d63bed47987a44e391deed78b3422b9505ee290dcb07b7d766"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses_round2/R2-BUY-volume_at_or_above_baseline.json",
+      "source_sha256": "ec334137a46295e871af56f1aeaecd7a1440582e82a003ee90b8b9b1ab350d2d"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses_round2/R2-SELL-ha_alignment.json",
+      "source_sha256": "715786ef1ed9d1841ce08a30bdf5a8770b193c1d2175c94fdcfa9b966b3b22ba"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses_round2/R2-SELL-ha_alignment_and_outside_value_area.json",
+      "source_sha256": "d738617c3acabe1817f71df474701493e21ae3c29731317a7076c0e9470ba07c"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses_round2/R2-SELL-ha_alignment_and_volume.json",
+      "source_sha256": "a8de156bfbf0ff4b1a09c2e092b60c12bc1f765f27bac44e2e37504716d57466"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses_round2/R2-SELL-ha_transition_and_volume.json",
+      "source_sha256": "a88014a71271fae71229208fe2be9139c3c3a87f63321cf6c23c00ecb2cbe26d"
+    },
+    {
+      "classification": "REGISTERED_RESEARCH_EVIDENCE_NOT_UNUSED_DATA_OR_NEW_BUDGET",
+      "path": "research/hypotheses_round2/R2-SELL-volume_at_or_above_baseline.json",
+      "source_sha256": "b3b7a2c45c61264fa9b31f914f0a91672b8b31ed9c247b22192d85f73e9878fc"
+    }
+  ],
+  "fresh_budget_inferred": false,
+  "outcome_fields_parsed": false,
+  "prior_result_summary": "17_DYNAMIC_HYPOTHESES_0_SURVIVORS_AS_PREVIOUSLY_DOCUMENTED"
+}

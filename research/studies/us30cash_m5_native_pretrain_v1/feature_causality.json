@@ -1,0 +1,57 @@
+{
+  "evidence_sha256": "298f7644dd75fa9c4b612abc9215b9c0c0cf89ed5634d9688b3d4b39494cc708",
+  "features": [
+    {
+      "feature": "stoch_k",
+      "historical_data_vintage": "UNVERIFIED",
+      "new_dataset_feature_bytes": "MISSING",
+      "new_dataset_warmup_source_and_seed": "UNBOUND",
+      "synthetic_native_prefix": "PASS_RETAINED_NOT_RERUN",
+      "training_admitted": false
+    },
+    {
+      "feature": "delta_k_1",
+      "historical_data_vintage": "UNVERIFIED",
+      "new_dataset_feature_bytes": "MISSING",
+      "new_dataset_warmup_source_and_seed": "UNBOUND",
+      "synthetic_native_prefix": "PASS_RETAINED_NOT_RERUN",
+      "training_admitted": false
+    },
+    {
+      "feature": "ATR",
+      "historical_data_vintage": "UNVERIFIED",
+      "new_dataset_feature_bytes": "MISSING",
+      "new_dataset_warmup_source_and_seed": "UNBOUND",
+      "synthetic_native_prefix": "PASS_RETAINED_NOT_RERUN",
+      "training_admitted": false
+    },
+    {
+      "feature": "relative_volume_20",
+      "historical_data_vintage": "UNVERIFIED",
+      "new_dataset_feature_bytes": "MISSING",
+      "new_dataset_warmup_source_and_seed": "UNBOUND",
+      "synthetic_native_prefix": "PASS_RETAINED_NOT_RERUN",
+      "training_admitted": false
+    },
+    {
+      "feature": "ha_direction",
+      "historical_data_vintage": "UNVERIFIED",
+      "new_dataset_feature_bytes": "MISSING",
+      "new_dataset_warmup_source_and_seed": "UNBOUND",
+      "synthetic_native_prefix": "PASS_RETAINED_NOT_RERUN",
+      "training_admitted": false
+    },
+    {
+      "feature": "range_to_ATR",
+      "historical_data_vintage": "UNVERIFIED",
+      "new_dataset_feature_bytes": "MISSING",
+      "new_dataset_warmup_source_and_seed": "UNBOUND",
+      "synthetic_native_prefix": "PASS_RETAINED_NOT_RERUN",
+      "training_admitted": false
+    }
+  ],
+  "global_causal_audit": "FAIL_UNCHANGED",
+  "new_native_probe_run": false,
+  "producer_sha256": "f2e9bf43cbbdc716148847fe53e1f3dd14b21393775ccc809d05cb5e134cb88d",
+  "status": "PARTIAL_SYNTHETIC_PROOF_REAL_STUDY_INPUTS_MISSING"
+}
