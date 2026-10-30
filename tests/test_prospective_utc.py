@@ -77,3 +77,13 @@ class ProspectiveTests(unittest.TestCase):
             self.assertEqual(after['chain_head'],before['chain_head'])
             self.assertEqual(after['rows'],before['rows'])
             self.assertEqual(after['bytes_verified'],before['bytes_verified']+2)
+
+    def test_non_windows_capture_fails_before_creating_evidence(self):
+        from unittest.mock import patch
+        spec=importlib.util.spec_from_file_location('station',Path(__file__).resolve().parents[1]/'tools/prospective_utc_station.py')
+        station=importlib.util.module_from_spec(spec);spec.loader.exec_module(station)
+        with tempfile.TemporaryDirectory() as directory:
+            station.BASE=Path(directory)/'must_not_exist'
+            with patch.object(station.sys,'platform','linux'), self.assertRaisesRegex(OSError,'LOCAL_REQUIRED_WINDOWS'):
+                station.observe(network=False)
+            self.assertFalse(station.BASE.exists())

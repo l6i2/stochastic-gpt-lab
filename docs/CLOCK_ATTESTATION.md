@@ -1,3 +1,5 @@
+> Continuación 2026-10-29 (Ecuador): este documento conserva el procedimiento/snapshot inicial. PC A ya completó una captura sellada PASS de alcance limitado. No repetirla como siguiente paso. Estado vigente y comandos: [PROJECT_STATUS.md](PROJECT_STATUS.md) y [LOCAL_PC_FINAL_STEPS.md](LOCAL_PC_FINAL_STEPS.md).
+
 # Clock attestation
 
 `READY_FOR_LOCAL_ATTESTATION`; evidencia Windows/MT5: `LOCAL_REQUIRED`.

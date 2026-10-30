@@ -1,25 +1,41 @@
-# Estado actual — preparación Cloud 2026-10-27
+# Estado actual — continuación Cloud, 2026-10-29 (Ecuador)
 
-Este documento sustituye los checkpoints operativos anteriores. La evidencia
-histórica se conserva en [el archivo](archive/pre_cloud_20261027/PROJECT_STATUS.md).
-El estado machine-readable está en [CLOUD_HANDOFF.json](../outputs/status/CLOUD_HANDOFF.json).
-Auditoría y límites: [CLOUD_PREPARATION_AUDIT.md](CLOUD_PREPARATION_AUDIT.md).
+Actualizado sobre `e35b05d461baeee1ee9ab65c4bf1b6f484744f6c`, preservando los
+17 commits publicados después del handoff Cloud original. Fuente operativa:
+[handoff actual](../outputs/status/CLOUD_HANDOFF.json) y
+[pasos locales](LOCAL_PC_FINAL_STEPS.md). Los informes PC A anteriores son snapshots,
+no observaciones en vivo desde Cloud.
 
-- Rama: `research/full-pipeline`.
-- `HYPOTHESES_TESTED_TOTAL=17`, `HYPOTHESES_SURVIVED=0`, `BEST_CANDIDATE=NONE`.
-- `DISCOVERY_VALIDATION=BLOCKED`, `FINAL_TEST=LOCKED`, `DEMO=DISABLED`, `LIVE_TRADING=false`.
-- `CLOCK_ATTESTATION=READY_FOR_LOCAL_ATTESTATION`, `NATIVE_TO_UTC_MAPPING=READY_FOR_LOCAL_ATTESTATION`.
-- `CAUSAL_AUDIT=READY_FOR_LOCAL_FINALIZATION`: herramientas listas; aceptación real pendiente.
-- `MAIN_K_PARITY=PASS`: evidencia nativa publicada previa, sin recompilar estrategia ni regenerar datos.
-- `SESSION_CALENDAR=PASS_WITH_RUNTIME_GUARD`: vacaciones desconocidas y snapshot expirado bloquean.
-- `FUTURE_EVALUATOR=READY_BUT_GATED`, `DRIFT_MONITOR=READY` (tooling; baseline real no ajustado).
-- `SHADOW_MODE=READY_BUT_DISABLED`, `SHADOW_ORDER_COUNT=0`.
-- `DEMO_EXECUTOR=READY_BUT_DISABLED_FULL`: mocks persistentes, sin adaptador de órdenes.
-- `FUTURE_COLLECTION_ACTIVE=YES` es el último estado local conocido, no una observación de Task Scheduler desde Cloud.
+| Componente | Estado y alcance |
+|---|---|
+| Clock attestation | PASS_CAPTURE_INTERVAL_ONLY: captura local sellada anterior; no prueba el reloj actual. |
+| MAIN_K | PASS nativo retenido; estrategia y datasets intactos. |
+| Native/UTC | BLOCKED_EXTERNAL_EVIDENCE_REQUIRED; ningún offset autorizado por observación. |
+| Causal audit | FAIL: procedencia temporal/calendario y completitud pendientes. |
+| Session calendar | PASS_WITH_RUNTIME_GUARD; observación semanal nativa parcial, UTC/feriados no certificados. |
+| Captura prospectiva | Último snapshot STALLED_START_ONLY, cero callbacks tick; no se declara activa. |
+| Lanzador | Instalación/compilación y visibilidad Navigator verificadas localmente; script no ejecutado en ese snapshot. |
+| Raw quarantine | Último estado local de colección independiente retenido; no verificado en vivo desde Cloud. |
+| Future evaluator | READY_BUT_GATED; no candidato, no autorización ni scoring. |
+| Drift | READY tooling; sin baseline real ajustado ni comparación de cohorte. |
+| Shadow | READY_BUT_DISABLED; SHADOW_ORDER_COUNT=0. |
+| DEMO executor | READY_BUT_DISABLED_FULL; mocks, sin órdenes reales. |
 
-Comando local: `powershell -ExecutionPolicy Bypass -File tools/local_finalize.ps1`.
-Acciones humanas: [LOCAL_PC_FINAL_STEPS.md](LOCAL_PC_FINAL_STEPS.md).
-`READY` describe preparación de herramientas; no equivale a PASS operativo ni a
-maturity, autorización, corrección del reloj o certificación del broker.
+17 hipótesis probadas, cero supervivientes, BEST_CANDIDATE=NONE.
+DISCOVERY_VALIDATION=BLOCKED; FINAL_TEST=LOCKED; DEMO=DISABLED; LIVE_TRADING=false.
 
-Historial específico: [snapshot anterior](archive/pre_cloud_20261027/PROJECT_STATUS.md).
+La captura de reloj completada no se repite para continuar. La corrección del
+escritor CRLF ya está publicada y compilada localmente; falta recargar únicamente
+el observador mediante `Scripts -> ResearchDiagnostics -> PC_A -> StartProspectiveUtcObserver`.
+Instalación PASS no equivale a callbacks PASS ni a UTC certificado.
+
+Esta continuación corrige el import Windows del monitor para que sus funciones
+puras sean testeables en Cloud, sin habilitar captura Windows en Linux. También
+hace que el preflight use el manifest versionado señalado por el handoff; el
+manifest Cloud original y los manifests PC A se conservan sin reescribir.
+
+Evidencia: [reloj local](../configs/pc_a_clock_attestation_20261028.json),
+[corrección del escritor](PC_A_CALLBACK_WRITE_FIX.md),
+[Navigator verificado](PC_A_NAVIGATOR_INSTALL_VERIFIED.md),
+[procedencia temporal pendiente](PC_A_TIME_PROVENANCE_REQUIREMENTS.md).
+No se leyó raw de cohorte, labels, PnL ni outcomes. No se ejecutó MT5 desde Cloud.

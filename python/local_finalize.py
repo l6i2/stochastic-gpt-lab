@@ -160,14 +160,16 @@ def main():
     parser.add_argument('--resume-folder', type=Path)
     parser.add_argument('--check-handoff', action='store_true')
     parser.add_argument('--source-manifest', type=Path,
-                        default=ROOT / 'outputs/status/CLOUD_SOURCE_HASHES.json')
+                        default=None)
     args = parser.parse_args()
     handoff = validate_handoff(json.loads((ROOT / 'outputs/status/CLOUD_HANDOFF.json').read_text()))
     branch = subprocess.check_output(['git', 'branch', '--show-current'], cwd=ROOT, text=True).strip()
     if branch != handoff['branch']:
         raise ValueError('WRONG_BRANCH')
     subprocess.run(['git', 'merge-base', '--is-ancestor', handoff['head'], 'HEAD'], cwd=ROOT, check=True)
-    verify_source_manifest(args.source_manifest)
+    source_manifest = args.source_manifest or ROOT / handoff.get(
+        'source_hash_manifest', 'outputs/status/CLOUD_SOURCE_HASHES.json')
+    verify_source_manifest(source_manifest)
     if args.check_handoff:
         print('HANDOFF_VALID; LOCAL_REQUIRED; no terminal connection')
         return 0

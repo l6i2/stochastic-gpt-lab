@@ -1,3 +1,5 @@
+> Continuación 2026-10-29 (Ecuador): este documento conserva el procedimiento/snapshot inicial. PC A ya completó una captura sellada PASS de alcance limitado. No repetirla como siguiente paso. Estado vigente y comandos: [PROJECT_STATUS.md](PROJECT_STATUS.md) y [LOCAL_PC_FINAL_STEPS.md](LOCAL_PC_FINAL_STEPS.md).
+
 # Cloud preparation audit — 2026-10-27
 
 Base auditada: `c9ad4aa35a391ca80bd3da371e0393c5c5282d58`, rama

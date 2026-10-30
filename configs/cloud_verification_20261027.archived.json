@@ -1,0 +1,65 @@
+{
+  "archived_docs_byte_exact": [
+    "docs/archive/pre_cloud_20261027/SHADOW_MODE_PROTOCOL.md",
+    "docs/archive/pre_cloud_20261027/PROSPECTIVE_EVALUATION_PROTOCOL.md.sha256",
+    "docs/archive/pre_cloud_20261027/MT5_CONTROLLER_STATUS.md",
+    "docs/archive/pre_cloud_20261027/DRIFT_MONITOR_PROTOCOL.md",
+    "docs/archive/pre_cloud_20261027/PROSPECTIVE_EVALUATION_PROTOCOL.md",
+    "docs/archive/pre_cloud_20261027/INTRATRADE_STATUS.md",
+    "docs/archive/pre_cloud_20261027/PROJECT_STATUS.md",
+    "docs/archive/pre_cloud_20261027/CLOCK_ATTESTATION.md",
+    "docs/archive/pre_cloud_20261027/DEMO_EXECUTOR_DESIGN.md"
+  ],
+  "compileall": "PASS",
+  "datasets_regenerated": false,
+  "demo_enabled": false,
+  "git_diff_check": "PASS",
+  "git_seals": {
+    "generic_partial_nonstandard_basename": 1,
+    "generic_verified": 25,
+    "nonstandard_main_k_seal_independently_verified": true,
+    "total": 26
+  },
+  "handoff_check": "PASS",
+  "implementation_head": "45e549a3870652c6a943f83e07363aa6665985ff",
+  "live_trading": false,
+  "local_required": [
+    "MetaEditor compile/run of FullClockAndTimeSemanticsProbe",
+    "Windows real-clock/NTP/TLS measurements",
+    "XM MT5 current runtime session",
+    "Windows Task Scheduler",
+    "External native-to-UTC authenticity review",
+    "Versioned causal acceptance"
+  ],
+  "platform": "Linux Cloud",
+  "protected_production_collector_and_sealed_metadata_unchanged": true,
+  "pytest": {
+    "command": "python -m pytest -q",
+    "log_sha256": "78887530729a1e5e1bf93f42ad58b29b9f8cf0dfd2f2d6e13ff9cd2cebc3ab97",
+    "passed": 243,
+    "skipped": 1,
+    "status": "PASS",
+    "subtests_passed": 54
+  },
+  "python": "3.12.14",
+  "real_cohort_read": false,
+  "real_outcomes_read": false,
+  "static_checks": {
+    "live_trading": false,
+    "main_k_parity": "PASS",
+    "main_k_scope": "RETAINED_NATIVE_EVIDENCE_HASHES_VERIFIED_NOT_RERUN",
+    "master_native_compile_run": "LOCAL_REQUIRED",
+    "python_sources_checked": 84,
+    "static_no_order_calls": "PASS"
+  },
+  "strategy_redesigned": false,
+  "unittest": {
+    "command": "python -m unittest discover -s tests -v",
+    "log_sha256": "b8e85e2c57f4ce3489f8ba66b368b6704b51b20e4cbf7537fb96aba4ba07f0da",
+    "passed": 243,
+    "skip_reason": "Windows Task Scheduler is unavailable",
+    "skipped": 1,
+    "status": "PASS",
+    "tests_run": 244
+  }
+}

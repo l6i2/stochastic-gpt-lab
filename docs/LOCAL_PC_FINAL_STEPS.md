@@ -1,70 +1,58 @@
-# Acciones inevitables en la PC
+# Pasos pendientes en PC A
 
 ## STEP 1
 
-Abrir PowerShell en la raíz del checkout existente `stochastic-gpt-lab` y actualizar:
+En PowerShell, desde la raíz del checkout existente:
 
 ```powershell
 git fetch origin
 git checkout research/full-pipeline
 git pull --ff-only origin research/full-pipeline
+.venv\Scripts\python.exe python\local_finalize.py --check-handoff
 ```
 
-Resultado: rama actualizada sin conflictos. Si falla, conservar cambios locales;
-no hacer reset, rebase ni force push. Resolver el conflicto antes de continuar.
+Esperado: `HANDOFF_VALID; LOCAL_REQUIRED; no terminal connection`.
+El comando verifica la rama, ascendencia y manifest vigente, sin capturar ni
+conectar. Si falla un hash, no editar seals ni hacer reset; conservar el error y
+revisar cambios locales. El handoff original de octubre 27 fue sustituido por
+los avances PC A; no volver a ejecutar su captura de reloj completada.
 
 ## STEP 2
 
-En esa misma raíz, preparar dependencias y abrir la instalación XM/MT5 habitual,
-conectada a la cuenta DEMO existente. No activar trading ni cambiar cuentas.
+En el XM/MT5 habitual, mantener Algo Trading y DLL desactivados. Ejecutar una vez:
 
-```powershell
-if (-not (Test-Path .venv\Scripts\python.exe)) { py -3.12 -m venv .venv }
-.venv\Scripts\python.exe -m pip install -r configs\controller_requirements.txt
-powershell -ExecutionPolicy Bypass -File tools\local_finalize.ps1
+```text
+Navigator -> Scripts -> ResearchDiagnostics -> PC_A -> StartProspectiveUtcObserver
 ```
 
-Resultado: carpeta nueva `outputs/local_clock_attestation/cloud_<nonce>/`,
-compilación 0 errores/0 warnings y una instrucción Navigator. Si hay varios
-terminales, repetir con `-TerminalPath 'RUTA_REAL\terminal64.exe'`; no elegir otra
-instalación al azar. Si falla Python/Windows Time/compilación, consultar
-`docs/CLOCK_ATTESTATION_RUNBOOK.md` y los logs de esa carpeta; conservar evidencia.
+El script ya apareció y fue verificado en Navigator. No requiere reinstalar ni
+actualizar el árbol según el último snapshot. Debe recargar solo el observador
+US30Cash corregido, sin sustituir otros EAs. `QUEUED_NOT_CERTIFIED` solo confirma
+encolado; esperar al menos 15 segundos con feed activo. Si falla o no aparece,
+conservar Journal y seguir `docs/PC_A_NAVIGATOR_INSTALL_VERIFIED.md`; no reiniciar
+MT5, cambiar permisos ni habilitar trading para solucionarlo.
 
 ## STEP 3
 
-En MT5, ejecutar exactamente la ruta impresa:
-
-```text
-Navigator -> Scripts -> ResearchDiagnostics -> cloud_<nonce> -> FullClockAndTimeSemanticsProbe
-```
-
-Conservar RunId por defecto. Esperar unos 50 segundos; el wrapper detecta
-`CLOCK_ATTESTATION_END` y continúa sin otra interacción. Revisar la ruta exacta de
-`final_report.json` impresa en consola. Si no llega END/captura completa en seis
-minutos, conservar el informe y repetir STEP 2 con una ejecución nueva tras
-resolver el error. No se reutiliza ni sobrescribe una captura.
-
-## STEP 4
-
-Revisar localmente el informe y aportar la correspondencia native/UTC externa y
-la evidencia causal faltante. El probe no certifica el offset del broker ni corrige
-la no equivalencia del metadata histórico. No escribir PASS a mano para sortearlo.
-Ruta reservada para evidencia privada: `outputs/local_clock_inputs/`.
-
-Con mapping externo revisado y sellado presente, ejecutar desde la raíz:
+Desde la misma raíz de PowerShell:
 
 ```powershell
-.venv\Scripts\python.exe python\validate_clock_mapping.py --mapping outputs\local_clock_inputs\mapping.json --output outputs\local_clock_inputs\mapping_validation.json
-.venv\Scripts\python.exe python\manifest_chain_handoff.py --cohort-root outputs\future_validation_cohort\cohort_20261019 --evidence-dir outputs\local_clock_inputs\manifest_history --output outputs\local_clock_inputs\manifest_chain_report.json
+.venv\Scripts\python.exe tools\prospective_utc_station.py --offline
 ```
 
-Resultado: contrato de mapping validado o BLOCKED; cadena VERIFIED/PARTIAL con
-prefijo UNVERIFIABLE_PRE_ANCHOR si faltan bytes. Los reportes son de creación única;
-usar otro nombre para una revisión nueva. Si no existe evidencia externa o un
-antecesor, mantener el bloqueo: no reconstruir ni inventar historia. La revisión
-causal y la revisión del snapshot de sesiones capturado por el master son necesarias antes de cualquier
-aceptación operativa; el runtime expira la evidencia vieja y falla cerrado.
-MAIN_K ya tiene evidencia PASS y no requiere nueva prueba ni dataset.
+Revisar `outputs/pc_a_prospective_utc/status.json`. Con mercado/feed activo se
+esperan una sesión nueva, heartbeats recientes y callbacks tick; el máximo estado
+es `ACTIVE_CALLBACKS_QUARANTINED`, nunca aceptación UTC o TRAIN. Sin ticks, con
+heartbeat vencido o error de cadena: conservar archivos y reportar el estado;
+no deduplicar, reparar prefijos ni reconstruir recepción prospectiva con historia.
+`last_failure.json` conserva errores de validación. Este comando no consulta NTP,
+no arranca EAs y no envía órdenes.
 
-Estos cuatro pasos preparan y revisan evidencia; no autorizan evaluación, DEMO,
-shadow ni trading. Un reloj correcto por sí solo no elimina los bloqueos restantes.
+Persisten dependencias externas: evidencia independiente del mismo evento XM,
+mapping acotado, incertidumbre/cola y calendario fechado del servidor exacto.
+Revisar `docs/PC_A_TIME_PROVENANCE_REQUIREMENTS.md` y las plantillas existentes
+antes de aportar evidencia. No contactar al broker automáticamente ni convertir
+un offset observado en PASS. La captura activa por sí sola no resuelve estos gates.
+
+Todos los pasos mantienen DISCOVERY_VALIDATION bloqueado, FINAL_TEST locked,
+DEMO deshabilitado y LIVE_TRADING=false.

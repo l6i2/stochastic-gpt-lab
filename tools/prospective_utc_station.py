@@ -4,7 +4,6 @@ import ctypes
 from datetime import datetime, timezone
 import hashlib
 import json
-import msvcrt
 from pathlib import Path
 import subprocess
 import sys
@@ -49,6 +48,10 @@ def append_witness(value):
 
 
 def observe(network=True):
+    # Pure witness validation is portable; real capture still requires Windows.
+    if sys.platform != 'win32':
+        raise OSError('LOCAL_REQUIRED_WINDOWS_CLOCK_AND_FILE_LOCK')
+    import msvcrt
     BASE.mkdir(parents=True,exist_ok=True)
     with (BASE/'monitor.lock').open('a+b') as lock:
         lock.seek(0);msvcrt.locking(lock.fileno(),msvcrt.LK_NBLCK,1)
