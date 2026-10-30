@@ -1,0 +1,12 @@
+{
+  "authenticated_ntp_measurements": 5,
+  "failed": 0,
+  "log_sha256": "962e48a89dfa06b5351bb7ef6d446ff8a80684953f5acd5bd883912c8529a0ec",
+  "nts_records_chain_verified": 3,
+  "passed": 33,
+  "skipped": 0,
+  "static_no_order_calls": "PASS",
+  "system_trust_modified": false,
+  "training_environment_modified": false,
+  "windows_clock_modified": false
+}

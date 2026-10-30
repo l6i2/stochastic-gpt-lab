@@ -128,6 +128,12 @@ def locked_observe(network):
             receipt_projection=receipt_projection(reference,s['continuity']['last_tick_observation']['callback_uptime_ms']))
             for name,s in sessions.items() if s['liveness']=='RECENT' and s['continuity'].get('last_tick_observation')}
         append_witness(witness)
+        # Isolate cryptographic dependencies and failures from native ingestion.
+        nts=subprocess.run([sys.executable,str(ROOT/'tools/authenticated_utc_station.py')],
+            cwd=ROOT,capture_output=True,text=True,timeout=40)
+        witness['nts_station_exit']=nts.returncode
+        raw.atomic(BASE/'nts_station_status.json',json.loads(nts.stdout) if nts.returncode==0 and nts.stdout.strip() else
+            dict(status='BLOCKED',error='ISOLATED_NTS_STATION_FAILED'))
     ticks=sum(s['tick_callbacks'] for s in sessions.values())
     active=any(s['tick_callbacks'] and s['last_connected'] and s['liveness']=='RECENT' for s in sessions.values())
     capture_status='ACTIVE_CALLBACKS_QUARANTINED' if active else 'INACTIVE_CALLBACKS_RETAINED' if ticks else 'STALLED_START_ONLY' if sessions else 'PREPARED_NOT_OBSERVED'
@@ -145,6 +151,15 @@ def locked_observe(network):
         source_sha256_scope='REPOSITORY_SOURCE_NOT_RUNTIME_BINARY_ATTESTATION',
         DISCOVERY_VALIDATION='BLOCKED',FINAL_TEST='LOCKED',DEMO='DISABLED',LIVE_TRADING=False,orders_sent=0)
     if (BASE/'external_witness.jsonl').exists():status['external_witness_sha256']=raw.sha(BASE/'external_witness.jsonl')
+    nts_state=BASE/'authenticated_utc/state.json'
+    if nts_state.exists():
+        pointer=json.loads(nts_state.read_text());record=json.loads((nts_state.parent/pointer['last_record']).read_text())
+        valid=hashlib.sha256(raw.canonical(record['payload'])).hexdigest()==pointer['chain_head']==record['sha256']
+        authenticated=valid and any(r.get('status')=='AUTHENTICATED_MEASUREMENT' for r in record['payload']['results'])
+        status['EXTERNAL_UTC_AUTHENTICATION']='PASS_NTS_MEASUREMENT_ONLY' if authenticated else 'UNVERIFIED'
+        status['authenticated_utc_record_sha256']=pointer['chain_head']
+        status['authenticated_utc_record']=pointer['last_record']
+        status['local_clock_continuous_authentication']='UNVERIFIED_BETWEEN_MEASUREMENTS'
     raw.atomic(checkpoint_path,sessions)
     raw.atomic(BASE/'status.json',status)
     return status

@@ -1,0 +1,347 @@
+[
+  {
+    "payload": {
+      "NATIVE_TO_UTC_MAPPING": "UNVERIFIED",
+      "certified_segments": [],
+      "clock_adjusted": false,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "native_receipt_correlations": {
+        "pc_a_prospective_utc_v1_268328_86572951924106_6708.jsonl": {
+          "models": [
+            {
+              "capture_id": "5af0ba5b48e94ec393304c13f5025f83",
+              "certified": false,
+              "event_utc_inferred": false,
+              "receipt_model_ns": [
+                1793330017452979513,
+                1793330017562782745
+              ],
+              "unbounded_components": [
+                "UPTIME_QUANTIZATION",
+                "OSCILLATOR_DRIFT",
+                "BROKER_GENERATION_TO_CALLBACK_DELAY"
+              ]
+            }
+          ],
+          "native_chain_head": "da1f03deb3bd6f2b05f447192fcef2ae788a4e67699db010a10c20fb3acec4b0",
+          "native_tick": {
+            "callback_uptime_ms": 3369593,
+            "receipt_host_gmt_seconds": 1793330018,
+            "sequence": 3873,
+            "time": 1793337217,
+            "time_msc": 1793337217409
+          }
+        }
+      },
+      "observed_host_utc": "2026-10-30T03:14:09.311501+00:00",
+      "orders_sent": 0,
+      "previous": "2e174362ff8402dfb39fba689098f0e4230384cf2b00d470af418782502c9433",
+      "record_id": "4edbb61c64af418f8d77def59cc641f8",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "5af0ba5b48e94ec393304c13f5025f83",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": -295100,
+            "host_receive_ns": 1793330044120177700,
+            "host_send_ns": 1793330044104360300,
+            "leap_indicator": 0,
+            "offset_server_minus_host_ns": [
+              -870198187,
+              -760394955
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "precision_log2_seconds": -26,
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              3395390,
+              3395390
+            ],
+            "response_sha256": "34c38ae88fdb74d78c36f164e31fc35a97329f4a68737f9c5480793a79572634",
+            "root_delay_ns": 91094970,
+            "root_dispersion_ns": 1480102,
+            "rtt_monotonic_ns": 16112500,
+            "server_advertised_error_ns": 47027603,
+            "server_processing_ns": 69374,
+            "server_receive_utc_ns": 1793330043296937742,
+            "server_transmit_utc_ns": 1793330043297007116,
+            "stratum": 3,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "ed9c2a888e1a170777bebfae18fbe6a5f41ef313435d983c70b11ea28c1c26a5",
+            "utc_receive_interval_model_ns": [
+              1793330043249979513,
+              1793330043359782745
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "error": "TimeoutError",
+          "origin": "ntppool2.time.nl",
+          "status": "UNAVAILABLE"
+        }
+      ],
+      "source_sha256": "d271d12a87553f86e2685437fb08abb71781f9c86279f13e256c6e2f8089e993"
+    },
+    "sha256": "754648878c26612820c3bf8ead6ddbc949b786d94ef3de2861a91f58c0df121e"
+  },
+  {
+    "payload": {
+      "NATIVE_TO_UTC_MAPPING": "UNVERIFIED",
+      "certified_segments": [],
+      "clock_adjusted": false,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "native_receipt_correlations": {
+        "pc_a_prospective_utc_v1_268328_86572951924106_6708.jsonl": {
+          "models": [
+            {
+              "capture_id": "3d682c3b60a84913b4b978202b9d0d69",
+              "certified": false,
+              "event_utc_inferred": false,
+              "receipt_model_ns": [
+                1793329897353804412,
+                1793329897460887242
+              ],
+              "unbounded_components": [
+                "UPTIME_QUANTIZATION",
+                "OSCILLATOR_DRIFT",
+                "BROKER_GENERATION_TO_CALLBACK_DELAY"
+              ]
+            },
+            {
+              "capture_id": "b9c805074fa14ba08b97ed58066c395e",
+              "certified": false,
+              "event_utc_inferred": false,
+              "receipt_model_ns": [
+                1793329897302092729,
+                1793329897502764960
+              ],
+              "unbounded_components": [
+                "UPTIME_QUANTIZATION",
+                "OSCILLATOR_DRIFT",
+                "BROKER_GENERATION_TO_CALLBACK_DELAY"
+              ]
+            }
+          ],
+          "native_chain_head": "464baa15f9aea022bfa673a47c325bf5df4a30faf97cda0158449c9f64bfae09",
+          "native_tick": {
+            "callback_uptime_ms": 3249484,
+            "receipt_host_gmt_seconds": 1793329898,
+            "sequence": 3738,
+            "time": 1793337097,
+            "time_msc": 1793337097296
+          }
+        }
+      },
+      "observed_host_utc": "2026-10-30T03:11:51.570410+00:00",
+      "orders_sent": 0,
+      "previous": "da5deea0584559efe17cb647d1da9aa26258f83c5cee4e271d56f5c59e7b4ac4",
+      "record_id": "6427fea662104954b1f0aed63d58aebd",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "3d682c3b60a84913b4b978202b9d0d69",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": -110900,
+            "host_receive_ns": 1793329910362601000,
+            "host_send_ns": 1793329910348758300,
+            "offset_server_minus_host_ns": [
+              -867796588,
+              -760713758
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              3261625,
+              3261625
+            ],
+            "response_sha256": "47f740e393f420336436fa3b17fce313d6c72fcc33856b004c885d3c55c4f0f7",
+            "rtt_monotonic_ns": 13953600,
+            "server_advertised_error_ns": 46676665,
+            "server_processing_ns": 113200,
+            "server_receive_utc_ns": 1793329909541367877,
+            "server_transmit_utc_ns": 1793329909541481077,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "5e1a89f6c8d767f79a936f4c5823782b8d5bcb9cd17ef872eb50353eac949383",
+            "utc_receive_interval_model_ns": [
+              1793329909494804412,
+              1793329909601887242
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "b9c805074fa14ba08b97ed58066c395e",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 652900,
+            "host_receive_ns": 1793329911568336000,
+            "host_send_ns": 1793329911367656700,
+            "offset_server_minus_host_ns": [
+              -922243271,
+              -721571040
+            ],
+            "origin": "ntppool2.time.nl",
+            "peer_certificate_sha256": "987c737f98c144280663fe519d851628c4a9697c28f3f7a0aafb87786e847510",
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              3262828,
+              3262828
+            ],
+            "response_sha256": "b1db09a1b05a2c1ea1146d76f6ef55339f12b6f8a6657fa2813190ee380c254c",
+            "rtt_monotonic_ns": 200026400,
+            "server_advertised_error_ns": 22903,
+            "server_processing_ns": 52875,
+            "server_receive_utc_ns": 1793329910646062757,
+            "server_transmit_utc_ns": 1793329910646115632,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "b8b241563eb2b24db4fc281c2032a9f6a829219bc45959b59e6c625b2c9cf933",
+            "utc_receive_interval_model_ns": [
+              1793329910646092729,
+              1793329910846764960
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        }
+      ],
+      "source_sha256": "3f7f9e7c233419c8ff6eb1d5965b2f3cf302dc3c473623cff26ede8341d033bf"
+    },
+    "sha256": "2e174362ff8402dfb39fba689098f0e4230384cf2b00d470af418782502c9433"
+  },
+  {
+    "payload": {
+      "NATIVE_TO_UTC_MAPPING": "UNVERIFIED",
+      "certified_segments": [],
+      "clock_adjusted": false,
+      "dependency_manifest_sha256": "8a9fa8727c50aebc989ebe163e4109feb196861d54b0df9a6b5c9160e0a9a05e",
+      "native_receipt_correlations": {
+        "pc_a_prospective_utc_v1_268328_86572951924106_6708.jsonl": {
+          "models": [
+            {
+              "capture_id": "8500094c7b6a4720828d5dce85d22f85",
+              "certified": false,
+              "event_utc_inferred": false,
+              "receipt_model_ns": [
+                1793329776612879499,
+                1793329776719174274
+              ],
+              "unbounded_components": [
+                "UPTIME_QUANTIZATION",
+                "OSCILLATOR_DRIFT",
+                "BROKER_GENERATION_TO_CALLBACK_DELAY"
+              ]
+            },
+            {
+              "capture_id": "c815b02890aa4ccd95460b6b63c0ba5e",
+              "certified": false,
+              "event_utc_inferred": false,
+              "receipt_model_ns": [
+                1793329776584761343,
+                1793329776811230545
+              ],
+              "unbounded_components": [
+                "UPTIME_QUANTIZATION",
+                "OSCILLATOR_DRIFT",
+                "BROKER_GENERATION_TO_CALLBACK_DELAY"
+              ]
+            }
+          ],
+          "native_chain_head": "59a0fd40c130bcd3de29a7d723bd8f948d34855b9cf5f77ab6f5b66aff37e05a",
+          "native_tick": {
+            "callback_uptime_ms": 3128750,
+            "receipt_host_gmt_seconds": 1793329777,
+            "sequence": 3605,
+            "time": 1793336976,
+            "time_msc": 1793336976573
+          }
+        }
+      },
+      "observed_host_utc": "2026-10-30T03:10:01.181326+00:00",
+      "orders_sent": 0,
+      "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+      "record_id": "6e62ff5c701e4d61a16a6ba170d5deb2",
+      "results": [
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "8500094c7b6a4720828d5dce85d22f85",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 110900,
+            "host_receive_ns": 1793329799868426500,
+            "host_send_ns": 1793329799855008100,
+            "offset_server_minus_host_ns": [
+              -865547001,
+              -759252226
+            ],
+            "origin": "time.cloudflare.com",
+            "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              3151140,
+              3151140
+            ],
+            "response_sha256": "bb09730fd219b641a671ea71c016e983c459c250c4bf9edd1bc4496d07d5dad6",
+            "rtt_monotonic_ns": 13307500,
+            "server_advertised_error_ns": 46485931,
+            "server_processing_ns": 95487,
+            "server_receive_utc_ns": 1793329799049269943,
+            "server_transmit_utc_ns": 1793329799049365430,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "1807d36a3be2da4d0a1740a6f20abfcaf9c0b3146577368ea81d23ca130edfd5",
+            "utc_receive_interval_model_ns": [
+              1793329799002879499,
+              1793329799109174274
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        },
+        {
+          "measurement": {
+            "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+            "broker_mapping_authorized": false,
+            "capture_id": "c815b02890aa4ccd95460b6b63c0ba5e",
+            "clock_adjusted": false,
+            "host_elapsed_minus_monotonic_ns": 53600,
+            "host_receive_ns": 1793329801178320200,
+            "host_send_ns": 1793329800951785500,
+            "offset_server_minus_host_ns": [
+              -906558857,
+              -680089655
+            ],
+            "origin": "ntppool2.time.nl",
+            "peer_certificate_sha256": "987c737f98c144280663fe519d851628c4a9697c28f3f7a0aafb87786e847510",
+            "protocol": "RFC8915_NTS_AEAD15_TLS13",
+            "receive_kernel_uptime_ms_interval": [
+              3152437,
+              3152437
+            ],
+            "response_sha256": "900e9b5ae57f985c396e957e2c65361adba8c786462d3828b531bd628825769c",
+            "rtt_monotonic_ns": 226481100,
+            "server_advertised_error_ns": 22903,
+            "server_processing_ns": 111304,
+            "server_receive_utc_ns": 1793329800271672942,
+            "server_transmit_utc_ns": 1793329800271784246,
+            "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+            "unique_id_sha256": "eb690152b3b30060f8165ed77c7b857feb5055a62df5398547ae5849ce6f3d99",
+            "utc_receive_interval_model_ns": [
+              1793329800271761343,
+              1793329800498230545
+            ]
+          },
+          "status": "AUTHENTICATED_MEASUREMENT"
+        }
+      ],
+      "source_sha256": "8e813d17b17fef51bee5732fbb73ddc2d030ddfc6db13b20af7eeac61fc98647"
+    },
+    "sha256": "da5deea0584559efe17cb647d1da9aa26258f83c5cee4e271d56f5c59e7b4ac4"
+  }
+]

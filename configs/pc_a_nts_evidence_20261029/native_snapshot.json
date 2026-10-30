@@ -1,0 +1,343 @@
+{
+  "BROKER_CALENDAR": "PARTIAL_NATIVE_OBSERVATIONS_RETAINED",
+  "CAUSAL_AUDIT": "FAIL",
+  "CLOCK_UNCERTAINTY": "UNVERIFIED_NO_AUTHENTICATED_PRECISION_BOUND",
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "EXTERNAL_UTC_AUTHENTICATION": "PASS_NTS_MEASUREMENT_ONLY",
+  "EXTERNAL_UTC_SOURCE": "NTP_AND_TLS_REFERENCES_DIAGNOSTIC_ONLY",
+  "FINAL_TEST": "LOCKED",
+  "LIVE_TRADING": false,
+  "REALTIME_CAPTURE": "ACTIVE_CALLBACKS_QUARANTINED",
+  "SEGMENT_CERTIFICATION": {
+    "causal_audit": "FAIL",
+    "certified_intervals": [],
+    "missing": [
+      "INDEPENDENT_SAME_EVENT_UTC_BINDING",
+      "BOUNDED_BROKER_EVENT_MAPPING",
+      "DATED_EXACT_SERVER_CALENDAR",
+      "CALLBACK_COVERAGE_AND_QUEUE_DELAY_BOUND",
+      "AUTHENTICATED_UTC_WITH_DEFENSIBLE_UNCERTAINTY"
+    ],
+    "status": "QUARANTINED",
+    "training_readiness": "BLOCKED_BY_RESEARCH_GOVERNANCE"
+  },
+  "TRAINING_READINESS": "BLOCKED_BY_RESEARCH_GOVERNANCE",
+  "XM_TIMESTAMP_MAPPING": "UNVERIFIED",
+  "authenticated_utc_record": "4edbb61c64af418f8d77def59cc641f8.json",
+  "authenticated_utc_record_sha256": "754648878c26612820c3bf8ead6ddbc949b786d94ef3de2861a91f58c0df121e",
+  "external_witness_sha256": "4005a678eef174a631b0ecbd7002f590f6a925f40bf289e662e63c675eb00ccb",
+  "heartbeat_liveness": "COMPARE_LAST_CALLBACK_UPTIME_WITH_CURRENT_KERNEL_UPTIME",
+  "local_clock_continuous_authentication": "UNVERIFIED_BETWEEN_MEASUREMENTS",
+  "native_sessions": {
+    "pc_a_prospective_utc_v1_268328_86572951924106_6708.jsonl": {
+      "adjacent_duplicate_quotes": 11,
+      "bytes_verified": 2403284,
+      "capture_id": "pc_a_prospective_utc_v1",
+      "chain_head": "2ecb45d76cba96ae54607e7f9ff3549a18c4a11188a88a88a8baafac554babee",
+      "completeness": "UNPROVEN_ONTICK_CAN_COALESCE",
+      "continuity": {
+        "certified_segments": [],
+        "coordinate_difference_scope": "NOT_MAPPING_NOT_EVENT_LATENCY",
+        "incidents": [
+          {
+            "after_host_gmt_seconds": 1793327572,
+            "after_sequence": 831,
+            "before_host_gmt_seconds": 1793327562,
+            "before_sequence": 829,
+            "between_tick_callbacks": 1,
+            "cause": "UNDETERMINED",
+            "connected_at_endpoints": [
+              true,
+              true
+            ],
+            "detection_scope": "TWO_NOMINAL_TIMER_PERIODS_ELAPSED_NOT_EVENT_LOSS_THRESHOLD",
+            "elapsed_ms": 10000,
+            "end_uptime_ms": 923359,
+            "incident_id": "ee33d18b8245e1f30a96d50284c48b985b3eb9d7661ec4580e212171c9c4dec9",
+            "nominal_timer_period_ms": 5000,
+            "program_counter_elapsed_us": 9998435,
+            "real_event_loss": "UNVERIFIED",
+            "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+            "start_uptime_ms": 913359
+          },
+          {
+            "after_host_gmt_seconds": 1793327618,
+            "after_sequence": 833,
+            "before_host_gmt_seconds": 1793327572,
+            "before_sequence": 831,
+            "between_tick_callbacks": 1,
+            "cause": "UNDETERMINED",
+            "connected_at_endpoints": [
+              true,
+              true
+            ],
+            "detection_scope": "TWO_NOMINAL_TIMER_PERIODS_ELAPSED_NOT_EVENT_LOSS_THRESHOLD",
+            "elapsed_ms": 46469,
+            "end_uptime_ms": 969828,
+            "incident_id": "5a0489fe1f094c28759d3e500d55d39c661ded08a53f7d61f6827c820265d5d3",
+            "nominal_timer_period_ms": 5000,
+            "program_counter_elapsed_us": 46477736,
+            "real_event_loss": "UNVERIFIED",
+            "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+            "start_uptime_ms": 923359
+          },
+          {
+            "after_host_gmt_seconds": 1793327708,
+            "after_sequence": 922,
+            "before_host_gmt_seconds": 1793327696,
+            "before_sequence": 919,
+            "between_tick_callbacks": 2,
+            "cause": "UNDETERMINED",
+            "connected_at_endpoints": [
+              true,
+              true
+            ],
+            "detection_scope": "TWO_NOMINAL_TIMER_PERIODS_ELAPSED_NOT_EVENT_LOSS_THRESHOLD",
+            "elapsed_ms": 11594,
+            "end_uptime_ms": 1059828,
+            "incident_id": "fbc3ced4a1ecb19e60eaf1c29a082e4db1f9ece601b49423bc96bf005bda0d03",
+            "nominal_timer_period_ms": 5000,
+            "program_counter_elapsed_us": 11590332,
+            "real_event_loss": "UNVERIFIED",
+            "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+            "start_uptime_ms": 1048234
+          }
+        ],
+        "largest_adjacent_record_gap_ms": 42235,
+        "last_tick_observation": {
+          "callback_uptime_ms": 3400484,
+          "receipt_host_gmt_seconds": 1793330049,
+          "sequence": 3905,
+          "time": 1793337248,
+          "time_msc": 1793337248301
+        },
+        "native_minus_host_label_ms_envelope": [
+          7135883,
+          7200125
+        ],
+        "rows": 3906,
+        "scientific_acceptance": false,
+        "segments": [
+          {
+            "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+            "end_callback_uptime_ms": 913359,
+            "incident_ids": [],
+            "interval": "[start,end)",
+            "reason": "TEMPORAL_PROVENANCE_UNVERIFIED",
+            "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+            "start_callback_uptime_ms": 268328,
+            "status": "QUARANTINED"
+          },
+          {
+            "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+            "end_callback_uptime_ms": 923359,
+            "incident_ids": [
+              "ee33d18b8245e1f30a96d50284c48b985b3eb9d7661ec4580e212171c9c4dec9"
+            ],
+            "interval": "[start,end)",
+            "reason": "CALLBACK_GAP_AND_TEMPORAL_PROVENANCE",
+            "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+            "start_callback_uptime_ms": 913359,
+            "status": "QUARANTINED"
+          },
+          {
+            "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+            "end_callback_uptime_ms": 969828,
+            "incident_ids": [
+              "5a0489fe1f094c28759d3e500d55d39c661ded08a53f7d61f6827c820265d5d3"
+            ],
+            "interval": "[start,end)",
+            "reason": "CALLBACK_GAP_AND_TEMPORAL_PROVENANCE",
+            "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+            "start_callback_uptime_ms": 923359,
+            "status": "QUARANTINED"
+          },
+          {
+            "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+            "end_callback_uptime_ms": 1048234,
+            "incident_ids": [],
+            "interval": "[start,end)",
+            "reason": "TEMPORAL_PROVENANCE_UNVERIFIED",
+            "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+            "start_callback_uptime_ms": 969828,
+            "status": "QUARANTINED"
+          },
+          {
+            "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+            "end_callback_uptime_ms": 1059828,
+            "incident_ids": [
+              "fbc3ced4a1ecb19e60eaf1c29a082e4db1f9ece601b49423bc96bf005bda0d03"
+            ],
+            "interval": "[start,end)",
+            "reason": "CALLBACK_GAP_AND_TEMPORAL_PROVENANCE",
+            "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+            "start_callback_uptime_ms": 1048234,
+            "status": "QUARANTINED"
+          },
+          {
+            "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+            "end_callback_uptime_ms": 3400484,
+            "incident_ids": [],
+            "interval": "[start,end)",
+            "reason": "TEMPORAL_PROVENANCE_UNVERIFIED",
+            "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+            "start_callback_uptime_ms": 1059828,
+            "status": "QUARANTINED"
+          }
+        ],
+        "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+        "terminal_endpoint": {
+          "included_in_next_interval": false,
+          "sequence": 3905,
+          "uptime_ms": 3400484
+        }
+      },
+      "disconnected_records": 0,
+      "future_event_timestamps": "NOT_EVALUABLE_WITHOUT_MAPPING",
+      "host_clock_delta_scope": "DIAGNOSTIC_SECOND_RESOLUTION_NOT_CERTIFIED_CLOCK_STEP",
+      "host_clock_vs_uptime_delta_ms_envelope": [
+        -984,
+        1156
+      ],
+      "largest_heartbeat_interval_ms": 46469,
+      "last_callback_uptime_ms": 3400484,
+      "last_connected": true,
+      "last_kind": "ONTICK_LATEST_QUOTE",
+      "liveness": "RECENT",
+      "native_timestamp_regressions": 0,
+      "observed_age_ms": 625,
+      "partial_tail": false,
+      "rows": 3906,
+      "scientific_acceptance": false,
+      "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+      "tick_callbacks": 3289
+    },
+    "pc_a_prospective_utc_v1_50343_86572951924106_1553.jsonl": {
+      "adjacent_duplicate_quotes": 1,
+      "bytes_verified": 170195,
+      "capture_id": "pc_a_prospective_utc_v1",
+      "chain_head": "d89845df198008427d4253ceb0bf838ddb8e06fb2a9037de8c7d01da0473ba8c",
+      "completeness": "UNPROVEN_ONTICK_CAN_COALESCE",
+      "continuity": {
+        "certified_segments": [],
+        "coordinate_difference_scope": "NOT_MAPPING_NOT_EVENT_LATENCY",
+        "incidents": [],
+        "largest_adjacent_record_gap_ms": 5219,
+        "last_tick_observation": {
+          "callback_uptime_ms": 267640,
+          "receipt_host_gmt_seconds": 1793326916,
+          "sequence": 277,
+          "time": 1793334115,
+          "time_msc": 1793334115508
+        },
+        "native_minus_host_label_ms_envelope": [
+          7189694,
+          7200129
+        ],
+        "rows": 279,
+        "scientific_acceptance": false,
+        "segments": [
+          {
+            "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+            "end_callback_uptime_ms": 268171,
+            "incident_ids": [],
+            "interval": "[start,end)",
+            "reason": "TEMPORAL_PROVENANCE_UNVERIFIED",
+            "session_id": "pc_a_prospective_utc_v1_50343_86572951924106_1553",
+            "start_callback_uptime_ms": 50343,
+            "status": "QUARANTINED"
+          }
+        ],
+        "session_id": "pc_a_prospective_utc_v1_50343_86572951924106_1553",
+        "terminal_endpoint": {
+          "included_in_next_interval": false,
+          "sequence": 278,
+          "uptime_ms": 268171
+        }
+      },
+      "disconnected_records": 0,
+      "future_event_timestamps": "NOT_EVALUABLE_WITHOUT_MAPPING",
+      "host_clock_delta_scope": "DIAGNOSTIC_SECOND_RESOLUTION_NOT_CERTIFIED_CLOCK_STEP",
+      "host_clock_vs_uptime_delta_ms_envelope": [
+        -969,
+        906
+      ],
+      "largest_heartbeat_interval_ms": 6734,
+      "last_callback_uptime_ms": 268171,
+      "last_connected": true,
+      "last_kind": "SESSION_END",
+      "liveness": "CLOSED",
+      "native_timestamp_regressions": 0,
+      "observed_age_ms": 3132938,
+      "partial_tail": false,
+      "rows": 279,
+      "scientific_acceptance": false,
+      "session_id": "pc_a_prospective_utc_v1_50343_86572951924106_1553",
+      "tick_callbacks": 234
+    },
+    "pc_a_prospective_utc_v1_6617828_86572951924106_12102.jsonl": {
+      "adjacent_duplicate_quotes": 0,
+      "bytes_verified": 579,
+      "capture_id": "pc_a_prospective_utc_v1",
+      "chain_head": "26b169447961843dcf7cb47aa7c64163268d4bcafb98cf5e20af840114ac4e78",
+      "completeness": "UNPROVEN_ONTICK_CAN_COALESCE",
+      "continuity": {
+        "certified_segments": [],
+        "coordinate_difference_scope": "NOT_MAPPING_NOT_EVENT_LATENCY",
+        "incidents": [],
+        "largest_adjacent_record_gap_ms": 0,
+        "last_tick_observation": null,
+        "native_minus_host_label_ms_envelope": null,
+        "rows": 1,
+        "scientific_acceptance": false,
+        "segments": [],
+        "session_id": "pc_a_prospective_utc_v1_6617828_86572951924106_12102",
+        "terminal_endpoint": {
+          "included_in_next_interval": false,
+          "sequence": 0,
+          "uptime_ms": 6617828
+        }
+      },
+      "disconnected_records": 0,
+      "future_event_timestamps": "NOT_EVALUABLE_WITHOUT_MAPPING",
+      "host_clock_delta_scope": "DIAGNOSTIC_SECOND_RESOLUTION_NOT_CERTIFIED_CLOCK_STEP",
+      "host_clock_vs_uptime_delta_ms_envelope": null,
+      "largest_heartbeat_interval_ms": 0,
+      "last_callback_uptime_ms": 6617828,
+      "last_connected": true,
+      "last_kind": "SESSION_START",
+      "liveness": "UPTIME_EPOCH_CHANGED_OR_EMPTY",
+      "native_timestamp_regressions": 0,
+      "observed_age_ms": null,
+      "partial_tail": false,
+      "rows": 1,
+      "scientific_acceptance": false,
+      "session_id": "pc_a_prospective_utc_v1_6617828_86572951924106_12102",
+      "tick_callbacks": 0
+    }
+  },
+  "observed": {
+    "Ecuador": "2026-10-29T22:14:09.842-05:00",
+    "Nueva York": "2026-10-29T23:14:09.842-04:00",
+    "UTC": "2026-10-30T03:14:09.842+00:00",
+    "XM": null,
+    "mapping_id": null,
+    "new_york_abbreviation": "EDT",
+    "new_york_fold": 0,
+    "primary_time": "2026-10-29T22:14:09.842-05:00",
+    "primary_timezone": "America/Guayaquil",
+    "scientific_authorization": false,
+    "time_basis": "HOST_RECEIPT_UNATTESTED",
+    "tzdata_version": "2026.5",
+    "xm_server_offset_seconds": null,
+    "xm_status": "UNVERIFIED_NO_CONVERSION"
+  },
+  "orders_sent": 0,
+  "restart_interpretation": "NEW_SESSION_CAN_BE_REINIT_RESTART_OR_ANOTHER_CHART_NO_AUTOMATIC_EQUIVALENCE",
+  "session_boundaries_observed": 2,
+  "session_count": 3,
+  "source_sha256": "b275430e62a04c4c89302dcfb7e7e5e6dcd4ecbdbb68b1e1c84298cf74e6faa7",
+  "source_sha256_scope": "REPOSITORY_SOURCE_NOT_RUNTIME_BINARY_ATTESTATION",
+  "total_tick_callbacks": 3523
+}

@@ -1,0 +1,109 @@
+{
+  "CAUSAL_AUDIT": "FAIL",
+  "CERTIFIED_SEGMENTS": [],
+  "CLOCK_OFFSET": [
+    {
+      "origin": "time.cloudflare.com",
+      "server_minus_host_ns": [
+        -870198187,
+        -760394955
+      ]
+    }
+  ],
+  "CLOCK_UNCERTAINTY": "CONDITIONAL_INTERVALS_MEASURED_ABSOLUTE_DRIFT_AND_QUEUE_BOUNDS_UNVERIFIED",
+  "COLLECTOR_HEALTH": "ACTIVE_CALLBACKS_QUARANTINED",
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "EXTERNAL_UTC_AUTHENTICATION": "PASS_NTS_MEASUREMENTS_OBSERVED_NOT_CONTINUOUS_LOCAL_CLOCK_CERTIFICATION",
+  "FINAL_TEST": "LOCKED",
+  "HARD_BLOCKER": [
+    "Calibrated error bound and clock continuity between authenticated samples",
+    "Independent broker generation-time binding and delay bound",
+    "Exact-server historical mapping and dated session calendar"
+  ],
+  "LIVE_TRADING": false,
+  "MANUAL_ACTION_REQUIRED": "NONE_FOR_AUTOMATED_NTS_MEASUREMENTS",
+  "NATIVE_EVENT_CORRELATION": "RECEIPT_MODEL_LINKED_TO_REAL_NATIVE_CALLBACK_PREFIX_NOT_GENERATION_TIME",
+  "NEXT_STATE": "CONTINUE_PINNED_PERIODIC_NTS_AND_NATIVE_QUARANTINE_NO_AUTOMATIC_COHORT",
+  "QUARANTINED_SEGMENTS": [
+    {
+      "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+      "end_callback_uptime_ms": 913359,
+      "incident_ids": [],
+      "interval": "[start,end)",
+      "reason": "TEMPORAL_PROVENANCE_UNVERIFIED",
+      "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+      "start_callback_uptime_ms": 268328,
+      "status": "QUARANTINED"
+    },
+    {
+      "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+      "end_callback_uptime_ms": 923359,
+      "incident_ids": [
+        "ee33d18b8245e1f30a96d50284c48b985b3eb9d7661ec4580e212171c9c4dec9"
+      ],
+      "interval": "[start,end)",
+      "reason": "CALLBACK_GAP_AND_TEMPORAL_PROVENANCE",
+      "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+      "start_callback_uptime_ms": 913359,
+      "status": "QUARANTINED"
+    },
+    {
+      "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+      "end_callback_uptime_ms": 969828,
+      "incident_ids": [
+        "5a0489fe1f094c28759d3e500d55d39c661ded08a53f7d61f6827c820265d5d3"
+      ],
+      "interval": "[start,end)",
+      "reason": "CALLBACK_GAP_AND_TEMPORAL_PROVENANCE",
+      "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+      "start_callback_uptime_ms": 923359,
+      "status": "QUARANTINED"
+    },
+    {
+      "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+      "end_callback_uptime_ms": 1048234,
+      "incident_ids": [],
+      "interval": "[start,end)",
+      "reason": "TEMPORAL_PROVENANCE_UNVERIFIED",
+      "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+      "start_callback_uptime_ms": 969828,
+      "status": "QUARANTINED"
+    },
+    {
+      "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+      "end_callback_uptime_ms": 1059828,
+      "incident_ids": [
+        "fbc3ced4a1ecb19e60eaf1c29a082e4db1f9ece601b49423bc96bf005bda0d03"
+      ],
+      "interval": "[start,end)",
+      "reason": "CALLBACK_GAP_AND_TEMPORAL_PROVENANCE",
+      "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+      "start_callback_uptime_ms": 1048234,
+      "status": "QUARANTINED"
+    },
+    {
+      "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+      "end_callback_uptime_ms": 3400484,
+      "incident_ids": [],
+      "interval": "[start,end)",
+      "reason": "TEMPORAL_PROVENANCE_UNVERIFIED",
+      "session_id": "pc_a_prospective_utc_v1_268328_86572951924106_6708",
+      "start_callback_uptime_ms": 1059828,
+      "status": "QUARANTINED"
+    },
+    {
+      "basis": "SESSION_SCOPED_UPTIME_NOT_UTC",
+      "end_callback_uptime_ms": 268171,
+      "incident_ids": [],
+      "interval": "[start,end)",
+      "reason": "TEMPORAL_PROVENANCE_UNVERIFIED",
+      "session_id": "pc_a_prospective_utc_v1_50343_86572951924106_1553",
+      "start_callback_uptime_ms": 50343,
+      "status": "QUARANTINED"
+    }
+  ],
+  "TRAINING_READINESS": "BLOCKED_BY_RESEARCH_GOVERNANCE",
+  "authenticated_measurements": 5,
+  "nts_records": 3
+}

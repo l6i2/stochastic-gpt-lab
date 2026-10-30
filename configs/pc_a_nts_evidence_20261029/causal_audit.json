@@ -1,0 +1,6 @@
+{
+  "new_material": "Authenticated external measurements are not native event normalization",
+  "normalized_rows_admitted": 0,
+  "reason": "NATIVE_UTC_MAPPING_UNVERIFIED",
+  "status": "FAIL"
+}
