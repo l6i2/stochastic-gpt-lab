@@ -1,0 +1,24 @@
+{
+  "callback_gaps": 3,
+  "capture_completeness": "UNPROVEN_ONTICK_COALESCENCE_AND_INTERRUPTION",
+  "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+  "dataset_admission": false,
+  "disconnection_starts": 1,
+  "incident_ids": [
+    "01c6a06d28e7bc4b1641fc90c42abe7cd9f4b8fcacd35b918c9f0f8ff8308eef",
+    "08430e14d7b2b44fb6e6c8b9c547fc34494c062df44b68d70ecc70393ef415d8",
+    "56e626d6d0203f144d4c26651a77edc0f79cfd3ec1c381e33393feae5a28be2c",
+    "c39068ece9d0c24a3bf107935153393ec04f02af68be6263c5b8d790ccbc09f9",
+    "c7c0f45f2039088a6390094296fc849f0e02ce5c3c148832285e9dc9564deb10"
+  ],
+  "last_connected": true,
+  "maximum_callback_gap_ms": 4066484,
+  "no_backfill": true,
+  "power_settings_changed": false,
+  "reconnection_observations": 1,
+  "scoring_authorized": false,
+  "source_sequence_integrity": "PASS_AT_VERIFIED_PREFIX_NOT_PROOF_OF_MISSING_BROKER_EVENTS",
+  "status": "ACTIVE_MONITOR_WITH_QUARANTINED_INTERRUPTION",
+  "training_authorized": false,
+  "verified_rows": 414
+}

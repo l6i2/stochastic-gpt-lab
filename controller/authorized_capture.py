@@ -248,6 +248,8 @@ class CaptureManager:
             atomic(state_path,state)
         elif self.writer is None:self.writer=Observation.resume(io_path(folder),now)
         ingested=self.writer.pump(self.clock,max_records=2000)
+        from .capture_continuity_monitor import audit
+        audit(self.root,self.clock)
         return self.status('ACTIVE_QUARANTINED',ingested)
 
     def status(self,status,ingested=0):
@@ -270,6 +272,8 @@ class CaptureManager:
             native_event_utc_mapping='UNVERIFIED',feed_completeness='UNPROVEN_ONTICK_CAN_COALESCE',
             previous_reservation_status=manifest['previous_reservation_status'],CAUSAL_AUDIT='FAIL_GLOBAL_UNCHANGED',
             LIVE_TRADING=False,orders_sent=0)
+        continuity=self.root/'continuity_summary.json'
+        if continuity.exists():result['continuity']=json.loads(continuity.read_text())
         atomic(self.root/'collector_status.json',result)
         return result
 

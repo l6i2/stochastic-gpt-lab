@@ -1,0 +1,12 @@
+{
+  "all_other_previous_files_verified": true,
+  "base_manifest_sha256": "3c3b978ccb18e7977c470ac639a27996258d8cdd3c46b81e8cf4450bc1a5dd7c",
+  "changed_existing_files": {
+    "controller/authorized_capture.py": {
+      "current_sha256": "d72ddab0e63058a925d4af1a39f73296d81060fc48ecdce24978eb37b10fab81",
+      "previous_sha256": "05c9d20b295b1312a9fdb1a43ff2daacad846c3fbff88990a3ba41835e8d17b3",
+      "reason": "PASSIVE_CONTINUITY_MONITOR_HOOK_NO_ADMISSION_OR_POWER_CHANGE"
+    }
+  },
+  "frozen_contracts_or_prior_captures_modified": false
+}

@@ -1,0 +1,39 @@
+{
+  "host_end_seconds": 1793476644,
+  "host_start_seconds": 1793472337,
+  "incident_id": "c39068ece9d0c24a3bf107935153393ec04f02af68be6263c5b8d790ccbc09f9",
+  "maximum_events": 20,
+  "missing_broker_ticks_recovered": false,
+  "no_power_policy_changed": true,
+  "query_scope": "HOST_CLOCK_LABEL_WINDOW_NOT_INDEPENDENT_BROKER_EVENT_UTC",
+  "reason_classification": "OS_MODERN_STANDBY_CORROBORATED_IF_506_ENTRY_AND_507_EXIT_PRESENT",
+  "response": {
+    "events": [
+      {
+        "Id": 507,
+        "Message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "RecordId": 207698,
+        "TimeUtc": "2026-10-31T19:55:22.8219901Z"
+      },
+      {
+        "Id": 506,
+        "Message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Austerity Battery Drain Budget Exceeded. ",
+        "RecordId": 207688,
+        "TimeUtc": "2026-10-31T19:15:53.4224536Z"
+      },
+      {
+        "Id": 507,
+        "Message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Austerity Battery Drain Budget Exceeded. ",
+        "RecordId": 207686,
+        "TimeUtc": "2026-10-31T19:15:53.4189406Z"
+      },
+      {
+        "Id": 506,
+        "Message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "RecordId": 207680,
+        "TimeUtc": "2026-10-31T18:47:38.1774587Z"
+      }
+    ],
+    "status": "OK"
+  }
+}

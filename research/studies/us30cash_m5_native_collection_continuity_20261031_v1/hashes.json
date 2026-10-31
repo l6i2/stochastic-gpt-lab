@@ -1,0 +1,19 @@
+{
+  "files": {
+    "README_ES.md": "8211c275a24ccf6c90befbbadb53113d99846bd49b3286d183d13bf8ee7bec6e",
+    "collector_snapshot.json": "966d225b99b0ef4bc43272c8f7a43e76fc11386f4885109da79a431686e4ec65",
+    "continuity_snapshot.json": "03982a103f3fcbee853224b5eb83bae263a927611d89b0552240af908837e385",
+    "incidents/01c6a06d28e7bc4b1641fc90c42abe7cd9f4b8fcacd35b918c9f0f8ff8308eef.json": "2bd26d7ff31b3861e58ae9e3892ab85372b5fe1651eb4bd8e1c22ae2761ee87b",
+    "incidents/08430e14d7b2b44fb6e6c8b9c547fc34494c062df44b68d70ecc70393ef415d8.json": "340baa2ff3ea8de2e719069654a25a4b6d2ec6b3ecc2d2690adb014aca28766a",
+    "incidents/56e626d6d0203f144d4c26651a77edc0f79cfd3ec1c381e33393feae5a28be2c.json": "6a52b5ad47857205435b5825faf4b5a3878110234b2bcdf8d5a667df9cf5dc6e",
+    "incidents/c39068ece9d0c24a3bf107935153393ec04f02af68be6263c5b8d790ccbc09f9.json": "1ae677800ff927b45ff035da3e1693fb9fc01a1e7e99d6550280df10911736d6",
+    "incidents/c7c0f45f2039088a6390094296fc849f0e02ce5c3c148832285e9dc9564deb10.json": "7534303aa136852bd98a394ecc7475740521d516fb229c00b03e1ad36273c947",
+    "power_context.json": "0bca47e03b66fd20ec9b97d91151bcaee260ba9c45ae7958cd4f90d5e5dfcd3b",
+    "prior_restart_evidence_preservation.json": "31ac32fb2a2af9d8a12f06157b0cc1203608b4ef3ff073ef20efc631f91fdcb9",
+    "source_review.json": "e931e25a5d34f49c39645741455f68f99b27e109af3cf68aa1daf097c7ecad4d",
+    "status.json": "efa3eb13a3b8dde368cc72d1281c02a87534ef76b44d9a59b8ca8695b56300ca",
+    "updated_process_restart.json": "392ed3efd2468dad7faac0d8fa582dfba5109b2357b35c5df7169030ba4a4648",
+    "validation.json": "9143d983e0ee1365101aa604df12bd84ccc70032184b0f69901bacd3dad8aa9c"
+  },
+  "root_sha256": "635de2d2670af5da597b37e20287ac828e9a09c5f1e105c1dc1ad8c2ab7fe072"
+}
