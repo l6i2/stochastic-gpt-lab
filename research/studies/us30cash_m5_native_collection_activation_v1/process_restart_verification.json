@@ -1,0 +1,15 @@
+{
+  "capture_and_segment_preserved": true,
+  "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+  "manifest_sha256_unchanged": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a",
+  "new_collector_pid": 24876,
+  "no_PC_reboot_performed": true,
+  "no_other_project_process_stopped": true,
+  "old_collector_pid": 16608,
+  "old_terminal_processes_preserved": true,
+  "records_after": 35,
+  "records_before": 34,
+  "source_report_sha256": "2cd2ea9bda9048f9cf4cb95fff6c038d3528d4d560e7a819236ff7eeef4e974d",
+  "status": "PASS_ACTUAL_PROCESS_RESTART",
+  "training_authorized": false
+}

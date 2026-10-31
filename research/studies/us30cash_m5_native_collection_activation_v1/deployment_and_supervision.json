@@ -1,0 +1,45 @@
+{
+  "actual_PC_reboot_performed": false,
+  "administrator_privileges_used": false,
+  "boot_and_new_session_recovery": "SYNTHETIC_REGRESSION_PASS",
+  "credentials_requested": false,
+  "deployment_pin_current": {
+    "file": "785d3b1a8b072dfe2a416e9a8fff9c6c2fcbfd0859b4f4e6a9997c01dc5c2b2a.json",
+    "sha256": "858f795d3cd222aa57add24b96cf72796917a9210ec97bb5f39ecfe09dc6ca68"
+  },
+  "mode": "PER_USER_RUN_AND_MUTEX_WATCHDOG",
+  "prior_tasks_modified": false,
+  "requires_awake_PC_logged_in_user_and_XM_observer": true,
+  "restart_poll_seconds": 5,
+  "scheduler_attempt": "REGISTER_SCHEDULED_TASK_ACCESS_DENIED_0X80070005_NO_TASK_CREATED",
+  "startup_command_sha256": "4a7c3fa20929343942cd870cf9e6517f9b51d710006cad7a7804a42fd3674f95",
+  "startup_value": "StochasticGPTLab_PC_A_NewNativeCapture_v1",
+  "supervisor": {
+    "active_segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+    "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+    "clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-10-31T18:45:00.116756+00:00",
+      "monotonic_ns": 145659470613500,
+      "uptime_ms": 145652609,
+      "utc_certified": false
+    },
+    "collector_status": "ACTIVE_QUARANTINED",
+    "process_id": 24876,
+    "scoring_authorized": false,
+    "status": "RUNNING",
+    "training_authorized": false
+  },
+  "user_startup_verified": true,
+  "watchdog": {
+    "check_interval_seconds": 5,
+    "child_has_exited": false,
+    "child_pid": 7292,
+    "launches": 2,
+    "live_trading": false,
+    "scoring_authorized": false,
+    "status": "WATCHDOG_RUNNING",
+    "training_authorized": false,
+    "watchdog_pid": 23728
+  }
+}

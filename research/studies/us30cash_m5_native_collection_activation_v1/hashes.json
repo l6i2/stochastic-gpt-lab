@@ -1,0 +1,25 @@
+{
+  "files": {
+    "README_ES.md": "dca720e892ef84762f01eec8ae11b4e61056cc80e6278a91b693e30b922450bf",
+    "activation_boundary.json": "13d178f568abdbc7e3561c99437ebb0cb451948bf8be63e9b21de6a089c537da",
+    "activation_nts_after.json": "91d73df0cb51f325a8878ef852958997a07eacc4ca94aadc19aece4a3849662e",
+    "activation_nts_before.json": "06c7b83dd8cce159bf8de818c1fb8fd7bc532300d3dd39f2f91c6099f9291f9f",
+    "activation_utc.json": "294ebc3a19b83979b41daa506b11ad4a4762ad39b0cf534620d2ab7caca1022c",
+    "authorization.json": "07a13fec2707ae9e23b936ea417e6b212dfa3b0c593a83681ce6a97f9a6e3211",
+    "collection_manifest.json": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a",
+    "decisions/0000_25b6c89bb2f4cb76123a7750902a8772a859d0c4e08c3fe8c04d8ea25d15da20.json": "d8513b49f28ffae2a47c4a1de947d8e346893463474403cf715b0cdbfd24b48f",
+    "decisions/0001_ff1301588d07acf259b128fbfd794cb415aca6450d4430beaaaa0e91e08cc45a.json": "80874629f63564b884085d25229312ea351fad8b6c1cec9e8c9e7f03beadd4b9",
+    "decisions/0002_53e9782624f49e0c946e6d030a20c1ad4b726fff46bbe114e39d105eddc1f0a5.json": "af52af759f300087b69293046667567e9321a9f22da43f7aede2f755b19175af",
+    "deployment_and_supervision.json": "67ff154e2cbda2632b798c472537c419ee92f9976540afaa7e19818d399b42b6",
+    "failed_attempt_preserved.json": "e961e07fded0155b3eaf56a618d7397eedc2f183d456e9d588c47e568a214ac1",
+    "initial_segment.json": "9e80e5a8ae71b6b35e7c5ce5133b941cc60e7f14af95dcef8b7476fb97992e5f",
+    "initial_segment_manifest.json": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+    "integrity_and_no_backfill.json": "cfdae0305c22521835e13634f08b01af17ec5797b1f2e3a50f34ebba5b63eb9b",
+    "previous_assets_audit.json": "84cd216542349c9b92d7073aaa8e0b0739b3a1d559053f5d885cf8520af5d776",
+    "prior_evidence_index.json": "fc9edcfb12d1b55ddd7b7b74fa7e80fca1aaf980e7352204260a3be551befddf",
+    "process_restart_verification.json": "ec2fd45aa54e8a81eb0e71d3d8f97e389a0f6372d71ced9395eb7738bda2d21e",
+    "status.json": "a53b84561bd189da981a7eb189d40bdca2bbdd28f12b7c0b6f10f95f0da46ad3",
+    "validation.json": "40852ed1dd1822a6efe3c4c67566bc627783c857f145e0062bb60866e76cb712"
+  },
+  "root_sha256": "d24c3ad7a1432c8920758191b7173dd14c72c77c2e536a7166e11091a0cddbcc"
+}

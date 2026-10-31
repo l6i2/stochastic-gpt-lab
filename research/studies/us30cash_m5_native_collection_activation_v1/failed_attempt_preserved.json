@@ -1,0 +1,1 @@
+{"all_files_preserved":true,"error":"WINDOWS_MAX_PATH_ON_CHECKPOINT_TEMPORARY","fix":"EXTENDED_WINDOWS_IO_PATHS_NO_RELOCATION_OR_DELETION","old_assets_modified":false,"previous_intent_sha256":"dddc69213ffe44ed7e4ddb1089e20674710c5a4852951eb1eba2c108d7960b75","source_records_persisted":0,"status":"FAILED_BEFORE_RESERVATION_CLOSURE_OR_DATA_INGESTION"}

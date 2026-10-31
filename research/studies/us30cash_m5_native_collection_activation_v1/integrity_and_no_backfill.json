@@ -1,0 +1,24 @@
+{
+  "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+  "dataset_admission": false,
+  "delayed_ingestion_of_post_activation_callbacks_is_not_historical_backfill": true,
+  "historical_API_queries": false,
+  "previous_cohort_segments_adopted": false,
+  "quote_timestamp_values_modified": false,
+  "segments": {
+    "obs_850c9ced05834b38b6e4c9e351a49f86": {
+      "chain_head": "131dc9e9557af2b1832754214ec8fc99c1d51b1f962d3d67c6cbaffa15afeea5",
+      "hash_and_sequence_prefix": "PASS_AT_SNAPSHOT",
+      "heartbeat_records": 133,
+      "native_source_head": "f4110c404c1dcd370b27f578af49f11a1503322ac967e3dfa9b129d90922d6cf",
+      "old_prefix_payloads_adopted": 0,
+      "rows_verified": 133,
+      "snapshot_does_not_assert_full_market_coverage": true,
+      "source_offset": 159612,
+      "source_records_verified": 133,
+      "source_sequence": 271,
+      "tick_callbacks": 0
+    }
+  },
+  "source": "ORIGINAL_NATIVE_CALLBACK_RECORDS_APPENDED_AFTER_NEW_CUT"
+}

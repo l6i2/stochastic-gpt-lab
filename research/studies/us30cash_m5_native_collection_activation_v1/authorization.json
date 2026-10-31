@@ -1,0 +1,21 @@
+{
+  "schema_version": "limited-collection-authorization/1.0",
+  "study_id": "US30CASH_M5_NATIVE_20261030_01",
+  "approved_request_commit": "3244088ba15946b68ca32e7a29357a022055cfcf",
+  "approved_request_sha256": "614b1c40df5913a6e50531f278d3a9640bde6d98cab87b2e87cee6f28597a5c3",
+  "authorization_source": "Explicit user message AUTORIZACION CIENTIFICA LIMITADA — STOCHASTIC-GPT-LAB, received in this chat on 2026-10-31 America/Guayaquil",
+  "collection_authorized": true,
+  "previous_reservation_new_ingress_closure_authorized": true,
+  "previous_assets_must_be_preserved": true,
+  "actual_UTC_activation_evidence_required": true,
+  "backfill_allowed": false,
+  "mode": "QUARANTINED",
+  "dataset_admission_authorized": false,
+  "training_authorized": false,
+  "scoring_authorized": false,
+  "protected_datasets_access_authorized": false,
+  "demo_enabled": false,
+  "orders_authorized": false,
+  "live_trading": false,
+  "authorization_text": "Autorizo exclusivamente la solicitud publicada para iniciar la nueva captura prospectiva de US30Cash M5 en cuarentena, utilizando la PC A. Autorizo cerrar únicamente nuevas incorporaciones a la reserva prospectiva anterior, conservando íntegramente todos sus datos, hashes, manifests, checkpoints, historial y evidencia. No borrar ni modificar datos anteriores. No alterar contratos científicos congelados. Registrar la decisión de cierre de incorporaciones en un ledger inmutable. Crear un nuevo identificador independiente para la captura. Establecer el inicio con la hora UTC real de activación. No realizar backfill. No mezclar ambas cohortes. No utilizar automáticamente la captura nueva como dataset científico admitido. Mantener la nueva captura en QUARANTINED hasta certificar su integridad, cobertura, causalidad y procedencia temporal. Automatizar la ejecución y supervisión, incluyendo reinicios y protección contra duplicados. Mantener el otro proyecto de PC A completamente separado. Publicar la decisión, los manifests y el estado en research/full-pipeline mediante push normal. Esta autorización no incluye entrenamiento, scoring, apertura de Discovery Validation, Historical Holdout o Final Test, activación de DEMO, envío de órdenes o trading real. LIVE_TRADING=false."
+}
