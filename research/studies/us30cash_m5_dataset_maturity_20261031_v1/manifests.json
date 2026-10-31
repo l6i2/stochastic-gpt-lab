@@ -1,0 +1,7 @@
+{
+  "collection_manifest_sha256": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a",
+  "decision_chain_head": "53e9782624f49e0c946e6d030a20c1ad4b726fff46bbe114e39d105eddc1f0a5",
+  "frozen_package_root_sha256": "c10fce405a0c820193681378b2166f35027180dcf0a7ea789ec091ca806e2349",
+  "integrity": "VERIFIED_AT_DURABLE_PREFIX_SNAPSHOT",
+  "no_originals_modified": true
+}

@@ -1,0 +1,30 @@
+{
+  "collector_status": "ACTIVE_QUARANTINED",
+  "last_callback_age_ms": 5125,
+  "no_installation_or_power_tests_repeated": true,
+  "recovery": {
+    "actions": [],
+    "capture_watchdog_count": 1,
+    "dry_run": false,
+    "host_utc": "2026-10-31T23:44:06.8378223Z",
+    "live_trading": false,
+    "no_backfill": true,
+    "recovery_pid": 6004,
+    "requires_user_logon": true,
+    "scope": "EXACT_XM_AND_OWN_WATCHDOG_NTS",
+    "xm_process_count": 1
+  },
+  "supervisor_status": "RUNNING",
+  "supervisor_uptime_age_ms": 1000,
+  "watchdog": {
+    "check_interval_seconds": 5,
+    "child_has_exited": false,
+    "child_pid": 17324,
+    "launches": 4,
+    "live_trading": false,
+    "scoring_authorized": false,
+    "status": "WATCHDOG_RUNNING",
+    "training_authorized": false,
+    "watchdog_pid": 23728
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "audit_overlay_entry": {
+    "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+    "collection_manifest_sha256": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a",
+    "entry_sha256": "11e859b471feda7d6b7e5af9675524ca2e79bb9c7073706814a989e9cb414178",
+    "independence_certified": false,
+    "kind": "MATURITY_RAW_METADATA_AUDIT_ONLY",
+    "labels_opened": 0,
+    "ledger_sequence": 10,
+    "observed_host_clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-10-31T23:44:10.858012+00:00",
+      "monotonic_ns": 163610226684100,
+      "uptime_ms": 163603359,
+      "utc_certified": false
+    },
+    "previous": "41ae3895825e1243e1095a77c826bc902e59a7bde439e3303737a366b5c36b92",
+    "protected_rows_opened": 0,
+    "rows_inspected": 2571,
+    "scoring": false,
+    "signals_opened": 0,
+    "source_membership_sha256": "06b568aea5f706837582333a556b0af8b09d20dd7ee2f9508980c5c487a20208"
+  },
+  "forward_closure_evidence_sha256": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a",
+  "legacy_chain_head": "41ae3895825e1243e1095a77c826bc902e59a7bde439e3303737a366b5c36b92",
+  "legacy_completeness_verified": false,
+  "legacy_file_sha256": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+  "legacy_missing": [
+    "ORIGINAL_MASTER_SPLIT_AND_SIGNAL_MEMBERSHIPS",
+    "HISTORICAL_HOLDOUT_EXACT_RESERVATION",
+    "PROSPECTIVE_ROLE_END_OR_NONOVERLAP_ATTESTATION",
+    "RECONCILED_COMPARABLE_TIME_DOMAINS",
+    "COMPLETE_PRIOR_EXPOSURE_LEDGER_OUTSIDE_LOCAL_METADATA"
+  ],
+  "no_protected_data_read": true,
+  "overlay_scope": "AUDIT_ACCESS_METADATA_NOT_REPLACEMENT_OF_FROZEN_LEDGER"
+}

@@ -1,0 +1,27 @@
+{
+  "authorization_package_sha256": "e9d6dc857fad11b8df42995c2c9c6d18d70c02f630e3d8ce7ac950581b2f6d61",
+  "collection_plan_sha256": "87493518847629a62e299b6a5758d07315f54b65fe2d23bb0568861f27307f7c",
+  "completion_date_estimate": null,
+  "deficits": {
+    "base_signals": 800,
+    "evaluable_buy": 80,
+    "evaluable_folds_each_side": 3,
+    "evaluable_sell": 80,
+    "evaluable_total": 200,
+    "post_entry_m5": 100,
+    "warmup_own_m5": 350
+  },
+  "evaluation_not_run_no_labels": true,
+  "protocol_sha256": "ce5ab48ab95cbf4d6c07cb9b1cc9a13ab7f14ab7d14792b494ae2d19a21d45d9",
+  "thresholds": {
+    "consecutive_base_signals": 800,
+    "minimum_evaluable_buy": 80,
+    "minimum_evaluable_sell": 80,
+    "minimum_evaluable_total": 200,
+    "minimum_folds_each_side": 3,
+    "minimum_utc_days": null,
+    "post_last_entry_m5": 100,
+    "warmup_own_closed_m5": 350
+  },
+  "thresholds_changed": false
+}

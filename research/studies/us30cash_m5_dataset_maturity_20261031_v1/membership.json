@@ -1,0 +1,24 @@
+{
+  "admitted_dataset_id": null,
+  "dataset_hash": null,
+  "feature_dependencies": [],
+  "label_intervals": [],
+  "native_event_intervals": [],
+  "old_reservation_closure": "FORWARD_ONLY_VERIFIED_BY_ACTIVATION_DECISIONS",
+  "protected_membership_completeness": false,
+  "raw_intervals": [
+    {
+      "boot_id": "111",
+      "first_sequence": 139,
+      "last_sequence": 2709,
+      "post_eof_only": true,
+      "prior_payloads_adopted": 0,
+      "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+      "session": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+      "source_end_offset": 1596750,
+      "source_start_offset": 81469
+    }
+  ],
+  "role": "EXCLUSIVE_PROVISIONAL_QUARANTINE_RESERVATION_NOT_SCIENTIFIC_COHORT",
+  "signal_ids": []
+}

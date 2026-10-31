@@ -1,0 +1,20 @@
+{
+  "files": {
+    "controller/dataset_maturity.py": "960c5e89cd221bd3165c62b55787d75c95f1b76c275cafeb00c28e951a15b73c",
+    "research/studies/us30cash_m5_dataset_maturity_20261031_v1/README_ES.md": "3c9ba62a80f4f2adb86fff1064b2fdf92a9c4dfb40dd6f0e0ff572d176a12d8b",
+    "research/studies/us30cash_m5_dataset_maturity_20261031_v1/clock.json": "20943e59e690fca192e77baedae1c09e352d3dcc9a96ddb8fe06ff984f2ab522",
+    "research/studies/us30cash_m5_dataset_maturity_20261031_v1/clock_evidence.json": "647dedec4d0aace86bb68e438995591ccb814451e4b169a0a157505455fa3599",
+    "research/studies/us30cash_m5_dataset_maturity_20261031_v1/exposure.json": "1f86bef5650eb1072d69e6aa475c2a620d550a1637e7020a344dad1e1989dfed",
+    "research/studies/us30cash_m5_dataset_maturity_20261031_v1/features.json": "14ca52b0603c00d7b0a8142eeebce3251b18aa5be4bcde7d7edcf237c736d339",
+    "research/studies/us30cash_m5_dataset_maturity_20261031_v1/manifests.json": "99c97f91dced54e8395564040d675a5dc3a455e913dd4082b4693dda6d4fc481",
+    "research/studies/us30cash_m5_dataset_maturity_20261031_v1/membership.json": "e926d22c59f870944cf6faf3d0f90e8bb8e635a4dbf307c284b4241f13f4bdce",
+    "research/studies/us30cash_m5_dataset_maturity_20261031_v1/monitors.json": "9bf45f377ea83c96d04c433551e7a41ceeeb3dc686d3d3bfa04b86b1a19d7ee1",
+    "research/studies/us30cash_m5_dataset_maturity_20261031_v1/requirements.json": "37fbeb1069fcc766fc636a902dba5df345515f9afa4a9d5387f13f1b90359119",
+    "research/studies/us30cash_m5_dataset_maturity_20261031_v1/result.json": "a212bd73354063e53465632db07bfa850150f1277afd9e476f957c6bd0609f8a",
+    "research/studies/us30cash_m5_dataset_maturity_20261031_v1/segments.json": "c009e719e41cfc134a3b1defbf30fc9623c4527e4b0c61ecf738cdc57975c103",
+    "research/studies/us30cash_m5_dataset_maturity_20261031_v1/validation.json": "b53e0d91189927410013fe395715de53d7ca621765be712df0ea8c373fa395b8",
+    "tests/test_dataset_maturity.py": "79f7f96d6995098c7356f326cd974f151187cf42903e16ea6e46aec6d4e61575",
+    "tools/audit_dataset_maturity.py": "a6606ac084a4c790ca77bfa5832a6db2bc7f751705ab2b10dc617c98e4514d0a"
+  },
+  "root_sha256": "58cd09a2aa92fd562039028bc163212a5e26ca0c1bb68129c8345f40ebad95e2"
+}
