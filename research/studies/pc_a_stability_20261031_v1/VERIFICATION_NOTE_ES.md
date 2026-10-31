@@ -1,0 +1,3 @@
+El índice de verificación válido es hashes_verified.json. Corrige únicamente una autorreferencia obsoleta del índice inicial, que se conserva. Todos los hashes de archivos restantes coincidieron.
+
+La lectura final encontró 6 gaps acumulados, no solamente los 3 del informe anterior: los adicionales fueron 24.906 s, 1592.766 s y 35.266 s. Sus observaciones terminan antes de aplicar energía a las 16:12:48 de Ecuador. No se atribuye causa sin evidencia adicional. El contador power_settings_changed=false dentro del monitor describe que ese monitor no modifica energía; la aplicación AC separada queda registrada en power.json. No demuestra ausencia de nuevas interrupciones futuras.
