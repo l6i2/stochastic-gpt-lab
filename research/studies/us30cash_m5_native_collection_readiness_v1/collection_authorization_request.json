@@ -1,0 +1,23 @@
+{
+  "actual_start_to_allocate_only_after_authorization": true,
+  "authorization_granted": false,
+  "does_not_authorize": [
+    "DATASET_ADMISSION",
+    "TRAINING",
+    "SCORING",
+    "HOLDOUT_ACCESS",
+    "DEMO",
+    "ORDERS"
+  ],
+  "exact_request": "Autorizo únicamente una nueva captura read-only y una reserva prospectiva provisional exclusiva para US30CASH_M5_NATIVE_20261030_01, desde un identificador y frontera real posteriores a esta aprobación. Autorizo cerrar, solo para nuevas incorporaciones desde esa frontera, la reserva de la cohorte us30cash_m5_future_20261019_v1; sus datos previos y contratos quedan sellados y sin modificaciones. Los observadores anteriores continúan sin cambios como archivos observacionales en cuarentena; no se heredan sus segmentos, warmup, señales ni labels. Esta autorización no certifica independencia ni admite el dataset y no permite entrenamiento, scoring, acceso a conjuntos protegidos, DEMO u órdenes. Cualquier incompatibilidad o límite de membership no demostrado mantiene la captura en cuarentena y bloquea su admisión.",
+  "existing_observers_to_modify": false,
+  "exposure_ledger_sha256": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+  "kind": "COLLECTION_ROLE_AUTHORIZATION_REQUEST_ONLY_NOT_TRAINING",
+  "protected_prior_segments_remain_sealed": true,
+  "protocol_sha256": "ce5ab48ab95cbf4d6c07cb9b1cc9a13ab7f14ab7d14792b494ae2d19a21d45d9",
+  "requested": true,
+  "scientific_consequence": "NO_FURTHER_SCIENTIFIC_ACCRUAL_TO_OLD_COHORT_FROM_NEW_BOUNDARY_ITS_FROZEN_MATURITY_RULES_NOT_RELAXED",
+  "scope": "FORWARD_ONLY_NEW_CAPTURE_AND_EXCLUSIVE_PROVISIONAL_STUDY_RESERVATION",
+  "study_id": "US30CASH_M5_NATIVE_20261030_01",
+  "unresolved_membership_still_blocks_admission": true
+}

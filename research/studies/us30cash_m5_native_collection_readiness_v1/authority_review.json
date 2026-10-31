@@ -1,0 +1,33 @@
+{
+  "evidence": [
+    {
+      "field": "cohort_activation_authorized",
+      "path": "research/native_methodology_v1/adoption.json",
+      "sha256": "747816c08c02d19edcd978a8fe8d596019229af7f60e265e61422980929a8d41",
+      "value": false
+    },
+    {
+      "field": "activate_scientific_cohort",
+      "path": "research/studies/us30cash_m5_native_pretrain_v1/prospective_collection_plan.json",
+      "sha256": "87493518847629a62e299b6a5758d07315f54b65fe2d23bb0568861f27307f7c",
+      "value": false
+    },
+    {
+      "field": "actual_training_authorized",
+      "path": "research/studies/us30cash_m5_native_pretrain_v1/scientific_authorization_package.json",
+      "sha256": "e9d6dc857fad11b8df42995c2c9c6d18d70c02f630e3d8ce7ac950581b2f6d61",
+      "value": false
+    },
+    {
+      "exact_clause": "Requiere inicio real posterior a una asignación de rol exclusiva autorizada",
+      "path": "research/studies/us30cash_m5_native_pretrain_v1/PROTOCOL_ES.md",
+      "scope": "SCIENTIFIC_STUDY_ROLE_ALLOCATION_NOT_GENERIC_READ_ONLY_OBSERVATION",
+      "sha256": "ce5ab48ab95cbf4d6c07cb9b1cc9a13ab7f14ab7d14792b494ae2d19a21d45d9"
+    }
+  ],
+  "frozen_UTC_cohort_rules_unchanged": true,
+  "observational_capture_permitted_by": "CURRENT_USER_ITEM_11_OBSERVATIONAL_QUARANTINE_ONLY",
+  "old_cohort_reservation_not_silently_closed": true,
+  "protected_membership_not_proven_by_permission": true,
+  "scientific_role_allocation_requires_explicit_authorization": true
+}

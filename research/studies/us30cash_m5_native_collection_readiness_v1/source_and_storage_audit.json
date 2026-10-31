@@ -1,0 +1,18 @@
+{
+  "constant_native_fields_not_independent_broker_generation_attestation": true,
+  "crash_recovery": "COMPLETE_ORPHAN_ROWS_RECOVERED_PARTIAL_ROWS_PRESERVED_AND_BLOCKED",
+  "displayed_time_is_host_derived_not_UTC_attestation": true,
+  "flush": "FLUSH_FSYNC_THEN_ATOMIC_CHECKPOINT",
+  "free_storage_bytes_at_smoke": 47289507840,
+  "host_receipt_label_ecuador": "2026-10-31T09:40:23.394659-05:00",
+  "independent_failure_domain_backup_verified": false,
+  "installed_observer_ex5_sha256": "5cf9fb463f0be82d46680a3b5e6af83f501033ad83b5cf1bc2795692262f1fc0",
+  "installed_observer_source_sha256": "b275430e62a04c4c89302dcfb7e7e5e6dcd4ecbdbb68b1e1c84298cf74e6faa7",
+  "old_source_files_opened_write": false,
+  "prior_published_identity_match": true,
+  "receiver_calls": "TAIL_NEW_JSONL_ONLY_NO_MT5_API_OR_HISTORICAL_QUERY",
+  "scientific_dataset_root_reserved": "outputs/new_native_studies/us30cash_m5_native_20261030_01/<FUTURE_CAPTURE_ID>",
+  "shared_with_protected_datasets": false,
+  "source_startup_guards": "PINNED_SYMBOL_SERVER_DEMO_AND_DATA_DIRECTORY_AT_ONINIT",
+  "storage_root": "outputs/pc_a_collection_readiness/observations/<NEW_UUID>"
+}

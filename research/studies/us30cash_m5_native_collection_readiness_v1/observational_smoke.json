@@ -1,0 +1,49 @@
+{
+  "active_collection_task_installed": false,
+  "actual_start_host_clock": {
+    "boot_id": "111",
+    "host_utc_label": "2026-10-31T14:40:23.394659+00:00",
+    "monotonic_ns": 130982748224400,
+    "uptime_ms": 130975890,
+    "utc_certified": false
+  },
+  "capture_id": "obs_49fa17366a1d4969b4d83f7268686cf5",
+  "chain_head": "b6efd958ee74d98b12eba0dac7ae0c4913f627deab12f0a73d218078b74b16e9",
+  "checkpoint_restart_exact": true,
+  "checkpoint_sha256": "f797ee95f58fb1d38ddeda31420224e5dbc0c43c40c8c95db61cc4efcd4e4f76",
+  "continuous_collection_started": false,
+  "event_utc_mapping": "UNVERIFIED",
+  "free_storage_bytes": 47289507840,
+  "independent_dataset_verified": false,
+  "journal_sha256": "729a688fc1a8eb7a277dca3a8cdf79003012252d04264e3dc8611cf443f56c5f",
+  "manifest_sha256": "b35e0d6fbbcebdcd4ae7d6931affbc3ef75efabf046315157669725dcc964224",
+  "mode": "OBSERVATIONAL_QUARANTINE",
+  "no_old_prefix_payloads_adopted": true,
+  "observer_code_hashes_unchanged": {
+    "controller/isolated_observation.py": "8cc1fd71a4e9d2d405c1dfeeb32b0d83fa42497a3f9a1643cc707f5ce442696e",
+    "mt5/ProspectiveUtcObserver.mq5": "b275430e62a04c4c89302dcfb7e7e5e6dcd4ecbdbb68b1e1c84298cf74e6faa7",
+    "python/pc_a_raw_archive.py": "ac2dd0201fc0f0048d2c103a57adb9783998e592944d2acb702d3526b8cb19de",
+    "tools/collection_readiness_review.py": "5fde5241b149bfe4ed229ba1cf079fbed582c1f45610dbf2605fbd5af71df3dc",
+    "tools/prospective_utc_station.py": "b6efd7dcec46d83ab5ec5286dd7381d738cbb5cda87bf87e2f523a64ea280c82"
+  },
+  "post_cut_heartbeats": 2,
+  "post_cut_tick_callbacks": 0,
+  "quote_callback_live_smoke": "NOT_OBSERVED_THIS_BOUNDED_WINDOW",
+  "relative_folder": "outputs/pc_a_collection_readiness/observations/obs_49fa17366a1d4969b4d83f7268686cf5",
+  "scientific_admission": false,
+  "scientific_collection_started": false,
+  "scientific_role_reserved": false,
+  "scoring_authorized": false,
+  "source_anchor": {
+    "callback_uptime_ms": 130975781,
+    "prefix_payloads_adopted": 0,
+    "source_capture": "pc_a_prospective_utc_v1",
+    "source_offset": 143484,
+    "source_sequence": 244,
+    "source_session": "pc_a_prospective_utc_v1_129755781_86572951924106_2196",
+    "source_sha256": "7fa7aead8e4a8dde4197dc2bb62d9d92d5a70b7235b8b09ec9f83e0b038c2ffe"
+  },
+  "source_records": 2,
+  "status": "PASS_NEW_RECORDS_ONLY_OBSERVATIONAL_SMOKE",
+  "training_authorized": false
+}

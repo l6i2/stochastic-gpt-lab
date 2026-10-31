@@ -1,0 +1,12 @@
+{
+  "files": {
+    "README_ES.md": "28a0e3c31e4ff3dff753745568737968ed181ec7196ecbeaccbd3602884923e8",
+    "authority_review.json": "0eeb980526ca29da94b3df69bb974356b79a425a310939b92e1e1cdc3eb833a5",
+    "collection_authorization_request.json": "614b1c40df5913a6e50531f278d3a9640bde6d98cab87b2e87cee6f28597a5c3",
+    "observational_smoke.json": "14be1e3f698541199cccc91b05d49484d7d2b276ddd39c5782e29ab117309ab6",
+    "readiness.json": "55ba97292a945c2da551007772a0a2294e45fd7659df7707cf844032a9dc2a01",
+    "source_and_storage_audit.json": "6911a5a937cca09ff38aa239f66cc8284e5ce2c89867578f31a9edfc616467e0",
+    "validation.json": "4acf4bff3e8831f68e6b3211992daf419d8065d390d750e9fbeb2e616f18c4ae"
+  },
+  "root_sha256": "39fa43e61afdb7a70efd3de601bd239205abec1fe01d8e19be36e5e856fb9243"
+}
