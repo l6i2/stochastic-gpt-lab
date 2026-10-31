@@ -1,0 +1,13 @@
+{
+  "controller/restart_readiness.py": "5e07dd8633bc3bf97a32046abe47efb6d940a0e96740501789ffdc1b6bb01407",
+  "research/studies/pc_a_final_stability_20261031_v1/README_ES.md": "4d19cb9ee0292d78d5c381a480d76b1c55b4b21fa008474639797022d99d8d6a",
+  "research/studies/pc_a_final_stability_20261031_v1/incident_inventory.json": "715e782e8e543d50e7cbed8843180d953d87d8859d2883af0aa37fa7fe069ace",
+  "research/studies/pc_a_final_stability_20261031_v1/restart_baseline_summary.json": "02c9ae0a25e314b16f71fcd058a376bea5dfdb88ae051f59c2af1fac1a5b033f",
+  "research/studies/pc_a_final_stability_20261031_v1/result.json": "3e7fb840b2a5ed56dd84908e4656ff71f6479f893f4325e4c8f02a17fdd745df",
+  "research/studies/pc_a_final_stability_20261031_v1/station_snapshot.json": "ce2886981624c832354a11faa1a03b4206e015c38bba753a63831a76ace6f30d",
+  "research/studies/pc_a_final_stability_20261031_v1/validation.json": "c69258f67059341d545e050b76c93d18a1d16a6002f477e023ff4c42c5bd0e1c",
+  "tests/test_restart_readiness.py": "e491a27ebed2680b4df15bd08ca25d099564d6c07bd454a9b2794479e517b190",
+  "tools/research_recovery.ps1": "acf1b29a9983bddc16050615ed5a5ce46b6aaf0c44607c2c0d9887ca68453595",
+  "tools/research_restart_receipt.py": "bf959c024e505a189c1287f2e867fff4cf1af54dc6c30b5ee46a5f5959ef1598",
+  "tools/research_stability_report.py": "33f86b25266300fb79b7ccfc8019d1348a57a88f7f017ef5cda52635289525e8"
+}

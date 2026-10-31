@@ -1,0 +1,36 @@
+{
+  "active_segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+  "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+  "clock": {
+    "boot_id": "111",
+    "host_utc_label": "2026-10-31T23:30:18.976406+00:00",
+    "monotonic_ns": 162778330886300,
+    "uptime_ms": 162771468,
+    "utc_certified": false
+  },
+  "collection_manifest_sha256": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a",
+  "receipt_sha256": "6e7600a84848cc2ba2428322781b7699c09a57adb7463f55db67af2d25c2ea7a",
+  "segments": {
+    "obs_850c9ced05834b38b6e4c9e351a49f86": {
+      "checkpoint": {
+        "chain_head": "a870d8c1a245e99a7bff423e6f22037c2de31b7ab3220b354d8b28ae1a971e85",
+        "heartbeat_records": 2405,
+        "last_callback_uptime_ms": 162768250,
+        "last_receipt_monotonic_ns": 162775548024300,
+        "last_tick_native_msc": null,
+        "manifest_sha256": "2da97f385fb695a1ebc5153e32b555a3284a206b0b55282e7754caafb76e76af",
+        "rows": 2405,
+        "source_offset": 1498810,
+        "source_records": 2405,
+        "source_sequence": 2543,
+        "source_sha256": "ddd24df8457b20dca3c65c70cf18cf7121367336041e76a027321063f000b88e",
+        "synthetic_feature_records": 0,
+        "tick_callbacks": 0
+      },
+      "journal_bytes": 4639899,
+      "journal_sha256": "5dd619e4500ebdf2ad35dc16cc8a94bad7bf3f86c4608631a2193e452153aeb9",
+      "manifest_sha256": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+      "source_prefix_sha256": "c1cbba660f8e8c5ee17b3aeb9f8edf43bf257705b97ed61a2ac1c6470ba03837"
+    }
+  }
+}

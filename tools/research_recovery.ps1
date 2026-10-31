@@ -10,7 +10,7 @@ New-Item -ItemType Directory -Path (Join-Path $base 'recovery_events') -Force | 
 $config=Join-Path $base 'xm_readonly_restart.ini'
 $expected="[Experts]`r`nEnabled=1`r`nAllowLiveTrading=0`r`nAllowDllImport=0`r`n[Charts]`r`nProfileLast=Default`r`n"
 if(Test-Path -LiteralPath $config){if([IO.File]::ReadAllText($config) -ne $expected){throw 'RECOVERY_CONFIG_CHANGED'}}else{[IO.File]::WriteAllText($config,$expected)}
-$nts=$null;$lastNts=[datetime]::MinValue;$lastLaunch=[datetime]::MinValue;$prior=''
+$nts=$null;$receipt=$null;$lastReceipt=[datetime]::MinValue;$lastNts=[datetime]::MinValue;$lastLaunch=[datetime]::MinValue;$prior=''
 try{
  do {
     $processes=@(Get-CimInstance Win32_Process)
@@ -37,10 +37,15 @@ try{
         if(!$DryRun){$id=[guid]::NewGuid().ToString('N');$nts=Start-Process (Join-Path $repo '.venv\Scripts\pythonw.exe') -ArgumentList ('"'+(Join-Path $repo 'tools\authenticated_utc_station.py')+'"') -WorkingDirectory $repo -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $base ($id+'.nts.stdout')) -RedirectStandardError (Join-Path $base ($id+'.nts.stderr'))}
         $lastNts=[datetime]::UtcNow
     }
+    if(($null -eq $receipt -or $receipt.HasExited) -and ([datetime]::UtcNow-$lastReceipt).TotalSeconds -ge 60){
+            $actions+='SAVE_OR_VERIFY_RESTART_RECEIPT'
+            if(!$DryRun){$receipt=Start-Process (Join-Path $repo '.venv\Scripts\pythonw.exe') -ArgumentList ('"'+(Join-Path $repo 'tools\research_restart_receipt.py')+'"') -WorkingDirectory $repo -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $base 'restart_receipt.stdout') -RedirectStandardError (Join-Path $base 'restart_receipt.stderr')}
+            $lastReceipt=[datetime]::UtcNow
+    }
     $value=@{recovery_pid=$PID;host_utc=[datetime]::UtcNow.ToString('o');xm_process_count=$xm.Count;capture_watchdog_count=$watch.Count;actions=$actions;dry_run=[bool]$DryRun;live_trading=$false;no_backfill=$true;scope='EXACT_XM_AND_OWN_WATCHDOG_NTS';requires_user_logon=$true}
     $value | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $base 'recovery_status.json') -Encoding UTF8
     $signature=(@($xm.Count,$watch.Count)+$actions) -join '|'
     if($signature -ne $prior){$event=Join-Path $base ('recovery_events\'+[guid]::NewGuid().ToString('N')+'.json');$value | ConvertTo-Json -Depth 5 | Out-File -LiteralPath $event -Encoding utf8 -NoClobber;$prior=$signature}
-    if(!$Once){Start-Sleep -Seconds 15}
+    if(!$Once){Start-Sleep -Seconds 30}
  }while(!$Once)
 }finally{$mutex.ReleaseMutex();$mutex.Dispose()}

@@ -1,0 +1,11 @@
+{
+  "existing_pinned_capture_deployment": "VERIFIED",
+  "live_prefix_comparison": "VERIFIED",
+  "mt5_or_collector_closed": false,
+  "physical_restart_performed": false,
+  "prior_source_files_unchanged_except": [
+    "tools/research_recovery.ps1"
+  ],
+  "python_tests_passed": 34,
+  "synthetic_powershell_checks_passed": 6
+}
