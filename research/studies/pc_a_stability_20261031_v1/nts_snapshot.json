@@ -1,0 +1,16 @@
+{
+  "chain_head": "b7d3f06fe7aa779e59b6d67ffae47fcc89f862b2f94d2b6114173252f4e74572",
+  "clock_adjusted": false,
+  "record_file": "13a023ee5a6f4f75a1d6eea2d245b483.json",
+  "record_file_sha256": "8a183e98e225d5e2d43e24648252218c3d3532bbfec9e05c88ddd142b3e6e856",
+  "results": [
+    {
+      "origin": "time.cloudflare.com",
+      "status": "AUTHENTICATED_MEASUREMENT"
+    },
+    {
+      "origin": "ntppool2.time.nl",
+      "status": "UNAVAILABLE"
+    }
+  ]
+}

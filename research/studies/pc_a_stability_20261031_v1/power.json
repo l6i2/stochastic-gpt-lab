@@ -1,0 +1,54 @@
+{
+  "original": {
+    "created_host_utc": "2026-10-31T21:12:47.5338015Z",
+    "scheme": "381b4222-f694-41f0-9685-ff5bb260df2e",
+    "scope": "AC_ONLY_MACHINE_POWER_POLICY",
+    "values": [
+      {
+        "ac": 300,
+        "dc": 180,
+        "setting": "STANDBYIDLE",
+        "sub": "SUB_SLEEP"
+      },
+      {
+        "ac": 0,
+        "dc": 2147483647,
+        "setting": "HIBERNATEIDLE",
+        "sub": "SUB_SLEEP"
+      },
+      {
+        "ac": 1,
+        "dc": 1,
+        "setting": "LIDACTION",
+        "sub": "SUB_BUTTONS"
+      }
+    ]
+  },
+  "scope": "WINDOWS_SHARED_AC_POLICY_ONLY_NO_OTHER_PROJECT_FILES_OR_PROCESSES_CHANGED",
+  "verified": {
+    "action": "Audit",
+    "battery_modified": false,
+    "host_utc": "2026-10-31T21:15:46.3451136Z",
+    "scheme": "381b4222-f694-41f0-9685-ff5bb260df2e",
+    "values": [
+      {
+        "ac": 0,
+        "dc": 180,
+        "setting": "STANDBYIDLE",
+        "sub": "SUB_SLEEP"
+      },
+      {
+        "ac": 0,
+        "dc": 2147483647,
+        "setting": "HIBERNATEIDLE",
+        "sub": "SUB_SLEEP"
+      },
+      {
+        "ac": 0,
+        "dc": 1,
+        "setting": "LIDACTION",
+        "sub": "SUB_BUTTONS"
+      }
+    ]
+  }
+}

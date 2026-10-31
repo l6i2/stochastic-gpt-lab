@@ -1,0 +1,17 @@
+{
+  "real_reboot_or_close_test": false,
+  "regression_tests": 27,
+  "result": "PASS",
+  "synthetic": {
+    "checks": [
+      "SYNTAX",
+      "HEALTHY_NO_RESTART",
+      "MISSING_COLLECTOR_RECOVERY",
+      "MISSING_XM_GUARDED_RECOVERY",
+      "NTS_DUE_CHECK",
+      "NO_REAL_PROCESS_LAUNCH"
+    ],
+    "real_processes_closed": 0,
+    "status": "PASS"
+  }
+}

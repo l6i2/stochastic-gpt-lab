@@ -1,0 +1,14 @@
+{
+  "actions": [
+    "CHECK_NTS_DUE_EXISTING_LOCKED_STATION"
+  ],
+  "capture_watchdog_count": 1,
+  "dry_run": false,
+  "host_utc": "2026-10-31T21:15:39.0960389Z",
+  "live_trading": false,
+  "no_backfill": true,
+  "recovery_pid": 9084,
+  "requires_user_logon": true,
+  "scope": "EXACT_XM_AND_OWN_WATCHDOG_NTS",
+  "xm_process_count": 1
+}

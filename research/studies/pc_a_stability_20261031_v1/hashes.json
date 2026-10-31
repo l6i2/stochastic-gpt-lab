@@ -1,0 +1,15 @@
+{
+  "research/studies/pc_a_stability_20261031_v1/README_ES.md": "c25b7bcf07f7567732714e69dc12bbc6d5ae93053f142c52c49c705e4a7252de",
+  "research/studies/pc_a_stability_20261031_v1/collector_snapshot.json": "94eb3bfec4d14cd0df05f8d10ff7ee087a8b8343d5985de71946acc8d6122b13",
+  "research/studies/pc_a_stability_20261031_v1/hashes.json": "23ecd2612799d54b83bce4b2efc68e4260e16fdf15bc85f880ded2c493b3a205",
+  "research/studies/pc_a_stability_20261031_v1/nts_snapshot.json": "c36ca1476c4a9fff8f212cdbb0c1fc8ca84650998c69737947684cc4038c4165",
+  "research/studies/pc_a_stability_20261031_v1/power.json": "c694e72df01280bfe156a251ca0c3e7b8e67ffc821e1e44f60f8645fe6268a90",
+  "research/studies/pc_a_stability_20261031_v1/recovery_snapshot.json": "fa5d6a4376e44affd9ddab8ec07975d7cdc4f1bff3ff3fcdc98d63d776a33603",
+  "research/studies/pc_a_stability_20261031_v1/status.json": "8231d9b7b1c20e3d425e2944d68d0c1e3e7bfe16310c25744e6e6d1e35392598",
+  "research/studies/pc_a_stability_20261031_v1/validation.json": "cff7b9071aea2a80cc611fff613231c1bd05a071d9cac7e656c8751b4acf0bb8",
+  "tests/test_research_stability.ps1": "1dcd4772a297aff5eded4858f0c42a720819015cb314fc3efcfe33d53fb8299f",
+  "tools/install_research_recovery.ps1": "183ae0e484e808dd237aeb283d1941976e9013dbed7defa14f0e0c0692764759",
+  "tools/research_power.ps1": "eb19f07629ca694f5b1e2cd599c2baa67ac88c16a2cb97cac5ea3d569a04aa15",
+  "tools/research_recovery.ps1": "a01f0f22f3b05bfb3e156f9cd94b056d4a726f0077428963cad46d6225c48ee2",
+  "tools/restore_research_stability.ps1": "f2a3d443b1f1ec5f8a27fd53e00bdca1ff1ded08364ab8194c222e39af37fe08"
+}

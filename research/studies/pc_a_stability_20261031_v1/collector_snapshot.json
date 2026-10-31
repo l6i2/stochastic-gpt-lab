@@ -1,0 +1,76 @@
+{
+  "CAUSAL_AUDIT": "FAIL_GLOBAL_UNCHANGED",
+  "LIVE_TRADING": false,
+  "activation_utc": {
+    "after_capture_id": "e0d89c0b39344f1397125160cf6219bf",
+    "basis": "CAUSAL_ORDER_BETWEEN_AUTHENTICATED_PRE_TRANSMIT_AND_POST_RECEIVE_SERVER_TIMESTAMPS",
+    "before_capture_id": "3edc6536c9254739bf61805836075879",
+    "broker_event_utc_certified": false,
+    "estimate_ns": 1793471633341915536,
+    "half_width_ns": 358890332,
+    "local_clock_offset_or_drift_extrapolated": false,
+    "uncertainty": "CONDITIONAL_ON_REMOTE_SERVER_ADVERTISED_ERROR_NOT_METROLOGICAL_ABSOLUTE",
+    "utc_estimate": "2026-10-31T18:33:53.341916+00:00",
+    "utc_interval_ns": [
+      1793471632983025204,
+      1793471633700805868
+    ],
+    "utc_lower": "2026-10-31T18:33:52.983025+00:00",
+    "utc_upper": "2026-10-31T18:33:53.700806+00:00"
+  },
+  "active_segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+  "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+  "continuity": {
+    "callback_gaps": 6,
+    "capture_completeness": "UNPROVEN_ONTICK_COALESCENCE_AND_INTERRUPTION",
+    "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+    "dataset_admission": false,
+    "disconnection_starts": 2,
+    "incident_ids": [
+      "01c6a06d28e7bc4b1641fc90c42abe7cd9f4b8fcacd35b918c9f0f8ff8308eef",
+      "08430e14d7b2b44fb6e6c8b9c547fc34494c062df44b68d70ecc70393ef415d8",
+      "19bd6f5afede53420862a72b9618407595c55d28eff08d76e96e60ff297b61da",
+      "288882ab81a52d825b1961af79e40f7a4110bf8a696d695409a888a16cc820a6",
+      "56e626d6d0203f144d4c26651a77edc0f79cfd3ec1c381e33393feae5a28be2c",
+      "7a4230d1ec21b31094dfdb731d96d47e4365ec75dbaf32608716c8e52618aecf",
+      "ba75d08f9148d2e4ab911ec4eaea525ece19b708b653559a472678b13a6e32fb",
+      "c39068ece9d0c24a3bf107935153393ec04f02af68be6263c5b8d790ccbc09f9",
+      "c7c0f45f2039088a6390094296fc849f0e02ce5c3c148832285e9dc9564deb10",
+      "fe4073c6b76e32ba744a858cb5dab9234a76b504e8e5eeaff15d5ece56c7f457"
+    ],
+    "last_connected": true,
+    "maximum_callback_gap_ms": 4066484,
+    "no_backfill": true,
+    "power_settings_changed": false,
+    "reconnection_observations": 2,
+    "scoring_authorized": false,
+    "source_sequence_integrity": "PASS_AT_VERIFIED_PREFIX_NOT_PROOF_OF_MISSING_BROKER_EVENTS",
+    "status": "ACTIVE_MONITOR_WITH_QUARANTINED_INTERRUPTION",
+    "training_authorized": false,
+    "verified_rows": 796
+  },
+  "dataset_admission": false,
+  "feed_completeness": "UNPROVEN_ONTICK_CAN_COALESCE",
+  "last_callback_age_ms": 500,
+  "liveness_rule": "TWO_NOMINAL_5S_TIMER_PERIODS_NOT_EVENT_LOSS_PROOF",
+  "native_event_utc_mapping": "UNVERIFIED",
+  "new_records_last_poll": 1,
+  "observed_clock": {
+    "boot_id": "111",
+    "host_utc_label": "2026-10-31T21:15:48.934993+00:00",
+    "monotonic_ns": 154708288860200,
+    "uptime_ms": 154701421,
+    "utc_certified": false
+  },
+  "orders_sent": 0,
+  "previous_reservation_status": "CLOSED_TO_NEW_SCIENTIFIC_INGRESS_FROM_BOUNDARY",
+  "scoring_authorized": false,
+  "segments": 1,
+  "status": "ACTIVE_QUARANTINED",
+  "totals": {
+    "heartbeat_records": 796,
+    "source_records": 796,
+    "tick_callbacks": 0
+  },
+  "training_authorized": false
+}
