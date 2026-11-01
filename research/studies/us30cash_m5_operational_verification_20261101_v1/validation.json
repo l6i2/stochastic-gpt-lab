@@ -1,0 +1,20 @@
+{
+  "labels_or_scoring": false,
+  "new_report_logic_tests_passed": 7,
+  "no_new_daemon_or_scheduled_task": true,
+  "old_derived_version_prefix_retained": true,
+  "old_raw_prefixes_verified": 1,
+  "prior_actual_idempotent_restart_receipt_verified": true,
+  "prior_native_and_pipeline_fixtures_not_rerun": true,
+  "processed_record_count_recomputed_from_real_raw": true,
+  "protected_rows_read": 0,
+  "raw_and_derived_hash_chains_verified": true,
+  "real_callback_delta": 4,
+  "real_sample_seconds": 21.3938563,
+  "real_tick_delta": 0,
+  "real_worker_consumed_delta": 4,
+  "restart_performed_this_audit": false,
+  "source_prefix_cursor_correspondence_verified": true,
+  "synthetic_records_counted_as_real": 0,
+  "technical_repairs_applied": 0
+}

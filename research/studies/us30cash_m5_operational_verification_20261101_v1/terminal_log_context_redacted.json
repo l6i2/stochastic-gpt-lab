@@ -1,0 +1,43 @@
+{
+  "source_file": "20261101.log",
+  "source_sha256": "d63d11b3df9a04981a080dc92c26305a365860e4dce624feca809ce37c8fa0ff",
+  "events": [
+    {
+      "host_log_time_label": "08:59:50.459",
+      "category": "NETWORK_DISCONNECTED"
+    },
+    {
+      "host_log_time_label": "09:01:38.736",
+      "category": "AUTHORIZATION_SUCCESS"
+    },
+    {
+      "host_log_time_label": "09:02:06.926",
+      "category": "SYNCHRONIZED"
+    },
+    {
+      "host_log_time_label": "09:02:24.611",
+      "category": "NETWORK_DISCONNECTED"
+    },
+    {
+      "host_log_time_label": "09:02:27.902",
+      "category": "AUTHORIZATION_SUCCESS"
+    },
+    {
+      "host_log_time_label": "09:02:30.451",
+      "category": "SYNCHRONIZED"
+    },
+    {
+      "host_log_time_label": "10:02:27.909",
+      "category": "NETWORK_DISCONNECTED"
+    },
+    {
+      "host_log_time_label": "10:02:33.599",
+      "category": "AUTHORIZATION_SUCCESS"
+    },
+    {
+      "host_log_time_label": "10:02:36.360",
+      "category": "SYNCHRONIZED"
+    }
+  ],
+  "no_raw_messages_or_credentials_published": true
+}

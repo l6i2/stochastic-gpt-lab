@@ -1,0 +1,17 @@
+{
+  "files": {
+    "research/studies/us30cash_m5_operational_verification_20261101_v1/README_ES.md": "ae5c4b821725de0b2e8254ea52da01a6c08d18f23aeba91d190ddb11851bba87",
+    "research/studies/us30cash_m5_operational_verification_20261101_v1/calendar_context.json": "cd7e26db9a435bb0e85990dd5d64960c2f2392f2b2c09623e56eb7a1ace991ef",
+    "research/studies/us30cash_m5_operational_verification_20261101_v1/first.json": "18addf56b304ae00f498d980d4d15bb06134790a53fe155b73aa2f242083e986",
+    "research/studies/us30cash_m5_operational_verification_20261101_v1/last.json": "447902de5b8f248c13d8118a56ab35eba5c171bef5c3b2c9aa6dd597c87538c9",
+    "research/studies/us30cash_m5_operational_verification_20261101_v1/later_prefix_integrity.json": "a607715ab3373f36dc91f2cd173a8fbc361507b17fff942abe4d6ca98e73a828",
+    "research/studies/us30cash_m5_operational_verification_20261101_v1/ledger_verification.json": "3dbd073a2d3cc6bbe8d6cbc83663a79d3bd115d9fd66255bf118399ee4f82bb6",
+    "research/studies/us30cash_m5_operational_verification_20261101_v1/progress.json": "42253faceac1797b16123b69ba6990d154d8c3e16f54ea551c66f7897e678a3d",
+    "research/studies/us30cash_m5_operational_verification_20261101_v1/result.json": "1683823bf1882c4416b033656ab9ebfa9f9a42fb18a518cc0ef9cc76bdbd461e",
+    "research/studies/us30cash_m5_operational_verification_20261101_v1/terminal_log_context_redacted.json": "ef04ca7ba5258a0255bc169efce80249bf9516194291ff8dfcd3a0fa3518a3d2",
+    "research/studies/us30cash_m5_operational_verification_20261101_v1/validation.json": "b753f3c61de967df89b441a495e926287e61d412f56effb000f13c2377ecf76d",
+    "tests/test_prospective_operation.py": "69101e8d83b6acbb9a788f2c8155bf62dfe8aa5d71251554bfbd8f2434c21469",
+    "tools/verify_prospective_operation.py": "0a2137851a632691786687ade9e8fc177e0adcde478b1b280ced0d171c1e62fc"
+  },
+  "root_sha256": "14be903979359c9480c6c3c1c16c8b4db73c867fa45b499d146af771682c29b9"
+}

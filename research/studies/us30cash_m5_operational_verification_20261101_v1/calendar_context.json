@@ -1,0 +1,20 @@
+{
+  "client_date": "2026-11-01",
+  "client_weekday": "SUNDAY",
+  "fixed_server_offset_assumed": false,
+  "historical_or_current_exact_calendar_certified": false,
+  "interpretation": "WEEKEND_CONSISTENT_WITH_RETAINED_SNAPSHOT_NOT_CURRENT_COMPLETE_CALENDAR_CERTIFICATE",
+  "official_generic_source": "https://www.xm.com/execution-policy",
+  "official_source_scope": "GENERIC_WEEKDAY_TRADING_NOT_ACTIVE_XM_SERVER_US30CASH_CERTIFICATION",
+  "quote_session_records": [
+    "XM_SESSION_PROBE|QUOTE|day=MONDAY|index=0|from=00:00|to=23:00",
+    "XM_SESSION_PROBE|QUOTE|day=TUESDAY|index=0|from=00:00|to=23:00",
+    "XM_SESSION_PROBE|QUOTE|day=WEDNESDAY|index=0|from=00:00|to=23:00",
+    "XM_SESSION_PROBE|QUOTE|day=THURSDAY|index=0|from=00:00|to=23:00",
+    "XM_SESSION_PROBE|QUOTE|day=FRIDAY|index=0|from=00:00|to=23:00"
+  ],
+  "retained_snapshot_path": "configs/pc_a_remaining_blockers_evidence_20261028/current_server_native_sessions.json",
+  "retained_snapshot_sha256": "cc80aae82f6f50d4f940e0d609907405a0e1b8be0ef0b528ebc0cabff0633ef9",
+  "server": "XMGlobalSC-MT5 5",
+  "symbol": "US30Cash"
+}

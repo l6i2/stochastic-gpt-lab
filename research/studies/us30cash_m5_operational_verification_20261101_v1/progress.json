@@ -1,0 +1,17 @@
+{
+  "cached_quote_unchanged": true,
+  "end_to_end_market_pipeline": "NOT_DEMONSTRATED_NO_MARKET_TICK_PROGRESS",
+  "immediate_cause": "NO_NEW_TICKS_MARKET_OR_BROKER_FEED_AVAILABILITY_NOT_CERTIFIED",
+  "market_closed_certified": false,
+  "observed_heartbeat_ingestion": "PASS_REAL_RECORD_PROGRESS",
+  "real_callback_delta": 4,
+  "real_tick_delta": 0,
+  "sample_elapsed_monotonic_seconds": 21.3938563,
+  "scientific_admission": false,
+  "terminal_connections": [
+    true,
+    true
+  ],
+  "worker_consumed_delta": 4,
+  "worker_cpu_one_core_average_percent": 0.876419834604573
+}
