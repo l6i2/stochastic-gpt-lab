@@ -1,0 +1,77 @@
+{
+  "actual_fits": 0,
+  "actual_scoring": 0,
+  "admitted_dataset": false,
+  "authorization_requested": false,
+  "chronological_plan": null,
+  "dataset_hash": null,
+  "decision": "p>0.5 FOLLOW ELSE INVERT",
+  "execution_enabled": false,
+  "execution_requirements": [
+    "HASH_BOUND_ADMITTED_DATASET_AND_DEPENDENCIES",
+    "COMPLETE_EXPOSURE_AND_MEMBERSHIP",
+    "EXPLICIT_SCIENTIFIC_AUTHORIZATION",
+    "ADMITTED_DATA_ADAPTER_AND_ACCEPTANCE_EVALUATOR_VALIDATION_BEFORE_EXECUTION"
+  ],
+  "family": "logistic",
+  "feature_order": [
+    "stoch_k",
+    "delta_k_1",
+    "ATR",
+    "relative_volume_20",
+    "ha_direction",
+    "range_to_ATR"
+  ],
+  "final_full_dataset_fit": false,
+  "label": "FOLLOW_PNL_MINUS_INVERT_PNL_GT_0",
+  "max_fits": 8,
+  "max_launches": 1,
+  "missing": "NO_IMPUTATION_FINITE_TRAIN_ONLY_MISSING_EVALUATION_FIXED_FOLLOW",
+  "mode": "PRE_TRAIN_PLAN_ONLY",
+  "optimization_searches": 0,
+  "params": {
+    "C": 1,
+    "class_weight": null,
+    "max_iter": 1000,
+    "random_state": 20261030,
+    "solver": "lbfgs"
+  },
+  "plan_sha256": "ed25fbf80c87371e2fb472d954ba26e39d4b85f39e48cfa95ed4ea1ec221acaa",
+  "planned_slots": [
+    {
+      "fold": 1,
+      "side": "BUY"
+    },
+    {
+      "fold": 1,
+      "side": "SELL"
+    },
+    {
+      "fold": 2,
+      "side": "BUY"
+    },
+    {
+      "fold": 2,
+      "side": "SELL"
+    },
+    {
+      "fold": 3,
+      "side": "BUY"
+    },
+    {
+      "fold": 3,
+      "side": "SELL"
+    },
+    {
+      "fold": 4,
+      "side": "BUY"
+    },
+    {
+      "fold": 4,
+      "side": "SELL"
+    }
+  ],
+  "protocol_hash": "ce5ab48ab95cbf4d6c07cb9b1cc9a13ab7f14ab7d14792b494ae2d19a21d45d9",
+  "scaling": "TRAIN_ONLY_DDOF_0_ZERO_SCALE_TO_1",
+  "whitelist_hash": "7d95930599e9ffa5b98a4f89c99e2862afcb47730c238c66052e6024ef703ec8"
+}

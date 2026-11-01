@@ -1,0 +1,146 @@
+[
+  {
+    "path": "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json",
+    "sha256": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670"
+  },
+  {
+    "path": "research/studies/us30cash_m5_dataset_maturity_20261031_v1/exposure.json",
+    "sha256": "1f86bef5650eb1072d69e6aa475c2a620d550a1637e7020a344dad1e1989dfed"
+  },
+  {
+    "path": "research/studies/strategy_diagnostic_preparation_20261101_v1/exposure_overlay.json",
+    "sha256": "e8b8ff75eb30e3531d01f22ebef0c3c99f71fcded4ea006325b292d296653516"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_pretrain_v1/known_exposed_signal_membership.json",
+    "sha256": "3105b6b8f18776907787aaa30e1ac27afbffd36053d9f657acc57f8b3b30862c"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_pretrain_v1/dataset_membership.json",
+    "sha256": "5bd99a7a50f9d97a34d6e51bd2e49caeecaa0fb97ebe83c66bd4d1911beae5c0"
+  },
+  {
+    "path": "research/studies/us30cash_m5_dataset_maturity_20261031_v1/membership.json",
+    "sha256": "e926d22c59f870944cf6faf3d0f90e8bb8e635a4dbf307c284b4241f13f4bdce"
+  },
+  {
+    "path": "docs/CENSORED_MEMBERSHIP_QUARANTINE.json",
+    "sha256": "e932d86933958cf5edfad715625bbab35f47c995cf1c13fdfaafdecb20838836"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_readiness_v1/authority_review.json",
+    "sha256": "0eeb980526ca29da94b3df69bb974356b79a425a310939b92e1e1cdc3eb833a5"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_readiness_v1/collection_authorization_request.json",
+    "sha256": "614b1c40df5913a6e50531f278d3a9640bde6d98cab87b2e87cee6f28597a5c3"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_readiness_v1/hashes.json",
+    "sha256": "93747b3dfe5e7692e411afcd23b1a148fc17457832d07fedb40338da8a341fe6"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_readiness_v1/observational_smoke.json",
+    "sha256": "14be1e3f698541199cccc91b05d49484d7d2b276ddd39c5782e29ab117309ab6"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_readiness_v1/readiness.json",
+    "sha256": "55ba97292a945c2da551007772a0a2294e45fd7659df7707cf844032a9dc2a01"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_readiness_v1/source_and_storage_audit.json",
+    "sha256": "6911a5a937cca09ff38aa239f66cc8284e5ce2c89867578f31a9edfc616467e0"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_readiness_v1/validation.json",
+    "sha256": "4acf4bff3e8831f68e6b3211992daf419d8065d390d750e9fbeb2e616f18c4ae"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_pretrain_v1/scientific_authorization_package.json",
+    "sha256": "e9d6dc857fad11b8df42995c2c9c6d18d70c02f630e3d8ce7ac950581b2f6d61"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_pretrain_v1/package_hashes.json",
+    "sha256": "6a34ff5006ad80a6ff419c269a35a872e49a8898aff4f2753208c580b5a0f9e3"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/activation_boundary.json",
+    "sha256": "13d178f568abdbc7e3561c99437ebb0cb451948bf8be63e9b21de6a089c537da"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/activation_nts_after.json",
+    "sha256": "91d73df0cb51f325a8878ef852958997a07eacc4ca94aadc19aece4a3849662e"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/activation_nts_before.json",
+    "sha256": "06c7b83dd8cce159bf8de818c1fb8fd7bc532300d3dd39f2f91c6099f9291f9f"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/activation_utc.json",
+    "sha256": "294ebc3a19b83979b41daa506b11ad4a4762ad39b0cf534620d2ab7caca1022c"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/authorization.json",
+    "sha256": "07a13fec2707ae9e23b936ea417e6b212dfa3b0c593a83681ce6a97f9a6e3211"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/collection_manifest.json",
+    "sha256": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/deployment_and_supervision.json",
+    "sha256": "67ff154e2cbda2632b798c472537c419ee92f9976540afaa7e19818d399b42b6"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/failed_attempt_preserved.json",
+    "sha256": "e961e07fded0155b3eaf56a618d7397eedc2f183d456e9d588c47e568a214ac1"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/hashes.json",
+    "sha256": "7e7226ea8e074c564f95b7e8474346efa2762db98d5cfd03500c8e11480e1e7f"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/initial_segment.json",
+    "sha256": "9e80e5a8ae71b6b35e7c5ce5133b941cc60e7f14af95dcef8b7476fb97992e5f"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/initial_segment_manifest.json",
+    "sha256": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/integrity_and_no_backfill.json",
+    "sha256": "cfdae0305c22521835e13634f08b01af17ec5797b1f2e3a50f34ebba5b63eb9b"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/previous_assets_audit.json",
+    "sha256": "84cd216542349c9b92d7073aaa8e0b0739b3a1d559053f5d885cf8520af5d776"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/prior_evidence_index.json",
+    "sha256": "fc9edcfb12d1b55ddd7b7b74fa7e80fca1aaf980e7352204260a3be551befddf"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/process_restart_verification.json",
+    "sha256": "ec2fd45aa54e8a81eb0e71d3d8f97e389a0f6372d71ced9395eb7738bda2d21e"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/status.json",
+    "sha256": "a53b84561bd189da981a7eb189d40bdca2bbdd28f12b7c0b6f10f95f0da46ad3"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/validation.json",
+    "sha256": "40852ed1dd1822a6efe3c4c67566bc627783c857f145e0062bb60866e76cb712"
+  },
+  {
+    "path": "outputs/pc_a_certification/native_features/latest.json",
+    "sha256": "c3d5ecd5ef81ddd6af4881d138152aae9db5ac662698fffe33fc225002da3f43"
+  },
+  {
+    "path": "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/native_oracle.json",
+    "sha256": "479d5d6900e1ca6425bc1f91737a5664ed8e514ec0ccce89b02fac1d2e3467bb"
+  },
+  {
+    "path": "outputs/prospective_derivatives_v1/deployment_pin_current.json",
+    "sha256": "a24bebc9249389238348f3101540a7225171b7c96fb129ae47140e53cf3069ef"
+  }
+]

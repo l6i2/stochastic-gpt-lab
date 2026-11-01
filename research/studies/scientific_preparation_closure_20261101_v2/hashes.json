@@ -1,0 +1,22 @@
+{
+  "files": {
+    "controller/native_study_runner.py": "d12ccde3f5c21d568c0c7ec5d995b8e3802f55463e27fec46ea82b2dbc0def51",
+    "controller/scientific_preparation.py": "5b04724512076d3fa70ac00aebdca27b8663603431e8d58125f0bc4561cde226",
+    "docs/SCIENTIFIC_PREPARATION_CLOSURE.md": "d09bd43391986a09a5f85044531df4d7a97f51b128c0f943dd6e77fd72b9a7dd",
+    "research/studies/scientific_preparation_closure_20261101_v2/exposure.json": "5526b53ef1b0475fbced2879b6b99b83a5a49a1f5ff0ef2fb7437627a17d7564",
+    "research/studies/scientific_preparation_closure_20261101_v2/features.json": "a1f70fd0c59d5cf0e8c23b464cac8f0cf818d3846d07edcdfb0db9e8f94ad257",
+    "research/studies/scientific_preparation_closure_20261101_v2/integrity.json": "a4d7bbc8c4e26517affa25344610ccb7ab5fbc022efba112098c97e4046957c3",
+    "research/studies/scientific_preparation_closure_20261101_v2/inventory.json": "736b18e83633a9b6b2371a66981cfe6c83127ba49046fd9072ff520cf11ec29c",
+    "research/studies/scientific_preparation_closure_20261101_v2/membership.json": "5679b5ff998e583efe02bc16b7645c4aebe424e23760c72a76c83ae5c3b23778",
+    "research/studies/scientific_preparation_closure_20261101_v2/progress.json": "8b6d6fb487c6596ef01cb7f97060b71f98470b022722418d54dd243af9266ab4",
+    "research/studies/scientific_preparation_closure_20261101_v2/protocol.json": "2f1f72d46cf609f61e99fb8386142fce57e2f6979d0e307df6044cd3bc233fc1",
+    "research/studies/scientific_preparation_closure_20261101_v2/runtime.json": "9e785d5708e93ce532b9acc9d71c6263349d981d8ac3eabc70a0f856f01012f2",
+    "research/studies/scientific_preparation_closure_20261101_v2/source_receipts.json": "dcf7ed49291a454b2514e5255d66b5b086aaad6cc491812b2299c77708e28a16",
+    "research/studies/scientific_preparation_closure_20261101_v2/summary.json": "a56925bc35fa867ba214d0766db813989621ed9cac5f3b7ebc688b904c6916a4",
+    "research/studies/scientific_preparation_closure_20261101_v2/training_plan.json": "31e9a2ded55b165aa5b3157ef251551b6a4347edf20ee856122d32054781fadf",
+    "research/studies/scientific_preparation_closure_20261101_v2/validation.json": "4a08aa2f8516ebb2d67c34d82cf4e53a24c6fea0fb3f2e4e42a4dc537323e891",
+    "tests/test_scientific_preparation.py": "29c5c5d0029d0376fbc705e0ed71f8731f894f4e7594ce921791ed77d5874b97",
+    "tools/close_scientific_preparation.py": "59e926ccaa2bfca84a8d164b102fec1cafab3944875eaeeb1d4cacf1def240e8"
+  },
+  "root_sha256": "1c9d40aa311c24155d7f16e7611de30a6abd1687e6a6aa55d925fc68cae0329b"
+}

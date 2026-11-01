@@ -1,0 +1,57 @@
+{
+  "acceptance_criteria": {
+    "bootstrap_resamples": 10000,
+    "future_tolerance_milliseconds": 0,
+    "invalid_required_quotes_allowed": 0,
+    "maximum_drawdown_ratio_to_each_baseline": 1.2,
+    "maximum_positive_effect_share_one_fold": 0.5,
+    "minimum_each_side": 80,
+    "minimum_evaluable_folds_per_side": 3,
+    "minimum_evaluation_signals": 200,
+    "minimum_positive_fold_fraction_each_comparison": 0.7,
+    "one_sided_bootstrap_lower_confidence": 0.9875,
+    "primary_comparisons": 4,
+    "protected_dependency_overlap_allowed": 0,
+    "required_evidence": [
+      "INDEPENDENT_COMPLETE_MEMBERSHIP_AND_EXPOSURE_LEDGER",
+      "NO_PROTECTED_OR_PREVIOUSLY_EXPOSED_DEPENDENCIES",
+      "HASH_VERIFIED_DATASET_AND_NATIVE_SOURCE_IDENTITY",
+      "CLOSED_FEATURE_AVAILABILITY_AND_BOUND_POST_START_RECURSIVE_SEEDS",
+      "VERIFIED_COVERAGE_NO_FABRICATED_BARS_OR_PROSPECTIVE_BACKFILL",
+      "PREREGISTERED_STATISTICAL_GATES_AND_SINGLE_FAMILY_BUDGET",
+      "EXPLICIT_HASH_BOUND_NEW_STUDY_AUTHORIZATION_BEFORE_ANY_FIT"
+    ],
+    "required_lower_bound": "STRICTLY_GREATER_THAN_ZERO",
+    "signal_and_451_observed_bar_block_checks_required": true,
+    "statistical_failure": "TERMINAL_NO_RETUNING_OR_PERIOD_EXTENSION",
+    "unknown_seed_or_coverage_action": "NOT_READY_OR_QUARANTINED"
+  },
+  "actual_scoring_calls": 0,
+  "actual_training_calls": 0,
+  "budget": {
+    "actual_fits_authorized": 0,
+    "actual_scoring_authorized": 0,
+    "exhausted_TRAIN_reopened": false,
+    "final_full_data_fit": 0,
+    "hyperparameter_configurations": 1,
+    "hypothesis_families": 1,
+    "max_planned_fold_fits": 8,
+    "max_scientific_launches": 1,
+    "new_TRAIN_budget_activated": false,
+    "optimization_searches": 0,
+    "separate_side_estimators": 2,
+    "walk_forward_folds": 4
+  },
+  "future_execution_adapter": "IMPLEMENTED_EMPTY_GRANT_ALLOWLIST_NO_DATA_IO_OR_FIT_CALLED",
+  "package_integrity": {
+    "independent_dataset_verified": false,
+    "integrity": "PASS_METADATA_PACKAGE_ONLY",
+    "mode": "PRE_TRAIN",
+    "scientific_authorization_requested": false,
+    "scoring_authorized": false,
+    "training_authorized": false
+  },
+  "protocol_hash": "ce5ab48ab95cbf4d6c07cb9b1cc9a13ab7f14ab7d14792b494ae2d19a21d45d9",
+  "unchanged": true,
+  "validation_remaining": "REAL_ADMITTED_INPUT_INTEGRATION_AND_RESAMPLING_COVERAGE_REVIEW_BEFORE_AUTHORIZATION"
+}

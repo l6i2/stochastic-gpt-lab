@@ -1,0 +1,10 @@
+{
+  "command": "$env:PYTHONPATH='tests'; .venv\\Scripts\\python.exe -m unittest tests.test_scientific_preparation tests.test_pretrain_contracts tests.test_native_study_design tests.test_pretrain_package tests.test_native_independence tests.test_native_feature_diagnostic tests.test_strategy_preparation tests.test_prospective_processor tests.test_prospective_operation",
+  "existing_native_probe_reused": true,
+  "original_source_seal_and_runtime_pins_verified": true,
+  "scientific_fits": 0,
+  "scientific_scoring": 0,
+  "status": "PASS",
+  "synthetic_summary_and_resampling_fixtures_only": true,
+  "tests": 71
+}
