@@ -1,0 +1,107 @@
+[
+  {
+    "events": [
+      {
+        "kinds": [
+          "CONNECT"
+        ],
+        "line_sha256": "44e0ae9f83d03fbd1595c5e9df300c483b49448e4c6c0bbe97420ca7d845b650",
+        "log_time_label": "09:20:02.347"
+      },
+      {
+        "kinds": [
+          "CONNECT"
+        ],
+        "line_sha256": "971eab4aed6a30f0a6f2033716cb538cbc7d163edff8ce025c77ddd929b93dbf",
+        "log_time_label": "13:18:49.125"
+      },
+      {
+        "kinds": [
+          "DISCONNECT"
+        ],
+        "line_sha256": "4798280d3e39601ff7facf98e33c121fced44f13f27bc77db7ae720ecff7d6bf",
+        "log_time_label": "13:18:55.146"
+      },
+      {
+        "kinds": [
+          "CONNECT"
+        ],
+        "line_sha256": "16dbc95c6ed574b8c66e185fbb1295bfbfcee7091715d968169d5db0197abcb2",
+        "log_time_label": "13:22:24.327"
+      },
+      {
+        "kinds": [
+          "CONNECT"
+        ],
+        "line_sha256": "8621480700cebaad7551d25d384197d90b3560138b0385d45602d4faecc96d24",
+        "log_time_label": "13:22:54.825"
+      },
+      {
+        "kinds": [
+          "CONNECT"
+        ],
+        "line_sha256": "88c4ad119383017624b85638073a1afecec7692d5a0195c1bfa0c24ee2c4cb4b",
+        "log_time_label": "14:57:10.156"
+      },
+      {
+        "kinds": [
+          "CONNECT"
+        ],
+        "line_sha256": "6b103c29b5ca40a987f3e42d82b26412701da39a5ca94a206f3d4ef2d49eb65b",
+        "log_time_label": "16:09:47.218"
+      }
+    ],
+    "file_sha256": "78252e2e19b2ae9a1d9f5c1a9a30de9990f4d2e29b06c30bf96f435607045e37",
+    "relative_terminal_path": "Logs/20261031.log",
+    "time_semantics": "UNVERIFIED_LOG_LABEL_NOT_USED_AS_UTC_OR_EXACT_GAP_BOUNDARY"
+  },
+  {
+    "events": [
+      {
+        "kinds": [
+          "CONNECT"
+        ],
+        "line_sha256": "1e332f8b5b211222ec1b04ae8baece8c81eec85fc14ddb0b3eff2def4ec1974b",
+        "log_time_label": "09:01:38.736"
+      },
+      {
+        "kinds": [
+          "CONNECT"
+        ],
+        "line_sha256": "53dc7b0a3ecd3d9a5a30670a7effc3f7db6d8137441885f91cfc239916668573",
+        "log_time_label": "09:02:27.902"
+      },
+      {
+        "kinds": [
+          "CONNECT"
+        ],
+        "line_sha256": "6842e0c2250cf54b8cb46f10f096bbe23d8032f95359c3d1bc8166c3cf8456ed",
+        "log_time_label": "10:02:33.599"
+      },
+      {
+        "kinds": [
+          "CONNECT"
+        ],
+        "line_sha256": "62643a7c7d9942822c20fc4e96e4eef8582a358d2e9ef6c50888878d13aab62c",
+        "log_time_label": "11:18:33.321"
+      },
+      {
+        "kinds": [
+          "CONNECT"
+        ],
+        "line_sha256": "1f90a10e9de2dafc5ad0b9208d6b6255225ed03d75cffd7350b2950c6a9893c7",
+        "log_time_label": "13:03:04.685"
+      },
+      {
+        "kinds": [
+          "CONNECT"
+        ],
+        "line_sha256": "8da7e430b436a5591c734cc4d173f9179b1ba0a4d2f8e04e4b66938a9bbf80d1",
+        "log_time_label": "13:32:05.298"
+      }
+    ],
+    "file_sha256": "32ef0913ceb8ba995b8c5b2a2c5517a1556cd0e1e7d8ed70d02623083bccf7bf",
+    "relative_terminal_path": "Logs/20261101.log",
+    "time_semantics": "UNVERIFIED_LOG_LABEL_NOT_USED_AS_UTC_OR_EXACT_GAP_BOUNDARY"
+  }
+]

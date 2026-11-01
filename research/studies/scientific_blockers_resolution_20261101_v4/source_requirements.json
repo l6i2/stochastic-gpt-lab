@@ -1,0 +1,27 @@
+[
+  {
+    "missing": "Exact IDs and purged boundaries, not counts or declared dates",
+    "requirement": "ORIGINAL_SPLIT_MEMBERSHIP",
+    "source": "Original producer of stochastic_master_v1 at ced3b6d9e469dadf76a4771049c994e476f19329; master/split manifests with frozen source hash"
+  },
+  {
+    "missing": "Exact reservations, role closure, comparable domain and dependency membership",
+    "requirement": "HOLDOUT_AND_OPEN_ROLE_MEMBERSHIP",
+    "source": "Original dataset governance owner and original reservation/split manifests"
+  },
+  {
+    "missing": "Independent link from broker event creation to authenticated UTC with bounded error",
+    "requirement": "XM_EVENT_UTC",
+    "source": "XM server-specific timestamp provenance/trace, or independently timestamped matched events with demonstrated identity and bounded generation/transport relation; NTS receipt or similar prices alone insufficient"
+  },
+  {
+    "missing": "Server-specific sessions, DST and exceptions over admitted periods",
+    "requirement": "HISTORICAL_CALENDAR",
+    "source": "XM server/symbol historical session and exception records"
+  },
+  {
+    "missing": "Per-callback scheduler/network trace; logged connection state does not identify root cause",
+    "requirement": "UNKNOWN_GAP_CAUSE",
+    "source": "Windows/MT5 diagnostic traces from the actual past interval, if retained; absence may be irreversible without a scientific acquisition decision"
+  }
+]

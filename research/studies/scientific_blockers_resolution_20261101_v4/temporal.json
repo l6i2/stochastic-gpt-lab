@@ -1,0 +1,304 @@
+{
+  "authenticated_utc_to_broker_generation_mapping": false,
+  "calibration_barriers": {
+    "AUTHENTICATED_SOURCE_UNAVAILABLE_OR_INVALID": 85,
+    "BOOT_CHANGED": 1,
+    "BOOT_ID_MISSING": 6,
+    "MISSED_NTS_MONITOR_PERIOD": 25,
+    "OS_CLOCK_EVENT_CURSOR_CHANGED": 3
+  },
+  "calibration_dispositions": {
+    "FEASIBLE_CONDITIONAL_MODEL": 61,
+    "INSUFFICIENT_POINTS": 84
+  },
+  "calibration_groups": 145,
+  "calibration_input_key": "c99a41a436961b4d17b44ac748984d360033b78ace23f33ef686ed51602e1d63",
+  "calibration_reused": true,
+  "calibration_source_sha256": "2e1cd1692dc565a4c63927226b08310d71406f9b5e6297c54d59833b80b23c40",
+  "certified_native_event_intervals": [],
+  "clock_changes": [
+    {
+      "new": "2026-11-01T14:27:02.2342819Z",
+      "old": "2026-11-01T14:27:02.2440220Z",
+      "record_id": 208068,
+      "wall_step_ns": -9740100
+    },
+    {
+      "new": "2026-11-01T13:55:33.5000000Z",
+      "old": "2026-11-01T05:07:08.3789516Z",
+      "record_id": 208011,
+      "wall_step_ns": 31705121048400
+    },
+    {
+      "new": "2026-11-01T01:40:41.1498791Z",
+      "old": "2026-11-01T01:40:41.1528482Z",
+      "record_id": 207985,
+      "wall_step_ns": -2969100
+    }
+  ],
+  "latest_measurements": [
+    {
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "capture_id": "62afdaf41cc54aa79ff0af300c6dfe8d",
+      "offset_ns": [
+        -921156927,
+        -807648103
+      ],
+      "origin": "time.cloudflare.com",
+      "qpc": {
+        "qpc_absolute_utc_accuracy": "NOT_IMPLIED_BY_RESOLUTION",
+        "qpc_frequency_hz": 10000000,
+        "qpc_ticks_interval": [
+          2318818185996,
+          2318818186066
+        ],
+        "scope": "LOCAL_WALL_READ_NOT_PACKET_ARRIVAL",
+        "uptime_resolution_bound": "NOT_CALIBRATED"
+      },
+      "record_sha256": "9919f606effb494bcb83d3b6cde6a6ee26f0371854759d2077dfea037be85a2e",
+      "rtt_ns": 21918900,
+      "server_error_ns": 46112076,
+      "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+      "uptime_ms": [
+        231869156,
+        231869156
+      ]
+    },
+    {
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "capture_id": "47e861e7674140f0883bf105b43fc48e",
+      "offset_ns": [
+        -953497151,
+        -722009680
+      ],
+      "origin": "ntppool2.time.nl",
+      "qpc": {
+        "qpc_absolute_utc_accuracy": "NOT_IMPLIED_BY_RESOLUTION",
+        "qpc_frequency_hz": 10000000,
+        "qpc_ticks_interval": [
+          2318833264529,
+          2318833264584
+        ],
+        "scope": "LOCAL_WALL_READ_NOT_PACKET_ARRIVAL",
+        "uptime_resolution_bound": "NOT_CALIBRATED"
+      },
+      "record_sha256": "9919f606effb494bcb83d3b6cde6a6ee26f0371854759d2077dfea037be85a2e",
+      "rtt_ns": 231764400,
+      "server_error_ns": 22918,
+      "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+      "uptime_ms": [
+        231870671,
+        231870671
+      ]
+    },
+    {
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "capture_id": "8973103cb49e43a7b724c9f4333caf20",
+      "offset_ns": [
+        -917683147,
+        -811679119
+      ],
+      "origin": "time.cloudflare.com",
+      "qpc": {
+        "qpc_absolute_utc_accuracy": "NOT_IMPLIED_BY_RESOLUTION",
+        "qpc_frequency_hz": 10000000,
+        "qpc_ticks_interval": [
+          2321884334086,
+          2321884334109
+        ],
+        "scope": "LOCAL_WALL_READ_NOT_PACKET_ARRIVAL",
+        "uptime_resolution_bound": "NOT_CALIBRATED"
+      },
+      "record_sha256": "ed1400d7e34b62127fd9f91824086b40e321d20da05fa60fe8dc597427e93f6d",
+      "rtt_ns": 13763600,
+      "server_error_ns": 46134978,
+      "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+      "uptime_ms": [
+        232175765,
+        232175765
+      ]
+    },
+    {
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+      "capture_id": "63ee08c7d056440a8a3deb286d8fd4f2",
+      "offset_ns": [
+        -950506437,
+        -768235367
+      ],
+      "origin": "ntppool2.time.nl",
+      "qpc": {
+        "qpc_absolute_utc_accuracy": "NOT_IMPLIED_BY_RESOLUTION",
+        "qpc_frequency_hz": 10000000,
+        "qpc_ticks_interval": [
+          2321898917807,
+          2321898917854
+        ],
+        "scope": "LOCAL_WALL_READ_NOT_PACKET_ARRIVAL",
+        "uptime_resolution_bound": "NOT_CALIBRATED"
+      },
+      "record_sha256": "ed1400d7e34b62127fd9f91824086b40e321d20da05fa60fe8dc597427e93f6d",
+      "rtt_ns": 182640200,
+      "server_error_ns": 22918,
+      "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+      "uptime_ms": [
+        232177234,
+        232177234
+      ]
+    }
+  ],
+  "nts_capture_provenance": "PINNED_CLIENT_VERIFICATION_AT_CAPTURE_AND_LOCAL_HASH_CHAIN_NOT_BROKER_TIME_AUTHENTICATION",
+  "nts_chain_head": "ed1400d7e34b62127fd9f91824086b40e321d20da05fa60fe8dc597427e93f6d",
+  "nts_records_verified": 157,
+  "prospective_ticks": 0,
+  "receipt_sampling": {
+    "rows": 5533,
+    "scope": "LOCAL_COUNTER_CALL_ORDER_ONLY_NOT_POINT_RECEIPT_UTC",
+    "source": "mt5/ProspectiveUtcObserver.mq5 Record: read counter before TimeGMT; controller/isolated_observation.py pump: receipt counter after complete line read",
+    "widest_windows": [
+      {
+        "broker_generation_inferred": false,
+        "callback_counter_ms": 171495593,
+        "counter_resolution_bound": "UNCALIBRATED",
+        "host_gmt_label_seconds": 1793498142,
+        "host_label_read_counter_bracket_ms": [
+          171495593,
+          182978796
+        ],
+        "host_label_utc_certified": false,
+        "observation_window_width_ms": 11483203,
+        "sequence": 4105
+      },
+      {
+        "broker_generation_inferred": false,
+        "callback_counter_ms": 216575078,
+        "counter_resolution_bound": "UNCALIBRATED",
+        "host_gmt_label_seconds": 1793543221,
+        "host_label_read_counter_bracket_ms": [
+          216575078,
+          218394328
+        ],
+        "host_label_utc_certified": false,
+        "observation_window_width_ms": 1819250,
+        "sequence": 4429
+      },
+      {
+        "broker_generation_inferred": false,
+        "callback_counter_ms": 227782109,
+        "counter_resolution_bound": "UNCALIBRATED",
+        "host_gmt_label_seconds": 1793554429,
+        "host_label_read_counter_bracket_ms": [
+          227782109,
+          229507703
+        ],
+        "host_label_utc_certified": false,
+        "observation_window_width_ms": 1725594,
+        "sequence": 5209
+      },
+      {
+        "broker_generation_inferred": false,
+        "callback_counter_ms": 145810484,
+        "counter_resolution_bound": "UNCALIBRATED",
+        "host_gmt_label_seconds": 1793472457,
+        "host_label_read_counter_bracket_ms": [
+          145810484,
+          147506203
+        ],
+        "host_label_utc_certified": false,
+        "observation_window_width_ms": 1695719,
+        "sequence": 303
+      },
+      {
+        "broker_generation_inferred": false,
+        "callback_counter_ms": 221655140,
+        "counter_resolution_bound": "UNCALIBRATED",
+        "host_gmt_label_seconds": 1793548301,
+        "host_label_read_counter_bracket_ms": [
+          221655140,
+          223243578
+        ],
+        "host_label_utc_certified": false,
+        "observation_window_width_ms": 1588438,
+        "sequence": 4620
+      },
+      {
+        "broker_generation_inferred": false,
+        "callback_counter_ms": 218398656,
+        "counter_resolution_bound": "UNCALIBRATED",
+        "host_gmt_label_seconds": 1793545281,
+        "host_label_read_counter_bracket_ms": [
+          218398718,
+          218644171
+        ],
+        "host_label_utc_certified": false,
+        "observation_window_width_ms": 245453,
+        "sequence": 4430
+      },
+      {
+        "broker_generation_inferred": false,
+        "callback_counter_ms": 144990500,
+        "counter_resolution_bound": "UNCALIBRATED",
+        "host_gmt_label_seconds": 1793471638,
+        "host_label_read_counter_bracket_ms": [
+          144990500,
+          145091234
+        ],
+        "host_label_utc_certified": false,
+        "observation_window_width_ms": 100734,
+        "sequence": 139
+      },
+      {
+        "broker_generation_inferred": false,
+        "callback_counter_ms": 144995500,
+        "counter_resolution_bound": "UNCALIBRATED",
+        "host_gmt_label_seconds": 1793471643,
+        "host_label_read_counter_bracket_ms": [
+          144995500,
+          145091234
+        ],
+        "host_label_utc_certified": false,
+        "observation_window_width_ms": 95734,
+        "sequence": 140
+      },
+      {
+        "broker_generation_inferred": false,
+        "callback_counter_ms": 145000484,
+        "counter_resolution_bound": "UNCALIBRATED",
+        "host_gmt_label_seconds": 1793471647,
+        "host_label_read_counter_bracket_ms": [
+          145000484,
+          145091250
+        ],
+        "host_label_utc_certified": false,
+        "observation_window_width_ms": 90766,
+        "sequence": 141
+      },
+      {
+        "broker_generation_inferred": false,
+        "callback_counter_ms": 145005484,
+        "counter_resolution_bound": "UNCALIBRATED",
+        "host_gmt_label_seconds": 1793471652,
+        "host_label_read_counter_bracket_ms": [
+          145005484,
+          145091250
+        ],
+        "host_label_utc_certified": false,
+        "observation_window_width_ms": 85766,
+        "sequence": 142
+      }
+    ]
+  },
+  "unresolved": [
+    "BROKER_GENERATION_TO_UTC_INDEPENDENT_LINK",
+    "HISTORICAL_SERVER_TIME_MAPPING",
+    "CALIBRATED_RECEIPT_COUNTER_ERROR_AND_WITHIN_SEGMENT_OSCILLATOR_BOUND",
+    "EXACT_HISTORICAL_SYMBOL_CALENDAR"
+  ],
+  "valid_authenticated_measurements": 229,
+  "verified_relations": [
+    "NATIVE_SEQUENCE_AND_RAW_DERIVED_PREFIX_IDENTITY",
+    "OBSERVED_LOCAL_COUNTER_ELAPSED_GAPS",
+    "AUTHENTICATED_NTS_EXCHANGES_AT_RECORDED_OBSERVATIONS",
+    "WINDOWS_RECORDED_WALL_CLOCK_STEPS",
+    "CAUSALLY_ORDERED_NTS_ACTIVATION_BRACKET_RETAINED_NOT_REMEASURED"
+  ]
+}

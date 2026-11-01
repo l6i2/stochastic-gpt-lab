@@ -1,0 +1,19 @@
+{
+  "admitted": 0,
+  "derived_head": "63bc109f789d3bd24d6aabd12a0ff9d9df206f8ea394cc2d0def08a061886cb0",
+  "derived_rows": 5388,
+  "processed_source_records": 5533,
+  "processed_ticks": 0,
+  "raw_and_derived_integrity": "VERIFIED_AT_DURABLE_PREFIXES",
+  "real_feature_causal_checks": 0,
+  "source_cursors": {
+    "obs_850c9ced05834b38b6e4c9e351a49f86": {
+      "head": "f7d13cd734e9dc326fab4d6f499e5b75db5814c5ef5264c02fb087e5c1ffd513",
+      "manifest_hash": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+      "native_head": "062a36ee04e6a6703fbe38c8497504db44e39e658b34dd8a7bf647b3a0a07aa9",
+      "native_sequence": 5671,
+      "offset": 10687121,
+      "rows": 5533
+    }
+  }
+}

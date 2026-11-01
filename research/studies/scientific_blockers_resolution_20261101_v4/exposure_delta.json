@@ -1,0 +1,23 @@
+{
+  "chain_head": "73a1d4be0ad9768559c4f6c4d86c0b33269fcf0b7077f552209b27139a02a2a2",
+  "complete_prior_exposure_history": false,
+  "entry": {
+    "admitted_intervals": 0,
+    "entry_sha256": "73a1d4be0ad9768559c4f6c4d86c0b33269fcf0b7077f552209b27139a02a2a2",
+    "incidents_sha256": "bfd5904a587fd593a37bc9c46a7ea548ae60758aa93706776c78624b1b134b86",
+    "independence_certified": false,
+    "kind": "EXISTING_EVIDENCE_ADJUDICATION_NO_NEW_SCIENTIFIC_HYPOTHESIS",
+    "ledger_sequence": 48,
+    "membership_sha256": "bbd0517d833e67fbd54fed756ac723631a6daac8be6291761094bb4eef8d38e9",
+    "new_scientific_fits": 0,
+    "new_scientific_scoring": 0,
+    "previous": "9fe56f239ce812ff6e39103d61da34f40f462ae4aa424e4b429b1a45ab91b3d3",
+    "protected_rows_read": 0,
+    "source_summary_sha256": "583e3ccb507694895d6e688e4ffe9e59890e681b118e55182a88aa38aec81bcc",
+    "temporal_sha256": "fa82c967e7627a966649f12f90630346b716b60160c416cd1455abb55ef97190"
+  },
+  "original_ledgers_unchanged": true,
+  "parent_chain_head": "9fe56f239ce812ff6e39103d61da34f40f462ae4aa424e4b429b1a45ab91b3d3",
+  "parent_file_sha256": "5526b53ef1b0475fbced2879b6b99b83a5a49a1f5ff0ef2fb7437627a17d7564",
+  "parent_path": "research/studies/scientific_preparation_closure_20261101_v2/exposure.json"
+}

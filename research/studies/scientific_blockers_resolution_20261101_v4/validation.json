@@ -1,0 +1,11 @@
+{
+  "command": "$env:PYTHONPATH='tests'; .venv\\Scripts\\python.exe -m unittest tests.test_scientific_blockers tests.test_capture_continuity_monitor tests.test_pretrain_contracts",
+  "feature_probes_rerun": 0,
+  "new_native_probes": 0,
+  "power_changes": 0,
+  "scientific_fits": 0,
+  "scientific_scoring": 0,
+  "source_and_runtime_pins_verified": true,
+  "status": "PASS",
+  "tests": 21
+}

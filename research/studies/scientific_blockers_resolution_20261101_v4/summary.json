@@ -1,0 +1,94 @@
+{
+  "BLOCKERS_CLOSED": [
+    "AMBIGUOUS_INCIDENT_COUNTS_SEPARATED_RAW_DERIVED_AND_REPEATS",
+    "PER_INCIDENT_CAUSE_CLASSIFICATION_WITH_SOURCE_AND_OS_REFERENCES",
+    "MASTER_DECLARED_OUTER_SIGNAL_LABELS_RECOVERED_NOT_SPLIT_IDS",
+    "CONCRETE_WINDOWS_CLOCK_DISCONTINUITIES_IDENTIFIED"
+  ],
+  "BLOCKERS_REMAINING": [
+    {
+      "missing": "Exact IDs and purged boundaries, not counts or declared dates",
+      "requirement": "ORIGINAL_SPLIT_MEMBERSHIP",
+      "source": "Original producer of stochastic_master_v1 at ced3b6d9e469dadf76a4771049c994e476f19329; master/split manifests with frozen source hash"
+    },
+    {
+      "missing": "Exact reservations, role closure, comparable domain and dependency membership",
+      "requirement": "HOLDOUT_AND_OPEN_ROLE_MEMBERSHIP",
+      "source": "Original dataset governance owner and original reservation/split manifests"
+    },
+    {
+      "missing": "Independent link from broker event creation to authenticated UTC with bounded error",
+      "requirement": "XM_EVENT_UTC",
+      "source": "XM server-specific timestamp provenance/trace, or independently timestamped matched events with demonstrated identity and bounded generation/transport relation; NTS receipt or similar prices alone insufficient"
+    },
+    {
+      "missing": "Server-specific sessions, DST and exceptions over admitted periods",
+      "requirement": "HISTORICAL_CALENDAR",
+      "source": "XM server/symbol historical session and exception records"
+    },
+    {
+      "missing": "Per-callback scheduler/network trace; logged connection state does not identify root cause",
+      "requirement": "UNKNOWN_GAP_CAUSE",
+      "source": "Windows/MT5 diagnostic traces from the actual past interval, if retained; absence may be irreversible without a scientific acquisition decision"
+    }
+  ],
+  "CAUSAL_FEATURE_AUDIT": "PRIOR_SYNTHETIC_NATIVE_PROOF_RETAINED_NO_NEW_REAL_FEATURES_GLOBAL_FAIL",
+  "DATASET_ADMISSION": "BLOCKED",
+  "DATASET_HASH": null,
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "FINAL_TEST": "LOCKED",
+  "HISTORICAL_HOLDOUT": "BLOCKED",
+  "INCIDENTS_ADJUDICATED": {
+    "all_derived_sources_in_verified_prefix": true,
+    "backfill": false,
+    "classifications": {
+      "PROBABLE_CAUSE": 9,
+      "UNKNOWN_CAUSE": 30,
+      "VERIFIED_CAUSE": 4
+    },
+    "derived_reasons": {
+      "CALLBACK_GAP_TWO_EXISTING_TIMERS": 27,
+      "DISCONNECTED": 78
+    },
+    "derived_records": 105,
+    "derived_unique_source_observations": 84,
+    "gap_classifications": {
+      "PROBABLE_CAUSE": 7,
+      "UNKNOWN_CAUSE": 16,
+      "VERIFIED_CAUSE": 4
+    },
+    "gap_coverage_restored": false,
+    "missing_broker_events": "UNKNOWN",
+    "raw_facts": 43,
+    "raw_kinds": {
+      "CALLBACK_TIMER_GAP": 27,
+      "DISCONNECTION_OBSERVED_START": 8,
+      "RECONNECTION_OBSERVED": 8
+    }
+  },
+  "INCIDENTS_UNRESOLVED": {
+    "gap_coverage_unresolved": 27,
+    "root_cause_not_definitive": 39,
+    "verified_contributor_is_not_full_gap_resolution": true
+  },
+  "LIVE_TRADING": false,
+  "MEMBERSHIP_UNKNOWN": "ORIGINAL_PROTECTED_SPLITS_AND_OPEN_ROLES",
+  "MEMBERSHIP_VERIFIED": "PUBLISHED_NATIVE_INTERVALS_IDS_AND_NEW_CAPTURE_PREFIX_ONLY",
+  "NEXT_STATE": "CONTINUE_QUARANTINE_PRESERVE_GAPS_RECOVER_ORIGINAL_PROVENANCE_BEFORE_ADMISSION",
+  "TEMPORAL_MAPPING_UNRESOLVED": [
+    "BROKER_GENERATION_TO_UTC_INDEPENDENT_LINK",
+    "HISTORICAL_SERVER_TIME_MAPPING",
+    "CALIBRATED_RECEIPT_COUNTER_ERROR_AND_WITHIN_SEGMENT_OSCILLATOR_BOUND",
+    "EXACT_HISTORICAL_SYMBOL_CALENDAR"
+  ],
+  "TEMPORAL_MAPPING_VERIFIED": "SEQUENCE_RECEIPT_COUNTER_RELATIONS_NTS_EXCHANGES_AND_ACTIVATION_BRACKET_ONLY",
+  "TRAINING_READINESS": "BLOCKED",
+  "actual_fits": 0,
+  "actual_scoring": 0,
+  "admitted_intervals": [],
+  "ecuador_time": "2026-11-01T13:47:56.266164-05:00",
+  "host_utc_label": "2026-11-01T18:47:56.266164+00:00",
+  "original_data_changed": false,
+  "protected_rows_read": 0
+}

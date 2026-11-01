@@ -1,0 +1,406 @@
+[
+  {
+    "events": [
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T18:31:38.3193668Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208160
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T18:25:08.2663983Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208148
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T18:02:34.8740753Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208140
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "55"
+        },
+        "host_utc_label": "2026-11-01T17:33:45.5003857Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Austerity Battery Drain Budget Exceeded. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208132
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "55"
+        },
+        "host_utc_label": "2026-11-01T17:33:45.4920826Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Austerity Battery Drain Budget Exceeded. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208130
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T17:07:27.1429661Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208122
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T16:18:09.3731899Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208109
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "55"
+        },
+        "host_utc_label": "2026-11-01T15:51:37.3693043Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Austerity Battery Drain Budget Exceeded. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208101
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "55"
+        },
+        "host_utc_label": "2026-11-01T15:51:37.3611985Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Austerity Battery Drain Budget Exceeded. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208099
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T15:17:33.2318651Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208091
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T15:01:20.4976761Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208087
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "55"
+        },
+        "host_utc_label": "2026-11-01T14:57:20.4901253Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Austerity Battery Drain Budget Exceeded. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208077
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "55"
+        },
+        "host_utc_label": "2026-11-01T14:57:20.4841897Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Austerity Battery Drain Budget Exceeded. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208075
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T14:27:01.4624617Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208063
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T13:55:35.2912276Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208030
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "20"
+        },
+        "host_utc_label": "2026-11-01T13:55:34.9336626Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Sleep, Hibernate, or Shutdown. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208024
+      },
+      {
+        "fields": {
+          "EffectiveState": "5",
+          "TargetState": "5"
+        },
+        "host_utc_label": "2026-11-01T05:07:08.3785407Z",
+        "id": 107,
+        "power_message": "El sistema se reanudó del estado de suspensión.",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208010
+      },
+      {
+        "fields": {
+          "EffectiveState": "5",
+          "Reason": "13",
+          "TargetState": "5"
+        },
+        "host_utc_label": "2026-11-01T05:06:59.8410851Z",
+        "id": 42,
+        "power_message": "El sistema está entrando en suspensión.\r\n\r\nMotivo de la suspensión: Hibernate from Sleep - Standby Battery Budget Exceeded",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208006
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "20"
+        },
+        "host_utc_label": "2026-11-01T05:06:57.1045952Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Sleep, Hibernate, or Shutdown. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208000
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "55"
+        },
+        "host_utc_label": "2026-11-01T01:55:40.4539704Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Austerity Battery Drain Budget Exceeded. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 207993
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "55"
+        },
+        "host_utc_label": "2026-11-01T01:55:40.4474443Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Austerity Battery Drain Budget Exceeded. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 207991
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T01:40:39.7878319Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 207978
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-10-31T21:08:24.3291211Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 207768
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-10-31T20:41:56.7490563Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 207722
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "31"
+        },
+        "host_utc_label": "2026-10-31T20:20:08.7578130Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Input Keyboard. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 207717
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "12"
+        },
+        "host_utc_label": "2026-10-31T20:19:21.2943035Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Idle Timeout. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 207715
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-10-31T19:55:22.8219901Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 207698
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "55"
+        },
+        "host_utc_label": "2026-10-31T19:15:53.4224536Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Austerity Battery Drain Budget Exceeded. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 207688
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "55"
+        },
+        "host_utc_label": "2026-10-31T19:15:53.4189406Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Austerity Battery Drain Budget Exceeded. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 207686
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-10-31T18:47:38.1774587Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 207680
+      }
+    ],
+    "maximum_events": 2048,
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "status": "OK",
+    "truncated": false
+  },
+  {
+    "events": [
+      {
+        "fields": {
+          "NewTime": "2026-11-01T14:27:02.2342819Z",
+          "OldTime": "2026-11-01T14:27:02.2440220Z",
+          "Reason": "1"
+        },
+        "host_utc_label": "2026-11-01T14:27:02.2352811Z",
+        "id": 1,
+        "power_message": null,
+        "provider": "Microsoft-Windows-Kernel-General",
+        "record_id": 208068
+      },
+      {
+        "fields": {
+          "NewTime": "2026-11-01T13:55:33.5000000Z",
+          "OldTime": "2026-11-01T05:07:08.3789516Z",
+          "Reason": "2"
+        },
+        "host_utc_label": "2026-11-01T13:55:33.5006813Z",
+        "id": 1,
+        "power_message": null,
+        "provider": "Microsoft-Windows-Kernel-General",
+        "record_id": 208011
+      },
+      {
+        "fields": {
+          "NewTime": "2026-11-01T01:40:41.1498791Z",
+          "OldTime": "2026-11-01T01:40:41.1528482Z",
+          "Reason": "1"
+        },
+        "host_utc_label": "2026-11-01T01:40:41.1552687Z",
+        "id": 1,
+        "power_message": null,
+        "provider": "Microsoft-Windows-Kernel-General",
+        "record_id": 207985
+      }
+    ],
+    "maximum_events": 2048,
+    "provider": "Microsoft-Windows-Kernel-General",
+    "status": "OK",
+    "truncated": false
+  },
+  {
+    "events": [
+      {
+        "fields": {
+          "EffectiveState": "5",
+          "SleepTime": "2026-11-01T05:06:57.1040014Z",
+          "TargetState": "5",
+          "WakeTime": "2026-11-01T13:55:34.9438985Z"
+        },
+        "host_utc_label": "2026-11-01T13:55:36.6058170Z",
+        "id": 1,
+        "power_message": null,
+        "provider": "Microsoft-Windows-Power-Troubleshooter",
+        "record_id": 208033
+      }
+    ],
+    "maximum_events": 2048,
+    "provider": "Microsoft-Windows-Power-Troubleshooter",
+    "status": "OK",
+    "truncated": false
+  }
+]

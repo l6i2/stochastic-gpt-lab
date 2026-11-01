@@ -1,0 +1,2036 @@
+[
+  {
+    "events": [
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:31:38.4847891Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51881
+      },
+      {
+        "fields": {
+          "State": "9"
+        },
+        "host_utc_label": "2026-11-01T18:31:38.1228732Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51880
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:31:38.0858173Z",
+        "id": 4002,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51879
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:25:14.3917174Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51878
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T18:25:13.9229064Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51877
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:25:13.9005008Z",
+        "id": 4001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51876
+      },
+      {
+        "fields": {
+          "State": "2"
+        },
+        "host_utc_label": "2026-11-01T18:25:13.8953525Z",
+        "id": 10001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51875
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:02:36.8454962Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51874
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:02:36.2268941Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51873
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T18:02:35.9337752Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51872
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:02:35.9308684Z",
+        "id": 4002,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51871
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:02:35.7125032Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51870
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T18:02:35.6906944Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51869
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:02:35.6887741Z",
+        "id": 4001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51868
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T17:33:57.4866362Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51867
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T17:07:33.3012958Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51866
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T17:07:32.8314006Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51865
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T17:07:32.8280326Z",
+        "id": 4001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51864
+      },
+      {
+        "fields": {
+          "State": "2"
+        },
+        "host_utc_label": "2026-11-01T17:07:32.8247645Z",
+        "id": 10001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51863
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T16:18:10.9831317Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51862
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T16:18:10.3136421Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51861
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T16:18:10.2395360Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51860
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T16:18:10.2220742Z",
+        "id": 4002,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51859
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T16:18:09.9037257Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51858
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T16:18:09.9029953Z",
+        "id": 4001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51857
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T15:51:49.9211813Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51856
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T15:17:41.1328017Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51855
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T15:17:40.6648141Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51854
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T15:17:40.6613608Z",
+        "id": 4001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51853
+      },
+      {
+        "fields": {
+          "State": "2"
+        },
+        "host_utc_label": "2026-11-01T15:17:40.6566507Z",
+        "id": 10001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51852
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T15:12:41.8341888Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51851
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T15:01:21.7085550Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51850
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T15:01:21.2147881Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51849
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T15:01:21.2031940Z",
+        "id": 4002,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51848
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T15:01:21.1765757Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51847
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T15:01:20.7551033Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51846
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T15:01:20.7535275Z",
+        "id": 4001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51845
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:57:31.5398681Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51844
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:27:08.0856503Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51843
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T14:27:07.6209462Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51842
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:27:07.6053958Z",
+        "id": 4001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51841
+      },
+      {
+        "fields": {
+          "State": "2"
+        },
+        "host_utc_label": "2026-11-01T14:27:07.5948631Z",
+        "id": 10001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51840
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:57:35.5385528Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51839
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:57:24.9951100Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51838
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:55:49.6265869Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51837
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:55:39.4751564Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51836
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:55:38.8659979Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51835
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T13:55:38.4013913Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51834
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:55:38.3898154Z",
+        "id": 4002,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51833
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:55:38.3220747Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51832
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T13:55:38.1893854Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51831
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:55:38.1866785Z",
+        "id": 4001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51830
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:55:35.4139006Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51829
+      },
+      {
+        "fields": {
+          "State": "2"
+        },
+        "host_utc_label": "2026-11-01T13:55:34.8949483Z",
+        "id": 10001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51828
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:55:33.5968356Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51827
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T05:06:59.1141018Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51826
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T05:06:58.6223316Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51825
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T05:06:58.6206092Z",
+        "id": 4002,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51824
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T05:06:58.4621013Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51823
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T05:06:58.0785962Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51822
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T05:06:58.0766038Z",
+        "id": 4001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51821
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:55:52.4296679Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51820
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:40:48.0568073Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51819
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T01:40:47.6262169Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51818
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:40:47.6110614Z",
+        "id": 4001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51817
+      },
+      {
+        "fields": {
+          "State": "2"
+        },
+        "host_utc_label": "2026-11-01T01:40:47.6101115Z",
+        "id": 10001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51816
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:31:08.1720876Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51815
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:30:57.3588395Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51814
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:30:56.5022304Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51813
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:46:47.0388152Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51812
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:46:35.4667861Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51811
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:46:27.5033511Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51810
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:46:18.0496306Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51809
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:46:06.8069034Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51808
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:43:11.5153197Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51807
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T19:55:24.3884626Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51806
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-10-31T19:55:23.6679207Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51805
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T19:55:23.6634881Z",
+        "id": 4002,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51804
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T19:55:23.6625283Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51803
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-10-31T19:55:23.3040467Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51802
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T19:55:23.3034052Z",
+        "id": 4001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51801
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T19:16:05.3879304Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51800
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T18:47:45.4852835Z",
+        "id": 4004,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51799
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-10-31T18:47:45.0424566Z",
+        "id": 10000,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51798
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T18:47:45.0385706Z",
+        "id": 4001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51797
+      },
+      {
+        "fields": {
+          "State": "2"
+        },
+        "host_utc_label": "2026-10-31T18:47:45.0381090Z",
+        "id": 10001,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51796
+      }
+    ],
+    "log_name": "Microsoft-Windows-NetworkProfile/Operational",
+    "maximum_events": 2048,
+    "status": "OK",
+    "truncated": false
+  },
+  {
+    "events": [
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:42:28.5149097Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53899
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:42:28.4885051Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53898
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:42:28.4618355Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53897
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:41:11.6787810Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53896
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:41:11.6546630Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53895
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:41:11.6351935Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53894
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:33:44.3032578Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53893
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:33:44.2821617Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53892
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:33:44.2528016Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53891
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:33:02.3659672Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53890
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:33:02.3507383Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53889
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:33:02.3423645Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53888
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:25:11.1804298Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53887
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:25:11.1641886Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53886
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:25:11.1479098Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53885
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:11:39.0545344Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53884
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:11:39.0448106Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53883
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:11:39.0315053Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53882
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:03:43.3643729Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53881
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:03:43.3594173Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53880
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:03:43.3585508Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53879
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil"
+        },
+        "host_utc_label": "2026-11-01T18:02:35.5142992Z",
+        "id": 8001,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53878
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:02:35.2467565Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53877
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:02:35.1846930Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53876
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:02:35.1846737Z",
+        "id": 11001,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53875
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:02:34.6305195Z",
+        "id": 11000,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53874
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil"
+        },
+        "host_utc_label": "2026-11-01T18:02:34.5454952Z",
+        "id": 8000,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53873
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:02:34.5168080Z",
+        "id": 8011,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53872
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil",
+          "Reason": "La red está desconectada debido a una directiva que deshabilita la conexión automática en esta interfaz.",
+          "ReasonCode": "5"
+        },
+        "host_utc_label": "2026-11-01T17:33:57.4982183Z",
+        "id": 8003,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53871
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T17:33:57.4547710Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53870
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T16:42:57.8078009Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53869
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T16:42:57.7381749Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53868
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T16:42:57.7113588Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53867
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T16:31:55.3217201Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53866
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T16:31:55.2771697Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53865
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T16:31:55.2608860Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53864
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil"
+        },
+        "host_utc_label": "2026-11-01T16:18:10.0120012Z",
+        "id": 8001,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53863
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T16:18:09.8746324Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53862
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T16:18:09.7822704Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53861
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T16:18:09.7822524Z",
+        "id": 11001,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53860
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T16:18:09.3236859Z",
+        "id": 11000,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53859
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil"
+        },
+        "host_utc_label": "2026-11-01T16:18:09.2740848Z",
+        "id": 8000,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53858
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T16:18:09.1472607Z",
+        "id": 8011,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53857
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil",
+          "Reason": "La red está desconectada debido a una directiva que deshabilita la conexión automática en esta interfaz.",
+          "ReasonCode": "5"
+        },
+        "host_utc_label": "2026-11-01T15:51:50.6761268Z",
+        "id": 8003,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53856
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T15:51:50.5611867Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53855
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil"
+        },
+        "host_utc_label": "2026-11-01T15:01:20.9327174Z",
+        "id": 8001,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53854
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T15:01:20.8326993Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53853
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T15:01:20.6508995Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53852
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T15:01:20.6508373Z",
+        "id": 11001,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53851
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T15:01:20.2533553Z",
+        "id": 11000,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53850
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil"
+        },
+        "host_utc_label": "2026-11-01T15:01:20.1689233Z",
+        "id": 8000,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53849
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T15:01:20.1353475Z",
+        "id": 8011,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53848
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil",
+          "Reason": "La red está desconectada debido a una directiva que deshabilita la conexión automática en esta interfaz.",
+          "ReasonCode": "5"
+        },
+        "host_utc_label": "2026-11-01T14:57:31.5300002Z",
+        "id": 8003,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53847
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:57:31.5111811Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53846
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:57:29.1006539Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53845
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:57:29.0835691Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53844
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:57:29.0226879Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53843
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:27:04.7242724Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53842
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:27:04.7064402Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53841
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:27:04.6631439Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53840
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:17:56.0350938Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53839
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:17:56.0233666Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53838
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:17:56.0012306Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53837
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:10:34.9539837Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53836
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:10:34.9419387Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53835
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T14:10:34.9021761Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53834
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:59:25.1420882Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53833
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:59:25.1323978Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53832
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:59:25.1206845Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53831
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil"
+        },
+        "host_utc_label": "2026-11-01T13:55:38.2490180Z",
+        "id": 8001,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53830
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:55:38.1583868Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53829
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:55:38.1174319Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53828
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:55:38.1174165Z",
+        "id": 11001,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53827
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T13:55:38.0442885Z",
+        "id": 11000,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53826
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil"
+        },
+        "host_utc_label": "2026-11-01T13:55:38.0198509Z",
+        "id": 8000,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53825
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil",
+          "Reason": "El controlador desconectó la red.",
+          "ReasonCode": "0"
+        },
+        "host_utc_label": "2026-11-01T13:55:35.3610939Z",
+        "id": 8003,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53824
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T05:07:08.1587512Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53823
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil"
+        },
+        "host_utc_label": "2026-11-01T05:06:58.1979098Z",
+        "id": 8001,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53822
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T05:06:58.0208637Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53821
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T05:06:57.9443022Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53820
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T05:06:57.9442856Z",
+        "id": 11001,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53819
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T05:06:57.5014555Z",
+        "id": 11000,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53818
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil"
+        },
+        "host_utc_label": "2026-11-01T05:06:57.3764304Z",
+        "id": 8000,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53817
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T05:06:57.1808531Z",
+        "id": 8011,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53816
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil",
+          "Reason": "La red está desconectada debido a una directiva que deshabilita la conexión automática en esta interfaz.",
+          "ReasonCode": "5"
+        },
+        "host_utc_label": "2026-11-01T01:55:52.4844347Z",
+        "id": 8003,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53815
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:55:52.4450183Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53814
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:29:54.1986486Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53813
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:29:54.1883952Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53812
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:29:54.1850682Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53811
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:18:54.9293601Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53810
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:18:54.8938159Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53809
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:18:54.8431479Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53808
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:16:37.5097280Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53807
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:16:37.4966215Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53806
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:16:37.4489219Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53805
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:14:48.5136516Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53804
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:14:48.4962273Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53803
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:14:48.4683663Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53802
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:14:34.6437085Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53801
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:14:34.6350595Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53800
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:14:34.6255557Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53799
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:09:13.2721358Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53798
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:09:13.2405520Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53797
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:09:13.2225638Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53796
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:06:17.0326539Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53795
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:06:17.0027115Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53794
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:06:16.9902801Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53793
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:00:56.2261208Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53792
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:00:56.1999313Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53791
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:00:56.1566791Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53790
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:00:42.4367239Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53789
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:00:42.4226102Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53788
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T01:00:42.3852938Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53787
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:55:26.7721804Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53786
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:55:26.7267345Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53785
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:55:26.6807812Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53784
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:55:01.5497314Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53783
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:55:01.5358121Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53782
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:55:01.4883551Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53781
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:49:50.7876686Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53780
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:49:50.7462338Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53779
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:49:50.7073989Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53778
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:49:36.7530441Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53777
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:49:36.7355329Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53776
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:49:36.7291275Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53775
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:44:05.0679921Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53774
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:44:05.0414572Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53773
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:44:03.9649194Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53772
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:38:55.2629167Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53771
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:38:55.2452737Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53770
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:38:55.2103441Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53769
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:38:41.8394671Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53768
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:38:41.8339225Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53767
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:38:41.8316569Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53766
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:32:56.9059723Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53765
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:32:56.8819516Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53764
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:32:56.8407113Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53763
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:32:28.4014956Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53762
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:32:28.3850421Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53761
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:32:28.3773437Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53760
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:27:09.4739311Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53759
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:27:09.4602568Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53758
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T00:27:09.4296958Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53757
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T23:07:15.4812207Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53756
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T23:07:15.4666804Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53755
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T23:07:15.4182741Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53754
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T23:07:10.3623927Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53753
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T23:07:10.3515854Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53752
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T23:07:10.3500806Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53751
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:42:17.6036956Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53750
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:42:17.5843275Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53749
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:42:17.5780008Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53748
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:37:13.5390785Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53747
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:37:13.5262751Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53746
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:37:13.5014935Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53745
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:24:35.7678330Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53744
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:24:35.7575746Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53743
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:24:35.7469452Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53742
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:15:06.6899908Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53741
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:15:06.6806174Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53740
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T22:15:06.6578407Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53739
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T21:17:39.7079648Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53738
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T21:17:39.6801134Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53737
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T21:17:39.6398545Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53736
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T21:10:04.6767570Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53735
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T21:10:04.6132900Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53734
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T21:10:04.6088265Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53733
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T20:47:10.8243615Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53732
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T20:47:10.8094648Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53731
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T20:47:10.7680843Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53730
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T20:42:01.1854222Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53729
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T20:42:01.1716236Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53728
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T20:42:01.1600907Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53727
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T20:13:00.5838377Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53726
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T20:13:00.4956804Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53725
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T20:13:00.4954090Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53724
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T20:07:28.2015104Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53723
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T20:07:28.1774909Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53722
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T20:07:28.1392503Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53721
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil"
+        },
+        "host_utc_label": "2026-10-31T19:55:23.3072246Z",
+        "id": 8001,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53720
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T19:55:23.1744520Z",
+        "id": 11005,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53719
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T19:55:23.1101884Z",
+        "id": 11010,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53718
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T19:55:23.1101659Z",
+        "id": 11001,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53717
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T19:55:22.6771868Z",
+        "id": 11000,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53716
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil"
+        },
+        "host_utc_label": "2026-10-31T19:55:22.6361667Z",
+        "id": 8000,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53715
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T19:55:22.4635351Z",
+        "id": 8011,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53714
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil",
+          "Reason": "La red está desconectada debido a una directiva que deshabilita la conexión automática en esta interfaz.",
+          "ReasonCode": "5"
+        },
+        "host_utc_label": "2026-10-31T19:16:05.4051024Z",
+        "id": 8003,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53713
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-10-31T19:16:05.3866105Z",
+        "id": 11004,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53712
+      }
+    ],
+    "log_name": "Microsoft-Windows-WLAN-AutoConfig/Operational",
+    "maximum_events": 2048,
+    "status": "OK",
+    "truncated": false
+  }
+]

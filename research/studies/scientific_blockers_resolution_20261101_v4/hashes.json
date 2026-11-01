@@ -1,0 +1,24 @@
+{
+  "files": {
+    "controller/scientific_blockers.py": "677e6e4a2ff61030c8b3bca10947478154950cac6c470b905028ae3dc8f483e9",
+    "docs/SCIENTIFIC_BLOCKERS_RESOLUTION.md": "92334528d7ba2e5b493396bfc4e1343f87b7b832373d281f8166c4a512466dae",
+    "research/studies/scientific_blockers_resolution_20261101_v4/derived_incident_prefix.json": "4570755098461d9132484ce362a9e556a7bf46ed6f2b37872ae01a50a0729d53",
+    "research/studies/scientific_blockers_resolution_20261101_v4/exposure_delta.json": "51eb5c3066563bf94d2f5bfb320265e5de243b34c757365e68d0337befee7504",
+    "research/studies/scientific_blockers_resolution_20261101_v4/incident_summary.json": "b7a7c286bf5da207ec00374180b2b4a5772bd59b24c06d22af356476207a0c98",
+    "research/studies/scientific_blockers_resolution_20261101_v4/incidents.json": "bfd5904a587fd593a37bc9c46a7ea548ae60758aa93706776c78624b1b134b86",
+    "research/studies/scientific_blockers_resolution_20261101_v4/membership.json": "bbd0517d833e67fbd54fed756ac723631a6daac8be6291761094bb4eef8d38e9",
+    "research/studies/scientific_blockers_resolution_20261101_v4/mt5_log_evidence.json": "b117b59b66714607f54c9d57fa285d51c66690f21532a1998b543cdd71b820a6",
+    "research/studies/scientific_blockers_resolution_20261101_v4/native_incident_facts.json": "5d7585ed92373a0c48bc37d11e21b00367e6636cb3b35e6c10ab0505a922f1aa",
+    "research/studies/scientific_blockers_resolution_20261101_v4/network.json": "ea9281287cfcac93dac12cddf0c2c9494ab160fd488f0fdf4ccf96d0f245b881",
+    "research/studies/scientific_blockers_resolution_20261101_v4/prefix_receipt.json": "af16ffd75b1bbb57c35b82de4508a0b56dd6135fe309ed9e2d0a54585d0e5e62",
+    "research/studies/scientific_blockers_resolution_20261101_v4/source_receipts.json": "dc193564f8d359e82584af68e887f2ada2711a3ccba742671543c4883b6e1a18",
+    "research/studies/scientific_blockers_resolution_20261101_v4/source_requirements.json": "411f05887df691a4f66f0dc6224f6a3694c59e63d920591b7b12f797a77f951d",
+    "research/studies/scientific_blockers_resolution_20261101_v4/summary.json": "583e3ccb507694895d6e688e4ffe9e59890e681b118e55182a88aa38aec81bcc",
+    "research/studies/scientific_blockers_resolution_20261101_v4/temporal.json": "fa82c967e7627a966649f12f90630346b716b60160c416cd1455abb55ef97190",
+    "research/studies/scientific_blockers_resolution_20261101_v4/validation.json": "f3470585ab9b6c67d77220363a2577c59acba5b9ae6ecfb580f5cebf48486ff7",
+    "research/studies/scientific_blockers_resolution_20261101_v4/windows.json": "97ec4266e67133bd1242568e0209cfe533deb713ac65e9a4eaf00f3c02696c5a",
+    "tests/test_scientific_blockers.py": "988ed3ef5abe4f3537f07672a7975ffc09692beaf6e9a1bd2c37669ac164b0e9",
+    "tools/resolve_scientific_blockers.py": "dcf688ebd18d10a3ed66dad36745cdcba80aaccc3e4ceb7fb40e58f4fc75b0d4"
+  },
+  "root_sha256": "a87dd5798c83f635bcf3cc188cb9b8414cd79be901e2090a5fa2dda2fd3a4774"
+}

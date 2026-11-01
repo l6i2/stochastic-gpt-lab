@@ -1,0 +1,28 @@
+{
+  "all_derived_sources_in_verified_prefix": true,
+  "backfill": false,
+  "classifications": {
+    "PROBABLE_CAUSE": 9,
+    "UNKNOWN_CAUSE": 30,
+    "VERIFIED_CAUSE": 4
+  },
+  "derived_reasons": {
+    "CALLBACK_GAP_TWO_EXISTING_TIMERS": 27,
+    "DISCONNECTED": 78
+  },
+  "derived_records": 105,
+  "derived_unique_source_observations": 84,
+  "gap_classifications": {
+    "PROBABLE_CAUSE": 7,
+    "UNKNOWN_CAUSE": 16,
+    "VERIFIED_CAUSE": 4
+  },
+  "gap_coverage_restored": false,
+  "missing_broker_events": "UNKNOWN",
+  "raw_facts": 43,
+  "raw_kinds": {
+    "CALLBACK_TIMER_GAP": 27,
+    "DISCONNECTION_OBSERVED_START": 8,
+    "RECONNECTION_OBSERVED": 8
+  }
+}
