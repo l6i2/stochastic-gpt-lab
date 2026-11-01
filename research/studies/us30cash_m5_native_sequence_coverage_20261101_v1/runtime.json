@@ -1,0 +1,27 @@
+{
+  "enabled": {
+    "enabled": true,
+    "live_trading": false,
+    "scoring": false,
+    "training": false
+  },
+  "guard_scope": "OPERATIONAL_RESOURCE_LIMIT_REJECT_WHOLE_RESPONSE_NOT_A_DATA_TOLERANCE",
+  "raw_collector_pid": 24392,
+  "raw_collector_restarted": false,
+  "reference_resource_guard_bytes": 16777216,
+  "worker_source_records": 4136,
+  "workers": [
+    {
+      "parent_pid": 18632,
+      "pid": 13132,
+      "private_mb": 15.87,
+      "working_mb": 10.3
+    },
+    {
+      "parent_pid": 24028,
+      "pid": 18632,
+      "private_mb": 1.08,
+      "working_mb": 0.89
+    }
+  ]
+}

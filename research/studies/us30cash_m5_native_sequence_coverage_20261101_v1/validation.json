@@ -1,0 +1,16 @@
+{
+  "actual_market_ticks": 0,
+  "actual_upgrade_idempotence": "PASS",
+  "affected_tests_passed": 64,
+  "exact_feature_method_hash_preserved": true,
+  "failures": 0,
+  "labels_or_scoring": false,
+  "new_coverage_tests": 14,
+  "old_ledger_prefix_verified": true,
+  "original_manifest_preserved": true,
+  "original_pin_preserved": true,
+  "prior_native_indicators_evidence_reused": true,
+  "protected_rows_read": 0,
+  "reference_tick_queries_executed_on_live_data": 0,
+  "skipped": 0
+}

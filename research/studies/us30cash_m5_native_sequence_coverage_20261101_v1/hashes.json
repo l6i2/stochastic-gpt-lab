@@ -1,0 +1,20 @@
+{
+  "files": {
+    "controller/native_sequence_coverage.py": "09143887de75ee92fb779bd175a180eeb5ce7ca478e6568198ea1a5bf17dc0ff",
+    "controller/prospective_processor.py": "5cc1e4398dc1f3d292e89a77c6a80406c244160cd6bf1fdbd87f5c509bc78c43",
+    "research/studies/us30cash_m5_native_sequence_coverage_20261101_v1/README_ES.md": "8a996784b912c8cfee14576f1ec262688dc2744f00325965fd48f8e7dde96236",
+    "research/studies/us30cash_m5_native_sequence_coverage_20261101_v1/active_deployment.json": "f39bd8317f93b3b56b3423b08b3f4b5f6089768c2f4d1704ac45085a057348e7",
+    "research/studies/us30cash_m5_native_sequence_coverage_20261101_v1/ledger_prefix_verification.json": "3e577bf2b51da2939f152e4b2b91571b7cb82f69fb182dbd3173a97454b59701",
+    "research/studies/us30cash_m5_native_sequence_coverage_20261101_v1/maturity_snapshot.json": "47d28a1a04aeeb47279866e1b966d1141469abb997218b94274404d38b5897d2",
+    "research/studies/us30cash_m5_native_sequence_coverage_20261101_v1/native_evidence_reuse.json": "ca4a74f0785d0fccfd978ad06d35916486082659fe40df15bcb84088ab4b753b",
+    "research/studies/us30cash_m5_native_sequence_coverage_20261101_v1/raw_snapshot.json": "f081036ba0fe264cf10eec3048ff4008591cb2eb41d4a81ec64f7a21126eb526",
+    "research/studies/us30cash_m5_native_sequence_coverage_20261101_v1/result.json": "e676f536f87a8f7585498258c0cc5853ddd7b2ccd3c45c028535362f7c22a615",
+    "research/studies/us30cash_m5_native_sequence_coverage_20261101_v1/runtime.json": "55540d7ff423aa4f0b640c0ee937ae1d9c955adabe91b9f199e3520187e56d6e",
+    "research/studies/us30cash_m5_native_sequence_coverage_20261101_v1/upgrade_receipt.json": "be483a6996a2ecfaba95db897c2f893a13ef7143b918c64481c5d035f03d8399",
+    "research/studies/us30cash_m5_native_sequence_coverage_20261101_v1/validation.json": "69950b645e8e10af82be60ccc816a250a475b2ada9d98ba0ae1fc73d46eb87d4",
+    "tests/test_native_sequence_coverage.py": "d2f9d47fd269354cf70ddd72187a5a0c86e9da49aa8e54b982ef9ce18e953405",
+    "tests/test_prospective_processor.py": "7a762ae516c7c5ce64660df81de1ca19ad0192c56b14ffb7842683c2a8641818",
+    "tools/prospective_pipeline.py": "fa18ab11a017bf2a5d022f80a8a73fabb2dd768ff15ce5bb1555e556fdbf29b2"
+  },
+  "root_sha256": "bd82bd210bb5939dda0f26117be66b9922d9907a7128735061ea155580934e4f"
+}

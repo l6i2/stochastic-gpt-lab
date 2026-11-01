@@ -1,0 +1,12 @@
+{
+  "ATR_PARITY": "PASS_EXACT",
+  "HA_PARITY": "PASS_EXACT",
+  "MAIN_K_PARITY": "PASS_RETAINED_BOUND",
+  "approved_calculation_source_sha256": "b946d860e2a37f8ac5747f8fc69e70ef10543514a2ac6cb54cb54a624c2e8514",
+  "current_feature_method_identical": true,
+  "features_fragment_sha256": "c8fe7846f6569d824cd7158c8fb72998a21a7aa3977901aed6cdde6fbc6e109d",
+  "native_reexecution": false,
+  "original_certificate_path": "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/native_oracle.json",
+  "original_certificate_sha256": "479d5d6900e1ca6425bc1f91737a5664ed8e514ec0ccce89b02fac1d2e3467bb",
+  "scope": "UNCHANGED_FEATURE_IMPLEMENTATION_ONLY_NOT_NEW_LIVE_DATA_PARITY"
+}

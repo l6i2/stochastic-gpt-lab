@@ -5,6 +5,7 @@ import hashlib,json,math,sqlite3
 from pathlib import Path
 from .pretrain_contracts import canonical,seal
 from .isolated_observation import GENESIS
+from .native_sequence_coverage import append_quote,compare_bucket
 
 
 def initial_state():
@@ -113,9 +114,10 @@ class Processor:
                 first=False
             else:first=bucket is None
             if bucket is None:
-                bucket=dict(timeframe_seconds=seconds,open_msc=opening,open=price,high=price,low=price,close=price,tick_volume=0,first_ref=ref,last_ref=ref,segment=self.s['segment'],tick_size=self.step,issues=['FIRST_PARTIAL_BUCKET'] if first else [])
+                bucket=dict(timeframe_seconds=seconds,open_msc=opening,open=price,high=price,low=price,close=price,tick_volume=0,bid_sequence_sha256=GENESIS,first_ref=ref,last_ref=ref,segment=self.s['segment'],tick_size=self.step,issues=['FIRST_PARTIAL_BUCKET'] if first else [])
                 self.s['buckets'][name]=bucket
             bucket['high']=max(bucket['high'],price);bucket['low']=min(bucket['low'],price);bucket['close']=price;bucket['tick_volume']+=1;bucket['last_ref']=ref
+            if 'bid_sequence_sha256' in bucket:bucket['bid_sequence_sha256']=append_quote(bucket['bid_sequence_sha256'],row,self.step)
             if not row['connected']:bucket['issues']=sorted(set(bucket['issues']+['DISCONNECTED']))
 
     def close_bucket(self,bucket,tick,ref,receipt):
@@ -127,18 +129,20 @@ class Processor:
             if int(bar['time'])*1000!=bucket['open_msc']:differences.append('time')
             if int(bar['tick_volume'])!=bucket['tick_volume']:differences.append('tick_volume')
             parity=not differences
-        evidence=dict(bucket=bucket,native_reference=native,parity_exact=parity,differences=differences,closure_ref=ref,native_closure_msc=tick['time_msc'],source_receipt=receipt,compute_clock=self.clock(),coverage_scope='NATIVE_AGGREGATE_OHLC_BID_VOLUME_PARITY_NOT_EXHAUSTIVE_EVENT_PROOF')
+        sequence_proof=compare_bucket(bucket,native.get('bid_sequence_reference') if native else None)
+        sequence_ok=sequence_proof['status']=='PASS_EXACT_NATIVE_BID_SEQUENCE_REFERENCE'
+        evidence=dict(bucket=bucket,native_reference=native,parity_exact=parity,differences=differences,bid_sequence_coverage=sequence_proof,closure_ref=ref,native_closure_msc=tick['time_msc'],source_receipt=receipt,compute_clock=self.clock(),coverage_scope='EXACT_NATIVE_BID_SEQUENCE_AND_AGGREGATE_REFERENCE_NOT_INDEPENDENT_GENERATION_UTC')
         evidence_hash=seal(evidence);self.emit('BAR_COMPARISON',dict(evidence_hash=evidence_hash,**evidence))
-        if not parity or bucket['issues']:
+        if not parity or not sequence_ok or bucket['issues']:
             self.s['rejected_buckets']+=1
             if seconds==300 and bucket['issues']!=['FIRST_PARTIAL_BUCKET']:self.s['protocol_stream_unbroken']=False
-            self.emit('INCOMPLETE_BUCKET',dict(observed_bucket=bucket,evidence_hash=evidence_hash,reasons=bucket['issues']+([] if parity else ['NATIVE_PARITY_MISSING_OR_FAILED'])))
+            self.emit('INCOMPLETE_BUCKET',dict(observed_bucket=bucket,evidence_hash=evidence_hash,reasons=bucket['issues']+([] if parity else ['NATIVE_PARITY_MISSING_OR_FAILED'])+sequence_proof['reasons']))
             if seconds==300:self.reset_context()
             return
         if (bucket['open_msc']//1000+seconds)*1000-1>=tick['time_msc']:raise ValueError('BAR_NOT_CLOSED_AT_DECISION_INPUT')
         step=float(self.step)
         bar=dict(time=bucket['open_msc']//1000,**{k:bucket[k]*step for k in ('open','high','low','close')},tick_volume=bucket['tick_volume'],segment=bucket['segment'],evidence_hash=evidence_hash)
-        bar_hash=seal(bar);self.emit('CLOSED_AGGREGATE_BAR',dict(bar=bar,bar_hash=bar_hash,closure_ref=ref,quality='EXACT_NATIVE_AGGREGATE_PARITY_ONLY',scientific_coverage_certified=False))
+        bar_hash=seal(bar);self.emit('CLOSED_AGGREGATE_BAR',dict(bar=bar,bar_hash=bar_hash,closure_ref=ref,quality='EXACT_NATIVE_AGGREGATE_AND_BID_SEQUENCE_REFERENCE',scientific_coverage_certified=False))
         if seconds==60:self.s['m1_bars']+=1;return
         self.s['own_bars']+=1;self.s['own_run_bars']+=1
         if self.s['protocol_stream_unbroken'] and self.s['after_warmup_signals']>=self.req['signals'] and self.s['post_signal_bars']<self.req['post_bars']:

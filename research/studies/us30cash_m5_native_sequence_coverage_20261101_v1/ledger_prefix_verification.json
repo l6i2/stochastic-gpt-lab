@@ -1,0 +1,73 @@
+{
+  "code_versions": [
+    {
+      "admitted": false,
+      "coverage_reference_policy": "EXACT_NATIVE_BID_SEQUENCE_REFERENCE_AND_OHLC_VOLUME_NO_REFERENCE_ROWS_ADOPTED",
+      "kind": "CODE_VERSION",
+      "ledger_index": 2474,
+      "new_pin_sha256": "260dd5388e93e59eaa39187c21b0c0c43275e38d20ebb9f9c636cc65f9ce4339",
+      "old_artifacts_rewritten": false,
+      "previous_pin_sha256": "b3b81345afa40a6d11806fd1e126ff42b5adead82155f6315c2e8db412adfe9e",
+      "quarantine": true,
+      "sha256": "7993cda047bf3b79df8b2c01be0c5e64d9df0c7150920c11fc9d6847fd85e3f2",
+      "source_cursors": {
+        "obs_850c9ced05834b38b6e4c9e351a49f86": {
+          "head": "c1ff2f1555cb3076116d7391e45ad9f5cde29495d910c841a5ecc0cfff089b67",
+          "manifest_hash": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+          "native_head": "0814253d46eda3b3ce885eb15a68e304395fb36861dda3d0a4ec08cf9f584ba9",
+          "native_sequence": 4166,
+          "offset": 7777572,
+          "rows": 4028
+        }
+      }
+    }
+  ],
+  "head": "58cb7ce4d66ae57b1596b2e4977e82104a0b874e0ceaa46fba20ab8529f4847b",
+  "old_ledger_prefix_retained": true,
+  "read_only_transaction": true,
+  "rows": 2572,
+  "state": {
+    "acquisition_boundary": null,
+    "active_code_pin": "260dd5388e93e59eaa39187c21b0c0c43275e38d20ebb9f9c636cc65f9ce4339",
+    "after_warmup_signals": 0,
+    "atr": null,
+    "buckets": {},
+    "cursors": {
+      "obs_850c9ced05834b38b6e4c9e351a49f86": {
+        "head": "999817d5cb77f5716890fc134b29ef1f83f5280c8424a6eeed63bd2c0aed7b8d",
+        "manifest_hash": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+        "native_head": "3878578a5e5e62904eb029dce5cc310b36c1c918e4b090f6a7373a2dbd1ad44f",
+        "native_sequence": 4274,
+        "offset": 7986336,
+        "rows": 4136
+      }
+    },
+    "evaluable_buy": 0,
+    "evaluable_sell": 0,
+    "first_800_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "ha": null,
+    "history": [],
+    "incident_count": 69,
+    "last_callback": 215800078,
+    "last_receipt": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-01T14:14:07.601243+00:00",
+      "monotonic_ns": 215813278083300,
+      "uptime_ms": 215800609,
+      "utc_certified": false
+    },
+    "last_tick": null,
+    "m1_bars": 0,
+    "own_bars": 0,
+    "own_run_bars": 0,
+    "post_signal_bars": 0,
+    "previous_k": null,
+    "protocol_stream_unbroken": false,
+    "rejected_buckets": 0,
+    "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+    "signals_buy": 0,
+    "signals_sell": 0,
+    "source_records": 4136
+  },
+  "state_sha256": "2582aa8cf6cbd76da9ba1df5694c27a3c9fd8cbdd94c7700d50ebcdf76c47d84"
+}

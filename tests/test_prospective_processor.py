@@ -4,6 +4,7 @@ from controller.prospective_processor import Processor,Ledger,initial_state
 from controller.pretrain_contracts import seal
 from test_isolated_observation import clock
 from python.native_metadata_v3 import main_k
+from controller.native_sequence_coverage import summarize_reference
 
 REQ=dict(warmup=350,signals=800,post_bars=100,evaluable=200,each_side=80)
 
@@ -24,8 +25,15 @@ class PipelineTests(unittest.TestCase):
         # Exact integer grid; fixtures use integral prices.
         bar={k:(int(v) if k!='time' else v) for k,v in bar.items()}
         bucket=dict(timeframe_seconds=300,open_msc=t,**{k:bar[k] for k in ('open','high','low','close','tick_volume')},first_ref={},last_ref={},segment='segment_a',tick_size='1',issues=[])
-        self.native[(t//1000,300)]=dict(bar=bar,kind='SYNTHETIC_NATIVE_ORACLE')
+        self.native[(t//1000,300)]=self.reference(bucket,bar)
         self.p.close_bucket(bucket,dict(time_msc=t+300000),dict(native_time_msc=t+300000),clock(i+1))
+
+    def reference(self,bucket,bar):
+        start=bucket['open_msc'];prices=[bar['open'],bar['high'],bar['low']]+[bar['close']]*(bucket['tick_volume']-3)
+        rows=[dict(time_msc=start+i,time=(start+i)//1000,bid=p,ask=p+1,flags=2) for i,p in enumerate(prices)]
+        proof=summarize_reference(rows,start,start+bucket['timeframe_seconds']*1000,'1')
+        bucket['bid_sequence_sha256']=proof['bid_sequence_sha256']
+        return dict(bar=bar,kind='SYNTHETIC_NATIVE_ORACLE',bid_sequence_reference=proof)
 
     def test_no_bar_from_heartbeats_or_first_partial(self):
         self.row(0,1,kind='HEARTBEAT');self.assertEqual(self.state['own_bars'],0)
@@ -125,7 +133,7 @@ class PipelineTests(unittest.TestCase):
             t=900000+i*300000;price=110 if (i//4)%2==0 else 190
             bar=dict(time=t//1000,open=price,high=200,low=100,close=price,tick_volume=10)
             bucket=dict(timeframe_seconds=300,open_msc=t,open=price,high=200,low=100,close=price,tick_volume=10,segment='segment_a',issues=[])
-            self.native[(t//1000,300)]=dict(bar=bar)
+            self.native[(t//1000,300)]=self.reference(bucket,bar)
             self.p.close_bucket(bucket,dict(time_msc=t+300000),dict(native_time_msc=t+300000),clock(i+1));i+=1
         self.assertEqual(self.state['after_warmup_signals'],800)
         for j in range(105):self.closed(i+j)

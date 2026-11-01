@@ -7,6 +7,7 @@ from controller.authorized_capture import CaptureManager,sha,once
 from controller.isolated_observation import atomic,host_clock,native_line,GENESIS
 from controller.pretrain_contracts import seal
 from controller.prospective_processor import Ledger,Processor
+from controller.native_sequence_coverage import summarize_reference
 
 BASE=ROOT/'outputs/prospective_derivatives_v1'
 
@@ -42,15 +43,40 @@ class NativeReference:
             if rows is not None:
                 if any(int(r['time'])!=opening for r in rows) or len(rows)>1:raise ValueError('NATIVE_REFERENCE_OUT_OF_REQUESTED_BAR')
                 if len(rows):bar={n:rows[0][n].item() for n in rows.dtype.names}
-            evidence=dict(kind='COPY_RATES_COMPARISON_ONLY_NOT_PROSPECTIVE_INPUT',bar=bar,requested_native_open=opening,timeframe_seconds=seconds,request_before=before,request_after=after,time_semantics='NATIVE_LABEL_REQUEST_NO_UTC_MAPPING',not_used_to_fill_missing_raw=True)
+            coverage=None
+            if bar is not None:
+                ticks=self.mt5.copy_ticks_range('US30Cash',datetime.fromtimestamp(opening,timezone.utc),datetime.fromtimestamp(opening+seconds-0.001,timezone.utc),self.mt5.COPY_TICKS_ALL)
+                if ticks is not None:
+                    if ticks.nbytes>16*1024*1024:raise ValueError('REFERENCE_RESOURCE_GUARD_NO_PARTIAL_ACCEPTANCE')
+                    coverage=summarize_reference(ticks,opening*1000,(opening+seconds)*1000,self.step)
+                after=host_clock()
+            evidence=dict(kind='NATIVE_BAR_AND_TICK_SEQUENCE_COMPARISON_ONLY_NOT_PROSPECTIVE_INPUT',bar=bar,bid_sequence_reference=coverage,requested_native_open=opening,timeframe_seconds=seconds,request_before=before,request_after=after,time_semantics='NATIVE_LABEL_REQUEST_NO_UTC_MAPPING',not_used_to_fill_missing_raw=True)
             return dict(evidence,hash=seal(evidence))
         except (ValueError,OSError) as exc:return dict(bar=None,error=type(exc).__name__+':'+str(exc),comparison_only=True)
     def close(self):
         if self.mt5:self.mt5.shutdown();self.mt5=None
 
 
+def active_code_pin():
+    pointer=BASE/'deployment_pin_current.json'
+    path=BASE/'deployment_pin.json'
+    if pointer.exists():
+        ref=json.loads(pointer.read_text());name=ref['file']
+        if Path(name).name!=name:raise ValueError('INVALID_PIPELINE_PIN_POINTER')
+        path=BASE/'deployment_pins'/name
+        if sha(path)!=ref['sha256']:raise ValueError('PIPELINE_PIN_POINTER_HASH_CHANGED')
+    return path,json.loads(path.read_text())
+
+
+def feature_fragment_hash(source):
+    import ast,hashlib
+    tree=ast.parse(source)
+    method=next(n for c in tree.body if isinstance(c,ast.ClassDef) and c.name=='Processor' for n in c.body if isinstance(n,ast.FunctionDef) and n.name=='features')
+    return hashlib.sha256(ast.get_source_segment(source,method).encode()).hexdigest()
+
+
 def verify_code_pin():
-    pin=json.loads((BASE/'deployment_pin.json').read_text())
+    _,pin=active_code_pin()
     for name,expected in pin['files'].items():
         path=(ROOT/name).resolve()
         if not path.is_relative_to(ROOT.resolve()) or sha(path)!=expected:raise ValueError('PIPELINE_PIN_CHANGED_'+name)
@@ -64,11 +90,19 @@ class Worker:
         try:msvcrt.locking(self.lock.fileno(),msvcrt.LK_NBLCK,1)
         except OSError:self.lock.close();raise RuntimeError('DERIVED_WORKER_ALREADY_RUNNING')
         self.manifest=manifest;self.oracle=NativeReference();self.req=frozen_requirements()
-        pin=json.loads((BASE/'deployment_pin.json').read_text());certificate=pin['native_indicator_oracle']
-        if certificate['worker_source_sha256']!=sha(ROOT/'controller/prospective_processor.py') or certificate['ATR_PARITY']!='PASS_EXACT' or certificate['HA_PARITY']!='PASS_EXACT' or certificate['MAIN_K_PARITY']!='PASS_RETAINED_BOUND':raise ValueError('NATIVE_IMPLEMENTATION_ORACLE_NOT_BOUND')
+        pin_path,pin=active_code_pin();certificate=pin['native_indicator_oracle'];binding=pin.get('unchanged_feature_fragment')
+        implementation_bound=certificate['worker_source_sha256']==sha(ROOT/'controller/prospective_processor.py')
+        if binding:
+            implementation_bound=binding['approved_worker_source_sha256']==certificate['worker_source_sha256'] and binding['feature_fragment_sha256']==feature_fragment_hash((ROOT/'controller/prospective_processor.py').read_text())
+        if not implementation_bound or certificate['ATR_PARITY']!='PASS_EXACT' or certificate['HA_PARITY']!='PASS_EXACT' or certificate['MAIN_K_PARITY']!='PASS_RETAINED_BOUND':raise ValueError('NATIVE_IMPLEMENTATION_ORACLE_NOT_BOUND')
         self.ledger=Ledger(self.folder/'quarantine.sqlite3')
-        once(self.folder/'manifest.json',dict(capture_id=manifest['capture_id'],raw_manifest_sha256=sha(self.manager.root/'collection_manifest.json'),code_pin_sha256=sha(BASE/'deployment_pin.json'),requirements=frozen_requirements(),mode='DERIVED_QUARANTINE',raw_inputs='EXISTING_POST_ACTIVATION_DURABLE_JOURNAL_ONLY',native_reference='COPY_RATES_COMPARISON_ONLY',no_backfill=True,labels=False,scoring=False,training=False,admitted_dataset_hash=None,live_trading=False))
+        original_manifest=dict(capture_id=manifest['capture_id'],raw_manifest_sha256=sha(self.manager.root/'collection_manifest.json'),code_pin_sha256=sha(BASE/'deployment_pin.json'),requirements=frozen_requirements(),mode='DERIVED_QUARANTINE',raw_inputs='EXISTING_POST_ACTIVATION_DURABLE_JOURNAL_ONLY',native_reference='COPY_RATES_COMPARISON_ONLY',no_backfill=True,labels=False,scoring=False,training=False,admitted_dataset_hash=None,live_trading=False)
+        once(self.folder/'manifest.json',original_manifest)  # origin manifest remains byte-identical
         self.verify_prefixes()
+        active_hash=sha(pin_path);old_hash=self.ledger.state.get('active_code_pin',original_manifest['code_pin_sha256'])
+        if active_hash!=old_hash:
+            self.ledger.emit('CODE_VERSION',dict(previous_pin_sha256=old_hash,new_pin_sha256=active_hash,source_cursors=self.ledger.state['cursors'],coverage_reference_policy=pin.get('coverage_policy','ORIGIN_AGGREGATE_ONLY'),old_artifacts_rewritten=False))
+            self.ledger.state['active_code_pin']=active_hash;self.ledger.commit()
     def verify_prefixes(self):
         for segment,cursor in self.ledger.state['cursors'].items():
             if Path(segment).name!=segment:raise ValueError('INVALID_RAW_SEGMENT')
@@ -113,6 +147,10 @@ class Worker:
         if processed:self.ledger.emit('MEMBERSHIP_EXPOSURE_PREFIX',dict(capture_id=self.manifest['capture_id'],raw_cursors=s['cursors'],labels_read=0,protected_rows_read=0,legacy_independence='PENDING'));self.ledger.commit()
         monitor=Processor(s,self.ledger.emit,self.oracle,self.oracle.step or '1',self.req).maturity()
         monitor.update(process_id=os.getpid(),observed_clock=host_clock(),raw_capture_id=self.manifest['capture_id'],source_cursors=s['cursors'],ledger_chain_head=self.ledger.head,ledger_artifacts=self.ledger.count,source_records_last_poll=processed,poll_elapsed_ms=round((time.monotonic()-started)*1000,2),status='ACTIVE_QUARANTINED_WAITING_NATIVE_TICKS' if not s['last_tick'] else 'ACTIVE_DERIVED_QUARANTINED',native_indicators_parity='PASS_SYNTHETIC_IMPLEMENTATION_LIVE_SEED_MEMBERSHIP_PENDING',m5_parity='NOT_OBSERVED_NO_CLOSED_BUCKETS' if not s['own_bars'] else 'EXACT_AGGREGATES_ONLY_NOT_EVENT_COMPLETENESS')
+        raw_status=json.loads((self.manager.root/'collector_status.json').read_text())
+        monitor.update(coverage_rule='EXACT_NATIVE_BID_SEQUENCE_PLUS_OHLC_VOLUME_REFERENCE_REQUIRED',raw_collector_status=raw_status['status'],raw_callback_age_ms=raw_status['last_callback_age_ms'],active_code_pin=s.get('active_code_pin',sha(BASE/'deployment_pin.json')),reference_ticks_adopted_as_raw=0)
+        if s['own_bars']:monitor['m5_parity']='EXACT_NATIVE_BID_SEQUENCE_AND_AGGREGATE_REFERENCE_ONLY'
+        if raw_status['status']!='ACTIVE_QUARANTINED':monitor['status']='SOURCE_NOT_RECENT_DERIVATIVES_QUARANTINED'
         atomic(self.folder/'maturity.json',monitor);return monitor
     def close(self):
         self.oracle.close();self.ledger.close();self.lock.close()
