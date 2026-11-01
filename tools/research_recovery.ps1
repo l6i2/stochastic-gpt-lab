@@ -10,13 +10,24 @@ New-Item -ItemType Directory -Path (Join-Path $base 'recovery_events') -Force | 
 $config=Join-Path $base 'xm_readonly_restart.ini'
 $expected="[Experts]`r`nEnabled=1`r`nAllowLiveTrading=0`r`nAllowDllImport=0`r`n[Charts]`r`nProfileLast=Default`r`n"
 if(Test-Path -LiteralPath $config){if([IO.File]::ReadAllText($config) -ne $expected){throw 'RECOVERY_CONFIG_CHANGED'}}else{[IO.File]::WriteAllText($config,$expected)}
-$nts=$null;$receipt=$null;$lastReceipt=[datetime]::MinValue;$lastNts=[datetime]::MinValue;$lastLaunch=[datetime]::MinValue;$prior=''
+$nts=$null;$receipt=$null;$lastPipeline=[datetime]::MinValue;$lastReceipt=[datetime]::MinValue;$lastNts=[datetime]::MinValue;$lastLaunch=[datetime]::MinValue;$prior=''
 try{
  do {
     $processes=@(Get-CimInstance Win32_Process)
     $xm=@($processes | Where-Object {$_.ExecutablePath -eq $terminal})
     $watch=@($processes | Where-Object {$_.Name -eq 'powershell.exe' -and $_.CommandLine -like ('*"'+(Join-Path $repo 'tools\new_capture_watchdog.ps1')+'"*')})
     $actions=@()
+    $pipelineEnable=Join-Path $repo 'outputs\prospective_derivatives_v1\enabled.json'
+    if(Test-Path -LiteralPath $pipelineEnable){
+        $pipelineEnabled=(Get-Content -LiteralPath $pipelineEnable -Raw | ConvertFrom-Json).enabled
+        $pipelineScript=Join-Path $repo 'tools\prospective_pipeline.py'
+        $pipeline=@($processes | Where-Object {$_.Name -eq 'pythonw.exe' -and $_.CommandLine -like ('*"'+$pipelineScript+'" --serve*')})
+        if($pipelineEnabled -and $pipeline.Count -eq 0 -and ([datetime]::UtcNow-$lastPipeline).TotalSeconds -ge 60){
+            $actions+='START_QUARANTINED_DERIVATIVE_WORKER'
+            if(!$DryRun){Start-Process (Join-Path $repo '.venv\Scripts\pythonw.exe') -ArgumentList ('"'+$pipelineScript+'" --serve') -WorkingDirectory $repo -WindowStyle Hidden -RedirectStandardOutput (Join-Path $repo 'outputs\prospective_derivatives_v1\worker.stdout') -RedirectStandardError (Join-Path $repo 'outputs\prospective_derivatives_v1\worker.stderr') | Out-Null}
+            $lastPipeline=[datetime]::UtcNow
+        }
+    }
     if($xm.Count -eq 0 -and ([datetime]::UtcNow-$lastLaunch).TotalSeconds -ge 120){
         # Only the already identified XM installation. No credentials, login change,
         # tester, orders or script injection. Preserve its persisted profile.

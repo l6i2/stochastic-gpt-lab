@@ -1,0 +1,21 @@
+{
+  "admitted_dataset_hash": null,
+  "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+  "code_pin_sha256": "b3b81345afa40a6d11806fd1e126ff42b5adead82155f6315c2e8db412adfe9e",
+  "labels": false,
+  "live_trading": false,
+  "mode": "DERIVED_QUARANTINE",
+  "native_reference": "COPY_RATES_COMPARISON_ONLY",
+  "no_backfill": true,
+  "raw_inputs": "EXISTING_POST_ACTIVATION_DURABLE_JOURNAL_ONLY",
+  "raw_manifest_sha256": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a",
+  "requirements": {
+    "each_side": 80,
+    "evaluable": 200,
+    "post_bars": 100,
+    "signals": 800,
+    "warmup": 350
+  },
+  "scoring": false,
+  "training": false
+}

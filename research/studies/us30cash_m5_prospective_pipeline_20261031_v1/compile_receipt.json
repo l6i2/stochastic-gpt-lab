@@ -1,0 +1,9 @@
+{
+  "compile_log_sha256": "408bbac56e956c178aed008acfe8a10c21091091821f5848de4fce2ac3a1e890",
+  "errors": 0,
+  "ex5_sha256": "c06c241a6076f7f05c074c6dd981e85cc46b935f1089f7ef5a2ceeacc7be4f2c",
+  "execution": "REAL_MT5_ISOLATED_SYNTHETIC_CUSTOM_SYMBOL_ONLY",
+  "main_terminal_preserved": true,
+  "source_sha256": "c8148739edd8135e85d7cfb668a06b823cd839c4e097efb9d08683e657b539cd",
+  "warnings": 0
+}

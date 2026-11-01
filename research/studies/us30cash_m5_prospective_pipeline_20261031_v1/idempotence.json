@@ -1,0 +1,25 @@
+{
+  "clock": {
+    "boot_id": "111",
+    "host_utc_label": "2026-11-01T00:05:21.418551+00:00",
+    "monotonic_ns": 164880974391200,
+    "uptime_ms": 164874109,
+    "utc_certified": false
+  },
+  "cursors": {
+    "obs_850c9ced05834b38b6e4c9e351a49f86": {
+      "head": "ecd50e2c9b1b2c0241fdcb2370b4e6830983b4594f1479050818db7f6c1a3395",
+      "manifest_hash": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+      "native_head": "30421b00c944b148f39cc80092148b38f1f57f727f649711d97c2e2a71b56aaa",
+      "native_sequence": 2963,
+      "offset": 5451758,
+      "rows": 2825
+    }
+  },
+  "duplicate_artifacts": 0,
+  "ledger_head": "6a2854385a1910b953c58cea0cb0791bba2acaefb338b534c80f674448504046",
+  "raw_collector_restarted": false,
+  "raw_prefix_mutated": false,
+  "restart_idempotence": "PASS_WITH_ACTUAL_POST_START_NATIVE_RECORDS",
+  "source_records": 2825
+}

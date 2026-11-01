@@ -1,0 +1,28 @@
+{
+  "files": {
+    "controller/prospective_processor.py": "b946d860e2a37f8ac5747f8fc69e70ef10543514a2ac6cb54cb54a624c2e8514",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/README_ES.md": "140e38db8e04538791188cc33e04f0b991df315af944ccad82f152f51104f654",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/artifact_normalization.json": "7836ba903fbe82de12d659e663f9d26196951f79e45768f86b3bba833e68ba3f",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/compile_receipt.json": "6792cfee5f124ec0d680dfaab4c5cb226b46aee9023f0c4146d30e7df7563797",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/deployment_pin.json": "f91ff1ace37119177165186ffef1d2a0279493a03cd858033f18cfc88d76ad0b",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/derived_activation.json": "e73dddef2cbeaefdea7bf24498b4d2db3a0b3d5f38cd4544b13cd5a54dfffbd0",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/derived_checkpoint_receipt.json": "6a7e488ec098d22b5fd8f423f9b2dbfa18797228fc8757361ae06a48fb565807",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/derived_manifest.json": "10d084c230070d7cf333d4b8104e3dbe73fa30652c142b95c5ac88abf980dfa8",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/executed_synthetic_oracle.mq5": "2a24ae9390589ac86a3953124fe5221d3d170176b32afeeaa34dff64416f40d4",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/idempotence.json": "24fa8fc03937eed47599a9b2c54c8c06ee69743ae16b0d9db1d51d5d191b56c0",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/maturity_snapshot.json": "aaf4eec042bfa96ea720c32310cebb76400cb16bc8596d5d099fd4d022be55ed",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/native_oracle.json": "479d5d6900e1ca6425bc1f91737a5664ed8e514ec0ccce89b02fac1d2e3467bb",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/raw_status_snapshot.json": "4c022e226b87a54908a919dcda071c199d98c0b262ae58753ee07f61775d31e4",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/result.json": "d6c2d9beb888179561c39a46304b9e4cfc66876eb2ea6f43cb81593f86e99a7f",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/runtime.json": "fc927cdb2eeee86d4e781e0eb8a493a356b2775fc3eaf7303c836b86a976d7c9",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/synthetic_native_indicator_oracle.csv": "2d3403427e0495fd8cf3a5871cd4aa173d54421cbd76e952159e4e81c74c7b6b",
+    "research/studies/us30cash_m5_prospective_pipeline_20261031_v1/validation.json": "821cb7e97d37d93b6d2a8ae00fc4651a3953ed2bbe0bc23422baa3631e8696f0",
+    "tests/mql5/ProspectiveIndicatorOracle.mq5": "2ce468d899855810cbec8cda60b0693c2586603bdb5474557e73d70342627ee9",
+    "tests/test_prospective_processor.py": "00dc37adea638b4f85eded9e48ca811097fc67e0547ebf26a978ec156d18e889",
+    "tools/prospective_native_oracle.py": "b483d85cb7f43c1d188b816e7937c699447087b3c999bdf03499f6a6c1759a59",
+    "tools/prospective_pipeline.py": "e394bfdc99d1aebe3fe514c67d92350624cad139c2c957ec6fa1bfe1a0c116cd",
+    "tools/research_recovery.ps1": "6c4e2bbf6508f37ede6976f1200247d44381e64254b9a80c15e6ba111ef2b6a9",
+    "tools/stop_prospective_pipeline.ps1": "f74e40d78cbb7c35b661e84f82f8b9ad09e28004f8e9aad87f443a5b1a3b7a46"
+  },
+  "root_sha256": "9001f0f1d990fbb75f173730aee872c15579805390837e05d670f0ea8484cbfc"
+}

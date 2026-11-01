@@ -1,0 +1,12 @@
+{
+  "executed_synthetic_oracle.mq5": {
+    "normalization": "CRLF_TO_LF_TEXT_ONLY_NO_NUMERIC_OR_CODE_CHANGE",
+    "original_local_native_bytes_sha256": "c8148739edd8135e85d7cfb668a06b823cd839c4e097efb9d08683e657b539cd",
+    "published_lf_copy_sha256": "2a24ae9390589ac86a3953124fe5221d3d170176b32afeeaa34dff64416f40d4"
+  },
+  "synthetic_native_indicator_oracle.csv": {
+    "normalization": "CRLF_TO_LF_TEXT_ONLY_NO_NUMERIC_OR_CODE_CHANGE",
+    "original_local_native_bytes_sha256": "a6cf247bb136b6e29d37a154405b476078471fed65d4a6067051171e83bf75e4",
+    "published_lf_copy_sha256": "2d3403427e0495fd8cf3a5871cd4aa173d54421cbd76e952159e4e81c74c7b6b"
+  }
+}

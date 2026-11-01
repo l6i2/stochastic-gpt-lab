@@ -1,0 +1,16 @@
+{
+  "affected_tests": 50,
+  "failures": 0,
+  "fit_or_scoring": false,
+  "native_compile_errors": 0,
+  "native_compile_warnings": 0,
+  "native_synthetic_bars": 499,
+  "new_pipeline_tests": 16,
+  "protected_rows_read": 0,
+  "real_post_start_heartbeat_processing": "PASS",
+  "skipped": 0,
+  "synthetic_atr_max_error": 0,
+  "synthetic_ha_mismatches": 0,
+  "synthetic_main_max_error": 0,
+  "worker_restart_idempotence": "PASS"
+}

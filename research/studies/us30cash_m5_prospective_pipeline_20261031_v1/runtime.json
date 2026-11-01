@@ -1,0 +1,23 @@
+{
+  "history_memory_bound": 351,
+  "max_input_records_per_transaction": 1000,
+  "pipeline_memory_total_private_mb": 12.47,
+  "raw_collector_pid": 24392,
+  "sqlite_cache": "DEFAULT_BOUNDED_CACHE",
+  "supervision": "EXISTING_RECOVERY_GUARDIAN_30S_CHECK_60S_MIN_RELAUNCH",
+  "worker_interval_seconds": 2,
+  "workers": [
+    {
+      "parent_pid": 25084,
+      "pid": 9944,
+      "private_mb": 11.39,
+      "working_mb": 6.72
+    },
+    {
+      "parent_pid": 24028,
+      "pid": 25084,
+      "private_mb": 1.08,
+      "working_mb": 0.67
+    }
+  ]
+}

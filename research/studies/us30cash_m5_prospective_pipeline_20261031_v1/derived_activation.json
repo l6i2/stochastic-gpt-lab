@@ -1,0 +1,18 @@
+{
+  "authorization": "CURRENT_USER_PROSPECTIVE_PIPELINE_COMPLETE_QUARANTINED_ONLY",
+  "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+  "clock": {
+    "boot_id": "111",
+    "host_utc_label": "2026-11-01T00:05:21.022639+00:00",
+    "monotonic_ns": 164880577873200,
+    "uptime_ms": 164873718,
+    "utc_certified": false
+  },
+  "live_trading": false,
+  "new_scientific_dataset_admitted": false,
+  "post_activation_existing_raw_prefix_derivation_is_not_historical_redownload": true,
+  "raw_capture_replaced": false,
+  "raw_manifest_sha256": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a",
+  "scoring": false,
+  "training": false
+}

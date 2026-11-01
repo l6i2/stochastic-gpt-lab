@@ -1,0 +1,55 @@
+{
+  "artifact_counts": {
+    "CHECKPOINT": 35,
+    "INCIDENT": 35,
+    "MEMBERSHIP_EXPOSURE_PREFIX": 35,
+    "SEGMENT": 1
+  },
+  "database_not_copied_or_mutated": true,
+  "integrity": "VERIFIED_CONSISTENT_READ_TRANSACTION",
+  "ledger_head": "6ca71dcf6f0b356b594b2d8d28b05ebf9840e692fef421c30cd3d004dac22fd7",
+  "ledger_rows": 106,
+  "state": {
+    "acquisition_boundary": null,
+    "after_warmup_signals": 0,
+    "atr": null,
+    "buckets": {},
+    "cursors": {
+      "obs_850c9ced05834b38b6e4c9e351a49f86": {
+        "head": "1f25d0ed9a455fb1ca9cd6a8aadfce3ea732d62e3ffec4e46ca39e7c3c1dcf76",
+        "manifest_hash": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+        "native_head": "b84cd96defdeab9c1fea7bf4e84d37b76366eb89670adf182873e6945a92b163",
+        "native_sequence": 2997,
+        "offset": 5517480,
+        "rows": 2859
+      }
+    },
+    "evaluable_buy": 0,
+    "evaluable_sell": 0,
+    "first_800_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "ha": null,
+    "history": [],
+    "incident_count": 35,
+    "last_callback": 165038234,
+    "last_receipt": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-01T00:08:06.179995+00:00",
+      "monotonic_ns": 165045754081500,
+      "uptime_ms": 165038890,
+      "utc_certified": false
+    },
+    "last_tick": null,
+    "m1_bars": 0,
+    "own_bars": 0,
+    "own_run_bars": 0,
+    "post_signal_bars": 0,
+    "previous_k": null,
+    "protocol_stream_unbroken": false,
+    "rejected_buckets": 0,
+    "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+    "signals_buy": 0,
+    "signals_sell": 0,
+    "source_records": 2859
+  },
+  "state_sha256": "82de2181d23727b70818d68dc5eb330f5f12dd0db7d4314d056b3853fafd2aa4"
+}
