@@ -1,0 +1,16 @@
+{
+  "classifications": {
+    "PROBABLE_CAUSE": 11,
+    "UNKNOWN_CAUSE": 34,
+    "VERIFIED_CAUSE": 5
+  },
+  "coverage": "ALL_GAPS_REMAIN_QUARANTINED_NO_BACKFILL",
+  "kinds": {
+    "CALLBACK_TIMER_GAP": 32,
+    "DISCONNECTION_OBSERVED_START": 9,
+    "RECONNECTION_OBSERVED": 9
+  },
+  "new_or_materially_affected": 9,
+  "reused_prior_decisions": 41,
+  "total": 50
+}

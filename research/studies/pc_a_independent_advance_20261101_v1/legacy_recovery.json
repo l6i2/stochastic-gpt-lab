@@ -1,0 +1,98 @@
+{
+  "additional_project_named_top_level_paths": [],
+  "archive_indices": [],
+  "automatic_retry_policy": "DO_NOT_REPEAT_UNTIL_NEW_SOURCE_OR_ACCESS_EVIDENCE",
+  "candidates": [
+    {
+      "bytes": 1001,
+      "exact_known_original_hash_match": false,
+      "kind": "METADATA_CANDIDATE_NOT_ORIGINAL_WITHOUT_MATCHED_PROVENANCE",
+      "path": "C:\\Users\\DELL 2022\\Documents\\Codex\\stochastic-gpt-lab-full-pipeline\\configs\\future_validation_cohort_manifest.template.json",
+      "project_relation_detected": true,
+      "sha256": "c1675bd21e3560908cfe6be70c0b5a2fbe18757bf6df02343d35578443187f08"
+    },
+    {
+      "bytes": 6994,
+      "exact_known_original_hash_match": false,
+      "kind": "METADATA_CANDIDATE_NOT_ORIGINAL_WITHOUT_MATCHED_PROVENANCE",
+      "path": "C:\\Users\\DELL 2022\\Documents\\Codex\\stochastic-gpt-lab-full-pipeline\\outputs\\pc_a_certification\\native_tester\\runs\\diag_abedbf590923\\run_manifest.json",
+      "project_relation_detected": true,
+      "sha256": "1b9f60ddea5e9a9f57fb6e2b50e081d9987dedf5a84cc45a05cc3fed18d99203"
+    },
+    {
+      "bytes": 5999,
+      "exact_known_original_hash_match": false,
+      "kind": "METADATA_CANDIDATE_NOT_ORIGINAL_WITHOUT_MATCHED_PROVENANCE",
+      "path": "C:\\Users\\DELL 2022\\Documents\\Codex\\stochastic-gpt-lab-full-pipeline\\outputs\\pc_a_certification\\native_tester\\runs\\diag_ac5237f5f6b8\\run_manifest.json",
+      "project_relation_detected": true,
+      "sha256": "2a06a6114b75c9bae1a63744ab3e6a37a0b27482654511b676c06c55b9b1e444"
+    },
+    {
+      "bytes": 9459,
+      "exact_known_original_hash_match": false,
+      "kind": "METADATA_CANDIDATE_NOT_ORIGINAL_WITHOUT_MATCHED_PROVENANCE",
+      "path": "C:\\Users\\DELL 2022\\Documents\\Codex\\stochastic-gpt-lab-full-pipeline\\outputs\\pc_a_certification\\native_tester\\runs\\diag_e1c6b8638452\\run_manifest.json",
+      "project_relation_detected": true,
+      "sha256": "c05dafb2b5a1f29c0525fd9e8510902c13d9d02d5039deb5f1b260f8b2d2eb1d"
+    },
+    {
+      "bytes": 6973,
+      "exact_known_original_hash_match": false,
+      "kind": "METADATA_CANDIDATE_NOT_ORIGINAL_WITHOUT_MATCHED_PROVENANCE",
+      "path": "C:\\Users\\DELL 2022\\Documents\\Codex\\stochastic-gpt-lab-full-pipeline\\outputs\\pc_a_certification\\native_tester\\runs\\diag_fd4e5bf3d468\\run_manifest.json",
+      "project_relation_detected": true,
+      "sha256": "3d64e2f2c5b35141c10b63921c239c614e591d5a1c5a7dcb1807b2047bcc5326"
+    }
+  ],
+  "directories_enumerated": 536,
+  "errors": [],
+  "git": {
+    "reachable_metadata_paths": [
+      "configs/future_validation_cohort_manifest.template.json"
+    ],
+    "remote_refs": [
+      "d8f639578a409acd941ec35b6d5349a66d7007c4\trefs/heads/main",
+      "789fb5a82fcd4acf0ae8921f36bb16eb724b5454\trefs/heads/research/full-pipeline"
+    ]
+  },
+  "github_public_indices": [
+    {
+      "data": {
+        "artifacts": [],
+        "total_count": 0
+      },
+      "endpoint": "actions/artifacts?per_page=100",
+      "pagination_link_present": false,
+      "status": "PUBLIC_INDEX_ACCESSIBLE"
+    },
+    {
+      "data": [],
+      "endpoint": "releases?per_page=100",
+      "pagination_link_present": false,
+      "status": "PUBLIC_INDEX_ACCESSIBLE"
+    },
+    {
+      "data": {
+        "total_count": 0,
+        "workflow_runs": []
+      },
+      "endpoint": "actions/runs?per_page=100",
+      "pagination_link_present": false,
+      "status": "PUBLIC_INDEX_ACCESSIBLE"
+    }
+  ],
+  "holdout_and_reservation_name_scan": [],
+  "known_original_hash_anchors": {
+    "run_identity.json": "65332af3b86fbecb24ffaab51e7fbf8637315ce1cb5f9f24e44a1fe4ebfb7500",
+    "split_manifest.json": "be6960e748f789a2638ec5700d0e7fd240703d90f397c551cc989a590db8c44e"
+  },
+  "limits": {
+    "max_directories": 25000,
+    "max_metadata_bytes": 2000000,
+    "max_seconds": 30
+  },
+  "local_search_truncated": false,
+  "original_data_modified": false,
+  "protected_rows_opened": 0,
+  "scope": "DOCUMENTS_CODEX_EXACT_METADATA_NAMES_AND_PROJECT_BACKUP_ZIP_CENTRAL_DIRECTORIES; GITHUB_PUBLIC_FIRST_PAGES_AND_REACHABLE_GIT"
+}

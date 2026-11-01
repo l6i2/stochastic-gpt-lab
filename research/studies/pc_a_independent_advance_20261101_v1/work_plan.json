@@ -1,0 +1,109 @@
+{
+  "admission": "BLOCKED",
+  "frozen_scientific_admission_changed": false,
+  "historic_data_adopted": false,
+  "legacy_datasets_retired_from_candidate_inputs": true,
+  "legacy_originals_required_to_operate": false,
+  "legacy_recovery": [
+    {
+      "automatic_retry": false,
+      "exact_original_recovered": false,
+      "expected_sha256": "be6960e748f789a2638ec5700d0e7fd240703d90f397c551cc989a590db8c44e",
+      "global_nonexistence_claim": false,
+      "missing_hash_is_not_reconstructable_from_counts": true,
+      "name": "legacy_split_manifest_r20261014.json",
+      "retry_only_if": "NEW_SOURCE_BACKUP_OR_ACCESS_EVIDENCE",
+      "status": "IRRECOVERABLE_IN_ACCESSIBLE_SEARCHED_SOURCES"
+    },
+    {
+      "automatic_retry": false,
+      "exact_original_recovered": false,
+      "expected_sha256": "65332af3b86fbecb24ffaab51e7fbf8637315ce1cb5f9f24e44a1fe4ebfb7500",
+      "global_nonexistence_claim": false,
+      "missing_hash_is_not_reconstructable_from_counts": true,
+      "name": "legacy_run_identity_r20261014.json",
+      "retry_only_if": "NEW_SOURCE_BACKUP_OR_ACCESS_EVIDENCE",
+      "status": "IRRECOVERABLE_IN_ACCESSIBLE_SEARCHED_SOURCES"
+    },
+    {
+      "automatic_retry": false,
+      "exact_original_recovered": false,
+      "expected_sha256": null,
+      "global_nonexistence_claim": false,
+      "missing_hash_is_not_reconstructable_from_counts": true,
+      "name": "original_master_manifest.json",
+      "retry_only_if": "NEW_SOURCE_BACKUP_OR_ACCESS_EVIDENCE",
+      "status": "IRRECOVERABLE_IN_ACCESSIBLE_SEARCHED_SOURCES"
+    },
+    {
+      "automatic_retry": false,
+      "exact_original_recovered": false,
+      "expected_sha256": null,
+      "global_nonexistence_claim": false,
+      "missing_hash_is_not_reconstructable_from_counts": true,
+      "name": "original_holdout_reservation_manifest.json",
+      "retry_only_if": "NEW_SOURCE_BACKUP_OR_ACCESS_EVIDENCE",
+      "status": "IRRECOVERABLE_IN_ACCESSIBLE_SEARCHED_SOURCES"
+    },
+    {
+      "automatic_retry": false,
+      "exact_original_recovered": false,
+      "expected_sha256": null,
+      "global_nonexistence_claim": false,
+      "missing_hash_is_not_reconstructable_from_counts": true,
+      "name": "original_cohort_20261019_manifest.json",
+      "retry_only_if": "NEW_SOURCE_BACKUP_OR_ACCESS_EVIDENCE",
+      "status": "IRRECOVERABLE_IN_ACCESSIBLE_SEARCHED_SOURCES"
+    }
+  ],
+  "native_diagnostic_method": "RETAIN_APPROVED_METHOD_NO_GENERATION_UTC_CLAIM",
+  "new_cohort_activated": false,
+  "new_start_selected": false,
+  "plan_sha256": "2db21637afd9638d90a51303c879a8ee78775f483595b472f8b62ce026cb58e9",
+  "protected_roles": [
+    "DISCOVERY_VALIDATION",
+    "HISTORICAL_HOLDOUT",
+    "FINAL_TEST"
+  ],
+  "schema": "pc-a-independent-operational-plan/1",
+  "scientific_future_decision": "SEPARATE_PROSPECTIVE_PROVENANCE_RULE_IF_ORIGINAL_LEDGER_CANNOT_BE_RECOVERED; NOT_ACTIVATED",
+  "scoring": false,
+  "tasks": [
+    {
+      "requires_legacy_manifests": false,
+      "status": "CONTINUE_EXISTING_AUTHORIZED_QUARANTINE",
+      "task": "RAW_NATIVE_CAPTURE"
+    },
+    {
+      "requires_legacy_manifests": false,
+      "status": "CONTINUE_EXISTING_AUTHORIZED_QUARANTINE",
+      "task": "RAW_HASH_AND_IDENTITY_VERIFICATION"
+    },
+    {
+      "requires_legacy_manifests": false,
+      "status": "CONTINUE_EXISTING_AUTHORIZED_QUARANTINE",
+      "task": "INCREMENTAL_NATIVE_BAR_COMPARISON"
+    },
+    {
+      "requires_legacy_manifests": false,
+      "status": "CONTINUE_EXISTING_AUTHORIZED_QUARANTINE",
+      "task": "CAUSAL_FEATURE_PREPARATION"
+    },
+    {
+      "requires_legacy_manifests": false,
+      "status": "CONTINUE_EXISTING_AUTHORIZED_QUARANTINE",
+      "task": "MATURITY_AND_HEALTH_REPORTS"
+    },
+    {
+      "requires_legacy_manifests": false,
+      "status": "CONTINUE_EXISTING_AUTHORIZED_QUARANTINE",
+      "task": "NTS_RECEIPT_CORRELATION"
+    },
+    {
+      "requires_legacy_manifests": false,
+      "status": "CONTINUE_EXISTING_AUTHORIZED_QUARANTINE",
+      "task": "INCIDENT_MONITORING"
+    }
+  ],
+  "training": false
+}

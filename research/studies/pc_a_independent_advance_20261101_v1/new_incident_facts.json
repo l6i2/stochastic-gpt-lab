@@ -1,0 +1,395 @@
+[
+  {
+    "backfill_performed": false,
+    "dataset_admission": false,
+    "fact": {
+      "after": {
+        "callback_program_us": 88626323295,
+        "callback_uptime_ms": 232916031,
+        "connected": true,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793559562,
+        "sequence": 5808,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "before": {
+        "callback_program_us": 88615768653,
+        "callback_uptime_ms": 232905531,
+        "connected": true,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793559554,
+        "sequence": 5807,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+      "detection": "TWO_NOMINAL_5S_TIMER_PERIODS_NOT_DATA_ACCEPTANCE_TOLERANCE",
+      "elapsed_ms": 10500,
+      "kind": "CALLBACK_TIMER_GAP",
+      "real_broker_event_loss": "UNVERIFIED",
+      "scientific_disposition": "QUARANTINED",
+      "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+      "source_record_hash": "f76783d595bdaa431ad7316e2f0a392930689587c63fae20c08e54a75f8bfea5",
+      "timestamps_are_host_labels_not_independent_event_UTC": true
+    },
+    "first_detected_host_clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-01T18:59:23.793117+00:00",
+      "monotonic_ns": 232929629359600,
+      "uptime_ms": 232916968,
+      "utc_certified": false
+    },
+    "incident_id": "11f6f09604f9daa0a4acc555eca9420b70c37c6339e014a8e25675c209dd98aa",
+    "training_authorized": false
+  },
+  {
+    "backfill_performed": false,
+    "dataset_admission": false,
+    "fact": {
+      "after": {
+        "callback_program_us": 86963478542,
+        "callback_uptime_ms": 231253171,
+        "connected": false,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793557900,
+        "sequence": 5478,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "before": {
+        "callback_program_us": 86567335432,
+        "callback_uptime_ms": 230856984,
+        "connected": true,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793557503,
+        "sequence": 5477,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+      "exact_disconnect_start": "UNKNOWN_BETWEEN_OBSERVATIONS",
+      "kind": "DISCONNECTION_OBSERVED_START",
+      "real_broker_event_loss": "UNVERIFIED",
+      "scientific_disposition": "QUARANTINED",
+      "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+      "source_record_hash": "8840420cd396d92fb0861a5a424de7bf72b24e65535d3656e2a1561ec9f5fe1f",
+      "timestamps_are_host_labels_not_independent_event_UTC": true
+    },
+    "first_detected_host_clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-01T18:31:44.819901+00:00",
+      "monotonic_ns": 231270656121100,
+      "uptime_ms": 231258000,
+      "utc_certified": false
+    },
+    "incident_id": "1ba55dbf2c9e29b67e161440b01897f347792b1835f66b9e54f7b3024b50ade2",
+    "training_authorized": false
+  },
+  {
+    "backfill_performed": false,
+    "dataset_admission": false,
+    "fact": {
+      "after": {
+        "callback_program_us": 86963478542,
+        "callback_uptime_ms": 231253171,
+        "connected": false,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793557900,
+        "sequence": 5478,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "before": {
+        "callback_program_us": 86567335432,
+        "callback_uptime_ms": 230856984,
+        "connected": true,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793557503,
+        "sequence": 5477,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+      "detection": "TWO_NOMINAL_5S_TIMER_PERIODS_NOT_DATA_ACCEPTANCE_TOLERANCE",
+      "elapsed_ms": 396187,
+      "kind": "CALLBACK_TIMER_GAP",
+      "real_broker_event_loss": "UNVERIFIED",
+      "scientific_disposition": "QUARANTINED",
+      "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+      "source_record_hash": "8840420cd396d92fb0861a5a424de7bf72b24e65535d3656e2a1561ec9f5fe1f",
+      "timestamps_are_host_labels_not_independent_event_UTC": true
+    },
+    "first_detected_host_clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-01T18:31:44.809262+00:00",
+      "monotonic_ns": 231270644930400,
+      "uptime_ms": 231257984,
+      "utc_certified": false
+    },
+    "incident_id": "52b07e312b2db0817e66d5b2eada9b895b78e47a5b58e26a3db3c6f924c4bab1",
+    "training_authorized": false
+  },
+  {
+    "backfill_performed": false,
+    "dataset_admission": false,
+    "fact": {
+      "after": {
+        "callback_program_us": 90774098346,
+        "callback_uptime_ms": 235063750,
+        "connected": false,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793561710,
+        "sequence": 5989,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "before": {
+        "callback_program_us": 89525914213,
+        "callback_uptime_ms": 233815562,
+        "connected": true,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793560462,
+        "sequence": 5988,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+      "exact_disconnect_start": "UNKNOWN_BETWEEN_OBSERVATIONS",
+      "kind": "DISCONNECTION_OBSERVED_START",
+      "real_broker_event_loss": "UNVERIFIED",
+      "scientific_disposition": "QUARANTINED",
+      "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+      "source_record_hash": "462c2d7223ef5e7579365e63e4291443efc90d74f170c5abb445e16c8deebeba",
+      "timestamps_are_host_labels_not_independent_event_UTC": true
+    },
+    "first_detected_host_clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-01T19:35:11.787436+00:00",
+      "monotonic_ns": 235077623884300,
+      "uptime_ms": 235064968,
+      "utc_certified": false
+    },
+    "incident_id": "60dbd3dfb5fb56e99681f45b90e52e32a3428ecbafd1d32cea84641cbc664773",
+    "training_authorized": false
+  },
+  {
+    "backfill_performed": false,
+    "dataset_admission": false,
+    "fact": {
+      "after": {
+        "callback_program_us": 105413201447,
+        "callback_uptime_ms": 249697296,
+        "connected": true,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793576344,
+        "sequence": 5997,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "before": {
+        "callback_program_us": 105408204148,
+        "callback_uptime_ms": 249692296,
+        "connected": false,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793576339,
+        "sequence": 5996,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+      "exact_reconnect_time": "UNKNOWN_BETWEEN_OBSERVATIONS",
+      "kind": "RECONNECTION_OBSERVED",
+      "real_broker_event_loss": "UNVERIFIED",
+      "scientific_disposition": "QUARANTINED",
+      "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+      "source_record_hash": "501b07c778bd480a856bb550c81f46ebf9c355bff5e34cc476a360e20fd3770d",
+      "timestamps_are_host_labels_not_independent_event_UTC": true
+    },
+    "first_detected_host_clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-01T23:39:04.350932+00:00",
+      "monotonic_ns": 249715743185400,
+      "uptime_ms": 249697531,
+      "utc_certified": false
+    },
+    "incident_id": "666dd70074cff3fbebce064e50154e48ad1eb5e6fc6b6ecb0aa12755d3183b15",
+    "training_authorized": false
+  },
+  {
+    "backfill_performed": false,
+    "dataset_admission": false,
+    "fact": {
+      "after": {
+        "callback_program_us": 101527674792,
+        "callback_uptime_ms": 245817328,
+        "connected": false,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793572464,
+        "sequence": 5990,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "before": {
+        "callback_program_us": 90774098346,
+        "callback_uptime_ms": 235063750,
+        "connected": false,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793561710,
+        "sequence": 5989,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+      "detection": "TWO_NOMINAL_5S_TIMER_PERIODS_NOT_DATA_ACCEPTANCE_TOLERANCE",
+      "elapsed_ms": 10753578,
+      "kind": "CALLBACK_TIMER_GAP",
+      "real_broker_event_loss": "UNVERIFIED",
+      "scientific_disposition": "QUARANTINED",
+      "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+      "source_record_hash": "05750f5b8572414970dc3fad245ca67f1cc21b65d2ae42b0784e33c4316fbd70",
+      "timestamps_are_host_labels_not_independent_event_UTC": true
+    },
+    "first_detected_host_clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-01T23:38:01.439389+00:00",
+      "monotonic_ns": 249652831243400,
+      "uptime_ms": 249634609,
+      "utc_certified": false
+    },
+    "incident_id": "7a61012a73a36ac64aee6d7af30a30cd4010e74ae039c4f6c38c9b3217b22125",
+    "training_authorized": false
+  },
+  {
+    "backfill_performed": false,
+    "dataset_admission": false,
+    "fact": {
+      "after": {
+        "callback_program_us": 90774098346,
+        "callback_uptime_ms": 235063750,
+        "connected": false,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793561710,
+        "sequence": 5989,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "before": {
+        "callback_program_us": 89525914213,
+        "callback_uptime_ms": 233815562,
+        "connected": true,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793560462,
+        "sequence": 5988,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+      "detection": "TWO_NOMINAL_5S_TIMER_PERIODS_NOT_DATA_ACCEPTANCE_TOLERANCE",
+      "elapsed_ms": 1248188,
+      "kind": "CALLBACK_TIMER_GAP",
+      "real_broker_event_loss": "UNVERIFIED",
+      "scientific_disposition": "QUARANTINED",
+      "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+      "source_record_hash": "462c2d7223ef5e7579365e63e4291443efc90d74f170c5abb445e16c8deebeba",
+      "timestamps_are_host_labels_not_independent_event_UTC": true
+    },
+    "first_detected_host_clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-01T19:35:11.777682+00:00",
+      "monotonic_ns": 235077613371400,
+      "uptime_ms": 235064953,
+      "utc_certified": false
+    },
+    "incident_id": "8ff00cd68eef56c78d4f61702efcdfdd2b4b2de9724330df8a593ec714c67e8c",
+    "training_authorized": false
+  },
+  {
+    "backfill_performed": false,
+    "dataset_admission": false,
+    "fact": {
+      "after": {
+        "callback_program_us": 105388230418,
+        "callback_uptime_ms": 249672359,
+        "connected": false,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793576319,
+        "sequence": 5992,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "before": {
+        "callback_program_us": 105359966352,
+        "callback_uptime_ms": 249644171,
+        "connected": false,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793576292,
+        "sequence": 5991,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+      "detection": "TWO_NOMINAL_5S_TIMER_PERIODS_NOT_DATA_ACCEPTANCE_TOLERANCE",
+      "elapsed_ms": 28188,
+      "kind": "CALLBACK_TIMER_GAP",
+      "real_broker_event_loss": "UNVERIFIED",
+      "scientific_disposition": "QUARANTINED",
+      "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+      "source_record_hash": "d2676a0661e5e8cf4905b24d4a11af9df81e9b48f75c0d1e754545cd8acb0ef5",
+      "timestamps_are_host_labels_not_independent_event_UTC": true
+    },
+    "first_detected_host_clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-01T23:38:41.568617+00:00",
+      "monotonic_ns": 249692960477800,
+      "uptime_ms": 249674750,
+      "utc_certified": false
+    },
+    "incident_id": "c028b96727f3c0394860b93eba9400fde1826f9d8d9427f946b12401d1030fe7",
+    "training_authorized": false
+  },
+  {
+    "backfill_performed": false,
+    "dataset_admission": false,
+    "fact": {
+      "after": {
+        "callback_program_us": 105359966352,
+        "callback_uptime_ms": 249644171,
+        "connected": false,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793576292,
+        "sequence": 5991,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "before": {
+        "callback_program_us": 101527674792,
+        "callback_uptime_ms": 245817328,
+        "connected": false,
+        "kind": "HEARTBEAT",
+        "receipt_host_gmt_seconds": 1793572464,
+        "sequence": 5990,
+        "session_id": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+        "time_msc": 0
+      },
+      "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+      "detection": "TWO_NOMINAL_5S_TIMER_PERIODS_NOT_DATA_ACCEPTANCE_TOLERANCE",
+      "elapsed_ms": 3826843,
+      "kind": "CALLBACK_TIMER_GAP",
+      "real_broker_event_loss": "UNVERIFIED",
+      "scientific_disposition": "QUARANTINED",
+      "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+      "source_record_hash": "10f3b587b09915d62a7beeb6f377d1d6f9e83b0a5bbc59f7dfa1bc074ec96489",
+      "timestamps_are_host_labels_not_independent_event_UTC": true
+    },
+    "first_detected_host_clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-01T23:38:33.932588+00:00",
+      "monotonic_ns": 249685323963200,
+      "uptime_ms": 249667109,
+      "utc_certified": false
+    },
+    "incident_id": "dea32aed71c1c9f342816b9cb2f23148965764d91f2d8912c37c6b555998aa03",
+    "training_authorized": false
+  }
+]

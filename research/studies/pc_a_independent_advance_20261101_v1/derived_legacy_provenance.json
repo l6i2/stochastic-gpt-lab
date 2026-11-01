@@ -1,0 +1,205 @@
+{
+  "independent_data_proven": false,
+  "membership": {
+    "censored_disposition": "QUARANTINE_NOT_CONFIRMED_PURGE",
+    "independent_dataset_certified": false,
+    "known_censored_nonmember_ids": [
+      "US30Cash_M5_1773955799999_MAIN_K",
+      "US30Cash_M5_1773959999999_MAIN_K"
+    ],
+    "known_diagnostic_ids": [
+      "US30Cash_M5_1704159299999_MAIN_K",
+      "US30Cash_M5_1704160799999_MAIN_K",
+      "US30Cash_M5_1704162299999_MAIN_K",
+      "US30Cash_M5_1704167699999_MAIN_K",
+      "US30Cash_M5_1704170399999_MAIN_K",
+      "US30Cash_M5_1704172799999_MAIN_K",
+      "US30Cash_M5_1704178499999_MAIN_K",
+      "US30Cash_M5_1704180599999_MAIN_K",
+      "US30Cash_M5_1704182699999_MAIN_K",
+      "US30Cash_M5_1704184199999_MAIN_K",
+      "US30Cash_M5_1704192899999_MAIN_K",
+      "US30Cash_M5_1704197999999_MAIN_K",
+      "US30Cash_M5_1704198599999_MAIN_K",
+      "US30Cash_M5_1704200399999_MAIN_K",
+      "US30Cash_M5_1704203699999_MAIN_K",
+      "US30Cash_M5_1704207899999_MAIN_K",
+      "US30Cash_M5_1704211799999_MAIN_K",
+      "US30Cash_M5_1704212999999_MAIN_K",
+      "US30Cash_M5_1704213599999_MAIN_K",
+      "US30Cash_M5_1704215999999_MAIN_K",
+      "US30Cash_M5_1704218699999_MAIN_K",
+      "US30Cash_M5_1704223499999_MAIN_K",
+      "US30Cash_M5_1704225299999_MAIN_K",
+      "US30Cash_M5_1704226799999_MAIN_K",
+      "US30Cash_M5_1704230999999_MAIN_K",
+      "US30Cash_M5_1704233699999_MAIN_K",
+      "US30Cash_M5_1704237899999_MAIN_K",
+      "US30Cash_M5_1704238799999_MAIN_K"
+    ],
+    "local_original_manifest_name_matches": [],
+    "master_declared_signal_label_envelope": {
+      "converted_to_utc": false,
+      "domain": "LEGACY_SERVER_NATIVE_UNRECONCILED",
+      "first": "2023.12.20 02:05:00",
+      "last": "2026.10.12 23:40:00",
+      "scope": "PUBLISHED_DECLARATION_NOT_ROW_MEMBERSHIP_OR_SPLIT_ASSIGNMENT"
+    },
+    "protected_intersection": "UNKNOWN_WITHOUT_ORIGINAL_COMPARABLE_MEMBERSHIP",
+    "reachable_git_manifest_paths": [
+      "configs/future_validation_cohort_manifest.template.json"
+    ],
+    "unknown_intervals": [
+      {
+        "dataset_id": "stochastic_master_v1",
+        "domain_id": "LEGACY_SERVER_NATIVE_UNRECONCILED",
+        "end_native_exclusive_msc": null,
+        "entry_sha256": "1f4fd6a58137fd91609ed9f0f90d0d7153209c28a63047efc4106066302c0451",
+        "reason": "UNKNOWN_BOUNDARY_OR_OPEN_ROLE_NO_SILENT_CLOSURE",
+        "roles": [
+          "TRAIN_EXHAUSTED",
+          "DISCOVERY_VALIDATION_PROTECTED",
+          "FINAL_TEST_PROTECTED"
+        ],
+        "source_sha256": "e2c05a24551078efb584cc4732b796846f3b98793d21978522b36be141de59c1",
+        "start_native_msc": null
+      },
+      {
+        "dataset_id": "legacy_quality_v1",
+        "domain_id": "LEGACY_SERVER_NATIVE_UNRECONCILED",
+        "end_native_exclusive_msc": null,
+        "entry_sha256": "037f08cb984cacbd6b7e3776bb97cc45e36769379bb709df18a6b5ff35104dab",
+        "reason": "UNKNOWN_BOUNDARY_OR_OPEN_ROLE_NO_SILENT_CLOSURE",
+        "roles": [
+          "TRAIN_EXHAUSTED",
+          "DISCOVERY_VALIDATION_PROTECTED"
+        ],
+        "source_sha256": null,
+        "start_native_msc": null
+      },
+      {
+        "dataset_id": "historical_holdout_unresolved",
+        "domain_id": "UNKNOWN",
+        "end_native_exclusive_msc": null,
+        "entry_sha256": "0ad4ef1b3006ad9ae8a2e5a48c9e2ada7e723a99084e0413d4b0cbf5c66dcd05",
+        "reason": "UNKNOWN_BOUNDARY_OR_OPEN_ROLE_NO_SILENT_CLOSURE",
+        "roles": [
+          "HISTORICAL_HOLDOUT_PROTECTED"
+        ],
+        "source_sha256": null,
+        "start_native_msc": null
+      },
+      {
+        "dataset_id": "us30cash_m5_future_20261019_v1",
+        "domain_id": "DECLARED_UTC_NOT_RECONCILED_TO_XM_NATIVE",
+        "end_native_exclusive_msc": null,
+        "entry_sha256": "b9b1dc5c5d1d0bea269348468eedb089b0a0d5c3fc445864c24f363856a35d84",
+        "reason": "UNKNOWN_BOUNDARY_OR_OPEN_ROLE_NO_SILENT_CLOSURE",
+        "roles": [
+          "PROTECTED_PROSPECTIVE_COHORT"
+        ],
+        "source_sha256": null,
+        "start_native_msc": null
+      },
+      {
+        "dataset_id": "prospective_20261028T175047_3ac8b527",
+        "domain_id": "XMGlobalSC-MT5 5|US30Cash|NATIVE_LABELS",
+        "end_native_exclusive_msc": null,
+        "entry_sha256": "cc9c0747138f3e12de4034a4f539483a7fc2c83468388a9a9af857c9bcf769fb",
+        "reason": "UNKNOWN_BOUNDARY_OR_OPEN_ROLE_NO_SILENT_CLOSURE",
+        "roles": [
+          "PROSPECTIVE_QUARANTINE_RESERVED"
+        ],
+        "source_sha256": "e9d87261d6e2987df4c2b08cda3b4edfb890a98f3056e99dd2077fed3ba274d2",
+        "start_native_msc": 1793214549498
+      }
+    ],
+    "verified_interval_metadata": [
+      {
+        "dataset_id": "historical_20261028T175047_e97ee981",
+        "domain_id": "XMGlobalSC-MT5 5|US30Cash|NATIVE_LABELS",
+        "end_native_exclusive_msc": 1704240000000,
+        "entry_sha256": "ebd9c18db14d7084a97b8fe8088d52b46904631f038df68ef3f749534668ff95",
+        "roles": [
+          "HISTORICAL_DIAGNOSTIC_EXPOSED"
+        ],
+        "scope": "DECLARED_NATIVE_INTERVAL_IN_VERIFIED_LEDGER_NOT_COMPLETE_SIGNAL_MEMBERSHIP",
+        "source_sha256": "3bef4fcbff070041c72dfd72e1bd838c213649db4c95adb82ea79b598c2044e5",
+        "start_native_msc": 1704153600000
+      },
+      {
+        "dataset_id": "diag_fd4e5bf3d468",
+        "domain_id": "XMGlobalSC-MT5 5|US30Cash|NATIVE_LABELS",
+        "end_native_exclusive_msc": 1704240000000,
+        "entry_sha256": "2f04347e2c27417d8f7970bb9439eae96b86310cd5e37b86f1979655f17d4ec0",
+        "roles": [
+          "NATIVE_DIAGNOSTIC_EXPOSED"
+        ],
+        "scope": "DECLARED_NATIVE_INTERVAL_IN_VERIFIED_LEDGER_NOT_COMPLETE_SIGNAL_MEMBERSHIP",
+        "source_sha256": "f03c643bc26c4cc236706537e49f0e78dd1fdf89eaab4674b5f599d2439c8711",
+        "start_native_msc": 1704153600000
+      },
+      {
+        "dataset_id": "diag_abedbf590923",
+        "domain_id": "XMGlobalSC-MT5 5|US30Cash|NATIVE_LABELS",
+        "end_native_exclusive_msc": 1704240000000,
+        "entry_sha256": "26e5f240a6ba0eda0ec25918b294d3445f140e6baccb146580dec70cc96c95bc",
+        "roles": [
+          "NATIVE_DIAGNOSTIC_EXPOSED"
+        ],
+        "scope": "DECLARED_NATIVE_INTERVAL_IN_VERIFIED_LEDGER_NOT_COMPLETE_SIGNAL_MEMBERSHIP",
+        "source_sha256": "f03c643bc26c4cc236706537e49f0e78dd1fdf89eaab4674b5f599d2439c8711",
+        "start_native_msc": 1704153600000
+      },
+      {
+        "dataset_id": "diag_ac5237f5f6b8",
+        "domain_id": "XMGlobalSC-MT5 5|US30Cash|NATIVE_LABELS",
+        "end_native_exclusive_msc": 1704240000000,
+        "entry_sha256": "539e503dfb2df3a45844546d34c90a0315977cebbedb2d6f83bc00fcf84d8ca4",
+        "roles": [
+          "NATIVE_DIAGNOSTIC_EXPOSED"
+        ],
+        "scope": "DECLARED_NATIVE_INTERVAL_IN_VERIFIED_LEDGER_NOT_COMPLETE_SIGNAL_MEMBERSHIP",
+        "source_sha256": "f03c643bc26c4cc236706537e49f0e78dd1fdf89eaab4674b5f599d2439c8711",
+        "start_native_msc": 1704153600000
+      },
+      {
+        "dataset_id": "diag_e1c6b8638452",
+        "domain_id": "XMGlobalSC-MT5 5|US30Cash|NATIVE_LABELS",
+        "end_native_exclusive_msc": 1704240000000,
+        "entry_sha256": "41ae3895825e1243e1095a77c826bc902e59a7bde439e3303737a366b5c36b92",
+        "roles": [
+          "NATIVE_DIAGNOSTIC_EXPOSED"
+        ],
+        "scope": "DECLARED_NATIVE_INTERVAL_IN_VERIFIED_LEDGER_NOT_COMPLETE_SIGNAL_MEMBERSHIP",
+        "source_sha256": "f03c643bc26c4cc236706537e49f0e78dd1fdf89eaab4674b5f599d2439c8711",
+        "start_native_msc": 1704153600000
+      }
+    ]
+  },
+  "original": false,
+  "reason": "EXISTING_PUBLISHED_METADATA_ONLY_NOT_RECONSTRUCTED_SPLIT_IDS",
+  "schema": "identified-legacy-provenance-derivative/1",
+  "source_refs": [
+    {
+      "path": "research/studies/scientific_blockers_resolution_20261101_v4/incidents.json",
+      "sha256": "bfd5904a587fd593a37bc9c46a7ea548ae60758aa93706776c78624b1b134b86"
+    },
+    {
+      "path": "research/studies/scientific_blockers_resolution_20261101_v4/native_incident_facts.json",
+      "sha256": "5d7585ed92373a0c48bc37d11e21b00367e6636cb3b35e6c10ab0505a922f1aa"
+    },
+    {
+      "path": "research/studies/scientific_blockers_resolution_20261101_v4/windows.json",
+      "sha256": "97ec4266e67133bd1242568e0209cfe533deb713ac65e9a4eaf00f3c02696c5a"
+    },
+    {
+      "path": "research/studies/scientific_blockers_resolution_20261101_v4/network.json",
+      "sha256": "ea9281287cfcac93dac12cddf0c2c9494ab160fd488f0fdf4ccf96d0f245b881"
+    },
+    {
+      "path": "research/studies/scientific_blockers_resolution_20261101_v4/membership.json",
+      "sha256": "bbd0517d833e67fbd54fed756ac723631a6daac8be6291761094bb4eef8d38e9"
+    }
+  ]
+}

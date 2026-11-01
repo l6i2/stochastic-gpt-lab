@@ -1,0 +1,12 @@
+{
+  "code_query": "split_manifest.json",
+  "code_search": {
+    "results": []
+  },
+  "producer_commit": "ced3b6d9e469dadf76a4771049c994e476f19329",
+  "producer_pr_runs": {
+    "workflow_runs": []
+  },
+  "repository": "l6i2/stochastic-gpt-lab",
+  "scope": "Connector default-branch search and PR-triggered runs only; public REST indices separately checked."
+}

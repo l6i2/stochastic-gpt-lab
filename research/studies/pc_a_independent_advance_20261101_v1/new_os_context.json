@@ -1,0 +1,711 @@
+[
+  {
+    "after_record_id": 208160.0,
+    "events": [
+      {
+        "fields": {
+          "AcOnline": "true"
+        },
+        "host_utc_label": "2026-11-01T23:37:41.6542434Z",
+        "id": 105,
+        "power_message": "Cambio de fuente de energía.",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208239
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T23:37:22.7612724Z",
+        "id": 566,
+        "power_message": "La sesión del sistema ha cambiado de 72 a 74.\r\n\r\nMotivo PolicyChange \r\n\r\nBootId: 111",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208221
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T23:37:22.7609745Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208220
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "20"
+        },
+        "host_utc_label": "2026-11-01T23:37:22.7270381Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Sleep, Hibernate, or Shutdown. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208218
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "20"
+        },
+        "host_utc_label": "2026-11-01T23:37:22.7263691Z",
+        "id": 566,
+        "power_message": "La sesión del sistema ha cambiado de 71 a 72.\r\n\r\nMotivo SxTransition \r\n\r\nBootId: 111",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208217
+      },
+      {
+        "fields": {
+          "EffectiveState": "5",
+          "TargetState": "5"
+        },
+        "host_utc_label": "2026-11-01T22:34:24.3467315Z",
+        "id": 107,
+        "power_message": "El sistema se reanudó del estado de suspensión.",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208204
+      },
+      {
+        "fields": {
+          "EffectiveState": "5",
+          "Reason": "13",
+          "TargetState": "5"
+        },
+        "host_utc_label": "2026-11-01T22:34:15.8955922Z",
+        "id": 42,
+        "power_message": "El sistema está entrando en suspensión.\r\n\r\nMotivo de la suspensión: Hibernate from Sleep - Standby Battery Budget Exceeded",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208200
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T22:34:15.7352916Z",
+        "id": 40,
+        "power_message": "El controlador \\Driver\\ACPI del dispositivo  detuvo la transición de energía.",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208199
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "20"
+        },
+        "host_utc_label": "2026-11-01T22:34:14.3314119Z",
+        "id": 566,
+        "power_message": "La sesión del sistema ha cambiado de 70 a 71.\r\n\r\nMotivo SxTransition \r\n\r\nBootId: 111",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208197
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "20"
+        },
+        "host_utc_label": "2026-11-01T22:34:14.3311511Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Sleep, Hibernate, or Shutdown. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208196
+      },
+      {
+        "fields": {
+          "Reason": "0",
+          "State": "0"
+        },
+        "host_utc_label": "2026-11-01T22:34:14.3169401Z",
+        "id": 172,
+        "power_message": "Estado de conectividad en modo de espera: Connected. Motivo: None",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208195
+      },
+      {
+        "fields": {
+          "Reason": "1",
+          "State": "2"
+        },
+        "host_utc_label": "2026-11-01T19:35:22.2530301Z",
+        "id": 172,
+        "power_message": "Estado de conectividad en modo de espera: Disconnected. Motivo: Policy Setting",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208192
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "55"
+        },
+        "host_utc_label": "2026-11-01T19:35:14.8484031Z",
+        "id": 566,
+        "power_message": "La sesión del sistema ha cambiado de 69 a 70.\r\n\r\nMotivo 55 \r\n\r\nBootId: 111",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208191
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "55"
+        },
+        "host_utc_label": "2026-11-01T19:35:09.7772824Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Austerity Battery Drain Budget Exceeded. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208190
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "55"
+        },
+        "host_utc_label": "2026-11-01T19:35:09.7752023Z",
+        "id": 566,
+        "power_message": "La sesión del sistema ha cambiado de 68 a 69.\r\n\r\nMotivo 55 \r\n\r\nBootId: 111",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208189
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "55"
+        },
+        "host_utc_label": "2026-11-01T19:35:09.7738958Z",
+        "id": 507,
+        "power_message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Austerity Battery Drain Budget Exceeded. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208188
+      },
+      {
+        "fields": {
+          "Reason": "0",
+          "State": "0"
+        },
+        "host_utc_label": "2026-11-01T19:35:09.7726559Z",
+        "id": 172,
+        "power_message": "Estado de conectividad en modo de espera: Connected. Motivo: None",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208187
+      },
+      {
+        "fields": {
+          "Reason": "7",
+          "State": "2"
+        },
+        "host_utc_label": "2026-11-01T19:14:34.0154737Z",
+        "id": 172,
+        "power_message": "Estado de conectividad en modo de espera: Disconnected. Motivo: Adaptive Connected Standby",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208184
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T19:14:26.6083576Z",
+        "id": 566,
+        "power_message": "La sesión del sistema ha cambiado de 67 a 68.\r\n\r\nMotivo PolicyChange \r\n\r\nBootId: 111",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208183
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T19:14:26.2742348Z",
+        "id": 506,
+        "power_message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Lid. ",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208180
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T19:14:26.2698142Z",
+        "id": 566,
+        "power_message": "La sesión del sistema ha cambiado de 66 a 67.\r\n\r\nMotivo PolicyChange \r\n\r\nBootId: 111",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208179
+      },
+      {
+        "fields": {
+          "AcOnline": "false"
+        },
+        "host_utc_label": "2026-11-01T19:14:26.1620956Z",
+        "id": 105,
+        "power_message": "Cambio de fuente de energía.",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208178
+      },
+      {
+        "fields": {
+          "AcOnline": "true"
+        },
+        "host_utc_label": "2026-11-01T18:59:06.1248230Z",
+        "id": 105,
+        "power_message": "Cambio de fuente de energía.",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208172
+      },
+      {
+        "fields": {
+          "BootId": "111",
+          "Reason": "15"
+        },
+        "host_utc_label": "2026-11-01T18:31:38.3199801Z",
+        "id": 566,
+        "power_message": "La sesión del sistema ha cambiado de 65 a 66.\r\n\r\nMotivo PolicyChange \r\n\r\nBootId: 111",
+        "provider": "Microsoft-Windows-Kernel-Power",
+        "record_id": 208161
+      }
+    ],
+    "log_name": "System",
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "status": "OK",
+    "truncated": false
+  },
+  {
+    "after_record_id": 208068.0,
+    "events": [
+      {
+        "fields": {
+          "NewTime": "2026-11-01T23:37:21.5000000Z",
+          "OldTime": "2026-11-01T22:34:24.3467609Z",
+          "Reason": "2"
+        },
+        "host_utc_label": "2026-11-01T23:37:21.5008968Z",
+        "id": 1,
+        "power_message": null,
+        "provider": "Microsoft-Windows-Kernel-General",
+        "record_id": 208205
+      }
+    ],
+    "log_name": "System",
+    "provider": "Microsoft-Windows-Kernel-General",
+    "status": "OK",
+    "truncated": false
+  },
+  {
+    "after_record_id": 208033.0,
+    "events": [
+      {
+        "fields": {
+          "EffectiveState": "5",
+          "SleepTime": "2026-11-01T22:34:14.3299624Z",
+          "TargetState": "5",
+          "WakeTime": "2026-11-01T23:37:22.7430736Z"
+        },
+        "host_utc_label": "2026-11-01T23:37:24.6536830Z",
+        "id": 1,
+        "power_message": null,
+        "provider": "Microsoft-Windows-Power-Troubleshooter",
+        "record_id": 208227
+      }
+    ],
+    "log_name": "System",
+    "provider": "Microsoft-Windows-Power-Troubleshooter",
+    "status": "OK",
+    "truncated": false
+  },
+  {
+    "after_record_id": 51881.0,
+    "events": [
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T23:39:21.3456120Z",
+        "id": 4004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51902
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T23:39:10.7304085Z",
+        "id": 4004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51901
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T23:37:34.4830090Z",
+        "id": 4004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51900
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T23:37:23.6784384Z",
+        "id": 4004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51899
+      },
+      {
+        "fields": {
+          "State": "9"
+        },
+        "host_utc_label": "2026-11-01T23:37:23.3372802Z",
+        "id": 10000,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51898
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T23:37:23.3070458Z",
+        "id": 4002,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51897
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T23:37:23.1547690Z",
+        "id": 4004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51896
+      },
+      {
+        "fields": {
+          "State": "2"
+        },
+        "host_utc_label": "2026-11-01T23:37:23.0772466Z",
+        "id": 10001,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51895
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T23:37:21.6234871Z",
+        "id": 4004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51894
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T22:34:18.3323306Z",
+        "id": 4004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51893
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T22:34:16.5349596Z",
+        "id": 4004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51892
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T22:34:15.7495313Z",
+        "id": 4004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51891
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T22:34:15.4315215Z",
+        "id": 10000,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51890
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T22:34:15.4148508Z",
+        "id": 4002,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51889
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T22:34:15.3537062Z",
+        "id": 10000,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51888
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T22:34:15.3516793Z",
+        "id": 4001,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51887
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T19:35:21.8045167Z",
+        "id": 4004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51886
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T19:14:33.5163553Z",
+        "id": 4004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51885
+      },
+      {
+        "fields": {
+          "State": "1"
+        },
+        "host_utc_label": "2026-11-01T19:14:33.0542360Z",
+        "id": 10000,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51884
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T19:14:33.0473927Z",
+        "id": 4001,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51883
+      },
+      {
+        "fields": {
+          "State": "2"
+        },
+        "host_utc_label": "2026-11-01T19:14:33.0453485Z",
+        "id": 10001,
+        "power_message": null,
+        "provider": "Microsoft-Windows-NetworkProfile",
+        "record_id": 51882
+      }
+    ],
+    "log_name": "Microsoft-Windows-NetworkProfile/Operational",
+    "provider": null,
+    "status": "OK",
+    "truncated": false
+  },
+  {
+    "after_record_id": 53899.0,
+    "events": [
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T23:39:05.9401167Z",
+        "id": 11005,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53923
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T23:39:05.8849418Z",
+        "id": 11010,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53922
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T23:39:05.8440116Z",
+        "id": 11004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53921
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T23:37:23.2527490Z",
+        "id": 11005,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53920
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T23:37:23.2375735Z",
+        "id": 11010,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53919
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T22:34:24.1800636Z",
+        "id": 11004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53918
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil"
+        },
+        "host_utc_label": "2026-11-01T22:34:15.3516974Z",
+        "id": 8001,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53917
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T22:34:15.2527831Z",
+        "id": 11005,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53916
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T22:34:15.2239326Z",
+        "id": 11010,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53915
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T22:34:15.2239135Z",
+        "id": 11001,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53914
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T22:34:14.6743942Z",
+        "id": 11000,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53913
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil"
+        },
+        "host_utc_label": "2026-11-01T22:34:14.4868548Z",
+        "id": 8000,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53912
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T22:34:14.4536208Z",
+        "id": 8011,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53911
+      },
+      {
+        "fields": {
+          "ConnectionMode": "Conexión automática con un perfil",
+          "Reason": "La red está desconectada debido a una directiva que deshabilita la conexión automática en esta interfaz.",
+          "ReasonCode": "5"
+        },
+        "host_utc_label": "2026-11-01T19:35:21.7842793Z",
+        "id": 8003,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53910
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T19:35:21.7607645Z",
+        "id": 11004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53909
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T19:11:02.0507387Z",
+        "id": 11005,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53908
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T19:11:02.0329211Z",
+        "id": 11010,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53907
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T19:11:02.0272723Z",
+        "id": 11004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53906
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:59:09.2942896Z",
+        "id": 11005,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53905
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:59:09.2786153Z",
+        "id": 11010,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53904
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:59:09.2687875Z",
+        "id": 11004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53903
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:56:45.4053167Z",
+        "id": 11005,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53902
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:56:45.3863001Z",
+        "id": 11010,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53901
+      },
+      {
+        "fields": {},
+        "host_utc_label": "2026-11-01T18:56:45.3721991Z",
+        "id": 11004,
+        "power_message": null,
+        "provider": "Microsoft-Windows-WLAN-AutoConfig",
+        "record_id": 53900
+      }
+    ],
+    "log_name": "Microsoft-Windows-WLAN-AutoConfig/Operational",
+    "provider": null,
+    "status": "OK",
+    "truncated": false
+  }
+]

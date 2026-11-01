@@ -1,0 +1,28 @@
+{
+  "files": {
+    "controller/provenance_independent_plan.py": "16518b03e9e2a93d4a1309da1b838b3b8ca8288919aed2887e1b3575394abd11",
+    "docs/PC_A_INDEPENDENT_BASE.md": "8077d09c1d71930a67d34785cc42856f1feffbbd0e6c7d16e6bc58152b2f16f0",
+    "research/studies/pc_a_independent_advance_20261101_v1/bar_comparison_evidence.json": "beb23d0ea2414828465f7cf84a05c9f02524895f88ae196deafe175e15e477c5",
+    "research/studies/pc_a_independent_advance_20261101_v1/bar_comparison_summary.json": "5d952ed88b406d94c83b4e57441d91f6ff820f45f8f08a5ce622c6d8c45e5f28",
+    "research/studies/pc_a_independent_advance_20261101_v1/derived_legacy_provenance.json": "e644050f24a5da99734b619d998b4f13e5c6af823118e19abda4626ff133c62d",
+    "research/studies/pc_a_independent_advance_20261101_v1/exposure_delta.json": "78e24756128e92d30a20c34d2cef12bcde28a41977f1cc77d090531590082fef",
+    "research/studies/pc_a_independent_advance_20261101_v1/github_connector.json": "3d3a059e805d04d9529296ea3e7c681fff90c7ba3ff4ac3c4d9be5b130f27b8b",
+    "research/studies/pc_a_independent_advance_20261101_v1/health.json": "9106ac44ba51fc3470503a9981ed9464e58b749bda5286c3c871f95af503f5d8",
+    "research/studies/pc_a_independent_advance_20261101_v1/incident_decisions.json": "49e959c6750a830366d4f07719b7185dd90a4b4f6c9341ca598bec457b4ff862",
+    "research/studies/pc_a_independent_advance_20261101_v1/incident_status.json": "a7279ae4c16a4309c8ce9e6cd46ad71a3722f68fc5ff1ab2334e17be8c536353",
+    "research/studies/pc_a_independent_advance_20261101_v1/legacy_recovery.json": "5efd7433c588bf86d0fee48e8c38d6c00b939766145058b5a7deff6a7f23e793",
+    "research/studies/pc_a_independent_advance_20261101_v1/membership.json": "b19948f2926f6bd9f4247081063ec8693e634293c7ce457eb40808525c3e8498",
+    "research/studies/pc_a_independent_advance_20261101_v1/new_incident_facts.json": "2488e8d9dec1290f31b269f85dc999250dde5c7b9922f0cc9ca63e3a6ae88b3f",
+    "research/studies/pc_a_independent_advance_20261101_v1/new_os_context.json": "f34c97ca01d94a3d98394487d12c342254896009f44f353068ab9b3524c707f3",
+    "research/studies/pc_a_independent_advance_20261101_v1/prefix_receipt.json": "18c5a60aa67e32c7880bcee92e08533c7ada4d093dd7463168fbc2da41e08b0b",
+    "research/studies/pc_a_independent_advance_20261101_v1/producer_provenance.json": "bed64b40748b93add9eab4d8e1f22e4e7a87009df46309f0188909f66d84bf3d",
+    "research/studies/pc_a_independent_advance_20261101_v1/scientific_path_proposal.json": "54a93ef7f795af78716d079bb0097e4aabb78637a3e3a45d9e0705bd6e0aa03d",
+    "research/studies/pc_a_independent_advance_20261101_v1/source_receipts.json": "cc60d6ea6a44f962c9950439bab000c1b6c67d4ecc25652033b787491508adda",
+    "research/studies/pc_a_independent_advance_20261101_v1/summary.json": "8c4458b82fb83a200655597a2290d8532be1dc77559ad7ff71d9c550710129b1",
+    "research/studies/pc_a_independent_advance_20261101_v1/validation.json": "baa3d4765ffdf8f3bbd6d4cc076fce20ba02dd62f389f30599ec33dc899ac252",
+    "research/studies/pc_a_independent_advance_20261101_v1/work_plan.json": "e336de8940bd7c8558bdf295c27aed0ab681949bc7a8e1aae84023320dcf793b",
+    "tests/test_provenance_independent_plan.py": "141c6c03061b5479b3e62482c8cc22e59bc7292230478f76b21fbe12f0c54f1f",
+    "tools/pc_a_independent_advance.py": "9ad92a6fd7d24d76fd811aff9e2319169cf30c8bae709afee0e9ab308009b6a5"
+  },
+  "root_sha256": "72d72a07e6e34fdbf8f95959b7ebd99a5a21a082ac00d32f98b168c0ff51b8a3"
+}

@@ -1,0 +1,11 @@
+{
+  "command": ".venv\\Scripts\\python.exe -m unittest tests.test_provenance_independent_plan tests.test_scientific_blockers tests.test_prospective_operation",
+  "original_contracts_and_strategy_unchanged": true,
+  "real_native_processing_proof": "health.json progress and bar_comparison_evidence.json; not inferred from test success",
+  "scientific_fits": 0,
+  "scientific_scoring": 0,
+  "source_pins_verified": true,
+  "status": "PASS",
+  "synthetic_governance_and_metadata_tests_only": true,
+  "tests": 20
+}

@@ -1,0 +1,26 @@
+{
+  "authorization_requested": false,
+  "current_capture_admitted": false,
+  "fit_calls": 0,
+  "frozen_contracts_unchanged": true,
+  "legacy_operational_dependency_removed": true,
+  "new_boundary_selected": false,
+  "new_cohort_activated": false,
+  "proposed_future_decision": "AUTHORIZE_A_SEPARATE_FORWARD_ONLY_PROSPECTIVE_PROVENANCE_RULE_FOR_AN_EXCLUSIVE_NEW_STUDY_WITHOUT_REUSING_LEGACY_INPUTS",
+  "remaining_technical_evidence": [
+    "RESOLVE_CALLBACK_VS_NATIVE_BID_SEQUENCE_COVERAGE",
+    "MATURITY_350_800_100_200_80_80",
+    "TEMPORAL_PROVENANCE_WITH_CORRECT_SCOPE"
+  ],
+  "safeguards": [
+    "KEEP_LEGACY_PROTECTED_DATA_AND_CONTRACTS_FROZEN",
+    "NO_RETROACTIVE_CLOSURE_OF_UNKNOWN_ROLES",
+    "OWN_SOURCE_MEMBERSHIP_AND_RECURSIVE_SEEDS",
+    "DEMONSTRATED_COVERAGE_AND_CAUSALITY",
+    "NO_REFERENCE_HISTORY_RENAMED_PROSPECTIVE",
+    "HASH_BOUND_DATASET_CODE_PROTOCOL_BUDGET",
+    "EXPLICIT_AUTHORIZATION_BEFORE_ANY_FIT_OR_SCORING"
+  ],
+  "scoring_calls": 0,
+  "status": "PREPARATION_ONLY_NOT_ACTIVATED"
+}

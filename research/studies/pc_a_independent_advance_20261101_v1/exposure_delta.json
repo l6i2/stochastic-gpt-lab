@@ -1,0 +1,23 @@
+{
+  "chain_head": "05f725fb7ec16172bb6ca97265af187b1230f80eafb74ff8826a4542ecc62a32",
+  "complete_legacy_membership": false,
+  "entry": {
+    "admitted_records": 0,
+    "comparison_evidence_sha256": "beb23d0ea2414828465f7cf84a05c9f02524895f88ae196deafe175e15e477c5",
+    "entry_sha256": "05f725fb7ec16172bb6ca97265af187b1230f80eafb74ff8826a4542ecc62a32",
+    "kind": "PC_A_ONLY_OPERATIONAL_ADVANCE_AND_BOUNDED_LEGACY_RECOVERY_CLOSURE",
+    "ledger_sequence": 49,
+    "legacy_recovery_sha256": "5efd7433c588bf86d0fee48e8c38d6c00b939766145058b5a7deff6a7f23e793",
+    "membership_sha256": "b19948f2926f6bd9f4247081063ec8693e634293c7ce457eb40808525c3e8498",
+    "previous": "73a1d4be0ad9768559c4f6c4d86c0b33269fcf0b7077f552209b27139a02a2a2",
+    "protected_rows_read": 0,
+    "scientific_fits": 0,
+    "scientific_scoring": 0,
+    "source_summary_sha256": "8c4458b82fb83a200655597a2290d8532be1dc77559ad7ff71d9c550710129b1"
+  },
+  "legacy_originals_fabricated": false,
+  "parent_chain_head": "73a1d4be0ad9768559c4f6c4d86c0b33269fcf0b7077f552209b27139a02a2a2",
+  "parent_file_sha256": "51eb5c3066563bf94d2f5bfb320265e5de243b34c757365e68d0337befee7504",
+  "parent_path": "research/studies/scientific_blockers_resolution_20261101_v4/exposure_delta.json",
+  "quarantine_retained": true
+}

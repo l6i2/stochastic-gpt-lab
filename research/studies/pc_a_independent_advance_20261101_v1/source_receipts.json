@@ -1,0 +1,70 @@
+[
+  {
+    "path": "outputs/legacy_bounded_recovery.json",
+    "sha256": "605f0afd999386fe8b77986c8e4f8e5c02e4142e885f166c077597eb2af138fe"
+  },
+  {
+    "path": "outputs/github_recovery_connector_receipt.json",
+    "sha256": "a0c3b514a323a715ed470206206f2b0678448542a5deb7ea8dca684c623d7949"
+  },
+  {
+    "path": "research/studies/us30cash_m5_native_collection_activation_v1/authorization.json",
+    "sha256": "07a13fec2707ae9e23b936ea417e6b212dfa3b0c593a83681ce6a97f9a6e3211"
+  },
+  {
+    "path": "outputs/new_native_studies/us30cash_m5_native_20261030_01/us30cap_15cbddec947f42c98219caa4cec978f2/collection_manifest.json",
+    "sha256": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a"
+  },
+  {
+    "path": "outputs/new_native_studies/us30cash_m5_native_20261030_01/us30cap_15cbddec947f42c98219caa4cec978f2/activation_boundary.json",
+    "sha256": "13d178f568abdbc7e3561c99437ebb0cb451948bf8be63e9b21de6a089c537da"
+  },
+  {
+    "path": "outputs/provenance_advance_first_sample.json",
+    "sha256": "84a5958578c2842d55dd24ff32db5ab9cd4668aee83e895172fa7e5f569a4522"
+  },
+  {
+    "path": "research/studies/scientific_blockers_resolution_20261101_v4/incidents.json",
+    "sha256": "bfd5904a587fd593a37bc9c46a7ea548ae60758aa93706776c78624b1b134b86"
+  },
+  {
+    "path": "research/studies/scientific_blockers_resolution_20261101_v4/native_incident_facts.json",
+    "sha256": "5d7585ed92373a0c48bc37d11e21b00367e6636cb3b35e6c10ab0505a922f1aa"
+  },
+  {
+    "path": "research/studies/scientific_blockers_resolution_20261101_v4/windows.json",
+    "sha256": "97ec4266e67133bd1242568e0209cfe533deb713ac65e9a4eaf00f3c02696c5a"
+  },
+  {
+    "path": "research/studies/scientific_blockers_resolution_20261101_v4/network.json",
+    "sha256": "ea9281287cfcac93dac12cddf0c2c9494ab160fd488f0fdf4ccf96d0f245b881"
+  },
+  {
+    "path": "outputs/provenance_context_delta.json",
+    "sha256": "afcb1a6f2db99200170b5ada5ebbdfd9e660cddedebaa00673e17f6e01d074ef"
+  },
+  {
+    "path": "outputs/pc_a_prospective_utc/authenticated_utc/state.json",
+    "sha256": "fc377248be3942145ed21bcecb4a2967ff0750b983877b36d38204a6c8f5e899"
+  },
+  {
+    "path": "outputs/pc_a_stability/recovery_status.json",
+    "sha256": "3bd6ea574a0db6f6116b5791b59b17a7b9703f6a1d6db0a2ea221ffc374ddc0c"
+  },
+  {
+    "path": "outputs/new_native_studies/us30cash_m5_native_20261030_01/watchdog_status.json",
+    "sha256": "4ba6bacf17a458f087069bbde85c571060ca13247ba3838fa961ba8b69838141"
+  },
+  {
+    "path": "outputs/pc_a_stability/restart/status.json",
+    "sha256": "d257fe5f7e04410acef596d27c4a2d63b1c17e2ae2b4ac3c0620a2f9d9ccf4e9"
+  },
+  {
+    "path": "outputs/new_native_studies/us30cash_m5_native_20261030_01/restart_verification.json",
+    "sha256": "53422ba097a5333f5de38b052bcb350c233dec28ae74efcd0ac37a2dc5b17a84"
+  },
+  {
+    "path": "research/studies/scientific_blockers_resolution_20261101_v4/membership.json",
+    "sha256": "bbd0517d833e67fbd54fed756ac723631a6daac8be6291761094bb4eef8d38e9"
+  }
+]

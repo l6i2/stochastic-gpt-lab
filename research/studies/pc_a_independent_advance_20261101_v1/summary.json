@@ -1,0 +1,98 @@
+{
+  "CAUSAL_AUDIT": "FAIL_GLOBAL_UNCHANGED",
+  "COVERAGE_STATUS": "QUARANTINED_GAPS_AND_SEQUENCE_DISCREPANCIES_NOT_FILLED",
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "FINAL_TEST": "LOCKED",
+  "HARD_BLOCKER": [
+    "INCOMPLETE_NEW_CAPTURE_COVERAGE",
+    "EXACT_NATIVE_SEQUENCE_REFERENCE_DISCREPANCIES",
+    "OWN_WARMUP_AND_MATURITY_NOT_REACHED",
+    "NATIVE_EVENT_UTC_UNVERIFIED",
+    "FROZEN_ADMISSION_RULE_NEEDS_FUTURE_EXPLICIT_SCIENTIFIC_DECISION_IF_LEGACY_PROVENANCE_UNAVAILABLE"
+  ],
+  "HISTORICAL_HOLDOUT": "BLOCKED",
+  "INCIDENT_ADJUDICATION": {
+    "classifications": {
+      "PROBABLE_CAUSE": 11,
+      "UNKNOWN_CAUSE": 34,
+      "VERIFIED_CAUSE": 5
+    },
+    "coverage": "ALL_GAPS_REMAIN_QUARANTINED_NO_BACKFILL",
+    "kinds": {
+      "CALLBACK_TIMER_GAP": 32,
+      "DISCONNECTION_OBSERVED_START": 9,
+      "RECONNECTION_OBSERVED": 9
+    },
+    "new_or_materially_affected": 9,
+    "reused_prior_decisions": 41,
+    "total": 50
+  },
+  "IRRECOVERABLE_EVIDENCE": "SCOPED_TO_ACCESSIBLE_SOURCES_NOT_GLOBAL_NONEXISTENCE_NO_AUTOMATIC_RETRY",
+  "LEGACY_MANIFEST_RECOVERY": [
+    {
+      "automatic_retry": false,
+      "exact_original_recovered": false,
+      "expected_sha256": "be6960e748f789a2638ec5700d0e7fd240703d90f397c551cc989a590db8c44e",
+      "global_nonexistence_claim": false,
+      "missing_hash_is_not_reconstructable_from_counts": true,
+      "name": "legacy_split_manifest_r20261014.json",
+      "retry_only_if": "NEW_SOURCE_BACKUP_OR_ACCESS_EVIDENCE",
+      "status": "IRRECOVERABLE_IN_ACCESSIBLE_SEARCHED_SOURCES"
+    },
+    {
+      "automatic_retry": false,
+      "exact_original_recovered": false,
+      "expected_sha256": "65332af3b86fbecb24ffaab51e7fbf8637315ce1cb5f9f24e44a1fe4ebfb7500",
+      "global_nonexistence_claim": false,
+      "missing_hash_is_not_reconstructable_from_counts": true,
+      "name": "legacy_run_identity_r20261014.json",
+      "retry_only_if": "NEW_SOURCE_BACKUP_OR_ACCESS_EVIDENCE",
+      "status": "IRRECOVERABLE_IN_ACCESSIBLE_SEARCHED_SOURCES"
+    },
+    {
+      "automatic_retry": false,
+      "exact_original_recovered": false,
+      "expected_sha256": null,
+      "global_nonexistence_claim": false,
+      "missing_hash_is_not_reconstructable_from_counts": true,
+      "name": "original_master_manifest.json",
+      "retry_only_if": "NEW_SOURCE_BACKUP_OR_ACCESS_EVIDENCE",
+      "status": "IRRECOVERABLE_IN_ACCESSIBLE_SEARCHED_SOURCES"
+    },
+    {
+      "automatic_retry": false,
+      "exact_original_recovered": false,
+      "expected_sha256": null,
+      "global_nonexistence_claim": false,
+      "missing_hash_is_not_reconstructable_from_counts": true,
+      "name": "original_holdout_reservation_manifest.json",
+      "retry_only_if": "NEW_SOURCE_BACKUP_OR_ACCESS_EVIDENCE",
+      "status": "IRRECOVERABLE_IN_ACCESSIBLE_SEARCHED_SOURCES"
+    },
+    {
+      "automatic_retry": false,
+      "exact_original_recovered": false,
+      "expected_sha256": null,
+      "global_nonexistence_claim": false,
+      "missing_hash_is_not_reconstructable_from_counts": true,
+      "name": "original_cohort_20261019_manifest.json",
+      "retry_only_if": "NEW_SOURCE_BACKUP_OR_ACCESS_EVIDENCE",
+      "status": "IRRECOVERABLE_IN_ACCESSIBLE_SEARCHED_SOURCES"
+    }
+  ],
+  "LIVE_TRADING": false,
+  "NEW_CAPTURE_ID": "us30cap_15cbddec947f42c98219caa4cec978f2",
+  "NEW_CAPTURE_MEMBERSHIP": "POST_BOUNDARY_PREFIX_VERIFIED_ADMITTED_MEMBERSHIP_EMPTY",
+  "NEW_CAPTURE_PROVENANCE": "VERIFIED_MANIFEST_NATIVE_BYTES_AND_DURABLE_PREFIXES_QUARANTINED",
+  "NEW_STUDY_READINESS": "PC_A_ONLY_PREPARATION_CONTINUES_SCIENTIFIC_ADMISSION_BLOCKED",
+  "NEXT_STATE": "CONTINUE_PC_A_QUARANTINE_INDEPENDENT_TASKS_STOP_LEGACY_SEARCH_UNTIL_NEW_SOURCE_NO_AUTOMATIC_GATE_OVERRIDE",
+  "NO_BACKFILL_PROOF": "POST_EOF_BOUNDARY_SOURCE_SEQUENCES_AND_UNCHANGED_MANIFEST_VERIFIED",
+  "TEMPORAL_EVIDENCE": "NATIVE_DIAGNOSTIC_ORDER_PLUS_AUTHENTICATED_NTS_RECEIPT_REFERENCES_GENERATION_UTC_UNVERIFIED",
+  "TRAINING_READINESS": "BLOCKED",
+  "original_data_changed": false,
+  "protected_rows_opened": 0,
+  "scoring_calls": 0,
+  "snapshot_ecuador": "2026-11-01T18:47:42.480281-05:00",
+  "training_calls": 0
+}

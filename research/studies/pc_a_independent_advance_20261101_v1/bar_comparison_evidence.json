@@ -1,0 +1,1125 @@
+[
+  {
+    "body": {
+      "admitted": false,
+      "bid_sequence_coverage": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_REFERENCE_MISSING",
+          "BID_SEQUENCE_REFERENCE_INTERVAL_MISMATCH",
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "bucket": {
+        "bid_sequence_sha256": "380c3bdd1cdfcf37b51fb0c5a094815ac52340dc749c7b32e2353674daf1aa90",
+        "close": 5194300,
+        "first_ref": {
+          "callback_uptime_ms": 249702812,
+          "native_hash": "2e0d53367a69ddb40f8875a6c00a5ff3efc4b1a09f8cc7a2d46602c475e83ea0",
+          "native_sequence": 5999,
+          "native_time_msc": 1793583549094,
+          "raw_journal_hash": "40f37617999661e427404751bf6a4a32a8e055cea7f1922a1bfa8188cb9a2ec6",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "high": 5194850,
+        "issues": [
+          "FIRST_PARTIAL_BUCKET"
+        ],
+        "last_ref": {
+          "callback_uptime_ms": 249751265,
+          "native_hash": "63206636fd2aed73c2b8d14edc07751b134065dcb52f0044938b04ad4277188c",
+          "native_sequence": 6046,
+          "native_time_msc": 1793583597612,
+          "raw_journal_hash": "6809c56d59f71024531e020fc43d84f110ee84d7956b7a320dfb9ef4db4d98c3",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "low": 5193950,
+        "open": 5194000,
+        "open_msc": 1793583540000,
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+        "tick_size": "0.01",
+        "tick_volume": 35,
+        "timeframe_seconds": 60
+      },
+      "closure_ref": {
+        "callback_uptime_ms": 249753796,
+        "native_hash": "02258633f80ec57a9db54404801ed2b18ccdb896e735c2ab4254c71c9eec5f5e",
+        "native_sequence": 6048,
+        "native_time_msc": 1793583600146,
+        "raw_journal_hash": "2a501824ca66fc2df748a63e7742d10b071c01257bc9c2a8645697405197fbfb",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      },
+      "compute_clock": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:40:02.936889+00:00",
+        "monotonic_ns": 249774329053800,
+        "uptime_ms": 249756109,
+        "utc_certified": false
+      },
+      "coverage_scope": "EXACT_NATIVE_BID_SEQUENCE_AND_AGGREGATE_REFERENCE_NOT_INDEPENDENT_GENERATION_UTC",
+      "differences": [],
+      "evidence_hash": "e42578476c0f344f65457299a84bb2b7426022f6641bd978c387a85330635c38",
+      "kind": "BAR_COMPARISON",
+      "native_closure_msc": 1793583600146,
+      "native_reference": null,
+      "parity_exact": false,
+      "quarantine": true,
+      "source_receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:40:01.091302+00:00",
+        "monotonic_ns": 249772483103200,
+        "uptime_ms": 249754265,
+        "utc_certified": false
+      }
+    },
+    "digest": "3b74e30ca790901a2c13fa3ffa1ee13f6d89cb8909389c9b5b95b0cf038cd54f",
+    "n": 6095
+  },
+  {
+    "body": {
+      "admitted": false,
+      "bid_sequence_coverage": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_REFERENCE_MISSING",
+          "BID_SEQUENCE_REFERENCE_INTERVAL_MISMATCH",
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "bucket": {
+        "bid_sequence_sha256": "380c3bdd1cdfcf37b51fb0c5a094815ac52340dc749c7b32e2353674daf1aa90",
+        "close": 5194300,
+        "first_ref": {
+          "callback_uptime_ms": 249702812,
+          "native_hash": "2e0d53367a69ddb40f8875a6c00a5ff3efc4b1a09f8cc7a2d46602c475e83ea0",
+          "native_sequence": 5999,
+          "native_time_msc": 1793583549094,
+          "raw_journal_hash": "40f37617999661e427404751bf6a4a32a8e055cea7f1922a1bfa8188cb9a2ec6",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "high": 5194850,
+        "issues": [
+          "FIRST_PARTIAL_BUCKET"
+        ],
+        "last_ref": {
+          "callback_uptime_ms": 249751265,
+          "native_hash": "63206636fd2aed73c2b8d14edc07751b134065dcb52f0044938b04ad4277188c",
+          "native_sequence": 6046,
+          "native_time_msc": 1793583597612,
+          "raw_journal_hash": "6809c56d59f71024531e020fc43d84f110ee84d7956b7a320dfb9ef4db4d98c3",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "low": 5193950,
+        "open": 5194000,
+        "open_msc": 1793583300000,
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+        "tick_size": "0.01",
+        "tick_volume": 35,
+        "timeframe_seconds": 300
+      },
+      "closure_ref": {
+        "callback_uptime_ms": 249753796,
+        "native_hash": "02258633f80ec57a9db54404801ed2b18ccdb896e735c2ab4254c71c9eec5f5e",
+        "native_sequence": 6048,
+        "native_time_msc": 1793583600146,
+        "raw_journal_hash": "2a501824ca66fc2df748a63e7742d10b071c01257bc9c2a8645697405197fbfb",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      },
+      "compute_clock": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:40:02.937892+00:00",
+        "monotonic_ns": 249774329215900,
+        "uptime_ms": 249756109,
+        "utc_certified": false
+      },
+      "coverage_scope": "EXACT_NATIVE_BID_SEQUENCE_AND_AGGREGATE_REFERENCE_NOT_INDEPENDENT_GENERATION_UTC",
+      "differences": [],
+      "evidence_hash": "9a9f58eaae9d58e4f255d1b44848dd9dc90ab17d2cc67cf51ffbb9261132ae98",
+      "kind": "BAR_COMPARISON",
+      "native_closure_msc": 1793583600146,
+      "native_reference": null,
+      "parity_exact": false,
+      "quarantine": true,
+      "source_receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:40:01.091302+00:00",
+        "monotonic_ns": 249772483103200,
+        "uptime_ms": 249754265,
+        "utc_certified": false
+      }
+    },
+    "digest": "a9211075e9a1d5a465a3d5cd804bf71356e7831e342585f2d27102ed89b25459",
+    "n": 6097
+  },
+  {
+    "body": {
+      "admitted": false,
+      "bid_sequence_coverage": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "bucket": {
+        "bid_sequence_sha256": "741c7f585e5eb51ced9a5b1748af8a2c4b09f1a1f3bd5bc2a01b59b1fe4e04a1",
+        "close": 5193850,
+        "first_ref": {
+          "callback_uptime_ms": 249753796,
+          "native_hash": "02258633f80ec57a9db54404801ed2b18ccdb896e735c2ab4254c71c9eec5f5e",
+          "native_sequence": 6048,
+          "native_time_msc": 1793583600146,
+          "raw_journal_hash": "2a501824ca66fc2df748a63e7742d10b071c01257bc9c2a8645697405197fbfb",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "high": 5194700,
+        "issues": [],
+        "last_ref": {
+          "callback_uptime_ms": 249813156,
+          "native_hash": "322cdf80e33b84fac1cee5d94bd11b036c06fe581b3f94ddf42e641eb2ee0dc4",
+          "native_sequence": 6104,
+          "native_time_msc": 1793583659508,
+          "raw_journal_hash": "0e3965e765d4e8bce6f7a00ea387ef803c3726220e389b92e5f415c8d91ab38a",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "low": 5193800,
+        "open": 5194350,
+        "open_msc": 1793583600000,
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+        "tick_size": "0.01",
+        "tick_volume": 45,
+        "timeframe_seconds": 60
+      },
+      "closure_ref": {
+        "callback_uptime_ms": 249813765,
+        "native_hash": "d22cd45b65656ba379481b8a7addf159320fcc0595ebcba1787139892b0f2951",
+        "native_sequence": 6105,
+        "native_time_msc": 1793583660107,
+        "raw_journal_hash": "c672d1bde2d5cb9e1bc891e13aac7c6c090185cea4f0f7efa92fee105ce0dd4f",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      },
+      "compute_clock": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:41:01.927878+00:00",
+        "monotonic_ns": 249833319349900,
+        "uptime_ms": 249815109,
+        "utc_certified": false
+      },
+      "coverage_scope": "EXACT_NATIVE_BID_SEQUENCE_AND_AGGREGATE_REFERENCE_NOT_INDEPENDENT_GENERATION_UTC",
+      "differences": [],
+      "evidence_hash": "741af7e9307374ee2c45dcaaf335be70dbdc22130df8aa4df2568977651e2348",
+      "kind": "BAR_COMPARISON",
+      "native_closure_msc": 1793583660107,
+      "native_reference": {
+        "bar": {
+          "close": 51938.5,
+          "high": 51947.0,
+          "low": 51938.0,
+          "open": 51943.5,
+          "real_volume": 0,
+          "spread": 600,
+          "tick_volume": 45,
+          "time": 1793583600
+        },
+        "bid_sequence_reference": {
+          "all_reference_ticks": 43,
+          "bid_sequence_sha256": "7512a54b3abf4bbcf53ecdb2679f195ecb74e24f305db9329fa88839100ff5b0",
+          "bid_update_count": 43,
+          "end_native_exclusive_msc": 1793583660000,
+          "first_bid_native_msc": 1793583600146,
+          "independently_certified_event_generation": false,
+          "last_reference_native_msc": 1793583658959,
+          "origin": "COPY_TICKS_RANGE_REFERENCE_REQUERY_ONLY",
+          "reference_rows_adopted_as_prospective": 0,
+          "schema": "native-bid-sequence/1",
+          "start_native_msc": 1793583600000
+        },
+        "hash": "822d4cde625b7654ad3b969ff3185fa847a321a4c408d91c47aaafa4cf030705",
+        "kind": "NATIVE_BAR_AND_TICK_SEQUENCE_COMPARISON_ONLY_NOT_PROSPECTIVE_INPUT",
+        "not_used_to_fill_missing_raw": true,
+        "request_after": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:41:01.926620+00:00",
+          "monotonic_ns": 249833317943400,
+          "uptime_ms": 249815109,
+          "utc_certified": false
+        },
+        "request_before": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:41:01.652562+00:00",
+          "monotonic_ns": 249833044578800,
+          "uptime_ms": 249814828,
+          "utc_certified": false
+        },
+        "requested_native_open": 1793583600,
+        "time_semantics": "NATIVE_LABEL_REQUEST_NO_UTC_MAPPING",
+        "timeframe_seconds": 60
+      },
+      "parity_exact": true,
+      "quarantine": true,
+      "source_receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:41:01.210084+00:00",
+        "monotonic_ns": 249832601430800,
+        "uptime_ms": 249814390,
+        "utc_certified": false
+      }
+    },
+    "digest": "43d3f7e1b5c28593bdbef92d1c9248ffd375dbca7f42d294642da519c3992928",
+    "n": 6145
+  },
+  {
+    "body": {
+      "admitted": false,
+      "bid_sequence_coverage": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "bucket": {
+        "bid_sequence_sha256": "06d4343494069c21a2634a5bb154fc9671c81b17c75065b0297f2dd8c7f2a72f",
+        "close": 5193950,
+        "first_ref": {
+          "callback_uptime_ms": 249813765,
+          "native_hash": "d22cd45b65656ba379481b8a7addf159320fcc0595ebcba1787139892b0f2951",
+          "native_sequence": 6105,
+          "native_time_msc": 1793583660107,
+          "raw_journal_hash": "c672d1bde2d5cb9e1bc891e13aac7c6c090185cea4f0f7efa92fee105ce0dd4f",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "high": 5194950,
+        "issues": [],
+        "last_ref": {
+          "callback_uptime_ms": 249872953,
+          "native_hash": "34e360b459be0a6b14e9f8604fb29b31e8c30b359b51842ee55662526b7750a5",
+          "native_sequence": 6174,
+          "native_time_msc": 1793583719297,
+          "raw_journal_hash": "b9db857042f87fc50fdbb4fbbfc24365c91a0faca128b58a77d6a568a6e200f1",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "low": 5193850,
+        "open": 5193900,
+        "open_msc": 1793583660000,
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+        "tick_size": "0.01",
+        "tick_volume": 58,
+        "timeframe_seconds": 60
+      },
+      "closure_ref": {
+        "callback_uptime_ms": 249875171,
+        "native_hash": "5fce799e208455e68c57d27423ce9e5a23151940c57b07f1d5b6b3ee1cf43ed4",
+        "native_sequence": 6175,
+        "native_time_msc": 1793583721519,
+        "raw_journal_hash": "4288171764a1702666c90938778ade98060ee1c22ba4d4456b75336be0ca7c32",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      },
+      "compute_clock": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:42:03.097894+00:00",
+        "monotonic_ns": 249894489723000,
+        "uptime_ms": 249876265,
+        "utc_certified": false
+      },
+      "coverage_scope": "EXACT_NATIVE_BID_SEQUENCE_AND_AGGREGATE_REFERENCE_NOT_INDEPENDENT_GENERATION_UTC",
+      "differences": [],
+      "evidence_hash": "a81edb12db5cb2c0b78bef467e3112266cd5c09a5d85fe25f8ab97b6eebf1c85",
+      "kind": "BAR_COMPARISON",
+      "native_closure_msc": 1793583721519,
+      "native_reference": {
+        "bar": {
+          "close": 51939.5,
+          "high": 51949.5,
+          "low": 51938.5,
+          "open": 51939.0,
+          "real_volume": 0,
+          "spread": 600,
+          "tick_volume": 58,
+          "time": 1793583660
+        },
+        "bid_sequence_reference": {
+          "all_reference_ticks": 57,
+          "bid_sequence_sha256": "0d34b8c38b50b98a947d2bd94e9c2264e00fbf1bf1a538ed60059a3d951af3c8",
+          "bid_update_count": 57,
+          "end_native_exclusive_msc": 1793583720000,
+          "first_bid_native_msc": 1793583660107,
+          "independently_certified_event_generation": false,
+          "last_reference_native_msc": 1793583718686,
+          "origin": "COPY_TICKS_RANGE_REFERENCE_REQUERY_ONLY",
+          "reference_rows_adopted_as_prospective": 0,
+          "schema": "native-bid-sequence/1",
+          "start_native_msc": 1793583660000
+        },
+        "hash": "660e7582e5f7f3fc2868e83c9ae7117fa9ece12267fa3cbdb070daa0a6bcd77c",
+        "kind": "NATIVE_BAR_AND_TICK_SEQUENCE_COMPARISON_ONLY_NOT_PROSPECTIVE_INPUT",
+        "not_used_to_fill_missing_raw": true,
+        "request_after": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:42:03.096949+00:00",
+          "monotonic_ns": 249894488978000,
+          "uptime_ms": 249876265,
+          "utc_certified": false
+        },
+        "request_before": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:42:02.963347+00:00",
+          "monotonic_ns": 249894355570900,
+          "uptime_ms": 249876140,
+          "utc_certified": false
+        },
+        "requested_native_open": 1793583660,
+        "time_semantics": "NATIVE_LABEL_REQUEST_NO_UTC_MAPPING",
+        "timeframe_seconds": 60
+      },
+      "parity_exact": true,
+      "quarantine": true,
+      "source_receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:42:02.895247+00:00",
+        "monotonic_ns": 249894286690800,
+        "uptime_ms": 249876078,
+        "utc_certified": false
+      }
+    },
+    "digest": "2a76f82e9ba3f3e7395a49e0e33617a7cf08793bc24d6ba30affb5f8f8beab5e",
+    "n": 6201
+  },
+  {
+    "body": {
+      "admitted": false,
+      "bid_sequence_coverage": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "bucket": {
+        "bid_sequence_sha256": "648fa170683d45da6aeedc0654665f9b45b43899707e096795a11c5bb276f0cc",
+        "close": 5195550,
+        "first_ref": {
+          "callback_uptime_ms": 249875171,
+          "native_hash": "5fce799e208455e68c57d27423ce9e5a23151940c57b07f1d5b6b3ee1cf43ed4",
+          "native_sequence": 6175,
+          "native_time_msc": 1793583721519,
+          "raw_journal_hash": "4288171764a1702666c90938778ade98060ee1c22ba4d4456b75336be0ca7c32",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "high": 5195550,
+        "issues": [],
+        "last_ref": {
+          "callback_uptime_ms": 249933265,
+          "native_hash": "057d46deef5608fbc9de1b507d8241f52c581d53da0a9582ec4abb0d3cecec4e",
+          "native_sequence": 6238,
+          "native_time_msc": 1793583779613,
+          "raw_journal_hash": "689fe002009f20ee8719d8f55e7d41f1170d22849b7c6a0b45ead408e745266f",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "low": 5193850,
+        "open": 5194050,
+        "open_msc": 1793583720000,
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+        "tick_size": "0.01",
+        "tick_volume": 48,
+        "timeframe_seconds": 60
+      },
+      "closure_ref": {
+        "callback_uptime_ms": 249933890,
+        "native_hash": "ee18827c84dc3ad313bbe80c019e1c25778676bcac1a655c8b444e3f66a771ce",
+        "native_sequence": 6239,
+        "native_time_msc": 1793583780244,
+        "raw_journal_hash": "f3745ceaa93ab3159fb183f001223a44e440d9df78e335b9ed430084603c0655",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      },
+      "compute_clock": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:43:01.876427+00:00",
+        "monotonic_ns": 249953267870600,
+        "uptime_ms": 249935046,
+        "utc_certified": false
+      },
+      "coverage_scope": "EXACT_NATIVE_BID_SEQUENCE_AND_AGGREGATE_REFERENCE_NOT_INDEPENDENT_GENERATION_UTC",
+      "differences": [
+        "high",
+        "tick_volume"
+      ],
+      "evidence_hash": "dd8aef44836da91d457a4ac71ec03cddedf10da13d57b4727aa370e1b80af889",
+      "kind": "BAR_COMPARISON",
+      "native_closure_msc": 1793583780244,
+      "native_reference": {
+        "bar": {
+          "close": 51955.5,
+          "high": 51956.0,
+          "low": 51938.5,
+          "open": 51940.5,
+          "real_volume": 0,
+          "spread": 600,
+          "tick_volume": 52,
+          "time": 1793583720
+        },
+        "bid_sequence_reference": {
+          "all_reference_ticks": 51,
+          "bid_sequence_sha256": "765e1cd103484715691dba6681402f8600bfc0f21d1955858bd0c7afd3a98095",
+          "bid_update_count": 51,
+          "end_native_exclusive_msc": 1793583780000,
+          "first_bid_native_msc": 1793583721519,
+          "independently_certified_event_generation": false,
+          "last_reference_native_msc": 1793583778872,
+          "origin": "COPY_TICKS_RANGE_REFERENCE_REQUERY_ONLY",
+          "reference_rows_adopted_as_prospective": 0,
+          "schema": "native-bid-sequence/1",
+          "start_native_msc": 1793583720000
+        },
+        "hash": "4770fd2754180b4646dd597853bc094ff68f6c42a9da63427cf34cce9fd3e35c",
+        "kind": "NATIVE_BAR_AND_TICK_SEQUENCE_COMPARISON_ONLY_NOT_PROSPECTIVE_INPUT",
+        "not_used_to_fill_missing_raw": true,
+        "request_after": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:43:01.876427+00:00",
+          "monotonic_ns": 249953267773800,
+          "uptime_ms": 249935046,
+          "utc_certified": false
+        },
+        "request_before": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:43:01.745737+00:00",
+          "monotonic_ns": 249953137961900,
+          "uptime_ms": 249934921,
+          "utc_certified": false
+        },
+        "requested_native_open": 1793583720,
+        "time_semantics": "NATIVE_LABEL_REQUEST_NO_UTC_MAPPING",
+        "timeframe_seconds": 60
+      },
+      "parity_exact": false,
+      "quarantine": true,
+      "source_receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:43:01.297413+00:00",
+        "monotonic_ns": 249952689076800,
+        "uptime_ms": 249934468,
+        "utc_certified": false
+      }
+    },
+    "digest": "acb4fb7637a97e3fec9c0a9d0b6ed2b41c14f066da3550034df88d94cb14328e",
+    "n": 6255
+  },
+  {
+    "body": {
+      "admitted": false,
+      "bid_sequence_coverage": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "bucket": {
+        "bid_sequence_sha256": "3cf67a4f9d2694481d42af703897e416ef253d283270853ad316a06c7afa4fe3",
+        "close": 5195900,
+        "first_ref": {
+          "callback_uptime_ms": 249933890,
+          "native_hash": "ee18827c84dc3ad313bbe80c019e1c25778676bcac1a655c8b444e3f66a771ce",
+          "native_sequence": 6239,
+          "native_time_msc": 1793583780244,
+          "raw_journal_hash": "f3745ceaa93ab3159fb183f001223a44e440d9df78e335b9ed430084603c0655",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "high": 5196150,
+        "issues": [],
+        "last_ref": {
+          "callback_uptime_ms": 249993093,
+          "native_hash": "3f16ea484eca7edc3f3cae45f2f7b6309739d12d67376ce5295ef00b72eed127",
+          "native_sequence": 6301,
+          "native_time_msc": 1793583839446,
+          "raw_journal_hash": "9087ef2d05c3ddf32b317913414d7080f5580fac2bb19b0362c974cf99deb756",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "low": 5195100,
+        "open": 5195600,
+        "open_msc": 1793583780000,
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+        "tick_size": "0.01",
+        "tick_volume": 48,
+        "timeframe_seconds": 60
+      },
+      "closure_ref": {
+        "callback_uptime_ms": 249994078,
+        "native_hash": "a4fad0d871193cbb93c04c9da21b25061f1deeaa798267d3c1753b5612fc3bcc",
+        "native_sequence": 6302,
+        "native_time_msc": 1793583840431,
+        "raw_journal_hash": "70edf1e843d88313eb980102bf4f10ffdb63b09bdb1a2e14457b0850bd5b562a",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      },
+      "compute_clock": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:44:04.653011+00:00",
+        "monotonic_ns": 250016044674400,
+        "uptime_ms": 249997828,
+        "utc_certified": false
+      },
+      "coverage_scope": "EXACT_NATIVE_BID_SEQUENCE_AND_AGGREGATE_REFERENCE_NOT_INDEPENDENT_GENERATION_UTC",
+      "differences": [
+        "tick_volume"
+      ],
+      "evidence_hash": "6bca9f1eaad5b224a9bb3d29f7e363530d80b2a2a207cec4088e5559e836ee6a",
+      "kind": "BAR_COMPARISON",
+      "native_closure_msc": 1793583840431,
+      "native_reference": {
+        "bar": {
+          "close": 51959.0,
+          "high": 51961.5,
+          "low": 51951.0,
+          "open": 51956.0,
+          "real_volume": 0,
+          "spread": 600,
+          "tick_volume": 63,
+          "time": 1793583780
+        },
+        "bid_sequence_reference": {
+          "all_reference_ticks": 61,
+          "bid_sequence_sha256": "b5a3ecbb8524c63c62562df02bf3657c3596b921cf602d641676ff93fa5c30fb",
+          "bid_update_count": 61,
+          "end_native_exclusive_msc": 1793583840000,
+          "first_bid_native_msc": 1793583780244,
+          "independently_certified_event_generation": false,
+          "last_reference_native_msc": 1793583836635,
+          "origin": "COPY_TICKS_RANGE_REFERENCE_REQUERY_ONLY",
+          "reference_rows_adopted_as_prospective": 0,
+          "schema": "native-bid-sequence/1",
+          "start_native_msc": 1793583780000
+        },
+        "hash": "b9c37e008a30a55944e51f69e011e8c4fcb203c556daf045d104eaddf344e92e",
+        "kind": "NATIVE_BAR_AND_TICK_SEQUENCE_COMPARISON_ONLY_NOT_PROSPECTIVE_INPUT",
+        "not_used_to_fill_missing_raw": true,
+        "request_after": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:44:04.652011+00:00",
+          "monotonic_ns": 250016044209300,
+          "uptime_ms": 249997828,
+          "utc_certified": false
+        },
+        "request_before": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:44:03.497099+00:00",
+          "monotonic_ns": 250014888647400,
+          "uptime_ms": 249996671,
+          "utc_certified": false
+        },
+        "requested_native_open": 1793583780,
+        "time_semantics": "NATIVE_LABEL_REQUEST_NO_UTC_MAPPING",
+        "timeframe_seconds": 60
+      },
+      "parity_exact": false,
+      "quarantine": true,
+      "source_receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:44:01.571176+00:00",
+        "monotonic_ns": 250012962800400,
+        "uptime_ms": 249994750,
+        "utc_certified": false
+      }
+    },
+    "digest": "51ab55965897c75b4e9c9db303f4c5d0b5c514f799b7bcaa9a18388c6f667202",
+    "n": 6307
+  },
+  {
+    "body": {
+      "admitted": false,
+      "bid_sequence_coverage": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "bucket": {
+        "bid_sequence_sha256": "00b5c787b52de0d7327b2d282a3f23815e2aea00a95d214fcbbd3e0401a75136",
+        "close": 5196150,
+        "first_ref": {
+          "callback_uptime_ms": 249994078,
+          "native_hash": "a4fad0d871193cbb93c04c9da21b25061f1deeaa798267d3c1753b5612fc3bcc",
+          "native_sequence": 6302,
+          "native_time_msc": 1793583840431,
+          "raw_journal_hash": "70edf1e843d88313eb980102bf4f10ffdb63b09bdb1a2e14457b0850bd5b562a",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "high": 5196450,
+        "issues": [],
+        "last_ref": {
+          "callback_uptime_ms": 250049453,
+          "native_hash": "c4cddecee702d02916bdd8b62e51e6bb73e397cfc22fa75167059430a68ab68e",
+          "native_sequence": 6375,
+          "native_time_msc": 1793583895808,
+          "raw_journal_hash": "3acd80729da55412dda4587d660654f6e05d6f75c917b4b862bc6f963c646233",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "low": 5195800,
+        "open": 5195850,
+        "open_msc": 1793583840000,
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+        "tick_size": "0.01",
+        "tick_volume": 60,
+        "timeframe_seconds": 60
+      },
+      "closure_ref": {
+        "callback_uptime_ms": 250054015,
+        "native_hash": "6948df886d81893037b2f499ac4ee37c8546c2b6e69f5ea47d374171e8536133",
+        "native_sequence": 6377,
+        "native_time_msc": 1793583900366,
+        "raw_journal_hash": "625e998c0358cc7a68e0c662b0d490a5e9abb6ca030a34130e63bc337855565f",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      },
+      "compute_clock": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:45:02.380623+00:00",
+        "monotonic_ns": 250073771972000,
+        "uptime_ms": 250055562,
+        "utc_certified": false
+      },
+      "coverage_scope": "EXACT_NATIVE_BID_SEQUENCE_AND_AGGREGATE_REFERENCE_NOT_INDEPENDENT_GENERATION_UTC",
+      "differences": [
+        "high",
+        "tick_volume"
+      ],
+      "evidence_hash": "9fd0832ede2452073ca10125c20f28942d11610420851413e3d1f636d3bc7126",
+      "kind": "BAR_COMPARISON",
+      "native_closure_msc": 1793583900366,
+      "native_reference": {
+        "bar": {
+          "close": 51961.5,
+          "high": 51965.0,
+          "low": 51958.0,
+          "open": 51958.5,
+          "real_volume": 0,
+          "spread": 600,
+          "tick_volume": 66,
+          "time": 1793583840
+        },
+        "bid_sequence_reference": {
+          "all_reference_ticks": 66,
+          "bid_sequence_sha256": "0173323b5c3f7dffad98764ee4b7ccd29fffb894aa4a47cb501524c2a18124a0",
+          "bid_update_count": 66,
+          "end_native_exclusive_msc": 1793583900000,
+          "first_bid_native_msc": 1793583840431,
+          "independently_certified_event_generation": false,
+          "last_reference_native_msc": 1793583895808,
+          "origin": "COPY_TICKS_RANGE_REFERENCE_REQUERY_ONLY",
+          "reference_rows_adopted_as_prospective": 0,
+          "schema": "native-bid-sequence/1",
+          "start_native_msc": 1793583840000
+        },
+        "hash": "512c0d40be5dd6d6dd21c8189cf2bb5d6307ce2b575b9a22515cee20647358cf",
+        "kind": "NATIVE_BAR_AND_TICK_SEQUENCE_COMPARISON_ONLY_NOT_PROSPECTIVE_INPUT",
+        "not_used_to_fill_missing_raw": true,
+        "request_after": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:45:02.379623+00:00",
+          "monotonic_ns": 250073771813900,
+          "uptime_ms": 250055562,
+          "utc_certified": false
+        },
+        "request_before": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:45:01.658780+00:00",
+          "monotonic_ns": 250073050747500,
+          "uptime_ms": 250054828,
+          "utc_certified": false
+        },
+        "requested_native_open": 1793583840,
+        "time_semantics": "NATIVE_LABEL_REQUEST_NO_UTC_MAPPING",
+        "timeframe_seconds": 60
+      },
+      "parity_exact": false,
+      "quarantine": true,
+      "source_receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:45:00.983352+00:00",
+        "monotonic_ns": 250072375567100,
+        "uptime_ms": 250054156,
+        "utc_certified": false
+      }
+    },
+    "digest": "7ee3f43c07069c9ef2b12c37239054f8accfc78adbadc209798e45fb703a9af3",
+    "n": 6359
+  },
+  {
+    "body": {
+      "admitted": false,
+      "bid_sequence_coverage": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "bucket": {
+        "bid_sequence_sha256": "3e9e5234f6a7a14952a08598a0edadcdb66c7150e7f2a162bf512ed51f797892",
+        "close": 5196150,
+        "first_ref": {
+          "callback_uptime_ms": 249753796,
+          "native_hash": "02258633f80ec57a9db54404801ed2b18ccdb896e735c2ab4254c71c9eec5f5e",
+          "native_sequence": 6048,
+          "native_time_msc": 1793583600146,
+          "raw_journal_hash": "2a501824ca66fc2df748a63e7742d10b071c01257bc9c2a8645697405197fbfb",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "high": 5196450,
+        "issues": [],
+        "last_ref": {
+          "callback_uptime_ms": 250049453,
+          "native_hash": "c4cddecee702d02916bdd8b62e51e6bb73e397cfc22fa75167059430a68ab68e",
+          "native_sequence": 6375,
+          "native_time_msc": 1793583895808,
+          "raw_journal_hash": "3acd80729da55412dda4587d660654f6e05d6f75c917b4b862bc6f963c646233",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "low": 5193800,
+        "open": 5194350,
+        "open_msc": 1793583600000,
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+        "tick_size": "0.01",
+        "tick_volume": 259,
+        "timeframe_seconds": 300
+      },
+      "closure_ref": {
+        "callback_uptime_ms": 250054015,
+        "native_hash": "6948df886d81893037b2f499ac4ee37c8546c2b6e69f5ea47d374171e8536133",
+        "native_sequence": 6377,
+        "native_time_msc": 1793583900366,
+        "raw_journal_hash": "625e998c0358cc7a68e0c662b0d490a5e9abb6ca030a34130e63bc337855565f",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      },
+      "compute_clock": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:45:02.391626+00:00",
+        "monotonic_ns": 250073783061100,
+        "uptime_ms": 250055562,
+        "utc_certified": false
+      },
+      "coverage_scope": "EXACT_NATIVE_BID_SEQUENCE_AND_AGGREGATE_REFERENCE_NOT_INDEPENDENT_GENERATION_UTC",
+      "differences": [
+        "high",
+        "tick_volume"
+      ],
+      "evidence_hash": "435616ecde26bc106bd5e2830fe9f773353c480bf8b94e9fc67a563133641d2e",
+      "kind": "BAR_COMPARISON",
+      "native_closure_msc": 1793583900366,
+      "native_reference": {
+        "bar": {
+          "close": 51961.5,
+          "high": 51965.0,
+          "low": 51938.0,
+          "open": 51943.5,
+          "real_volume": 0,
+          "spread": 600,
+          "tick_volume": 284,
+          "time": 1793583600
+        },
+        "bid_sequence_reference": {
+          "all_reference_ticks": 284,
+          "bid_sequence_sha256": "9eef0c2c0cab601b333b7af5a5d3c9b30dc7d51004e67746bdf234f024d3d8e9",
+          "bid_update_count": 284,
+          "end_native_exclusive_msc": 1793583900000,
+          "first_bid_native_msc": 1793583600146,
+          "independently_certified_event_generation": false,
+          "last_reference_native_msc": 1793583895808,
+          "origin": "COPY_TICKS_RANGE_REFERENCE_REQUERY_ONLY",
+          "reference_rows_adopted_as_prospective": 0,
+          "schema": "native-bid-sequence/1",
+          "start_native_msc": 1793583600000
+        },
+        "hash": "b5981ffb4b5be7d9c4eab7288ef989a0c16e0d746dc735a8d97664001015a68c",
+        "kind": "NATIVE_BAR_AND_TICK_SEQUENCE_COMPARISON_ONLY_NOT_PROSPECTIVE_INPUT",
+        "not_used_to_fill_missing_raw": true,
+        "request_after": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:45:02.390628+00:00",
+          "monotonic_ns": 250073782413900,
+          "uptime_ms": 250055562,
+          "utc_certified": false
+        },
+        "request_before": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:45:02.380623+00:00",
+          "monotonic_ns": 250073772184300,
+          "uptime_ms": 250055562,
+          "utc_certified": false
+        },
+        "requested_native_open": 1793583600,
+        "time_semantics": "NATIVE_LABEL_REQUEST_NO_UTC_MAPPING",
+        "timeframe_seconds": 300
+      },
+      "parity_exact": false,
+      "quarantine": true,
+      "source_receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:45:00.983352+00:00",
+        "monotonic_ns": 250072375567100,
+        "uptime_ms": 250054156,
+        "utc_certified": false
+      }
+    },
+    "digest": "4ea8e617813d6a06820ad2910e306a71f6ec88ff8d0b6fe148b11cff5473d39b",
+    "n": 6361
+  },
+  {
+    "body": {
+      "admitted": false,
+      "bid_sequence_coverage": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "bucket": {
+        "bid_sequence_sha256": "a97309ea0a94ca7d304735a5bb7359ffabbadee4547b8bc8901684b03fa6f2c4",
+        "close": 5194900,
+        "first_ref": {
+          "callback_uptime_ms": 250054015,
+          "native_hash": "6948df886d81893037b2f499ac4ee37c8546c2b6e69f5ea47d374171e8536133",
+          "native_sequence": 6377,
+          "native_time_msc": 1793583900366,
+          "raw_journal_hash": "625e998c0358cc7a68e0c662b0d490a5e9abb6ca030a34130e63bc337855565f",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "high": 5196150,
+        "issues": [],
+        "last_ref": {
+          "callback_uptime_ms": 250112734,
+          "native_hash": "7cad12c2f009abfd79fd4768d52a5c7b3268c95215e6fbd459132851dfed08a8",
+          "native_sequence": 6492,
+          "native_time_msc": 1793583959079,
+          "raw_journal_hash": "ae5a10021d5e6df9f32c2453bf205ff05dec624bdffb98efd9aca29d01b7f88e",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "low": 5194350,
+        "open": 5196050,
+        "open_msc": 1793583900000,
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+        "tick_size": "0.01",
+        "tick_volume": 104,
+        "timeframe_seconds": 60
+      },
+      "closure_ref": {
+        "callback_uptime_ms": 250113734,
+        "native_hash": "23e32d7cc271f442267e07809ee88d79fc3d57b608df1213b1839c2fc0ca9842",
+        "native_sequence": 6493,
+        "native_time_msc": 1793583960088,
+        "raw_journal_hash": "d151bb3baa0fb3a8164f06cbdaa2479b8e80ab446b57c1a9c74de9752f7861b0",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      },
+      "compute_clock": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:46:01.227929+00:00",
+        "monotonic_ns": 250132619478500,
+        "uptime_ms": 250114406,
+        "utc_certified": false
+      },
+      "coverage_scope": "EXACT_NATIVE_BID_SEQUENCE_AND_AGGREGATE_REFERENCE_NOT_INDEPENDENT_GENERATION_UTC",
+      "differences": [
+        "tick_volume"
+      ],
+      "evidence_hash": "ab5ef24156355867bc2c4154d494fb899f60850a92ebabe2affd7113c78fdbe2",
+      "kind": "BAR_COMPARISON",
+      "native_closure_msc": 1793583960088,
+      "native_reference": {
+        "bar": {
+          "close": 51949.0,
+          "high": 51961.5,
+          "low": 51943.5,
+          "open": 51960.5,
+          "real_volume": 0,
+          "spread": 600,
+          "tick_volume": 106,
+          "time": 1793583900
+        },
+        "bid_sequence_reference": {
+          "all_reference_ticks": 105,
+          "bid_sequence_sha256": "e3c6e0c1479d96b73779fb933561ed0b9deeacfdb2919062c57098f119edfaec",
+          "bid_update_count": 105,
+          "end_native_exclusive_msc": 1793583960000,
+          "first_bid_native_msc": 1793583900366,
+          "independently_certified_event_generation": false,
+          "last_reference_native_msc": 1793583957892,
+          "origin": "COPY_TICKS_RANGE_REFERENCE_REQUERY_ONLY",
+          "reference_rows_adopted_as_prospective": 0,
+          "schema": "native-bid-sequence/1",
+          "start_native_msc": 1793583900000
+        },
+        "hash": "04fcb0fc11d31804fd46e4369e4f85fe406b08561a2bdb5a717984dcd2a7302a",
+        "kind": "NATIVE_BAR_AND_TICK_SEQUENCE_COMPARISON_ONLY_NOT_PROSPECTIVE_INPUT",
+        "not_used_to_fill_missing_raw": true,
+        "request_after": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:46:01.227929+00:00",
+          "monotonic_ns": 250132619363800,
+          "uptime_ms": 250114406,
+          "utc_certified": false
+        },
+        "request_before": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:46:01.186847+00:00",
+          "monotonic_ns": 250132578384700,
+          "uptime_ms": 250114359,
+          "utc_certified": false
+        },
+        "requested_native_open": 1793583900,
+        "time_semantics": "NATIVE_LABEL_REQUEST_NO_UTC_MAPPING",
+        "timeframe_seconds": 60
+      },
+      "parity_exact": false,
+      "quarantine": true,
+      "source_receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:46:01.166378+00:00",
+        "monotonic_ns": 250132558575700,
+        "uptime_ms": 250114343,
+        "utc_certified": false
+      }
+    },
+    "digest": "5277160a7764fd6494ad2ef5c3790d6828371d34e83062b295c0b9e2383126b6",
+    "n": 6421
+  },
+  {
+    "body": {
+      "admitted": false,
+      "bid_sequence_coverage": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "bucket": {
+        "bid_sequence_sha256": "30720647de5dfca7e77535c97bc3ba36c50984db2df3a5ce2192251b372db982",
+        "close": 5195900,
+        "first_ref": {
+          "callback_uptime_ms": 250113734,
+          "native_hash": "23e32d7cc271f442267e07809ee88d79fc3d57b608df1213b1839c2fc0ca9842",
+          "native_sequence": 6493,
+          "native_time_msc": 1793583960088,
+          "raw_journal_hash": "d151bb3baa0fb3a8164f06cbdaa2479b8e80ab446b57c1a9c74de9752f7861b0",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "high": 5196050,
+        "issues": [],
+        "last_ref": {
+          "callback_uptime_ms": 250173328,
+          "native_hash": "1e4e8c30db4a804db4fd60b9395205c91c94e1e8537c0a552f25bc73a7f55d91",
+          "native_sequence": 6566,
+          "native_time_msc": 1793584019675,
+          "raw_journal_hash": "9c6a14a7d62076ba2ad39d587d3143d166ee25cb173ac842a46c7b83a0e7ad20",
+          "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+        },
+        "low": 5194750,
+        "open": 5194750,
+        "open_msc": 1793583960000,
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+        "tick_size": "0.01",
+        "tick_volume": 62,
+        "timeframe_seconds": 60
+      },
+      "closure_ref": {
+        "callback_uptime_ms": 250173734,
+        "native_hash": "bf765c403f04b87b76b174068fc3e7b33aad0a63f5e5d9cd2d01ae426d757f88",
+        "native_sequence": 6567,
+        "native_time_msc": 1793584020078,
+        "raw_journal_hash": "a66edf9107cf3cdd142ab8a3ed0593ef5bdc19b6bc69c828a66608a11f7354e4",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      },
+      "compute_clock": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:47:01.949752+00:00",
+        "monotonic_ns": 250193341117400,
+        "uptime_ms": 250175125,
+        "utc_certified": false
+      },
+      "coverage_scope": "EXACT_NATIVE_BID_SEQUENCE_AND_AGGREGATE_REFERENCE_NOT_INDEPENDENT_GENERATION_UTC",
+      "differences": [],
+      "evidence_hash": "8a3b07bd07cdb1146dd7b2ebb36819de44acba2cac72fd3af65b8d5d316e474b",
+      "kind": "BAR_COMPARISON",
+      "native_closure_msc": 1793584020078,
+      "native_reference": {
+        "bar": {
+          "close": 51959.0,
+          "high": 51960.5,
+          "low": 51947.5,
+          "open": 51947.5,
+          "real_volume": 0,
+          "spread": 600,
+          "tick_volume": 62,
+          "time": 1793583960
+        },
+        "bid_sequence_reference": {
+          "all_reference_ticks": 61,
+          "bid_sequence_sha256": "17085ab14808f8d375d2b76266982aab10873c8f15835576cff8f377e14bfec4",
+          "bid_update_count": 61,
+          "end_native_exclusive_msc": 1793584020000,
+          "first_bid_native_msc": 1793583960088,
+          "independently_certified_event_generation": false,
+          "last_reference_native_msc": 1793584017919,
+          "origin": "COPY_TICKS_RANGE_REFERENCE_REQUERY_ONLY",
+          "reference_rows_adopted_as_prospective": 0,
+          "schema": "native-bid-sequence/1",
+          "start_native_msc": 1793583960000
+        },
+        "hash": "0af4d2ddc08e1d0c81d4eb2821b3e098a26f3eb0fd8c3e1d79f61c3e567730d3",
+        "kind": "NATIVE_BAR_AND_TICK_SEQUENCE_COMPARISON_ONLY_NOT_PROSPECTIVE_INPUT",
+        "not_used_to_fill_missing_raw": true,
+        "request_after": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:47:01.948758+00:00",
+          "monotonic_ns": 250193340761000,
+          "uptime_ms": 250175125,
+          "utc_certified": false
+        },
+        "request_before": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-01T23:47:01.936847+00:00",
+          "monotonic_ns": 250193328685100,
+          "uptime_ms": 250175109,
+          "utc_certified": false
+        },
+        "requested_native_open": 1793583960,
+        "time_semantics": "NATIVE_LABEL_REQUEST_NO_UTC_MAPPING",
+        "timeframe_seconds": 60
+      },
+      "parity_exact": true,
+      "quarantine": true,
+      "source_receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T23:47:01.259798+00:00",
+        "monotonic_ns": 250192651122700,
+        "uptime_ms": 250174437,
+        "utc_certified": false
+      }
+    },
+    "digest": "d11f889c2d3c10dc5a443248ccc1985db9ea9724998dafa5e23d969e0c054bcd",
+    "n": 6475
+  }
+]

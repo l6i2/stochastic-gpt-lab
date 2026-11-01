@@ -1,0 +1,3744 @@
+{
+  "derived_head": "e73cbab5a18b09b8f38c6c664ded05fe2534cb4d957368c8c42667b211413aac",
+  "derived_rows": 6507,
+  "old_raw_prefixes_verified": 1,
+  "old_version_prefix_retained": true,
+  "raw_integrity": "VERIFIED_AT_DURABLE_PREFIXES",
+  "raw_segments": [
+    {
+      "boot_id": "111",
+      "callback_envelope_ms": 105221218,
+      "certified_market_coverage_ms": 0,
+      "checkpoint": {
+        "chain_head": "79558146f3604860d98b5211c69732d500a679a17489c2be521f9f783925854f",
+        "heartbeat_records": 5961,
+        "last_callback_uptime_ms": 250211718,
+        "last_receipt_monotonic_ns": 250230424090800,
+        "last_tick_native_msc": 1793584058047,
+        "manifest_sha256": "2da97f385fb695a1ebc5153e32b555a3284a206b0b55282e7754caafb76e76af",
+        "rows": 6466,
+        "source_offset": 3916642,
+        "source_records": 6466,
+        "source_sequence": 6604,
+        "source_sha256": "a45f5eb9ab53300c61bd6c1bf2ff0341080ad2ecbdbd3de0afd3a3884f0cb1ca",
+        "synthetic_feature_records": 0,
+        "tick_callbacks": 505
+      },
+      "counts": {
+        "HEARTBEAT": 5961,
+        "ONTICK_LATEST_QUOTE": 505
+      },
+      "coverage": {
+        "disconnected_endpoint_interval_ms": 75819268,
+        "disconnections_observed": 9,
+        "gap_intervals_ms": 75565609,
+        "gaps": [
+          {
+            "after_uptime_ms": 149876968,
+            "before_uptime_ms": 145810484,
+            "duration_ms": 4066484
+          },
+          {
+            "after_uptime_ms": 149913359,
+            "before_uptime_ms": 149885765,
+            "duration_ms": 27594
+          },
+          {
+            "after_uptime_ms": 149928968,
+            "before_uptime_ms": 149913359,
+            "duration_ms": 15609
+          },
+          {
+            "after_uptime_ms": 151362921,
+            "before_uptime_ms": 151338015,
+            "duration_ms": 24906
+          },
+          {
+            "after_uptime_ms": 154260687,
+            "before_uptime_ms": 152667921,
+            "duration_ms": 1592766
+          },
+          {
+            "after_uptime_ms": 154295953,
+            "before_uptime_ms": 154260687,
+            "duration_ms": 35266
+          },
+          {
+            "after_uptime_ms": 158389843,
+            "before_uptime_ms": 158371421,
+            "duration_ms": 18422
+          },
+          {
+            "after_uptime_ms": 158403234,
+            "before_uptime_ms": 158389843,
+            "duration_ms": 13391
+          },
+          {
+            "after_uptime_ms": 165080687,
+            "before_uptime_ms": 165068593,
+            "duration_ms": 12094
+          },
+          {
+            "after_uptime_ms": 165095328,
+            "before_uptime_ms": 165080687,
+            "duration_ms": 14641
+          },
+          {
+            "after_uptime_ms": 171495593,
+            "before_uptime_ms": 170590296,
+            "duration_ms": 905297
+          },
+          {
+            "after_uptime_ms": 214937828,
+            "before_uptime_ms": 171495593,
+            "duration_ms": 43442235
+          },
+          {
+            "after_uptime_ms": 214948796,
+            "before_uptime_ms": 214937828,
+            "duration_ms": 10968
+          },
+          {
+            "after_uptime_ms": 215007093,
+            "before_uptime_ms": 214993140,
+            "duration_ms": 13953
+          },
+          {
+            "after_uptime_ms": 215068468,
+            "before_uptime_ms": 215057140,
+            "duration_ms": 11328
+          },
+          {
+            "after_uptime_ms": 218398656,
+            "before_uptime_ms": 216575078,
+            "duration_ms": 1823578
+          },
+          {
+            "after_uptime_ms": 218652921,
+            "before_uptime_ms": 218398656,
+            "duration_ms": 254265
+          },
+          {
+            "after_uptime_ms": 218664484,
+            "before_uptime_ms": 218652921,
+            "duration_ms": 11563
+          },
+          {
+            "after_uptime_ms": 218676796,
+            "before_uptime_ms": 218664484,
+            "duration_ms": 12312
+          },
+          {
+            "after_uptime_ms": 221655140,
+            "before_uptime_ms": 219606609,
+            "duration_ms": 2048531
+          },
+          {
+            "after_uptime_ms": 223248843,
+            "before_uptime_ms": 221655140,
+            "duration_ms": 1593703
+          },
+          {
+            "after_uptime_ms": 223262343,
+            "before_uptime_ms": 223248843,
+            "duration_ms": 13500
+          },
+          {
+            "after_uptime_ms": 223308687,
+            "before_uptime_ms": 223298218,
+            "duration_ms": 10469
+          },
+          {
+            "after_uptime_ms": 227782109,
+            "before_uptime_ms": 226197734,
+            "duration_ms": 1584375
+          },
+          {
+            "after_uptime_ms": 229514375,
+            "before_uptime_ms": 227782109,
+            "duration_ms": 1732266
+          },
+          {
+            "after_uptime_ms": 229526984,
+            "before_uptime_ms": 229514375,
+            "duration_ms": 12609
+          },
+          {
+            "after_uptime_ms": 231253171,
+            "before_uptime_ms": 230856984,
+            "duration_ms": 396187
+          },
+          {
+            "after_uptime_ms": 232916031,
+            "before_uptime_ms": 232905531,
+            "duration_ms": 10500
+          },
+          {
+            "after_uptime_ms": 235063750,
+            "before_uptime_ms": 233815562,
+            "duration_ms": 1248188
+          },
+          {
+            "after_uptime_ms": 245817328,
+            "before_uptime_ms": 235063750,
+            "duration_ms": 10753578
+          },
+          {
+            "after_uptime_ms": 249644171,
+            "before_uptime_ms": 245817328,
+            "duration_ms": 3826843
+          },
+          {
+            "after_uptime_ms": 249672359,
+            "before_uptime_ms": 249644171,
+            "duration_ms": 28188
+          }
+        ],
+        "interpretation": "HOST_UPTIME_CALLBACK_SUPPORT_NOT_MARKET_COVERAGE_OR_UTC_CERTIFICATION",
+        "short_callback_intervals_ms": 29655609,
+        "windows": [
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 145285796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 295296,
+            "start_uptime_ms": 144985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 145585796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 145285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 45,
+            "disconnected_endpoint_interval_ms": 75312,
+            "end_uptime_ms": 145885796,
+            "gap_interval_ms": 75312,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 224688,
+            "start_uptime_ms": 145585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 146185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 145885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 146485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 146185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 146785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 146485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 147085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 146785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 147385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 147085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 147685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 147385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 147985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 147685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 148285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 147985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 148585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 148285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 148885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 148585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 149185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 148885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 149485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 149185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 149785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 149485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 35,
+            "disconnected_endpoint_interval_ms": 202235,
+            "end_uptime_ms": 150085796,
+            "gap_interval_ms": 134375,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 165625,
+            "start_uptime_ms": 149785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 150385796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 150085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 150685796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 150385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 150985796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 150685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 151285796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 150985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 56,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 151585796,
+            "gap_interval_ms": 24906,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 275094,
+            "start_uptime_ms": 151285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 151885796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 151585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 152185796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 151885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 152485796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 152185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 37,
+            "disconnected_endpoint_interval_ms": 117875,
+            "end_uptime_ms": 152785796,
+            "gap_interval_ms": 117875,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 182125,
+            "start_uptime_ms": 152485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 153085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 152785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 153385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 153085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 153685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 153385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 153985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 153685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 1,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 154285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 153985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 58,
+            "disconnected_endpoint_interval_ms": 65125,
+            "end_uptime_ms": 154585796,
+            "gap_interval_ms": 10157,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 289843,
+            "start_uptime_ms": 154285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 154885796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 154585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 155185796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 154885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 155485796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 155185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 155785796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 155485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 156085796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 155785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 156385796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 156085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 156685796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 156385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 156985796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 156685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 157285796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 156985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 157585796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 157285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 157885796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 157585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 158185796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 157885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 56,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 158485796,
+            "gap_interval_ms": 31813,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 268187,
+            "start_uptime_ms": 158185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 158785796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 158485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 159085796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 158785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 159385796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 159085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 159685796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 159385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 159985796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 159685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 160285796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 159985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 160585796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 160285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 160885796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 160585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 161185796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 160885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 161485796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 161185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 161785796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 161485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 162085796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 161785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 162385796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 162085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 162685796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 162385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 162985796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 162685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 163285796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 162985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 163585796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 163285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 163885796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 163585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 164185796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 163885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 164485796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 164185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 164785796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 164485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 58,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 165085796,
+            "gap_interval_ms": 17203,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 282797,
+            "start_uptime_ms": 164785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 59,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 165385796,
+            "gap_interval_ms": 9532,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 290468,
+            "start_uptime_ms": 165085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 165685796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 165385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 165985796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 165685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 166285796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 165985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 166585796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 166285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 166885796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 166585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 167185796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 166885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 167485796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 167185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 167785796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 167485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 168085796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 167785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 168385796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 168085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 168685796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 168385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 168985796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 168685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 169285796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 168985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 169585796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 169285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 169885796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 169585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 170185796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 169885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 170485796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 170185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 21,
+            "disconnected_endpoint_interval_ms": 195500,
+            "end_uptime_ms": 170785796,
+            "gap_interval_ms": 195500,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 104500,
+            "start_uptime_ms": 170485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 171085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 170785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 171385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 171085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 1,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 171685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 171385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 171985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 171685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 172285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 171985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 172585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 172285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 172885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 172585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 173185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 172885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 173485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 173185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 173785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 173485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 174085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 173785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 174385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 174085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 174685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 174385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 174985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 174685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 175285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 174985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 175585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 175285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 175885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 175585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 176185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 175885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 176485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 176185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 176785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 176485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 177085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 176785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 177385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 177085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 177685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 177385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 177985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 177685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 178285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 177985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 178585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 178285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 178885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 178585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 179185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 178885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 179485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 179185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 179785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 179485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 180085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 179785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 180385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 180085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 180685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 180385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 180985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 180685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 181285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 180985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 181585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 181285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 181885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 181585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 182185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 181885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 182485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 182185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 182785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 182485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 183085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 182785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 183385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 183085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 183685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 183385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 183985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 183685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 184285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 183985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 184585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 184285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 184885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 184585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 185185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 184885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 185485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 185185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 185785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 185485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 186085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 185785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 186385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 186085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 186685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 186385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 186985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 186685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 187285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 186985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 187585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 187285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 187885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 187585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 188185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 187885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 188485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 188185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 188785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 188485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 189085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 188785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 189385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 189085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 189685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 189385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 189985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 189685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 190285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 189985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 190585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 190285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 190885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 190585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 191185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 190885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 191485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 191185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 191785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 191485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 192085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 191785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 192385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 192085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 192685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 192385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 192985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 192685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 193285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 192985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 193585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 193285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 193885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 193585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 194185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 193885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 194485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 194185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 194785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 194485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 195085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 194785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 195385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 195085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 195685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 195385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 195985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 195685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 196285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 195985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 196585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 196285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 196885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 196585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 197185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 196885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 197485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 197185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 197785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 197485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 198085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 197785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 198385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 198085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 198685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 198385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 198985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 198685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 199285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 198985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 199585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 199285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 199885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 199585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 200185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 199885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 200485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 200185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 200785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 200485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 201085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 200785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 201385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 201085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 201685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 201385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 201985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 201685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 202285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 201985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 202585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 202285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 202885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 202585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 203185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 202885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 203485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 203185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 203785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 203485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 204085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 203785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 204385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 204085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 204685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 204385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 204985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 204685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 205285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 204985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 205585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 205285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 205885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 205585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 206185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 205885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 206485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 206185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 206785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 206485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 207085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 206785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 207385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 207085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 207685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 207385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 207985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 207685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 208285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 207985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 208585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 208285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 208885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 208585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 209185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 208885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 209485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 209185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 209785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 209485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 210085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 209785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 210385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 210085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 210685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 210385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 210985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 210685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 211285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 210985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 211585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 211285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 211885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 211585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 212185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 211885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 212485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 212185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 212785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 212485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 213085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 212785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 213385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 213085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 213685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 213385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 213985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 213685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 214285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 213985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 214585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 214285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 214885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 214585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 45,
+            "disconnected_endpoint_interval_ms": 209314,
+            "end_uptime_ms": 215185796,
+            "gap_interval_ms": 88281,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 211719,
+            "start_uptime_ms": 214885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 61,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 215485796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 215185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 215785796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 215485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 216085796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 215785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 216385796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 216085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 38,
+            "disconnected_endpoint_interval_ms": 110718,
+            "end_uptime_ms": 216685796,
+            "gap_interval_ms": 110718,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 189282,
+            "start_uptime_ms": 216385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 216985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 216685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 217285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 216985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 217585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 217285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 217885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 217585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 218185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 217885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 1,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 218485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 218185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 24,
+            "disconnected_endpoint_interval_ms": 225829,
+            "end_uptime_ms": 218785796,
+            "gap_interval_ms": 191000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 109000,
+            "start_uptime_ms": 218485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 219085796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 218785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 219385796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 219085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 45,
+            "disconnected_endpoint_interval_ms": 79187,
+            "end_uptime_ms": 219685796,
+            "gap_interval_ms": 79187,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 220813,
+            "start_uptime_ms": 219385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 219985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 219685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 220285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 219985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 220585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 220285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 220885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 220585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 221185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 220885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 221485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 221185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 1,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 221785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 221485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 222085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 221785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 222385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 222085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 222685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 222385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 222985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 222685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 6,
+            "disconnected_endpoint_interval_ms": 286704,
+            "end_uptime_ms": 223285796,
+            "gap_interval_ms": 276547,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 23453,
+            "start_uptime_ms": 222985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 59,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 223585796,
+            "gap_interval_ms": 10469,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 289531,
+            "start_uptime_ms": 223285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 223885796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 223585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 224185796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 223885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 224485796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 224185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 224785796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 224485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 225085796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 224785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 225385796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 225085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 225685796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 225385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 225985796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 225685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 43,
+            "disconnected_endpoint_interval_ms": 88062,
+            "end_uptime_ms": 226285796,
+            "gap_interval_ms": 88062,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 211938,
+            "start_uptime_ms": 225985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 226585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 226285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 226885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 226585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 227185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 226885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 227485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 227185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 1,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 227785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 227485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 228085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 227785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 228385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 228085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 228685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 228385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 228985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 228685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 229285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 228985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 13,
+            "disconnected_endpoint_interval_ms": 256204,
+            "end_uptime_ms": 229585796,
+            "gap_interval_ms": 241188,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 58812,
+            "start_uptime_ms": 229285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 229885796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 229585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 230185796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 229885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 230485796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 230185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 230785796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 230485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 15,
+            "disconnected_endpoint_interval_ms": 228812,
+            "end_uptime_ms": 231085796,
+            "gap_interval_ms": 228812,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 71188,
+            "start_uptime_ms": 230785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 26,
+            "disconnected_endpoint_interval_ms": 196657,
+            "end_uptime_ms": 231385796,
+            "gap_interval_ms": 167375,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 132625,
+            "start_uptime_ms": 231085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 231685796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 231385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 231985796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 231685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 232285796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 231985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 232585796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 232285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 232885796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 232585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 59,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 233185796,
+            "gap_interval_ms": 10500,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 289500,
+            "start_uptime_ms": 232885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 233485796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 233185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 60,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 233785796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 233485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 6,
+            "disconnected_endpoint_interval_ms": 270234,
+            "end_uptime_ms": 234085796,
+            "gap_interval_ms": 270234,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 29766,
+            "start_uptime_ms": 233785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 234385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 234085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 234685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 234385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 234985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 234685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 1,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 235285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 234985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 235585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 235285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 235885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 235585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 236185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 235885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 236485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 236185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 236785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 236485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 237085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 236785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 237385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 237085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 237685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 237385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 237985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 237685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 238285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 237985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 238585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 238285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 238885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 238585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 239185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 238885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 239485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 239185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 239785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 239485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 240085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 239785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 240385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 240085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 240685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 240385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 240985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 240685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 241285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 240985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 241585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 241285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 241885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 241585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 242185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 241885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 242485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 242185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 242785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 242485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 243085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 242785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 243385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 243085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 243685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 243385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 243985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 243685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 244285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 243985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 244585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 244285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 244885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 244585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 245185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 244885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 245485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 245185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 245785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 245485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 1,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 246085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 245785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 246385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 246085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 246685796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 246385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 246985796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 246685796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 247285796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 246985796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 247585796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 247285796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 247885796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 247585796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 248185796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 247885796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 248485796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 248185796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 248785796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 248485796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 249085796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 248785796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 0,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 249385796,
+            "gap_interval_ms": 300000,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 0,
+            "start_uptime_ms": 249085796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 4,
+            "disconnected_endpoint_interval_ms": 300000,
+            "end_uptime_ms": 249685796,
+            "gap_interval_ms": 286563,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 13437,
+            "start_uptime_ms": 249385796,
+            "ticks": 0
+          },
+          {
+            "callbacks": 298,
+            "disconnected_endpoint_interval_ms": 11500,
+            "end_uptime_ms": 249985796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 300000,
+            "start_uptime_ms": 249685796,
+            "ticks": 238
+          },
+          {
+            "callbacks": 312,
+            "disconnected_endpoint_interval_ms": 0,
+            "end_uptime_ms": 250285796,
+            "gap_interval_ms": 0,
+            "scientific_status": "QUARANTINED",
+            "short_callback_interval_ms": 225922,
+            "start_uptime_ms": 249985796,
+            "ticks": 267
+          }
+        ]
+      },
+      "duplicate_record_ids": 0,
+      "equal_native_tick_timestamps": 0,
+      "feature_records": 0,
+      "first_callback_uptime_ms": 144990500,
+      "first_host_gmt_seconds": 1793471638,
+      "hash_chain_and_native_bytes": "VERIFIED_AT_DURABLE_CHECKPOINT",
+      "journal_prefix_bytes": 12518583,
+      "journal_prefix_sha256": "fb36c1d6cbc9759cb639c9e77a70c3973daf7c11d3807e595bb54ec137ddce35",
+      "last_callback_uptime_ms": 250211718,
+      "last_host_gmt_seconds": 1793576858,
+      "m1_bar_records": 0,
+      "m5_bar_records": 0,
+      "manifest_file_sha256": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+      "membership": {
+        "first_sequence": 139,
+        "last_sequence": 6604,
+        "post_eof_only": true,
+        "prior_payloads_adopted": 0,
+        "source_end_offset": 3916642,
+        "source_start_offset": 81469
+      },
+      "note": "Current source schema contains quotes/heartbeats only. Zero stored bar/feature/signal records does not certify zero market signals. No derivation or scoring performed.",
+      "quarantine_flags": {
+        "DISCONNECTED": 86
+      },
+      "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+      "signal_records": 0,
+      "source_capture": "pc_a_prospective_utc_v1",
+      "source_session": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+      "verified_rows": 6466
+    }
+  ]
+}

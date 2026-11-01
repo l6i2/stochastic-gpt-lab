@@ -1,0 +1,14 @@
+{
+  "capture_originals_changed": false,
+  "component": "ProspectiveUtcObserver",
+  "deployment_receipt_sha256": "b3cc8ac885d71608b04582d0d2c98130f033804a97d14a3526f953394ac83e97",
+  "installed_ex5_sha256": "5cf9fb463f0be82d46680a3b5e6af83f501033ad83b5cf1bc2795692262f1fc0",
+  "installed_files_match_existing_published_producer": true,
+  "loaded_memory_binary_independently_attested": false,
+  "new_native_probe_executed": false,
+  "recompilation_performed": false,
+  "source_identity": "XMGlobalSC-MT5 5|US30Cash|NATIVE_LABELS",
+  "source_sha256": "b275430e62a04c4c89302dcfb7e7e5e6dcd4ecbdbb68b1e1c84298cf74e6faa7",
+  "terminal_data_folder_id": "20C285FE08971A9A2E814AAC44AFC9D2",
+  "type": "READ_ONLY_NATIVE_EA"
+}
