@@ -1,0 +1,46 @@
+{
+  "groups": [
+    {
+      "id": "2024_01_02_native_fixed_diagnostic",
+      "raw_or_blocked_dataset": false,
+      "role": "AUTHORIZED_EXPOSED_DIAGNOSTIC_ONLY",
+      "rows_opened": 28
+    },
+    {
+      "id": "stochastic_master_v1",
+      "role": "MIXED_SOURCE_CONTAINS_PROTECTED_TAIL_DO_NOT_OPEN",
+      "rows_opened": 0
+    },
+    {
+      "id": "quality_v1_TRAIN",
+      "role": "EXHAUSTED_NO_NEW_SEARCH_OR_FIT",
+      "rows_opened": 0
+    },
+    {
+      "id": "DISCOVERY_VALIDATION",
+      "role": "BLOCKED_POTENTIAL_CONTAMINATION",
+      "rows_opened": 0
+    },
+    {
+      "id": "HISTORICAL_HOLDOUT",
+      "role": "BLOCKED_EXACT_MEMBERSHIP_MISSING",
+      "rows_opened": 0
+    },
+    {
+      "id": "FINAL_TEST",
+      "role": "LOCKED_INCLUDING_MASTER_TAIL",
+      "rows_opened": 0
+    },
+    {
+      "id": "us30cash_m5_future_20261019_v1",
+      "role": "PREVIOUS_RESERVATION_CLOSED_FORWARD_ONLY_RAW_RETAINED",
+      "rows_opened": 0
+    },
+    {
+      "id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+      "outcomes_read": 0,
+      "role": "NEW_PROSPECTIVE_QUARANTINED_NOT_ADMITTED"
+    }
+  ],
+  "independent_dataset_hash": null
+}

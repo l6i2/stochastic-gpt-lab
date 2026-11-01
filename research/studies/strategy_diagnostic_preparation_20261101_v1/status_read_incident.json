@@ -1,0 +1,13 @@
+{
+  "auto_recovered_worker_pid": 30040,
+  "clock": {
+    "boot_id": "111",
+    "host_utc_label": "2026-11-01T16:28:17.934255+00:00",
+    "monotonic_ns": 223863769664000,
+    "uptime_ms": 223851109,
+    "utc_certified": false
+  },
+  "error": "PermissionError",
+  "file": "collector_status.json",
+  "original_error_sha256": "cd9ec50c79612684a191d06c00fadeeb7868f086d2b4d42e1c60ddd7cede7c02"
+}

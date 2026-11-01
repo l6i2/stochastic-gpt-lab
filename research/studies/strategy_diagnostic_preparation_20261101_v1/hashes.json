@@ -1,0 +1,27 @@
+{
+  "files": {
+    "controller/feature_availability_review.py": "fee9c060add85cb8b42b1af9aef63a5b42deef54a8b0e586cf988d17fd9f2774",
+    "controller/pretrain_model_preparation.py": "8149f1f73a33abde5ba7e95c6408c91d48d790547a79dbf704fa7db314cdd0bc",
+    "controller/strategy_diagnostic.py": "97f0446a5ee67bfab5db1dffbde1d4bd34b020114a8418c0e772e64e23387444",
+    "docs/STRATEGY_DIAGNOSTIC_REPORT.md": "ad05a9971d8e2c6a4c54a39c44cac8fd7679b6af07ea8202c37333d37c3be279",
+    "research/studies/strategy_diagnostic_preparation_20261101_v1/data_eligibility.json": "766a2e7a20d7384dbabe11686a54ede3ab3d977dda60ead53019046244fa1bd5",
+    "research/studies/strategy_diagnostic_preparation_20261101_v1/exposure_overlay.json": "e8b8ff75eb30e3531d01f22ebef0c3c99f71fcded4ea006325b292d296653516",
+    "research/studies/strategy_diagnostic_preparation_20261101_v1/feature_review.json": "16ade8c429c0a3c5f1c839731dae7389ff82edb0a70479d5fd88dd35fba74c87",
+    "research/studies/strategy_diagnostic_preparation_20261101_v1/fixed_day_diagnostic.json": "c475c96883d21596b50a61f2f1a0a75a7752f84a318cf7234af2a77a2698977c",
+    "research/studies/strategy_diagnostic_preparation_20261101_v1/model_catalog.json": "7a2d5fbfbd048b5d1b6226e43d8e1561943cef595c4443e742b69ef872497596",
+    "research/studies/strategy_diagnostic_preparation_20261101_v1/prospective_status.json": "3d6598938d49c9b97c5eb94ca15d637cbb3f5641bfd60ce8cd084a75634381e7",
+    "research/studies/strategy_diagnostic_preparation_20261101_v1/reproduction_plan.json": "0c37e357555699283acb07716603ba9c96e39f48eb0138e6ea907d8d9a31027b",
+    "research/studies/strategy_diagnostic_preparation_20261101_v1/result.json": "80ecc32b9d3b37f108a07e3ba23d0ca7d7c23cb71d535fa02f9a01485ddc4b09",
+    "research/studies/strategy_diagnostic_preparation_20261101_v1/reviewed_sources.json": "192d61b4aaf1eadcf44054fea551c558c39b1acdc63805ad33b3c5da920a3480",
+    "research/studies/strategy_diagnostic_preparation_20261101_v1/session_reference_only.json": "6ecbe56e237cd820888d274090537f3f5a9b7ebd546519b906e4bb67ec5cf5b1",
+    "research/studies/strategy_diagnostic_preparation_20261101_v1/status_read_incident.json": "d690e025d26522cf0ded9a23069448e8715c1ac3bf457b326deb8c460040aeb1",
+    "research/studies/strategy_diagnostic_preparation_20261101_v1/unfitted_logistic_manifests.json": "db0a5c351baf4b9a8240b345083988d3f77c3dc099f62bd8a2c7e1071b747f82",
+    "research/studies/strategy_diagnostic_preparation_20261101_v1/validation.json": "f681d8dcfeb179c87945d2428892275be19bb7f7e140c1f93aa04d5e1ff62187",
+    "research/studies/strategy_diagnostic_preparation_20261101_v1/worker_control_repair.json": "851d67e6631e57c245b57930f2618be8903a0c855d6bb88f9a4fa53fe1cfbe2e",
+    "tests/test_status_read_retry.py": "0fafaeaa87f2c32ac0f650afb94f2da8adaf944e7c16030c206f44d5c15e5733",
+    "tests/test_strategy_preparation.py": "921d34fd207be43c2b993f43d300c018654074cee06315a0d87e7e5a82b0caee",
+    "tools/offline_strategy_diagnostic.py": "0daac68ff6fdb864d8cfdf58608bbe7b0054ddac2b93b2ef99018603c5d64bd4",
+    "tools/prospective_pipeline.py": "d6b119a0a70a5d756a890aa0a258dedac60cc3c3e54fe3d1b5480229c07b49d7"
+  },
+  "root_sha256": "0b2027ccea3763915cb85196c83c4fedf05df3421656504e0da379c1b2c14e8d"
+}

@@ -12,6 +12,15 @@ from controller.native_sequence_coverage import summarize_reference
 BASE=ROOT/'outputs/prospective_derivatives_v1'
 
 
+def read_collector_status(path):
+    """Bounded retry of a derived liveness file only, never a data-acceptance rule."""
+    for attempt in range(5):
+        try:return json.loads(path.read_text())
+        except PermissionError:
+            if attempt==4:raise
+            time.sleep(0.02)
+
+
 def frozen_requirements():
     package=ROOT/'research/studies/us30cash_m5_native_pretrain_v1'
     auth=json.loads((package/'scientific_authorization_package.json').read_text())
@@ -147,7 +156,7 @@ class Worker:
         if processed:self.ledger.emit('MEMBERSHIP_EXPOSURE_PREFIX',dict(capture_id=self.manifest['capture_id'],raw_cursors=s['cursors'],labels_read=0,protected_rows_read=0,legacy_independence='PENDING'));self.ledger.commit()
         monitor=Processor(s,self.ledger.emit,self.oracle,self.oracle.step or '1',self.req).maturity()
         monitor.update(process_id=os.getpid(),observed_clock=host_clock(),raw_capture_id=self.manifest['capture_id'],source_cursors=s['cursors'],ledger_chain_head=self.ledger.head,ledger_artifacts=self.ledger.count,source_records_last_poll=processed,poll_elapsed_ms=round((time.monotonic()-started)*1000,2),status='ACTIVE_QUARANTINED_WAITING_NATIVE_TICKS' if not s['last_tick'] else 'ACTIVE_DERIVED_QUARANTINED',native_indicators_parity='PASS_SYNTHETIC_IMPLEMENTATION_LIVE_SEED_MEMBERSHIP_PENDING',m5_parity='NOT_OBSERVED_NO_CLOSED_BUCKETS' if not s['own_bars'] else 'EXACT_AGGREGATES_ONLY_NOT_EVENT_COMPLETENESS')
-        raw_status=json.loads((self.manager.root/'collector_status.json').read_text())
+        raw_status=read_collector_status(self.manager.root/'collector_status.json')
         monitor.update(coverage_rule='EXACT_NATIVE_BID_SEQUENCE_PLUS_OHLC_VOLUME_REFERENCE_REQUIRED',raw_collector_status=raw_status['status'],raw_callback_age_ms=raw_status['last_callback_age_ms'],active_code_pin=s.get('active_code_pin',sha(BASE/'deployment_pin.json')),reference_ticks_adopted_as_raw=0)
         if s['own_bars']:monitor['m5_parity']='EXACT_NATIVE_BID_SEQUENCE_AND_AGGREGATE_REFERENCE_ONLY'
         if raw_status['status']!='ACTIVE_QUARANTINED':monitor['status']='SOURCE_NOT_RECENT_DERIVATIVES_QUARANTINED'

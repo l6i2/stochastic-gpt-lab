@@ -1,0 +1,58 @@
+{
+  "active_pin_sha256": "d82f5cce490c0b351c48abaa65af3ac76e5c606e460e91bfe15d11f4e6fbba92",
+  "attempts": 5,
+  "change": "BOUNDED_PERMISSION_ERROR_RETRY_COLLECTOR_STATUS_ONLY",
+  "feature_fragment_binding": {
+    "approved_git_head": "dbd43f362c69ed710d45ada67b5a9194622c6cc2",
+    "approved_worker_source_sha256": "b946d860e2a37f8ac5747f8fc69e70ef10543514a2ac6cb54cb54a624c2e8514",
+    "feature_fragment_sha256": "c8fe7846f6569d824cd7158c8fb72998a21a7aa3977901aed6cdde6fbc6e109d",
+    "native_fixture_rerun": false
+  },
+  "maximum_sleep_seconds": 0.08,
+  "missing_or_malformed_status_still_fails": true,
+  "native_probe_repeated": false,
+  "raw_collector_source_unchanged": true,
+  "upgrade": {
+    "after_head": "e8fe185553325eee217f0437ec641ab270b57e622e837d4abdd6058695b121cf",
+    "before": {
+      "clock": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-01T16:31:02.807692+00:00",
+        "monotonic_ns": 224028643414800,
+        "uptime_ms": 224015984,
+        "utc_certified": false
+      },
+      "derived_head": "b71089ca46bb4ddc2d5445b74137c2db1f3db4aec4bc2db295819f7276d47ad3",
+      "manifest_sha256": "31d3a783f90cc2771b24c69a55a1da0f43086c5c5e067b59b52992fd31e4c65e",
+      "origin_pin_sha256": "b3b81345afa40a6d11806fd1e126ff42b5adead82155f6315c2e8db412adfe9e",
+      "raw_cursors": {
+        "obs_850c9ced05834b38b6e4c9e351a49f86": {
+          "head": "c60106df0672bd677db30a2888062bfc6c51774bded56b8d4a408c87bf92ad16",
+          "manifest_hash": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+          "native_head": "ef36ea2d0a439c0a483f61d1af73f8a9a81f5fe82a231c3fbde66a3e7cda2d46",
+          "native_sequence": 4770,
+          "offset": 8945329,
+          "rows": 4632
+        }
+      },
+      "source_records": 4632
+    },
+    "clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-01T16:31:04.030463+00:00",
+      "monotonic_ns": 224029866106800,
+      "uptime_ms": 224017203,
+      "utc_certified": false
+    },
+    "cursor_reset": false,
+    "features_fragment_hash": "c8fe7846f6569d824cd7158c8fb72998a21a7aa3977901aed6cdde6fbc6e109d",
+    "idempotence": "PASS",
+    "native_oracle_reused_unchanged_features": true,
+    "new_active_pin_sha256": "d82f5cce490c0b351c48abaa65af3ac76e5c606e460e91bfe15d11f4e6fbba92",
+    "old_artifacts_preserved": true,
+    "original_manifest_preserved": true,
+    "original_pin_preserved": true,
+    "reference_rows_adopted_as_raw": 0,
+    "source_records": 4633
+  }
+}

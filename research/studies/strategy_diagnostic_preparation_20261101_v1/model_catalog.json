@@ -1,0 +1,67 @@
+{
+  "BUY_SELL": "SEPARATE_ESTIMATOR_INSTANCES",
+  "current_study_families": [
+    "logistic"
+  ],
+  "decision": "p>0.5 FOLLOW; otherwise INVERT",
+  "features": [
+    "stoch_k",
+    "delta_k_1",
+    "ATR",
+    "relative_volume_20",
+    "ha_direction",
+    "range_to_ATR"
+  ],
+  "fits_authorized": 0,
+  "hist_gradient_boosting": {
+    "required_explicit_params": [
+      "early_stopping",
+      "l2_regularization",
+      "learning_rate",
+      "max_depth",
+      "max_iter",
+      "max_leaf_nodes",
+      "min_samples_leaf",
+      "random_state",
+      "validation_fraction"
+    ],
+    "scientific_budget": 0,
+    "status": "PROPOSAL_ONLY_SEPARATE_PREREGISTRATION_REQUIRED"
+  },
+  "logistic": {
+    "missing": "NO_IMPUTATION_REPORT_MISSING_FIXED_FOLLOW_NO_FIT_ON_MISSING",
+    "params": {
+      "C": 1,
+      "class_weight": null,
+      "max_iter": 1000,
+      "random_state": 20261030,
+      "solver": "lbfgs"
+    },
+    "scaling": "TRAIN_FOLD_ONLY_POPULATION_STANDARD_DEVIATION_ZERO_TO_ONE",
+    "status": "FROZEN_NEW_STUDY_SPEC_PREPARED_NOT_AUTHORIZED_TO_FIT"
+  },
+  "random_forest": {
+    "required_explicit_params": [
+      "max_depth",
+      "max_features",
+      "min_samples_leaf",
+      "n_estimators",
+      "n_jobs",
+      "random_state"
+    ],
+    "scientific_budget": 0,
+    "status": "PROPOSAL_ONLY_SEPARATE_PREREGISTRATION_REQUIRED"
+  },
+  "scoring_authorized": 0,
+  "sequential": {
+    "requirements": [
+      "INDEPENDENT_SEQUENCE_MEMBERSHIP",
+      "CAUSAL_WINDOW_AND_PURGE_SPEC",
+      "PARAMETER_AND_COMPUTE_BUDGET",
+      "JUSTIFICATION_VERSUS_SIMPLE_BASELINES",
+      "SEPARATE_PREREGISTRATION_AND_AUTHORIZATION"
+    ],
+    "scientific_budget": 0,
+    "status": "NOT_IMPLEMENTED_AS_TRAINER_JUSTIFICATION_REQUIRED"
+  }
+}

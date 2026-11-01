@@ -1,0 +1,19 @@
+{
+  "diagnostic_outcome_paths_read": 56,
+  "failures": 0,
+  "fits": 0,
+  "main_k_comparisons": 268,
+  "model_scoring_calls": 0,
+  "native_replay_quote_records": 79211,
+  "new_hypotheses_tested": 0,
+  "new_strategy_preparation_tests": 9,
+  "producer_or_frozen_contract_changes": false,
+  "protected_rows_read": 0,
+  "purged_walk_forward_metadata_tests": 4,
+  "real_native_M1_matched": 1376,
+  "real_native_M5_matched": 276,
+  "reproducible_artifact_pairs": 8,
+  "skipped": 0,
+  "status_read_tests": 3,
+  "tests_passed": 16
+}

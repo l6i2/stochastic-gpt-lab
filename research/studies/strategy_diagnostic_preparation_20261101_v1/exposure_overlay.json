@@ -1,0 +1,25 @@
+{
+  "audit_entry": {
+    "ML_fit_or_policy_scoring": false,
+    "diagnostic_outcome_paths_read": 56,
+    "diagnostic_signals": 28,
+    "entry_sha256": "a580bc957b48586716909e7897793c4370fdc3bd66e8dcc07781d9048161a43b",
+    "independence_certified": false,
+    "kind": "AUTHORIZED_FIXED_NATIVE_DIAGNOSTIC_DESCRIPTIVE_SUMMARY",
+    "ledger_sequence": 10,
+    "new_adaptive_hypotheses": 0,
+    "period_native": "2024-01-02_ONLY",
+    "previous": "41ae3895825e1243e1095a77c826bc902e59a7bde439e3303737a366b5c36b92",
+    "protected_rows_read": 0,
+    "source_event_sha256": "975b374fce187ef4cdf33a02b6a69f743393cc2ef989f352706ae89c8225da81",
+    "source_run_ids": [
+      "diag_fd4e5bf3d468",
+      "diag_abedbf590923"
+    ]
+  },
+  "legacy_chain_head": "41ae3895825e1243e1095a77c826bc902e59a7bde439e3303737a366b5c36b92",
+  "legacy_completeness": false,
+  "legacy_file_sha256": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+  "legacy_path": "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json",
+  "original_ledger_unchanged": true
+}

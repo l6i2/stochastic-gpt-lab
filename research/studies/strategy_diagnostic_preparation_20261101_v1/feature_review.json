@@ -1,0 +1,112 @@
+{
+  "current_live_feature_rows_verified": 0,
+  "profile_activity_is_not_native_bar_tick_volume": true,
+  "rows": [
+    {
+      "current_study_permitted": true,
+      "dependency": "CLOSED_M5_NATIVE_BUFFER_SHIFT_1_MAIN_K_5_3_3",
+      "extra_features_require_separate_protocol": false,
+      "group": "Stochastic",
+      "live_admission": false,
+      "readiness": "NATIVE_FIXED_DIAGNOSTIC_OR_SYNTHETIC_SCOPE_ONLY"
+    },
+    {
+      "current_study_permitted": true,
+      "dependency": "CLOSED_M5_NATIVE_BID_UPDATE_VOLUME_PARITY_REQUIRED",
+      "extra_features_require_separate_protocol": false,
+      "group": "tick_volume",
+      "live_admission": false,
+      "readiness": "NATIVE_FIXED_DIAGNOSTIC_OR_SYNTHETIC_SCOPE_ONLY"
+    },
+    {
+      "current_study_permitted": false,
+      "dependency": "TICK_WINDOW_END_AND_LAST_TICK_AT_OR_BEFORE_CUTOFF",
+      "extra_features_require_separate_protocol": true,
+      "group": "Volume_Profile",
+      "live_admission": false,
+      "readiness": "NATIVE_FIXED_DIAGNOSTIC_OR_SYNTHETIC_SCOPE_ONLY"
+    },
+    {
+      "current_study_permitted": false,
+      "dependency": "DETERMINISTIC_MAX_MASS_BIN_LOWER_PRICE_TIE",
+      "extra_features_require_separate_protocol": true,
+      "group": "POC",
+      "live_admission": false,
+      "readiness": "NATIVE_FIXED_DIAGNOSTIC_OR_SYNTHETIC_SCOPE_ONLY"
+    },
+    {
+      "current_study_permitted": false,
+      "dependency": "CONTIGUOUS_VALUE_AREA_70_PERCENT_NO_FUTURE_TICKS",
+      "extra_features_require_separate_protocol": true,
+      "group": "VAH_VAL",
+      "live_admission": false,
+      "readiness": "NATIVE_FIXED_DIAGNOSTIC_OR_SYNTHETIC_SCOPE_ONLY"
+    },
+    {
+      "current_study_permitted": false,
+      "dependency": "LOCAL_BIN_NEIGHBORS_WITHIN_CLOSED_PROFILE_WINDOW",
+      "extra_features_require_separate_protocol": true,
+      "group": "HVN_LVN",
+      "live_admission": false,
+      "readiness": "NATIVE_FIXED_DIAGNOSTIC_OR_SYNTHETIC_SCOPE_ONLY"
+    },
+    {
+      "current_study_permitted": true,
+      "dependency": "ENTIRE_RECURSION_FROM_OWN_SEED_READY_276",
+      "extra_features_require_separate_protocol": false,
+      "group": "Heikin_Ashi",
+      "live_admission": false,
+      "readiness": "NATIVE_FIXED_DIAGNOSTIC_OR_SYNTHETIC_SCOPE_ONLY"
+    },
+    {
+      "current_study_permitted": true,
+      "dependency": "NATIVE_14_PERIOD_INITIALIZATION_BOUND_TO_OWN_HISTORY",
+      "extra_features_require_separate_protocol": false,
+      "group": "ATR",
+      "live_admission": false,
+      "readiness": "NATIVE_FIXED_DIAGNOSTIC_OR_SYNTHETIC_SCOPE_ONLY"
+    },
+    {
+      "current_study_permitted": false,
+      "dependency": "RECURSIVE_NATIVE_SEED_PROVENANCE_NOT_JUST_LAST_350_BARS",
+      "extra_features_require_separate_protocol": true,
+      "group": "EMA",
+      "live_admission": false,
+      "readiness": "NATIVE_FIXED_DIAGNOSTIC_OR_SYNTHETIC_SCOPE_ONLY"
+    },
+    {
+      "current_study_permitted": false,
+      "dependency": "CLOSED_EMA_ALIGNMENT_AND_PAST_SLOPES",
+      "extra_features_require_separate_protocol": true,
+      "group": "trend",
+      "live_admission": false,
+      "readiness": "NATIVE_FIXED_DIAGNOSTIC_OR_SYNTHETIC_SCOPE_ONLY"
+    },
+    {
+      "current_study_permitted": false,
+      "dependency": "CLOSED_ROLLING_HH_HL_LH_LL_NO_CENTERED_FUTURE_PIVOTS",
+      "extra_features_require_separate_protocol": true,
+      "group": "structure",
+      "live_admission": false,
+      "readiness": "NATIVE_FIXED_DIAGNOSTIC_OR_SYNTHETIC_SCOPE_ONLY"
+    },
+    {
+      "current_study_permitted": false,
+      "dependency": "VERIFIED_EVENT_UTC_AND_IANA_MAPPING_NO_GUESSED_SERVER_OFFSET",
+      "extra_features_require_separate_protocol": true,
+      "group": "hours_sessions",
+      "live_admission": false,
+      "readiness": "NATIVE_FIXED_DIAGNOSTIC_OR_SYNTHETIC_SCOPE_ONLY"
+    }
+  ],
+  "session_mapping": "UNVERIFIED_NO_PNL_REASSIGNMENT",
+  "structure_break_flags": "DEGENERATE_INCLUSIVE_EXTREME_COMPARISON_PRESERVED_NOT_FIXED",
+  "whitelist_exact": [
+    "stoch_k",
+    "delta_k_1",
+    "ATR",
+    "relative_volume_20",
+    "ha_direction",
+    "range_to_ATR"
+  ]
+}

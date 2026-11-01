@@ -1,0 +1,54 @@
+[
+  {
+    "current_protocol_family": true,
+    "family": "logistic",
+    "feature_order": [
+      "stoch_k",
+      "delta_k_1",
+      "ATR",
+      "relative_volume_20",
+      "ha_direction",
+      "range_to_ATR"
+    ],
+    "fit_calls": 0,
+    "params": {
+      "C": 1,
+      "class_weight": null,
+      "max_iter": 1000,
+      "random_state": 20261030,
+      "solver": "lbfgs"
+    },
+    "proposal_only": false,
+    "scoring_authorized": false,
+    "side": "BUY",
+    "sklearn_version": "1.9.1",
+    "spec_sha256": "a23f0710a38bfbf53970db86834ec01ea88deb5ce671e5f3c238fe8f869b9556",
+    "training_authorized": false
+  },
+  {
+    "current_protocol_family": true,
+    "family": "logistic",
+    "feature_order": [
+      "stoch_k",
+      "delta_k_1",
+      "ATR",
+      "relative_volume_20",
+      "ha_direction",
+      "range_to_ATR"
+    ],
+    "fit_calls": 0,
+    "params": {
+      "C": 1,
+      "class_weight": null,
+      "max_iter": 1000,
+      "random_state": 20261030,
+      "solver": "lbfgs"
+    },
+    "proposal_only": false,
+    "scoring_authorized": false,
+    "side": "SELL",
+    "sklearn_version": "1.9.1",
+    "spec_sha256": "bec3f5a8fabf72340e612739049312a7f6fae74f7d35bad430c136e6285554e1",
+    "training_authorized": false
+  }
+]

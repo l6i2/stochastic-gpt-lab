@@ -1,0 +1,20 @@
+{
+  "configs/pc_a_native_tester_evidence_20261030/native_runs.json": "4bade6e18468ac4434abd3a7e57774706594142267ce63352b31f3808bd99eac",
+  "configs/pc_a_native_tester_evidence_20261030/reconciliation.json": "ccd6e445583612116ca4a6bb0a176f57873998d26ddc201732b55f8e649123fe",
+  "docs/DATASET_FREEZE.md": "8b7e1bd7aefb2c62e118c63d2e03971950402ee4f0945ed610f3c336aa715a07",
+  "docs/DATA_DICTIONARY.md": "13f5ffe4559992e567847b7c9edaee8d0a4ef33f878e172ad0f9b611804860ef",
+  "docs/DYNAMIC_EXIT_TRAIN_REPORT.md": "876e66954b49ed1a2cc0b0dc860b33efee35d69e40b5356aab9841b622f02ea0",
+  "docs/INTRATRADE_TRAIN_ROUNDS_REPORT.md": "c0a4a6699cf25a9b70b55e1f30d095b971587c93ef985102fd08ba8fef133562",
+  "docs/ISOLATION_INCIDENT_AUDIT.md": "e742dc62883c07179d379f866ed77948729715ba5041312448ad016e81d5bbd4",
+  "docs/PC_A_NATIVE_TESTER_CAPABILITIES.md": "4dd014e1af4a5848edc6a7310170f198cbf5977a9ac0ffe862dc01145a57e3ce",
+  "docs/QUALITY_DIRECTION_MODEL_REPORT.md": "a8c08cf803c8242ea7f94015c81335fcc4e555c5a9ecdb285484f94679804d4e",
+  "docs/STRATEGY_SPEC.md": "041a9257d487cf2f0ce8b4ddb90b11997acca1d70541279d17615d5ab5ef6ab8",
+  "docs/TRAIN_V2_LOW_MEMORY_BENCHMARK.md": "3ad5c89891ced3121a70db572b315590de81f93700ea7a8e216ff7661a062a50",
+  "docs/V2_FAILURE_ANALYSIS.md": "7820cb4f17fc7078d0ffb41807e2857b8492f2312f7de2305a408f0a073d9957",
+  "mt5/HeikinAshiCore.mqh": "d9a1e525a99e66f855bc49c3a696030c5e12ef534a1aeff5012b63a462a3e8ef",
+  "mt5/ResearchCore.mqh": "99a5328d58bf613d5cc9b354ddfee936a0e23427b8a16792a19d6e63b0011283",
+  "mt5/StochasticBarDecisionResearchEA.mq5": "f2e9bf43cbbdc716148847fe53e1f3dd14b21393775ccc809d05cb5e134cb88d",
+  "research/native_methodology_v1/adoption.json": "747816c08c02d19edcd978a8fe8d596019229af7f60e265e61422980929a8d41",
+  "research/studies/us30cash_m5_native_pretrain_v1/PROTOCOL_ES.md": "ce5ab48ab95cbf4d6c07cb9b1cc9a13ab7f14ab7d14792b494ae2d19a21d45d9",
+  "research/studies/us30cash_m5_native_pretrain_v1/feature_model_whitelist.json": "7d95930599e9ffa5b98a4f89c99e2862afcb47730c238c66052e6024ef703ec8"
+}

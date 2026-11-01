@@ -1,0 +1,19 @@
+{
+  "allowed_source_run_ids": [
+    "diag_fd4e5bf3d468",
+    "diag_abedbf590923"
+  ],
+  "native_model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "native_pair_hash_verified": true,
+  "native_period_allowlist": [
+    "2024-01-02"
+  ],
+  "native_terminal_runs_this_task": 0,
+  "new_period_requires_explicit_diagnostic_scope": true,
+  "no_train_search": true,
+  "optimization": false,
+  "python_native_domain_replay_now": "PASS",
+  "recheck_command": ".venv\\Scripts\\python.exe tools\\offline_strategy_diagnostic.py --out outputs\\diagnostico_<id_nuevo>.json",
+  "symbol": "US30Cash",
+  "timeframe": "M5"
+}
