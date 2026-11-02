@@ -1,0 +1,21 @@
+{
+  "actions": [
+    "CHECK_NTS_DUE_EXISTING_LOCKED_STATION",
+    "SAVE_OR_VERIFY_RESTART_RECEIPT"
+  ],
+  "capture_watchdog_count": 1,
+  "cause": "NOT_PROVEN",
+  "dry_run": false,
+  "host_utc": "2026-11-02T14:38:57.4382858Z",
+  "live_trading": false,
+  "mt5_restarted": false,
+  "no_backfill": true,
+  "previous_guardian_absent": true,
+  "previous_task_exit": "0xC000013A",
+  "recovery": "EXISTING_SCOPED_TASK_RESUMED",
+  "recovery_pid": 12364,
+  "requires_user_logon": true,
+  "scope": "EXACT_XM_AND_OWN_WATCHDOG_NTS",
+  "worker_pid_preserved": 18572,
+  "xm_process_count": 1
+}
