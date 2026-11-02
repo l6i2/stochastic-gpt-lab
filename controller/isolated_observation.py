@@ -149,7 +149,11 @@ class Observation:
             raise ValueError('PARENT_REQUIRES_CHECKPOINT_RECOVERY')
         reference=dict(capture_id=manifest['capture_id'],chain_head=head,rows=rows,
                        manifest_sha256=seal(manifest),source_offset=checkpoint['source_offset'])
-        return cls.create(base,source,eof_anchor(source),clock,synthetic,parent_segment=reference)
+        anchor=eof_anchor(source)
+        # Parent verification can be slow while the new native source keeps growing.
+        # Sample a fresh cut after EOF; an earlier clock is not comparable to that EOF.
+        cut=clock() if callable(clock) else clock
+        return cls.create(base,source,anchor,cut,synthetic,parent_segment=reference)
 
     @classmethod
     def resume(cls,folder,clock):

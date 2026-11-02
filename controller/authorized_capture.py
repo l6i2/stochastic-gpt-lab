@@ -243,7 +243,7 @@ class CaptureManager:
             if self.writer is not None:self.writer.close();self.writer=None
             if not same_boot and same_source:
                 return self.status('WAITING_NEW_NATIVE_SESSION_AFTER_BOOT')
-            self.writer=Observation.new_segment(io_path(folder),io_path(self.root/'segments'),latest,self.clock())
+            self.writer=Observation.new_segment(io_path(folder),io_path(self.root/'segments'),latest,self.clock)
             state['active_segment']=self.writer.folder.name;state['segments'].append(self.writer.folder.name);state['restarts']+=1
             atomic(state_path,state)
         elif self.writer is None:self.writer=Observation.resume(io_path(folder),now)

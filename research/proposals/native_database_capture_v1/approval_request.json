@@ -1,0 +1,8 @@
+{
+  "activation_requires_explicit_approval": true,
+  "alternative_if_denied": "Keep strict callback contract blocked; independent broker event-sequenced receipt source required, availability unknown",
+  "current_request_grants_execution": false,
+  "proposal_manifest_sha256": "aaddfddaef177a82e2bfd05960e702fe5a0ec2d82380bd7e522dd2427acc1b54",
+  "request_type": "METHODOLOGY_AND_SEPARATE_PRODUCER_DEVELOPMENT_ONLY",
+  "requested_decision": "Authorize development and isolated diagnostic trial of a new terminal-database snapshot producer under a separate protocol accepting first-observation provenance; preserve original callback stream and contract. No cohort admission, retrospective filling, scoring, training or orders."
+}

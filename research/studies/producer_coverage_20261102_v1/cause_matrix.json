@@ -1,0 +1,42 @@
+[
+  {
+    "cause": "ON_TICK_COALESCING_AND_LATEST_SNAPSHOT",
+    "evidence": "793/793 with6missing+6duplicate; prior immutable receipt reused",
+    "status": "OFFICIAL_API_LIMIT_PLUS_REAL_NONBIJECTIVE_PAYLOAD_SEQUENCE"
+  },
+  {
+    "cause": "SLOW_PROCESSING_OR_QUEUE_SCHEDULE_PER_EVENT",
+    "evidence": "Hashing/write/flush occur in callback; no unique event payload or prequeue tracing",
+    "status": "POSSIBLE_NOT_RECORDED_PER_EVENT"
+  },
+  {
+    "cause": "FILE_WRITE_FAILURE",
+    "evidence": "Observer hash chain and write-length checks; no claim that FileFlush has zero scheduling cost",
+    "status": "NOT_DEMONSTRATED_FOR_REVIEWED_WINDOW"
+  },
+  {
+    "cause": "INCORRECT_DEDUPLICATION",
+    "evidence": "Original quotes retained; duplicates flagged; no removal or timestamp adjustment",
+    "status": "NOT_APPLIED_BY_CURRENT_PROCESSOR"
+  },
+  {
+    "cause": "DISCONNECT_RESTART",
+    "evidence": "XM14:29 reload; source changed; failed segment transition then repaired",
+    "status": "REAL_NEW_TERMINAL_SESSION_OBSERVED"
+  },
+  {
+    "cause": "CLOCK_EPOCH_UNCOMPARABLE",
+    "evidence": "Live callback anchor advances during parent verification; fresh cut now sampled after EOF",
+    "status": "TECHNICAL_ORDERING_DEFECT_REPAIRED"
+  },
+  {
+    "cause": "WINDOWS_CLOCK_OR_SLEEP_1419",
+    "evidence": "Previous Windows receipt SleepEntered=false; no epoch tolerance introduced",
+    "status": "NOT_THE_PROVEN_LOSS_CAUSE"
+  },
+  {
+    "cause": "NO_QUOTES_OR_MARKET_SESSION_GAP",
+    "evidence": "Hundreds of ticks in reviewed windows; historical calendar remains PARTIAL",
+    "status": "NOT_EXPLANATION_OF_NONEMPTY_MISMATCH_WINDOWS"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "clock_host_utc": "2026-11-02T19:34:15.089921+00:00",
+  "error": "ValueError:CLOCK_EPOCH_UNCOMPARABLE",
+  "evidence_type": "TRANSCRIPTION_OF_ACTUAL_SUPERVISOR_STATUS_READ_BEFORE_REPLACEMENT_NOT_ORIGINAL_HASHED_LOG",
+  "failures": 16,
+  "mechanism": "CLOCK_EVALUATED_BEFORE_PARENT_SCAN_AND_NEW_EOF; NEW_CALLBACK_ANCHOR_CAN_EXCEED_STALE_CUT",
+  "original_status_file_preserved": false,
+  "process_id": 5804,
+  "status": "RETRYING_QUARANTINED"
+}

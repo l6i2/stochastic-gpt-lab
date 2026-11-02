@@ -1,0 +1,42 @@
+{
+  "status": "REPEATABLE_DATABASE_SNAPSHOT_ONLY",
+  "reasons": [],
+  "first_rows": 186,
+  "second_rows": 186,
+  "first_sha256": "6355276d2a6905ae1d630c0dda0569f0744230b9c6e6f19928b8f20dbda1d2bb",
+  "second_sha256": "6355276d2a6905ae1d630c0dda0569f0744230b9c6e6f19928b8f20dbda1d2bb",
+  "multiplicity_preserved": true,
+  "callback_receipt_proven": false,
+  "event_generation_utc_proven": false,
+  "eligible_for_frozen_callback_warmup": false,
+  "dataset_admitted": false,
+  "producer_activation_allowed": false,
+  "first_observation_interval_ns": [
+    321547033082300,
+    321547077413600
+  ],
+  "native_m1_differences": [],
+  "native_m1_repeatable_reference_parity": true,
+  "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+  "segment": "obs_d307e679c50b4c3286bae0db88244cf3",
+  "range_is_new_segment_membership_proven": false,
+  "start_native_msc": 1793655300000,
+  "end_native_exclusive_msc": 1793655360000,
+  "source": "TWO_POSTCLOSE_DATABASE_REFERENCE_QUERIES_NOT_PROSPECTIVE_RECEIPTS",
+  "read_observations": [
+    {
+      "query_start_ns": 321547033082300,
+      "query_end_ns": 321547077413600,
+      "first_seen_host_label": "2026-11-02T19:36:11.482939+00:00"
+    },
+    {
+      "query_start_ns": 321547082136500,
+      "query_end_ns": 321547082261100,
+      "first_seen_host_label": "2026-11-02T19:36:11.531852+00:00"
+    }
+  ],
+  "raw_originals_modified": false,
+  "raw_rows_published": 0,
+  "reference_rows_adopted": 0,
+  "review_source_sha256": "35e7ace5c52be39bca7af38e1c54d937a83f7fe2f60effc70089a061bafcfcd3"
+}

@@ -1,0 +1,27 @@
+{
+  "restart_initiator_proven": false,
+  "sanitized_events": [
+    "MH\t0\t08:21:05.978\tTerminal\texit with code 0",
+    "JL\t0\t08:21:06.753\tNetwork\t'[ACCOUNT_REDACTED]': disconnected from XMGlobalSC-MT5 5",
+    "QG\t0\t08:21:07.040\tTerminal\tstopped with 0",
+    "FG\t0\t08:21:07.165\tTerminal\tshutdown with 0",
+    "RL\t0\t08:25:11.150\tExperts\texpert ProspectiveUtcObserver (US30Cash,H1) loaded successfully",
+    "KJ\t0\t08:25:12.490\tNetwork\t'[ACCOUNT_REDACTED]': terminal synchronized with XM (SC) Limited: 0 positions, 0 orders, 1640 symbols, 0 spreads",
+    "GD\t0\t08:25:17.414\tExperts\texpert ProspectiveUtcObserver (US30Cash,H1) removed",
+    "MP\t0\t08:25:17.663\tTerminal\texit with code 0",
+    "FD\t0\t08:25:18.473\tNetwork\t'[ACCOUNT_REDACTED]': disconnected from XMGlobalSC-MT5 5",
+    "PO\t0\t08:25:18.539\tTerminal\tstopped with 0",
+    "LO\t0\t08:25:18.657\tTerminal\tshutdown with 0",
+    "RQ\t0\t08:26:35.737\tExperts\texpert ProspectiveUtcObserver (US30Cash,H1) loaded successfully",
+    "JI\t0\t08:26:37.657\tNetwork\t'[ACCOUNT_REDACTED]': terminal synchronized with XM (SC) Limited: 0 positions, 0 orders, 1640 symbols, 0 spreads",
+    "NS\t0\t14:28:42.723\tExperts\texpert ProspectiveUtcObserver (US30Cash,H1) removed",
+    "ES\t0\t14:28:43.244\tTerminal\texit with code 0",
+    "OR\t0\t14:28:44.097\tNetwork\t'[ACCOUNT_REDACTED]': disconnected from XMGlobalSC-MT5 5",
+    "JN\t0\t14:28:44.488\tTerminal\tstopped with 0",
+    "FM\t0\t14:28:44.528\tTerminal\tshutdown with 0",
+    "DP\t0\t14:29:34.600\tExperts\texpert ProspectiveUtcObserver (US30Cash,H1) loaded successfully",
+    "JF\t0\t14:29:38.436\tNetwork\t'[ACCOUNT_REDACTED]': terminal synchronized with XM (SC) Limited: 0 positions, 0 orders, 1640 symbols, 0 spreads"
+  ],
+  "scope": "READ_ONLY_OWN_XM_TERMINAL",
+  "source_sha256": "485ef22b0f3cfa62c9cba274e3f8ba3e6dbce6ec618726db4a5d07edc0cfe611"
+}

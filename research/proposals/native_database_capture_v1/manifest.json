@@ -1,0 +1,30 @@
+{
+  "activation_authorized": false,
+  "current_observer_sha256": "b275430e62a04c4c89302dcfb7e7e5e6dcd4ecbdbb68b1e1c84298cf74e6faa7",
+  "current_producer_changed": false,
+  "current_protocol_changed": false,
+  "files": {
+    "research/proposals/native_database_capture_v1/PROPOSAL_ES.md": "cdd5dcadebd795e6bba20d7955863bfb0c1354e0fc441ca63bb68a011674a72c",
+    "research/proposals/native_database_capture_v1/review.py": "35e7ace5c52be39bca7af38e1c54d937a83f7fe2f60effc70089a061bafcfcd3",
+    "tests/test_proposed_database_capture.py": "2dc4dd67277dbf81e5d0d86ebb7ddc847611bb7291f3da687145b17b61e7a324",
+    "tools/review_native_database_candidate.py": "057bec06446eb75fb6b86c9e982272826ef579db56c3c2d60a85570e49882d27"
+  },
+  "frozen_protocol_sha256": "ce5ab48ab95cbf4d6c07cb9b1cc9a13ab7f14ab7d14792b494ae2d19a21d45d9",
+  "live_trading": false,
+  "proposed_producer_identity": "us30cash_native_database_observations_v2_RESERVED_NOT_STARTED",
+  "runtime_installed": false,
+  "schema": "native-database-capture-proposal/1",
+  "scientific_cohort_authorized": false,
+  "scoring_authorized": false,
+  "source_class": "TERMINAL_DATABASE_QUERY_NOT_CALLBACK_RECEIPT",
+  "status": "DESIGN_ONLY_INACTIVE",
+  "thresholds": {
+    "BUY": 80,
+    "SELL": 80,
+    "evaluable": 200,
+    "post_bars": 100,
+    "signals": 800,
+    "warmup": 350
+  },
+  "training_authorized": false
+}

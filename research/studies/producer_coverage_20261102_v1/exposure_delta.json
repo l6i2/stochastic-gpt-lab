@@ -1,0 +1,16 @@
+{
+  "chain_head": "c0600279e649ef6d5dfd85f1287a73a23cc2489692c5d6452bf647f2174e86c7",
+  "entry": {
+    "database_reference_experiment_sha256": "f1a4e2933a0b123f7642d59b6f8b3a39e3d75d30bf6de4f3de466a2aa9fe350b",
+    "dataset_admitted": false,
+    "kind": "PRODUCER_FEASIBILITY_AND_BOUNDARY_RECOVERY",
+    "ledger_sequence": 55,
+    "previous": "3acf3349cf397b604ebeb4374573102de1513174ae2bbc1fb56d7a3312324850",
+    "protected_rows_opened": 0,
+    "scientific_fits": 0,
+    "scientific_scoring": 0,
+    "summary_sha256": "46236caf070d66f80593e76671250d434d267095115c7a6417f81302475d4a51"
+  },
+  "parent_path": "research/studies/warmup_diagnosis_20261102_v1/exposure_delta.json",
+  "parent_sha256": "ffc6ade8386143bbf6c3722a2f24cc9278bfbe972fba0423d85f6e5b9f8477fb"
+}

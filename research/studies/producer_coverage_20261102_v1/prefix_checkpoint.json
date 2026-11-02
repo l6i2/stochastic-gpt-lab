@@ -1,0 +1,181 @@
+{
+  "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+  "completed_bars": {
+    "300": 16,
+    "60": 243
+  },
+  "derived_head": "92e7b34509c32193e4d9c72ee46e3e5dd8085723a188094874ae86658d552db8",
+  "derived_rows": 33553,
+  "integrity_scope": "PREVIOUS_PUBLISHED_ANCHORS_PRESERVED_NEW_TAIL_AND_ORIGINAL_NATIVE_BYTES_VERIFIED_NOT_FULL_REHASH",
+  "prior_receipt_path": "research\\studies\\warmup_diagnosis_20261102_v1\\prefix_checkpoint.json",
+  "prior_receipt_sha256": "90ebe70af0827f6c84f15bce73823177c82a2653ad3d54289ddc9f234cfddb56",
+  "processed_real_heartbeats": 11476,
+  "processed_real_ticks_in_quarantine": 69916,
+  "raw_segments": [
+    {
+      "manifest_file_sha256": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+      "rows_processed": 12337,
+      "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+    },
+    {
+      "manifest_file_sha256": "17c83cb12d9273a86e38440783f54cd3816dbf92a8b97a0e690571c541a33b1c",
+      "rows_processed": 0,
+      "segment": "obs_f1348970aac44236b4c1c906fe17f451"
+    },
+    {
+      "manifest_file_sha256": "21db2eadedadcfdd68d5aa2942850a3344b7fa11434e1fc94c569a18fff72a74",
+      "rows_processed": 9,
+      "segment": "obs_f4af841d849c4f79abdca694d78af2ad"
+    },
+    {
+      "manifest_file_sha256": "c737acb4dad028e5b0cf8aab0458e1927b595c58d5745f74c2db3b3579be8667",
+      "rows_processed": 68586,
+      "segment": "obs_b47db00a212c478580d583503d34b373"
+    },
+    {
+      "manifest_file_sha256": "35a6924b2faf21fdb92487c86d26d42f884f70edc5f50f815ee97871c11bbbea",
+      "rows_processed": 462,
+      "segment": "obs_d307e679c50b4c3286bae0db88244cf3"
+    }
+  ],
+  "real_feature_causal_checks": 16,
+  "rejected_bars": {
+    "300": 78,
+    "60": 224
+  },
+  "schema": "incremental-prospective-progress/1",
+  "state": {
+    "acquisition_boundary": null,
+    "active_code_pin": "973829b0fd1532cb4ed4b25dd9503567ddee740d04c1d476f0f02d97122e5bf3",
+    "after_warmup_signals": 0,
+    "atr": null,
+    "buckets": {
+      "300": {
+        "bid_sequence_sha256": "e73100fdfb80b88419c407bfda80507b3a40de0d103d6a40b027e674377db816",
+        "close": 5207710,
+        "first_ref": {
+          "callback_uptime_ms": 321494625,
+          "native_hash": "9b237e53f9dba2bfd7b030b9bc2c38c996f59bfddffc92f217a55228cfb00765",
+          "native_sequence": 1316,
+          "native_time_msc": 1793655340067,
+          "raw_journal_hash": "4104e67d158dd82e9f7e4fd6ed12288aa0117a779013e8d9c443880813171847",
+          "segment": "obs_d307e679c50b4c3286bae0db88244cf3"
+        },
+        "high": 5212333,
+        "issues": [
+          "FIRST_PARTIAL_BUCKET"
+        ],
+        "last_ref": {
+          "callback_uptime_ms": 321627656,
+          "native_hash": "0c0b44d017190c80908f7eddb8039138970635dd9ceac0bde0b78f37f3a42d10",
+          "native_sequence": 1777,
+          "native_time_msc": 1793655473177,
+          "raw_journal_hash": "570ee265a705dec0be4edac976c1d338ad868ab471ff9358168e6bb0f77b6980",
+          "segment": "obs_d307e679c50b4c3286bae0db88244cf3"
+        },
+        "low": 5207063,
+        "open": 5211692,
+        "open_msc": 1793655300000,
+        "segment": "obs_d307e679c50b4c3286bae0db88244cf3",
+        "tick_size": "0.01",
+        "tick_volume": 436,
+        "timeframe_seconds": 300
+      },
+      "60": {
+        "bid_sequence_sha256": "e7cb45866595b2f5fc892eaf9933d467c06fc469b9c6974def93d7371f2d68dd",
+        "close": 5207710,
+        "first_ref": {
+          "callback_uptime_ms": 321574531,
+          "native_hash": "0160a933c33717d69ebf8292f95321e26b1ab9b2da5ff98d2820351c6967b364",
+          "native_sequence": 1580,
+          "native_time_msc": 1793655420051,
+          "raw_journal_hash": "d68b4a9905968177ca6b8d2f6a0fad1b994ccec7a7a1a793f5f3811005a07073",
+          "segment": "obs_d307e679c50b4c3286bae0db88244cf3"
+        },
+        "high": 5208854,
+        "issues": [],
+        "last_ref": {
+          "callback_uptime_ms": 321627656,
+          "native_hash": "0c0b44d017190c80908f7eddb8039138970635dd9ceac0bde0b78f37f3a42d10",
+          "native_sequence": 1777,
+          "native_time_msc": 1793655473177,
+          "raw_journal_hash": "570ee265a705dec0be4edac976c1d338ad868ab471ff9358168e6bb0f77b6980",
+          "segment": "obs_d307e679c50b4c3286bae0db88244cf3"
+        },
+        "low": 5207063,
+        "open": 5208548,
+        "open_msc": 1793655420000,
+        "segment": "obs_d307e679c50b4c3286bae0db88244cf3",
+        "tick_size": "0.01",
+        "tick_volume": 188,
+        "timeframe_seconds": 60
+      }
+    },
+    "cursors": {
+      "obs_850c9ced05834b38b6e4c9e351a49f86": {
+        "head": "04d3500e33d56dafa4c92f5667e744c8db32d7150c9039ba92e9c14a07c5df81",
+        "manifest_hash": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+        "native_head": "e564c7178db4555c54d13e8602e76f1f0436d1bb55a0e3a14556fa90547789b1",
+        "native_sequence": 12475,
+        "offset": 24151744,
+        "rows": 12337
+      },
+      "obs_b47db00a212c478580d583503d34b373": {
+        "head": "89d147bda2046921ec4b51fbbb7cd00eef3431ebd0a7d0bcc440d5249d328f02",
+        "manifest_hash": "c737acb4dad028e5b0cf8aab0458e1927b595c58d5745f74c2db3b3579be8667",
+        "native_head": "90191af07b8ae4430c1887d267cb60b9be8cec45f7a21c6d5e0a245af774c7ad",
+        "native_sequence": 68588,
+        "offset": 136357732,
+        "rows": 68586
+      },
+      "obs_d307e679c50b4c3286bae0db88244cf3": {
+        "head": "570ee265a705dec0be4edac976c1d338ad868ab471ff9358168e6bb0f77b6980",
+        "manifest_hash": "35a6924b2faf21fdb92487c86d26d42f884f70edc5f50f815ee97871c11bbbea",
+        "native_head": "0c0b44d017190c80908f7eddb8039138970635dd9ceac0bde0b78f37f3a42d10",
+        "native_sequence": 1777,
+        "offset": 911848,
+        "rows": 462
+      },
+      "obs_f4af841d849c4f79abdca694d78af2ad": {
+        "head": "833c1dcbca6d1aa4d4ff7e5c7a54ffda246ac7280703e28c334759b5a91bb6eb",
+        "manifest_hash": "21db2eadedadcfdd68d5aa2942850a3344b7fa11434e1fc94c569a18fff72a74",
+        "native_head": "97531b28ce4c7fecba4a0456664b89c84fb51a9b98d2f789a5a890f86c95a9aa",
+        "native_sequence": 9,
+        "offset": 17546,
+        "rows": 9
+      }
+    },
+    "dependency_hash": "d5fcdc9891cf414385c08f5c1fc468dcb3f09b8d2baac016506e496a764f2a3e",
+    "evaluable_buy": 0,
+    "evaluable_sell": 0,
+    "first_800_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "ha": null,
+    "history": [],
+    "incident_count": 257,
+    "last_callback": 321627656,
+    "last_receipt": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-02T19:37:53.705429+00:00",
+      "monotonic_ns": 321649255369100,
+      "uptime_ms": 321627750,
+      "utc_certified": false
+    },
+    "last_tick": [
+      1793655473177,
+      52077.1,
+      52083.1,
+      1126
+    ],
+    "m1_bars": 243,
+    "own_bars": 16,
+    "own_run_bars": 0,
+    "post_signal_bars": 0,
+    "previous_k": null,
+    "protocol_stream_unbroken": false,
+    "rejected_buckets": 302,
+    "segment": "obs_d307e679c50b4c3286bae0db88244cf3",
+    "signals_buy": 0,
+    "signals_sell": 0,
+    "source_records": 81394
+  }
+}

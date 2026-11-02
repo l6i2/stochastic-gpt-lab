@@ -1,0 +1,137 @@
+{
+  "admitted_intervals": 0,
+  "artifact_counts": {
+    "BAR_COMPARISON": 5,
+    "CHECKPOINT": 159,
+    "CLOSED_AGGREGATE_BAR": 4,
+    "CODE_VERSION": 1,
+    "INCIDENT": 1,
+    "INCOMPLETE_BUCKET": 1,
+    "MEMBERSHIP_EXPOSURE_PREFIX": 158,
+    "SEGMENT": 1,
+    "UNFINISHED_BUCKET": 2
+  },
+  "certified_event_utc_intervals": 0,
+  "classification_counts": {
+    "300": {
+      "PARTIAL_ABORTED_AT_SEGMENT_BOUNDARY": 1
+    },
+    "60": {
+      "PARTIAL_ABORTED_AT_SEGMENT_BOUNDARY": 1,
+      "PARTIAL_REJECTED": 1,
+      "VALID_REFERENCE_PARITY_QUARANTINED": 4
+    }
+  },
+  "end_exclusive": 33553,
+  "features": [],
+  "intervals": [
+    {
+      "aggregate_differences": [],
+      "category": "VALID_REFERENCE_PARITY_QUARANTINED",
+      "evidence_hash": "14f644395aa3b2b30b97ef083c03dabe0b5867598559d92498ba12db90fb0ffb",
+      "ledger_n": 33270,
+      "native_bar_volume": 219,
+      "native_open_msc": 1793654700000,
+      "raw_bid_count": 219,
+      "reasons": [],
+      "reference_bid_count": 219,
+      "reference_error": null,
+      "scientifically_certified": false,
+      "segment": "obs_b47db00a212c478580d583503d34b373",
+      "timeframe_seconds": 60
+    },
+    {
+      "aggregate_differences": [],
+      "category": "VALID_REFERENCE_PARITY_QUARANTINED",
+      "evidence_hash": "5d1c0c745b25cad60753c4487731833cd8ebddd3f4f501ecc581c1fe618bb060",
+      "ledger_n": 33330,
+      "native_bar_volume": 195,
+      "native_open_msc": 1793654760000,
+      "raw_bid_count": 195,
+      "reasons": [],
+      "reference_bid_count": 195,
+      "reference_error": null,
+      "scientifically_certified": false,
+      "segment": "obs_b47db00a212c478580d583503d34b373",
+      "timeframe_seconds": 60
+    },
+    {
+      "aggregate_differences": [],
+      "category": "VALID_REFERENCE_PARITY_QUARANTINED",
+      "evidence_hash": "9216d2f215cc020581f92665d5a636d1a0b4d212c21d7776e5683fe2867a9a42",
+      "ledger_n": 33392,
+      "native_bar_volume": 224,
+      "native_open_msc": 1793654820000,
+      "raw_bid_count": 224,
+      "reasons": [],
+      "reference_bid_count": 224,
+      "reference_error": null,
+      "scientifically_certified": false,
+      "segment": "obs_b47db00a212c478580d583503d34b373",
+      "timeframe_seconds": 60
+    },
+    {
+      "category": "PARTIAL_ABORTED_AT_SEGMENT_BOUNDARY",
+      "ledger_n": 33438,
+      "native_open_msc": 1793654700000,
+      "reasons": [
+        "SEGMENT_OR_BOOT_BOUNDARY"
+      ],
+      "scientifically_certified": false,
+      "segment": "obs_b47db00a212c478580d583503d34b373",
+      "timeframe_seconds": 300
+    },
+    {
+      "category": "PARTIAL_ABORTED_AT_SEGMENT_BOUNDARY",
+      "ledger_n": 33439,
+      "native_open_msc": 1793654880000,
+      "reasons": [
+        "SEGMENT_OR_BOOT_BOUNDARY"
+      ],
+      "scientifically_certified": false,
+      "segment": "obs_b47db00a212c478580d583503d34b373",
+      "timeframe_seconds": 60
+    },
+    {
+      "aggregate_differences": [],
+      "category": "PARTIAL_REJECTED",
+      "evidence_hash": "377da9b4dacb94d4bd8046aef7f5c57abe9117005111d6260689b5af15b02719",
+      "ledger_n": 33442,
+      "native_bar_volume": null,
+      "native_open_msc": 1793655300000,
+      "raw_bid_count": 61,
+      "reasons": [
+        "FIRST_PARTIAL_BUCKET",
+        "NATIVE_PARITY_MISSING_OR_FAILED",
+        "BID_SEQUENCE_REFERENCE_MISSING",
+        "BID_SEQUENCE_REFERENCE_INTERVAL_MISMATCH",
+        "BID_SEQUENCE_COUNT_MISMATCH",
+        "BID_SEQUENCE_HASH_MISMATCH"
+      ],
+      "reference_bid_count": null,
+      "reference_error": null,
+      "scientifically_certified": false,
+      "segment": "obs_d307e679c50b4c3286bae0db88244cf3",
+      "timeframe_seconds": 60
+    },
+    {
+      "aggregate_differences": [],
+      "category": "VALID_REFERENCE_PARITY_QUARANTINED",
+      "evidence_hash": "018c3fe42db5adadc93a90744f9ac5e5183a50448e00029159eea3f1e11755d9",
+      "ledger_n": 33500,
+      "native_bar_volume": 187,
+      "native_open_msc": 1793655360000,
+      "raw_bid_count": 187,
+      "reasons": [],
+      "reference_bid_count": 187,
+      "reference_error": null,
+      "scientifically_certified": false,
+      "segment": "obs_d307e679c50b4c3286bae0db88244cf3",
+      "timeframe_seconds": 60
+    }
+  ],
+  "new_head": "92e7b34509c32193e4d9c72ee46e3e5dd8085723a188094874ae86658d552db8",
+  "parent_head": "8097a19144340c7fb4ee28a2b9dae05b2df4f6d517a322fceab38590ca0d1d2c",
+  "signals": [],
+  "start_n": 33221
+}

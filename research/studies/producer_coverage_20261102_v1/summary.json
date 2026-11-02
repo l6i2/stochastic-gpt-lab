@@ -1,0 +1,75 @@
+{
+  "BUY_SIGNALS": 0,
+  "CERTIFIED_SEGMENTS": 0,
+  "CONSECUTIVE_SIGNALS": 0,
+  "DATASET_MATURITY": {
+    "BUY": "0/80",
+    "SELL": "0/80",
+    "admitted_percent": 0,
+    "evaluable": "0/200",
+    "post_bars": "0/100",
+    "protocol_stream_unbroken": false,
+    "signals": "0/800",
+    "status": "NOT_READY_QUARANTINED",
+    "warmup": "0/350"
+  },
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "FEATURES_NEW": 0,
+  "FEATURES_TOTAL": 16,
+  "FINAL_TEST": "LOCKED",
+  "HARD_BLOCKER": [
+    "EXACT_NATIVE_BID_SEQUENCE_AND_OHLC_VOLUME_COVERAGE",
+    "CONTIGUOUS_OWN_WARMUP_AND_SEEDS",
+    "800_CONSECUTIVE_SIGNALS_PLUS_100_POST_BARS",
+    "200_EVALUABLE_80_BUY_80_SELL_AND_FOLD_SUPPORT",
+    "COMPLETE_SCIENTIFIC_MEMBERSHIP_AND_APPLICABLE_CAUSAL_PROVENANCE",
+    "EXPLICIT_HASH_BOUND_TRAINING_GRANT"
+  ],
+  "HISTORICAL_HOLDOUT": "LOCKED",
+  "LIVE_TRADING": false,
+  "MANUAL_ACTION_REQUIRED": "NONE_NOW",
+  "MEMBERSHIP": "NEW_NATIVE_TAIL_IDENTIFIERS_BYTES_HASHES_AND_PREFIX_VERIFIED_ADMITTED_DATASET_STILL_EMPTY",
+  "NEXT_STATE": "EXISTING_WORKER_PROCESSES_NEW_NATIVE_INTERVALS_MONITOR_TRACKS_PROGRESS_QUARANTINE_REMAINS",
+  "POST_SIGNAL_BARS": 0,
+  "QUARANTINED_SEGMENTS": 5,
+  "REAL_M5_COMPLETED": {
+    "new": 0,
+    "total": 16
+  },
+  "REAL_M5_REJECTED": {
+    "new": 0,
+    "new_aborted": 1,
+    "new_other_rejected": 0,
+    "new_partial": 0,
+    "total": 78
+  },
+  "REAL_TICKS_NEW": 1261,
+  "REAL_TICKS_TOTAL": 69916,
+  "SELL_SIGNALS": 0,
+  "TEMPORAL_PROVENANCE": "NATIVE_TIME_UNIT_AND_RECEIPT_ORDER_VERIFIED_SAME_BOOT; GENERATION_UTC_AND_ABSOLUTE_BOUNDS_UNVERIFIED",
+  "TRAINING_ADMISSION_GATE": {
+    "TRAINING_ADMISSION_GATE": "BLOCKED",
+    "authorization_request_ready": false,
+    "authorization_requested": false,
+    "execution_permitted": false,
+    "package_complete": false,
+    "reasons": [
+      "NO_INDEPENDENT_ADMITTED_SEALED_DATASET",
+      "COMPLETE_MEMBERSHIP_AND_COVERAGE_RECEIPTS_REQUIRED",
+      "APPLICABLE_CONTRACT_CAUSALITY_NOT_ADMITTED",
+      "NO_HASH_BOUND_SCIENTIFIC_AUTHORIZATION"
+    ],
+    "scientific_grants": 0,
+    "training_executed": false
+  },
+  "TRAINING_EXECUTED": false,
+  "TRAINING_READINESS": "BLOCKED",
+  "WARMUP_SCIENTIFICALLY_ADMITTED": 0,
+  "WARMUP_VALID_BARS": 0,
+  "historical_protected_rows_opened": 0,
+  "new_regression_of_old_window": 0,
+  "old_259_284_queries": 0,
+  "scoring_calls": 0,
+  "snapshot_ecuador": "2026-11-02T14:37:58.426245-05:00"
+}

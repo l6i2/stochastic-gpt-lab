@@ -1,0 +1,29 @@
+{
+  "collector_boundary_sampling_only": true,
+  "derived_origin_manifest_sha256": "31d3a783f90cc2771b24c69a55a1da0f43086c5c5e067b59b52992fd31e4c65e",
+  "native_observer_changed": false,
+  "old_assets_rewritten": false,
+  "old_derived_head": "c8b77cc98b8092a8be7c948b0173aaeb7cb6e7908493cc79c1d61b7cf74ec60e",
+  "old_segments": [
+    "obs_850c9ced05834b38b6e4c9e351a49f86",
+    "obs_f1348970aac44236b4c1c906fe17f451",
+    "obs_f4af841d849c4f79abdca694d78af2ad",
+    "obs_b47db00a212c478580d583503d34b373"
+  ],
+  "pins": [
+    {
+      "file": "482534e7d6edcd2f32a0827663459b5d5f4e396e6655e6b1a7d121f8cbad4be5.json",
+      "new_pin_sha256": "7837588be8a32f1e158a8b82d889be68e4731b0d46eb6e7fa558e6bceb7af281",
+      "old_pin_sha256": "9ad62bc6eede39c2c67ba738af9cb2d84432d93fb93fd8611853f6d8e68dcd80",
+      "role": "raw"
+    },
+    {
+      "file": "ede1575380a305f23f2002455794fd9f724ba09f5cf18af5b339decde20c9b6a.json",
+      "new_pin_sha256": "973829b0fd1532cb4ed4b25dd9503567ddee740d04c1d476f0f02d97122e5bf3",
+      "old_pin_sha256": "df10d285c963c42eeb526156700a9317772a549b6546f3791fa15a4b8a51bf0e",
+      "role": "worker"
+    }
+  ],
+  "producer_changed": false,
+  "raw_origin_manifest_sha256": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a"
+}
