@@ -1,0 +1,30 @@
+{
+  "host_utc_label": "2026-11-02T01:55:17.391938+00:00",
+  "scope": "OWN_COMPONENTS_ONLY_NOT_SYSTEM_TOTAL",
+  "processes": [
+    {
+      "pid": 7848,
+      "role": "incremental_worker",
+      "resident_mb": 11.04,
+      "private_mb": 252.87
+    },
+    {
+      "pid": 30368,
+      "role": "dashboard",
+      "resident_mb": 6.89,
+      "private_mb": 14.01
+    },
+    {
+      "pid": 2100,
+      "role": "guardian",
+      "resident_mb": 40.98,
+      "private_mb": 79.3
+    },
+    {
+      "pid": 7524,
+      "role": "xm_terminal",
+      "resident_mb": 13.84,
+      "private_mb": 87.39
+    }
+  ]
+}

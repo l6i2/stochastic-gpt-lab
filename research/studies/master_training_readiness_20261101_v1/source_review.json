@@ -1,0 +1,18 @@
+{
+  "all_other_previous_assets_verified": true,
+  "changed": {
+    "controller/native_study_runner.py": {
+      "current_sha256": "320e8df3a4b7cae4c1a79cdead8bab0d5cfc0de2468e881b309add31b3925348",
+      "previous_sha256": "d12ccde3f5c21d568c0c7ec5d995b8e3802f55463e27fec46ea82b2dbc0def51",
+      "reason": "UNIQUE_TRAINING_GATE_BEFORE_LOADER_AND_FIT; EXISTING_GUARDIAN_SUPERVISES_READ_ONLY_DASHBOARD"
+    },
+    "tools/research_recovery.ps1": {
+      "current_sha256": "3d0aae1a3f877fd370059f75fab9ff11bea03501f95eb0a618506976b121fe5d",
+      "previous_sha256": "6c4e2bbf6508f37ede6976f1200247d44381e64254b9a80c15e6ba111ef2b6a9",
+      "reason": "UNIQUE_TRAINING_GATE_BEFORE_LOADER_AND_FIT; EXISTING_GUARDIAN_SUPERVISES_READ_ONLY_DASHBOARD"
+    }
+  },
+  "frozen_strategy_contracts_and_original_data_unchanged": true,
+  "previous_manifest_sha256": "eb773a52ac5082505f70ba3e095a58bad453c0d4dd7b24a4e65032fa6d77129a",
+  "raw_and_worker_pins_verified": true
+}

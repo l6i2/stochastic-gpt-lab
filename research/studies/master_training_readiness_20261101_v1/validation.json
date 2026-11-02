@@ -1,0 +1,14 @@
+{
+  "command": "$env:PYTHONPATH='tests;python'; .venv\\Scripts\\python.exe -m unittest discover -s tests",
+  "compileall": "PASS_CONTROLLER_PYTHON_TOOLS_TESTS",
+  "diff_check": "PASS",
+  "failures": 0,
+  "passed": 489,
+  "scientific_scoring_executed": false,
+  "scientific_training_executed": false,
+  "seconds": 73.791,
+  "skipped": 9,
+  "tests": 498,
+  "transcript_sha256": "1ab6f208f0d26847903d2eac237533e698adfafb64a901c5616f72247f332bab",
+  "warning": "ResourceWarning in temporary synthetic fastparquet fixture; no protected input opened"
+}

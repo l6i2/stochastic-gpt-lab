@@ -1,0 +1,20 @@
+{
+  "chain_head": "c92a3c3aa30c37444fb452fdbc94a9b39cd527e1a7106e7ec74ceda5f5f1fc99",
+  "entry": {
+    "admitted_records": 0,
+    "entry_sha256": "c92a3c3aa30c37444fb452fdbc94a9b39cd527e1a7106e7ec74ceda5f5f1fc99",
+    "kind": "AUTHORIZED_NATIVE_QUOTE_PAYLOAD_RECONCILIATION_AND_PRE_TRAIN_GATE_PREPARATION",
+    "ledger_sequence": 50,
+    "prefix_receipt_sha256": "cb8434061b1ce25420dc0a9c3ce2dda4b0049b5ca0385d851950e215e9ea27b4",
+    "previous": "05f725fb7ec16172bb6ca97265af187b1230f80eafb74ff8826a4542ecc62a32",
+    "protected_rows_opened": 0,
+    "scientific_scoring_calls": 0,
+    "scientific_training_calls": 0,
+    "summary_sha256": "08ae763999e3d2a4b97658167848d0785430c9e3c79d2ce805691455b4985d05",
+    "tick_forensics_sha256": "12a660c6a4ea0b7dc337af6f2365a7125b7b956fcdc8b70ee58c5faa8866260d"
+  },
+  "legacy_membership_completeness": false,
+  "parent_file_sha256": "78e24756128e92d30a20c34d2cef12bcde28a41977f1cc77d090531590082fef",
+  "parent_path": "research/studies/pc_a_independent_advance_20261101_v1/exposure_delta.json",
+  "quarantine_retained": true
+}

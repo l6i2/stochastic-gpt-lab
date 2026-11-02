@@ -1,0 +1,348 @@
+{
+  "baseline_replay": {
+    "BASELINE_REPLAY": "PASS",
+    "censored_trades": 18,
+    "decision_arrivals": 3279,
+    "final_test_accessed": false,
+    "indexed_trades": 56,
+    "policy_fill": "STRICTLY_AFTER_DECISION_ARRIVAL_SEQUENCE",
+    "quote_record_bytes": 28,
+    "quote_records": 79211
+  },
+  "features": {
+    "ATR": {
+      "max": 42.03571428571484,
+      "mean": 17.490357142857732,
+      "median": 16.464285714286262,
+      "min": 4.678571428571982,
+      "n": 28
+    },
+    "relative_volume_20": {
+      "max": 3.8925354907647685,
+      "mean": 1.0147116446699687,
+      "median": 0.9281108841105616,
+      "min": 0.1597051597051597,
+      "n": 28
+    }
+  },
+  "main_k": {
+    "closed_bars_compared": 268,
+    "early_signal_needs_pre_day_history": true,
+    "existing_tolerance": 1e-10,
+    "max_abs_error": 1.4210854715202004e-14,
+    "status": "PASS"
+  },
+  "ohlc": {
+    "M1": {
+      "derived_bars": 1376,
+      "mismatches": [],
+      "missing": [],
+      "native_bars": 1376
+    },
+    "M5": {
+      "derived_bars": 276,
+      "mismatches": [],
+      "missing": [],
+      "native_bars": 276
+    }
+  },
+  "scope": "AUTHORIZED_PREVIOUSLY_EXPOSED_FIXED_NATIVE_DAY_2024_01_02_NOT_GENERALIZATION_OR_NEW_SCORING",
+  "source_path": "research/studies/strategy_diagnostic_preparation_20261101_v1/fixed_day_diagnostic.json",
+  "source_sha256": "c475c96883d21596b50a61f2f1a0a75a7752f84a318cf7234af2a77a2698977c",
+  "summaries": [
+    {
+      "censored": 9,
+      "censoring": "NO_ZERO_IMPUTATION_MFE_MAE_OF_CENSORED_PATHS_ARE_OBSERVED_LOWER_BOUNDS",
+      "closed_pnl_exit_order_drawdown_proxy": -393.19999999998254,
+      "completed": 19,
+      "completed_duration_observed_m5_bars": {
+        "max": 100,
+        "mean": 66.63157894736842,
+        "median": 69,
+        "min": 7,
+        "n": 19
+      },
+      "completed_pnl": {
+        "max": 240.0,
+        "mean": 24.848421052632865,
+        "median": 5.209999999999127,
+        "min": -185.75,
+        "n": 19
+      },
+      "completed_pnl_sum": 472.12000000002445,
+      "completed_win_rate": 0.5263157894736842,
+      "drawdown_scope": "CLOSED_VIRTUAL_PNL_EXIT_ORDER_NOT_MARK_TO_MARKET_OR_ACCOUNT_EQUITY",
+      "exit_reasons": {
+        "END_OF_DATA": 9,
+        "SL": 6,
+        "TIME_EXIT": 7,
+        "TP": 6
+      },
+      "mode": "FOLLOW",
+      "observed_mae_all": {
+        "max": 185.75,
+        "mean": 88.52107142857052,
+        "median": 84.43499999999767,
+        "min": 4.740000000005239,
+        "n": 28
+      },
+      "observed_mfe_all": {
+        "max": 240.0,
+        "mean": 108.06892857142884,
+        "median": 73.93500000000131,
+        "min": 0.0,
+        "n": 28
+      },
+      "original_signal_side": "ALL",
+      "profit_factor": 1.3857063494657302,
+      "scientific_inference": false,
+      "signals": 28,
+      "units": "US30CASH_PRICE_UNITS_NOT_CURRENCY"
+    },
+    {
+      "censored": 9,
+      "censoring": "NO_ZERO_IMPUTATION_MFE_MAE_OF_CENSORED_PATHS_ARE_OBSERVED_LOWER_BOUNDS",
+      "closed_pnl_exit_order_drawdown_proxy": -1052.1599999999817,
+      "completed": 19,
+      "completed_duration_observed_m5_bars": {
+        "max": 100,
+        "mean": 68.10526315789474,
+        "median": 79,
+        "min": 11,
+        "n": 19
+      },
+      "completed_pnl": {
+        "max": 240.0,
+        "mean": -52.58210526315662,
+        "median": -62.69999999999709,
+        "min": -184.65000000000146,
+        "n": 19
+      },
+      "completed_pnl_sum": -999.0599999999758,
+      "completed_win_rate": 0.3157894736842105,
+      "drawdown_scope": "CLOSED_VIRTUAL_PNL_EXIT_ORDER_NOT_MARK_TO_MARKET_OR_ACCOUNT_EQUITY",
+      "exit_reasons": {
+        "END_OF_DATA": 9,
+        "SL": 9,
+        "TIME_EXIT": 7,
+        "TP": 3
+      },
+      "mode": "INVERT",
+      "observed_mae_all": {
+        "max": 184.65000000000146,
+        "mean": 104.17071428571373,
+        "median": 104.28499999999985,
+        "min": 2.75,
+        "n": 28
+      },
+      "observed_mfe_all": {
+        "max": 240.0,
+        "mean": 90.27607142857258,
+        "median": 75.80000000000291,
+        "min": 0.0,
+        "n": 28
+      },
+      "original_signal_side": "ALL",
+      "profit_factor": 0.4549620569445957,
+      "scientific_inference": false,
+      "signals": 28,
+      "units": "US30CASH_PRICE_UNITS_NOT_CURRENCY"
+    },
+    {
+      "censored": 4,
+      "censoring": "NO_ZERO_IMPUTATION_MFE_MAE_OF_CENSORED_PATHS_ARE_OBSERVED_LOWER_BOUNDS",
+      "closed_pnl_exit_order_drawdown_proxy": -742.1499999999869,
+      "completed": 9,
+      "completed_duration_observed_m5_bars": {
+        "max": 100,
+        "mean": 57.55555555555556,
+        "median": 62,
+        "min": 16,
+        "n": 9
+      },
+      "completed_pnl": {
+        "max": 240.0,
+        "mean": 3.444444444446061,
+        "median": -21.349999999998545,
+        "min": -180.34999999999854,
+        "n": 9
+      },
+      "completed_pnl_sum": 31.000000000014552,
+      "completed_win_rate": 0.4444444444444444,
+      "drawdown_scope": "CLOSED_VIRTUAL_PNL_EXIT_ORDER_NOT_MARK_TO_MARKET_OR_ACCOUNT_EQUITY",
+      "exit_reasons": {
+        "END_OF_DATA": 4,
+        "SL": 4,
+        "TIME_EXIT": 2,
+        "TP": 3
+      },
+      "mode": "FOLLOW",
+      "observed_mae_all": {
+        "max": 180.34999999999854,
+        "mean": 92.29999999999843,
+        "median": 84.04999999999563,
+        "min": 6.630000000004657,
+        "n": 13
+      },
+      "observed_mfe_all": {
+        "max": 240.0,
+        "mean": 96.56846153846206,
+        "median": 70.65000000000146,
+        "min": 7.889999999999418,
+        "n": 13
+      },
+      "original_signal_side": "BUY",
+      "profit_factor": 1.0417705315637205,
+      "scientific_inference": false,
+      "signals": 13,
+      "units": "US30CASH_PRICE_UNITS_NOT_CURRENCY"
+    },
+    {
+      "censored": 4,
+      "censoring": "NO_ZERO_IMPUTATION_MFE_MAE_OF_CENSORED_PATHS_ARE_OBSERVED_LOWER_BOUNDS",
+      "closed_pnl_exit_order_drawdown_proxy": -660.3399999999965,
+      "completed": 9,
+      "completed_duration_observed_m5_bars": {
+        "max": 100,
+        "mean": 70.66666666666667,
+        "median": 79,
+        "min": 11,
+        "n": 9
+      },
+      "completed_pnl": {
+        "max": 240.0,
+        "mean": -25.28222222222151,
+        "median": -60.849999999998545,
+        "min": -184.65000000000146,
+        "n": 9
+      },
+      "completed_pnl_sum": -227.5399999999936,
+      "completed_win_rate": 0.3333333333333333,
+      "drawdown_scope": "CLOSED_VIRTUAL_PNL_EXIT_ORDER_NOT_MARK_TO_MARKET_OR_ACCOUNT_EQUITY",
+      "exit_reasons": {
+        "END_OF_DATA": 4,
+        "SL": 3,
+        "TIME_EXIT": 4,
+        "TP": 2
+      },
+      "mode": "INVERT",
+      "observed_mae_all": {
+        "max": 184.65000000000146,
+        "mean": 101.41076923076896,
+        "median": 97.22000000000116,
+        "min": 13.389999999999418,
+        "n": 13
+      },
+      "observed_mfe_all": {
+        "max": 240.0,
+        "mean": 103.6900000000012,
+        "median": 76.95000000000437,
+        "min": 0.0,
+        "n": 13
+      },
+      "original_signal_side": "BUY",
+      "profit_factor": 0.6844936840499797,
+      "scientific_inference": false,
+      "signals": 13,
+      "units": "US30CASH_PRICE_UNITS_NOT_CURRENCY"
+    },
+    {
+      "censored": 5,
+      "censoring": "NO_ZERO_IMPUTATION_MFE_MAE_OF_CENSORED_PATHS_ARE_OBSERVED_LOWER_BOUNDS",
+      "closed_pnl_exit_order_drawdown_proxy": -366.18999999999505,
+      "completed": 10,
+      "completed_duration_observed_m5_bars": {
+        "max": 100,
+        "mean": 74.8,
+        "median": 97.0,
+        "min": 7,
+        "n": 10
+      },
+      "completed_pnl": {
+        "max": 240.0,
+        "mean": 44.11200000000099,
+        "median": 13.930000000000291,
+        "min": -185.75,
+        "n": 10
+      },
+      "completed_pnl_sum": 441.1200000000099,
+      "completed_win_rate": 0.6,
+      "drawdown_scope": "CLOSED_VIRTUAL_PNL_EXIT_ORDER_NOT_MARK_TO_MARKET_OR_ACCOUNT_EQUITY",
+      "exit_reasons": {
+        "END_OF_DATA": 5,
+        "SL": 2,
+        "TIME_EXIT": 5,
+        "TP": 3
+      },
+      "mode": "FOLLOW",
+      "observed_mae_all": {
+        "max": 185.75,
+        "mean": 85.24599999999967,
+        "median": 84.81999999999971,
+        "min": 4.740000000005239,
+        "n": 15
+      },
+      "observed_mfe_all": {
+        "max": 240.0,
+        "mean": 118.03600000000006,
+        "median": 123.72000000000116,
+        "min": 0.0,
+        "n": 15
+      },
+      "original_signal_side": "SELL",
+      "profit_factor": 1.91539562970806,
+      "scientific_inference": false,
+      "signals": 15,
+      "units": "US30CASH_PRICE_UNITS_NOT_CURRENCY"
+    },
+    {
+      "censored": 5,
+      "censoring": "NO_ZERO_IMPUTATION_MFE_MAE_OF_CENSORED_PATHS_ARE_OBSERVED_LOWER_BOUNDS",
+      "closed_pnl_exit_order_drawdown_proxy": -931.4999999999854,
+      "completed": 10,
+      "completed_duration_observed_m5_bars": {
+        "max": 100,
+        "mean": 65.8,
+        "median": 77.0,
+        "min": 20,
+        "n": 10
+      },
+      "completed_pnl": {
+        "max": 240.0,
+        "mean": -77.15199999999822,
+        "median": -180.04999999999563,
+        "min": -180.34999999999854,
+        "n": 10
+      },
+      "completed_pnl_sum": -771.5199999999822,
+      "completed_win_rate": 0.3,
+      "drawdown_scope": "CLOSED_VIRTUAL_PNL_EXIT_ORDER_NOT_MARK_TO_MARKET_OR_ACCOUNT_EQUITY",
+      "exit_reasons": {
+        "END_OF_DATA": 5,
+        "SL": 6,
+        "TIME_EXIT": 3,
+        "TP": 1
+      },
+      "mode": "INVERT",
+      "observed_mae_all": {
+        "max": 180.34999999999854,
+        "mean": 106.56266666666585,
+        "median": 129.22000000000116,
+        "min": 2.75,
+        "n": 15
+      },
+      "observed_mfe_all": {
+        "max": 240.0,
+        "mean": 78.65066666666777,
+        "median": 74.65000000000146,
+        "min": 0.0,
+        "n": 15
+      },
+      "original_signal_side": "SELL",
+      "profit_factor": 0.3060747243258868,
+      "scientific_inference": false,
+      "signals": 15,
+      "units": "US30CASH_PRICE_UNITS_NOT_CURRENCY"
+    }
+  ]
+}

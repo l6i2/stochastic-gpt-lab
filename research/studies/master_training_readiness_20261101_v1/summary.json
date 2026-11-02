@@ -1,0 +1,92 @@
+{
+  "BROKER_CONNECTION": "XM_DEMO_CONNECTED_VERIFIED",
+  "BUY_SUPPORT": 0,
+  "CAUSAL_AUDIT": "FAIL_GLOBAL_UNCHANGED",
+  "COLLECTOR_HEALTH": "ACTIVE_DERIVED_QUARANTINED",
+  "DATASET_MATURITY": {
+    "admitted_percent": 0,
+    "consecutive": 0,
+    "own_M5_total": 2,
+    "post_bars": 0,
+    "post_required": 100,
+    "reason": "NO_MEANINGFUL_WEIGHTED_TOTAL_WITH_UNKNOWN_COVERAGE_MEMBERSHIP",
+    "required": 800,
+    "status": "NOT_READY_QUARANTINED",
+    "total_scientific_percent": null,
+    "valid_contiguous_warmup": 0,
+    "warmup_percent": 0.0,
+    "warmup_required": 350
+  },
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "FEATURE_CAUSALITY": {
+    "all_six_values_present": 0,
+    "global_certification": false,
+    "real_prefix_checks": 2
+  },
+  "FINAL_TEST": "LOCKED",
+  "HARD_BLOCKER": [
+    "CONTINUITY_AND_EXACT_BID_COVERAGE",
+    "OWN_350_800_100_MATURITY_AND_200_80_80_SUPPORT",
+    "PROVEN_MEMBERSHIP_AND_RECURSIVE_SEEDS",
+    "APPLICABLE_SCIENTIFIC_CONTRACT_AND_UTC_LIMITS",
+    "NO_EXPLICIT_TRAINING_GRANT"
+  ],
+  "HISTORICAL_HOLDOUT": "LOCKED",
+  "LIVE_TRADING": false,
+  "M1_COMPLETED": 33,
+  "M5_COMPLETED": 2,
+  "MAIN_K_SIGNALS": {
+    "BUY": 0,
+    "SELL": 0
+  },
+  "MANUAL_ACTION_REQUIRED": "NONE_NOW_NO_PREMATURE_SCIENTIFIC_AUTHORIZATION_REQUEST",
+  "MARKET_STATE": "RECENT_XM_QUOTES_OBSERVED",
+  "MEMBERSHIP": "OWN_SOURCE_PREFIX_VERIFIED_PROTECTED_LEGACY_UNKNOWN_RETIRED_FROM_OPERATION_NOT_ADMISSION_OVERRIDE",
+  "MEMORY_USAGE": {
+    "processes": [
+      {
+        "cpu_seconds": 33.703125,
+        "parent_pid": 24864,
+        "pid": 7848,
+        "private_mb": 252.87,
+        "role": "PROCESSING_WORKER",
+        "working_mb": 15.43
+      },
+      {
+        "cpu_seconds": 0.015625,
+        "parent_pid": 24028,
+        "pid": 24864,
+        "private_mb": 1.03,
+        "role": "VENV_LAUNCHER",
+        "working_mb": 0.75
+      }
+    ],
+    "processing_workers": 1,
+    "unexpected_processes": 0
+  },
+  "NATIVE_BACKTEST_PARITY": "PASS_RETAINED_AUTHORIZED_FIXED_DAY_AND_SYNTHETIC_ORACLE",
+  "NEXT_STATE": "CONTINUE_VALID_NATIVE_DIAGNOSTIC_INTERVALS_QUARANTINED_DASHBOARD_AND_GATE_AUTO_NO_TRAINING",
+  "REAL_TICKS_RECEIVED": 4739,
+  "SELL_SUPPORT": 0,
+  "TEMPORAL_PROVENANCE": "NATIVE_ORDER_AND_NTS_RECEIPT_EVIDENCE_GENERATION_UTC_UNVERIFIED",
+  "TICK_DISCREPANCY_ROOT_CAUSE": "25_REFERENCE_BID_PAYLOADS_ABSENT_NO_DUPLICATES_SINGLE_SESSION_NO_DISCONNECTED_QUOTE_CALLBACKS; ONTICK_COALESCENCE_DOCUMENTED_MECHANISM_NOT_EACH_EVENT_SCHEDULER_PROOF",
+  "TRAINING_ADMISSION_GATE": {
+    "TRAINING_ADMISSION_GATE": "BLOCKED",
+    "authorization_request_ready": false,
+    "authorization_requested": false,
+    "execution_permitted": false,
+    "package_complete": false,
+    "reasons": [
+      "NO_INDEPENDENT_ADMITTED_SEALED_DATASET",
+      "COMPLETE_MEMBERSHIP_AND_COVERAGE_RECEIPTS_REQUIRED",
+      "APPLICABLE_CONTRACT_CAUSALITY_NOT_ADMITTED",
+      "NO_HASH_BOUND_SCIENTIFIC_AUTHORIZATION"
+    ],
+    "scientific_grants": 0,
+    "training_executed": false
+  },
+  "TRAINING_EXECUTED": false,
+  "TRAINING_READINESS": "BLOCKED",
+  "TRAINING_RESULTS": null
+}

@@ -1,0 +1,26 @@
+{
+  "files": {
+    "controller/native_study_runner.py": "320e8df3a4b7cae4c1a79cdead8bab0d5cfc0de2468e881b309add31b3925348",
+    "controller/scientific_authority.py": "950da37105fb3c66c0adbd0a828e8ca20e14efa8fd43dddfb644627dd2963b98",
+    "controller/tick_discrepancy.py": "a48f59588b6ff4571c5e271a359484f32a30a90dd64258107a73788894f03ce3",
+    "controller/training_admission_gate.py": "1ff59daa7e121cee5e95e35f3d2e4506744b83bf7bc075e97c83eaca81e11ab2",
+    "docs/MASTER_TRAINING_READINESS_REPORT.md": "26349b800d13105e325887ae0c07828a2b9eef8e67bda9d5ff047219ecf0f226",
+    "research/studies/master_training_readiness_20261101_v1/dashboard_snapshot.html": "c0986c740f96272ef5cf63b9df1cbfd947ee92739cf97f184ba71dc1ab4f7408",
+    "research/studies/master_training_readiness_20261101_v1/exposure_delta.json": "c0928411aa32de6af85e20ff57fc5f5348e6168dccf5cdc42ffc2fbf8d50a185",
+    "research/studies/master_training_readiness_20261101_v1/historical_reused.json": "87e877c364b67dfdc261548359fa3eb8be294f47103059a3568a2e503c3da3a9",
+    "research/studies/master_training_readiness_20261101_v1/memory_sample.json": "6743a39e334dd571a4ba96df05eca24692c2b9d759a11c4dc1d2aca1631b1569",
+    "research/studies/master_training_readiness_20261101_v1/prefix_verification.json": "cb8434061b1ce25420dc0a9c3ce2dda4b0049b5ca0385d851950e215e9ea27b4",
+    "research/studies/master_training_readiness_20261101_v1/real_derived_evidence.json": "951783cc493b4cdd92528f4528f5d472237dc4ce173262248e082f3929625c45",
+    "research/studies/master_training_readiness_20261101_v1/runtime.json": "17d99df44c76dbec2e7aa69ad09f35bf8b1769a2bbb95a06b87fbc903850c118",
+    "research/studies/master_training_readiness_20261101_v1/source_review.json": "df098751f37ffd2f1c208ed7a348f300f2f9c60a981de568dcee9251492da07a",
+    "research/studies/master_training_readiness_20261101_v1/summary.json": "08ae763999e3d2a4b97658167848d0785430c9e3c79d2ce805691455b4985d05",
+    "research/studies/master_training_readiness_20261101_v1/tick_forensics.json": "12a660c6a4ea0b7dc337af6f2365a7125b7b956fcdc8b70ee58c5faa8866260d",
+    "research/studies/master_training_readiness_20261101_v1/validation.json": "e006cd223cc2aef6e1d84e09eaa50f69511bf1319525cd0695f5c73f4166e577",
+    "tests/test_training_admission_gate.py": "8a3c6249ccc43f29b239452554ee116d128168759fe2513a505260544d586176",
+    "tools/admitted_training.py": "5af62c06ffd7cffdeff3b0d2cd8a8fc21c871596812f8790aacaca2d965fd57d",
+    "tools/investigate_25_ticks.py": "0a175a5a5d6c7c38266c65cd7fe4ef868e34469456af02bea3caf9ae5190325f",
+    "tools/research_dashboard.py": "97ae1f6274c2c19d568852f8a06b3af9f630a59ac0f62ee9916b00dac619f28e",
+    "tools/research_recovery.ps1": "3d0aae1a3f877fd370059f75fab9ff11bea03501f95eb0a618506976b121fe5d"
+  },
+  "root_sha256": "3e2c823f56994dc1266643fe32e167464322a2e608e30b7187d26227981298eb"
+}

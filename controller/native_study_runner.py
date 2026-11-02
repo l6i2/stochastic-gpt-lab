@@ -11,7 +11,7 @@ from .pretrain_contracts import FEATURES, seal
 from .native_study_design import fold_plan
 from .pretrain_model_preparation import prepare_unfitted
 
-AUTHORIZED_GRANT_HASHES = frozenset()
+from .training_admission_gate import AUTHORIZED_GRANT_HASHES,authorize_execution
 
 
 def bootstrap_contrasts(rows, first_admitted_observed_bar, last_admitted_observed_bar):
@@ -79,11 +79,12 @@ def execute(grant, load_admitted_rows, claim_single_attempt):
     exposure and membership. Durable single-attempt claim precedes data access.
     Failed convergence/single class is terminal; there are no retries or tuning.
     """
-    if seal(grant) not in AUTHORIZED_GRANT_HASHES:
-        raise PermissionError('NO_EXPLICIT_HASH_BOUND_SCIENTIFIC_GRANT')
+    from pathlib import Path
+    authorize_execution(grant,Path(__file__).resolve().parents[1])
     required={'study_id','dataset_hash','protocol_hash','feature_whitelist_hash',
               'membership_hash','exposure_hash','admission_receipt_hash','code_head',
-              'environment_hash','row_schema','plan_hash','dataset_first_observed_bar'}
+              'environment_hash','row_schema','plan_hash','dataset_first_observed_bar',
+              'manifest_path','manifest_sha256','max_fits'}
     if set(grant)!=required or grant['row_schema']!='native-study-admitted-rows/1':
         raise ValueError('INVALID_FUTURE_GRANT_SCHEMA')
     claim_single_attempt(seal(grant))  # Must be an exclusive durable claim; never auto retry.
@@ -119,12 +120,14 @@ def execute(grant, load_admitted_rows, claim_single_attempt):
             if len(set(y))!=2:
                 raise ValueError('SINGLE_CLASS_NOT_RUN_NO_PARAMETER_CHANGE')
             estimator,_=prepare_unfitted(side)
+            if fit_count>=grant['max_fits']:
+                raise ValueError('FIT_BUDGET_EXCEEDED_BEFORE_FIT')
             from sklearn.exceptions import ConvergenceWarning
             with warnings.catch_warnings():
                 warnings.simplefilter('error',ConvergenceWarning)
                 estimator.fit([[r['features'][f] for f in FEATURES] for r in valid],y)
             fit_count+=1
-            if fit_count>8:
+            if fit_count>grant['max_fits']:
                 raise ValueError('FIT_BUDGET_EXCEEDED')
             good=[r for r in evaluation if finite(r)]
             probability={r['signal_id']:float(p[1]) for r,p in zip(good,
