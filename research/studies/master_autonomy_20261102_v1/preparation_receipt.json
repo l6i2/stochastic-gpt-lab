@@ -1,0 +1,29 @@
+{
+  "admitted": false,
+  "grants": 0,
+  "old_259_284_requeried": false,
+  "old_regression_repeated": false,
+  "package_assets_verified": [
+    "PROTOCOL_ES.md",
+    "PROTOCOL_ES.md.sha256",
+    "README_ES.md",
+    "archive_windows.json",
+    "code_source_hashes.json",
+    "coverage_audit.json",
+    "dataset_inventory.json",
+    "dataset_membership.json",
+    "environment_versions.json",
+    "exposure_ledger.json",
+    "feature_causality.json",
+    "feature_model_whitelist.json",
+    "known_exposed_signal_membership.json",
+    "pre_train_gates.json",
+    "prospective_collection_plan.json",
+    "research_registry_inventory.json",
+    "scientific_authorization_package.json",
+    "temporal_dependencies.json",
+    "validation.json"
+  ],
+  "protected_rows_opened": 0,
+  "training_executed": false
+}

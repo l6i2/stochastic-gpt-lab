@@ -1,0 +1,120 @@
+{
+  "chain_head": "fb25c7f9fa356e5c30e256e861949e1078fa27593113b70f60f6502b53a53304",
+  "generation_certified": false,
+  "interval_seconds": 303.953,
+  "measurements": [
+    {
+      "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+      "broker_mapping_authorized": false,
+      "capture_id": "64a65ce732274f7e9779eec1e70ced5f",
+      "clock_adjusted": false,
+      "host_elapsed_minus_monotonic_interval_ns": [
+        56400,
+        802200
+      ],
+      "host_elapsed_minus_monotonic_ns": 802200,
+      "host_receive_ns": 1793629991359540100,
+      "host_send_ns": 1793629991343539300,
+      "leap_indicator": 0,
+      "offset_server_minus_host_ns": [
+        -402041384,
+        -293993871
+      ],
+      "origin": "time.cloudflare.com",
+      "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+      "precision_log2_seconds": -26,
+      "protocol": "RFC8915_NTS_AEAD15_TLS13",
+      "receive_clock_observation": {
+        "qpc_absolute_utc_accuracy": "NOT_IMPLIED_BY_RESOLUTION",
+        "qpc_frequency_hz": 10000000,
+        "qpc_ticks_interval": [
+          3033666111642,
+          3033666111688
+        ],
+        "scope": "LOCAL_WALL_READ_NOT_PACKET_ARRIVAL",
+        "uptime_resolution_bound": "NOT_CALIBRATED"
+      },
+      "receive_kernel_uptime_ms_interval": [
+        303345109,
+        303345109
+      ],
+      "response_sha256": "0a6e8e9af189757d3a6f4fb1a11be7f2737fd57cfcb35fc13c15b598e0058110",
+      "root_delay_ns": 90866088,
+      "root_dispersion_ns": 625610,
+      "rtt_local_read_interval_ns": [
+        15198600,
+        15944400
+      ],
+      "rtt_monotonic_ns": 15944400,
+      "rtt_scope": "QUERY_ELAPSED_INCLUDES_LOCAL_PROCESSING_NOT_PURE_NETWORK_DELAY",
+      "server_advertised_error_ns": 46058670,
+      "server_processing_ns": 70627,
+      "server_receive_utc_ns": 1793629991003486759,
+      "server_transmit_utc_ns": 1793629991003557386,
+      "stratum": 3,
+      "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+      "unique_id_sha256": "769ee0121810fd67a50b64d8f5dcbae90ec23f1c749d1ecf107d87bbc2626d4e",
+      "utc_receive_interval_model_ns": [
+        1793629990957498716,
+        1793629991065546229
+      ]
+    },
+    {
+      "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+      "broker_mapping_authorized": false,
+      "capture_id": "0f1c3a47bbac498b8b4bb35f4daef8e5",
+      "clock_adjusted": false,
+      "host_elapsed_minus_monotonic_interval_ns": [
+        -336500,
+        -265900
+      ],
+      "host_elapsed_minus_monotonic_ns": -265900,
+      "host_receive_ns": 1793629992626860200,
+      "host_send_ns": 1793629992434751300,
+      "leap_indicator": 0,
+      "offset_server_minus_host_ns": [
+        -440682315,
+        -248661309
+      ],
+      "origin": "ntppool2.time.nl",
+      "peer_certificate_sha256": "325116366b5e1bf09b80a2e9afaf38806b405f58a3f7766bd8d70a9801326dc5",
+      "precision_log2_seconds": -25,
+      "protocol": "RFC8915_NTS_AEAD15_TLS13",
+      "receive_clock_observation": {
+        "qpc_absolute_utc_accuracy": "NOT_IMPLIED_BY_RESOLUTION",
+        "qpc_frequency_hz": 10000000,
+        "qpc_ticks_interval": [
+          3033678784465,
+          3033678784502
+        ],
+        "scope": "LOCAL_WALL_READ_NOT_PACKET_ARRIVAL",
+        "uptime_resolution_bound": "NOT_CALIBRATED"
+      },
+      "receive_kernel_uptime_ms_interval": [
+        303346375,
+        303346375
+      ],
+      "response_sha256": "655be7de2568d9958a78acd6a1cc521b35adb01fee1b908424f7646f3b5976b8",
+      "root_delay_ns": 15258,
+      "root_dispersion_ns": 15258,
+      "rtt_local_read_interval_ns": [
+        192374800,
+        192445400
+      ],
+      "rtt_monotonic_ns": 192445400,
+      "rtt_scope": "QUERY_ELAPSED_INCLUDES_LOCAL_PROCESSING_NOT_PURE_NETWORK_DELAY",
+      "server_advertised_error_ns": 22918,
+      "server_processing_ns": 133730,
+      "server_receive_utc_ns": 1793629992186067073,
+      "server_transmit_utc_ns": 1793629992186200803,
+      "stratum": 1,
+      "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+      "unique_id_sha256": "7fd30431e9896663d60794d0cb767688001b39f22625384101383d8ff2432021",
+      "utc_receive_interval_model_ns": [
+        1793629992186177885,
+        1793629992378198891
+      ]
+    }
+  ],
+  "nominal_seconds": 300
+}

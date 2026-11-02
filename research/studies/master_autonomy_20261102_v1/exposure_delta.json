@@ -1,0 +1,16 @@
+{
+  "chain_head": "c54a7bc6b692eb05b103ac55b2998b174f437c9373bc348fc0cf61793e5ff1ab",
+  "entry": {
+    "dataset_admission": false,
+    "kind": "NEW_PROSPECTIVE_TAIL_MASTER_AUTONOMY",
+    "ledger_sequence": 53,
+    "membership_sha256": "1c682786facf562df9aa4d4b48f9760b69926beed303d284cd72c4ba836d1a64",
+    "previous": "8b06cff68802e04056d14f45e8732ab904b4b616bc82d0e01fbb30d27edf06bd",
+    "protected_rows_opened": 0,
+    "scientific_fits": 0,
+    "scientific_scoring": 0,
+    "summary_sha256": "d45902007895321395681f884bf99fd6870b4418f12715e22fe6bbec019385cb"
+  },
+  "parent_path": "research/studies/prospective_progress_20261102_v3/exposure_delta.json",
+  "parent_sha256": "b24b45b15c82089bb7e1ff5cee94f75ac12197889d68ac856a84e01c1c5fe3aa"
+}
