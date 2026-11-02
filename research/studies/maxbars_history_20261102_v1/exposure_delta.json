@@ -1,0 +1,17 @@
+{
+  "chain_head": "bb4e43ef54bc4c0167831587af667c0fac26e8996a8472efe468dad570b80208",
+  "entry": {
+    "kind": "MAXBARS_AND_REPEAT_FIXED_AUTHORIZED_HISTORICAL_DIAGNOSTIC",
+    "ledger_sequence": 57,
+    "native_day": "2024-01-02",
+    "new_dataset_admission": false,
+    "new_training_fits": 0,
+    "previous": "a616eb8e7159e4a18a1ad829bf2ba453ca9f66e8c7ad1a02d48d7c0c1a040a88",
+    "prospective_backfill": 0,
+    "run_id": "diag_d17cbe6aedfc",
+    "scientific_scoring": 0,
+    "summary_sha256": "2c59c9ea5882b1bab84990757a2d457b38c45c2b9d6fa08155730a9935469440"
+  },
+  "parent_path": "research/studies/native_database_producer_trial_20261102_v1/exposure_delta.json",
+  "parent_sha256": "a5b863e5a4c96e1b73b5e4d7fc9039748713f7e8eb1ac8f0db1ce6279fbd6fd1"
+}

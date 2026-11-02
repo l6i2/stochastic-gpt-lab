@@ -1,0 +1,17 @@
+{
+  "dataset_admitted": false,
+  "files": {
+    "diag_d17cbe6aedfc_bar_execution_quotes.csv": "575ffacf591e30b78317a03d898731cda728f9fe52a2201b1537ec76f21530fd",
+    "diag_d17cbe6aedfc_bar_quote_path.bin": "f03c643bc26c4cc236706537e49f0e78dd1fdf89eaab4674b5f599d2439c8711",
+    "diag_d17cbe6aedfc_bar_trade_index.csv": "90571e6a85d858f6fdcdb78dfded60065abf804ed3aa70df42a692539412296a",
+    "diag_d17cbe6aedfc_stochastic_events.csv": "975b374fce187ef4cdf33a02b6a69f743393cc2ef989f352706ae89c8225da81",
+    "diag_d17cbe6aedfc_stochastic_events.csv.native_M1.csv": "12e8af250f76483b28ce90631ccd1dde4786971ffe44d5f118d5f77b4e8a036c",
+    "diag_d17cbe6aedfc_stochastic_events.csv.native_M5.csv": "62e1d0877b3ac9cae68d2f30d17567eff4909d3e7a3417e9bd7f8817b2c208df",
+    "diag_d17cbe6aedfc_stochastic_events.csv.native_main.csv": "13916e70d0f2a3ff099e93186bf28ac8c02a92558c7a9667ba099229c3374a8d"
+  },
+  "kind": "HISTORICAL_FIXED_AUTHORIZED_DIAGNOSTIC_NOT_PROSPECTIVE",
+  "native_day": "2024-01-02",
+  "prospective_warmup_adopted": 0,
+  "run_id": "diag_d17cbe6aedfc",
+  "training_authorized": false
+}

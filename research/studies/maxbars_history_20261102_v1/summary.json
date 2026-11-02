@@ -1,0 +1,86 @@
+{
+  "BLOCKERS": [
+    "FULL_SERVER_HISTORY_NOT_CERTIFIED_OR_DOWNLOADED_DUE_PROTECTED_ROLES",
+    "20K_CHART_WINDOW_CANNOT_SERVE_2024_DAY_DIRECTLY_USE_ISOLATED_FIXED_TESTER",
+    "PROSPECTIVE_COVERAGE_SEEDS_MEMBERSHIP_CAUSALITY_AND_MATURITY_PENDING",
+    "GLOBAL_CAUSAL_AUDIT_FAIL_EXTERNAL_UTC_UNRESOLVED"
+  ],
+  "COLLECTOR_STATUS": "ACTIVE_QUARANTINED",
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "FINAL_TEST": "LOCKED",
+  "HISTORICAL_COVERAGE": {
+    "M1_chart_first_native": "2026-10-13 12:19",
+    "M5_chart_first_native": "2026-07-22 05:35",
+    "all_history_downloaded": false,
+    "chart_queries_old_day_error": 4401,
+    "complete_server_coverage_certified": false,
+    "downloaded_ticks": 79211,
+    "local_native_database_first": "2022-06-03",
+    "metadata_counts_scope": "ISOLATED_NATIVE_TERMINAL_SAME20K_LIMIT_NOT_ASSUMED_ACTIVE_CACHE_IDENTICAL",
+    "permitted_download_day": "2024-01-02",
+    "protected_period_content_queries": 0,
+    "python_direct_response": "REJECTED_OUT_OF_RANGE_NO_BARS_PERSISTED",
+    "server_advertised_first_native": "2011-08-10"
+  },
+  "HISTORICAL_HOLDOUT": "LOCKED",
+  "LIVE_TRADING": false,
+  "M1_DISPONIBLES": {
+    "fixed_day_downloaded": 1376,
+    "native_isolated_metadata_bars": 20000
+  },
+  "M5_DISPONIBLES": {
+    "fixed_day_downloaded": 276,
+    "native_isolated_metadata_bars": 20316
+  },
+  "MAX_BARS_ACTUAL": 500000,
+  "MAX_BARS_ACTUAL_FINAL": 20000,
+  "MAX_BARS_CONFIGURADO": 20000,
+  "MT5_BACKTEST_PARITY": {
+    "BUY": 13,
+    "M1_EXACT": 1376,
+    "M5_EXACT": 276,
+    "MAIN_K": {
+      "all_bar_max_error": 1.4210854715202004e-14,
+      "all_native_closed_bars_compared": 268,
+      "compared_signals": 27,
+      "early_warmup_rows_not_compared": 1,
+      "inherited_oracle_absolute_tolerance": 1e-10,
+      "max_error": 1.4210854715202004e-14,
+      "missing_signal_cutoffs": [],
+      "status": "PASS"
+    },
+    "SELL": 15,
+    "new_native_tester_run": true,
+    "run_id": "diag_d17cbe6aedfc",
+    "scope": "FROZEN_NATIVE_VIRTUAL_EXPORTER_VS_PYTHON_NOT_MT5_ORDER_FILL_ENGINE",
+    "status": "PASS",
+    "virtual_paths": 56
+  },
+  "RAM_AFTER": {
+    "available_mib": 1075,
+    "maxbars": 20000,
+    "pid": 23100,
+    "terminal_resident_mib": 11.7
+  },
+  "RAM_BEFORE": {
+    "connected": true,
+    "maxbars": 500000,
+    "ram_available_mib": 1247,
+    "ram_percent": 84.3,
+    "ram_total_mib": 7927,
+    "terminal_pid": 23100,
+    "terminal_resident_mib": 60.14
+  },
+  "TRAINING_READINESS": "BLOCKED_NO_DATASET_ADMISSION_OR_TRAINING_GRANT",
+  "WARMUP_PROSPECTIVO": {
+    "historical_bars_imported": 0,
+    "own_contiguous_diagnostic": 0,
+    "required": 350,
+    "scientifically_admitted": 0
+  },
+  "active_terminal_pid_preserved": true,
+  "manual_action_required": false,
+  "restart_required": false,
+  "snapshot_ecuador": "2026-11-02T16:45:56.653810-05:00"
+}
