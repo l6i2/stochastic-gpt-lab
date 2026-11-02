@@ -1,0 +1,19 @@
+{
+  "chain_head": "a9bceee08181e61cff185c7b4cdacb00b4681a099b1af97559ce47fa374622f6",
+  "entry": {
+    "dataset_admission": false,
+    "entry_sha256": "a9bceee08181e61cff185c7b4cdacb00b4681a099b1af97559ce47fa374622f6",
+    "kind": "CONTINUED_PC_A_RECOVERY_AND_NEW_SEGMENT_DIAGNOSTIC_PREFIX_VERIFICATION",
+    "ledger_sequence": 51,
+    "prefix_sha256": "a2ee9c8da6610dde4eea9290ad7001456e7a33125b55daa46e8e453d44f7eaff",
+    "previous": "c92a3c3aa30c37444fb452fdbc94a9b39cd527e1a7106e7ec74ceda5f5f1fc99",
+    "protected_rows_opened": 0,
+    "runtime_sha256": "baf02173af22dda186400f442ffc174162974d2345e1943959bfe53dad3083f9",
+    "scientific_fits": 0,
+    "scientific_scoring": 0,
+    "summary_sha256": "f4ee267ce7437dabed97ba629f5c4cee3446e27d543c2ce7e7adb64c3ded3286"
+  },
+  "old_ledgers_preserved": true,
+  "parent_file_sha256": "c0928411aa32de6af85e20ff57fc5f5348e6168dccf5cdc42ffc2fbf8d50a185",
+  "parent_path": "research/studies/master_training_readiness_20261101_v1/exposure_delta.json"
+}

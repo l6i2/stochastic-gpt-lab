@@ -1,0 +1,16 @@
+{
+  "command": "$env:PYTHONPATH='tests;python'; .venv\\Scripts\\python.exe -m unittest tests.test_future_segment_isolation tests.test_prospective_processor tests.test_native_sequence_coverage tests.test_training_admission_gate",
+  "core_processes_preserved": true,
+  "failures": 0,
+  "full_previous_suite": "498 executed, 489 PASS, 9 SKIPPED retained; not unnecessarily rerun",
+  "new_native_probes": 0,
+  "passed": 40,
+  "protected_rows_opened": 0,
+  "scope": "NEW_SEGMENT_ISOLATION_AND_DEPENDENT_PROCESSOR_SEQUENCE_GATE_REGRESSIONS_ONLY",
+  "scoring_calls": 0,
+  "skipped": 0,
+  "task_scheduler_relaunch_verified": true,
+  "tests": 40,
+  "training_calls": 0,
+  "transcript_sha256": "741fc3488101f9b4313c2d038bd7cb735eae031f578c09108ca2f75ebad71b92"
+}

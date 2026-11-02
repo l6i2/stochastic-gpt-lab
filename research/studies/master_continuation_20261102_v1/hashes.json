@@ -1,0 +1,15 @@
+{
+  "files": {
+    "docs/MASTER_CONTINUATION_20261102.md": "66fac1f854e0c1f08ed3627287423c91c536268724080e102597b579f3bb0138",
+    "research/studies/master_continuation_20261102_v1/exposure_delta.json": "498c4a9237fdd1f39321489f36d42f32314f54c0781231e499b47e05f45c9bf2",
+    "research/studies/master_continuation_20261102_v1/phase_audit.json": "ffcc60326f7445de292d677e0d7925e2b7b357301286f02078f15b755660fcc4",
+    "research/studies/master_continuation_20261102_v1/prefix_receipt.json": "a2ee9c8da6610dde4eea9290ad7001456e7a33125b55daa46e8e453d44f7eaff",
+    "research/studies/master_continuation_20261102_v1/runtime.json": "baf02173af22dda186400f442ffc174162974d2345e1943959bfe53dad3083f9",
+    "research/studies/master_continuation_20261102_v1/source_review.json": "6b3c641c494a080458345e7455db23162f6f5c6dc94f5182b85394bc0584dc62",
+    "research/studies/master_continuation_20261102_v1/summary.json": "f4ee267ce7437dabed97ba629f5c4cee3446e27d543c2ce7e7adb64c3ded3286",
+    "research/studies/master_continuation_20261102_v1/validation.json": "67c2f691588d474fa60cc97e8732737c33686914aa2ee0d015f67b8a443b457f",
+    "tests/test_future_segment_isolation.py": "2f6cf6680db0fe2d10315c9e753687ae482777f23bf193374c6bde96bac0d1cd",
+    "tools/ensure_research_guardian.ps1": "74c5010b340b2d14601d31b5036e1408d97488145db550984108e7e44278acbf"
+  },
+  "root_sha256": "954071c991c112a2a1bc5082ff70a74af8298c6432390801a854f3f8b53ef0a1"
+}

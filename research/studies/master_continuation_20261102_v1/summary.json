@@ -1,0 +1,193 @@
+{
+  "BLOCKERS_FUTURE_DATA": [
+    "OWN_CONTIGUOUS_350_M5",
+    "800_CONSECUTIVE_SIGNALS_AND_100_OBSERVED_POST_BARS",
+    "200_EVALUABLE_80_BUY_80_SELL"
+  ],
+  "BLOCKERS_NOT_ONLY_FUTURE_DATA": [
+    "EXACT_COVERAGE_NOT_PROVEN_FOR_LOSSY_CALLBACK_WINDOWS",
+    "NATIVE_EVENT_UTC_AND_APPLICABLE_CONTRACT",
+    "PROTECTED_ROLE_MEMBERSHIP_AND_INDEPENDENCE",
+    "EXPLICIT_TRAINING_AUTHORIZATION"
+  ],
+  "BUY_SIGNALS": 0,
+  "CAUSAL_AUDIT": "FAIL_GLOBAL_UNCHANGED",
+  "DEMO": "DISABLED",
+  "DISCOVERY_VALIDATION": "BLOCKED",
+  "FINAL_TEST": "LOCKED",
+  "HISTORICAL_HOLDOUT": "LOCKED",
+  "INDEPENDENT_DATASET_STATUS": "QUARANTINED_NO_ADMITTED_SEALED_DATASET",
+  "LIVE_TRADING": false,
+  "MANUAL_ACTION_REQUIRED": "NONE_NOW",
+  "MASTER_PHASES_COMPLETED": [
+    {
+      "completion_scope": "VERIFIED_WITHIN_AUTHORIZED_SCOPE",
+      "evidence": "Source seal v40 verified; no strategy/contract/data changes",
+      "name": "INVARIANTES",
+      "number": 1,
+      "status": "COMPLETED"
+    },
+    {
+      "completion_scope": "VERIFIED_WITHIN_AUTHORIZED_SCOPE",
+      "evidence": "Old process IDs absent; fresh XM DEMO connection and quote progression verified",
+      "name": "ESTADO_REAL",
+      "number": 2,
+      "status": "COMPLETED_WITH_RECOVERY"
+    },
+    {
+      "completion_scope": "TECHNICAL_IMPLEMENTATION_OR_PREPARATION_ONLY",
+      "evidence": "M5/features derived where exact parity holds; insufficient continuous own history for features/signals",
+      "name": "PIPELINE_INCREMENTAL",
+      "number": 5,
+      "status": "IMPLEMENTED_PENDING_DATA_EVIDENCE"
+    },
+    {
+      "completion_scope": "VERIFIED_WITHIN_AUTHORIZED_SCOPE",
+      "evidence": "Existing IANA display retained; no native timestamp offset imposed",
+      "name": "ECUADOR_Y_DST",
+      "number": 7,
+      "status": "COMPLETED"
+    },
+    {
+      "completion_scope": "TECHNICAL_IMPLEMENTATION_OR_PREPARATION_ONLY",
+      "evidence": "Existing persistent monitor active; frozen thresholds unchanged",
+      "name": "MADUREZ_DASHBOARD",
+      "number": 9,
+      "status": "MONITOR_COMPLETE_DATA_PENDING"
+    },
+    {
+      "completion_scope": "VERIFIED_WITHIN_AUTHORIZED_SCOPE",
+      "evidence": "Existing authorized fixed-day report retained; no new research on exhausted TRAIN",
+      "name": "DIAGNOSTICO_HISTORICO",
+      "number": 10,
+      "status": "COMPLETED_SCOPE_LIMITED"
+    },
+    {
+      "completion_scope": "TECHNICAL_IMPLEMENTATION_OR_PREPARATION_ONLY",
+      "evidence": "Hash-bound single-attempt runner and frozen model/protocol ready; no admitted data integration run or fit",
+      "name": "RUNNER_REPRODUCIBLE",
+      "number": 11,
+      "status": "PREPARED_LOCKED"
+    },
+    {
+      "completion_scope": "TECHNICAL_IMPLEMENTATION_OR_PREPARATION_ONLY",
+      "evidence": "Unique gate retained; no authority hashes or premature request",
+      "name": "TRAINING_ADMISSION_GATE",
+      "number": 12,
+      "status": "IMPLEMENTED_BLOCKED"
+    },
+    {
+      "completion_scope": "VERIFIED_WITHIN_AUTHORIZED_SCOPE",
+      "evidence": "Existing stack resumed; limited guardian task registered and Task Scheduler relaunch tested without stopping core processes",
+      "name": "AUTOMATIZACION_RECUPERACION",
+      "number": 13,
+      "status": "COMPLETED_SCOPED_REPAIR"
+    },
+    {
+      "completion_scope": "VERIFIED_WITHIN_AUTHORIZED_SCOPE",
+      "evidence": "40 regressions PASS plus actual task idempotence/relaunch; previous complete suite retained not repeated",
+      "name": "PRUEBAS",
+      "number": 14,
+      "status": "COMPLETED_RELEVANT_REGRESSIONS"
+    },
+    {
+      "completion_scope": "TECHNICAL_IMPLEMENTATION_OR_PREPARATION_ONLY",
+      "evidence": "No force push; enclosing commit and final remote verification identify publication",
+      "name": "PUBLICACION",
+      "number": 15,
+      "status": "PREPARED_FOR_NORMAL_PUSH"
+    },
+    {
+      "completion_scope": "VERIFIED_WITHIN_AUTHORIZED_SCOPE",
+      "evidence": "This delta indexes completed/pending phases and independent blockers",
+      "name": "REPORTE_UNICO",
+      "number": 16,
+      "status": "COMPLETED"
+    }
+  ],
+  "MASTER_PHASES_PENDING": [
+    {
+      "evidence": "Prior hashed reconciliation retained: 25 absent BID payloads, no duplicate explanation; per-event scheduling cause not recorded",
+      "name": "259_VS_284",
+      "number": 3,
+      "status": "PARTIAL_CAUSE_UNRESOLVED"
+    },
+    {
+      "evidence": "New real quote/heartbeat/sequence progress; completeness and live signal progression not certified",
+      "name": "CAPTURA_REAL",
+      "number": 4,
+      "status": "PARTIAL_LIVE"
+    },
+    {
+      "evidence": "M5/features derived where exact parity holds; insufficient continuous own history for features/signals",
+      "name": "PIPELINE_INCREMENTAL",
+      "number": 5,
+      "status": "IMPLEMENTED_PENDING_DATA_EVIDENCE"
+    },
+    {
+      "evidence": "Native diagnostics allowed; physical event UTC and scientific contract obligations unresolved",
+      "name": "TEMPORALIDAD_CAUSALIDAD",
+      "number": 6,
+      "status": "PARTIAL_EXTERNAL_PROVENANCE"
+    },
+    {
+      "evidence": "Own source prefix verified; legacy originals recovery retired, unknown roles not fabricated or closed",
+      "name": "MEMBERSHIP",
+      "number": 8,
+      "status": "PARTIAL_EVIDENCE"
+    },
+    {
+      "evidence": "Existing persistent monitor active; frozen thresholds unchanged",
+      "name": "MADUREZ_DASHBOARD",
+      "number": 9,
+      "status": "MONITOR_COMPLETE_DATA_PENDING"
+    },
+    {
+      "evidence": "Hash-bound single-attempt runner and frozen model/protocol ready; no admitted data integration run or fit",
+      "name": "RUNNER_REPRODUCIBLE",
+      "number": 11,
+      "status": "PREPARED_LOCKED"
+    },
+    {
+      "evidence": "Unique gate retained; no authority hashes or premature request",
+      "name": "TRAINING_ADMISSION_GATE",
+      "number": 12,
+      "status": "IMPLEMENTED_BLOCKED"
+    }
+  ],
+  "MEMBERSHIP_STATUS": "OWN_PREFIX_VERIFIED_LEGACY_UNKNOWN_NO_SILENT_ROLE_CLOSURE",
+  "NEW_M5_BARS": 0,
+  "NEW_REAL_TICKS": {
+    "definition": "QUOTE_CALLBACKS_NOT_UNIQUE_OR_EXHAUSTIVE_BROKER_EVENTS",
+    "during_resumed_live_observation": 671,
+    "since_published_master_checkpoint": 1272,
+    "total_callbacks": 6011
+  },
+  "NEXT_STATE": "CONTINUE_RESTORED_SCOPED_SUPERVISION_AND_VALID_DIAGNOSTIC_SEGMENTS_NO_BACKFILL_NO_TRAINING",
+  "SELL_SIGNALS": 0,
+  "TICK_DISCREPANCY_ROOT_CAUSE": "OMISSION_RELATIVE_TO_REFERENCE_VERIFIED; NOT_DUPLICATES_OR_BID_COUNTER_DEFINITION; EXACT_CALLBACK_OMISSION_CAUSE_UNPROVEN_OLD_WINDOW_REMAINS_QUARANTINED",
+  "TOTAL_M1": 34,
+  "TOTAL_M5": 2,
+  "TRAINING_ADMISSION_GATE": {
+    "TRAINING_ADMISSION_GATE": "BLOCKED",
+    "authorization_request_ready": false,
+    "authorization_requested": false,
+    "execution_permitted": false,
+    "package_complete": false,
+    "reasons": [
+      "NO_INDEPENDENT_ADMITTED_SEALED_DATASET",
+      "COMPLETE_MEMBERSHIP_AND_COVERAGE_RECEIPTS_REQUIRED",
+      "APPLICABLE_CONTRACT_CAUSALITY_NOT_ADMITTED",
+      "NO_HASH_BOUND_SCIENTIFIC_AUTHORIZATION"
+    ],
+    "scientific_grants": 0,
+    "training_executed": false
+  },
+  "TRAINING_EXECUTED": false,
+  "TRAINING_READINESS": "BLOCKED",
+  "ecuador_snapshot": "2026-11-02T08:34:46.947545-05:00",
+  "frozen_cohort_rules_not_relaxed": true,
+  "new_feature_prefixes": 0,
+  "old_quarantine_does_not_block_future_native_diagnostics": true,
+  "real_feature_prefixes": 2
+}

@@ -1,0 +1,104 @@
+[
+  {
+    "evidence": "Source seal v40 verified; no strategy/contract/data changes",
+    "name": "INVARIANTES",
+    "number": 1,
+    "status": "COMPLETED"
+  },
+  {
+    "evidence": "Old process IDs absent; fresh XM DEMO connection and quote progression verified",
+    "name": "ESTADO_REAL",
+    "number": 2,
+    "status": "COMPLETED_WITH_RECOVERY"
+  },
+  {
+    "evidence": "Prior hashed reconciliation retained: 25 absent BID payloads, no duplicate explanation; per-event scheduling cause not recorded",
+    "name": "259_VS_284",
+    "number": 3,
+    "status": "PARTIAL_CAUSE_UNRESOLVED"
+  },
+  {
+    "evidence": "New real quote/heartbeat/sequence progress; completeness and live signal progression not certified",
+    "name": "CAPTURA_REAL",
+    "number": 4,
+    "status": "PARTIAL_LIVE"
+  },
+  {
+    "evidence": "M5/features derived where exact parity holds; insufficient continuous own history for features/signals",
+    "name": "PIPELINE_INCREMENTAL",
+    "number": 5,
+    "status": "IMPLEMENTED_PENDING_DATA_EVIDENCE"
+  },
+  {
+    "evidence": "Native diagnostics allowed; physical event UTC and scientific contract obligations unresolved",
+    "name": "TEMPORALIDAD_CAUSALIDAD",
+    "number": 6,
+    "status": "PARTIAL_EXTERNAL_PROVENANCE"
+  },
+  {
+    "evidence": "Existing IANA display retained; no native timestamp offset imposed",
+    "name": "ECUADOR_Y_DST",
+    "number": 7,
+    "status": "COMPLETED"
+  },
+  {
+    "evidence": "Own source prefix verified; legacy originals recovery retired, unknown roles not fabricated or closed",
+    "name": "MEMBERSHIP",
+    "number": 8,
+    "status": "PARTIAL_EVIDENCE"
+  },
+  {
+    "evidence": "Existing persistent monitor active; frozen thresholds unchanged",
+    "name": "MADUREZ_DASHBOARD",
+    "number": 9,
+    "status": "MONITOR_COMPLETE_DATA_PENDING"
+  },
+  {
+    "evidence": "Existing authorized fixed-day report retained; no new research on exhausted TRAIN",
+    "name": "DIAGNOSTICO_HISTORICO",
+    "number": 10,
+    "status": "COMPLETED_SCOPE_LIMITED"
+  },
+  {
+    "evidence": "Hash-bound single-attempt runner and frozen model/protocol ready; no admitted data integration run or fit",
+    "name": "RUNNER_REPRODUCIBLE",
+    "number": 11,
+    "status": "PREPARED_LOCKED"
+  },
+  {
+    "evidence": "Unique gate retained; no authority hashes or premature request",
+    "name": "TRAINING_ADMISSION_GATE",
+    "number": 12,
+    "status": "IMPLEMENTED_BLOCKED"
+  },
+  {
+    "evidence": "Existing stack resumed; limited guardian task registered and Task Scheduler relaunch tested without stopping core processes",
+    "name": "AUTOMATIZACION_RECUPERACION",
+    "number": 13,
+    "status": "COMPLETED_SCOPED_REPAIR"
+  },
+  {
+    "evidence": "40 regressions PASS plus actual task idempotence/relaunch; previous complete suite retained not repeated",
+    "name": "PRUEBAS",
+    "number": 14,
+    "status": "COMPLETED_RELEVANT_REGRESSIONS"
+  },
+  {
+    "evidence": "No force push; enclosing commit and final remote verification identify publication",
+    "name": "PUBLICACION",
+    "number": 15,
+    "status": "PREPARED_FOR_NORMAL_PUSH"
+  },
+  {
+    "evidence": "This delta indexes completed/pending phases and independent blockers",
+    "name": "REPORTE_UNICO",
+    "number": 16,
+    "status": "COMPLETED"
+  },
+  {
+    "evidence": "Safe technical continuation complete; future evidence and scientific permissions not bypassed",
+    "name": "EJECUCION_AUTONOMA",
+    "number": 17,
+    "status": "CONTINUES_QUARANTINED"
+  }
+]

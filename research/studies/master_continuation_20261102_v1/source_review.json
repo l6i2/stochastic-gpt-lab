@@ -1,0 +1,10 @@
+{
+  "all_prior_assets_verified_unchanged": true,
+  "global_power_network_battery_changes": false,
+  "native_producer_changed": false,
+  "only_task_scope": "StochasticGPTLab_PC_A_RecoveryGuardian_v1",
+  "previous_manifest_sha256": "2193ab77de721b7a2e331a3c2e06ea3be2af8c985a91bb2a034f600e20d1c3e2",
+  "raw_and_derivative_runtime_pins_verified": true,
+  "strategy_contracts_original_data_changed": false,
+  "task_permissions": "INTERACTIVE_LIMITED"
+}
