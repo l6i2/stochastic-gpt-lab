@@ -1,0 +1,91 @@
+[
+  {
+    "boot_id": "111",
+    "certified": false,
+    "first_new_sequence": null,
+    "journal_new_byte_range": [
+      24151744,
+      24151744
+    ],
+    "last_sequence": 12475,
+    "manifest_sha256": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+    "new_quarantine_flags": {},
+    "new_rows": 0,
+    "new_source_kinds": {},
+    "own_post_cut_source_only": true,
+    "previous_rows": 12337,
+    "raw_rows_waiting": 0,
+    "reference_rows_adopted": 0,
+    "rows_processed": 12337,
+    "segment": "obs_850c9ced05834b38b6e4c9e351a49f86",
+    "source_new_byte_range": [
+      7587306,
+      7587306
+    ],
+    "source_session": "pc_a_prospective_utc_v1_144295453_86572951924106_12318",
+    "status": "VERIFIED_NATIVE_TAIL_QUARANTINED"
+  },
+  {
+    "certified": false,
+    "manifest_sha256": "17c83cb12d9273a86e38440783f54cd3816dbf92a8b97a0e690571c541a33b1c",
+    "raw_rows_waiting": 0,
+    "rows_processed": 0,
+    "segment": "obs_f1348970aac44236b4c1c906fe17f451",
+    "status": "EMPTY_OR_NOT_YET_CONSUMED_QUARANTINED"
+  },
+  {
+    "boot_id": "111",
+    "certified": false,
+    "first_new_sequence": null,
+    "journal_new_byte_range": [
+      17546,
+      17546
+    ],
+    "last_sequence": 9,
+    "manifest_sha256": "21db2eadedadcfdd68d5aa2942850a3344b7fa11434e1fc94c569a18fff72a74",
+    "new_quarantine_flags": {},
+    "new_rows": 0,
+    "new_source_kinds": {},
+    "own_post_cut_source_only": true,
+    "previous_rows": 9,
+    "raw_rows_waiting": 0,
+    "reference_rows_adopted": 0,
+    "rows_processed": 9,
+    "segment": "obs_f4af841d849c4f79abdca694d78af2ad",
+    "source_new_byte_range": [
+      6158,
+      6158
+    ],
+    "source_session": "pc_a_prospective_utc_v1_299265828_86572951924106_3062",
+    "status": "VERIFIED_NATIVE_TAIL_QUARANTINED"
+  },
+  {
+    "boot_id": "111",
+    "certified": false,
+    "first_new_sequence": 870,
+    "journal_new_byte_range": [
+      1705509,
+      16316076
+    ],
+    "last_sequence": 8250,
+    "manifest_sha256": "c737acb4dad028e5b0cf8aab0458e1927b595c58d5745f74c2db3b3579be8667",
+    "new_quarantine_flags": {},
+    "new_rows": 7381,
+    "new_source_kinds": {
+      "HEARTBEAT": 522,
+      "ONTICK_LATEST_QUOTE": 6859
+    },
+    "own_post_cut_source_only": true,
+    "previous_rows": 867,
+    "raw_rows_waiting": 0,
+    "reference_rows_adopted": 0,
+    "rows_processed": 8248,
+    "segment": "obs_b47db00a212c478580d583503d34b373",
+    "source_new_byte_range": [
+      542019,
+      5167712
+    ],
+    "source_session": "pc_a_prospective_utc_v1_299351015_86572951924106_2164",
+    "status": "VERIFIED_NATIVE_TAIL_QUARANTINED"
+  }
+]

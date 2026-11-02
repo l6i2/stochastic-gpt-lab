@@ -1,0 +1,166 @@
+{
+  "before": {
+    "before": {
+      "active_pin": "outputs\\prospective_derivatives_v1\\deployment_pins\\85e7be61ba671cbb8e8c5f1700165873002f5a01c1cab842068830b80550b86d.json",
+      "active_pin_sha256": "d82f5cce490c0b351c48abaa65af3ac76e5c606e460e91bfe15d11f4e6fbba92",
+      "derived_head": "186002de8caa87bd71a871fabeae04186c5a604ff1309764e94592416d94d185",
+      "raw_cursors": {
+        "obs_850c9ced05834b38b6e4c9e351a49f86": {
+          "head": "04d3500e33d56dafa4c92f5667e744c8db32d7150c9039ba92e9c14a07c5df81",
+          "manifest_hash": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+          "native_head": "e564c7178db4555c54d13e8602e76f1f0436d1bb55a0e3a14556fa90547789b1",
+          "native_sequence": 12475,
+          "offset": 24151744,
+          "rows": 12337
+        },
+        "obs_b47db00a212c478580d583503d34b373": {
+          "head": "2baff0f9e3b1cae381afa5def6aa4b123efc531d74464597a6237a35132c5832",
+          "manifest_hash": "c737acb4dad028e5b0cf8aab0458e1927b595c58d5745f74c2db3b3579be8667",
+          "native_head": "6e7b48280b5a32bf571efe7e283b30a10261ee8c7d17e257bc6410952ef38d00",
+          "native_sequence": 5833,
+          "offset": 11532630,
+          "rows": 5831
+        },
+        "obs_f4af841d849c4f79abdca694d78af2ad": {
+          "head": "833c1dcbca6d1aa4d4ff7e5c7a54ffda246ac7280703e28c334759b5a91bb6eb",
+          "manifest_hash": "21db2eadedadcfdd68d5aa2942850a3344b7fa11434e1fc94c569a18fff72a74",
+          "native_head": "97531b28ce4c7fecba4a0456664b89c84fb51a9b98d2f789a5a890f86c95a9aa",
+          "native_sequence": 9,
+          "offset": 17546,
+          "rows": 9
+        }
+      },
+      "source_records": 18177,
+      "worker_pid": 8836
+    },
+    "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+    "clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-02T13:59:05.996431+00:00",
+      "monotonic_ns": 301320962726500,
+      "uptime_ms": 301299453,
+      "utc_certified": false
+    },
+    "faults": [
+      {
+        "n": 13451,
+        "reference": {
+          "bar": null,
+          "comparison_only": true,
+          "error": "ValueError:NATIVE_REFERENCE_IDENTITY_OR_GRID_CHANGED"
+        }
+      },
+      {
+        "n": 13393,
+        "reference": {
+          "bar": null,
+          "comparison_only": true,
+          "error": "ValueError:NATIVE_REFERENCE_IDENTITY_OR_GRID_CHANGED"
+        }
+      },
+      {
+        "n": 13333,
+        "reference": {
+          "bar": null,
+          "comparison_only": true,
+          "error": "ValueError:NATIVE_REFERENCE_IDENTITY_OR_GRID_CHANGED"
+        }
+      }
+    ],
+    "feature_fragment_sha256": "c8fe7846f6569d824cd7158c8fb72998a21a7aa3977901aed6cdde6fbc6e109d",
+    "new_pin": "0b9fed8123130270936424dca0f7e2d75b5dadeb8d75cc72b5be14d45b640f67.json",
+    "new_pin_sha256": "03cd90212543af5a49747e11f81473c936fcc4f2b1b161fad87f58d3c5cdedac",
+    "old_artifacts_rewritten": false,
+    "old_window_259_284_queried": false,
+    "original_derived_manifest_sha256": "31d3a783f90cc2771b24c69a55a1da0f43086c5c5e067b59b52992fd31e4c65e",
+    "original_raw_manifest_sha256": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a",
+    "reference_rows_adopted": 0
+  },
+  "code_version": {
+    "admitted": false,
+    "coverage_reference_policy": "EXACT_NATIVE_BID_SEQUENCE_REFERENCE_AND_OHLC_VOLUME_NO_REFERENCE_ROWS_ADOPTED",
+    "kind": "CODE_VERSION",
+    "new_pin_sha256": "03cd90212543af5a49747e11f81473c936fcc4f2b1b161fad87f58d3c5cdedac",
+    "old_artifacts_rewritten": false,
+    "previous_pin_sha256": "d82f5cce490c0b351c48abaa65af3ac76e5c606e460e91bfe15d11f4e6fbba92",
+    "quarantine": true,
+    "source_cursors": {
+      "obs_850c9ced05834b38b6e4c9e351a49f86": {
+        "head": "04d3500e33d56dafa4c92f5667e744c8db32d7150c9039ba92e9c14a07c5df81",
+        "manifest_hash": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+        "native_head": "e564c7178db4555c54d13e8602e76f1f0436d1bb55a0e3a14556fa90547789b1",
+        "native_sequence": 12475,
+        "offset": 24151744,
+        "rows": 12337
+      },
+      "obs_b47db00a212c478580d583503d34b373": {
+        "head": "1ce590eafb6b260ca0a45fa847b9e5db7ad570eae2be0f894c541369ac336ef6",
+        "manifest_hash": "c737acb4dad028e5b0cf8aab0458e1927b595c58d5745f74c2db3b3579be8667",
+        "native_head": "129c09232ed0382693f6702ba0cfa5e0996ad749f4efd38de024f0bce19f34d8",
+        "native_sequence": 5837,
+        "offset": 11540563,
+        "rows": 5835
+      },
+      "obs_f4af841d849c4f79abdca694d78af2ad": {
+        "head": "833c1dcbca6d1aa4d4ff7e5c7a54ffda246ac7280703e28c334759b5a91bb6eb",
+        "manifest_hash": "21db2eadedadcfdd68d5aa2942850a3344b7fa11434e1fc94c569a18fff72a74",
+        "native_head": "97531b28ce4c7fecba4a0456664b89c84fb51a9b98d2f789a5a890f86c95a9aa",
+        "native_sequence": 9,
+        "offset": 17546,
+        "rows": 9
+      }
+    }
+  },
+  "code_version_ledger_n": 13459,
+  "cursors_reset": false,
+  "feature_fragment_unchanged": true,
+  "new_worker_pid": 24764,
+  "old_derived_head_preserved": true,
+  "old_rejections_rewritten": false,
+  "post_repair_comparisons": [
+    {
+      "frame": 60,
+      "n": 13515,
+      "native_bar_volume": 136,
+      "native_open_msc": 1793635140000,
+      "parity_exact": true,
+      "raw_bid_count": 136,
+      "reference_bar_present": true,
+      "reference_bid_count": 134,
+      "reference_error": null,
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      }
+    },
+    {
+      "frame": 300,
+      "n": 13517,
+      "native_bar_volume": 716,
+      "native_open_msc": 1793634900000,
+      "parity_exact": true,
+      "raw_bid_count": 716,
+      "reference_bar_present": true,
+      "reference_bid_count": 714,
+      "reference_error": null,
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      }
+    }
+  ],
+  "raw_and_derived_origin_manifests_unchanged": true,
+  "reference_api_recovery_observed": true,
+  "reference_rows_adopted_as_prospective": 0,
+  "scope": "REFERENCE_IPC_RECOVERY_NOT_TICK_CAPTURE_COMPLETENESS_OR_SCIENTIFIC_ADMISSION"
+}

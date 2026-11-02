@@ -54,3 +54,5 @@ configs/clock_recheck_20261023/* -text whitespace=cr-at-eol
 mt5/StochasticBarDecisionResearchEA.mq5 -text
 
 research/hypotheses_round2/manifest.json -text
+
+research/studies/prospective_progress_20261102_v3/** -text whitespace=cr-at-eol

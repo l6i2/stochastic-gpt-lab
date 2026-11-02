@@ -1,0 +1,17 @@
+# Avance prospectivo real — 2 noviembre 2026
+
+Corte: 09:18:14 Ecuador. Frente al prefijo publicado: **6.859 ticks nuevos**, 12.870 totales; **2 M5 nuevas** aceptadas (4 totales), **7 nuevas rechazadas** (28 totales), 2 features nuevas (4 totales). Warmup continuo diagnóstico **2/350**; admisión científica **0**. Señales BUY/SELL **0/0**, consecutivas **0/800**, posteriores **0/100**, evaluables **0/200**, soporte **0/80 por lado**. Cuatro segmentos en cuarentena, uno vacío; certificados **0**. Ninguna fila pendiente entre el cursor de captura y el worker al corte.
+
+Se repararon exclusivamente dos defectos observados de la referencia: reconexión del IPC Python al cambiar el PID del terminal XM exactamente fijado y endpoint de CopyTicks. En una ventana nueva, consultar hasta fin−1ms devolvía 714 ticks; consultar hasta el segundo entero final y filtrar estrictamente [inicio,fin) devolvió 716, con hash idéntico a los 716 BID capturados. La documentación oficial admite fechas expresadas en segundos: https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksrange_py . Esto no demuestra UTC físico del broker ni explica la antigua discrepancia 259/284, que no fue consultada.
+
+El worker único recuperó producción M5 real después de ambas correcciones. Se preservaron cursores, manifests originales y rechazos anteriores mediante pins versionados. Observador y MT5 no se detuvieron; solo se reinició el worker derivado. Memoria del worker: 33,71 MiB residente, 253,42 MiB privada; cola de origen procesable: 0. Cadena NTS: 198 registros verificados. No se deduce certificación de generación UTC.
+
+Una reconstrucción diagnóstica separada del segmento nuevo ya capturado verificó 7 M5 y 46 M1, 7 features y 6 M5 contiguas. Reutilizó 53 comparaciones guardadas y realizó 5 nuevas. Es una nueva vintage calculada ahora, no disponibilidad retrospectiva demostrada; no se suma a los contadores del worker ni se admite para entrenamiento. No adopta ticks históricos como captura ni sobrescribe originales.
+
+Membership del nuevo prefijo: bytes, productor, secuencia, hashes e identidad trazables; independencia científica y admisión completa pendientes. Orden de recepción nativo verificable en el mismo boot; generación UTC y cotas absolutas no certificadas. CAUSAL_AUDIT global sigue FAIL. La continuidad protocolaria permanece false; no se ha activado otra cohorte ni reiniciado el protocolo científico.
+
+Faltan 348 M5 contiguas para el warmup diagnóstico actual, 800 señales consecutivas, 100 barras posteriores, 200 evaluables con 80 BUY y 80 SELL y soporte de folds; además cobertura exacta, membership completo, causalidad aplicable admitida y autorización científica ligada a hashes. El runner está preparado y su gate probado, pero no existe dataset independiente admitido ni grant. No se solicita autorización de entrenamiento con paquete incompleto.
+
+50 tests relevantes PASS. No se repitió la regresión de aislamiento ya aprobada. Datos admitidos, fits, scoring y acceso a conjuntos protegidos: 0. DISCOVERY_VALIDATION=BLOCKED; FINAL_TEST=LOCKED; DEMO=DISABLED; LIVE_TRADING=false. Captura, worker y supervisión continúan en cuarentena. No hace falta intervención manual.
+
+Evidencia única: research/studies/prospective_progress_20261102_v3 (summary, membership, prefijo verificable, health, recibos de reparación y diagnóstico versionado). Siguiente estado: procesar únicamente nuevas observaciones; no repetir consultas sin nueva evidencia material.

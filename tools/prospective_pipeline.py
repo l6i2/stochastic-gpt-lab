@@ -31,39 +31,59 @@ def frozen_requirements():
 
 
 class NativeReference:
-    def __init__(self):self.mt5=None;self.step=None
+    def __init__(self):self.mt5=None;self.step=None;self.bound_pid=None
     def connect(self):
-        if self.mt5:return
+        # Tests may inject an API without a process binding. Production bindings
+        # always record the exact pinned terminal PID after identity validation.
+        if self.mt5 and self.bound_pid is None:return
         import psutil,MetaTrader5 as mt5
         expected='C:/Program Files/XM Global SC MT5 Terminal/terminal64.exe'
-        if not any((p.info.get('exe') or '').replace('\\','/').lower()==expected.lower() for p in psutil.process_iter(['exe'])):raise ValueError('XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH')
+        matches=[p.pid for p in psutil.process_iter(['exe']) if (p.info.get('exe') or '').replace('\\','/').lower()==expected.lower()]
+        if not matches:raise ValueError('XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH')
+        if len(matches)!=1:raise ValueError('XM_PINNED_PROCESS_AMBIGUOUS')
+        if self.mt5:
+            if self.bound_pid==matches[0]:return
+            self.close()  # Release old Python IPC only; never close/restart MT5.
         if not mt5.initialize(path=expected,timeout=5000):raise ValueError('XM_READ_ONLY_ATTACH_FAILED')
         info=mt5.terminal_info();account=mt5.account_info();symbol=mt5.symbol_info('US30Cash')
         if not info or Path(info.data_path).name!='20C285FE08971A9A2E814AAC44AFC9D2' or not account or account.server!='XMGlobalSC-MT5 5' or account.trade_mode!=0 or not symbol or symbol.chart_mode!=0:
             mt5.shutdown();raise ValueError('PINNED_XM_DEMO_BID_CHART_IDENTITY_MISMATCH')
-        self.mt5=mt5;self.step=str(symbol.trade_tick_size)
+        if self.step is not None and str(symbol.trade_tick_size)!=self.step:
+            mt5.shutdown();raise ValueError('PINNED_SYMBOL_GRID_CHANGED_NO_REINTERPRETATION')
+        self.mt5=mt5;self.step=str(symbol.trade_tick_size);self.bound_pid=matches[0]
     def __call__(self,opening,seconds):
         try:
             self.connect();before=host_clock()
             account=self.mt5.account_info();terminal=self.mt5.terminal_info();symbol=self.mt5.symbol_info('US30Cash')
+            if account is None or terminal is None or symbol is None:
+                self.close()
+                raise ValueError('NATIVE_REFERENCE_API_UNAVAILABLE_RECONNECT_NEXT_INTERVAL')
             if not account or account.server!='XMGlobalSC-MT5 5' or account.trade_mode!=0 or not terminal or Path(terminal.data_path).name!='20C285FE08971A9A2E814AAC44AFC9D2' or not symbol or symbol.chart_mode!=0 or str(symbol.trade_tick_size)!=self.step:raise ValueError('NATIVE_REFERENCE_IDENTITY_OR_GRID_CHANGED')
             rows=self.mt5.copy_rates_range('US30Cash',self.mt5.TIMEFRAME_M5 if seconds==300 else self.mt5.TIMEFRAME_M1,datetime.fromtimestamp(opening,timezone.utc),datetime.fromtimestamp(opening,timezone.utc))
             after=host_clock();bar=None
             if rows is not None:
                 if any(int(r['time'])!=opening for r in rows) or len(rows)>1:raise ValueError('NATIVE_REFERENCE_OUT_OF_REQUESTED_BAR')
                 if len(rows):bar={n:rows[0][n].item() for n in rows.dtype.names}
-            coverage=None
+            coverage=None;excluded_boundary_ticks=0
             if bar is not None:
-                ticks=self.mt5.copy_ticks_range('US30Cash',datetime.fromtimestamp(opening,timezone.utc),datetime.fromtimestamp(opening+seconds-0.001,timezone.utc),self.mt5.COPY_TICKS_ALL)
+                # Python API dates use seconds; a fractional end can truncate the
+                # last second. Query its integer boundary and enforce the exact
+                # native-millisecond half-open interval before comparison.
+                ticks=self.mt5.copy_ticks_range('US30Cash',datetime.fromtimestamp(opening,timezone.utc),datetime.fromtimestamp(opening+seconds,timezone.utc),self.mt5.COPY_TICKS_ALL)
                 if ticks is not None:
                     if ticks.nbytes>16*1024*1024:raise ValueError('REFERENCE_RESOURCE_GUARD_NO_PARTIAL_ACCEPTANCE')
-                    coverage=summarize_reference(ticks,opening*1000,(opening+seconds)*1000,self.step)
+                    start_msc=opening*1000;end_msc=(opening+seconds)*1000
+                    if any(int(r['time_msc'])<start_msc or int(r['time_msc'])>end_msc for r in ticks):raise ValueError('REFERENCE_OUTSIDE_REQUEST_ENVELOPE')
+                    closed=ticks[ticks['time_msc']<end_msc]
+                    excluded_boundary_ticks=len(ticks)-len(closed)
+                    coverage=summarize_reference(closed,start_msc,end_msc,self.step)
                 after=host_clock()
-            evidence=dict(kind='NATIVE_BAR_AND_TICK_SEQUENCE_COMPARISON_ONLY_NOT_PROSPECTIVE_INPUT',bar=bar,bid_sequence_reference=coverage,requested_native_open=opening,timeframe_seconds=seconds,request_before=before,request_after=after,time_semantics='NATIVE_LABEL_REQUEST_NO_UTC_MAPPING',not_used_to_fill_missing_raw=True)
+            evidence=dict(kind='NATIVE_BAR_AND_TICK_SEQUENCE_COMPARISON_ONLY_NOT_PROSPECTIVE_INPUT',bar=bar,bid_sequence_reference=coverage,requested_native_open=opening,timeframe_seconds=seconds,request_before=before,request_after=after,time_semantics='NATIVE_LABEL_REQUEST_NO_UTC_MAPPING',not_used_to_fill_missing_raw=True,reference_query_end_native_msc=(opening+seconds)*1000,excluded_exact_end_boundary_ticks=excluded_boundary_ticks,comparison_interval='STRICT_NATIVE_MSC_HALF_OPEN_NO_TIMESTAMP_SHIFT')
             return dict(evidence,hash=seal(evidence))
         except (ValueError,OSError) as exc:return dict(bar=None,error=type(exc).__name__+':'+str(exc),comparison_only=True)
     def close(self):
         if self.mt5:self.mt5.shutdown();self.mt5=None
+        self.bound_pid=None
 
 
 def active_code_pin():

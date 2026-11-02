@@ -1,0 +1,19 @@
+{
+  "chain_head": "8b06cff68802e04056d14f45e8732ab904b4b616bc82d0e01fbb30d27edf06bd",
+  "entry": {
+    "dataset_admission": false,
+    "entry_sha256": "8b06cff68802e04056d14f45e8732ab904b4b616bc82d0e01fbb30d27edf06bd",
+    "kind": "NEW_PROSPECTIVE_TAIL_AND_SEPARATE_VERSIONED_NATIVE_DIAGNOSTIC_RECHECK",
+    "ledger_sequence": 52,
+    "prefix_sha256": "2d21909ce529d8da900b68d196399162210ee0d0ba01e016795fa65e29629712",
+    "previous": "a9bceee08181e61cff185c7b4cdacb00b4681a099b1af97559ce47fa374622f6",
+    "protected_rows_opened": 0,
+    "recheck_sha256": "0f243c4ccdae3db3c70d4e0e422fab127460571113c5563eaea9561b74f9e6fe",
+    "scientific_fits": 0,
+    "scientific_scoring": 0,
+    "summary_sha256": "e52cd8cabc17212fd029502b48c7b9e812d76b6daa2cf8a1f0f6f979100040eb"
+  },
+  "old_ledgers_preserved": true,
+  "parent_file_sha256": "498c4a9237fdd1f39321489f36d42f32314f54c0781231e499b47e05f45c9bf2",
+  "parent_path": "research/studies/master_continuation_20261102_v1/exposure_delta.json"
+}

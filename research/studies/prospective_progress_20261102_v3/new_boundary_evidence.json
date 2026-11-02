@@ -1,0 +1,63 @@
+{
+  "start_native_msc": 1793634900000,
+  "end_native_exclusive_msc": 1793635200000,
+  "queries": [
+    {
+      "label": "prior_minus_1ms",
+      "returned": 714,
+      "included": 714,
+      "outside": 0,
+      "last_returned_native_msc": 1793635198718,
+      "summary": {
+        "schema": "native-bid-sequence/1",
+        "start_native_msc": 1793634900000,
+        "end_native_exclusive_msc": 1793635200000,
+        "bid_update_count": 714,
+        "all_reference_ticks": 714,
+        "bid_sequence_sha256": "f91ac7a912c77345d0ff108169bcce97d20a94665b7a5ea34cafba7f393712be",
+        "first_bid_native_msc": 1793634900083,
+        "last_reference_native_msc": 1793635198718,
+        "origin": "COPY_TICKS_RANGE_REFERENCE_REQUERY_ONLY",
+        "independently_certified_event_generation": false,
+        "reference_rows_adopted_as_prospective": 0
+      }
+    },
+    {
+      "label": "boundary_envelope",
+      "returned": 716,
+      "included": 716,
+      "outside": 0,
+      "last_returned_native_msc": 1793635199521,
+      "summary": {
+        "schema": "native-bid-sequence/1",
+        "start_native_msc": 1793634900000,
+        "end_native_exclusive_msc": 1793635200000,
+        "bid_update_count": 716,
+        "all_reference_ticks": 716,
+        "bid_sequence_sha256": "5b5d3e3c92783e38e77c38e661dfdfb2df9e7d7302992a3f367164cbe92db6e9",
+        "first_bid_native_msc": 1793634900083,
+        "last_reference_native_msc": 1793635199521,
+        "origin": "COPY_TICKS_RANGE_REFERENCE_REQUERY_ONLY",
+        "independently_certified_event_generation": false,
+        "reference_rows_adopted_as_prospective": 0
+      }
+    }
+  ],
+  "raw_summary": {
+    "schema": "native-bid-sequence/1",
+    "start_native_msc": 1793634900000,
+    "end_native_exclusive_msc": 1793635200000,
+    "bid_update_count": 716,
+    "all_reference_ticks": 716,
+    "bid_sequence_sha256": "5b5d3e3c92783e38e77c38e661dfdfb2df9e7d7302992a3f367164cbe92db6e9",
+    "first_bid_native_msc": 1793634900083,
+    "last_reference_native_msc": 1793635199521,
+    "origin": "COPY_TICKS_RANGE_REFERENCE_REQUERY_ONLY",
+    "independently_certified_event_generation": false,
+    "reference_rows_adopted_as_prospective": 0
+  },
+  "same_bid_sequence_with_envelope": true,
+  "old_259_284_queried": false,
+  "reference_rows_adopted_as_raw": 0,
+  "raw_data_modified": false
+}

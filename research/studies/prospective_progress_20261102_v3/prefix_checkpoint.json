@@ -1,0 +1,201 @@
+{
+  "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+  "completed_bars": {
+    "300": 4,
+    "60": 47
+  },
+  "derived_head": "e0c976443f829c7c61ceac572c6f585b46702f6060dfffaef5539c6b0202977b",
+  "derived_rows": 14615,
+  "integrity_scope": "PREVIOUS_PUBLISHED_ANCHORS_PRESERVED_NEW_TAIL_AND_ORIGINAL_NATIVE_BYTES_VERIFIED_NOT_FULL_REHASH",
+  "prior_receipt_path": "research\\studies\\master_continuation_20261102_v1\\prefix_receipt.json",
+  "prior_receipt_sha256": "a2ee9c8da6610dde4eea9290ad7001456e7a33125b55daa46e8e453d44f7eaff",
+  "processed_real_heartbeats": 7723,
+  "processed_real_ticks_in_quarantine": 12870,
+  "raw_segments": [
+    {
+      "manifest_file_sha256": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+      "rows_processed": 12337,
+      "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+    },
+    {
+      "manifest_file_sha256": "17c83cb12d9273a86e38440783f54cd3816dbf92a8b97a0e690571c541a33b1c",
+      "rows_processed": 0,
+      "segment": "obs_f1348970aac44236b4c1c906fe17f451"
+    },
+    {
+      "manifest_file_sha256": "21db2eadedadcfdd68d5aa2942850a3344b7fa11434e1fc94c569a18fff72a74",
+      "rows_processed": 9,
+      "segment": "obs_f4af841d849c4f79abdca694d78af2ad"
+    },
+    {
+      "manifest_file_sha256": "c737acb4dad028e5b0cf8aab0458e1927b595c58d5745f74c2db3b3579be8667",
+      "rows_processed": 8248,
+      "segment": "obs_b47db00a212c478580d583503d34b373"
+    }
+  ],
+  "real_feature_causal_checks": 4,
+  "rejected_bars": {
+    "300": 28,
+    "60": 108
+  },
+  "schema": "incremental-prospective-progress/1",
+  "state": {
+    "acquisition_boundary": null,
+    "active_code_pin": "570f6447d8bc2560e3d1e183a24b9449075507093e8b8ed19ab6611572950ccb",
+    "after_warmup_signals": 0,
+    "atr": {
+      "count": 2,
+      "seed_bar_hash": "9a0351a24918651ca5cdc1c3f1b09635a6ff0362b2658cda6d0e99a3aff43d07",
+      "tr": [
+        19.0
+      ],
+      "value": null
+    },
+    "buckets": {
+      "300": {
+        "bid_sequence_sha256": "6f1d3f9f4eca26dea854c459455bb18f3305afe8871617138ef897c942cadacb",
+        "close": 5216150,
+        "first_ref": {
+          "callback_uptime_ms": 302254281,
+          "native_hash": "8cb83b768f549c18db7eb9ce025476f19c60aa90c74fcfb76df669c52b92dab8",
+          "native_sequence": 7970,
+          "native_time_msc": 1793636100117,
+          "raw_journal_hash": "296ea156b9f6c407391fca7a109d44be53b9504f4f6cee5a0f2f65c735d8f4d8",
+          "segment": "obs_b47db00a212c478580d583503d34b373"
+        },
+        "high": 5216200,
+        "issues": [],
+        "last_ref": {
+          "callback_uptime_ms": 302441125,
+          "native_hash": "7f3b0d4e7acd0c43bd686ca90534237d67b6ef1d0aff4625caa9a20754ee6850",
+          "native_sequence": 8250,
+          "native_time_msc": 1793636286950,
+          "raw_journal_hash": "0a39480043b4ee76ef38df8c4d2d2657c273c8acf5f10a975755f84e3706960f",
+          "segment": "obs_b47db00a212c478580d583503d34b373"
+        },
+        "low": 5213800,
+        "open": 5213900,
+        "open_msc": 1793636100000,
+        "segment": "obs_b47db00a212c478580d583503d34b373",
+        "tick_size": "0.01",
+        "tick_volume": 243,
+        "timeframe_seconds": 300
+      },
+      "60": {
+        "bid_sequence_sha256": "204653a3c925bbed4103b6e11b3837327522297107a4811a09c7a6f2c5387234",
+        "close": 5216150,
+        "first_ref": {
+          "callback_uptime_ms": 302434812,
+          "native_hash": "8e7a565538763a3da395e7fffa8597b5c0419a8305bff37ac5fed875d7a38789",
+          "native_sequence": 8239,
+          "native_time_msc": 1793636280653,
+          "raw_journal_hash": "56b1d348edc4f5f9e31d15aa7051352683b2d614555de8b7dcd67fde14ea40b8",
+          "segment": "obs_b47db00a212c478580d583503d34b373"
+        },
+        "high": 5216200,
+        "issues": [],
+        "last_ref": {
+          "callback_uptime_ms": 302441125,
+          "native_hash": "7f3b0d4e7acd0c43bd686ca90534237d67b6ef1d0aff4625caa9a20754ee6850",
+          "native_sequence": 8250,
+          "native_time_msc": 1793636286950,
+          "raw_journal_hash": "0a39480043b4ee76ef38df8c4d2d2657c273c8acf5f10a975755f84e3706960f",
+          "segment": "obs_b47db00a212c478580d583503d34b373"
+        },
+        "low": 5215950,
+        "open": 5216200,
+        "open_msc": 1793636280000,
+        "segment": "obs_b47db00a212c478580d583503d34b373",
+        "tick_size": "0.01",
+        "tick_volume": 10,
+        "timeframe_seconds": 60
+      }
+    },
+    "cursors": {
+      "obs_850c9ced05834b38b6e4c9e351a49f86": {
+        "head": "04d3500e33d56dafa4c92f5667e744c8db32d7150c9039ba92e9c14a07c5df81",
+        "manifest_hash": "605b083043670e6e8b912e2a417c9fdc4adf878525917ae31cff72d2101b9099",
+        "native_head": "e564c7178db4555c54d13e8602e76f1f0436d1bb55a0e3a14556fa90547789b1",
+        "native_sequence": 12475,
+        "offset": 24151744,
+        "rows": 12337
+      },
+      "obs_b47db00a212c478580d583503d34b373": {
+        "head": "0a39480043b4ee76ef38df8c4d2d2657c273c8acf5f10a975755f84e3706960f",
+        "manifest_hash": "c737acb4dad028e5b0cf8aab0458e1927b595c58d5745f74c2db3b3579be8667",
+        "native_head": "7f3b0d4e7acd0c43bd686ca90534237d67b6ef1d0aff4625caa9a20754ee6850",
+        "native_sequence": 8250,
+        "offset": 16316076,
+        "rows": 8248
+      },
+      "obs_f4af841d849c4f79abdca694d78af2ad": {
+        "head": "833c1dcbca6d1aa4d4ff7e5c7a54ffda246ac7280703e28c334759b5a91bb6eb",
+        "manifest_hash": "21db2eadedadcfdd68d5aa2942850a3344b7fa11434e1fc94c569a18fff72a74",
+        "native_head": "97531b28ce4c7fecba4a0456664b89c84fb51a9b98d2f789a5a890f86c95a9aa",
+        "native_sequence": 9,
+        "offset": 17546,
+        "rows": 9
+      }
+    },
+    "dependency_hash": "61feff5b5953c5c8a944924b143fa13a0ae69dbdadce92e2a3cbdcab3de8b545",
+    "evaluable_buy": 0,
+    "evaluable_sell": 0,
+    "first_800_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "ha": {
+      "close": 52140.375,
+      "count": 2,
+      "open": 52121.3125,
+      "seed_bar_hash": "9a0351a24918651ca5cdc1c3f1b09635a6ff0362b2658cda6d0e99a3aff43d07"
+    },
+    "history": [
+      {
+        "bar_hash": "9a0351a24918651ca5cdc1c3f1b09635a6ff0362b2658cda6d0e99a3aff43d07",
+        "close": 52139.5,
+        "evidence_hash": "abde10d2736dfcd1dc3285debacdcd5e026e711ffe2f8aaa34d58e795fe4b10c",
+        "high": 52152.0,
+        "low": 52100.0,
+        "open": 52100.0,
+        "segment": "obs_b47db00a212c478580d583503d34b373",
+        "tick_volume": 653,
+        "time": 1793635500
+      },
+      {
+        "bar_hash": "523353291c26907de926ed42d539359a157bc39c20f443c72d81a5284390cc06",
+        "close": 52139.5,
+        "evidence_hash": "7b2a8f398b416efe5b0d1132b546c8a83690e05baf382f56462ad272ead5e859",
+        "high": 52151.0,
+        "low": 52132.0,
+        "open": 52139.0,
+        "segment": "obs_b47db00a212c478580d583503d34b373",
+        "tick_volume": 411,
+        "time": 1793635800
+      }
+    ],
+    "incident_count": 136,
+    "last_callback": 302441125,
+    "last_receipt": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-02T14:18:07.737221+00:00",
+      "monotonic_ns": 302462883804600,
+      "uptime_ms": 302441375,
+      "utc_certified": false
+    },
+    "last_tick": [
+      1793636286950,
+      52161.5,
+      52167.5,
+      1126
+    ],
+    "m1_bars": 47,
+    "own_bars": 4,
+    "own_run_bars": 2,
+    "post_signal_bars": 0,
+    "previous_k": null,
+    "protocol_stream_unbroken": false,
+    "rejected_buckets": 136,
+    "segment": "obs_b47db00a212c478580d583503d34b373",
+    "signals_buy": 0,
+    "signals_sell": 0,
+    "source_records": 20594
+  }
+}

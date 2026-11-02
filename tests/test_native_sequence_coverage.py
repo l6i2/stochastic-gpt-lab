@@ -88,7 +88,7 @@ class CoverageTests(unittest.TestCase):
         ref,calls,_=self.api()
         with patch('tools.prospective_pipeline.host_clock',return_value=clock()):result=ref(300,300)
         self.assertEqual(len(calls),1);self.assertEqual(calls[0][1].timestamp(),300)
-        self.assertEqual(calls[0][2].microsecond,999000);self.assertEqual(int(calls[0][2].timestamp()),599)
+        self.assertEqual(calls[0][2].microsecond,0);self.assertEqual(int(calls[0][2].timestamp()),600)
         self.assertTrue(result['not_used_to_fill_missing_raw'])
         self.assertEqual(result['bid_sequence_reference']['reference_rows_adopted_as_prospective'],0)
 
