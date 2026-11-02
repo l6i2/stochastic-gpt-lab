@@ -1,0 +1,16 @@
+{
+  "chain_head": "3acf3349cf397b604ebeb4374573102de1513174ae2bbc1fb56d7a3312324850",
+  "entry": {
+    "dataset_admitted": false,
+    "kind": "WARMUP_RESET_CAUSE_AND_ONE_NEW_RECENT_REFERENCE_WINDOW",
+    "ledger_sequence": 54,
+    "membership_sha256": "5f8c943b4f78214bed45a14704fa84002a66a768ed95a6b4cd4fcadab538e0a7",
+    "previous": "c54a7bc6b692eb05b103ac55b2998b174f437c9373bc348fc0cf61793e5ff1ab",
+    "protected_rows_opened": 0,
+    "scientific_fits": 0,
+    "scientific_scoring": 0,
+    "summary_sha256": "fc1741d7897562ca4593f81caafe9880325b0a51a5a9b3ec2af847fe6780faa6"
+  },
+  "parent_path": "research/studies/master_autonomy_20261102_v1/exposure_delta.json",
+  "parent_sha256": "63d956ea1e0da0c379e22820f9d5e823912da34e9e13b562e276439b31db6496"
+}

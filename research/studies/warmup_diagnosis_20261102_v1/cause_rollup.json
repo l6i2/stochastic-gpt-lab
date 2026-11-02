@@ -1,0 +1,252 @@
+{
+  "rejection_reason_occurrences": {
+    "FIRST_PARTIAL_BUCKET": 2,
+    "BID_SEQUENCE_REFERENCE_MISSING": 7,
+    "BID_SEQUENCE_REFERENCE_INTERVAL_MISMATCH": 7,
+    "BID_SEQUENCE_COUNT_MISMATCH": 48,
+    "BID_SEQUENCE_HASH_MISMATCH": 77,
+    "high": 6,
+    "tick_volume": 33,
+    "INDISTINGUISHABLE_QUOTE_CALLBACKS": 43,
+    "CALLBACK_GAP_TWO_EXISTING_TIMERS": 1,
+    "DISCONNECTED": 1,
+    "UNKNOWN_NATIVE_SESSION_GAP": 1,
+    "close": 2,
+    "open": 1,
+    "low": 1
+  },
+  "last_nonduplicate_incidents": [
+    {
+      "n": 9949,
+      "admitted": false,
+      "kind": "INCIDENT",
+      "quarantine": true,
+      "reason": "CALLBACK_GAP_TWO_EXISTING_TIMERS",
+      "source": {
+        "callback_uptime_ms": 256268421,
+        "elapsed_ms": 1745187,
+        "native_hash": "78943ae1475cf7042c82660685c320017dab1c4a17c8e2d4e7f9cf79fb6715c4",
+        "native_sequence": 10496,
+        "native_time_msc": 0,
+        "raw_journal_hash": "19773b27dac45b68c70da6dd28fb112325673dd6ebb81cc16345fd36f8d3415f",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      }
+    },
+    {
+      "n": 9950,
+      "admitted": false,
+      "kind": "INCIDENT",
+      "quarantine": true,
+      "reason": "DISCONNECTED",
+      "source": {
+        "callback_uptime_ms": 256268421,
+        "native_hash": "78943ae1475cf7042c82660685c320017dab1c4a17c8e2d4e7f9cf79fb6715c4",
+        "native_sequence": 10496,
+        "native_time_msc": 0,
+        "raw_journal_hash": "19773b27dac45b68c70da6dd28fb112325673dd6ebb81cc16345fd36f8d3415f",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      }
+    },
+    {
+      "n": 9953,
+      "admitted": false,
+      "kind": "INCIDENT",
+      "quarantine": true,
+      "reason": "DISCONNECTED",
+      "source": {
+        "callback_uptime_ms": 256277671,
+        "native_hash": "e5eac7879cb8a4d33a1727679904c63ad4da8093dfb091abb3dc26db7f776890",
+        "native_sequence": 10497,
+        "native_time_msc": 0,
+        "raw_journal_hash": "7939b651cbf025558aa8d9bc184fe7e35a8448760eb69dfd379c79fb952b31e7",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      }
+    },
+    {
+      "n": 9956,
+      "admitted": false,
+      "kind": "INCIDENT",
+      "quarantine": true,
+      "reason": "DISCONNECTED",
+      "source": {
+        "callback_uptime_ms": 256283546,
+        "native_hash": "d547009726d0b6c1f9686c35987dfacfc926099ba02d294c4cd253e5714d67e2",
+        "native_sequence": 10498,
+        "native_time_msc": 0,
+        "raw_journal_hash": "4bc2f98e9a3bedd8ccbcd83b8dfb5fe623d15cc16b38abbb50304009797d3e19",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      }
+    },
+    {
+      "n": 9959,
+      "admitted": false,
+      "kind": "INCIDENT",
+      "quarantine": true,
+      "reason": "CALLBACK_GAP_TWO_EXISTING_TIMERS",
+      "source": {
+        "callback_uptime_ms": 256297343,
+        "elapsed_ms": 13797,
+        "native_hash": "430117bc6a75117396a0a45a1a40062564325cc16ac79e761a6643ae6462490b",
+        "native_sequence": 10499,
+        "native_time_msc": 0,
+        "raw_journal_hash": "c24ac16646b6adba78fc00a56182da48ba40dce394062d466ce62e9cbb720d62",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      }
+    },
+    {
+      "n": 9960,
+      "admitted": false,
+      "kind": "INCIDENT",
+      "quarantine": true,
+      "reason": "DISCONNECTED",
+      "source": {
+        "callback_uptime_ms": 256297343,
+        "native_hash": "430117bc6a75117396a0a45a1a40062564325cc16ac79e761a6643ae6462490b",
+        "native_sequence": 10499,
+        "native_time_msc": 0,
+        "raw_journal_hash": "c24ac16646b6adba78fc00a56182da48ba40dce394062d466ce62e9cbb720d62",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      }
+    },
+    {
+      "n": 9963,
+      "admitted": false,
+      "kind": "INCIDENT",
+      "quarantine": true,
+      "reason": "DISCONNECTED",
+      "source": {
+        "callback_uptime_ms": 256302687,
+        "native_hash": "1e18fbb86f58ad5b63714d7b13bb70fc6fb54e1c13fb2375346e3f70f5aa09f9",
+        "native_sequence": 10500,
+        "native_time_msc": 0,
+        "raw_journal_hash": "0ddbca5c1903fabf14daaf5d4d274f8501294abda10499333a2318630473cefc",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      }
+    },
+    {
+      "n": 11462,
+      "admitted": false,
+      "kind": "INCIDENT",
+      "quarantine": true,
+      "reason": "CALLBACK_GAP_TWO_EXISTING_TIMERS",
+      "source": {
+        "callback_uptime_ms": 259778468,
+        "elapsed_ms": 1811656,
+        "native_hash": "bfea6c9f37f6415289b2bb31b05b32e97a17fd6ced06d2bfb69e3fa331ba77bb",
+        "native_sequence": 12474,
+        "native_time_msc": 0,
+        "raw_journal_hash": "d451ea8c484ff48b9609c49d158722d894b36fbc4e362f3adcad84554b5106d7",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      }
+    },
+    {
+      "n": 11465,
+      "admitted": false,
+      "kind": "INCIDENT",
+      "quarantine": true,
+      "reason": "CALLBACK_GAP_TWO_EXISTING_TIMERS",
+      "source": {
+        "callback_uptime_ms": 261182515,
+        "elapsed_ms": 1404047,
+        "native_hash": "e564c7178db4555c54d13e8602e76f1f0436d1bb55a0e3a14556fa90547789b1",
+        "native_sequence": 12475,
+        "native_time_msc": 0,
+        "raw_journal_hash": "04d3500e33d56dafa4c92f5667e744c8db32d7150c9039ba92e9c14a07c5df81",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      }
+    },
+    {
+      "n": 11466,
+      "admitted": false,
+      "kind": "INCIDENT",
+      "quarantine": true,
+      "reason": "DISCONNECTED",
+      "source": {
+        "callback_uptime_ms": 261182515,
+        "native_hash": "e564c7178db4555c54d13e8602e76f1f0436d1bb55a0e3a14556fa90547789b1",
+        "native_sequence": 12475,
+        "native_time_msc": 0,
+        "raw_journal_hash": "04d3500e33d56dafa4c92f5667e744c8db32d7150c9039ba92e9c14a07c5df81",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      }
+    },
+    {
+      "n": 11469,
+      "admitted": false,
+      "kind": "INCIDENT",
+      "quarantine": true,
+      "reason": "SEGMENT_OR_BOOT_BOUNDARY",
+      "source": {
+        "segment": "obs_f4af841d849c4f79abdca694d78af2ad"
+      }
+    },
+    {
+      "n": 11479,
+      "admitted": false,
+      "kind": "INCIDENT",
+      "quarantine": true,
+      "reason": "SEGMENT_OR_BOOT_BOUNDARY",
+      "source": {
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    }
+  ],
+  "last_accepted_m5": [
+    {
+      "n": 23094,
+      "native_open_msc": 1793644500000,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T16:40:01.797251+00:00",
+        "monotonic_ns": 310977323350000,
+        "uptime_ms": 310955812,
+        "utc_certified": false
+      }
+    },
+    {
+      "n": 25835,
+      "native_open_msc": 1793647200000,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T17:25:01.498986+00:00",
+        "monotonic_ns": 313677039396800,
+        "uptime_ms": 313655531,
+        "utc_certified": false
+      }
+    },
+    {
+      "n": 27054,
+      "native_open_msc": 1793648400000,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T17:45:01.399051+00:00",
+        "monotonic_ns": 314876943491700,
+        "uptime_ms": 314855437,
+        "utc_certified": false
+      }
+    },
+    {
+      "n": 27359,
+      "native_open_msc": 1793648700000,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T17:50:00.908920+00:00",
+        "monotonic_ns": 315176453205300,
+        "uptime_ms": 315154937,
+        "utc_certified": false
+      }
+    },
+    {
+      "n": 28281,
+      "native_open_msc": 1793649600000,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T18:05:01.069665+00:00",
+        "monotonic_ns": 316076615863400,
+        "uptime_ms": 316055109,
+        "utc_certified": false
+      }
+    }
+  ],
+  "normal_session_gap_occurrences": 1
+}

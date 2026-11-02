@@ -12,13 +12,17 @@ from controller.native_sequence_coverage import summarize_reference
 BASE=ROOT/'outputs/prospective_derivatives_v1'
 
 
-def read_collector_status(path):
-    """Bounded retry of a derived liveness file only, never a data-acceptance rule."""
+def read_snapshot_json(path):
+    """Retry transient Windows snapshot access only; never retry processing or accept stale bytes."""
     for attempt in range(5):
         try:return json.loads(path.read_text())
         except PermissionError:
             if attempt==4:raise
             time.sleep(0.02)
+
+
+def read_collector_status(path):
+    return read_snapshot_json(path)
 
 
 def frozen_requirements():
@@ -145,10 +149,10 @@ class Worker:
                     head=row['sha256'];count+=1
                 if stream.tell()!=cursor['offset'] or head!=cursor['head'] or count!=cursor['rows']:raise ValueError('RAW_PREFIX_TRUNCATED')
     def pump(self):
-        self.manager.load();runtime=json.loads((self.manager.root/'runtime_state.json').read_text());s=self.ledger.state;processed=0;started=time.monotonic()
+        self.manager.load();runtime=read_snapshot_json(self.manager.root/'runtime_state.json');s=self.ledger.state;processed=0;started=time.monotonic()
         for segment in runtime['segments']:
             if Path(segment).name!=segment:raise ValueError('INVALID_RAW_SEGMENT')
-            folder=self.manager.root/'segments'/segment;manifest=json.loads((folder/'manifest.json').read_text());cp=json.loads((folder/'checkpoint.json').read_text())
+            folder=self.manager.root/'segments'/segment;manifest=json.loads((folder/'manifest.json').read_text());cp=read_snapshot_json(folder/'checkpoint.json')
             cursor=s['cursors'].get(segment,dict(rows=0,offset=0,head=GENESIS,manifest_hash=sha(folder/'manifest.json'),native_head=manifest['anchor']['source_sha256'],native_sequence=manifest['anchor']['source_sequence']))
             if sha(folder/'manifest.json')!=cursor['manifest_hash'] or seal(manifest)!=cp['manifest_sha256']:raise ValueError('RAW_MANIFEST_CHANGED')
             if cp['rows']<cursor['rows']:raise ValueError('RAW_CHECKPOINT_REGRESSED')

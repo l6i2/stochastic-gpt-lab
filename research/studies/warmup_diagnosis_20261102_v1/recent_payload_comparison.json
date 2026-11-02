@@ -1,0 +1,16 @@
+{
+  "native_open_msc": 1793654100000,
+  "end_exclusive": 1793654400000,
+  "raw": 793,
+  "reference": 793,
+  "missing_payloads": 6,
+  "extra_payloads": 6,
+  "raw_duplicate_excess": 6,
+  "reference_duplicate_excess": 0,
+  "same_sequence": false,
+  "read_delay_ms_max": 0,
+  "source": "EXISTING_POSTCUT_RAW_VS_ONE_NEW_RECENT_WINDOW_COPYTICKS_REFERENCE_ONLY",
+  "old_259_284_queried": false,
+  "reference_adopted_as_raw": false,
+  "cause": "LATEST_QUOTE_PAYLOAD_SEQUENCE_DIVERGENCE_PROVEN; EXACT_EVENT_QUEUE_OR_SCHEDULING_CAUSE_NOT_RECORDED"
+}

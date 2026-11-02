@@ -1,0 +1,14 @@
+{
+  "admitted": false,
+  "clock": {
+    "boot_id": "111",
+    "host_utc_label": "2026-11-02T17:19:14.239261+00:00",
+    "monotonic_ns": 313329778536600,
+    "uptime_ms": 313308265,
+    "utc_certified": false
+  },
+  "error": "PermissionError",
+  "live_trading": false,
+  "reason": "Permission denied reading active segment checkpoint.json",
+  "source_file_sha256": "08e5376671ff5a40bef9b6297ddaf64785268df8adc9a0ac59e76712ce630348"
+}

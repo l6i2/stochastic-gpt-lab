@@ -1,0 +1,23 @@
+{
+  "state": {
+    "own_bars": 16,
+    "own_run_bars": 0,
+    "m1_bars": 237,
+    "source_records": 79703,
+    "incident_count": 256,
+    "active_code_pin": "df10d285c963c42eeb526156700a9317772a549b6546f3791fa15a4b8a51bf0e",
+    "last_receipt": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-02T19:23:22.324820+00:00",
+      "monotonic_ns": 320777874698400,
+      "uptime_ms": 320756359,
+      "utc_certified": false
+    }
+  },
+  "head": "2b0ab3666e2913508aedc18469a2129f0444ea090ce33bb56bac09556405e4b5",
+  "worker_pid": 23832,
+  "prior_prefix_preserved": true,
+  "new_source_rows": 186,
+  "m5_delta": 0,
+  "m1_delta": 0
+}

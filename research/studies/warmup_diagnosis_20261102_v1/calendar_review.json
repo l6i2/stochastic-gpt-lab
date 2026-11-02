@@ -1,0 +1,12 @@
+{
+  "battery_settings_changed": false,
+  "calendar_status": "PARTIAL_OBSERVATION_NOT_HISTORICAL_CERTIFICATION",
+  "contract_change_applied": false,
+  "contract_change_prepared": false,
+  "contract_change_reason": "CONDITIONAL_NORMAL_CLOSE_MISINTERPRETATION_NOT_DEMONSTRATED",
+  "native_sessions_evidence": "configs/pc_a_remaining_blockers_evidence_20261028/current_server_native_sessions.json",
+  "native_sessions_sha256": "cc80aae82f6f50d4f940e0d609907405a0e1b8be0ef0b528ebc0cabff0633ef9",
+  "normal_closure_cause_for_recent_resets": false,
+  "reason": "BID_QUOTES_INSIDE_REJECTED_WINDOWS_WITH_PAYLOAD_MISMATCH; NO_NEW_UNKNOWN_NATIVE_SESSION_GAP",
+  "windows_1419": "SLEEP_ENTERED_FALSE_SLEEP_DURATION_ZERO; NOT_PROOF_OF_SUSPENSION"
+}

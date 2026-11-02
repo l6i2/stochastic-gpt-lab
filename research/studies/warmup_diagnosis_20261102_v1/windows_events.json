@@ -1,0 +1,79 @@
+[
+  {
+    "time": "2026-11-02T14:19:05.8295622-05:00",
+    "id": 507,
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "record_id": 208439,
+    "data": {
+      "DurationInUs": "1096319",
+      "PowerStateAc": "false",
+      "LidOpenState": "true",
+      "SleepDurationInUs": "0",
+      "SleepEntered": "false",
+      "Reason": "15",
+      "BootId": "111"
+    }
+  },
+  {
+    "time": "2026-11-02T14:19:04.7394588-05:00",
+    "id": 506,
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "record_id": 208434,
+    "data": {
+      "Reason": "15",
+      "BootId": "111",
+      "LidOpenState": "false"
+    }
+  },
+  {
+    "time": "2026-11-02T08:21:14.7291551-05:00",
+    "id": 1,
+    "provider": "Microsoft-Windows-IsolatedUserMode",
+    "record_id": 208406,
+    "data": {}
+  },
+  {
+    "time": "2026-11-02T08:20:32.6120125-05:00",
+    "id": 1,
+    "provider": "Microsoft-Windows-Power-Troubleshooter",
+    "record_id": 208399,
+    "data": {}
+  },
+  {
+    "time": "2026-11-02T08:20:31.5712793-05:00",
+    "id": 507,
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "record_id": 208387,
+    "data": {
+      "DurationInUs": "12942",
+      "PowerStateAc": "false",
+      "LidOpenState": "true",
+      "SleepDurationInUs": "0",
+      "SleepEntered": "false",
+      "Reason": "15",
+      "BootId": "111"
+    }
+  },
+  {
+    "time": "2026-11-02T08:20:31.5593071-05:00",
+    "id": 506,
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "record_id": 208386,
+    "data": {
+      "Reason": "20",
+      "BootId": "111",
+      "LidOpenState": "true"
+    }
+  },
+  {
+    "time": "2026-11-02T08:20:30.5003344-05:00",
+    "id": 1,
+    "provider": "Microsoft-Windows-Kernel-General",
+    "record_id": 208373,
+    "data": {
+      "Reason": "2",
+      "OldTime": "2026-11-02T02:51:14.3463173Z",
+      "NewTime": "2026-11-02T13:20:30.5000000Z"
+    }
+  }
+]

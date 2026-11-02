@@ -1,0 +1,35 @@
+{
+  "accepted_m1_delta": 2,
+  "accepted_m5_delta": 0,
+  "accepted_m5_increase_demonstrated": false,
+  "last_new_m5": {
+    "aggregate_differences": [
+      "tick_volume"
+    ],
+    "category": "REJECTED",
+    "evidence_hash": "109ebf4ca34496847b489f3285a608b157e9903bc8d98bfd453de26904fc40c7",
+    "ledger_n": 33208,
+    "native_bar_volume": 937,
+    "native_open_msc": 1793654400000,
+    "raw_bid_count": 936,
+    "reasons": [
+      "NATIVE_PARITY_MISSING_OR_FAILED",
+      "BID_SEQUENCE_COUNT_MISMATCH",
+      "BID_SEQUENCE_HASH_MISMATCH"
+    ],
+    "reference_bid_count": 937,
+    "reference_error": null,
+    "scientifically_certified": false,
+    "segment": "obs_b47db00a212c478580d583503d34b373",
+    "timeframe_seconds": 300
+  },
+  "new_source_rows_since_first": 547,
+  "no_backfill": true,
+  "old_cursors_not_regressed": true,
+  "old_head_retained": true,
+  "persistence_demonstrated": true,
+  "previous_worker_pid": 25404,
+  "reference_rows_adopted": 0,
+  "warmup": 0,
+  "worker_pid": 23832
+}

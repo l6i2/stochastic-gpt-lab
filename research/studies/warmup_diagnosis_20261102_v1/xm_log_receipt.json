@@ -1,0 +1,33 @@
+[
+  {
+    "log_kind": "logs",
+    "sha256": "c4648e405a143b301cbb9d4ebc97636c02f12dbc191c3deda7a31a78aaa1b383",
+    "relevant_events": [
+      "OM\t0\t08:21:00.694\tTerminal\tXM Global SC MT5 Terminal x64 build 6290 started for XM (SC) Limited",
+      "IF\t0\t08:21:00.697\tMCP\tstarted on [IP_REDACTED]:22346",
+      "KM\t0\t08:21:01.914\tExperts\texpert ProspectiveUtcObserver (US30Cash,H1) loaded successfully",
+      "EN\t0\t08:21:02.860\tNetwork\t'[REDACTED]': authorized on XMGlobalSC-MT5 5 through Access Server UK (ping: 160.60 ms, build 5660)",
+      "CM\t0\t08:21:04.369\tNetwork\t'[REDACTED]': terminal synchronized with XM (SC) Limited: 0 positions, 0 orders, 1640 symbols, 0 spreads",
+      "RM\t0\t08:21:04.763\tExperts\texpert ProspectiveUtcObserver (US30Cash,H1) removed",
+      "MH\t0\t08:21:05.978\tTerminal\texit with code 0",
+      "JL\t0\t08:21:06.753\tNetwork\t'[REDACTED]': disconnected from XMGlobalSC-MT5 5",
+      "QG\t0\t08:21:07.040\tTerminal\tstopped with 0",
+      "FG\t0\t08:21:07.165\tTerminal\tshutdown with 0",
+      "LI\t0\t08:25:09.416\tTerminal\tXM Global SC MT5 Terminal x64 build 6290 started for XM (SC) Limited",
+      "RF\t0\t08:25:09.420\tMCP\tstarted on [IP_REDACTED]:22346",
+      "RL\t0\t08:25:11.150\tExperts\texpert ProspectiveUtcObserver (US30Cash,H1) loaded successfully",
+      "GN\t0\t08:25:12.083\tNetwork\t'[REDACTED]': authorized on XMGlobalSC-MT5 5 through Access Server UK (ping: 160.60 ms, build 5660)",
+      "KJ\t0\t08:25:12.490\tNetwork\t'[REDACTED]': terminal synchronized with XM (SC) Limited: 0 positions, 0 orders, 1640 symbols, 0 spreads",
+      "GD\t0\t08:25:17.414\tExperts\texpert ProspectiveUtcObserver (US30Cash,H1) removed",
+      "MP\t0\t08:25:17.663\tTerminal\texit with code 0",
+      "FD\t0\t08:25:18.473\tNetwork\t'[REDACTED]': disconnected from XMGlobalSC-MT5 5",
+      "PO\t0\t08:25:18.539\tTerminal\tstopped with 0",
+      "LO\t0\t08:25:18.657\tTerminal\tshutdown with 0",
+      "GI\t0\t08:26:34.308\tTerminal\tXM Global SC MT5 Terminal x64 build 6290 started for XM (SC) Limited",
+      "HK\t0\t08:26:34.311\tMCP\tstarted on [IP_REDACTED]:22346",
+      "RQ\t0\t08:26:35.737\tExperts\texpert ProspectiveUtcObserver (US30Cash,H1) loaded successfully",
+      "JJ\t0\t08:26:37.013\tNetwork\t'[REDACTED]': authorized on XMGlobalSC-MT5 5 through Access Server UK (ping: 160.60 ms, build 5660)",
+      "JI\t0\t08:26:37.657\tNetwork\t'[REDACTED]': terminal synchronized with XM (SC) Limited: 0 positions, 0 orders, 1640 symbols, 0 spreads"
+    ]
+  }
+]

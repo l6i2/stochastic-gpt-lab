@@ -1,0 +1,950 @@
+{
+  "current_state": {
+    "own_run_bars": 0,
+    "own_bars": 16,
+    "m1_bars": 235,
+    "source_records": 79202,
+    "incident_count": 256,
+    "active_code_pin": "570f6447d8bc2560e3d1e183a24b9449075507093e8b8ed19ab6611572950ccb",
+    "last_callback": 320609187,
+    "last_receipt": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-02T19:20:55.459352+00:00",
+      "monotonic_ns": 320631009723300,
+      "uptime_ms": 320609500,
+      "utc_certified": false
+    }
+  },
+  "reset_count": 77,
+  "recent_resets": [
+    {
+      "n": 28592,
+      "prior_run": 1,
+      "native_open_msc": 1793649900000,
+      "native_label": "2026-11-02T20:05:00+00:00",
+      "raw_bid": 1042,
+      "reference_bid": 1042,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T18:10:00.714608+00:00",
+        "monotonic_ns": 316376261684400,
+        "uptime_ms": 316354750,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 316354546,
+        "native_hash": "c1681571eac2a1bcb0c1d2860e28d709fba2f1a2bb719aff560631e7a35b21fc",
+        "native_sequence": 53942,
+        "native_time_msc": 1793650200147,
+        "raw_journal_hash": "0b4e0c50ebfdec84cdc59f7cf627d5e871568867fa4c51cb9fc7207e0abbe7a4",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 28897,
+      "prior_run": 0,
+      "native_open_msc": 1793650200000,
+      "native_label": "2026-11-02T20:10:00+00:00",
+      "raw_bid": 1043,
+      "reference_bid": 1043,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T18:15:00.596951+00:00",
+        "monotonic_ns": 316676144193600,
+        "uptime_ms": 316654640,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 316654531,
+        "native_hash": "667092a0e4f826be821dc40fe5cfcd67a107c051a8ed1896fdabe4c434a5e2a6",
+        "native_sequence": 55045,
+        "native_time_msc": 1793650500139,
+        "raw_journal_hash": "5650ae33f71b3ceb9e61d120701d0ff4dafb319ab94847803b2dee1b39cf6dfd",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 29208,
+      "prior_run": 0,
+      "native_open_msc": 1793650500000,
+      "native_label": "2026-11-02T20:15:00+00:00",
+      "raw_bid": 955,
+      "reference_bid": 955,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T18:20:00.920311+00:00",
+        "monotonic_ns": 316976467858500,
+        "uptime_ms": 316954953,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 316954640,
+        "native_hash": "7392bbbc51dcd45819f81ce840bb70a1a9feefb1fc90525b5ea9752e909e320f",
+        "native_sequence": 56060,
+        "native_time_msc": 1793650800144,
+        "raw_journal_hash": "915e23fb1bb36fa7166b1daf7c9fedd63d23cf5f5318d57a57755e1c6a45dca5",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 29517,
+      "prior_run": 0,
+      "native_open_msc": 1793650800000,
+      "native_label": "2026-11-02T20:20:00+00:00",
+      "raw_bid": 817,
+      "reference_bid": 819,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [
+        "tick_volume"
+      ],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T18:25:01.018769+00:00",
+        "monotonic_ns": 317276566715900,
+        "uptime_ms": 317255062,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 317254578,
+        "native_hash": "0c6d04db6a7695de0c1a18399500b1e8c2e912cf34e077308ab6bde921826e04",
+        "native_sequence": 56937,
+        "native_time_msc": 1793651100178,
+        "raw_journal_hash": "304826ae9d89b8a8b1fd91435e9e036ab703b01b460ef0f9947011e5299c81a3",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 29824,
+      "prior_run": 0,
+      "native_open_msc": 1793651100000,
+      "native_label": "2026-11-02T20:25:00+00:00",
+      "raw_bid": 829,
+      "reference_bid": 829,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T18:30:01.130073+00:00",
+        "monotonic_ns": 317576678613600,
+        "uptime_ms": 317555171,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 317554500,
+        "native_hash": "1e6df07dd613c4fbd60346187956cb110cc1df54c26ea3b5a51705fceeb2fb78",
+        "native_sequence": 57826,
+        "native_time_msc": 1793651400077,
+        "raw_journal_hash": "96fe07e586c0230985493e0d1bc04412011ebc912125560115696cfcb140ea8f",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 30125,
+      "prior_run": 0,
+      "native_open_msc": 1793651400000,
+      "native_label": "2026-11-02T20:30:00+00:00",
+      "raw_bid": 1003,
+      "reference_bid": 1003,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T18:35:00.894448+00:00",
+        "monotonic_ns": 317876442944600,
+        "uptime_ms": 317854937,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 317854593,
+        "native_hash": "0ea17073ab6438440d630b9b7e023c46fb0d810afbaf73fcf599d47bbfc763bb",
+        "native_sequence": 58889,
+        "native_time_msc": 1793651700177,
+        "raw_journal_hash": "3f8446db4b4b9f87208111cd61ee3802a7719bae00566261717ae278bfaae7cc",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 30435,
+      "prior_run": 0,
+      "native_open_msc": 1793651700000,
+      "native_label": "2026-11-02T20:35:00+00:00",
+      "raw_bid": 831,
+      "reference_bid": 831,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T18:40:01.047986+00:00",
+        "monotonic_ns": 318176596419900,
+        "uptime_ms": 318155093,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 318154578,
+        "native_hash": "11662c633c8d78d8391b4fa94e4f58e3c4c1f87f2fb73fb38e52a90dbf8298b5",
+        "native_sequence": 59780,
+        "native_time_msc": 1793652000155,
+        "raw_journal_hash": "edac37688918716f16df97f279875042defa180020207607a12b4cde7366dcee",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 30742,
+      "prior_run": 0,
+      "native_open_msc": 1793652000000,
+      "native_label": "2026-11-02T20:40:00+00:00",
+      "raw_bid": 828,
+      "reference_bid": 828,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T18:45:00.795662+00:00",
+        "monotonic_ns": 318476344614100,
+        "uptime_ms": 318454843,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 318454578,
+        "native_hash": "0352e5e31da031c85d670cffcf337fea7a203ba0bb5cc60abf964c42cf628b77",
+        "native_sequence": 60668,
+        "native_time_msc": 1793652300158,
+        "raw_journal_hash": "d7b9f8bb61fd27f082832f884ddb6e0aa89395982cb7c54f81bab9d91dcf2266",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 31053,
+      "prior_run": 0,
+      "native_open_msc": 1793652300000,
+      "native_label": "2026-11-02T20:45:00+00:00",
+      "raw_bid": 735,
+      "reference_bid": 735,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T18:50:01.130834+00:00",
+        "monotonic_ns": 318776679807800,
+        "uptime_ms": 318755171,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 318755171,
+        "native_hash": "9ecd82f32405ac758adce5996f95f313e8260cbe8ef9b45d5d1c3f6ad0bd994d",
+        "native_sequence": 61463,
+        "native_time_msc": 1793652600737,
+        "raw_journal_hash": "9785bf182cb0b1c64dc93d4f5c23706cc424de76942359ec4da310904ab63557",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 31362,
+      "prior_run": 0,
+      "native_open_msc": 1793652600000,
+      "native_label": "2026-11-02T20:50:00+00:00",
+      "raw_bid": 799,
+      "reference_bid": 799,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T18:55:01.734079+00:00",
+        "monotonic_ns": 319077282927800,
+        "uptime_ms": 319055781,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 319055015,
+        "native_hash": "5145ed9846998dc48040ebcbe6601a80b4b08d5324079c04338066f89a0f3aa4",
+        "native_sequence": 62322,
+        "native_time_msc": 1793652900557,
+        "raw_journal_hash": "cbadd1d48e14e5c54db967ffd0dc85c4e80ed07e081049413dfa4b2e7edc8a19",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 31668,
+      "prior_run": 0,
+      "native_open_msc": 1793652900000,
+      "native_label": "2026-11-02T20:55:00+00:00",
+      "raw_bid": 704,
+      "reference_bid": 705,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [
+        "tick_volume"
+      ],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:00:00.809948+00:00",
+        "monotonic_ns": 319376359249800,
+        "uptime_ms": 319354843,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 319354515,
+        "native_hash": "fa218b1ad42d585c7385c0665c2d2422bd617951f8446d4560bfca7376d9febd",
+        "native_sequence": 63086,
+        "native_time_msc": 1793653200071,
+        "raw_journal_hash": "cf12341ab9f80fe945b291c9f9923aebe31cae3acd80d915dfd5c1ad94e11634",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 31977,
+      "prior_run": 0,
+      "native_open_msc": 1793653200000,
+      "native_label": "2026-11-02T21:00:00+00:00",
+      "raw_bid": 956,
+      "reference_bid": 957,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [
+        "tick_volume"
+      ],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:05:00.722133+00:00",
+        "monotonic_ns": 319676272140600,
+        "uptime_ms": 319654765,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 319654578,
+        "native_hash": "ec14eeb7ea31b557f91a5db2e53823e37fc605d52a2f899cb1a1434f9e3d7534",
+        "native_sequence": 64102,
+        "native_time_msc": 1793653500127,
+        "raw_journal_hash": "dd3a6fb745d885e16cb4462e50630d3ca13bda1eee5e457a9b367826e634c7ab",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 32288,
+      "prior_run": 0,
+      "native_open_msc": 1793653500000,
+      "native_label": "2026-11-02T21:05:00+00:00",
+      "raw_bid": 852,
+      "reference_bid": 854,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [
+        "close",
+        "tick_volume"
+      ],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:10:01.189444+00:00",
+        "monotonic_ns": 319976739195200,
+        "uptime_ms": 319955234,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 319954687,
+        "native_hash": "ae2a01fb0d92c60d3e6374f7714ccbf6b114c8d53de7c45a8d5627d5460629a9",
+        "native_sequence": 65014,
+        "native_time_msc": 1793653800123,
+        "raw_journal_hash": "4a3f92526337bfe54bafebdd6769e258df2b10d3b56aded6a5b906887ccf7cae",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 32599,
+      "prior_run": 0,
+      "native_open_msc": 1793653800000,
+      "native_label": "2026-11-02T21:10:00+00:00",
+      "raw_bid": 754,
+      "reference_bid": 753,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [
+        "tick_volume"
+      ],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:15:01.082199+00:00",
+        "monotonic_ns": 320276631803500,
+        "uptime_ms": 320255125,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 320254468,
+        "native_hash": "797a580e5c5e7a85ac1b243474f19e65fe46520e81dd034c1436f25ade6fcdbe",
+        "native_sequence": 65828,
+        "native_time_msc": 1793654100015,
+        "raw_journal_hash": "f78102c33e2d7f1c5149846513df7353ddc98fbc2e479b23a43531d167397575",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 32907,
+      "prior_run": 0,
+      "native_open_msc": 1793654100000,
+      "native_label": "2026-11-02T21:15:00+00:00",
+      "raw_bid": 793,
+      "reference_bid": 793,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:20:01.033393+00:00",
+        "monotonic_ns": 320576583667600,
+        "uptime_ms": 320555078,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 320554500,
+        "native_hash": "86c27a412213fe80d4b0c18d9747e03c762c13876a7d089598471f8e3757269c",
+        "native_sequence": 66681,
+        "native_time_msc": 1793654400039,
+        "raw_journal_hash": "c14fd7241bacea8b98f7c11b16699e6db46324acba6c615bb99410058e737c73",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    }
+  ],
+  "positive_run_resets": [
+    {
+      "n": 8714,
+      "prior_run": 1,
+      "native_open_msc": 1793586300000,
+      "native_label": "2026-11-02T02:25:00+00:00",
+      "raw_bid": 125,
+      "reference_bid": 124,
+      "issues": [],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T00:30:01.629916+00:00",
+        "monotonic_ns": 252773021612300,
+        "uptime_ms": 252754812,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 252753859,
+        "native_hash": "b97a77b1c63dc78223e0d05e10427fa9caf10701fde0b91bf9057fb420f0d3d2",
+        "native_sequence": 9161,
+        "native_time_msc": 1793586600155,
+        "raw_journal_hash": "663c03d4e117221a5aef335ecc54aa5a4f2b23e8a780208d75daac9eab86bcd6",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      }
+    },
+    {
+      "n": 9221,
+      "prior_run": 1,
+      "native_open_msc": 1793586900000,
+      "native_label": "2026-11-02T02:35:00+00:00",
+      "raw_bid": 212,
+      "reference_bid": 210,
+      "issues": [],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T00:40:01.283382+00:00",
+        "monotonic_ns": 253372675305100,
+        "uptime_ms": 253354453,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 253353796,
+        "native_hash": "6eda554b985817c45f20ec84e6a59e5642537a4fd8002b2b5340c5c69f3abee2",
+        "native_sequence": 9695,
+        "native_time_msc": 1793587200095,
+        "raw_journal_hash": "0f0818930cdaab96ed254cd9b7c40b73ed416808dd0b3588665376431f504261",
+        "segment": "obs_850c9ced05834b38b6e4c9e351a49f86"
+      }
+    },
+    {
+      "n": 15294,
+      "prior_run": 4,
+      "native_open_msc": 1793636700000,
+      "native_label": "2026-11-02T16:25:00+00:00",
+      "raw_bid": 797,
+      "reference_bid": 797,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T14:30:01.081256+00:00",
+        "monotonic_ns": 303176315658600,
+        "uptime_ms": 303154812,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 303154281,
+        "native_hash": "7d89da32ebc8ebf115bd7c25c41cd5a1942caef285cc4fea13d24efd3ec893c3",
+        "native_sequence": 9849,
+        "native_time_msc": 1793637000103,
+        "raw_journal_hash": "b2640fd9d43b3f9149d4f0addbb6ca0dc25515d4d6320085f6bf3ea2f5fe99e0",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 18535,
+      "prior_run": 3,
+      "native_open_msc": 1793640000000,
+      "native_label": "2026-11-02T17:20:00+00:00",
+      "raw_bid": 1068,
+      "reference_bid": 1081,
+      "issues": [],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [
+        "tick_volume"
+      ],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T15:25:01.483005+00:00",
+        "monotonic_ns": 306476925653900,
+        "uptime_ms": 306455421,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 306454390,
+        "native_hash": "a67741fc3fb3f8ea4c606e9293cf7e2541aad8d9e58a416880b4a5a628528e2b",
+        "native_sequence": 24215,
+        "native_time_msc": 1793640300158,
+        "raw_journal_hash": "2e4fec6640a16bb8131aab917d39982a244ff60c88ad6d91de09ff9749b93b96",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 20645,
+      "prior_run": 1,
+      "native_open_msc": 1793642100000,
+      "native_label": "2026-11-02T17:55:00+00:00",
+      "raw_bid": 983,
+      "reference_bid": 983,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T16:00:01.177147+00:00",
+        "monotonic_ns": 308576673040700,
+        "uptime_ms": 308555171,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 308554390,
+        "native_hash": "6c6022d2b95b7c9685de9fe590641319e4a6d9389913ec4de59fffef41d6026c",
+        "native_sequence": 31109,
+        "native_time_msc": 1793642400119,
+        "raw_journal_hash": "9f417c34a6d855dd87314197b02ee02eb16e5c643f360e367011170b48740a45",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 21258,
+      "prior_run": 1,
+      "native_open_msc": 1793642700000,
+      "native_label": "2026-11-02T18:05:00+00:00",
+      "raw_bid": 859,
+      "reference_bid": 859,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T16:10:00.911386+00:00",
+        "monotonic_ns": 309176418049900,
+        "uptime_ms": 309154906,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 309154515,
+        "native_hash": "9cc35566bd77bca34575adf61ea63bc68e8eb45cf7bed5442ce4b5927e471465",
+        "native_sequence": 33040,
+        "native_time_msc": 1793643000240,
+        "raw_journal_hash": "79d9d5e36594eed6ba83000cc8fd2b01a0de7833aaa98e68004ea146f13efbae",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 23400,
+      "prior_run": 1,
+      "native_open_msc": 1793644800000,
+      "native_label": "2026-11-02T18:40:00+00:00",
+      "raw_bid": 744,
+      "reference_bid": 744,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T16:45:00.542009+00:00",
+        "monotonic_ns": 311276070992200,
+        "uptime_ms": 311254562,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 311254468,
+        "native_hash": "69af94470427106024e669a8a5520bcb6e310c770e0a06aa7c5b64c20234b744",
+        "native_sequence": 39065,
+        "native_time_msc": 1793645100131,
+        "raw_journal_hash": "44c3989c62aa5ce7893ce0062794a851cd2d9eaf4932858867d7eb4b301ac0b9",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 26136,
+      "prior_run": 1,
+      "native_open_msc": 1793647500000,
+      "native_label": "2026-11-02T19:25:00+00:00",
+      "raw_bid": 616,
+      "reference_bid": 616,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T17:30:00.671979+00:00",
+        "monotonic_ns": 313976213338500,
+        "uptime_ms": 313954703,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 313954484,
+        "native_hash": "6e1f701186b008be43201b817958940f23603daf0b8cf832e635270e44107b37",
+        "native_sequence": 45854,
+        "native_time_msc": 1793647800127,
+        "raw_journal_hash": "471bca642f617bab954c241c2f7314974d42be23a23b0a90a63b8d18e760e635",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 27667,
+      "prior_run": 2,
+      "native_open_msc": 1793649000000,
+      "native_label": "2026-11-02T19:50:00+00:00",
+      "raw_bid": 1265,
+      "reference_bid": 1265,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T17:55:01.363038+00:00",
+        "monotonic_ns": 315476907956600,
+        "uptime_ms": 315455406,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 315454562,
+        "native_hash": "2c9a6c3d109c36d39ba23b41758ee69c3eea77603f7faf722b657c87da069fad",
+        "native_sequence": 50643,
+        "native_time_msc": 1793649300196,
+        "raw_journal_hash": "084e6ac615ebe4a33f2f0e75167448d3d9da03cbe9e7c02590a6df44478cc193",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    },
+    {
+      "n": 28592,
+      "prior_run": 1,
+      "native_open_msc": 1793649900000,
+      "native_label": "2026-11-02T20:05:00+00:00",
+      "raw_bid": 1042,
+      "reference_bid": 1042,
+      "issues": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+      ],
+      "sequence": {
+        "independent_utc_certification": false,
+        "reasons": [
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ],
+        "scientific_admission": false,
+        "status": "UNVERIFIED_OR_MISMATCH"
+      },
+      "differences": [],
+      "reference_error": null,
+      "receipt": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T18:10:00.714608+00:00",
+        "monotonic_ns": 316376261684400,
+        "uptime_ms": 316354750,
+        "utc_certified": false
+      },
+      "closure": {
+        "callback_uptime_ms": 316354546,
+        "native_hash": "c1681571eac2a1bcb0c1d2860e28d709fba2f1a2bb719aff560631e7a35b21fc",
+        "native_sequence": 53942,
+        "native_time_msc": 1793650200147,
+        "raw_journal_hash": "0b4e0c50ebfdec84cdc59f7cf627d5e871568867fa4c51cb9fc7207e0abbe7a4",
+        "segment": "obs_b47db00a212c478580d583503d34b373"
+      }
+    }
+  ],
+  "artifact_counts": {
+    "SEGMENT": 3,
+    "INCIDENT": 256,
+    "MEMBERSHIP_EXPOSURE_PREFIX": 15787,
+    "CHECKPOINT": 15791,
+    "CODE_VERSION": 4,
+    "BAR_COMPARISON": 550,
+    "INCOMPLETE_BUCKET": 299,
+    "CLOSED_AGGREGATE_BAR": 251,
+    "CAUSAL_PREFIX_FEATURES": 16,
+    "UNFINISHED_BUCKET": 4
+  }
+}

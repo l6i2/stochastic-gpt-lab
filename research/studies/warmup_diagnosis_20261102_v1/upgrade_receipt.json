@@ -1,0 +1,11 @@
+{
+  "feature_fragment_sha256": "c8fe7846f6569d824cd7158c8fb72998a21a7aa3977901aed6cdde6fbc6e109d",
+  "mt5_restarted": false,
+  "new_pin": "df10d285c963c42eeb526156700a9317772a549b6546f3791fa15a4b8a51bf0e",
+  "new_pin_file": "328d3dbbe701aca74723b6b95ceba0ffb58bfaad740ab16354fb1f296c40196e.json",
+  "origin_derived_manifest_sha256": "31d3a783f90cc2771b24c69a55a1da0f43086c5c5e067b59b52992fd31e4c65e",
+  "origin_raw_manifest_sha256": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a",
+  "original_rejections_unchanged": true,
+  "previous_pin": "570f6447d8bc2560e3d1e183a24b9449075507093e8b8ed19ab6611572950ccb",
+  "worker_restart_only": true
+}
