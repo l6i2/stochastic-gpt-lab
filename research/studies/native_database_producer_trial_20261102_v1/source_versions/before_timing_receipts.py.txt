@@ -1,0 +1,134 @@
+"""Separate readonly XM database-observation service; never writes old capture roots."""
+import argparse,json,os,sys,time,uuid
+from pathlib import Path
+from datetime import datetime,timezone
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+from controller.native_database_snapshots import Store,start_epoch,boundary_reason,assess,apply_result
+from controller.authorized_capture import sha,once
+from controller.isolated_observation import host_clock,atomic
+from tools.prospective_pipeline import NativeReference
+
+BASE=ROOT/'outputs/native_database_snapshots_v1'
+
+
+class Producer:
+    def __init__(self):
+        import msvcrt
+        self.lock=(BASE/'producer.lock').open('a+b');self.lock.seek(0,2)
+        if self.lock.tell()==0:self.lock.write(b'0');self.lock.flush()
+        self.lock.seek(0);msvcrt.locking(self.lock.fileno(),msvcrt.LK_NBLCK,1)
+        pointer=json.loads((BASE/'current.json').read_text());self.folder=BASE/pointer['capture_id']
+        if not pointer['capture_id'].startswith('dbsnap_') or Path(pointer['capture_id']).name!=pointer['capture_id']:raise ValueError('INVALID_DATABASE_CAPTURE_ID')
+        manifest_path=self.folder/'manifest.json';self.manifest=json.loads(manifest_path.read_text())
+        if sha(manifest_path)!=pointer['manifest_sha256']:raise ValueError('DATABASE_MANIFEST_CHANGED')
+        if sha(ROOT/self.manifest['authorization_path'])!=self.manifest['authorization_sha256']:raise ValueError('LIMITED_AUTHORIZATION_CHANGED')
+        authorization=json.loads((ROOT/self.manifest['authorization_path']).read_text())
+        if authorization.get('producer_trial_authorized') is not True or any(authorization.get(k) is not False for k in ('training_authorized','scoring_authorized','dataset_admission_authorized','live_trading','orders_authorized')):raise ValueError('AUTHORIZATION_SCOPE_EXCEEDED')
+        pin_path=self.folder/'runtime_pin_current.json';self.active_pin=pointer['manifest_sha256'];self.expected_step=None
+        source_hashes=self.manifest['source_hashes']
+        if pin_path.exists():
+            ref=json.loads(pin_path.read_text())
+            if Path(ref['file']).name!=ref['file']:raise ValueError('INVALID_SOURCE_PIN')
+            pin_file=self.folder/'source_versions'/ref['file'];pin=json.loads(pin_file.read_text())
+            if sha(pin_file)!=ref['sha256'] or pin['origin_manifest_sha256']!=pointer['manifest_sha256']:raise ValueError('SOURCE_PIN_CHANGED')
+            source_hashes=pin['source_hashes'];self.active_pin=ref['sha256'];self.expected_step=pin['tick_size']
+        for n,e in source_hashes.items():
+            if sha(ROOT/n)!=e:raise ValueError('DATABASE_PRODUCER_CODE_CHANGED_'+n)
+        self.store=Store(self.folder/'snapshots.sqlite3');self.oracle=NativeReference();self.restart=True
+        self.store.commit([dict(kind='PROCESS_START',pid=os.getpid(),clock=host_clock(),prior_epoch=self.store.state['epoch'],active_source_pin_sha256=self.active_pin,recovery_does_not_fill_gap=True)])
+
+    def identity(self):
+        api=self.oracle.mt5;a=api.account_info();t=api.terminal_info();symbol=api.symbol_info('US30Cash')
+        if not a or a.trade_mode!=0 or a.server!='XMGlobalSC-MT5 5' or not t or Path(t.data_path).name!='20C285FE08971A9A2E814AAC44AFC9D2' or not symbol or symbol.chart_mode!=0 or str(symbol.trade_tick_size)!=self.oracle.step:raise RuntimeError('REAL_OR_UNKNOWN_OR_CHANGED_XM_IDENTITY')
+        if not t.connected:raise RuntimeError('XM_DISCONNECTED')
+        if self.expected_step is not None and self.oracle.step!=self.expected_step:raise RuntimeError('FROZEN_TRIAL_GRID_CHANGED')
+        return t
+
+    def connect(self):
+        # Keep the already validated IPC binding; do not enumerate every Windows
+        # process on every2s poll. No initialization occurs through this fast path.
+        if self.oracle.mt5 is not None and self.oracle.bound_pid is not None:
+            import psutil
+            try:
+                p=psutil.Process(self.oracle.bound_pid)
+                if p.is_running() and p.exe().replace('\\','/').lower()=='c:/program files/xm global sc mt5 terminal/terminal64.exe':return
+            except (psutil.NoSuchProcess,psutil.AccessDenied):pass
+        self.oracle.connect()
+
+    def query(self,start,end):
+        begin=host_clock();self.connect();self.identity();api=self.oracle.mt5
+        ticks=api.copy_ticks_range('US30Cash',datetime.fromtimestamp(start/1000,timezone.utc),datetime.fromtimestamp(end/1000,timezone.utc),api.COPY_TICKS_ALL)
+        error=api.last_error();finish=host_clock()
+        if ticks is None:raise RuntimeError('COPY_TICKS_FAILED_'+str(error[0]))
+        if len(ticks)>20000 or ticks.nbytes>1600000:raise RuntimeError('BATCH_RESOURCE_CAP_NO_TRUNCATION')
+        if any(int(r['time_msc'])<start or int(r['time_msc'])>end for r in ticks):raise RuntimeError('QUERY_ENVELOPE_VIOLATION')
+        self.identity()
+        rows=[dict(time=int(r['time']),time_msc=int(r['time_msc']),bid=float(r['bid']),ask=float(r['ask']),last=float(r['last']),volume=int(r['volume']),flags=int(r['flags']),volume_real=float(r['volume_real'])) for r in ticks if start<=int(r['time_msc'])<end]
+        return rows,dict(origin='TERMINAL_DATABASE_QUERY',availability='FIRST_OBSERVED_AFTER_QUERY_COMPLETION',
+            read_start=begin,read_end=finish,start_native_msc=start,end_native_exclusive_msc=end,
+            query_error=None if error[0]==1 else str(error[0]),tick_size=self.oracle.step,active_source_pin_sha256=self.active_pin,all_returned_rows=len(ticks),excluded_exact_end_rows=sum(int(r['time_msc'])==end for r in ticks),
+            retrieval_may_include_server_downloads=True,original_tick_receipt_unknown=True,broker_event_utc_unverified=True)
+
+    def poll(self):
+        s=self.store.state;events=[];clock=host_clock();old_pid=self.oracle.bound_pid;poll_start=time.perf_counter_ns()
+        try:
+            self.connect();connection_end=time.perf_counter_ns();terminal=self.identity();read_start=host_clock();tick=self.oracle.mt5.symbol_info_tick('US30Cash');clock=host_clock()
+            if not terminal or not terminal.connected or tick is None:raise RuntimeError('XM_DISCONNECTED_OR_QUOTE_UNAVAILABLE')
+            observed=dict(time_msc=int(tick.time_msc),time=int(tick.time),bid=float(tick.bid),ask=float(tick.ask),flags=int(tick.flags))
+            reason='PROCESS_RESTART_FRESH_CUT_NO_BACKFILL' if self.restart else boundary_reason(s,observed,clock,terminal_changed=old_pid is not None and old_pid!=self.oracle.bound_pid)
+            if reason:events.append(start_epoch(s,observed,clock,reason));self.restart=False
+            s['last_poll']=clock;s['last_tick']=observed['time_msc']
+            # Poll observation is not an OnTick receipt or a complete event stream.
+            events.append(dict(kind='LIVE_LATEST_STATE_POLL',native_quote=observed,read_start=read_start,read_end=clock,connection_ns=connection_end-poll_start,identity_and_quote_ns=time.perf_counter_ns()-connection_end,not_original_event_receipt=True))
+            for frame in (60,300):
+                start=s['next_open'][str(frame)];end=start+frame*1000
+                if observed['time_msc']<end:continue
+                # Never catch up ranges missed across process/connection/poll boundaries.
+                first,one=self.query(start,end)
+                events.append(dict(kind='DATABASE_QUERY_OBSERVATION',epoch=s['epoch'],frame_seconds=frame,observation=one,rows=first))
+                second,two=self.query(start,end)
+                events.append(dict(kind='DATABASE_QUERY_OBSERVATION',epoch=s['epoch'],frame_seconds=frame,observation=two,rows=second))
+                if one['read_start']['boot_id']!=two['read_end']['boot_id'] or two['read_end']['monotonic_ns']<one['read_start']['monotonic_ns']:raise RuntimeError('QUERY_CLOCK_DISCONTINUITY')
+                rates=self.oracle.mt5.copy_rates_range('US30Cash',self.oracle.mt5.TIMEFRAME_M1 if frame==60 else self.oracle.mt5.TIMEFRAME_M5,datetime.fromtimestamp(start/1000,timezone.utc),datetime.fromtimestamp((end-1000)/1000,timezone.utc))
+                rate_error=self.oracle.mt5.last_error();bar=None
+                self.identity()
+                if rates is not None and len(rates)==1:
+                    r=rates[0];bar=dict(time=int(r['time']),open=float(r['open']),high=float(r['high']),low=float(r['low']),close=float(r['close']),tick_volume=int(r['tick_volume']))
+                result=assess(first,second,bar,start,end,self.oracle.step,one['query_error'] or two['query_error'] or (str(rate_error[0]) if rate_error[0]!=1 else None))
+                events.append(dict(kind='DATABASE_SNAPSHOT_PAIR',epoch=s['epoch'],frame_seconds=frame,start_native_msc=start,end_native_exclusive_msc=end,
+                    first_observation=one,verification_observation=two,native_bar=bar,assessment=result,not_callback_receipt=True))
+                apply_result(s,frame,start,result)
+            s['source_records']+=1;commit_start=time.perf_counter_ns();self.store.commit(events)
+            self.last_timing=dict(poll_ns=time.perf_counter_ns()-poll_start,commit_ns=time.perf_counter_ns()-commit_start)
+            atomic(self.folder/'timing.json',dict(clock=host_clock(),**self.last_timing))
+            self.report('ACTIVE_QUARANTINED')
+        except Exception as exc:
+            # Commit any already-observed pair, but no new range is accepted after this interruption.
+            events.append(dict(kind='OBSERVATION_INTERRUPTION',clock=host_clock(),error=type(exc).__name__,reason=str(exc),gap_not_backfilled=True))
+            s['epoch']=None;s['consecutive_m5']=0;s['last_verified']={};self.restart=True
+            self.store.commit(events);self.oracle.close();self.report('RETRYING_QUARANTINED',str(exc))
+
+    def report(self,status,error=None):
+        s=self.store.state
+        atomic(self.folder/'status.json',dict(status=status,capture_id=self.folder.name,process_id=os.getpid(),clock=host_clock(),
+            accepted=s['accepted'],rejected=s['rejected'],consecutive_m5_database_view=s['consecutive_m5'],maximum_consecutive_m5_database_view=s['max_consecutive_m5'],
+            epoch=s['epoch'],epochs=s['epochs'],next_open=s['next_open'],records=self.store.count,chain_head=self.store.head,
+            error=error,active_source_pin_sha256=self.active_pin,provenance='NATIVE_DATABASE_OBSERVATIONS_NOT_ORIGINAL_CALLBACK_RECEIPTS',scientific_warmup=0,dataset_admitted=False,
+            callback_coverage_certified=False,event_generation_utc_certified=False,training_authorized=False,scoring_authorized=False,live_trading=False))
+
+    def close(self):self.oracle.close();self.store.close();self.lock.close()
+
+
+def main(serve):
+    p=Producer()
+    try:
+        while True:
+            p.poll()
+            if not serve:return
+            if not json.loads((BASE/'enabled.json').read_text()).get('enabled'):return
+            time.sleep(2)
+    finally:p.close()
+
+
+if __name__=='__main__':
+    a=argparse.ArgumentParser(description=__doc__);a.add_argument('--serve',action='store_true');main(a.parse_args().serve)

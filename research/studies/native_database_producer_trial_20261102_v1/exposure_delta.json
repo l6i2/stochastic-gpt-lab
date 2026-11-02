@@ -1,0 +1,18 @@
+{
+  "chain_head": "a616eb8e7159e4a18a1ad829bf2ba453ca9f66e8c7ad1a02d48d7c0c1a040a88",
+  "entry": {
+    "audit_summary_sha256": "7cf7eab954a4c85a0cfceaab18997955bd36886b4e4e619909912cf80371c347",
+    "capture_id": "dbsnap_a5b5b6a8d777455d9cc63c8ca8690942",
+    "data_role": "EXPOSED_DIAGNOSTIC_TRIAL_NOT_AUTOMATICALLY_INDEPENDENT_TRAIN",
+    "dataset_admitted": false,
+    "kind": "AUTHORIZED_SEPARATE_DATABASE_OBSERVATION_TRIAL",
+    "ledger_sequence": 56,
+    "previous": "c0600279e649ef6d5dfd85f1287a73a23cc2489692c5d6452bf647f2174e86c7",
+    "protected_rows_opened": 0,
+    "report_sha256": "1758d8f8e07ca5f8e418b5314aab5081c596c011139fb7428a5aa8f51e1aa15f",
+    "scientific_fits": 0,
+    "scientific_scoring": 0
+  },
+  "parent_path": "research/studies/producer_coverage_20261102_v1/exposure_delta.json",
+  "parent_sha256": "d73613d5a9ba920d8a90cd94ff17e6b337acf082655b0818af1ad97f3790670c"
+}

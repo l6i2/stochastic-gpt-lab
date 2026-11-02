@@ -1,0 +1,2564 @@
+[
+  {
+    "bid_updates": 199,
+    "end_native_exclusive_msc": 1793656260000,
+    "epoch": "1_322320828",
+    "first_observation": {
+      "all_returned_rows": 199,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793656260000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:51:02.436447+00:00",
+        "monotonic_ns": 322437986484200,
+        "uptime_ms": 322416484,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:51:02.421414+00:00",
+        "monotonic_ns": 322437972040600,
+        "uptime_ms": 322416468,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793656200000
+    },
+    "first_sha256": "6c18b71c69e6a576056811e50d23bdf737142d9b37bebd4b999d42ecebb2aabd",
+    "frame_seconds": 60,
+    "n": 100,
+    "native_bar": {
+      "close": 52054.83,
+      "high": 52055.87,
+      "low": 52039.85,
+      "open": 52046.76,
+      "tick_volume": 199,
+      "time": 1793656200
+    },
+    "reasons": [],
+    "rows": 199,
+    "second_sha256": "6c18b71c69e6a576056811e50d23bdf737142d9b37bebd4b999d42ecebb2aabd",
+    "start_native_msc": 1793656200000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": false,
+    "verification_observation": {
+      "all_returned_rows": 199,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793656260000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:51:02.455979+00:00",
+        "monotonic_ns": 322438006124000,
+        "uptime_ms": 322416500,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:51:02.443971+00:00",
+        "monotonic_ns": 322437994336100,
+        "uptime_ms": 322416484,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793656200000
+    }
+  },
+  {
+    "bid_updates": 228,
+    "end_native_exclusive_msc": 1793656320000,
+    "epoch": "1_322320828",
+    "first_observation": {
+      "all_returned_rows": 228,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793656320000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:52:01.248065+00:00",
+        "monotonic_ns": 322496798113000,
+        "uptime_ms": 322475296,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:52:01.236059+00:00",
+        "monotonic_ns": 322496786088600,
+        "uptime_ms": 322475281,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793656260000
+    },
+    "first_sha256": "25d54751d671aa3898c98e7194a236c894c03c27a1446eafd5acbb9fc7c65ca3",
+    "frame_seconds": 60,
+    "n": 161,
+    "native_bar": {
+      "close": 52077.59,
+      "high": 52085.54,
+      "low": 52054.26,
+      "open": 52055.33,
+      "tick_volume": 228,
+      "time": 1793656260
+    },
+    "reasons": [],
+    "rows": 228,
+    "second_sha256": "25d54751d671aa3898c98e7194a236c894c03c27a1446eafd5acbb9fc7c65ca3",
+    "start_native_msc": 1793656260000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": false,
+    "verification_observation": {
+      "all_returned_rows": 228,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793656320000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:52:01.264784+00:00",
+        "monotonic_ns": 322496814822500,
+        "uptime_ms": 322475312,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:52:01.255058+00:00",
+        "monotonic_ns": 322496805060000,
+        "uptime_ms": 322475296,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793656260000
+    }
+  },
+  {
+    "bid_updates": 260,
+    "end_native_exclusive_msc": 1793656380000,
+    "epoch": "1_322320828",
+    "first_observation": {
+      "all_returned_rows": 260,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793656380000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:53:02.117098+00:00",
+        "monotonic_ns": 322557667758600,
+        "uptime_ms": 322536156,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:53:02.110638+00:00",
+        "monotonic_ns": 322557661180700,
+        "uptime_ms": 322536156,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793656320000
+    },
+    "first_sha256": "726bd148e6a2a042e4ca4a5eaa21eb8ea9cc1d99ac591083dd6e74daf47140e9",
+    "frame_seconds": 60,
+    "n": 224,
+    "native_bar": {
+      "close": 52090.6,
+      "high": 52099.53,
+      "low": 52078.08,
+      "open": 52078.08,
+      "tick_volume": 260,
+      "time": 1793656320
+    },
+    "reasons": [],
+    "rows": 260,
+    "second_sha256": "726bd148e6a2a042e4ca4a5eaa21eb8ea9cc1d99ac591083dd6e74daf47140e9",
+    "start_native_msc": 1793656320000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": false,
+    "verification_observation": {
+      "all_returned_rows": 260,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793656380000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:53:02.128901+00:00",
+        "monotonic_ns": 322557679082200,
+        "uptime_ms": 322536171,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:53:02.122108+00:00",
+        "monotonic_ns": 322557672845700,
+        "uptime_ms": 322536156,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793656320000
+    }
+  },
+  {
+    "bid_updates": 207,
+    "end_native_exclusive_msc": 1793656500000,
+    "epoch": "2_322555218",
+    "first_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 207,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793656500000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:55:02.555977+00:00",
+        "monotonic_ns": 322678106205600,
+        "uptime_ms": 322656593,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:55:02.549871+00:00",
+        "monotonic_ns": 322678099929400,
+        "uptime_ms": 322656593,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793656440000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "c2be15310c53d5bb2178de16bb26cbf54b96dacc7de0a7419e8defcf53bca4e7",
+    "frame_seconds": 60,
+    "n": 342,
+    "native_bar": {
+      "close": 52095.68,
+      "high": 52099.66,
+      "low": 52083.72,
+      "open": 52088.68,
+      "tick_volume": 207,
+      "time": 1793656440
+    },
+    "reasons": [],
+    "rows": 207,
+    "second_sha256": "c2be15310c53d5bb2178de16bb26cbf54b96dacc7de0a7419e8defcf53bca4e7",
+    "start_native_msc": 1793656440000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 207,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793656500000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:55:02.567955+00:00",
+        "monotonic_ns": 322678118079200,
+        "uptime_ms": 322656609,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T19:55:02.559952+00:00",
+        "monotonic_ns": 322678110794700,
+        "uptime_ms": 322656609,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793656440000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 208,
+    "end_native_exclusive_msc": 1793657340000,
+    "epoch": "4_323407859",
+    "first_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 208,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793657340000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:09:02.320989+00:00",
+        "monotonic_ns": 323517871550400,
+        "uptime_ms": 323496359,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:09:02.105685+00:00",
+        "monotonic_ns": 323517656044500,
+        "uptime_ms": 323496140,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793657280000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "7a443bcc7a8ed50946b4db500e50b1e8e17557c462101413513e868a8e9aa5e2",
+    "frame_seconds": 60,
+    "n": 459,
+    "native_bar": {
+      "close": 52164.58,
+      "high": 52175.04,
+      "low": 52154.23,
+      "open": 52159.66,
+      "tick_volume": 208,
+      "time": 1793657280
+    },
+    "reasons": [],
+    "rows": 208,
+    "second_sha256": "7a443bcc7a8ed50946b4db500e50b1e8e17557c462101413513e868a8e9aa5e2",
+    "start_native_msc": 1793657280000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 208,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793657340000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:09:02.333372+00:00",
+        "monotonic_ns": 323517883828700,
+        "uptime_ms": 323496375,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:09:02.327254+00:00",
+        "monotonic_ns": 323517877610800,
+        "uptime_ms": 323496375,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793657280000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 211,
+    "end_native_exclusive_msc": 1793657400000,
+    "epoch": "4_323407859",
+    "first_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 211,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793657400000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:10:01.395810+00:00",
+        "monotonic_ns": 323576946917200,
+        "uptime_ms": 323555437,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:10:01.352323+00:00",
+        "monotonic_ns": 323576903456600,
+        "uptime_ms": 323555390,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793657340000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "0a5256f8db67f52f836d8c53e4ddb4fa362f5a2a79009f86aa854a116818674c",
+    "frame_seconds": 60,
+    "n": 520,
+    "native_bar": {
+      "close": 52149.71,
+      "high": 52165.08,
+      "low": 52149.71,
+      "open": 52165.08,
+      "tick_volume": 211,
+      "time": 1793657340
+    },
+    "reasons": [],
+    "rows": 211,
+    "second_sha256": "0a5256f8db67f52f836d8c53e4ddb4fa362f5a2a79009f86aa854a116818674c",
+    "start_native_msc": 1793657340000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 211,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793657400000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:10:01.409810+00:00",
+        "monotonic_ns": 323576960742100,
+        "uptime_ms": 323555453,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:10:01.401816+00:00",
+        "monotonic_ns": 323576952480800,
+        "uptime_ms": 323555437,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793657340000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 198,
+    "end_native_exclusive_msc": 1793657460000,
+    "epoch": "4_323407859",
+    "first_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 198,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793657460000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:11:02.200718+00:00",
+        "monotonic_ns": 323637751356300,
+        "uptime_ms": 323616250,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:11:02.192721+00:00",
+        "monotonic_ns": 323637743594800,
+        "uptime_ms": 323616234,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793657400000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "f25921481a30076b14a5419d405187fd7a1e9bded3cb55661f4d614bb9120bea",
+    "frame_seconds": 60,
+    "n": 583,
+    "native_bar": {
+      "close": 52132.45,
+      "high": 52156.6,
+      "low": 52130.45,
+      "open": 52150.21,
+      "tick_volume": 198,
+      "time": 1793657400
+    },
+    "reasons": [],
+    "rows": 198,
+    "second_sha256": "f25921481a30076b14a5419d405187fd7a1e9bded3cb55661f4d614bb9120bea",
+    "start_native_msc": 1793657400000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 198,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793657460000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:11:02.213033+00:00",
+        "monotonic_ns": 323637763185900,
+        "uptime_ms": 323616250,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:11:02.206030+00:00",
+        "monotonic_ns": 323637756399500,
+        "uptime_ms": 323616250,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793657400000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 198,
+    "end_native_exclusive_msc": 1793657520000,
+    "epoch": "4_323407859",
+    "first_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 198,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793657520000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:12:02.075255+00:00",
+        "monotonic_ns": 323697625860400,
+        "uptime_ms": 323676125,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:12:02.010726+00:00",
+        "monotonic_ns": 323697560725200,
+        "uptime_ms": 323676046,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793657460000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "253977ca95ceebf1498b14f9619ae9ea2adf944f9f8cf80e1a06d4dd8edbbffa",
+    "frame_seconds": 60,
+    "n": 640,
+    "native_bar": {
+      "close": 52132.04,
+      "high": 52135.93,
+      "low": 52121.01,
+      "open": 52132.95,
+      "tick_volume": 198,
+      "time": 1793657460
+    },
+    "reasons": [],
+    "rows": 198,
+    "second_sha256": "253977ca95ceebf1498b14f9619ae9ea2adf944f9f8cf80e1a06d4dd8edbbffa",
+    "start_native_msc": 1793657460000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 198,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793657520000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:12:02.088631+00:00",
+        "monotonic_ns": 323697639616500,
+        "uptime_ms": 323676125,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:12:02.081627+00:00",
+        "monotonic_ns": 323697632003100,
+        "uptime_ms": 323676125,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793657460000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 201,
+    "end_native_exclusive_msc": 1793657820000,
+    "epoch": "6_323897593",
+    "first_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 201,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793657820000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:17:02.660817+00:00",
+        "monotonic_ns": 323998211351700,
+        "uptime_ms": 323976703,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:17:02.615024+00:00",
+        "monotonic_ns": 323998165582200,
+        "uptime_ms": 323976656,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793657760000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "ed741c90950e168580111013e2f4a148afaa8776b6ca7acb43b31c647c1cd60b",
+    "frame_seconds": 60,
+    "n": 751,
+    "native_bar": {
+      "close": 52138.65,
+      "high": 52140.14,
+      "low": 52125.28,
+      "open": 52133.32,
+      "tick_volume": 201,
+      "time": 1793657760
+    },
+    "reasons": [],
+    "rows": 201,
+    "second_sha256": "ed741c90950e168580111013e2f4a148afaa8776b6ca7acb43b31c647c1cd60b",
+    "start_native_msc": 1793657760000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 201,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793657820000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:17:02.673815+00:00",
+        "monotonic_ns": 323998224015800,
+        "uptime_ms": 323976718,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:17:02.667814+00:00",
+        "monotonic_ns": 323998218337700,
+        "uptime_ms": 323976703,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793657760000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 192,
+    "end_native_exclusive_msc": 1793658000000,
+    "epoch": "7_324042890",
+    "first_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 192,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658000000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:20:02.558975+00:00",
+        "monotonic_ns": 324178109064000,
+        "uptime_ms": 324156593,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:20:02.543019+00:00",
+        "monotonic_ns": 324178093491300,
+        "uptime_ms": 324156578,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793657940000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "f29e7d880d11ce82542f46794ac6ef49cf6999ac59fc6e156f34b58982ca8be2",
+    "frame_seconds": 60,
+    "n": 913,
+    "native_bar": {
+      "close": 52136.51,
+      "high": 52145.53,
+      "low": 52134.05,
+      "open": 52142.52,
+      "tick_volume": 192,
+      "time": 1793657940
+    },
+    "reasons": [],
+    "rows": 192,
+    "second_sha256": "f29e7d880d11ce82542f46794ac6ef49cf6999ac59fc6e156f34b58982ca8be2",
+    "start_native_msc": 1793657940000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 192,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658000000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:20:02.574985+00:00",
+        "monotonic_ns": 324178125415900,
+        "uptime_ms": 324156609,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:20:02.565977+00:00",
+        "monotonic_ns": 324178116489900,
+        "uptime_ms": 324156609,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793657940000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 194,
+    "end_native_exclusive_msc": 1793658060000,
+    "epoch": "7_324042890",
+    "first_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 194,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658060000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:21:01.703428+00:00",
+        "monotonic_ns": 324237253906400,
+        "uptime_ms": 324215750,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:21:01.595245+00:00",
+        "monotonic_ns": 324237146011300,
+        "uptime_ms": 324215640,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658000000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "f78c94e68a12cfe2805a933878153475f81a34d2c682828ebfd0eea202e609c8",
+    "frame_seconds": 60,
+    "n": 972,
+    "native_bar": {
+      "close": 52126.07,
+      "high": 52136.01,
+      "low": 52121.11,
+      "open": 52136.01,
+      "tick_volume": 194,
+      "time": 1793658000
+    },
+    "reasons": [],
+    "rows": 194,
+    "second_sha256": "f78c94e68a12cfe2805a933878153475f81a34d2c682828ebfd0eea202e609c8",
+    "start_native_msc": 1793658000000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 194,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658060000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:21:01.716464+00:00",
+        "monotonic_ns": 324237267375700,
+        "uptime_ms": 324215765,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:21:01.709204+00:00",
+        "monotonic_ns": 324237259930500,
+        "uptime_ms": 324215750,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658000000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 188,
+    "end_native_exclusive_msc": 1793658120000,
+    "epoch": "7_324042890",
+    "first_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 188,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658120000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:22:01.111421+00:00",
+        "monotonic_ns": 324296662237300,
+        "uptime_ms": 324275156,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:22:01.101423+00:00",
+        "monotonic_ns": 324296651535300,
+        "uptime_ms": 324275140,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658060000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "8b1e9c07a6dee05b9c828c2787cd9bc4e55b1071f8ff97f4843e2eccdf0296bc",
+    "frame_seconds": 60,
+    "n": 1033,
+    "native_bar": {
+      "close": 52135.51,
+      "high": 52140.48,
+      "low": 52119.63,
+      "open": 52124.57,
+      "tick_volume": 188,
+      "time": 1793658060
+    },
+    "reasons": [],
+    "rows": 188,
+    "second_sha256": "8b1e9c07a6dee05b9c828c2787cd9bc4e55b1071f8ff97f4843e2eccdf0296bc",
+    "start_native_msc": 1793658060000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 188,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658120000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:22:01.131419+00:00",
+        "monotonic_ns": 324296681506300,
+        "uptime_ms": 324275171,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:22:01.119416+00:00",
+        "monotonic_ns": 324296669828900,
+        "uptime_ms": 324275156,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658060000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 232,
+    "end_native_exclusive_msc": 1793658300000,
+    "epoch": "8_324347734",
+    "first_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 232,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658300000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:25:00.857792+00:00",
+        "monotonic_ns": 324476408761700,
+        "uptime_ms": 324454906,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:25:00.667492+00:00",
+        "monotonic_ns": 324476218704800,
+        "uptime_ms": 324454703,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658240000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "bc6bc49386670f849ebeaa74cb8e2f8af2d4290d06552c4bfcfcfd6ded846f54",
+    "frame_seconds": 60,
+    "n": 1199,
+    "native_bar": {
+      "close": 52157.05,
+      "high": 52165.98,
+      "low": 52135.21,
+      "open": 52149.53,
+      "tick_volume": 232,
+      "time": 1793658240
+    },
+    "reasons": [],
+    "rows": 232,
+    "second_sha256": "bc6bc49386670f849ebeaa74cb8e2f8af2d4290d06552c4bfcfcfd6ded846f54",
+    "start_native_msc": 1793658240000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 232,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658300000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:25:00.868793+00:00",
+        "monotonic_ns": 324476419434100,
+        "uptime_ms": 324454906,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:25:00.864798+00:00",
+        "monotonic_ns": 324476415682000,
+        "uptime_ms": 324454906,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658240000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 215,
+    "end_native_exclusive_msc": 1793658360000,
+    "epoch": "8_324347734",
+    "first_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 215,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658360000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:26:01.803667+00:00",
+        "monotonic_ns": 324537354190800,
+        "uptime_ms": 324515843,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:26:01.795591+00:00",
+        "monotonic_ns": 324537345996600,
+        "uptime_ms": 324515843,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658300000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "03519e02f790ffa590282578851cda27691c60d9bc50586168229cdaafab86c9",
+    "frame_seconds": 60,
+    "n": 1262,
+    "native_bar": {
+      "close": 52133.48,
+      "high": 52157.56,
+      "low": 52126.53,
+      "open": 52157.54,
+      "tick_volume": 215,
+      "time": 1793658300
+    },
+    "reasons": [],
+    "rows": 215,
+    "second_sha256": "03519e02f790ffa590282578851cda27691c60d9bc50586168229cdaafab86c9",
+    "start_native_msc": 1793658300000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "133bb4575f22f08e51ba92614efb5c25ae4b79bc04842f95870fdf106ae6bc70",
+      "all_returned_rows": 215,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658360000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:26:01.813666+00:00",
+        "monotonic_ns": 324537364348700,
+        "uptime_ms": 324515859,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:26:01.808653+00:00",
+        "monotonic_ns": 324537359672200,
+        "uptime_ms": 324515859,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658300000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 171,
+    "end_native_exclusive_msc": 1793658600000,
+    "epoch": "11_324686156",
+    "first_observation": {
+      "active_source_pin_sha256": "766f4bdb4d989a8a3cecac9f0743439c5ba34dd184b463c2bbe95cb73154a95c",
+      "all_returned_rows": 171,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658600000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:30:06.364983+00:00",
+        "monotonic_ns": 324781915414800,
+        "uptime_ms": 324760406,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:30:06.346710+00:00",
+        "monotonic_ns": 324781896923400,
+        "uptime_ms": 324760390,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658540000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "e4dfc0ec9907ddb7d1f1f0b57f77424cb2c587a8adac7f16bbf81e3358979bf2",
+    "frame_seconds": 60,
+    "n": 1480,
+    "native_bar": {
+      "close": 52103.52,
+      "high": 52107.03,
+      "low": 52093.69,
+      "open": 52093.69,
+      "tick_volume": 171,
+      "time": 1793658540
+    },
+    "reasons": [],
+    "rows": 171,
+    "second_sha256": "e4dfc0ec9907ddb7d1f1f0b57f77424cb2c587a8adac7f16bbf81e3358979bf2",
+    "start_native_msc": 1793658540000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "766f4bdb4d989a8a3cecac9f0743439c5ba34dd184b463c2bbe95cb73154a95c",
+      "all_returned_rows": 171,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658600000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:30:06.367980+00:00",
+        "monotonic_ns": 324781918915900,
+        "uptime_ms": 324760406,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:30:06.367980+00:00",
+        "monotonic_ns": 324781917970500,
+        "uptime_ms": 324760406,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658540000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 214,
+    "end_native_exclusive_msc": 1793658660000,
+    "epoch": "11_324686156",
+    "first_observation": {
+      "active_source_pin_sha256": "766f4bdb4d989a8a3cecac9f0743439c5ba34dd184b463c2bbe95cb73154a95c",
+      "all_returned_rows": 214,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658660000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:31:02.387932+00:00",
+        "monotonic_ns": 324837938068800,
+        "uptime_ms": 324816437,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:31:02.384929+00:00",
+        "monotonic_ns": 324837935009300,
+        "uptime_ms": 324816421,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658600000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "2f744a8f6bb1e764a97a7210be9436839a9fc79df036808a6554472a6e40d001",
+    "frame_seconds": 60,
+    "n": 1529,
+    "native_bar": {
+      "close": 52069.39,
+      "high": 52103.03,
+      "low": 52066.89,
+      "open": 52103.03,
+      "tick_volume": 214,
+      "time": 1793658600
+    },
+    "reasons": [],
+    "rows": 214,
+    "second_sha256": "2f744a8f6bb1e764a97a7210be9436839a9fc79df036808a6554472a6e40d001",
+    "start_native_msc": 1793658600000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "766f4bdb4d989a8a3cecac9f0743439c5ba34dd184b463c2bbe95cb73154a95c",
+      "all_returned_rows": 214,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658660000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:31:02.394139+00:00",
+        "monotonic_ns": 324837944362000,
+        "uptime_ms": 324816437,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:31:02.391125+00:00",
+        "monotonic_ns": 324837941985200,
+        "uptime_ms": 324816437,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658600000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 214,
+    "end_native_exclusive_msc": 1793658720000,
+    "epoch": "11_324686156",
+    "first_observation": {
+      "active_source_pin_sha256": "766f4bdb4d989a8a3cecac9f0743439c5ba34dd184b463c2bbe95cb73154a95c",
+      "all_returned_rows": 214,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658720000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:32:01.038540+00:00",
+        "monotonic_ns": 324896588990500,
+        "uptime_ms": 324875078,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:32:01.032996+00:00",
+        "monotonic_ns": 324896583878000,
+        "uptime_ms": 324875078,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658660000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "e8f2c700cd65ed847c25137b2d5ea8666ec64596888680e3d56c88fef9dc607e",
+    "frame_seconds": 60,
+    "n": 1590,
+    "native_bar": {
+      "close": 52073.67,
+      "high": 52075.16,
+      "low": 52054.07,
+      "open": 52070.38,
+      "tick_volume": 214,
+      "time": 1793658660
+    },
+    "reasons": [],
+    "rows": 214,
+    "second_sha256": "e8f2c700cd65ed847c25137b2d5ea8666ec64596888680e3d56c88fef9dc607e",
+    "start_native_msc": 1793658660000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "766f4bdb4d989a8a3cecac9f0743439c5ba34dd184b463c2bbe95cb73154a95c",
+      "all_returned_rows": 214,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658720000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:32:01.044551+00:00",
+        "monotonic_ns": 324896595153400,
+        "uptime_ms": 324875093,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:32:01.043546+00:00",
+        "monotonic_ns": 324896593836300,
+        "uptime_ms": 324875078,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658660000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 205,
+    "end_native_exclusive_msc": 1793658900000,
+    "epoch": "12_324942015",
+    "first_observation": {
+      "active_source_pin_sha256": "766f4bdb4d989a8a3cecac9f0743439c5ba34dd184b463c2bbe95cb73154a95c",
+      "all_returned_rows": 205,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658900000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:35:01.917694+00:00",
+        "monotonic_ns": 325077467837100,
+        "uptime_ms": 325055953,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:35:01.894699+00:00",
+        "monotonic_ns": 325077445487800,
+        "uptime_ms": 325055937,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658840000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "a9c82b746002ecf84deaea0a0299b031d926e5c32a6f13addc29ff119f59384c",
+    "frame_seconds": 60,
+    "n": 1758,
+    "native_bar": {
+      "close": 52072.87,
+      "high": 52076.37,
+      "low": 52061.51,
+      "open": 52070.36,
+      "tick_volume": 205,
+      "time": 1793658840
+    },
+    "reasons": [],
+    "rows": 205,
+    "second_sha256": "a9c82b746002ecf84deaea0a0299b031d926e5c32a6f13addc29ff119f59384c",
+    "start_native_msc": 1793658840000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "766f4bdb4d989a8a3cecac9f0743439c5ba34dd184b463c2bbe95cb73154a95c",
+      "all_returned_rows": 205,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658900000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:35:01.928699+00:00",
+        "monotonic_ns": 325077479200000,
+        "uptime_ms": 325055968,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:35:01.925694+00:00",
+        "monotonic_ns": 325077476133900,
+        "uptime_ms": 325055968,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658840000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 234,
+    "end_native_exclusive_msc": 1793658960000,
+    "epoch": "12_324942015",
+    "first_observation": {
+      "active_source_pin_sha256": "766f4bdb4d989a8a3cecac9f0743439c5ba34dd184b463c2bbe95cb73154a95c",
+      "all_returned_rows": 234,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658960000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:36:02.023738+00:00",
+        "monotonic_ns": 325137574206200,
+        "uptime_ms": 325116062,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:36:01.935374+00:00",
+        "monotonic_ns": 325137485421500,
+        "uptime_ms": 325115984,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658900000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "272b6540ebcf0d83a24dd15851ef8395a70f126cf977bd63f26bb8fb286ffb1f",
+    "frame_seconds": 60,
+    "n": 1807,
+    "native_bar": {
+      "close": 52066.14,
+      "high": 52075.85,
+      "low": 52056.18,
+      "open": 52072.38,
+      "tick_volume": 234,
+      "time": 1793658900
+    },
+    "reasons": [],
+    "rows": 234,
+    "second_sha256": "272b6540ebcf0d83a24dd15851ef8395a70f126cf977bd63f26bb8fb286ffb1f",
+    "start_native_msc": 1793658900000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "766f4bdb4d989a8a3cecac9f0743439c5ba34dd184b463c2bbe95cb73154a95c",
+      "all_returned_rows": 234,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793658960000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:36:02.032741+00:00",
+        "monotonic_ns": 325137583408900,
+        "uptime_ms": 325116078,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:36:02.030756+00:00",
+        "monotonic_ns": 325137581154600,
+        "uptime_ms": 325116078,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793658900000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 196,
+    "end_native_exclusive_msc": 1793659140000,
+    "epoch": "14_325194359",
+    "first_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 196,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659140000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:39:01.263144+00:00",
+        "monotonic_ns": 325316813459300,
+        "uptime_ms": 325295312,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:39:01.239271+00:00",
+        "monotonic_ns": 325316790059900,
+        "uptime_ms": 325295281,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659080000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "591198a9afdacb6445af6ef8dcdc5a126f7a6f36a52f5b237530ca0f263c724f",
+    "frame_seconds": 60,
+    "n": 1976,
+    "native_bar": {
+      "close": 52057.69,
+      "high": 52068.58,
+      "low": 52054.41,
+      "open": 52064.51,
+      "tick_volume": 196,
+      "time": 1793659080
+    },
+    "reasons": [],
+    "rows": 196,
+    "second_sha256": "591198a9afdacb6445af6ef8dcdc5a126f7a6f36a52f5b237530ca0f263c724f",
+    "start_native_msc": 1793659080000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 196,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659140000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:39:01.271278+00:00",
+        "monotonic_ns": 325316821520300,
+        "uptime_ms": 325295312,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:39:01.267144+00:00",
+        "monotonic_ns": 325316817616700,
+        "uptime_ms": 325295312,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659080000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 169,
+    "end_native_exclusive_msc": 1793659200000,
+    "epoch": "14_325194359",
+    "first_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 169,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659200000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:40:02.660181+00:00",
+        "monotonic_ns": 325378210559500,
+        "uptime_ms": 325356703,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:40:02.657177+00:00",
+        "monotonic_ns": 325378207516600,
+        "uptime_ms": 325356703,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659140000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "f8326e2cf08c83e9b79055b705800d6c150b625ebb4fffb9d226af9b2f5fe6bd",
+    "frame_seconds": 60,
+    "n": 2039,
+    "native_bar": {
+      "close": 52056.35,
+      "high": 52062.17,
+      "low": 52052.36,
+      "open": 52058.19,
+      "tick_volume": 169,
+      "time": 1793659140
+    },
+    "reasons": [],
+    "rows": 169,
+    "second_sha256": "f8326e2cf08c83e9b79055b705800d6c150b625ebb4fffb9d226af9b2f5fe6bd",
+    "start_native_msc": 1793659140000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 169,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659200000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:40:02.666232+00:00",
+        "monotonic_ns": 325378216234100,
+        "uptime_ms": 325356703,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:40:02.663325+00:00",
+        "monotonic_ns": 325378213399300,
+        "uptime_ms": 325356703,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659140000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 195,
+    "end_native_exclusive_msc": 1793659260000,
+    "epoch": "14_325194359",
+    "first_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 195,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659260000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:41:01.029590+00:00",
+        "monotonic_ns": 325436580128200,
+        "uptime_ms": 325415078,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:41:01.003499+00:00",
+        "monotonic_ns": 325436554001900,
+        "uptime_ms": 325415046,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659200000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "3a4f39cede7f4ed210d09e7ca8460e43500950914f43d21a1d97b2f9c4e14c0f",
+    "frame_seconds": 60,
+    "n": 2094,
+    "native_bar": {
+      "close": 52029.17,
+      "high": 52057.35,
+      "low": 52023.18,
+      "open": 52056.85,
+      "tick_volume": 195,
+      "time": 1793659200
+    },
+    "reasons": [],
+    "rows": 195,
+    "second_sha256": "3a4f39cede7f4ed210d09e7ca8460e43500950914f43d21a1d97b2f9c4e14c0f",
+    "start_native_msc": 1793659200000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 195,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659260000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:41:01.041459+00:00",
+        "monotonic_ns": 325436591990600,
+        "uptime_ms": 325415078,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:41:01.038449+00:00",
+        "monotonic_ns": 325436589040700,
+        "uptime_ms": 325415078,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659200000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 202,
+    "end_native_exclusive_msc": 1793659320000,
+    "epoch": "14_325194359",
+    "first_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 202,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659320000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:42:08.035690+00:00",
+        "monotonic_ns": 325503585928000,
+        "uptime_ms": 325482078,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:42:08.009689+00:00",
+        "monotonic_ns": 325503560185900,
+        "uptime_ms": 325482046,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659260000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "c386bf95a4f2f6564bff42755366934152317c37956a9e1b441b1ae842394b76",
+    "frame_seconds": 60,
+    "n": 2157,
+    "native_bar": {
+      "close": 52032.05,
+      "high": 52039.0,
+      "low": 52018.03,
+      "open": 52028.67,
+      "tick_volume": 202,
+      "time": 1793659260
+    },
+    "reasons": [],
+    "rows": 202,
+    "second_sha256": "c386bf95a4f2f6564bff42755366934152317c37956a9e1b441b1ae842394b76",
+    "start_native_msc": 1793659260000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 202,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659320000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:42:08.041687+00:00",
+        "monotonic_ns": 325503592671200,
+        "uptime_ms": 325482078,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:42:08.039687+00:00",
+        "monotonic_ns": 325503590395000,
+        "uptime_ms": 325482078,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659260000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 195,
+    "end_native_exclusive_msc": 1793659380000,
+    "epoch": "14_325194359",
+    "first_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 195,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659380000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:43:01.056319+00:00",
+        "monotonic_ns": 325556606908800,
+        "uptime_ms": 325535093,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:43:01.055293+00:00",
+        "monotonic_ns": 325556605373800,
+        "uptime_ms": 325535093,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659320000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "49ed1eb3eb944cdaf5b5ecd371c7ade3e724f92a31eff9f0e390a2e1019619a4",
+    "frame_seconds": 60,
+    "n": 2210,
+    "native_bar": {
+      "close": 52028.95,
+      "high": 52039.4,
+      "low": 52027.61,
+      "open": 52032.55,
+      "tick_volume": 195,
+      "time": 1793659320
+    },
+    "reasons": [],
+    "rows": 195,
+    "second_sha256": "49ed1eb3eb944cdaf5b5ecd371c7ade3e724f92a31eff9f0e390a2e1019619a4",
+    "start_native_msc": 1793659320000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 195,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659380000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:43:01.059293+00:00",
+        "monotonic_ns": 325556609996400,
+        "uptime_ms": 325535093,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:43:01.058295+00:00",
+        "monotonic_ns": 325556609035900,
+        "uptime_ms": 325535093,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659320000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 200,
+    "end_native_exclusive_msc": 1793659440000,
+    "epoch": "14_325194359",
+    "first_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 200,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659440000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:44:02.176245+00:00",
+        "monotonic_ns": 325617726609900,
+        "uptime_ms": 325596218,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:44:02.174133+00:00",
+        "monotonic_ns": 325617724517400,
+        "uptime_ms": 325596218,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659380000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "5992fb1bcb2c4694ffcf908898b6641050858a7e62ab522f7c147a082c194b17",
+    "frame_seconds": 60,
+    "n": 2273,
+    "native_bar": {
+      "close": 52032.6,
+      "high": 52041.55,
+      "low": 52029.45,
+      "open": 52029.45,
+      "tick_volume": 200,
+      "time": 1793659380
+    },
+    "reasons": [],
+    "rows": 200,
+    "second_sha256": "5992fb1bcb2c4694ffcf908898b6641050858a7e62ab522f7c147a082c194b17",
+    "start_native_msc": 1793659380000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 200,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659440000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:44:02.184083+00:00",
+        "monotonic_ns": 325617734463400,
+        "uptime_ms": 325596218,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:44:02.182367+00:00",
+        "monotonic_ns": 325617732876300,
+        "uptime_ms": 325596218,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659380000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 199,
+    "end_native_exclusive_msc": 1793659500000,
+    "epoch": "14_325194359",
+    "first_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 199,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659500000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:45:00.851907+00:00",
+        "monotonic_ns": 325676402322500,
+        "uptime_ms": 325654890,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:45:00.830032+00:00",
+        "monotonic_ns": 325676380713800,
+        "uptime_ms": 325654875,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659440000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "e0f62d3a9ac72edfa5e1fed849eec80e3bbf7593a99d470bcf5864e9f14d83c1",
+    "frame_seconds": 60,
+    "n": 2334,
+    "native_bar": {
+      "close": 52040.94,
+      "high": 52044.38,
+      "low": 52029.48,
+      "open": 52033.1,
+      "tick_volume": 199,
+      "time": 1793659440
+    },
+    "reasons": [],
+    "rows": 199,
+    "second_sha256": "e0f62d3a9ac72edfa5e1fed849eec80e3bbf7593a99d470bcf5864e9f14d83c1",
+    "start_native_msc": 1793659440000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 199,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659500000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:45:00.858917+00:00",
+        "monotonic_ns": 325676409579200,
+        "uptime_ms": 325654906,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:45:00.856916+00:00",
+        "monotonic_ns": 325676406924300,
+        "uptime_ms": 325654906,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659440000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 991,
+    "end_native_exclusive_msc": 1793659500000,
+    "epoch": "14_325194359",
+    "first_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 991,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659500000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:45:00.881746+00:00",
+        "monotonic_ns": 325676432313000,
+        "uptime_ms": 325654921,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:45:00.878278+00:00",
+        "monotonic_ns": 325676429018200,
+        "uptime_ms": 325654921,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659200000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "af74ade0f53d6be623fb012f71f19efbcf22dbad0d63ed0ea2cbcd396b79ee9a",
+    "frame_seconds": 300,
+    "n": 2337,
+    "native_bar": {
+      "close": 52040.94,
+      "high": 52057.35,
+      "low": 52018.03,
+      "open": 52056.85,
+      "tick_volume": 991,
+      "time": 1793659200
+    },
+    "reasons": [],
+    "rows": 991,
+    "second_sha256": "af74ade0f53d6be623fb012f71f19efbcf22dbad0d63ed0ea2cbcd396b79ee9a",
+    "start_native_msc": 1793659200000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 991,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659500000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:45:00.898618+00:00",
+        "monotonic_ns": 325676448875000,
+        "uptime_ms": 325654937,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:45:00.895485+00:00",
+        "monotonic_ns": 325676446375500,
+        "uptime_ms": 325654937,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659200000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 237,
+    "end_native_exclusive_msc": 1793659560000,
+    "epoch": "14_325194359",
+    "first_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 237,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659560000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:46:03.010086+00:00",
+        "monotonic_ns": 325738560526100,
+        "uptime_ms": 325717046,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:46:02.019124+00:00",
+        "monotonic_ns": 325737570116000,
+        "uptime_ms": 325716062,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659500000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "12efb63c73ce79af34de8ba6a82bf8ecd1ff3c2f812215a91431bf8460d51900",
+    "frame_seconds": 60,
+    "n": 2394,
+    "native_bar": {
+      "close": 52054.77,
+      "high": 52061.71,
+      "low": 52039.45,
+      "open": 52039.94,
+      "tick_volume": 237,
+      "time": 1793659500
+    },
+    "reasons": [],
+    "rows": 237,
+    "second_sha256": "12efb63c73ce79af34de8ba6a82bf8ecd1ff3c2f812215a91431bf8460d51900",
+    "start_native_msc": 1793659500000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 237,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659560000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:46:03.017084+00:00",
+        "monotonic_ns": 325738567551200,
+        "uptime_ms": 325717062,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:46:03.014098+00:00",
+        "monotonic_ns": 325738564878600,
+        "uptime_ms": 325717062,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659500000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 213,
+    "end_native_exclusive_msc": 1793659620000,
+    "epoch": "14_325194359",
+    "first_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 213,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659620000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:47:05.841865+00:00",
+        "monotonic_ns": 325801392595700,
+        "uptime_ms": 325779890,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:47:05.808632+00:00",
+        "monotonic_ns": 325801358782900,
+        "uptime_ms": 325779843,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659560000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "99aa4d1a88141a152b1277e1b6685e8707218a32a4d88eedc7ee53d2e5206a5a",
+    "frame_seconds": 60,
+    "n": 2455,
+    "native_bar": {
+      "close": 52087.1,
+      "high": 52091.56,
+      "low": 52054.28,
+      "open": 52054.28,
+      "tick_volume": 213,
+      "time": 1793659560
+    },
+    "reasons": [],
+    "rows": 213,
+    "second_sha256": "99aa4d1a88141a152b1277e1b6685e8707218a32a4d88eedc7ee53d2e5206a5a",
+    "start_native_msc": 1793659560000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 213,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659620000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:47:05.850864+00:00",
+        "monotonic_ns": 325801401630800,
+        "uptime_ms": 325779890,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:47:05.847864+00:00",
+        "monotonic_ns": 325801398402400,
+        "uptime_ms": 325779890,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659560000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 219,
+    "end_native_exclusive_msc": 1793659680000,
+    "epoch": "14_325194359",
+    "first_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 219,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659680000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:48:02.011184+00:00",
+        "monotonic_ns": 325857562173000,
+        "uptime_ms": 325836046,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:48:01.951506+00:00",
+        "monotonic_ns": 325857502200100,
+        "uptime_ms": 325836000,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659620000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "63551084bfa4128bd9438e73ddcd4f1bd4ccd1607e4f36cf8e03ba022ff67cea",
+    "frame_seconds": 60,
+    "n": 2512,
+    "native_bar": {
+      "close": 52088.67,
+      "high": 52094.09,
+      "low": 52077.36,
+      "open": 52086.1,
+      "tick_volume": 219,
+      "time": 1793659620
+    },
+    "reasons": [],
+    "rows": 219,
+    "second_sha256": "63551084bfa4128bd9438e73ddcd4f1bd4ccd1607e4f36cf8e03ba022ff67cea",
+    "start_native_msc": 1793659620000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 219,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659680000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:48:02.019176+00:00",
+        "monotonic_ns": 325857569661300,
+        "uptime_ms": 325836062,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:48:02.016184+00:00",
+        "monotonic_ns": 325857566208900,
+        "uptime_ms": 325836062,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659620000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 189,
+    "end_native_exclusive_msc": 1793659740000,
+    "epoch": "14_325194359",
+    "first_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 189,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659740000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:49:02.293821+00:00",
+        "monotonic_ns": 325917844086800,
+        "uptime_ms": 325896328,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:49:02.289811+00:00",
+        "monotonic_ns": 325917840454200,
+        "uptime_ms": 325896328,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659680000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "7d1af89070b1a269f3d6b088c075d78ca4a44f6c628abeb3ee882097f773f42b",
+    "frame_seconds": 60,
+    "n": 2571,
+    "native_bar": {
+      "close": 52085.71,
+      "high": 52100.64,
+      "low": 52081.75,
+      "open": 52089.17,
+      "tick_volume": 189,
+      "time": 1793659680
+    },
+    "reasons": [],
+    "rows": 189,
+    "second_sha256": "7d1af89070b1a269f3d6b088c075d78ca4a44f6c628abeb3ee882097f773f42b",
+    "start_native_msc": 1793659680000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 189,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659740000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:49:02.300824+00:00",
+        "monotonic_ns": 325917851421000,
+        "uptime_ms": 325896343,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:49:02.297815+00:00",
+        "monotonic_ns": 325917848485600,
+        "uptime_ms": 325896343,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659680000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 188,
+    "end_native_exclusive_msc": 1793659800000,
+    "epoch": "14_325194359",
+    "first_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 188,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659800000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:50:00.986537+00:00",
+        "monotonic_ns": 325976537130400,
+        "uptime_ms": 325955031,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:50:00.984539+00:00",
+        "monotonic_ns": 325976535043000,
+        "uptime_ms": 325955031,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659740000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "b2d1a7a1f1be9e011251212d4dac60d32c602ebdd4a73378f96cebc08457d449",
+    "frame_seconds": 60,
+    "n": 2632,
+    "native_bar": {
+      "close": 52083.43,
+      "high": 52092.17,
+      "low": 52077.88,
+      "open": 52086.71,
+      "tick_volume": 188,
+      "time": 1793659740
+    },
+    "reasons": [],
+    "rows": 188,
+    "second_sha256": "b2d1a7a1f1be9e011251212d4dac60d32c602ebdd4a73378f96cebc08457d449",
+    "start_native_msc": 1793659740000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 188,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659800000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:50:00.990536+00:00",
+        "monotonic_ns": 325976541438900,
+        "uptime_ms": 325955031,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:50:00.989539+00:00",
+        "monotonic_ns": 325976540069100,
+        "uptime_ms": 325955031,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659740000,
+      "tick_size": "0.01"
+    }
+  },
+  {
+    "bid_updates": 1046,
+    "end_native_exclusive_msc": 1793659800000,
+    "epoch": "14_325194359",
+    "first_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 1046,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659800000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:50:01.009188+00:00",
+        "monotonic_ns": 325976559327900,
+        "uptime_ms": 325955046,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:50:01.006173+00:00",
+        "monotonic_ns": 325976557032700,
+        "uptime_ms": 325955046,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659500000,
+      "tick_size": "0.01"
+    },
+    "first_sha256": "e59dcd05e2a9e55f3c13a36efaaf6a5b70e89f1c51780ba23badd00747fb1082",
+    "frame_seconds": 300,
+    "n": 2635,
+    "native_bar": {
+      "close": 52083.43,
+      "high": 52100.64,
+      "low": 52039.45,
+      "open": 52039.94,
+      "tick_volume": 1046,
+      "time": 1793659500
+    },
+    "reasons": [],
+    "rows": 1046,
+    "second_sha256": "e59dcd05e2a9e55f3c13a36efaaf6a5b70e89f1c51780ba23badd00747fb1082",
+    "start_native_msc": 1793659500000,
+    "status": "VERIFIED_DATABASE_VIEW_ONLY",
+    "strict_recomputed": true,
+    "verification_observation": {
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "all_returned_rows": 1046,
+      "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+      "broker_event_utc_unverified": true,
+      "end_native_exclusive_msc": 1793659800000,
+      "excluded_exact_end_rows": 0,
+      "origin": "TERMINAL_DATABASE_QUERY",
+      "original_tick_receipt_unknown": true,
+      "query_error": null,
+      "read_end": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:50:01.030170+00:00",
+        "monotonic_ns": 325976580590800,
+        "uptime_ms": 325955078,
+        "utc_certified": false
+      },
+      "read_start": {
+        "boot_id": "111",
+        "host_utc_label": "2026-11-02T20:50:01.024171+00:00",
+        "monotonic_ns": 325976574766100,
+        "uptime_ms": 325955062,
+        "utc_certified": false
+      },
+      "retrieval_may_include_server_downloads": true,
+      "start_native_msc": 1793659500000,
+      "tick_size": "0.01"
+    }
+  }
+]

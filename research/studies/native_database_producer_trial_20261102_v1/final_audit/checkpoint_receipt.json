@@ -1,0 +1,45 @@
+{
+  "chain_head": "4ceeeb55daa4105770d64b8036dd7a4bf47d4bc42ca1a29c8dc16001f85c6ba6",
+  "state": {
+    "accepted": {
+      "300": 2,
+      "60": 31
+    },
+    "consecutive_m5": 2,
+    "epoch": "14_325194359",
+    "epochs": 14,
+    "last_completed_poll": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-02T20:50:31.976555+00:00",
+      "monotonic_ns": 326007527095900,
+      "uptime_ms": 325986015,
+      "utc_certified": false
+    },
+    "last_poll": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-02T20:50:31.974561+00:00",
+      "monotonic_ns": 326007525101600,
+      "uptime_ms": 325986015,
+      "utc_certified": false
+    },
+    "last_sleep_record_id": 208471,
+    "last_tick": 1793659831461,
+    "last_verified": {
+      "300": 1793659500000,
+      "60": 1793659740000
+    },
+    "max_consecutive_m5": 2,
+    "next_open": {
+      "300": 1793659800000,
+      "60": 1793659800000
+    },
+    "rejected": {
+      "300": 0,
+      "60": 0
+    },
+    "scientific_warmup": 0,
+    "source_records": 1269
+  },
+  "state_hash": "c5dc2832209d1c037e8e7a6a02466ed27e8041b8772888b67633e29860419ced",
+  "verified_records": 2667
+}

@@ -1,0 +1,10 @@
+{
+  "action": "NONE",
+  "audited_m5": 2,
+  "live_trading": false,
+  "matching_python_processes": 2,
+  "observed_host_utc": "2026-11-02T20:52:54.2984521Z",
+  "scope": "NEW_DATABASE_TRIAL_ONLY",
+  "training_authorized": false,
+  "watchdog_pid": 25272
+}

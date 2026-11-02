@@ -1,0 +1,54 @@
+[
+  {
+    "time": "2026-11-02T15:15:25.4395192-05:00",
+    "id": 507,
+    "record_id": 208471,
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "data": {
+      "SleepDurationInUs": "178783725",
+      "PowerStateAc": "false",
+      "LidOpenState": "true",
+      "Reason": "33",
+      "SleepEntered": "true",
+      "DurationInUs": "179004172",
+      "BootId": "111"
+    }
+  },
+  {
+    "time": "2026-11-02T15:12:26.4377063-05:00",
+    "id": 506,
+    "record_id": 208465,
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "data": {
+      "LidOpenState": "true",
+      "Reason": "12",
+      "BootId": "111"
+    }
+  },
+  {
+    "time": "2026-11-02T15:06:44.1438459-05:00",
+    "id": 507,
+    "record_id": 208462,
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "data": {
+      "SleepDurationInUs": "677322776",
+      "PowerStateAc": "false",
+      "LidOpenState": "true",
+      "Reason": "33",
+      "SleepEntered": "true",
+      "DurationInUs": "678031615",
+      "BootId": "111"
+    }
+  },
+  {
+    "time": "2026-11-02T14:55:26.1148406-05:00",
+    "id": 506,
+    "record_id": 208452,
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "data": {
+      "LidOpenState": "true",
+      "Reason": "12",
+      "BootId": "111"
+    }
+  }
+]
