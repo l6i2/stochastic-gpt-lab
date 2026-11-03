@@ -1,0 +1,83 @@
+{
+  "automatic_report_errors": [],
+  "automatic_report_state": "WAITING_FOR_DATA",
+  "automatic_report_timestamp": "2026-11-02T17:02:53.555122-05:00",
+  "existing_tasks": [
+    {
+      "last_result": 2147946720,
+      "name": "StochasticGPTLab_PC_A_ProspectiveUTC_v1",
+      "next": "2026-11-02T17:03:37-05:00",
+      "state": "Running"
+    },
+    {
+      "last_result": 267009,
+      "name": "StochasticGPTLab_PC_A_RawQuarantine_v1",
+      "next": "2026-11-02T17:02:57-05:00",
+      "state": "Running"
+    },
+    {
+      "last_result": 2147946720,
+      "name": "StochasticGPTLab_PC_A_RecoveryGuardian_v1",
+      "next": "2026-11-02T17:04:40-05:00",
+      "state": "Running"
+    }
+  ],
+  "live_comparison": {
+    "cached_quote_unchanged": false,
+    "end_to_end_market_pipeline": "REQUIRES_REAL_BAR_FEATURE_SIGNAL_EVIDENCE",
+    "immediate_cause": "REAL_QUOTE_CALLBACKS_ADVANCED_CHECK_DERIVED_EVIDENCE",
+    "market_closed_certified": false,
+    "observed_heartbeat_ingestion": "PASS_REAL_RECORD_PROGRESS",
+    "real_callback_delta": 101,
+    "real_tick_delta": 75,
+    "sample_elapsed_monotonic_seconds": 130.5867181,
+    "scientific_admission": false,
+    "terminal_connections": [
+      true,
+      true
+    ],
+    "worker_consumed_delta": 104,
+    "worker_cpu_one_core_average_percent": 1.7110277618654695
+  },
+  "mt5_restarts": 0,
+  "new_m5_rejection_reason_counts": {
+    "BID_SEQUENCE_COUNT_MISMATCH": 23,
+    "BID_SEQUENCE_HASH_MISMATCH": 23,
+    "BID_SEQUENCE_REFERENCE_INTERVAL_MISMATCH": 2,
+    "BID_SEQUENCE_REFERENCE_MISSING": 2,
+    "CALLBACK_GAP_TWO_EXISTING_TIMERS": 3,
+    "DISCONNECTED": 3,
+    "FIRST_PARTIAL_BUCKET": 2,
+    "INDISTINGUISHABLE_QUOTE_CALLBACKS": 7,
+    "NATIVE_PARITY_MISSING_OR_FAILED": 23,
+    "SEGMENT_OR_BOOT_BOUNDARY": 1,
+    "UNKNOWN_NATIVE_SESSION_GAP": 2
+  },
+  "new_tasks_created": 0,
+  "nts_chain_records_verified": 281,
+  "nts_chain_scope": "HASH_CHAIN_INTEGRITY_NOT_281_AUTHENTICATED_SUCCESSFUL_MEASUREMENTS",
+  "supervised_reporter_pid": 14896,
+  "training_executed": false,
+  "worker": {
+    "processes": [
+      {
+        "cpu_seconds": 190.140625,
+        "parent_pid": 24880,
+        "pid": 1116,
+        "private_mb": 253.83,
+        "role": "PROCESSING_WORKER",
+        "working_mb": 7.6
+      },
+      {
+        "cpu_seconds": 0.0625,
+        "parent_pid": 4660,
+        "pid": 24880,
+        "private_mb": 1.0,
+        "role": "VENV_LAUNCHER",
+        "working_mb": 0.02
+      }
+    ],
+    "processing_workers": 1,
+    "unexpected_processes": 0
+  }
+}

@@ -87,6 +87,15 @@ def main(serve):
                 atomic(BASE/'status.json',value|dict(TRAINING_ADMISSION_GATE='BLOCKED_REPORT_FAILURE'))
                 (BASE/'index.html').write_text('<meta charset="utf-8"><meta http-equiv="refresh" content="60"><h1>Reporte bloqueado</h1><p>'+html.escape(value['reason'])+'</p><p>Sin autorización ni ejecución de entrenamiento.</p>',encoding='utf8')
             if not serve:return value
+            # Reuse the supervised reporter, rather than another process/task.
+            # Separate failure receipt: a bad consolidated report never dispatches.
+            try:
+                from tools.autonomous_research_status import build
+                atomic(ROOT/'outputs/status/AUTONOMOUS_RESEARCH_STATUS.json',build())
+            except Exception as exc:
+                atomic(ROOT/'outputs/status/AUTONOMOUS_RESEARCH_STATUS.json',dict(
+                    TRAINING_ADMISSION_GATE='FAIL',TRAINING_READINESS='BLOCKED',TRAINING_EXECUTED=False,
+                    error=type(exc).__name__+':'+str(exc),LIVE_TRADING=False))
             time.sleep(60)
 
 

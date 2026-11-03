@@ -1,0 +1,17 @@
+{
+  "chain_head": "a314a9644c806363293c20cfd2b4dac0d4b46cc895415f9c327409f99f85d930",
+  "entry": {
+    "kind": "NEW_PROSPECTIVE_TAIL_INTEGRITY_AND_METADATA_READINESS_REVIEW",
+    "ledger_sequence": 58,
+    "new_dataset_admission": false,
+    "old_window_queries": 0,
+    "previous": "bb4e43ef54bc4c0167831587af667c0fac26e8996a8472efe468dad570b80208",
+    "protected_rows_read": 0,
+    "scoring": 0,
+    "status_sha256": "6c46373e34bffb3895a9498a995d26da954eb5ac09da6ca2a55607e7b00aafe5",
+    "tail_summary_sha256": "cb5eebd5550b972fa21c11a98fc3c669dcc0db936e07b944da8f19d293d39925",
+    "training_fits": 0
+  },
+  "parent_path": "research/studies/maxbars_history_20261102_v1/exposure_delta.json",
+  "parent_sha256": "8c4ac6eff76e46a20932b2c5f76d833f7f12df7ee754c3b71e8f9a100290ccee"
+}

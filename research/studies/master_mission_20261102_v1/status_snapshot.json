@@ -1,0 +1,203 @@
+{
+  "BUY_SIGNALS": 0,
+  "DEMO": "DISABLED",
+  "LIVE_TRADING": false,
+  "SELL_SIGNALS": 0,
+  "TRAINING_ADMISSION_GATE": "WAITING_FOR_DATA",
+  "TRAINING_EXECUTED": false,
+  "TRAINING_READINESS": "BLOCKED",
+  "admitted_records": 0,
+  "capture_activation": {
+    "after_capture_id": "e0d89c0b39344f1397125160cf6219bf",
+    "basis": "CAUSAL_ORDER_BETWEEN_AUTHENTICATED_PRE_TRANSMIT_AND_POST_RECEIVE_SERVER_TIMESTAMPS",
+    "before_capture_id": "3edc6536c9254739bf61805836075879",
+    "broker_event_utc_certified": false,
+    "estimate_ns": 1793471633341915536,
+    "half_width_ns": 358890332,
+    "local_clock_offset_or_drift_extrapolated": false,
+    "uncertainty": "CONDITIONAL_ON_REMOTE_SERVER_ADVERTISED_ERROR_NOT_METROLOGICAL_ABSOLUTE",
+    "utc_estimate": "2026-10-31T18:33:53.341916+00:00",
+    "utc_interval_ns": [
+      1793471632983025204,
+      1793471633700805868
+    ],
+    "utc_lower": "2026-10-31T18:33:52.983025+00:00",
+    "utc_upper": "2026-10-31T18:33:53.700806+00:00"
+  },
+  "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+  "causal_audit": "FAIL_GLOBAL_UNCHANGED",
+  "code_head": "8b7394fa71db673c9d5f19973d8303fa7551b84f",
+  "consecutive_signals": 0,
+  "coverage": "EXACT_NATIVE_BID_SEQUENCE_PLUS_OHLC_VOLUME_REFERENCE_REQUIRED",
+  "dataset_hash": null,
+  "dataset_id": "us30cash_m5_native_new_01_reserved",
+  "dataset_id_is_reservation": true,
+  "dataset_maturity": "NOT_READY_QUARANTINED",
+  "demonstrated_independent_admitted_periods": [],
+  "evaluable_BUY": 0,
+  "evaluable_SELL": 0,
+  "evaluable_required": 200,
+  "evaluable_total": 0,
+  "exposure_chain_verified": true,
+  "exposure_missing": [
+    "ORIGINAL_MASTER_SPLIT_AND_SIGNAL_MEMBERSHIPS",
+    "HISTORICAL_HOLDOUT_EXACT_RESERVATION",
+    "PROSPECTIVE_ROLE_END_OR_NONOVERLAP_ATTESTATION",
+    "RECONCILED_COMPARABLE_TIME_DOMAINS",
+    "COMPLETE_PRIOR_EXPOSURE_LEDGER_OUTSIDE_LOCAL_METADATA"
+  ],
+  "feature_status": "PASS_SYNTHETIC_IMPLEMENTATION_LIVE_SEED_MEMBERSHIP_PENDING",
+  "gate_authority": {
+    "TRAINING_ADMISSION_GATE": "BLOCKED",
+    "authorization_request_ready": false,
+    "authorization_requested": false,
+    "execution_permitted": false,
+    "package_complete": false,
+    "reasons": [
+      "NO_INDEPENDENT_ADMITTED_SEALED_DATASET",
+      "COMPLETE_MEMBERSHIP_AND_COVERAGE_RECEIPTS_REQUIRED",
+      "APPLICABLE_CONTRACT_CAUSALITY_NOT_ADMITTED",
+      "NO_HASH_BOUND_SCIENTIFIC_AUTHORIZATION"
+    ],
+    "scientific_grants": 0,
+    "training_executed": false
+  },
+  "historical_diagnostic": {
+    "M1_chart_first_native": "2026-10-13 12:19",
+    "M5_chart_first_native": "2026-07-22 05:35",
+    "all_history_downloaded": false,
+    "chart_queries_old_day_error": 4401,
+    "complete_server_coverage_certified": false,
+    "downloaded_ticks": 79211,
+    "local_native_database_first": "2022-06-03",
+    "metadata_counts_scope": "ISOLATED_NATIVE_TERMINAL_SAME20K_LIMIT_NOT_ASSUMED_ACTIVE_CACHE_IDENTICAL",
+    "permitted_download_day": "2024-01-02",
+    "protected_period_content_queries": 0,
+    "python_direct_response": "REJECTED_OUT_OF_RANGE_NO_BARS_PERSISTED",
+    "server_advertised_first_native": "2011-08-10"
+  },
+  "historical_parity": {
+    "BUY": 13,
+    "M1_EXACT": 1376,
+    "M5_EXACT": 276,
+    "MAIN_K": {
+      "all_bar_max_error": 1.4210854715202004e-14,
+      "all_native_closed_bars_compared": 268,
+      "compared_signals": 27,
+      "early_warmup_rows_not_compared": 1,
+      "inherited_oracle_absolute_tolerance": 1e-10,
+      "max_error": 1.4210854715202004e-14,
+      "missing_signal_cutoffs": [],
+      "status": "PASS"
+    },
+    "SELL": 15,
+    "new_native_tester_run": true,
+    "run_id": "diag_d17cbe6aedfc",
+    "scope": "FROZEN_NATIVE_VIRTUAL_EXPORTER_VS_PYTHON_NOT_MT5_ORDER_FILL_ENGINE",
+    "status": "PASS",
+    "virtual_paths": 56
+  },
+  "manual_action_required": false,
+  "membership": "RAW_AND_DERIVED_LINEAGE_TRACKED_LEGACY_NONOVERLAP_PENDING",
+  "next_automatic_action": "EXISTING_CAPTURE_WORKER_NTS_SNAPSHOT_MONITOR_CONTINUE_NO_BACKFILL",
+  "non_data_blockers": [
+    "SNAPSHOT_METHOD_ADMISSION_NOT_AUTHORIZED",
+    "UNKNOWN_LEGACY_MEMBERSHIP_NOT_RESOLVED_BY_MORE_TICKS",
+    "EXPLICIT_SCIENTIFIC_GRANT_REQUIRED"
+  ],
+  "nts_latest_record_hash": "5b391cda5fe4e927b5c80987635ca92c7e860bd4daa10057fe3bdcbdb7683749",
+  "nts_scope": "AUTHENTICATION_VERIFIED_BY_EXISTING_NTS_SERVICE_NOT_RECHECKED_BY_THIS_METADATA_REPORT",
+  "nts_state": {
+    "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:111",
+    "chain_head": "4ea516455a0d06caf84a268434c132585550a1f683ee96c8f454e284cefb0680",
+    "failures": 0,
+    "last_record": "84af986a87c249f0930f5c6ab925d976.json",
+    "last_uptime_ms": 330133312,
+    "next_due_uptime_ms": 330433312
+  },
+  "observed_ecuador": "2026-11-02T17:01:44.415700-05:00",
+  "observed_m1": 298,
+  "observed_m5": 16,
+  "old_window_queries": 0,
+  "post_required": 100,
+  "post_signal_bars": 0,
+  "protected_sets": {
+    "DISCOVERY_VALIDATION": "BLOCKED",
+    "FINAL_TEST": "LOCKED",
+    "HISTORICAL_HOLDOUT": "LOCKED"
+  },
+  "raw_heartbeats": 12744,
+  "raw_status": "ACTIVE_QUARANTINED",
+  "raw_ticks": 84921,
+  "receipts": {
+    "outputs/native_database_snapshots_v1/current.json": "0e82cfd979adb6e279716b167d52034a3dacaf03a5f885e893edac127cf36750",
+    "outputs/native_database_snapshots_v1/dbsnap_a5b5b6a8d777455d9cc63c8ca8690942/status.json": "bd92759ba2cdf87228ae5b2e5d55f5819753180d00911b805cf3f3c9be25dcb3",
+    "outputs/new_native_studies/us30cash_m5_native_20261030_01/current_capture.json": "88158f3ee45388c56e12ab56cc8ec129554f1e99f91589554e2e4a5cc84aaba7",
+    "outputs/new_native_studies/us30cash_m5_native_20261030_01/us30cap_15cbddec947f42c98219caa4cec978f2/collection_manifest.json": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a",
+    "outputs/new_native_studies/us30cash_m5_native_20261030_01/us30cap_15cbddec947f42c98219caa4cec978f2/collector_status.json": "a7f83d1b9b671343859d057339a0860106675ab65e85eaf0546bf3f886da1495",
+    "outputs/pc_a_prospective_utc/authenticated_utc/84af986a87c249f0930f5c6ab925d976.json": "5b391cda5fe4e927b5c80987635ca92c7e860bd4daa10057fe3bdcbdb7683749",
+    "outputs/pc_a_prospective_utc/authenticated_utc/state.json": "4c4551b127a3f8f985f4326da9437f1f885ef883390c139992e40b0243479512",
+    "outputs/pc_a_stability/recovery_status.json": "d195c1f5ffea14e164db7d1dd1367cf7a2543d822088596094edc13ef8b37218",
+    "outputs/prospective_derivatives_v1/us30cap_15cbddec947f42c98219caa4cec978f2/maturity.json": "ce4a446cd75affda432893512b60af33ef38a59780b81f6f28e58b28fb44b5a6",
+    "outputs/research_readiness/broker_identity.json": "6e64e9ab6a4215aeccea1b06e0bcfd5bc01ce2298177a351240532fa65c474f9",
+    "research/studies/maxbars_history_20261102_v1/summary.json": "2c59c9ea5882b1bab84990757a2d457b38c45c2b9d6fa08155730a9935469440",
+    "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+    "research/studies/us30cash_m5_native_pretrain_v1/package_hashes.json": "6a34ff5006ad80a6ff419c269a35a872e49a8898aff4f2753208c580b5a0f9e3"
+  },
+  "rejected_buckets_all_timeframes": 375,
+  "remaining_blockers": [
+    "EXACT_CALLBACK_COVERAGE_AND_OWN_RECURSIVE_SEEDS",
+    "350_OWN_M5_THEN_800_SIGNALS_AND_100_POST_BARS",
+    "200_EVALUABLE_80_EACH_SIDE_3_FOLDS_EACH",
+    "COMPLETE_COMPARABLE_MEMBERSHIP_AND_APPLICABLE_CAUSALITY",
+    "NO_AUTHORIZATION_TO_ADMIT_DATABASE_SNAPSHOT_TRIAL",
+    "SEALED_DATASET_AND_SPECIFIC_TRAINING_GRANT"
+  ],
+  "report_does_not_train": true,
+  "report_health_errors": [],
+  "required_each_side": 80,
+  "schema": "autonomous-research-status/1",
+  "signals_required": 800,
+  "snapshot_trial": {
+    "accepted": {
+      "300": 10,
+      "60": 78
+    },
+    "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+    "callback_coverage_certified": false,
+    "capture_id": "dbsnap_a5b5b6a8d777455d9cc63c8ca8690942",
+    "chain_head": "929b61b42769a1f1bbe2a06fa4e260648a0c6e5c277fed5ea24cac464c549c5c",
+    "clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-02T22:01:43.535155+00:00",
+      "monotonic_ns": 330279085278300,
+      "uptime_ms": 330257578,
+      "utc_certified": false
+    },
+    "consecutive_m5_database_view": 4,
+    "dataset_admitted": false,
+    "epoch": "16_328506625",
+    "epochs": 16,
+    "error": null,
+    "event_generation_utc_certified": false,
+    "live_trading": false,
+    "maximum_consecutive_m5_database_view": 6,
+    "next_open": {
+      "300": 1793663700000,
+      "60": 1793663940000
+    },
+    "process_id": 28580,
+    "provenance": "NATIVE_DATABASE_OBSERVATIONS_NOT_ORIGINAL_CALLBACK_RECEIPTS",
+    "records": 5418,
+    "rejected": {
+      "300": 0,
+      "60": 0
+    },
+    "scientific_warmup": 0,
+    "scoring_authorized": false,
+    "status": "ACTIVE_QUARANTINED",
+    "training_authorized": false
+  },
+  "warmup_current": 0,
+  "warmup_required": 350
+}

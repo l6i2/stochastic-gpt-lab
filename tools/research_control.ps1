@@ -8,9 +8,13 @@ if($Action -eq 'RESUME'){
     $task=Get-ScheduledTask -TaskName $name
     if($task.State -ne 'Running'){Start-ScheduledTask -TaskName $name}
 }
+# Refresh the requested consolidated metadata. Never dispatches a fit or a query.
+& (Join-Path $repo '.venv\Scripts\python.exe') (Join-Path $PSScriptRoot 'autonomous_research_status.py') | Out-Null
+$authoritative=Join-Path $repo 'outputs\status\AUTONOMOUS_RESEARCH_STATUS.json'
 $dashboard=Join-Path $repo 'outputs\research_readiness\status.json'
 $recovery=Join-Path $repo 'outputs\pc_a_stability\recovery_status.json'
 $value=[ordered]@{action=$Action;observed_local=(Get-Date).ToString('o');training_started=$false;orders_sent=0}
+if(Test-Path -LiteralPath $authoritative){$value['authoritative']=(Get-Content -LiteralPath $authoritative -Raw | ConvertFrom-Json)}
 foreach($item in @(@('estado_cientifico',$dashboard),@('supervision',$recovery))){
     if(Test-Path -LiteralPath $item[1]){
         $value[$item[0]]=@{report_age_seconds=[math]::Round(((Get-Date)-(Get-Item -LiteralPath $item[1]).LastWriteTime).TotalSeconds,1);report=(Get-Content -LiteralPath $item[1] -Raw | ConvertFrom-Json)}
