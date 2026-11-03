@@ -10,13 +10,25 @@ New-Item -ItemType Directory -Path (Join-Path $base 'recovery_events') -Force | 
 $config=Join-Path $base 'xm_readonly_restart.ini'
 $expected="[Experts]`r`nEnabled=1`r`nAllowLiveTrading=0`r`nAllowDllImport=0`r`n[Charts]`r`nProfileLast=Default`r`n"
 if(Test-Path -LiteralPath $config){if([IO.File]::ReadAllText($config) -ne $expected){throw 'RECOVERY_CONFIG_CHANGED'}}else{[IO.File]::WriteAllText($config,$expected)}
-$nts=$null;$receipt=$null;$lastDashboard=[datetime]::MinValue;$lastPipeline=[datetime]::MinValue;$lastReceipt=[datetime]::MinValue;$lastNts=[datetime]::MinValue;$lastLaunch=[datetime]::MinValue;$prior=''
+$nts=$null;$receipt=$null;$lastSnapshotWatch=[datetime]::MinValue;$lastDashboard=[datetime]::MinValue;$lastPipeline=[datetime]::MinValue;$lastReceipt=[datetime]::MinValue;$lastNts=[datetime]::MinValue;$lastLaunch=[datetime]::MinValue;$prior=''
 try{
  do {
     $processes=@(Get-CimInstance Win32_Process)
     $xm=@($processes | Where-Object {$_.ExecutablePath -eq $terminal})
     $watch=@($processes | Where-Object {$_.Name -eq 'powershell.exe' -and $_.CommandLine -like ('*"'+(Join-Path $repo 'tools\new_capture_watchdog.ps1')+'"*')})
     $actions=@()
+    # The authorized separate snapshot trial has its own mutex watchdog. Logon
+    # registration alone cannot recover a watchdog lost during the same login.
+    $snapshotEnable=Join-Path $repo 'outputs\native_database_snapshots_v1\enabled.json'
+    $snapshotWatch=Join-Path $repo 'scripts\Watch-NativeDatabaseSnapshots.ps1'
+    if((Test-Path -LiteralPath $snapshotEnable) -and (Get-Content -LiteralPath $snapshotEnable -Raw|ConvertFrom-Json).enabled){
+        $snapshotWatches=@($processes|Where-Object {$_.Name -eq 'powershell.exe' -and $_.CommandLine -like ('*"'+$snapshotWatch+'"*')})
+        if($snapshotWatches.Count -eq 0 -and ([datetime]::UtcNow-$lastSnapshotWatch).TotalSeconds -ge 60){
+            $actions+='START_AUTHORIZED_SEPARATE_SNAPSHOT_WATCHDOG'
+            if(!$DryRun){Start-Process powershell.exe -ArgumentList ('-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "'+$snapshotWatch+'"') -WorkingDirectory $repo -WindowStyle Hidden | Out-Null}
+            $lastSnapshotWatch=[datetime]::UtcNow
+        }
+    }
     $dashboardScript=Join-Path $repo 'tools\research_dashboard.py'
     $dashboard=@($processes|Where-Object {$_.Name -eq 'pythonw.exe' -and $_.CommandLine -like ('*"'+$dashboardScript+'" --serve*')})
     if($dashboard.Count -eq 0 -and ([datetime]::UtcNow-$lastDashboard).TotalSeconds -ge 60){

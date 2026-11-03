@@ -1,0 +1,15 @@
+{
+  "chain_head": "8ba6b199c9e9bf69590c3af5b831a1b3eaaa67ba8b3c0a7907c260dd2a877475",
+  "entry": {
+    "kind": "RECOVER_AUTHORIZED_SNAPSHOT_WATCHDOG_WITHOUT_STOPPING_PRODUCER",
+    "ledger_sequence": 59,
+    "new_dataset_admission": false,
+    "previous": "a314a9644c806363293c20cfd2b4dac0d4b46cc895415f9c327409f99f85d930",
+    "proof_sha256": "83d34ca3cc0226a1f4d45e502bb8ee6986ec681b934cc5b327e791ab1d642db6",
+    "prospective_backfill": 0,
+    "protected_rows_read": 0,
+    "training_fits": 0
+  },
+  "parent_path": "research/studies/master_mission_20261102_v1/exposure_delta.json",
+  "parent_sha256": "202fca9d8e20c5dce36dc8b7a81d9aadce6fa26584a507016bbc261565d06719"
+}

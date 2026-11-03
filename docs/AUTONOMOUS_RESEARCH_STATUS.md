@@ -98,3 +98,20 @@ el estado vivo, usar STATUS o el JSON; este documento conserva el corte publicad
 
 `DISCOVERY_VALIDATION=BLOCKED`, `HISTORICAL_HOLDOUT=LOCKED`, `FINAL_TEST=LOCKED`,
 `DEMO=DISABLED`, `LIVE_TRADING=false`. Intervención manual actual: ninguna.
+
+## Actualización operativa — 2 de noviembre, 19:37 Ecuador
+
+El corte anterior permanece en la evidencia v1; no representa los contadores
+actuales. En la comprobación posterior había 20 M5 derivadas originales, pero
+seguían sin warmup científico admitido. El reporte detectó correctamente FAIL:
+el ensayo separado de snapshots no tenía productor/watchdog activos y su último
+recibo era RETRYING, con `REAL_OR_UNKNOWN_OR_CHANGED_XM_IDENTITY`. La inspección
+actual comprobó DEMO, servidor y carpeta esperados; no se reinterpretó ese error
+pasado como prueba de una causa concreta de desconexión ni de reinicio físico.
+
+Se demostró una omisión de recuperación: el guardian persistente no reponía el
+watchdog separado tras perderse durante la misma sesión. Se añadió su arranque
+solo cuando la captura separada está habilitada, con intervalo de reintento y
+el mutex existente. No se cambió el productor ni su manifest/pin. Se recuperó
+como época 17 con corte nuevo y sin rellenar el intervalo perdido. La evidencia
+posterior se conserva en `research/studies/master_mission_20261102_v2/`.

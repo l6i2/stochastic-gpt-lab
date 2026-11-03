@@ -1,0 +1,91 @@
+{
+  "after_producer": {
+    "accepted": {
+      "300": 10,
+      "60": 78
+    },
+    "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+    "callback_coverage_certified": false,
+    "capture_id": "dbsnap_a5b5b6a8d777455d9cc63c8ca8690942",
+    "chain_head": "6e0a9bc7129dd2f28b68ffc46ef74c3deb27a895bf10e152eed72190c2520d8f",
+    "clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-03T00:38:57.915746+00:00",
+      "monotonic_ns": 339715957028600,
+      "uptime_ms": 339691500,
+      "utc_certified": false
+    },
+    "consecutive_m5_database_view": 0,
+    "dataset_admitted": false,
+    "epoch": "17_339580093",
+    "epochs": 17,
+    "error": null,
+    "event_generation_utc_certified": false,
+    "live_trading": false,
+    "maximum_consecutive_m5_database_view": 6,
+    "next_open": {
+      "300": 1793673600000,
+      "60": 1793673480000
+    },
+    "process_id": 5548,
+    "provenance": "NATIVE_DATABASE_OBSERVATIONS_NOT_ORIGINAL_CALLBACK_RECEIPTS",
+    "records": 6375,
+    "rejected": {
+      "300": 0,
+      "60": 0
+    },
+    "scientific_warmup": 0,
+    "scoring_authorized": false,
+    "status": "ACTIVE_QUARANTINED",
+    "training_authorized": false
+  },
+  "after_watchdog": {
+    "action": "NONE",
+    "audited_m5": 10,
+    "live_trading": false,
+    "matching_python_processes": 2,
+    "observed_host_utc": "2026-11-03T00:38:48.8196001Z",
+    "scope": "NEW_DATABASE_TRIAL_ONLY",
+    "training_authorized": false,
+    "watchdog_pid": 30628
+  },
+  "before": {
+    "before_clock": {
+      "boot_id": "111",
+      "host_utc_label": "2026-11-03T00:37:45.098776+00:00",
+      "monotonic_ns": 339643144097600,
+      "uptime_ms": 339618687,
+      "utc_certified": false
+    },
+    "before_watchdog_pid": 19472,
+    "producer_chain_head": "7ba7a0b536d78558bef87fce0755760c6e2da108560435b709415411db96bd95",
+    "producer_pid": 5548,
+    "test_scope": "RESTART_WATCHDOG_ONLY_NEVER_STOP_PRODUCER"
+  },
+  "guardian": {
+    "actions": [],
+    "capture_watchdog_count": 1,
+    "dry_run": false,
+    "host_utc": "2026-11-03T00:38:47.3582753Z",
+    "live_trading": false,
+    "no_backfill": true,
+    "recovery_pid": 24608,
+    "requires_user_logon": true,
+    "scope": "EXACT_XM_AND_OWN_WATCHDOG_NTS",
+    "xm_process_count": 1
+  },
+  "lost_interval_not_backfilled": true,
+  "physical_restart_not_claimed": true,
+  "prior_identity_failure_cause": "UNRESOLVED_HISTORICAL_CONDITION_CURRENT_IDENTITY_VERIFIED",
+  "processes": [
+    {
+      "parent": 21656,
+      "pid": 5548
+    },
+    {
+      "parent": 19472,
+      "pid": 21656
+    }
+  ],
+  "result": "PASS_WATCHDOG_RESTORED_WITH_SAME_LIVE_PRODUCER_NO_DUPLICATE"
+}
