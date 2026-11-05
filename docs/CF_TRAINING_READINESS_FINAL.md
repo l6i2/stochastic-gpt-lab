@@ -194,3 +194,39 @@ la primera barra propia, evitando heredar una paridad de otro contexto dentro
 del mismo epoch. La comprobación HA desde276 exige PASS_EXACT. La batería de
 pruebas focalizadas final es **21 PASS**; no se repitieron pruebas nativas aprobadas.
 Recibos más recientes: `ac_followup_20261105/interval_progress/`.
+
+
+## Continuación prioritaria de C+F del 5 de noviembre
+
+El corte auditado de las 15:15 en Ecuador contiene 128 M1 y 20 M5 verificadas.
+El contexto actual conserva 1 M5 consecutiva y 0 M5 científicamente elegibles.
+La M5 nueva posterior al hueco se verificó con cinco M1 propias. Las 20
+observaciones offline conservaron el orden nativo y el orden monotónico entre
+la lectura, su verificación, el cálculo y el uso. El auditor reproduce la
+paridad M1/M5, enlaza la referencia de decisión a su observación y comprueba el
+hash del snapshot. La causalidad física de entrada y la generación UTC siguen
+pendientes. Los epochs previos quedan fuera del paquete de admisión vigente.
+
+El hueco de las 15:08 duró 14,287 s entre observaciones. El registro identifica
+la regla de discontinuidad de polling. El commit anterior duró 1,467 s, el
+identificador de suspensión se mantuvo y la causa subyacente queda desconocida.
+Se conserva el corte observado y el productor continúa con su epoch nuevo.
+
+La revisión real del contexto vigente devuelve `NOT_READY`. Faltan evidencia
+de calendario aplicable, features completas, semillas y paridad ATR propias,
+madurez y sellado del dataset. Los roles prospectivos exclusivos se verificaron.
+Faltan 14 M5 propias para la primera comprobación iATR, 275 para HA y 349 para
+warmup. El soporte sigue en cero para las 800 señales consecutivas, 100 barras
+posteriores, 200 evaluables, 80 BUY, 80 SELL y tres folds evaluables por lado.
+La transición de sesión necesita observación continua y excepción aplicable
+verificadas. El monitor conserva los hitos 15, 276 y 350.
+
+El entrenador valida todos los folds y el presupuesto antes del primer fit.
+El ensayo aislado comprobó el rechazo de un fold tardío inválido y de un
+presupuesto insuficiente antes de crear estimadores. El recorrido completo
+usó estimadores simulados para las ocho posiciones. Pasaron 50 pruebas
+focalizadas. El presupuesto científico consumido sigue en cero.
+
+El boot sigue en 112 y el próximo arranque natural todavía queda por observar.
+La recuperación existente y la adquisición siguen activas. Los recibos de este
+corte están en `research/studies/us30cash_m5_native_observations/priority_readiness_20261105/`.

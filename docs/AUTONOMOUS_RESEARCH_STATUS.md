@@ -1,3 +1,8 @@
+> Continuación prioritaria C+F. El corte de las 15:15 en Ecuador verificó 20 M5 acumuladas,
+> 1 consecutiva y 0 científicamente elegibles. Admisión real `NOT_READY` y 50 pruebas
+> focalizadas PASS. El oráculo espera 15 M5 propias y el próximo arranque natural
+> de Windows queda pendiente. [Informe de preparación](CF_TRAINING_READINESS_FINAL.md)
+
 > Recuperación automática activa al iniciar sesión. El ensayo real conservó el prefijo
 > de 6.230 registros y abrió el epoch `11_153168750`. Contadores del recibo publicado
 > **18 acumuladas**, **0 consecutivas** y **0 científicamente elegibles**.

@@ -1,10 +1,25 @@
 import copy
 import unittest
 from controller.cf_admission_review import bind_packet,review,no_grant_rejection,from_operational_receipt
+from controller.cf_admission_review import review_current_context
 from controller.pretrain_contracts import FEATURES
 
 
 class CfAdmissionRehearsalTests(unittest.TestCase):
+    def test_current_review_does_not_import_prior_epochs(self):
+        clock=dict(boot_id='boot',monotonic_ns=1)
+        receipt=dict(study_id='s',dataset_id='d',producer_id='p',exclusive_roles=dict(exclusive=True,minimum_native_open_msc=0),
+                     technical_consecutive_m5=1,offline_availability=[{},{}],
+                     active_context_availability=[dict(epoch='new',start_native_msc=600000,feature_max_native_msc=899999,
+                                                       decision_native_msc=900000,ready_clock=clock,offline_use_clock=clock)],
+                     native_membership=[dict(epoch=epoch,start_native_msc=600000,end_native_exclusive_msc=900000,
+                                             frame_seconds=300,status='VERIFIED_DATABASE_VIEW_ONLY') for epoch in ('old','new')])
+        result=review_current_context(receipt,True)
+        self.assertEqual(result['context_m5'],1)
+        self.assertEqual(result['packet']['artifacts']['membership']['intervals'][0]['epoch'],'new')
+        self.assertEqual(result['result']['REHEARSAL_STATUS'],'NOT_READY')
+        self.assertFalse(result['result']['dataset_admitted'])
+
     def complete(self):
         identity=dict(study_id='synthetic',dataset_id='synthetic02',producer_id='syntheticC',server='XMGlobalSC-MT5 5',symbol='US30Cash',terminal_trade_allowed=False,receipt_verified=True)
         interval=dict(**{k:identity[k] for k in ('study_id','dataset_id','producer_id')},start_native_msc=600000,end_native_exclusive_msc=900000,origin='POST_CUTOFF_NATIVE_DATABASE_SNAPSHOT',backfill=False,first_observation_post_cut_verified=True)

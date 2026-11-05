@@ -108,3 +108,28 @@ def from_operational_receipt(receipt):
     # the adapter's output is deliberately incomplete, not a fresh identity proof.
     packet=bind_packet(artifacts);packet['source_receipt_hash']=seal(receipt)
     return packet
+
+
+def review_current_context(receipt, identity_verified):
+    """Rehearse admission only on the auditor's current, unmixed C+F context."""
+    packet = from_operational_receipt(receipt)
+    artifacts = packet['artifacts']
+    artifacts['identity']['receipt_verified'] = identity_verified is True
+    availability = receipt['active_context_availability']
+    context_keys = {(row['epoch'], row['start_native_msc']) for row in availability}
+    if len(context_keys) != len(availability) or len(availability) != receipt['technical_consecutive_m5']:
+        raise ValueError('CURRENT_CONTEXT_EVIDENCE_COUNT_CHANGED')
+    intervals = [row for row in artifacts['membership']['intervals']
+                 if (row['epoch'], row['start_native_msc']) in context_keys
+                 and row['status'] == 'VERIFIED_DATABASE_VIEW_ONLY']
+    if len(intervals) != len(availability):
+        raise ValueError('CURRENT_CONTEXT_MEMBERSHIP_INCOMPLETE')
+    artifacts['membership']['intervals'] = intervals
+    artifacts['features']['availability'] = availability
+    if intervals:
+        for field in ('complete','five_own_m1','ohlc_exact','volume_exact','two_views_equal','bid_ask_preserved'):
+            artifacts['coverage'][field] = True
+    sealed = bind_packet(artifacts)
+    return dict(operational_receipt_hash=seal(receipt), packet=sealed, result=review(sealed),
+                training_gate=no_grant_rejection(), context_m5=len(intervals),
+                all_observed_offline_causal_checks=len(receipt['offline_availability']))

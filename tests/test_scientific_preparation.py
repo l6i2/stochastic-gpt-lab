@@ -1,5 +1,6 @@
 import copy
 import unittest
+from unittest.mock import Mock, patch
 from controller.pretrain_contracts import chain, seal, verify_chain, FEATURES
 from controller.scientific_preparation import reconcile, training_plan, progress_projection
 from controller.feature_availability_review import GROUPS, review, structure_break_observation
@@ -7,6 +8,28 @@ from controller.native_study_runner import execute, acceptance, bootstrap_contra
 
 
 class ScientificPreparationTests(unittest.TestCase):
+    def test_late_fold_validation_and_budget_precede_all_synthetic_estimator_calls(self):
+        from controller.native_study_design import fold_plan
+        metadata=[dict(signal_id=str(i),side='BUY' if i%2 else 'SELL',decision=i*10,
+                       arrival_index=i,follow_exit=i*10+1,invert_exit=i*10+2) for i in range(32)]
+        rows=[dict(row,features={key:1.0 for key in FEATURES},follow_pnl=float((i//2)%2),
+                   invert_pnl=0.0,observed_bar_index=i) for i,row in enumerate(metadata)]
+        grant=dict.fromkeys(('study_id','dataset_hash','protocol_hash','feature_whitelist_hash','membership_hash',
+            'exposure_hash','admission_receipt_hash','code_head','environment_hash','row_schema','plan_hash',
+            'dataset_first_observed_bar','manifest_path','manifest_sha256','max_fits'))
+        grant.update(row_schema='native-study-admitted-rows/1',plan_hash=seal(fold_plan(metadata)),max_fits=8)
+        estimator=Mock()
+        estimator.predict_proba.side_effect=lambda x:[[0.4,0.6] for _ in x]
+        with patch('controller.native_study_runner.authorize_execution'),patch('controller.native_study_runner.prepare_unfitted',return_value=(estimator,{})) as prepare:
+            late_invalid=copy.deepcopy(rows);late_invalid[-1]['follow_pnl']=None
+            with self.assertRaisesRegex(ValueError,'NONFINITE_PAIRED'):
+                execute(dict(grant,dataset_hash=seal(late_invalid)),lambda _:late_invalid,Mock())
+            with self.assertRaisesRegex(ValueError,'FIT_BUDGET_EXCEEDED'):
+                execute(dict(grant,dataset_hash=seal(rows),max_fits=7),lambda _:rows,Mock())
+            prepare.assert_not_called()
+            self.assertEqual(execute(dict(grant,dataset_hash=seal(rows)),lambda _:rows,Mock())['fits'],8)
+            self.assertEqual(estimator.fit.call_count,8)
+
     def test_runner_denies_before_any_reader_or_attempt_claim(self):
         def forbidden(*args):
             self.fail('Preparation must never read a dataset or claim a training attempt')

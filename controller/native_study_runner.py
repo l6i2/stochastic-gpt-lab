@@ -103,8 +103,7 @@ def execute(grant, load_admitted_rows, claim_single_attempt):
     if seal(plan)!=grant['plan_hash']:
         raise ValueError('PURGED_PLAN_CHANGED')
     by_id={r['signal_id']:r for r in rows}
-    result=[]
-    fit_count=0
+    prepared=[]
     for fold in plan['folds']:
         for side in ('BUY','SELL'):
             train=[by_id[i] for i in fold['train_ids'] if by_id[i]['side']==side]
@@ -119,27 +118,29 @@ def execute(grant, load_admitted_rows, claim_single_attempt):
             y=[int(r['follow_pnl']-r['invert_pnl']>0) for r in valid]
             if len(set(y))!=2:
                 raise ValueError('SINGLE_CLASS_NOT_RUN_NO_PARAMETER_CHANGE')
-            estimator,_=prepare_unfitted(side)
-            if fit_count>=grant['max_fits']:
-                raise ValueError('FIT_BUDGET_EXCEEDED_BEFORE_FIT')
-            from sklearn.exceptions import ConvergenceWarning
-            with warnings.catch_warnings():
-                warnings.simplefilter('error',ConvergenceWarning)
-                estimator.fit([[r['features'][f] for f in FEATURES] for r in valid],y)
-            fit_count+=1
-            if fit_count>grant['max_fits']:
-                raise ValueError('FIT_BUDGET_EXCEEDED')
-            good=[r for r in evaluation if finite(r)]
-            probability={r['signal_id']:float(p[1]) for r,p in zip(good,
-                estimator.predict_proba([[r['features'][f] for f in FEATURES] for r in good]))} if good else {}
-            for r in evaluation:
-                p=probability.get(r['signal_id'])
-                follow=p is None or p>0.5
-                result.append(dict(signal_id=r['signal_id'],side=side,fold=fold['fold'],
-                    observed_bar_index=r['observed_bar_index'],arrival_index=r['arrival_index'],
-                    probability=p,missing_features=p is None,action='FOLLOW' if follow else 'INVERT',
-                    candidate=r['follow_pnl'] if follow else r['invert_pnl'],
-                    follow=r['follow_pnl'],invert=r['invert_pnl']))
+            prepared.append((fold['fold'],side,valid,evaluation,y,[r for r in evaluation if finite(r)]))
+    if len(prepared)>grant['max_fits']:
+        raise ValueError('FIT_BUDGET_EXCEEDED_BEFORE_FIT')
+
+    from sklearn.exceptions import ConvergenceWarning
+    result=[]
+    fit_count=0
+    for fold_number,side,valid,evaluation,y,good in prepared:
+        estimator,_=prepare_unfitted(side)
+        with warnings.catch_warnings():
+            warnings.simplefilter('error',ConvergenceWarning)
+            estimator.fit([[r['features'][f] for f in FEATURES] for r in valid],y)
+        fit_count+=1
+        probability={r['signal_id']:float(p[1]) for r,p in zip(good,
+            estimator.predict_proba([[r['features'][f] for f in FEATURES] for r in good]))} if good else {}
+        for r in evaluation:
+            p=probability.get(r['signal_id'])
+            follow=p is None or p>0.5
+            result.append(dict(signal_id=r['signal_id'],side=side,fold=fold_number,
+                observed_bar_index=r['observed_bar_index'],arrival_index=r['arrival_index'],
+                probability=p,missing_features=p is None,action='FOLLOW' if follow else 'INVERT',
+                candidate=r['follow_pnl'] if follow else r['invert_pnl'],
+                follow=r['follow_pnl'],invert=r['invert_pnl']))
     # Preserve original chronology for drawdown and paired block resampling.
     result.sort(key=lambda r:r['arrival_index'])
     return dict(rows=result,fits=fit_count,final_full_fit=False,attempt_terminal=True,
