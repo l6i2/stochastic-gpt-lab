@@ -1,0 +1,315 @@
+{
+  "admitted_package_count": 0,
+  "authorized_grant_count": 0,
+  "independent_periods_demonstrated": [],
+  "matrix_receipt_sha256": "935ab7ba6e5575e46bd3292c551117c0edb5c65f2254560437ef14b54e51e38f",
+  "metadata_manifest_paths_present": {
+    "outputs/future_validation_cohort/cohort_20261019/cohort_manifest.json": false,
+    "outputs/master/master_manifest.json": false,
+    "outputs/splits/split_manifest.json": false
+  },
+  "original_tail": {
+    "appended_verified": 3585,
+    "final_hash": "6516de2a7a6070453db1b8c4fd1fa2054b49dd87c7581e594fcbf6514654171e",
+    "final_n": 58938,
+    "prefix_hash": "a9ac89e8e3098fcc5f3d34e6835ab870a38c962ad0d44c5e3bf79d2ae0013e4b",
+    "prefix_n": 55353
+  },
+  "protected_rows_read": 0,
+  "replay_rerun": false,
+  "scientific_contract_changed": false,
+  "snapshot_tail": {
+    "appended_verified": 2166,
+    "final_hash": "11124f491122f0f40640be793884091f393944965caa0f4c96ba902ecc6e4ad6",
+    "final_n": 25017,
+    "prefix_hash": "c7d1a68b5bc9799730c0d71303ac1869f0b8f3327f3ad49112068e69eff1fa93",
+    "prefix_n": 22851
+  },
+  "status": {
+    "BUY_SIGNALS": 0,
+    "DEMO": "DISABLED",
+    "LIVE_TRADING": false,
+    "SELL_SIGNALS": 0,
+    "TRAINING_ADMISSION_GATE": "WAITING_FOR_DATA",
+    "TRAINING_EXECUTED": false,
+    "TRAINING_READINESS": "BLOCKED",
+    "admitted_records": 0,
+    "capture_activation": {
+      "after_capture_id": "e0d89c0b39344f1397125160cf6219bf",
+      "basis": "CAUSAL_ORDER_BETWEEN_AUTHENTICATED_PRE_TRANSMIT_AND_POST_RECEIVE_SERVER_TIMESTAMPS",
+      "before_capture_id": "3edc6536c9254739bf61805836075879",
+      "broker_event_utc_certified": false,
+      "estimate_ns": 1793471633341915536,
+      "half_width_ns": 358890332,
+      "local_clock_offset_or_drift_extrapolated": false,
+      "uncertainty": "CONDITIONAL_ON_REMOTE_SERVER_ADVERTISED_ERROR_NOT_METROLOGICAL_ABSOLUTE",
+      "utc_estimate": "2026-10-31T18:33:53.341916+00:00",
+      "utc_interval_ns": [
+        1793471632983025204,
+        1793471633700805868
+      ],
+      "utc_lower": "2026-10-31T18:33:52.983025+00:00",
+      "utc_upper": "2026-10-31T18:33:53.700806+00:00"
+    },
+    "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+    "causal_audit": "FAIL_GLOBAL_UNCHANGED",
+    "code_head": "43f2cf3df5b4d92c04256cf4ccc4ca9262e1033a",
+    "consecutive_signals": 0,
+    "coverage": "EXACT_NATIVE_BID_SEQUENCE_PLUS_OHLC_VOLUME_REFERENCE_REQUIRED",
+    "dataset_hash": null,
+    "dataset_id": "us30cash_m5_native_new_01_reserved",
+    "dataset_id_is_reservation": true,
+    "dataset_maturity": "NOT_READY_QUARANTINED",
+    "demonstrated_independent_admitted_periods": [],
+    "evaluable_BUY": 0,
+    "evaluable_SELL": 0,
+    "evaluable_required": 200,
+    "evaluable_total": 0,
+    "exposure_chain_verified": true,
+    "exposure_missing": [
+      "ORIGINAL_MASTER_SPLIT_AND_SIGNAL_MEMBERSHIPS",
+      "HISTORICAL_HOLDOUT_EXACT_RESERVATION",
+      "PROSPECTIVE_ROLE_END_OR_NONOVERLAP_ATTESTATION",
+      "RECONCILED_COMPARABLE_TIME_DOMAINS",
+      "COMPLETE_PRIOR_EXPOSURE_LEDGER_OUTSIDE_LOCAL_METADATA"
+    ],
+    "feature_status": "PASS_SYNTHETIC_IMPLEMENTATION_LIVE_SEED_MEMBERSHIP_PENDING",
+    "gate_authority": {
+      "TRAINING_ADMISSION_GATE": "BLOCKED",
+      "authorization_request_ready": false,
+      "authorization_requested": false,
+      "execution_permitted": false,
+      "package_complete": false,
+      "reasons": [
+        "NO_INDEPENDENT_ADMITTED_SEALED_DATASET",
+        "COMPLETE_MEMBERSHIP_AND_COVERAGE_RECEIPTS_REQUIRED",
+        "APPLICABLE_CONTRACT_CAUSALITY_NOT_ADMITTED",
+        "NO_HASH_BOUND_SCIENTIFIC_AUTHORIZATION"
+      ],
+      "scientific_grants": 0,
+      "training_executed": false
+    },
+    "historical_diagnostic": {
+      "M1_chart_first_native": "2026-10-13 12:19",
+      "M5_chart_first_native": "2026-07-22 05:35",
+      "all_history_downloaded": false,
+      "chart_queries_old_day_error": 4401,
+      "complete_server_coverage_certified": false,
+      "downloaded_ticks": 79211,
+      "local_native_database_first": "2022-06-03",
+      "metadata_counts_scope": "ISOLATED_NATIVE_TERMINAL_SAME20K_LIMIT_NOT_ASSUMED_ACTIVE_CACHE_IDENTICAL",
+      "permitted_download_day": "2024-01-02",
+      "protected_period_content_queries": 0,
+      "python_direct_response": "REJECTED_OUT_OF_RANGE_NO_BARS_PERSISTED",
+      "server_advertised_first_native": "2011-08-10"
+    },
+    "historical_parity": {
+      "BUY": 13,
+      "M1_EXACT": 1376,
+      "M5_EXACT": 276,
+      "MAIN_K": {
+        "all_bar_max_error": 1.4210854715202004e-14,
+        "all_native_closed_bars_compared": 268,
+        "compared_signals": 27,
+        "early_warmup_rows_not_compared": 1,
+        "inherited_oracle_absolute_tolerance": 1e-10,
+        "max_error": 1.4210854715202004e-14,
+        "missing_signal_cutoffs": [],
+        "status": "PASS"
+      },
+      "SELL": 15,
+      "new_native_tester_run": true,
+      "run_id": "diag_d17cbe6aedfc",
+      "scope": "FROZEN_NATIVE_VIRTUAL_EXPORTER_VS_PYTHON_NOT_MT5_ORDER_FILL_ENGINE",
+      "status": "PASS",
+      "virtual_paths": 56
+    },
+    "manual_action_required": false,
+    "membership": "RAW_AND_DERIVED_LINEAGE_TRACKED_LEGACY_NONOVERLAP_PENDING",
+    "next_automatic_action": "EXISTING_CAPTURE_WORKER_NTS_SNAPSHOT_MONITOR_CONTINUE_NO_BACKFILL",
+    "non_data_blockers": [
+      "SNAPSHOT_METHOD_ADMISSION_NOT_AUTHORIZED",
+      "UNKNOWN_LEGACY_MEMBERSHIP_NOT_RESOLVED_BY_MORE_TICKS",
+      "EXPLICIT_SCIENTIFIC_GRANT_REQUIRED"
+    ],
+    "nts_latest_record_hash": "4ddeebae5e190f521fb09b607aaa45554e022eb1cad93a48071192d12c2e5983",
+    "nts_scope": "AUTHENTICATION_VERIFIED_BY_EXISTING_NTS_SERVICE_NOT_RECHECKED_BY_THIS_METADATA_REPORT",
+    "nts_state": {
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:112",
+      "chain_head": "408d2f37b018b78ff1f14a06a2e7d519422195b587cb595c047e5617c8fa0477",
+      "failures": 0,
+      "last_record": "d368dc23e6b743c89bb0c4c3b99dfd99.json",
+      "last_uptime_ms": 92897203,
+      "next_due_uptime_ms": 93197203
+    },
+    "observed_ecuador": "2026-11-04T22:09:38.210188-05:00",
+    "observed_m1": 543,
+    "observed_m5": 30,
+    "offline_diagnostic_review": {
+      "coverage": {
+        "M1": {
+          "count": 1376,
+          "gaps": [
+            {
+              "after": 1704160680,
+              "before": 1704160800
+            },
+            {
+              "after": 1704164220,
+              "before": 1704164340
+            },
+            {
+              "after": 1704172860,
+              "before": 1704172980
+            },
+            {
+              "after": 1704176220,
+              "before": 1704176340
+            }
+          ],
+          "native_volume_sum": 79201,
+          "ohlc_or_time_mismatches": 0,
+          "quote_count_volume_disagreements": 10
+        },
+        "M5": {
+          "count": 276,
+          "gaps": [],
+          "native_volume_sum": 79201,
+          "ohlc_or_time_mismatches": 0,
+          "quote_count_volume_disagreements": 10
+        }
+      },
+      "diagnostic_id": "us30cash_native_20240102_diagnostic_d17cbe6aedfc",
+      "historical_independence_demonstrated": false,
+      "receipt_sha256": "935ab7ba6e5575e46bd3292c551117c0edb5c65f2254560437ef14b54e51e38f",
+      "replay": "PASS",
+      "review_scope": "EXPOSED_DIAGNOSTIC_ONLY",
+      "signals": {
+        "BUY": 13,
+        "SELL": 15
+      }
+    },
+    "old_window_queries": 0,
+    "post_required": 100,
+    "post_signal_bars": 0,
+    "protected_sets": {
+      "DISCOVERY_VALIDATION": "BLOCKED",
+      "FINAL_TEST": "LOCKED",
+      "HISTORICAL_HOLDOUT": "LOCKED"
+    },
+    "raw_heartbeats": 17962,
+    "raw_status": "ACTIVE_QUARANTINED",
+    "raw_ticks": 144456,
+    "receipts": {
+      "outputs/native_database_snapshots_v1/current.json": "0e82cfd979adb6e279716b167d52034a3dacaf03a5f885e893edac127cf36750",
+      "outputs/native_database_snapshots_v1/dbsnap_a5b5b6a8d777455d9cc63c8ca8690942/status.json": "8606a154845e41b9ba5391b87cb3b31191cc311b46e873eb347f0951d19ad7df",
+      "outputs/new_native_studies/us30cash_m5_native_20261030_01/current_capture.json": "88158f3ee45388c56e12ab56cc8ec129554f1e99f91589554e2e4a5cc84aaba7",
+      "outputs/new_native_studies/us30cash_m5_native_20261030_01/us30cap_15cbddec947f42c98219caa4cec978f2/collection_manifest.json": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a",
+      "outputs/new_native_studies/us30cash_m5_native_20261030_01/us30cap_15cbddec947f42c98219caa4cec978f2/collector_status.json": "d79cc7ad0c866d8c33bec2fd40aa48c7b237dfe4214f10f0036ff3f0d22366b4",
+      "outputs/pc_a_prospective_utc/authenticated_utc/d368dc23e6b743c89bb0c4c3b99dfd99.json": "4ddeebae5e190f521fb09b607aaa45554e022eb1cad93a48071192d12c2e5983",
+      "outputs/pc_a_prospective_utc/authenticated_utc/state.json": "945f0a44d4d8126def2fbae8f0b2b1fbe83d03a2261a650e0cd41a09c1a401c9",
+      "outputs/pc_a_stability/recovery_status.json": "f70b0484e0cb3eef53d388079e2b8a48e40d5f0630e17519af0bd7979bd2065c",
+      "outputs/prospective_derivatives_v1/us30cap_15cbddec947f42c98219caa4cec978f2/maturity.json": "e5a0d8ee11e5b848093161d98c76656ba8b16056dca6010a12459f67fab0d6b5",
+      "outputs/research_readiness/broker_identity.json": "6e64e9ab6a4215aeccea1b06e0bcfd5bc01ce2298177a351240532fa65c474f9",
+      "research/studies/final_mission_20261104_v1/offline_receipt.json": "935ab7ba6e5575e46bd3292c551117c0edb5c65f2254560437ef14b54e51e38f",
+      "research/studies/maxbars_history_20261102_v1/summary.json": "2c59c9ea5882b1bab84990757a2d457b38c45c2b9d6fa08155730a9935469440",
+      "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+      "research/studies/us30cash_m5_native_pretrain_v1/package_hashes.json": "6a34ff5006ad80a6ff419c269a35a872e49a8898aff4f2753208c580b5a0f9e3"
+    },
+    "rejected_buckets_all_timeframes": 622,
+    "remaining_blockers": [
+      "EXACT_CALLBACK_COVERAGE_AND_OWN_RECURSIVE_SEEDS",
+      "350_OWN_M5_THEN_800_SIGNALS_AND_100_POST_BARS",
+      "200_EVALUABLE_80_EACH_SIDE_3_FOLDS_EACH",
+      "COMPLETE_COMPARABLE_MEMBERSHIP_AND_APPLICABLE_CAUSALITY",
+      "NO_AUTHORIZATION_TO_ADMIT_DATABASE_SNAPSHOT_TRIAL",
+      "SEALED_DATASET_AND_SPECIFIC_TRAINING_GRANT"
+    ],
+    "report_does_not_train": true,
+    "report_health_errors": [],
+    "required_each_side": 80,
+    "schema": "autonomous-research-status/1",
+    "signals_required": 800,
+    "snapshot_trial": {
+      "accepted": {
+        "300": 52,
+        "60": 382
+      },
+      "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+      "callback_coverage_certified": false,
+      "capture_id": "dbsnap_a5b5b6a8d777455d9cc63c8ca8690942",
+      "chain_head": "11124f491122f0f40640be793884091f393944965caa0f4c96ba902ecc6e4ad6",
+      "clock": {
+        "boot_id": "112",
+        "host_utc_label": "2026-11-05T03:09:22.283071+00:00",
+        "monotonic_ns": 93045864371100,
+        "uptime_ms": 93042546,
+        "utc_certified": false
+      },
+      "consecutive_m5_database_view": 0,
+      "dataset_admitted": false,
+      "epoch": "58_92773515",
+      "epochs": 58,
+      "error": null,
+      "event_generation_utc_certified": false,
+      "live_trading": false,
+      "maximum_consecutive_m5_database_view": 10,
+      "next_open": {
+        "300": 1793855100000,
+        "60": 1793855340000
+      },
+      "process_id": 9768,
+      "provenance": "NATIVE_DATABASE_OBSERVATIONS_NOT_ORIGINAL_CALLBACK_RECEIPTS",
+      "records": 25018,
+      "rejected": {
+        "300": 1,
+        "60": 3
+      },
+      "scientific_warmup": 0,
+      "scoring_authorized": false,
+      "status": "ACTIVE_QUARANTINED",
+      "training_authorized": false
+    },
+    "warmup_counter_receipt": {
+      "checkpoint_digest": "cf62b4ee6b762a1b2b043d750216b2359cc959da1c36566b371f825c66d3896d",
+      "completed_m5": 30,
+      "current_run": 1,
+      "historical_bars_adopted": 0,
+      "last_rejection": {
+        "ledger_digest": "9ba5c7da9a872a1d7ba17faaf6beb8c5c4513f323e67d6b5d3af85eb604fb543",
+        "ledger_n": 58630,
+        "native_open_msc": 1793854500000,
+        "reasons": [
+          "NATIVE_PARITY_MISSING_OR_FAILED",
+          "BID_SEQUENCE_COUNT_MISMATCH",
+          "BID_SEQUENCE_HASH_MISMATCH"
+        ]
+      },
+      "ledger_head": "6516de2a7a6070453db1b8c4fd1fa2054b49dd87c7581e594fcbf6514654171e",
+      "ledger_last_n": 58938,
+      "maximum_observed_run": 4,
+      "own_run_counter_verified": true,
+      "rejected_m5": 172,
+      "rejection_reasons": {
+        "BID_SEQUENCE_COUNT_MISMATCH": 142,
+        "BID_SEQUENCE_HASH_MISMATCH": 172,
+        "BID_SEQUENCE_REFERENCE_INTERVAL_MISMATCH": 16,
+        "BID_SEQUENCE_REFERENCE_MISSING": 16,
+        "CALLBACK_GAP_TWO_EXISTING_TIMERS": 12,
+        "DISCONNECTED": 6,
+        "FIRST_PARTIAL_BUCKET": 10,
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS": 72,
+        "NATIVE_PARITY_MISSING_OR_FAILED": 133,
+        "UNKNOWN_NATIVE_SESSION_GAP": 5
+      },
+      "scientific_warmup": 0,
+      "scientifically_admitted": 0,
+      "snapshot_bars_adopted": 0,
+      "source": "FROZEN_ORIGINAL_CALLBACK_PRODUCER_ONLY"
+    },
+    "warmup_current": 1,
+    "warmup_producer_authority": "ORIGINAL_POST_ACTIVATION_CALLBACKS_ONLY_SUBJECT_TO_FROZEN_COVERAGE; SNAPSHOT_TRIAL_NOT_ADMITTED",
+    "warmup_required": 350
+  },
+  "training_executed": false
+}

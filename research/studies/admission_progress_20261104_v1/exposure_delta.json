@@ -1,0 +1,15 @@
+{
+  "chain_head": "bd8c3395566734a19aef3751f6e3a8dc3b76039907ec75e6148d4fab177bd3c0",
+  "entry": {
+    "kind": "INCREMENTAL_QUARANTINE_TAIL_AND_ADMISSION_REVIEW",
+    "ledger_sequence": 62,
+    "new_dataset_admission": false,
+    "previous": "121bee6f72ec88ed8acef0234e45f4d5b26bb69ae54ac1145a0143a87e6c78af",
+    "prospective_backfill": 0,
+    "protected_rows_read": 0,
+    "receipt_sha256": "667d80ecd13a014d311997d5fa692424959d532b8c3f937e633efb470677542e",
+    "training_fits": 0
+  },
+  "parent_path": "research/studies/final_mission_20261104_v1/exposure_delta.json",
+  "parent_sha256": "a416e1cfb0aa0f8c8d06e71da5816009b3faa5b6b681af10ebb25a3155d94f19"
+}

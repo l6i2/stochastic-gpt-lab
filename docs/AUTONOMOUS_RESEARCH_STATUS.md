@@ -149,3 +149,32 @@ independiente con cobertura y causalidad. Los productores programados acumulan
 evidencia. La alternativa offline requiere admisión metodológica específica
 antes de que su evidencia pueda alimentar un estudio. `STATUS` expone el corte
 vivo y el recibo de este diagnóstico. El gate permanece `WAITING_FOR_DATA`.
+
+## Evidencia incremental del 4 de noviembre, 22:09 Ecuador
+
+El [recibo de avance](../research/studies/admission_progress_20261104_v1/receipt.json)
+verificó 3.585 entradas derivadas originales y 2.166 registros del ensayo de
+snapshots contra sus prefijos publicados. Se conservó la matriz de períodos
+anterior y se vinculó su hash. La comprobación de presencia de los tres
+manifiestos esperados confirmó que master, splits y el manifiesto de la cohorte
+reservada siguen ausentes. Las filas de los conjuntos protegidos quedaron fuera
+de la revisión.
+
+El corte registró 144.456 callbacks, 543 M1, 30 M5 originales acumuladas y 172
+M5 rechazadas. La racha técnica era de una barra, con máximo observado de cuatro.
+El ensayo separado registró 382 M1 y 52 M5. El warmup científico sigue en 0/350,
+las señales consecutivas en 0/800, las barras posteriores en 0/100 y las
+evaluables en 0/200, incluidas 0 BUY y 0 SELL frente al mínimo de 80 por lado.
+
+`TRAINING_ADMISSION_GATE=WAITING_FOR_DATA`. Hay cero paquetes admitidos y cero
+grants. Para una admisión faltan un intervalo con independencia demostrable,
+cobertura exacta, causalidad con semillas verificadas y los umbrales anteriores.
+Los metadatos pendientes son membership original de splits y señales, reserva
+exacta de Historical Holdout, cierre o no solapamiento de la reserva prospectiva
+legada, conciliación de dominios temporales e historial de exposición externo.
+La metodología de snapshots sigue pendiente de autorización científica propia.
+Las tres tareas programadas de UTC, cuarentena y recuperación estaban activas.
+El corte de salud fue limpio. La adquisición continúa en cuarentena.
+
+Para reproducir la verificación incremental con el corte disponible, ejecutar
+`.venv\Scripts\python.exe tools/admission_progress_receipt.py --out <archivo_nuevo>`.
