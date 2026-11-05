@@ -1,0 +1,15 @@
+{
+  "chain_head": "121bee6f72ec88ed8acef0234e45f4d5b26bb69ae54ac1145a0143a87e6c78af",
+  "entry": {
+    "kind": "FIXED_EXPOSED_DAY_OFFLINE_REPLAY_AND_INDEPENDENCE_REVIEW",
+    "ledger_sequence": 61,
+    "new_dataset_admission": false,
+    "offline_receipt_sha256": "935ab7ba6e5575e46bd3292c551117c0edb5c65f2254560437ef14b54e51e38f",
+    "previous": "8f45b34cdad9f2c55816c177e77c58af44a118b06e2cb2418e520e112b921ca1",
+    "prospective_backfill": 0,
+    "protected_rows_read": 0,
+    "training_fits": 0
+  },
+  "parent_path": "research/studies/warmup_resolution_20261103_v1/exposure_delta.json",
+  "parent_sha256": "9fdc3819f3dd614926edc5bd151bac193d168cf3c1fb57ed0a9872e1c9bea2e6"
+}

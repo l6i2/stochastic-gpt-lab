@@ -1,0 +1,18 @@
+{
+  "accepted": {
+    "300": 47,
+    "60": 343
+  },
+  "capture_id": "dbsnap_a5b5b6a8d777455d9cc63c8ca8690942",
+  "chain_head": "c7d1a68b5bc9799730c0d71303ac1869f0b8f3327f3ad49112068e69eff1fa93",
+  "consecutive_m5_database_view": 0,
+  "dataset_admitted": false,
+  "maximum_consecutive_m5_database_view": 10,
+  "rejected": {
+    "300": 1,
+    "60": 3
+  },
+  "scientific_warmup": 0,
+  "snapshot_ecuador": "2026-11-04T21:24:30.278062-05:00",
+  "verified_records": 22852
+}

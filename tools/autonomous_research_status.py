@@ -105,6 +105,17 @@ def build(root=ROOT):
         next_automatic_action='EXISTING_CAPTURE_WORKER_NTS_SNAPSHOT_MONITOR_CONTINUE_NO_BACKFILL',manual_action_required=False,
         protected_sets=dict(DISCOVERY_VALIDATION='BLOCKED',HISTORICAL_HOLDOUT='LOCKED',FINAL_TEST='LOCKED'),DEMO='DISABLED',LIVE_TRADING=False,
         receipts=receipts,report_does_not_train=True,old_window_queries=0)
+    review_path='research/studies/final_mission_20261104_v1/offline_receipt.json'
+    if (root/review_path).is_file():
+        review=read(review_path)
+        result['offline_diagnostic_review']=dict(
+            receipt_sha256=receipts[review_path],
+            diagnostic_id=review['diagnostic']['dataset_id'],
+            coverage=review['diagnostic']['bars'],
+            replay=review['replay']['BASELINE_REPLAY'],
+            signals=review['signal_counts'],
+            historical_independence_demonstrated=False,
+            review_scope='EXPOSED_DIAGNOSTIC_ONLY')
     return result
 
 def main():

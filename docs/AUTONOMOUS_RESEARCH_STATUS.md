@@ -115,3 +115,37 @@ solo cuando la captura separada está habilitada, con intervalo de reintento y
 el mutex existente. No se cambió el productor ni su manifest/pin. Se recuperó
 como época 17 con corte nuevo y sin rellenar el intervalo perdido. La evidencia
 posterior se conserva en `research/studies/master_mission_20261102_v2/`.
+
+## Revisión de admisión del 4 de noviembre
+
+El recibo reproducible `research/studies/final_mission_20261104_v1/offline_receipt.json`
+vincula siete exportaciones permitidas de MT5 del 2 de enero de 2024 con su inventario
+sellado. `tools/offline_study_receipt.py --out <archivo_nuevo>` verifica sus hashes,
+reconstruye M1/M5 y reproduce las trayectorias congeladas en Python. El día aportó
+79.211 cotizaciones, 1.376 M1 y 276 M5. Coincidieron OHLC y coordenadas nativas de
+las barras. Hay cuatro saltos M1 y diez discrepancias de volumen en cada escala.
+Se verificaron 13 BUY, 15 SELL, 56 trayectorias y 3.279 llegadas de decisión.
+FOLLOW e INVERT cerraron 19 trayectorias cada uno y censuraron nueve por modo.
+Sus sumas cerradas fueron +472,12 y −999,06 unidades de precio, respectivamente.
+
+El replay comprobó el primer tick de entrada en la M5 siguiente y los límites
+nativos declarados de features en 28 señales, incluidos los de Volume Profile
+y Heikin Ashi. El calendario y los horarios históricos de Ecuador siguen sin
+atestación. La causalidad completa exige bytes y semillas verificables en un
+dataset independiente. La whitelist congelada rige las features de entrenamiento.
+
+La matriz de períodos usa exclusivamente metadatos de exposición y procedencia.
+La cadena del ledger se verificó. Siguen faltando membership original, límites
+exactos del holdout y evidencia de no solapamiento en dominios comparables.
+El día recuperado está expuesto. El ensayo separado verificó 47 M5 y 343 M1
+en su corte, con cero contribución al warmup original. Los tres dominios siguen
+separados: histórico diagnóstico, observaciones en cuarentena y datos admitidos.
+
+El paquete preregistrado conserva la reserva de ID y un hash de dataset nulo.
+El ejecutor preparado aplica logística BUY/SELL, FOLLOW/INVERT y walk-forward
+cronológico con purga. El presupuesto preregistrado prevé hasta ocho ajustes,
+con cero autorizados. La condición crítica es demostrar y sellar un intervalo
+independiente con cobertura y causalidad. Los productores programados acumulan
+evidencia. La alternativa offline requiere admisión metodológica específica
+antes de que su evidencia pueda alimentar un estudio. `STATUS` expone el corte
+vivo y el recibo de este diagnóstico. El gate permanece `WAITING_FOR_DATA`.

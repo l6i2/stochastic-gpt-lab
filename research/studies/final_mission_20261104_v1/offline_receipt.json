@@ -1,0 +1,608 @@
+{
+  "authorization_template": {
+    "ACCEPTANCE_CRITERIA": {
+      "bootstrap_resamples": 10000,
+      "future_tolerance_milliseconds": 0,
+      "invalid_required_quotes_allowed": 0,
+      "maximum_drawdown_ratio_to_each_baseline": 1.2,
+      "maximum_positive_effect_share_one_fold": 0.5,
+      "minimum_each_side": 80,
+      "minimum_evaluable_folds_per_side": 3,
+      "minimum_evaluation_signals": 200,
+      "minimum_positive_fold_fraction_each_comparison": 0.7,
+      "one_sided_bootstrap_lower_confidence": 0.9875,
+      "primary_comparisons": 4,
+      "protected_dependency_overlap_allowed": 0,
+      "required_evidence": [
+        "INDEPENDENT_COMPLETE_MEMBERSHIP_AND_EXPOSURE_LEDGER",
+        "NO_PROTECTED_OR_PREVIOUSLY_EXPOSED_DEPENDENCIES",
+        "HASH_VERIFIED_DATASET_AND_NATIVE_SOURCE_IDENTITY",
+        "CLOSED_FEATURE_AVAILABILITY_AND_BOUND_POST_START_RECURSIVE_SEEDS",
+        "VERIFIED_COVERAGE_NO_FABRICATED_BARS_OR_PROSPECTIVE_BACKFILL",
+        "PREREGISTERED_STATISTICAL_GATES_AND_SINGLE_FAMILY_BUDGET",
+        "EXPLICIT_HASH_BOUND_NEW_STUDY_AUTHORIZATION_BEFORE_ANY_FIT"
+      ],
+      "required_lower_bound": "STRICTLY_GREATER_THAN_ZERO",
+      "signal_and_451_observed_bar_block_checks_required": true,
+      "statistical_failure": "TERMINAL_NO_RETUNING_OR_PERIOD_EXTENSION",
+      "unknown_seed_or_coverage_action": "NOT_READY_OR_QUARANTINED"
+    },
+    "CODE_HEAD": null,
+    "CODE_HEAD_BINDING": "RESOLVED_IN_POST_COMMIT_PUBLICATION_RECEIPT_NOT_BASE_HEAD",
+    "CODE_SOURCE_SET_HASH": "a4dad1ca41a9a8959e55104c1ac9d0ee1c8a1d1c8cf11a95c39f3950aae47254",
+    "DATASET_HASH": null,
+    "DATASET_ID": "us30cash_m5_native_new_01_reserved",
+    "DATASET_MEMBERSHIP_HASH": "5bd99a7a50f9d97a34d6e51bd2e49caeecaa0fb97ebe83c66bd4d1911beae5c0",
+    "EXPOSURE_LEDGER_HASH": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+    "FEATURE_WHITELIST_HASH": "7d95930599e9ffa5b98a4f89c99e2862afcb47730c238c66052e6024ef703ec8",
+    "PROTOCOL_HASH": "ce5ab48ab95cbf4d6c07cb9b1cc9a13ab7f14ab7d14792b494ae2d19a21d45d9",
+    "REVIEWED_BASE_HEAD": "ee68187ef6c1921d8f7c27c839b38f152b6cca17",
+    "STUDY_ID": "US30CASH_M5_NATIVE_20261030_01",
+    "TRAINING_BUDGET": {
+      "actual_fits_authorized": 0,
+      "actual_scoring_authorized": 0,
+      "exhausted_TRAIN_reopened": false,
+      "final_full_data_fit": 0,
+      "hyperparameter_configurations": 1,
+      "hypothesis_families": 1,
+      "max_planned_fold_fits": 8,
+      "max_scientific_launches": 1,
+      "new_TRAIN_budget_activated": false,
+      "optimization_searches": 0,
+      "separate_side_estimators": 2,
+      "walk_forward_folds": 4
+    },
+    "actual_scoring_authorized": false,
+    "actual_training_authorized": false,
+    "authorization_ready": false,
+    "authorization_requested": false,
+    "mode": "PRE_TRAIN",
+    "reason": "NO_VERIFIABLE_INDEPENDENT_DATASET_AND_INCOMPLETE_EXPOSURE_HISTORY"
+  },
+  "candidate_dataset_hash": null,
+  "diagnostic": {
+    "bars": {
+      "M1": {
+        "count": 1376,
+        "gaps": [
+          {
+            "after": 1704160680,
+            "before": 1704160800
+          },
+          {
+            "after": 1704164220,
+            "before": 1704164340
+          },
+          {
+            "after": 1704172860,
+            "before": 1704172980
+          },
+          {
+            "after": 1704176220,
+            "before": 1704176340
+          }
+        ],
+        "native_volume_sum": 79201,
+        "ohlc_or_time_mismatches": 0,
+        "quote_count_volume_disagreements": 10
+      },
+      "M5": {
+        "count": 276,
+        "gaps": [],
+        "native_volume_sum": 79201,
+        "ohlc_or_time_mismatches": 0,
+        "quote_count_volume_disagreements": 10
+      }
+    },
+    "dataset_id": "us30cash_native_20240102_diagnostic_d17cbe6aedfc",
+    "evidence_observed_ecuador": "2026-11-02T16:45:56.653810-05:00",
+    "files": {
+      "diag_d17cbe6aedfc_bar_execution_quotes.csv": "575ffacf591e30b78317a03d898731cda728f9fe52a2201b1537ec76f21530fd",
+      "diag_d17cbe6aedfc_bar_quote_path.bin": "f03c643bc26c4cc236706537e49f0e78dd1fdf89eaab4674b5f599d2439c8711",
+      "diag_d17cbe6aedfc_bar_trade_index.csv": "90571e6a85d858f6fdcdb78dfded60065abf804ed3aa70df42a692539412296a",
+      "diag_d17cbe6aedfc_stochastic_events.csv": "975b374fce187ef4cdf33a02b6a69f743393cc2ef989f352706ae89c8225da81",
+      "diag_d17cbe6aedfc_stochastic_events.csv.native_M1.csv": "12e8af250f76483b28ce90631ccd1dde4786971ffe44d5f118d5f77b4e8a036c",
+      "diag_d17cbe6aedfc_stochastic_events.csv.native_M5.csv": "62e1d0877b3ac9cae68d2f30d17567eff4909d3e7a3417e9bd7f8817b2c208df",
+      "diag_d17cbe6aedfc_stochastic_events.csv.native_main.csv": "13916e70d0f2a3ff099e93186bf28ac8c02a92558c7a9667ba099229c3374a8d"
+    },
+    "first_observation": "UNKNOWN_ORIGINAL_RECEIPT",
+    "inventory_sha256": "71a52f04e6142021e1eb1cf59f4be9c8f10b151576d1088deb40d842b8019d39",
+    "native_day": "2024-01-02",
+    "native_first_msc": 1704157200107,
+    "native_last_msc": 1704239998386,
+    "prospective_bars_adopted": 0,
+    "sessions": "ECUADOR_SESSION_ATTESTATION_UNAVAILABLE_FOR_NATIVE_LABELS",
+    "source_kind": "MT5_TESTER_RECOVERED_HISTORICAL",
+    "source_version": "diag_d17cbe6aedfc",
+    "ticks": 79211,
+    "verification_utc": "2026-11-05T02:24:22.065640+00:00"
+  },
+  "diagnostic_receipt_hash": "b35b4867cea2ff14b080fe404e045d2aca2a4086c3493b63e651ef2281cc2be0",
+  "exposure_complete": false,
+  "exposure_ledger_sha256": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+  "external_utc_certified": false,
+  "feature_scope": "DECLARED_NATIVE_CUTOFF_AND_VP_COORDINATES_NOT_INDEPENDENT_FEATURE_VINTAGE_OR_SEEDS",
+  "first_next_m5_quotes_checked": 28,
+  "independent_periods": [],
+  "missing_evidence": [
+    "ORIGINAL_MASTER_SPLIT_AND_SIGNAL_MEMBERSHIPS",
+    "HISTORICAL_HOLDOUT_EXACT_RESERVATION",
+    "PROSPECTIVE_ROLE_END_OR_NONOVERLAP_ATTESTATION",
+    "RECONCILED_COMPARABLE_TIME_DOMAINS",
+    "COMPLETE_PRIOR_EXPOSURE_LEDGER_OUTSIDE_LOCAL_METADATA"
+  ],
+  "native_feature_cutoffs_checked": 28,
+  "period_matrix": [
+    {
+      "dataset_id": "stochastic_master_v1",
+      "declared_native_date_range": [
+        "2023-12-20",
+        "2026-10-13_PARTIAL"
+      ],
+      "domain_id": "LEGACY_SERVER_NATIVE_UNRECONCILED",
+      "end_native_exclusive_msc": null,
+      "exposure": "MASTER_CONTAINS_PROTECTED_TAIL_TRAIN_PREVIOUSLY_RESEARCHED",
+      "membership": "MISSING_ORIGINAL_IDS",
+      "roles": [
+        "TRAIN_EXHAUSTED",
+        "DISCOVERY_VALIDATION_PROTECTED",
+        "FINAL_TEST_PROTECTED"
+      ],
+      "start_native_msc": null
+    },
+    {
+      "dataset_id": "legacy_quality_v1",
+      "declared_native_date_range": null,
+      "domain_id": "LEGACY_SERVER_NATIVE_UNRECONCILED",
+      "end_native_exclusive_msc": null,
+      "exposure": "17_HYPOTHESES_0_SURVIVORS_RECORDED_HISTORY_NOT_NEW_BUDGET",
+      "membership": "MISSING_ORIGINAL_IDS",
+      "roles": [
+        "TRAIN_EXHAUSTED",
+        "DISCOVERY_VALIDATION_PROTECTED"
+      ],
+      "start_native_msc": null
+    },
+    {
+      "dataset_id": "historical_holdout_unresolved",
+      "declared_native_date_range": null,
+      "domain_id": "UNKNOWN",
+      "end_native_exclusive_msc": null,
+      "exposure": "PROTECTED_UNKNOWN_EXTENT_NOT_ASSERTED_VIEWED",
+      "membership": "MISSING_UNKNOWN_PROTECTED_INTERVAL",
+      "roles": [
+        "HISTORICAL_HOLDOUT_PROTECTED"
+      ],
+      "start_native_msc": null
+    },
+    {
+      "dataset_id": "us30cash_m5_future_20261019_v1",
+      "declared_native_date_range": null,
+      "domain_id": "DECLARED_UTC_NOT_RECONCILED_TO_XM_NATIVE",
+      "end_native_exclusive_msc": null,
+      "exposure": "RESERVED_NOT_AVAILABLE_FOR_TRAIN",
+      "membership": "ORIGINAL_SEGMENTS_AND_START_MAPPING_MISSING",
+      "roles": [
+        "PROTECTED_PROSPECTIVE_COHORT"
+      ],
+      "start_native_msc": null
+    },
+    {
+      "dataset_id": "historical_20261028T175047_e97ee981",
+      "declared_native_date_range": null,
+      "domain_id": "XMGlobalSC-MT5 5|US30Cash|NATIVE_LABELS",
+      "end_native_exclusive_msc": 1704240000000,
+      "exposure": "NOT_INDEPENDENT_NEW_TRAIN",
+      "membership": null,
+      "roles": [
+        "HISTORICAL_DIAGNOSTIC_EXPOSED"
+      ],
+      "start_native_msc": 1704153600000
+    },
+    {
+      "dataset_id": "prospective_20261028T175047_3ac8b527",
+      "declared_native_date_range": null,
+      "domain_id": "XMGlobalSC-MT5 5|US30Cash|NATIVE_LABELS",
+      "end_native_exclusive_msc": null,
+      "exposure": "NOT_INDEPENDENT_NEW_TRAIN",
+      "membership": null,
+      "roles": [
+        "PROSPECTIVE_QUARANTINE_RESERVED"
+      ],
+      "start_native_msc": 1793214549498
+    },
+    {
+      "dataset_id": "diag_fd4e5bf3d468",
+      "declared_native_date_range": null,
+      "domain_id": "XMGlobalSC-MT5 5|US30Cash|NATIVE_LABELS",
+      "end_native_exclusive_msc": 1704240000000,
+      "exposure": "SAME_HISTORICAL_DAY_NOT_INDEPENDENT_REDOWNLOAD",
+      "membership": null,
+      "roles": [
+        "NATIVE_DIAGNOSTIC_EXPOSED"
+      ],
+      "start_native_msc": 1704153600000
+    },
+    {
+      "dataset_id": "diag_abedbf590923",
+      "declared_native_date_range": null,
+      "domain_id": "XMGlobalSC-MT5 5|US30Cash|NATIVE_LABELS",
+      "end_native_exclusive_msc": 1704240000000,
+      "exposure": "SAME_HISTORICAL_DAY_NOT_INDEPENDENT_REDOWNLOAD",
+      "membership": null,
+      "roles": [
+        "NATIVE_DIAGNOSTIC_EXPOSED"
+      ],
+      "start_native_msc": 1704153600000
+    },
+    {
+      "dataset_id": "diag_ac5237f5f6b8",
+      "declared_native_date_range": null,
+      "domain_id": "XMGlobalSC-MT5 5|US30Cash|NATIVE_LABELS",
+      "end_native_exclusive_msc": 1704240000000,
+      "exposure": "SAME_APPROVED_DAY_DIAGNOSTIC_NOT_NEW_TRAIN",
+      "membership": null,
+      "roles": [
+        "NATIVE_DIAGNOSTIC_EXPOSED"
+      ],
+      "start_native_msc": 1704153600000
+    },
+    {
+      "dataset_id": "diag_e1c6b8638452",
+      "declared_native_date_range": null,
+      "domain_id": "XMGlobalSC-MT5 5|US30Cash|NATIVE_LABELS",
+      "end_native_exclusive_msc": 1704240000000,
+      "exposure": "SAME_APPROVED_DAY_DIAGNOSTIC_NOT_NEW_TRAIN",
+      "membership": null,
+      "roles": [
+        "NATIVE_DIAGNOSTIC_EXPOSED"
+      ],
+      "start_native_msc": 1704153600000
+    },
+    {
+      "activation": {
+        "after_capture_id": "e0d89c0b39344f1397125160cf6219bf",
+        "basis": "CAUSAL_ORDER_BETWEEN_AUTHENTICATED_PRE_TRANSMIT_AND_POST_RECEIVE_SERVER_TIMESTAMPS",
+        "before_capture_id": "3edc6536c9254739bf61805836075879",
+        "broker_event_utc_certified": false,
+        "estimate_ns": 1793471633341915536,
+        "half_width_ns": 358890332,
+        "local_clock_offset_or_drift_extrapolated": false,
+        "uncertainty": "CONDITIONAL_ON_REMOTE_SERVER_ADVERTISED_ERROR_NOT_METROLOGICAL_ABSOLUTE",
+        "utc_estimate": "2026-10-31T18:33:53.341916+00:00",
+        "utc_interval_ns": [
+          1793471632983025204,
+          1793471633700805868
+        ],
+        "utc_lower": "2026-10-31T18:33:52.983025+00:00",
+        "utc_upper": "2026-10-31T18:33:53.700806+00:00"
+      },
+      "dataset_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+      "membership": "RAW_AND_DERIVED_LINEAGE_TRACKED_LEGACY_NONOVERLAP_PENDING",
+      "roles": [
+        "ORIGINAL_PROSPECTIVE_QUARANTINE"
+      ]
+    },
+    {
+      "coverage_certified": false,
+      "dataset_id": "dbsnap_a5b5b6a8d777455d9cc63c8ca8690942",
+      "membership": "NOT_ADMITTED",
+      "roles": [
+        "SEPARATE_DATABASE_SNAPSHOT_TRIAL"
+      ]
+    }
+  ],
+  "protected_rows_read": 0,
+  "replay": {
+    "BASELINE_REPLAY": "PASS",
+    "censored_trades": 18,
+    "decision_arrivals": 3279,
+    "final_test_accessed": false,
+    "indexed_trades": 56,
+    "policy_fill": "STRICTLY_AFTER_DECISION_ARRIVAL_SEQUENCE",
+    "quote_record_bytes": 28,
+    "quote_records": 79211
+  },
+  "results": [
+    {
+      "censored": 9,
+      "censoring": "NO_ZERO_IMPUTATION_MFE_MAE_OF_CENSORED_PATHS_ARE_OBSERVED_LOWER_BOUNDS",
+      "closed_pnl_exit_order_drawdown_proxy": -393.19999999998254,
+      "completed": 19,
+      "completed_duration_observed_m5_bars": {
+        "max": 100,
+        "mean": 66.63157894736842,
+        "median": 69,
+        "min": 7,
+        "n": 19
+      },
+      "completed_pnl": {
+        "max": 240.0,
+        "mean": 24.848421052632865,
+        "median": 5.209999999999127,
+        "min": -185.75,
+        "n": 19
+      },
+      "completed_pnl_sum": 472.12000000002445,
+      "completed_win_rate": 0.5263157894736842,
+      "drawdown_scope": "CLOSED_VIRTUAL_PNL_EXIT_ORDER_NOT_MARK_TO_MARKET_OR_ACCOUNT_EQUITY",
+      "exit_reasons": {
+        "END_OF_DATA": 9,
+        "SL": 6,
+        "TIME_EXIT": 7,
+        "TP": 6
+      },
+      "mode": "FOLLOW",
+      "observed_mae_all": {
+        "max": 185.75,
+        "mean": 88.52107142857052,
+        "median": 84.43499999999767,
+        "min": 4.740000000005239,
+        "n": 28
+      },
+      "observed_mfe_all": {
+        "max": 240.0,
+        "mean": 108.06892857142884,
+        "median": 73.93500000000131,
+        "min": 0.0,
+        "n": 28
+      },
+      "original_signal_side": "ALL",
+      "profit_factor": 1.3857063494657302,
+      "scientific_inference": false,
+      "signals": 28,
+      "units": "US30CASH_PRICE_UNITS_NOT_CURRENCY"
+    },
+    {
+      "censored": 4,
+      "censoring": "NO_ZERO_IMPUTATION_MFE_MAE_OF_CENSORED_PATHS_ARE_OBSERVED_LOWER_BOUNDS",
+      "closed_pnl_exit_order_drawdown_proxy": -742.1499999999869,
+      "completed": 9,
+      "completed_duration_observed_m5_bars": {
+        "max": 100,
+        "mean": 57.55555555555556,
+        "median": 62,
+        "min": 16,
+        "n": 9
+      },
+      "completed_pnl": {
+        "max": 240.0,
+        "mean": 3.444444444446061,
+        "median": -21.349999999998545,
+        "min": -180.34999999999854,
+        "n": 9
+      },
+      "completed_pnl_sum": 31.000000000014552,
+      "completed_win_rate": 0.4444444444444444,
+      "drawdown_scope": "CLOSED_VIRTUAL_PNL_EXIT_ORDER_NOT_MARK_TO_MARKET_OR_ACCOUNT_EQUITY",
+      "exit_reasons": {
+        "END_OF_DATA": 4,
+        "SL": 4,
+        "TIME_EXIT": 2,
+        "TP": 3
+      },
+      "mode": "FOLLOW",
+      "observed_mae_all": {
+        "max": 180.34999999999854,
+        "mean": 92.29999999999843,
+        "median": 84.04999999999563,
+        "min": 6.630000000004657,
+        "n": 13
+      },
+      "observed_mfe_all": {
+        "max": 240.0,
+        "mean": 96.56846153846206,
+        "median": 70.65000000000146,
+        "min": 7.889999999999418,
+        "n": 13
+      },
+      "original_signal_side": "BUY",
+      "profit_factor": 1.0417705315637205,
+      "scientific_inference": false,
+      "signals": 13,
+      "units": "US30CASH_PRICE_UNITS_NOT_CURRENCY"
+    },
+    {
+      "censored": 5,
+      "censoring": "NO_ZERO_IMPUTATION_MFE_MAE_OF_CENSORED_PATHS_ARE_OBSERVED_LOWER_BOUNDS",
+      "closed_pnl_exit_order_drawdown_proxy": -366.18999999999505,
+      "completed": 10,
+      "completed_duration_observed_m5_bars": {
+        "max": 100,
+        "mean": 74.8,
+        "median": 97.0,
+        "min": 7,
+        "n": 10
+      },
+      "completed_pnl": {
+        "max": 240.0,
+        "mean": 44.11200000000099,
+        "median": 13.930000000000291,
+        "min": -185.75,
+        "n": 10
+      },
+      "completed_pnl_sum": 441.1200000000099,
+      "completed_win_rate": 0.6,
+      "drawdown_scope": "CLOSED_VIRTUAL_PNL_EXIT_ORDER_NOT_MARK_TO_MARKET_OR_ACCOUNT_EQUITY",
+      "exit_reasons": {
+        "END_OF_DATA": 5,
+        "SL": 2,
+        "TIME_EXIT": 5,
+        "TP": 3
+      },
+      "mode": "FOLLOW",
+      "observed_mae_all": {
+        "max": 185.75,
+        "mean": 85.24599999999967,
+        "median": 84.81999999999971,
+        "min": 4.740000000005239,
+        "n": 15
+      },
+      "observed_mfe_all": {
+        "max": 240.0,
+        "mean": 118.03600000000006,
+        "median": 123.72000000000116,
+        "min": 0.0,
+        "n": 15
+      },
+      "original_signal_side": "SELL",
+      "profit_factor": 1.91539562970806,
+      "scientific_inference": false,
+      "signals": 15,
+      "units": "US30CASH_PRICE_UNITS_NOT_CURRENCY"
+    },
+    {
+      "censored": 9,
+      "censoring": "NO_ZERO_IMPUTATION_MFE_MAE_OF_CENSORED_PATHS_ARE_OBSERVED_LOWER_BOUNDS",
+      "closed_pnl_exit_order_drawdown_proxy": -1052.1599999999817,
+      "completed": 19,
+      "completed_duration_observed_m5_bars": {
+        "max": 100,
+        "mean": 68.10526315789474,
+        "median": 79,
+        "min": 11,
+        "n": 19
+      },
+      "completed_pnl": {
+        "max": 240.0,
+        "mean": -52.58210526315662,
+        "median": -62.69999999999709,
+        "min": -184.65000000000146,
+        "n": 19
+      },
+      "completed_pnl_sum": -999.0599999999758,
+      "completed_win_rate": 0.3157894736842105,
+      "drawdown_scope": "CLOSED_VIRTUAL_PNL_EXIT_ORDER_NOT_MARK_TO_MARKET_OR_ACCOUNT_EQUITY",
+      "exit_reasons": {
+        "END_OF_DATA": 9,
+        "SL": 9,
+        "TIME_EXIT": 7,
+        "TP": 3
+      },
+      "mode": "INVERT",
+      "observed_mae_all": {
+        "max": 184.65000000000146,
+        "mean": 104.17071428571373,
+        "median": 104.28499999999985,
+        "min": 2.75,
+        "n": 28
+      },
+      "observed_mfe_all": {
+        "max": 240.0,
+        "mean": 90.27607142857258,
+        "median": 75.80000000000291,
+        "min": 0.0,
+        "n": 28
+      },
+      "original_signal_side": "ALL",
+      "profit_factor": 0.4549620569445957,
+      "scientific_inference": false,
+      "signals": 28,
+      "units": "US30CASH_PRICE_UNITS_NOT_CURRENCY"
+    },
+    {
+      "censored": 4,
+      "censoring": "NO_ZERO_IMPUTATION_MFE_MAE_OF_CENSORED_PATHS_ARE_OBSERVED_LOWER_BOUNDS",
+      "closed_pnl_exit_order_drawdown_proxy": -660.3399999999965,
+      "completed": 9,
+      "completed_duration_observed_m5_bars": {
+        "max": 100,
+        "mean": 70.66666666666667,
+        "median": 79,
+        "min": 11,
+        "n": 9
+      },
+      "completed_pnl": {
+        "max": 240.0,
+        "mean": -25.28222222222151,
+        "median": -60.849999999998545,
+        "min": -184.65000000000146,
+        "n": 9
+      },
+      "completed_pnl_sum": -227.5399999999936,
+      "completed_win_rate": 0.3333333333333333,
+      "drawdown_scope": "CLOSED_VIRTUAL_PNL_EXIT_ORDER_NOT_MARK_TO_MARKET_OR_ACCOUNT_EQUITY",
+      "exit_reasons": {
+        "END_OF_DATA": 4,
+        "SL": 3,
+        "TIME_EXIT": 4,
+        "TP": 2
+      },
+      "mode": "INVERT",
+      "observed_mae_all": {
+        "max": 184.65000000000146,
+        "mean": 101.41076923076896,
+        "median": 97.22000000000116,
+        "min": 13.389999999999418,
+        "n": 13
+      },
+      "observed_mfe_all": {
+        "max": 240.0,
+        "mean": 103.6900000000012,
+        "median": 76.95000000000437,
+        "min": 0.0,
+        "n": 13
+      },
+      "original_signal_side": "BUY",
+      "profit_factor": 0.6844936840499797,
+      "scientific_inference": false,
+      "signals": 13,
+      "units": "US30CASH_PRICE_UNITS_NOT_CURRENCY"
+    },
+    {
+      "censored": 5,
+      "censoring": "NO_ZERO_IMPUTATION_MFE_MAE_OF_CENSORED_PATHS_ARE_OBSERVED_LOWER_BOUNDS",
+      "closed_pnl_exit_order_drawdown_proxy": -931.4999999999854,
+      "completed": 10,
+      "completed_duration_observed_m5_bars": {
+        "max": 100,
+        "mean": 65.8,
+        "median": 77.0,
+        "min": 20,
+        "n": 10
+      },
+      "completed_pnl": {
+        "max": 240.0,
+        "mean": -77.15199999999822,
+        "median": -180.04999999999563,
+        "min": -180.34999999999854,
+        "n": 10
+      },
+      "completed_pnl_sum": -771.5199999999822,
+      "completed_win_rate": 0.3,
+      "drawdown_scope": "CLOSED_VIRTUAL_PNL_EXIT_ORDER_NOT_MARK_TO_MARKET_OR_ACCOUNT_EQUITY",
+      "exit_reasons": {
+        "END_OF_DATA": 5,
+        "SL": 6,
+        "TIME_EXIT": 3,
+        "TP": 1
+      },
+      "mode": "INVERT",
+      "observed_mae_all": {
+        "max": 180.34999999999854,
+        "mean": 106.56266666666585,
+        "median": 129.22000000000116,
+        "min": 2.75,
+        "n": 15
+      },
+      "observed_mfe_all": {
+        "max": 240.0,
+        "mean": 78.65066666666777,
+        "median": 74.65000000000146,
+        "min": 0.0,
+        "n": 15
+      },
+      "original_signal_side": "SELL",
+      "profit_factor": 0.3060747243258868,
+      "scientific_inference": false,
+      "signals": 15,
+      "units": "US30CASH_PRICE_UNITS_NOT_CURRENCY"
+    }
+  ],
+  "scientific_authorization_requested": false,
+  "signal_counts": {
+    "BUY": 13,
+    "SELL": 15
+  },
+  "training_executed": false
+}
