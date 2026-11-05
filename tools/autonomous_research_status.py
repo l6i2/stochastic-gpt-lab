@@ -116,6 +116,16 @@ def build(root=ROOT):
             signals=review['signal_counts'],
             historical_independence_demonstrated=False,
             review_scope='EXPOSED_DIAGNOSTIC_ONLY')
+    cf_path='outputs/us30cash_m5_native_observations/status.json'
+    if (root/cf_path).is_file():
+        cf=read(cf_path)
+        age=(now-datetime.fromisoformat(cf['clock']['host_utc_label'])).total_seconds()
+        if age<0 or age>120:
+            cf=dict(cf,NEW_STUDY_DATASET_ADMISSION='FAIL',monitor_error='CF_STATUS_STALE_OR_FUTURE')
+        result['new_study_cf']=cf
+        result['NEW_STUDY_DATASET_ADMISSION']=cf['NEW_STUDY_DATASET_ADMISSION']
+        result['non_data_blockers']=['CF_RESERVATION_SCOPE_DECISION_PENDING','CF_CALENDAR_AND_CAUSAL_EVIDENCE_PENDING','SPECIFIC_TRAINING_GRANT_REQUIRED']
+        result['remaining_blockers']=[r for r in result['remaining_blockers'] if r!='NO_AUTHORIZATION_TO_ADMIT_DATABASE_SNAPSHOT_TRIAL']+['NEW_CF_STUDY_DATASET_ADMISSION_PENDING']
     return result
 
 def main():

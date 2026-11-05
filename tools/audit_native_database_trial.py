@@ -16,7 +16,7 @@ def audit(out,base=None):
     if out.exists():raise ValueError('NO_OVERWRITE')
     if not (out.is_relative_to(ROOT/'outputs') or out.is_relative_to(ROOT/'research/studies')):raise ValueError('OUTPUT_NAMESPACE_REFUSED')
     base=Path(base).resolve() if base else ROOT/'outputs/native_database_snapshots_v1'
-    if base not in ((ROOT/'outputs/native_database_snapshots_v1').resolve(),(ROOT/'outputs/six_alternatives_experiment').resolve()):raise ValueError('UNAUTHORIZED_TRIAL_NAMESPACE')
+    if base not in tuple((ROOT/'outputs'/name).resolve() for name in ('native_database_snapshots_v1','six_alternatives_experiment','us30cash_m5_native_observations')):raise ValueError('UNAUTHORIZED_TRIAL_NAMESPACE')
     pointer=json.loads((base/'current.json').read_text())
     if Path(pointer['capture_id']).name!=pointer['capture_id']:raise ValueError('INVALID_CAPTURE_ID')
     folder=base/pointer['capture_id']

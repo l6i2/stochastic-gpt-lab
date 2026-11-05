@@ -15,13 +15,30 @@ New-Item -ItemType Directory -Path (Join-Path $base 'recovery_events') -Force | 
 $config=Join-Path $base 'xm_readonly_restart.ini'
 $expected="[Experts]`r`nEnabled=1`r`nAllowLiveTrading=0`r`nAllowDllImport=0`r`n[Charts]`r`nProfileLast=Default`r`n"
 if(Test-Path -LiteralPath $config){if([IO.File]::ReadAllText($config) -ne $expected){throw 'RECOVERY_CONFIG_CHANGED'}}else{[IO.File]::WriteAllText($config,$expected)}
-$nts=$null;$receipt=$null;$lastSnapshotWatch=[datetime]::MinValue;$lastDashboard=[datetime]::MinValue;$lastPipeline=[datetime]::MinValue;$lastReceipt=[datetime]::MinValue;$lastNts=[datetime]::MinValue;$lastLaunch=[datetime]::MinValue;$prior=''
+$nts=$null;$receipt=$null;$lastCF=[datetime]::MinValue;$lastSnapshotWatch=[datetime]::MinValue;$lastDashboard=[datetime]::MinValue;$lastPipeline=[datetime]::MinValue;$lastReceipt=[datetime]::MinValue;$lastNts=[datetime]::MinValue;$lastLaunch=[datetime]::MinValue;$prior=''
 try{
  do {
     $processes=@(Get-CimInstance Win32_Process)
     $xm=@($processes | Where-Object {$_.ExecutablePath -eq $terminal})
     $watch=@($processes | Where-Object {$_.Name -eq 'powershell.exe' -and $_.CommandLine -like ('*"'+(Join-Path $repo 'tools\new_capture_watchdog.ps1')+'"*')})
     $actions=@()
+    $cfBase=Join-Path $repo 'outputs\us30cash_m5_native_observations'
+    $cfEnable=Join-Path $cfBase 'enabled.json'
+    if((Test-Path -LiteralPath $cfEnable) -and (Get-Content -LiteralPath $cfEnable -Raw|ConvertFrom-Json).enabled){
+        $cfScript=Join-Path $repo 'tools\cf_study_station.py'
+        $cf=@($processes|Where-Object {$_.Name -eq 'pythonw.exe' -and $_.CommandLine -like ('*"'+$cfScript+'" --serve*')})
+        $cfStatus=Join-Path $cfBase 'status.json'
+        if($cf.Count -gt 0 -and (Test-Path -LiteralPath $cfStatus) -and ([datetime]::UtcNow-(Get-Item -LiteralPath $cfStatus).LastWriteTimeUtc).TotalSeconds -ge 300){
+            $parents=@($cf|ForEach-Object {$_.ParentProcessId})
+            $leaves=@($cf|Where-Object {$_.ProcessId -notin $parents -and ([datetime]::UtcNow-$_.CreationDate.ToUniversalTime()).TotalSeconds -ge 300})
+            if($leaves.Count -gt 0){$actions+='RECOVER_STALLED_CF_CLIENT_NEW_EPOCH';if(!$DryRun){foreach($leaf in $leaves){Stop-Process -Id $leaf.ProcessId -Force -ErrorAction SilentlyContinue}}}
+        }
+        if($cf.Count -eq 0 -and ([datetime]::UtcNow-$lastCF).TotalSeconds -ge 60){
+            $actions+='START_AUTHORIZED_CF_QUARANTINE_PRODUCER'
+            if(!$DryRun){Start-Process (Join-Path $repo '.venv\Scripts\pythonw.exe') -ArgumentList ('"'+$cfScript+'" --serve') -WorkingDirectory $repo -WindowStyle Hidden -RedirectStandardOutput (Join-Path $cfBase 'producer.stdout') -RedirectStandardError (Join-Path $cfBase 'producer.stderr')|Out-Null}
+            $lastCF=[datetime]::UtcNow
+        }
+    }
     if($xm.Count -eq 1){
         $capturePointer=Join-Path $repo 'outputs\new_native_studies\us30cash_m5_native_20261030_01\current_capture.json'
         if(Test-Path -LiteralPath $capturePointer){

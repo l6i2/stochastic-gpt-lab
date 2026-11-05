@@ -1,0 +1,39 @@
+{
+  "definitions_sha256": "608d70cd2fbe2afeec5b3b2de62741ae80c99fbb6d84dd42542a9a638373bfbe",
+  "features": [
+    "stoch_k",
+    "delta_k_1",
+    "ATR",
+    "relative_volume_20",
+    "ha_direction",
+    "range_to_ATR"
+  ],
+  "forbidden": [
+    "UTC",
+    "NY_SESSION",
+    "IDS",
+    "TIMESTAMPS",
+    "ENTRY_QUOTES",
+    "SPREAD_AT_ENTRY",
+    "TARGETS",
+    "FUTURE_OUTCOMES"
+  ],
+  "missing_policy": "NO_IMPUTATION_NO_FIT_WITH_MISSING_PREDICTORS_FIXED_FOLLOW_FALLBACK_REPORT_ALL",
+  "models": [
+    {
+      "C": 1,
+      "class_weight": null,
+      "family": "LOGISTIC_REGRESSION_L2",
+      "max_iter": 1000,
+      "seed": 20261030,
+      "separate_original_sides": [
+        "BUY",
+        "SELL"
+      ],
+      "solver": "lbfgs"
+    }
+  ],
+  "schema_version": "native-study-whitelist/1.0",
+  "study_id": "US30CASH_M5_NATIVE_20261030_01",
+  "training_authorized": false
+}

@@ -1,0 +1,10 @@
+{
+  "chain_head": "bf0f923e50cb929bf36d51fe6d4433c7336efc2be34e05d2374e78ac292aa47c",
+  "files": {
+    "checkpoint_receipt.json": "eb4b9f17d00ccf7424a9bf7d8546c2111621ee7c6c975113b399d49d64f3a824",
+    "pairs.json": "b66a3736a2e4a769a7794a806f324921127338d53c4dacbbf6335d3739c506a1",
+    "summary.json": "fdf47c48a7e1b96ac843a3cb8bf30f19b54b8132cda66035d77268d0a8a601eb"
+  },
+  "source_sha256": "2ea8a798c3bcc73dfad73cfb1717e53bbb1019d5266a75e1546f36570496c671",
+  "verified_records": 839
+}

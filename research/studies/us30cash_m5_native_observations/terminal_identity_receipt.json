@@ -1,0 +1,14 @@
+{
+  "account_identity_redacted": true,
+  "chart_mode": 0,
+  "connected": true,
+  "observed_host_utc": "2026-11-05T14:00:53.498680+00:00",
+  "orders_sent": false,
+  "other_project_scope": "NO_ACTIONS_TARGETED_OTHER_PROJECT_NOT_A_FULL_EXTERNAL_FILESYSTEM_AUDIT",
+  "other_project_touched": false,
+  "server": "XMGlobalSC-MT5 5",
+  "symbol": "US30Cash",
+  "terminal_data_folder_id": "20C285FE08971A9A2E814AAC44AFC9D2",
+  "terminal_trade_allowed": false,
+  "tick_size": 0.01
+}

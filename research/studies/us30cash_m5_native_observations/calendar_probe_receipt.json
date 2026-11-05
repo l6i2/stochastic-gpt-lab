@@ -1,0 +1,14 @@
+{
+  "approved_transition_receipts": [],
+  "compile_log_sha256": "50d237d40914de332e8abd389b0aed797feead12a7429b64d34da3e8286a6f1a",
+  "compile_result": "0 errors, 0 warnings",
+  "current_calendar": "PARTIAL",
+  "ex5_sha256": "d62e5825b3fd14c317ef0224916816f75349abe8ea80f7ec27bdf81726ecb601",
+  "execution_seen_in_terminal_journal": true,
+  "holiday_exception": "UNKNOWN",
+  "installed_source_sha256": "ba10164dcde167e8f9d3c027a97a7f1fdcce25273d74d801332dc798d3fafde0",
+  "reason": "FRESH_PROBE_OUTPUT_NOT_YET_RECOVERED_DO_NOT_INFER_CURRENT_SCHEDULE_FROM_COMPILATION",
+  "results_recovered_and_hash_bound": false,
+  "session_transition_certified": false,
+  "source_sha256": "ba10164dcde167e8f9d3c027a97a7f1fdcce25273d74d801332dc798d3fafde0"
+}

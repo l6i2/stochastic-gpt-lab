@@ -1,0 +1,41 @@
+{
+  "processes": [
+    {
+      "Id": 16256,
+      "WorkingSet64": 212992,
+      "CPU": 0.046875
+    },
+    {
+      "Id": 14372,
+      "WorkingSet64": 11980800,
+      "CPU": 6.515625
+    }
+  ],
+  "tasks": [
+    {
+      "TaskName": "StochasticGPTLab_PC_A_ProspectiveUTC_v1",
+      "State": 4
+    },
+    {
+      "TaskName": "StochasticGPTLab_PC_A_RawQuarantine_v1",
+      "State": 4
+    },
+    {
+      "TaskName": "StochasticGPTLab_PC_A_RecoveryGuardian_v1",
+      "State": 4
+    }
+  ],
+  "guardian": {
+    "capture_watchdog_count": 1,
+    "no_backfill": true,
+    "scope": "EXACT_XM_AND_OWN_WATCHDOG_NTS",
+    "live_trading": false,
+    "recovery_pid": 13612,
+    "xm_process_count": 1,
+    "dry_run": false,
+    "actions": [],
+    "host_utc": "2026-11-05T14:01:05.1432444Z",
+    "requires_user_logon": true
+  },
+  "physical_restart_proven": false
+}

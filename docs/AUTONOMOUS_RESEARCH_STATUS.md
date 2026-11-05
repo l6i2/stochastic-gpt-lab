@@ -218,3 +218,41 @@ suficientes con semillas, cobertura y causalidad verificadas. El dataset sigue
 sin admisión y con hash nulo. El protocolo de entrenamiento planifica hasta ocho
 ajustes y autoriza cero. El productor original, worker, NTS y guardian mantienen
 su supervisión programada. Los conjuntos protegidos conservan sus restricciones.
+
+
+## Estudio C + F activado — 5 de noviembre de 2026, Ecuador
+
+Contrato nuevo `CF_NATIVE_OBSERVATIONS_CONTRACT_V1_20261105`, autorizado
+expresamente; contratos anteriores intactos. Productor científico separado
+`cfprod_5c64f0781dc148e5896391b1492ba144`, captura
+`dbsnap_e35f302e858e4b0a82c73821bef5667b`.
+
+Corte operativo auditado: **17 M1, 2 M5 reales, 2 M5 consecutivas técnicas,
+0 rechazadas**. Paridad exacta M1/M5 en ambas; prefijo preservado entre auditorías,
+con avance de 1 a 2 M5. Dos inicios de proceso registrados; el reinicio técnico
+abre epoch 2 sin backfill, conserva primera observación y datos de epoch 1.
+Warmup técnico 2/350; warmup científicamente admitido 0/350. BUY=0, SELL=0,
+primeras señales 0/800, barras posteriores 0/100, evaluables 0/200,
+BUY/SELL evaluables 0/80 y folds evaluables 0/3 por lado.
+
+NEW_STUDY_DATASET_ADMISSION=WAITING_FOR_EVIDENCE. Membership de artefactos
+propios trazado; exclusividad y no solapamiento aún no demostrados frente a
+reservas antiguas con extremo desconocido. Una única solicitud científica está en
+`research/studies/us30cash_m5_native_observations/RESERVATION_SCOPE_DECISION_REQUEST.md`.
+No se aplicó la decisión. Calendario PARTIAL, ninguna transición entre sesiones
+certificada. Semillas propias y paridad nativa iATR pendientes. La disponibilidad
+física registrada precede al uso offline; no prueba la entrada original en vivo
+ni la generación física UTC. CAUSAL_AUDIT global permanece FAIL sin reinterpretarlo.
+
+DATASET_HASH=null; datos científicos admitidos=0. Entrenamiento, scoring,
+Discovery Validation, Historical Holdout, Final Test y DEMO siguen cerrados.
+LIVE_TRADING=false y terminal_trade_allowed=false verificado. La automatización
+existente mantiene adquisición, checkpoints, NTS, estado y recuperación sin
+backfill. No se reinició XM ni Windows. La prueba de reinicio físico sigue futura.
+
+56 tests relevantes PASS. Informe y recibos reproducibles:
+`docs/NEW_STUDY_C_F_ACTIVATION.md` y
+`research/studies/us30cash_m5_native_observations/operational_receipt.json`.
+El estado vivo puede avanzar después de este corte; no se presenta como dataset
+sellado. Próximo estado: seguir capturando en cuarentena, reunir evidencia de
+calendario y resolver el alcance futuro de reservas antes de admisión.

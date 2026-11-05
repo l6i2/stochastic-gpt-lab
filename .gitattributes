@@ -57,3 +57,5 @@ mt5/StochasticBarDecisionResearchEA.mq5 -text
 research/hypotheses_round2/manifest.json -text
 
 research/studies/prospective_progress_20261102_v3/** -text whitespace=cr-at-eol
+
+research/studies/us30cash_m5_native_observations/inherited_* -text whitespace=cr-at-eol

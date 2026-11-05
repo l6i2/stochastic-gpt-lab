@@ -1,0 +1,38 @@
+{
+  "base_code_head": "6d94a97a319e40bcc1fc1260b92919c1b9acbde2",
+  "excluded_from_index": [
+    "evidence_index.json"
+  ],
+  "files": {
+    "RESERVATION_SCOPE_DECISION_REQUEST.md": "d615833f70ce4bae334ae33a80e15a11a8be6d411c0841360050e54a9fd41e66",
+    "activation_clock_evidence.json": "65700f27db602d8b3cac520b46f36589259a773535d8ba75e550e61da7bf3d53",
+    "audit_before_second.json": "268a0bd010ec807034eed44cba4c12c3e1f44d06e8945446b3069a39fc3954a3",
+    "audit_before_second_complete.json": "2032afe07d8c6f72a30ebf7a5b79a97c8667a697ff1036213e39dde2776564eb",
+    "audit_final.json": "7d3f5e1394ab4de6a375752c56675d9a52a9d0079450a167389c3accb1162c52",
+    "audit_final_complete.json": "aefc642e98c01299bc9a0e4a1c0eaf393c34eb36735bcc3c38ce24ba124ed3be",
+    "audit_first.json": "fdf47c48a7e1b96ac843a3cb8bf30f19b54b8132cda66035d77268d0a8a601eb",
+    "audit_first_complete.json": "e5069fc4babcd63b1bdc0bb7ecc8795bc4b251fe5d816ddc114074da9dd70bfc",
+    "authorization.json": "210a08cc1298cc8580397c0f858e0df868dcaf42fc8b2531872f073dbdb1eda0",
+    "automation_receipt.json": "e3f9fff5c30fcd0a2f43e3d31c9a0f8b9e92b209e99383603114fbcb6cfeab79",
+    "calendar_probe_receipt.json": "166b7c19204ecdaa839ebe17c7504247862f7bc45e2f756fae5359dd47a8208f",
+    "contract.json": "2082db65062b1f744d8797fefffe34fa2d912cbb4e41fb0cacfd2fd6ece9c532",
+    "contract_sources.json": "df5b9fc0ee32d6c65da7d7f293a5bc7329657d95d7850b2ac14785eeb5986c74",
+    "implementation_v2.json": "f31495e1169e202b948644d029cfd5ab7478ff2d98819b4067e14004a8ba2d3f",
+    "inherited_PROTOCOL_ES.md": "ce5ab48ab95cbf4d6c07cb9b1cc9a13ab7f14ab7d14792b494ae2d19a21d45d9",
+    "inherited_feature_model_whitelist.json": "7d95930599e9ffa5b98a4f89c99e2862afcb47730c238c66052e6024ef703ec8",
+    "inherited_statistical_protocol.json": "0824cbd3e4afd44720dfb782b92ce29b110b140d791641b7e901dd4dcd5db230",
+    "inherited_temporal_dependencies.json": "608d70cd2fbe2afeec5b3b2de62741ae80c99fbb6d84dd42542a9a638373bfbe",
+    "operational_receipt.json": "92d00095d94a4f948754e2f59d83b2e80fed27c654f644ab68979c7619f065bf",
+    "origin_manifest.json": "1f16c7f15ec4e3ed63443db6205be25bcb1f01f5ed22564aa1b95d4337b405a6",
+    "protocol_binding.json": "7007df5638bbf64db9828a909758e1f02de85bcaf6d2d8b48e4aa0d38a8920fd",
+    "role_ledger.json": "76381382fa4b149fcfadce2655cdfd379a1c90735e39190a01aac478756e48e3",
+    "runtime_status.json": "427cfc7bca1a0380076288637e07812a41eec2da1c61b3a0f16dfb56c97992dc",
+    "terminal_identity_receipt.json": "f5d6c0a0339bf967cfb2e06281e55735cf53cae909a758364ff65d8f8d92dba3",
+    "tests.log": "3cc78b9d1dcda5ba92fbed3a25db2f8e0f1ebd33cdaba701f269bb9f2b6861e6"
+  },
+  "live_trading": false,
+  "protected_scoring": false,
+  "schema_version": 1,
+  "scope": "SANITIZED_BOUNDED_C_F_ACTIVATION_EVIDENCE_NO_DATASET_ADMISSION",
+  "training_executed": false
+}
