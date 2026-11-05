@@ -1,3 +1,12 @@
+> Última verificación en corriente: 96 M1 / 17 M5, 2/350 consecutivas actuales.
+> Oráculo vinculado a la semilla propia; 21 pruebas focalizadas PASS. Sin admisión
+> ni reinicios de captura en esta continuación. Véase `ac_followup_20261105/interval_progress`.
+
+> Continuación autorizada: el corte exclusivo y las identidades se conservan.
+> En la comprobación con corriente: 91 M1, 16 M5 acumuladas y 1 M5 consecutiva
+> actual; ningún dato admitido. La continuidad entre sesiones sigue esperando
+> evidencia, no se presume. Véase el informe consolidado y `ac_followup_20261105`.
+
 > Actualización integral: el corte exclusivo sigue aplicado. El acumulado auditado
 > es 72 M1 / 12 M5, pero el contexto actual es 0/350 tras suspensiones verificadas.
 > La versión de continuidad v3, monitor incremental, ensayos de admisión y oráculo

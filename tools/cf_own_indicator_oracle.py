@@ -51,7 +51,7 @@ def run():
         scripts=target/'MQL5/Scripts/ProspectivePipeline'/nonce;scripts.mkdir(parents=True)
         source=scripts/'ProspectiveIndicatorOracle.mq5';source.write_text(build_source(prefix,nonce),encoding='utf8')
         shutil.copyfile(ROOT/'mt5/HeikinAshiCore.mqh',scripts/'HeikinAshiCore.mqh')
-        once(folder/'input_manifest.json',dict(capture_id=prefix['capture_id'],epoch=prefix['epoch'],checkpoint=prefix['state_hash'],native_m5=len(prefix['native_m5']),native_m1=len(prefix['native_m1']),source_sha256=sha(source),retained_oracle=proof,origin='OWN_POST_CUT_OBSERVED_PREFIX_CLONED_ONLY_IN_ISOLATED_DIAGNOSTIC_SYMBOL',synthetic_bars_added=0))
+        once(folder/'input_manifest.json',dict(capture_id=prefix['capture_id'],epoch=prefix['epoch'],own_seed_bar_hash=prefix['seeds']['seed_bar_hash'],checkpoint=prefix['state_hash'],native_m5=len(prefix['native_m5']),native_m1=len(prefix['native_m1']),source_sha256=sha(source),retained_oracle=proof,origin='OWN_POST_CUT_OBSERVED_PREFIX_CLONED_ONLY_IN_ISOLATED_DIAGNOSTIC_SYMBOL',synthetic_bars_added=0))
         startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
         log=folder/'compile.log';editor=Path('C:/Program Files/XM Global SC MT5 Terminal/metaeditor64.exe')
         subprocess.run(f'"{editor}" /compile:"{source}" /log:"{log}"',startupinfo=startup,timeout=90)
@@ -80,6 +80,7 @@ def run():
             if int(native['ha_ready'])!=(values['ha_direction'] is not None) or values['ha_direction'] is not None and int(native['ha_direction'])!=values['ha_direction']:ha_mismatch+=1
         if main_error>1e-10 or ha_mismatch:raise ValueError('OWN_STOCH_OR_HA_PARITY_FAILED')
         result=dict(status='PASS_OWN_PREFIX_NATIVE_DIAGNOSTIC_ONLY',capture_id=prefix['capture_id'],epoch=prefix['epoch'],native_m5=n,ATR_compared=checked,ATR_PARITY='PASS_EXACT',HA_PARITY='PASS_EXACT' if n>=276 else 'SEED_BOUND_READY_VALUES_WAITING_276',MAIN_K_PARITY='PASS_RETAINED_BOUND',native_export_sha256=sha(output),input_manifest_sha256=sha(folder/'input_manifest.json'),source_sha256=sha(source),original_terminals_preserved=all(psutil.pid_exists(pid) for pid in original),orders_sent=0,training_executed=False,dataset_admitted=False)
+        result['own_seed_bar_hash']=prefix['seeds']['seed_bar_hash']
         once(folder/'result.json',result);return dict(folder=str(folder),**result)
 
 

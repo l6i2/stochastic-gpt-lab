@@ -1,3 +1,14 @@
+> Último recibo de continuidad en corriente: 96 M1, 17 M5 acumuladas y
+> 2/350 consecutivas del contexto actual. Cero datos admitidos. Oráculo ligado a semilla,
+> 21 pruebas focalizadas PASS. Recibos: `ac_followup_20261105/interval_progress/`.
+
+> Continuación C+F en corriente: recibo de las 13:35 Ecuador verifica **91 M1 / 16 M5**,
+> con **1/350** en el contexto actual y cero admisión científica. El gap de las
+> 13:28 está excluido, con causa subyacente no demostrada; no se sumaron epochs.
+> Oráculo automático endurecido y 18 pruebas focalizadas PASS, sin reiniciar XM
+> ni el capturador. [Actualización consolidada](CF_TRAINING_READINESS_FINAL.md).
+> Recibos: `research/studies/us30cash_m5_native_observations/ac_followup_20261105/`.
+
 > Revisión integral C+F vigente — 05/11/2026, Ecuador.
 > Acumulado auditado: 72 M1 y 12 M5 verificadas; contexto actual
 > 0/350, científico 0/350. Las suspensiones reales segmentaron el dataset.

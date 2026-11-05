@@ -1,0 +1,22 @@
+test_ha_milestone_requires_actual_ha_parity (tests.test_cf_oracle_jobs.OracleJobTests.test_ha_milestone_requires_actual_ha_parity) ... ok
+test_native_success_requires_same_capture_epoch_and_no_authority_expansion (tests.test_cf_oracle_jobs.OracleJobTests.test_native_success_requires_same_capture_epoch_and_no_authority_expansion) ... ok
+test_partial_output_distinguishes_running_from_dead (tests.test_cf_oracle_jobs.OracleJobTests.test_partial_output_distinguishes_running_from_dead) ... ok
+test_resource_deferral_is_not_native_parity (tests.test_cf_oracle_jobs.OracleJobTests.test_resource_deferral_is_not_native_parity) ... ok
+test_explicit_interruption_excludes_orphan_queries_without_blocking_future (tests.test_cf_quality_monitor.QualityMonitorTests.test_explicit_interruption_excludes_orphan_queries_without_blocking_future) ... ok
+test_repeat_skips_verified_prefix_and_wrong_cursor_fails (tests.test_cf_quality_monitor.QualityMonitorTests.test_repeat_skips_verified_prefix_and_wrong_cursor_fails) ... ok
+test_short_realistic_capture_does_not_invent_eta_or_admission (tests.test_cf_maturity.MaturityTests.test_short_realistic_capture_does_not_invent_eta_or_admission) ... ok
+test_thresholds_remain_independent_and_never_negative (tests.test_cf_maturity.MaturityTests.test_thresholds_remain_independent_and_never_negative) ... ok
+test_absent_grant_rejected_before_any_file_access (tests.test_cf_admission_review.CfAdmissionRehearsalTests.test_absent_grant_rejected_before_any_file_access) ... ok
+test_altered_hash_rejected (tests.test_cf_admission_review.CfAdmissionRehearsalTests.test_altered_hash_rejected) ... ok
+test_bridge_without_calendar_is_rejected (tests.test_cf_admission_review.CfAdmissionRehearsalTests.test_bridge_without_calendar_is_rejected) ... ok
+test_complete_synthetic_packet_never_admits_or_trains (tests.test_cf_admission_review.CfAdmissionRehearsalTests.test_complete_synthetic_packet_never_admits_or_trains) ... ok
+test_incomplete_seeds_and_immature_dataset_cannot_pass (tests.test_cf_admission_review.CfAdmissionRehearsalTests.test_incomplete_seeds_and_immature_dataset_cannot_pass) ... ok
+test_malformed_packet_fails_closed (tests.test_cf_admission_review.CfAdmissionRehearsalTests.test_malformed_packet_fails_closed) ... ok
+test_native_and_physical_offline_leakage_rejected (tests.test_cf_admission_review.CfAdmissionRehearsalTests.test_native_and_physical_offline_leakage_rejected) ... ok
+test_retroactive_import_wrong_membership_overlap_and_precut_rejected (tests.test_cf_admission_review.CfAdmissionRehearsalTests.test_retroactive_import_wrong_membership_overlap_and_precut_rejected) ... ok
+test_unknown_real_evidence_is_not_invented (tests.test_cf_admission_review.CfAdmissionRehearsalTests.test_unknown_real_evidence_is_not_invented) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.389s
+
+OK

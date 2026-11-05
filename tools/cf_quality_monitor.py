@@ -15,26 +15,76 @@ from controller.cf_feature_review import seed_check,retained_oracle
 from controller.prospective_processor import initial_state
 
 
+def oracle_job_status(folder,expected,process_running):
+    """A dead/failed oracle must never be presented indefinitely as running."""
+    folder=Path(folder)
+    try:result=json.loads((folder/'stdout.json').read_text())
+    except (ValueError,FileNotFoundError):
+        return dict(status='RUNNING' if process_running else 'FAILED_NO_VALID_RESULT',
+                    native_parity_verified=False,training_executed=False)
+    if result.get('status')=='PASS_OWN_PREFIX_NATIVE_DIAGNOSTIC_ONLY':
+        valid=(all(result.get(k)==expected[k] for k in ('capture_id','epoch','own_seed_bar_hash'))
+               and result.get('native_m5',0)>=expected['milestone']
+               and result.get('ATR_PARITY')=='PASS_EXACT' and result.get('MAIN_K_PARITY')=='PASS_RETAINED_BOUND'
+               and (expected['milestone']<276 or result.get('HA_PARITY')=='PASS_EXACT')
+               and result.get('original_terminals_preserved') is True and result.get('orders_sent')==0
+               and result.get('training_executed') is False and result.get('dataset_admitted') is False)
+        return dict(status='PASS_OWN_PREFIX_NATIVE_DIAGNOSTIC_ONLY' if valid else 'FAILED_RESULT_SCOPE',
+                    native_parity_verified=valid,result=result,training_executed=False)
+    retryable=result.get('status') in ('WAITING_FOR_RESOURCES','WAITING_FOR_DATA')
+    return dict(status=result.get('status','FAILED_RESULT_SCHEMA'),native_parity_verified=False,
+                retryable_on_new_data=retryable,result=result,training_executed=False)
+
+
+def oracle_process_running(pid,script):
+    import psutil
+    if not pid:return False
+    try:return str(script).lower() in ' '.join(psutil.Process(pid).cmdline()).lower()
+    except psutil.NoSuchProcess:return False
+    except psutil.AccessDenied:return True  # Do not create a duplicate on uncertainty.
+
+
 def native_oracle_milestone(root,base,status):
     """Dispatch bounded work only on new seed milestones; never retry same input."""
     import psutil,subprocess,os
     n=status['technical_warmup']
     milestone=next((limit for limit in (350,276,15) if n>=limit),None)
     if milestone is None:return dict(status='WAITING_FOR_15_OWN_M5',own_bars=n,native_terminal_launched=False)
+    if not status.get('own_seed_bar_hash'):raise ValueError('ORACLE_OWN_SEED_NOT_BOUND')
     script=root/'tools/cf_own_indicator_oracle.py'
-    key=seal([status['capture_id'],status['epoch'],milestone,sha(script),sha(root/'controller/cf_feature_review.py')])
-    folder=base/'native_oracle_jobs'/key;request=folder/'request.json'
+    key=seal([status['capture_id'],status['epoch'],status['own_seed_bar_hash'],milestone,sha(script),sha(root/'controller/cf_feature_review.py')])
+    stage=base/'native_oracle_jobs'/key;folder=stage;request=folder/'request.json'
+    if (stage/'verified_result.json').exists():return json.loads((stage/'verified_result.json').read_text())
+    if (stage/'last_attempt.json').exists():
+        name=json.loads((stage/'last_attempt.json').read_text())['folder']
+        if Path(name).name!=name:raise ValueError('ORACLE_ATTEMPT_PATH_CHANGED')
+        folder=stage/name;request=folder/'request.json'
     if request.exists():
-        output=folder/'stdout.json'
-        try:return dict(job_key=key,result=json.loads(output.read_text()),repeated=False)
-        except (ValueError,FileNotFoundError):return dict(status='RUNNING_OR_FAILED_REVIEW_JOB_LOG',job_key=key,repeated=False)
+        pid=json.loads((folder/'process.json').read_text())['pid'] if (folder/'process.json').exists() else None
+        running=oracle_process_running(pid,script)
+        expected=dict(capture_id=status['capture_id'],epoch=status['epoch'],own_seed_bar_hash=status['own_seed_bar_hash'],milestone=milestone)
+        result=oracle_job_status(folder,expected,running)
+        if result['native_parity_verified']:
+            once(stage/'verified_result.json',result);return result
+        if not result.get('retryable_on_new_data') or n<=json.loads(request.read_text()).get('own_bars_at_dispatch',milestone):
+            return dict(job_key=key,repeated=False,**result)
+        # No repeated attempt on unchanged observations. Resource/data deferrals
+        # can use a new own prefix; genuine parity/compile failures stay closed.
+        folder=stage/('deferred_prefix_'+str(n));request=folder/'request.json'
+        if request.exists():
+            pid=json.loads((folder/'process.json').read_text())['pid'] if (folder/'process.json').exists() else None
+            running=oracle_process_running(pid,script)
+            result=oracle_job_status(folder,expected,running)
+            if result['native_parity_verified']:once(stage/'verified_result.json',result)
+            return dict(job_key=key,repeated=False,**result)
     if psutil.virtual_memory().available<512*1024*1024:return dict(status='WAITING_FOR_RESOURCES',job_key=key)
     for p in psutil.process_iter(['name','cmdline']):
         if p.info['name'] in ('pythonw.exe','python.exe') and str(script).lower() in ' '.join(p.info['cmdline'] or []).lower():
             return dict(status='EXISTING_OWN_ORACLE_JOB_ACTIVE')
-    folder.mkdir(parents=True)
+    folder.mkdir(parents=True,exist_ok=True)
     once(request,dict(capture_id=status['capture_id'],epoch=status['epoch'],milestone=milestone,
-                      source_sha256=sha(script),training_executed=False))
+                      own_seed_bar_hash=status['own_seed_bar_hash'],own_bars_at_dispatch=n,source_sha256=sha(script),training_executed=False))
+    if folder!=stage:atomic(stage/'last_attempt.json',dict(folder=folder.name))
     with (folder/'stdout.json').open('w') as out,(folder/'stderr.log').open('w') as err:
         process=subprocess.Popen([str(root/'.venv/Scripts/pythonw.exe'),str(script)],cwd=root,
             stdout=out,stderr=err,creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
@@ -117,7 +167,7 @@ def _run_once(root=ROOT):
         orphan_queries_excluded_on_explicit_interruption=excluded_queries,
         roles_verified=bool(roles),recursive_seeds=seeds,maturity=maturity(own_status),
         retained_indicator_parity=retained_oracle(root) if (root/'research/studies/us30cash_m5_prospective_pipeline_20261031_v1/native_oracle.json').exists() else None,
-        native_own_prefix_oracle=native_oracle_milestone(root,base,dict(own_status,epoch=state['epoch'])),
+        native_own_prefix_oracle=native_oracle_milestone(root,base,dict(own_status,epoch=state['epoch'],own_seed_bar_hash=seed_hash)),
         scientific_admission=False,physical_generation_utc_certified=False,training_executed=False)
     atomic(checkpoint,dict(capture_id=pointer['capture_id'],n=n,head=head,epoch_seed_hash=seed_hash,
         monitor_source_sha256=monitor_source,m1_m5_pass=parity_pass,m1_m5_fail=parity_fail))

@@ -142,3 +142,55 @@ Acción física necesaria para recolección sostenida: **conectar PC A a corrien
 El collector se reanuda automáticamente al despertar, pero ninguna automatización
 puede producir observaciones mientras Windows está suspendido. No hace falta
 otra autorización científica para continuar esta adquisición en cuarentena.
+
+
+## Continuación en corriente — corte auditado de las 13:35 Ecuador
+
+La PC se comprobó conectada a corriente. El acumulado auditado avanzó a **91 M1
+ y 16 M5**, todas las M5 con paridad M1/M5 registrada. El contexto actual es
+**1/350**; el científico sigue en cero. Las tres M5 del contexto previo no se
+sumaron: a las 13:28:34 apareció un gap nativo tras **173,5372149 segundos**
+transcurridos en la fase de identidad/quote del poll. El recibo separa esa fase
+larga de la lectura final del tick, que fue breve. No está demostrada la causa
+subyacente ni que haya sido un cierre normal. El sleep ID registrado no cambió
+entre esas observaciones; no se inventó una desconexión ni se atribuyó todo el
+intervalo a la suspensión anterior. La ventana quedó excluida y el segmento
+posterior produjo una M5 nueva. No se reiniciaron el capturador ni XM para este
+avance. No hubo backfill ni cambios en los contratos o datasets anteriores.
+
+Se reparó el seguimiento automático del oráculo de prefijo: ya distingue proceso
+activo, salida incompleta/fallida y resultado válido. Un PASS debe pertenecer al
+mismo capture/epoch y cumplir su milestone; desde 276 exige también HA exacta.
+Un aplazamiento por recursos puede reintentarse con observaciones nuevas, sin
+repetir el input inmóvil. Un resultado exitoso se reutiliza; un fallo de paridad
+no se convierte en PASS ni se oculta mediante un reintento. **18 pruebas
+focalizadas PASS**, incluida recuperación por recursos sin duplicar trabajo.
+No se repitió el ensayo nativo retenido de 499 barras.
+
+La paridad nativa del prefijo actual espera 15 barras propias, HA espera276 y el
+warmup350. No se usan barras de epochs previos. El calendario semanal sigue
+verificado; falta prueba de transición real y excepción aplicable. Se revisó una
+alternativa nativa MCP documentada por MetaQuotes, pero no hay endpoint autenticado
+configurado en este entorno. No se modificaron credenciales ni permisos. Esa
+alternativa tampoco aporta por sí sola la excepción faltante:
+[configuración oficial](https://www.metatrader5.com/de/terminal/help/mcp_and_ai/configuration),
+[capacidades oficiales](https://www.metatrader5.com/en/terminal/help/mcp_and_ai/capabilities).
+No se repitieron las búsquedas agotadas de la misma excepción.
+
+Los recibos actuales están en
+`research/studies/us30cash_m5_native_observations/ac_followup_20261105/`.
+Continúan pendientes 349 M5 del contexto para warmup, 800 señales, 100 barras
+posteriores, 200 evaluables, 80 por lado y tres folds por lado; además del
+calendario/transición, semillas, sellado del dataset final y grant específico.
+La cifra349 pertenece al corte de este informe y cambiará con datos nuevos.
+No hay ETA de calendario justificable. El monitor y la captura siguen activos
+sin depender del chat, con DATASET_ADMISSION=WAITING_FOR_EVIDENCE y ningún fit.
+
+
+Verificación posterior del mismo avance en corriente: **96 M1 / 17 M5** acumuladas,
+**2/350** en el contexto actual, sin nuevas mezclas. El prefijo previo permanece
+intacto. Además, el oráculo solo reutiliza un resultado si coincide el hash de
+la primera barra propia, evitando heredar una paridad de otro contexto dentro
+del mismo epoch. La comprobación HA desde276 exige PASS_EXACT. La batería de
+pruebas focalizadas final es **21 PASS**; no se repitieron pruebas nativas aprobadas.
+Recibos más recientes: `ac_followup_20261105/interval_progress/`.

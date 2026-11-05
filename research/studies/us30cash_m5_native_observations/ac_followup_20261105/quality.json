@@ -1,0 +1,89 @@
+{
+  "schema": "cf-quality-monitor/1",
+  "observed_host_utc": "2026-11-05T18:35:27.378456+00:00",
+  "capture_id": "dbsnap_0fd175bd0cb94a5fa26e7404819c2228",
+  "records_verified": 5186,
+  "new_records_verified": 5186,
+  "chain_head": "81b442d84112c312fd96161fdd58cefd996f0de8e8111e3c79b4bb514c2517fb",
+  "checkpoint_hash": "202286a0308d77e6a959d1eabc4959729a8b04ebbb2109104c29499d9b3a200a",
+  "epoch": "7_148194265",
+  "new_m5_pairs_checked": 16,
+  "status": "PASS_INCREMENTAL_QUARANTINED",
+  "runtime_status": "ACTIVE_QUARANTINED",
+  "real_m1": 91,
+  "real_m5": 16,
+  "rejected": {
+    "300": 0,
+    "60": 0
+  },
+  "m5_with_five_m1_parity": 16,
+  "m5_m1_m5_parity_exclusions": 0,
+  "orphan_queries_excluded_on_explicit_interruption": 0,
+  "roles_verified": true,
+  "recursive_seeds": {
+    "own_bars": 1,
+    "seeds_bound": true,
+    "seed_bar_hash": "6a4734e284c9c3451b21b4f2d8f20bf08745907985b77a4884e87d03a2eef7b3",
+    "ATR_INITIALIZED": false,
+    "ATR_required_own_bars": 15,
+    "HA_READY": false,
+    "HA_required_own_bars": 276,
+    "warmup_ready": false,
+    "warmup_required_own_bars": 350,
+    "scientifically_admitted": false
+  },
+  "maturity": {
+    "requirements": {
+      "warmup_m5": 350,
+      "signals": 800,
+      "post_m5": 100,
+      "evaluable": 200,
+      "BUY": 80,
+      "SELL": 80,
+      "folds_each": 3
+    },
+    "remaining": {
+      "warmup_m5": 349,
+      "consecutive_signals": 800,
+      "post_m5": 100,
+      "evaluable": 200,
+      "BUY_evaluable": 80,
+      "SELL_evaluable": 80,
+      "BUY_folds": 3,
+      "SELL_folds": 3
+    },
+    "technical_warmup": 1,
+    "scientific_warmup": 0,
+    "observed_market_bar_minutes": 5,
+    "remaining_warmup_observed_bar_minutes": 1745,
+    "observed_signals_per_100_bars": 0.0,
+    "rate_scope": "DESCRIPTIVE_CURRENT_UNINTERRUPTED_CONTEXT_NOT_AN_INDEPENDENT_SAMPLE",
+    "calendar_eta": null,
+    "statistically_justified_eta": false,
+    "eta_reason": "SESSION_TRANSITION_UNCERTIFIED_OR_SIGNAL_SAMPLE_IMMATURE_NO_CALENDAR_FORECAST",
+    "slowest_requirement": "UNDETERMINED_SIGNAL_AND_COVERAGE_RATES_NOT_YET_ESTIMABLE",
+    "dataset_admitted": false,
+    "training_executed": false
+  },
+  "retained_indicator_parity": {
+    "algorithmic_ATR_PARITY": "PASS_EXACT_RETAINED_NATIVE_499_BAR_ORACLE",
+    "algorithmic_HA_PARITY": "PASS_EXACT_RETAINED",
+    "algorithmic_MAIN_K_PARITY": "PASS_RETAINED_BOUND",
+    "feature_fragment_sha256": "c8fe7846f6569d824cd7158c8fb72998a21a7aa3977901aed6cdde6fbc6e109d",
+    "ha_core_sha256": "d9a1e525a99e66f855bc49c3a696030c5e12ef534a1aeff5012b63a462a3e8ef",
+    "retained_receipt_sha256": "479d5d6900e1ca6425bc1f91737a5664ed8e514ec0ccce89b02fac1d2e3467bb",
+    "native_export_sha256": "a6cf247bb136b6e29d37a154405b476078471fed65d4a6067051171e83bf75e4",
+    "code_pin_sha256": "973829b0fd1532cb4ed4b25dd9503567ddee740d04c1d476f0f02d97122e5bf3",
+    "rerun": false,
+    "own_dataset_native_iATR_parity": false,
+    "dataset_admitted": false
+  },
+  "native_own_prefix_oracle": {
+    "status": "WAITING_FOR_15_OWN_M5",
+    "own_bars": 1,
+    "native_terminal_launched": false
+  },
+  "scientific_admission": false,
+  "physical_generation_utc_certified": false,
+  "training_executed": false
+}
