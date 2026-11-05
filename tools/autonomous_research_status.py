@@ -41,6 +41,17 @@ def build(root=ROOT):
         age=(now-datetime.fromisoformat(clock)).total_seconds()
         if age<0 or age>limit:errors.append(label+'_STALE_OR_FUTURE')
         return age
+    legacy_closed=False
+    closure='outputs/us30cash_m5_native_observations/legacy_ingress_closed.json'
+    if (root/closure).exists():
+        from controller.exclusive_roles import verify_roles
+        from controller.authorized_capture import sha
+        current=read('outputs/us30cash_m5_native_observations/current.json')
+        cf_manifest_path='outputs/us30cash_m5_native_observations/'+current['capture_id']+'/manifest.json'
+        cf_manifest=read(cf_manifest_path)
+        if sha(root/cf_manifest_path)!=current['manifest_sha256']:raise ValueError('CF_MANIFEST_CHANGED')
+        legacy_closed=bool(verify_roles(root,cf_manifest))
+        if not legacy_closed:raise ValueError('LEGACY_CLOSURE_WITHOUT_EXCLUSIVE_ASSIGNMENT')
     package='research/studies/us30cash_m5_native_pretrain_v1/'
     index=read(package+'package_hashes.json')
     if seal(index['files'])!=index['root_sha256']:raise ValueError('PACKAGE_INDEX_CHANGED')
@@ -54,7 +65,7 @@ def build(root=ROOT):
     raw=read(rawbase+'collector_status.json');manifest=read(rawbase+'collection_manifest.json')
     m=read('outputs/prospective_derivatives_v1/'+capture+'/maturity.json')
     if [m[k] for k in ('warmup_required','signals_required','post_signal_bars_required','evaluable_required','evaluable_required_each_side')]!=[350,800,100,200,80]:raise ValueError('FROZEN_THRESHOLDS_CHANGED')
-    fresh('WORKER',m['observed_clock']['host_utc_label'],120)
+    if not legacy_closed:fresh('WORKER',m['observed_clock']['host_utc_label'],120)
     recovery=read('outputs/pc_a_stability/recovery_status.json');fresh('GUARDIAN',recovery['host_utc'],120)
     broker=read('outputs/research_readiness/broker_identity.json')
     gate=snapshot_gate(m,broker,root=root)
@@ -65,7 +76,8 @@ def build(root=ROOT):
     nbase='outputs/native_database_snapshots_v1/'
     n=read(nbase+'current.json');sid=n.get('capture_id') or n.get('id')
     if not sid or Path(sid).name!=sid:raise ValueError('UNSAFE_SNAPSHOT_ID')
-    snapshot=read(nbase+sid+'/status.json');fresh('SNAPSHOT',snapshot['clock']['host_utc_label'],120)
+    snapshot=read(nbase+sid+'/status.json')
+    if not legacy_closed:fresh('SNAPSHOT',snapshot['clock']['host_utc_label'],120)
     ntsbase='outputs/pc_a_prospective_utc/authenticated_utc/'
     nts=read(ntsbase+'state.json');record=nts['last_record']
     if Path(record).name!=record:raise ValueError('UNSAFE_NTS_RECORD')
@@ -75,8 +87,8 @@ def build(root=ROOT):
     if nts.get('failures',0):errors.append('NTS_SERVICE_FAILURES')
     # Scheduling health only: this 120s grace is not a temporal-certification tolerance.
     if nts['boot_identity']!='WINDOWS_PREFETCH_BOOT_ID:'+clock['boot_id'] or clock['uptime_ms']>nts['next_due_uptime_ms']+120000:errors.append('NTS_MEASUREMENT_OVERDUE_OR_BOOT_CHANGED')
-    if raw['status']!='ACTIVE_QUARANTINED':errors.append('RAW_SOURCE_NOT_ACTIVE')
-    if snapshot['status']!='ACTIVE_QUARANTINED':errors.append('SNAPSHOT_NOT_ACTIVE')
+    if not legacy_closed and raw['status']!='ACTIVE_QUARANTINED':errors.append('RAW_SOURCE_NOT_ACTIVE')
+    if not legacy_closed and snapshot['status']!='ACTIVE_QUARANTINED':errors.append('SNAPSHOT_NOT_ACTIVE')
     historical=read('research/studies/maxbars_history_20261102_v1/summary.json')
     from controller.warmup_diagnostics import inspect
     warmup_receipt=inspect(root/'outputs/prospective_derivatives_v1'/capture/'quarantine.sqlite3')
@@ -123,8 +135,11 @@ def build(root=ROOT):
         if age<0 or age>120:
             cf=dict(cf,NEW_STUDY_DATASET_ADMISSION='FAIL',monitor_error='CF_STATUS_STALE_OR_FUTURE')
         result['new_study_cf']=cf
+        result['authoritative_current_study']='new_study_cf'
+        result['legacy_collectors']='CLOSED_TO_NEW_INGRESS_ARCHIVED_COUNTERS_ONLY' if legacy_closed else 'PREVIOUS_SCOPE_UNCHANGED'
+        if legacy_closed:result['next_automatic_action']='EXCLUSIVE_CF_CAPTURE_NTS_AND_MONITOR_CONTINUE_NO_BACKFILL'
         result['NEW_STUDY_DATASET_ADMISSION']=cf['NEW_STUDY_DATASET_ADMISSION']
-        result['non_data_blockers']=['CF_RESERVATION_SCOPE_DECISION_PENDING','CF_CALENDAR_AND_CAUSAL_EVIDENCE_PENDING','SPECIFIC_TRAINING_GRANT_REQUIRED']
+        result['non_data_blockers']=([] if cf.get('facts',{}).get('nonoverlap') is True else ['CF_RESERVATION_SCOPE_DECISION_PENDING'])+['CF_CALENDAR_AND_CAUSAL_EVIDENCE_PENDING','SPECIFIC_TRAINING_GRANT_REQUIRED']
         result['remaining_blockers']=[r for r in result['remaining_blockers'] if r!='NO_AUTHORIZATION_TO_ADMIT_DATABASE_SNAPSHOT_TRIAL']+['NEW_CF_STUDY_DATASET_ADMISSION_PENDING']
     return result
 

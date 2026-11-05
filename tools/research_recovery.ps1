@@ -22,6 +22,9 @@ try{
     $xm=@($processes | Where-Object {$_.ExecutablePath -eq $terminal})
     $watch=@($processes | Where-Object {$_.Name -eq 'powershell.exe' -and $_.CommandLine -like ('*"'+(Join-Path $repo 'tools\new_capture_watchdog.ps1')+'"*')})
     $actions=@()
+    # Scientific ingress closure is forward-only. The native XM observer remains
+    # diagnostic; old reservation writers and their watchdogs must not restart.
+    $legacyIngressClosed=Test-Path -LiteralPath (Join-Path $repo 'outputs\us30cash_m5_native_observations\legacy_ingress_closed.json')
     $cfBase=Join-Path $repo 'outputs\us30cash_m5_native_observations'
     $cfEnable=Join-Path $cfBase 'enabled.json'
     if((Test-Path -LiteralPath $cfEnable) -and (Get-Content -LiteralPath $cfEnable -Raw|ConvertFrom-Json).enabled){
@@ -39,7 +42,7 @@ try{
             $lastCF=[datetime]::UtcNow
         }
     }
-    if($xm.Count -eq 1){
+    if($xm.Count -eq 1 -and !$legacyIngressClosed){
         $capturePointer=Join-Path $repo 'outputs\new_native_studies\us30cash_m5_native_20261030_01\current_capture.json'
         if(Test-Path -LiteralPath $capturePointer){
             $captureId=(Get-Content -LiteralPath $capturePointer -Raw|ConvertFrom-Json).capture_id
@@ -67,7 +70,7 @@ try{
     # registration alone cannot recover a watchdog lost during the same login.
     $snapshotEnable=Join-Path $repo 'outputs\native_database_snapshots_v1\enabled.json'
     $snapshotWatch=Join-Path $repo 'scripts\Watch-NativeDatabaseSnapshots.ps1'
-    if((Test-Path -LiteralPath $snapshotEnable) -and (Get-Content -LiteralPath $snapshotEnable -Raw|ConvertFrom-Json).enabled){
+    if(!$legacyIngressClosed -and (Test-Path -LiteralPath $snapshotEnable) -and (Get-Content -LiteralPath $snapshotEnable -Raw|ConvertFrom-Json).enabled){
         $snapshotWatches=@($processes|Where-Object {$_.Name -eq 'powershell.exe' -and $_.CommandLine -like ('*"'+$snapshotWatch+'"*')})
         if($snapshotWatches.Count -eq 0 -and ([datetime]::UtcNow-$lastSnapshotWatch).TotalSeconds -ge 60){
             $actions+='START_AUTHORIZED_SEPARATE_SNAPSHOT_WATCHDOG'
@@ -83,7 +86,7 @@ try{
         $lastDashboard=[datetime]::UtcNow
     }
     $pipelineEnable=Join-Path $repo 'outputs\prospective_derivatives_v1\enabled.json'
-    if(Test-Path -LiteralPath $pipelineEnable){
+    if(!$legacyIngressClosed -and (Test-Path -LiteralPath $pipelineEnable)){
         $pipelineEnabled=(Get-Content -LiteralPath $pipelineEnable -Raw | ConvertFrom-Json).enabled
         $pipelineScript=Join-Path $repo 'tools\prospective_pipeline.py'
         $pipeline=@($processes | Where-Object {$_.Name -eq 'pythonw.exe' -and $_.CommandLine -like ('*"'+$pipelineScript+'" --serve*')})
@@ -122,7 +125,7 @@ try{
         }else{$actions+='BLOCKED_PROFILE_REQUIRES_REVIEW'}
         $lastLaunch=[datetime]::UtcNow
     }
-    if($watch.Count -eq 0){$actions+='START_OWN_CAPTURE_WATCHDOG';if(!$DryRun){Start-Process powershell.exe -ArgumentList ('-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "'+(Join-Path $repo 'tools\new_capture_watchdog.ps1')+'"') -WindowStyle Hidden | Out-Null}}
+    if(!$legacyIngressClosed -and $watch.Count -eq 0){$actions+='START_OWN_CAPTURE_WATCHDOG';if(!$DryRun){Start-Process powershell.exe -ArgumentList ('-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "'+(Join-Path $repo 'tools\new_capture_watchdog.ps1')+'"') -WindowStyle Hidden | Out-Null}}
     if(($null -eq $nts -or $nts.HasExited) -and ([datetime]::UtcNow-$lastNts).TotalSeconds -ge 60){
         $actions+='CHECK_NTS_DUE_EXISTING_LOCKED_STATION'
         if(!$DryRun){$id=[guid]::NewGuid().ToString('N');$nts=Start-Process (Join-Path $repo '.venv\Scripts\pythonw.exe') -ArgumentList ('"'+(Join-Path $repo 'tools\authenticated_utc_station.py')+'"') -WorkingDirectory $repo -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $base ($id+'.nts.stdout')) -RedirectStandardError (Join-Path $base ($id+'.nts.stderr'))}

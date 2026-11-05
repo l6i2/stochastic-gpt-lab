@@ -1,3 +1,13 @@
+> Estado vigente C+F: corte exclusivo aplicado el 05/11/2026 a las 09:22:39 Ecuador.
+> Dataset activo: `us30cash_m5_native_observations_20261105_01_dataset_02`.
+> Evidencia auditada posterior al corte: 5 M1, 1 M5 propia verificada, 0 rechazos;
+> warmup técnico 1/350, científico 0/350. No se adoptaron las 6 M5 anteriores.
+> Roles futuros exclusivos verificados por decisión expresa; membership histórico
+> desconocido permanece desconocido. Gate WAITING_FOR_EVIDENCE; entrenamiento BLOCKED.
+> 63 regresiones PASS. [Aplicación y límites](CF_EXCLUSIVE_CUT_APPLIED.md).
+> Recibos actuales: `research/studies/us30cash_m5_native_observations/exclusive_cut_v1/`.
+> Los contadores de las secciones anteriores son históricos, no del dataset 02.
+
 # Estado autoritativo de investigación — PC A
 
 Corte: **2026-11-02 17:01 Ecuador**. Código revisado: `8b7394fa71db673c9d5f19973d8303fa7551b84f`

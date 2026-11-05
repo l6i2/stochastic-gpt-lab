@@ -1,0 +1,4 @@
+{
+  "StochasticGPTLab_NativeDatabaseSnapshots_v1": "\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File \"C:\\Users\\DELL 2022\\Documents\\Codex\\stochastic-gpt-lab-full-pipeline\\scripts\\Watch-NativeDatabaseSnapshots.ps1\"",
+  "StochasticGPTLab_PC_A_NewNativeCapture_v1": "\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File \"C:\\Users\\DELL 2022\\Documents\\Codex\\stochastic-gpt-lab-full-pipeline\\tools\\new_capture_watchdog.ps1\""
+}

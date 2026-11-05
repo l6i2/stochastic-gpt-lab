@@ -10,6 +10,7 @@ sys.path.insert(0, str(ROOT))
 from controller.authorized_capture import sha, once
 from controller.pretrain_contracts import seal
 from tools.audit_native_database_trial import audit
+from controller.exclusive_roles import verify_roles
 
 
 def run(out, previous=None):
@@ -22,7 +23,9 @@ def run(out, previous=None):
     manifest = json.loads((folder/'manifest.json').read_text())
     contract = json.loads((package/'contract.json').read_text())
     assert sha(package/'contract.json') == manifest['contract_sha256']
-    assert sha(package/'authorization.json') == contract['authority_sha256'] == manifest['authorization_sha256']
+    assert sha(package/'authorization.json') == contract['authority_sha256']
+    assert sha(ROOT/manifest['authorization_path']) == manifest['authorization_sha256']
+    roles=verify_roles(ROOT,manifest)
     index = json.loads((package/'contract_sources.json').read_text())
     assert all(sha(package/name)==digest for name,digest in index['files'].items())
     ref = json.loads((folder/'runtime_pin_current.json').read_text())
@@ -61,7 +64,7 @@ def run(out, previous=None):
     assert first['read_start']['monotonic_ns'] >= manifest['intent_clock']['monotonic_ns']
     receipt=dict(study_id=manifest['study_id'],producer_id=manifest['producer_id'],dataset_id=manifest['dataset_id'],
         capture_id=pointer['capture_id'],contract_id=contract['contract_id'],contract_sha256=sha(package/'contract.json'),
-        authorization_sha256=sha(package/'authorization.json'),implementation_pin_sha256=ref['sha256'],
+        authorization_sha256=manifest['authorization_sha256'],implementation_pin_sha256=ref['sha256'],
         origin_manifest_sha256=pointer['manifest_sha256'],checkpoint_state_hash=checkpoint['state_hash'],
         first_observation=first,activation=manifest['activation'],verified_records=summary['verified_records'],
         chain_head=summary['chain_head'],real_m1=summary['accepted'].get('60',0),real_m5=summary['accepted'].get('300',0),
@@ -70,10 +73,15 @@ def run(out, previous=None):
         prefix_persistence=prefix,native_membership=[dict(epoch=p['epoch'],frame_seconds=p['frame_seconds'],
             start_native_msc=p['start_native_msc'],end_native_exclusive_msc=p['end_native_exclusive_msc'],
             status=p['status'],hash=p['first_sha256']) for p in json.loads((out/'pairs.json').read_text())],
-        membership_scope='OWN_ARTIFACTS_VERIFIED_EXCLUSIVE_ROLE_NONOVERLAP_NOT_DEMONSTRATED',
+        exclusive_roles=roles,
+        membership_scope='EXCLUSIVE_FORWARD_SCOPE_BY_EXPLICIT_DECISION' if roles else 'OWN_ARTIFACTS_VERIFIED_EXCLUSIVE_ROLE_NONOVERLAP_NOT_DEMONSTRATED',
         dataset_hash=None,dataset_admitted=False,NEW_STUDY_DATASET_ADMISSION='WAITING_FOR_EVIDENCE',
         callback_receipt_proven=False,event_generation_utc_proven=False,
         TRAINING_EXECUTED=False,PROTECTED_SCORING=False,LIVE_TRADING=False)
+    if roles:
+        for member in receipt['native_membership']:
+            minimum=roles['minimum_m1_open_msc'] if member['frame_seconds']==60 else roles['minimum_native_open_msc']
+            assert member['start_native_msc']>=minimum
     once(out/'cf_receipt.json',receipt)
     return receipt
 

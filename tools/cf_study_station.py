@@ -16,6 +16,7 @@ from controller.isolated_observation import host_clock, atomic
 from controller.pretrain_contracts import seal
 from controller.cf_study import process_events, admission, bridge_allowed
 from controller.native_database_snapshots import Store
+from controller.exclusive_roles import verify_roles
 from tools import native_database_snapshots as native
 
 BASE = ROOT / 'outputs/us30cash_m5_native_observations'
@@ -26,6 +27,9 @@ STUDY = 'US30CASH_M5_NATIVE_OBSERVATIONS_20261105_01'
 class StudyStore(Store):
     def commit(self, events):
         original = self.state
+        minimum = original.get('cf_exclusive_minimum_native_open_msc')
+        if minimum is not None and any(e.get('kind') == 'DATABASE_SNAPSHOT_PAIR' and e['start_native_msc'] < (original['cf_exclusive_minimum_m1_open_msc'] if e['frame_seconds']==60 else minimum) for e in events):
+            raise ValueError('PRE_CUTOFF_INTERVAL_REFUSED')
         working = copy.deepcopy(original)
         pending = working.pop('cf_pending_bridges', [])
         extras = process_events(working, events)
@@ -47,6 +51,13 @@ class Producer(native.Producer):
         if self.manifest['contract_sha256'] != sha(PACKAGE/'contract.json'):
             self.close()
             raise ValueError('CF_MANIFEST_CONTRACT_CHANGED')
+        self.roles = verify_roles(ROOT, self.manifest)
+        if self.roles:
+            self.store.state['cf_exclusive_minimum_native_open_msc'] = self.roles['minimum_native_open_msc']
+            self.store.state['cf_exclusive_minimum_m1_open_msc'] = self.roles['minimum_m1_open_msc']
+            self.store.commit([dict(kind='EXCLUSIVE_ROLE_BOUND',assignment=self.manifest['exclusive_role_assignment'],
+                                   minimum_native_open_msc=self.roles['minimum_native_open_msc'],
+                                   precut_data_adopted=False,training_authorized=False)])
 
     def identity(self):
         terminal = super().identity()
@@ -64,7 +75,7 @@ class Producer(native.Producer):
                        and (context.get('ha') or {}).get('count', 0) == context.get('own_run_bars')
                        and (context.get('atr') or {}).get('count', 0) == context.get('own_run_bars'))
         facts = dict(contract_approved=contract_matches, contract_changed=not contract_matches,
-                     independence=False, nonoverlap=False, calendar=False,
+                     independence=bool(self.roles), nonoverlap=bool(self.roles), calendar=False,
                      coverage=status == 'ACTIVE_QUARANTINED' and context.get('own_run_bars', 0) > 0,
                      causality=bool(state.get('cf_offline_use_verified') and state.get('cf_full_feature_values') and seeds_bound),
                      seeds=seeds_bound,
@@ -80,7 +91,9 @@ class Producer(native.Producer):
                      source_rows=state['source_records'], ledger_records=self.store.count, chain_head=self.store.head,
                      implementation_pin_sha256=self.active_pin,
                      epoch=state['epoch'], epochs=state['epochs'], membership='OWN_ID_AND_NATIVE_INTERVALS_QUARANTINED',
-                     independence='WAITING_RESERVATION_SCOPE_DECISION', calendar='PARTIAL_NO_CERTIFIED_TRANSITION',
+                     independence='VERIFIED_FORWARD_SCOPE_BY_EXPLICIT_DECISION' if self.roles else 'WAITING_RESERVATION_SCOPE_DECISION', calendar='PARTIAL_NO_CERTIFIED_TRANSITION',
+                     exclusive_role_assignment=self.manifest.get('exclusive_role_assignment'),
+                     exclusive_cutoff=self.manifest.get('role_cutoff'),
                      causality='NATIVE_PREFIX_AND_OFFLINE_USE_RECORDED_FULL_SEEDS_PENDING', dataset_hash=None,
                      activation=self.manifest['activation'], first_observation=state.get('cf_first_observation'),
                      facts=facts, **admission(facts), DEMO='DISABLED', LIVE_TRADING=False, PROTECTED_SCORING=False)
