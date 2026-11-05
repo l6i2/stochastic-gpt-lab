@@ -1,3 +1,9 @@
+> Recuperación automática activa al iniciar sesión. El ensayo real conservó el prefijo
+> de 6.230 registros y abrió el epoch `11_153168750`. Contadores del recibo publicado
+> **18 acumuladas**, **0 consecutivas** y **0 científicamente elegibles**.
+> 53 pruebas y simulación del guardian PASS. El reinicio físico se verificará tras
+> un uso normal. [Protocolo operativo](PC_A_AUTOMATIC_RECOVERY_PROTOCOL.md).
+
 > Último recibo de continuidad en corriente: 96 M1, 17 M5 acumuladas y
 > 2/350 consecutivas del contexto actual. Cero datos admitidos. Oráculo ligado a semilla,
 > 21 pruebas focalizadas PASS. Recibos: `ac_followup_20261105/interval_progress/`.

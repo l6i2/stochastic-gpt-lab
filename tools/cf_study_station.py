@@ -25,8 +25,27 @@ PACKAGE = ROOT / 'research/studies/us30cash_m5_native_observations'
 STUDY = 'US30CASH_M5_NATIVE_OBSERVATIONS_20261105_01'
 
 
+class DurabilityFailure(BaseException):
+    """Exit the poll instead of replaying a batch with uncertain commit status."""
+
+
+def durable_publish(path, value):
+    try:
+        atomic(path, value)
+    except Exception as exc:
+        raise DurabilityFailure('CF_STATUS_PUBLICATION_FAILED') from exc
+
+
 class StudyStore(Store):
     def commit(self, events):
+        try:
+            self._commit(events)
+        except Exception as exc:
+            if getattr(self, 'fail_stop', False):
+                raise DurabilityFailure('CF_CHECKPOINT_COMMIT_FAILED') from exc
+            raise
+
+    def _commit(self, events):
         original = self.state
         minimum = original.get('cf_exclusive_minimum_native_open_msc')
         if minimum is not None and any(e.get('kind') == 'DATABASE_SNAPSHOT_PAIR' and e['start_native_msc'] < (original['cf_exclusive_minimum_m1_open_msc'] if e['frame_seconds']==60 else minimum) for e in events):
@@ -71,6 +90,13 @@ class Producer(native.Producer):
         return terminal
 
     def report(self, status, error=None):
+        try:
+            self._report(status, error)
+        except Exception as exc:
+            raise DurabilityFailure('CF_STATUS_PUBLICATION_FAILED') from exc
+        self.retrying = status != 'ACTIVE_QUARANTINED'
+
+    def _report(self, status, error=None):
         super().report(status, error)
         state = self.store.state
         context = state.get('cf_features', {})
@@ -155,6 +181,7 @@ def activate():
 def serve():
     native.BASE = BASE
     native.Store = StudyStore
+    native.atomic = durable_publish
     previous_boundary = native.boundary_reason
     producer = None
     def boundary(state, tick, clock, terminal_changed=False):
@@ -185,13 +212,16 @@ def serve():
         return reason
     native.boundary_reason = boundary
     producer = Producer()
+    producer.store.fail_stop = True
+    retry_delay = 2
     try:
         while json.loads((BASE/'enabled.json').read_text())['enabled']:
             producer.poll()
             if producer.store.state.get('cf_acquisition_complete'):
                 atomic(BASE/'enabled.json', dict(enabled=False, reason='FROZEN_ACQUISITION_BOUNDARY_REACHED'))
                 break
-            time.sleep(2)
+            retry_delay = min(30, retry_delay * 2) if producer.retrying else 2
+            time.sleep(retry_delay)
     finally:
         producer.close()
 

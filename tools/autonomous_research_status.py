@@ -139,6 +139,14 @@ def build(root=ROOT):
         result['legacy_collectors']='CLOSED_TO_NEW_INGRESS_ARCHIVED_COUNTERS_ONLY' if legacy_closed else 'PREVIOUS_SCOPE_UNCHANGED'
         if legacy_closed:result['next_automatic_action']='EXCLUSIVE_CF_CAPTURE_NTS_AND_MONITOR_CONTINUE_NO_BACKFILL'
         result['NEW_STUDY_DATASET_ADMISSION']=cf['NEW_STUDY_DATASET_ADMISSION']
+        recovery_path='outputs/us30cash_m5_native_observations/recovery/latest.json'
+        if (root/recovery_path).exists():
+            saved=read(recovery_path)
+            if seal(saved['receipt'])!=saved['sha256'] or saved['receipt']['capture_id']!=cf['capture_id']:
+                raise ValueError('CF_RECOVERY_RECEIPT_CHANGED')
+            result['cf_recovery']=saved['receipt']
+            for key in ('TOTAL_VERIFIED_M5','CURRENT_CONSECUTIVE_M5','SCIENTIFICALLY_ELIGIBLE_M5'):
+                result[key]=saved['receipt'][key]
         quality_path='outputs/us30cash_m5_native_observations/quality_status.json'
         if (root/quality_path).exists():
             quality=read(quality_path)

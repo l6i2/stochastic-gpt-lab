@@ -1,13 +1,38 @@
 """Refresh a pre-reboot receipt and preserve the first post-boot comparison."""
-import json,sys,hashlib
+import json,sys,hashlib,subprocess
+from datetime import datetime
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
-from controller.authorized_capture import CaptureManager
+from controller.authorized_capture import CaptureManager,manager_lock
+from controller.cf_recovery import recover
 from controller.isolated_observation import atomic,host_clock
 from controller.restart_readiness import receipt,verify_previous,transition
 
 
+def windows_events(start, end):
+    # Both arguments come from verified clock labels and are normalized before quoting.
+    start, end = (datetime.fromisoformat(value).isoformat() for value in (start, end))
+    script = """
+$events = @(Get-WinEvent -FilterHashtable @{LogName='System';StartTime=([datetimeoffset]'START').LocalDateTime;EndTime=([datetimeoffset]'END').LocalDateTime;Id=12,13,41,1074} -ErrorAction SilentlyContinue | Sort-Object RecordId | ForEach-Object {
+    $intent=''
+    if($_.ProviderName -eq 'User32' -and $_.Id -eq 1074){$xml=[xml]$_.ToXml();$intent=[string]($xml.Event.EventData.Data | Where-Object Name -eq 'param5').'#text'}
+    @{id=$_.Id;provider=$_.ProviderName;record=$_.RecordId;time=$_.TimeCreated.ToUniversalTime().ToString('o');intent=$intent}
+})
+ConvertTo-Json -InputObject $events -Compress
+""".replace('START',start).replace('END',end)
+    try:
+        result = subprocess.run(['powershell.exe','-NoProfile','-Command',script], capture_output=True,
+                                text=True, check=True, timeout=20, creationflags=subprocess.CREATE_NO_WINDOW)
+        return json.loads(result.stdout)
+    except (subprocess.SubprocessError, ValueError, OSError):
+        return []
+
+
 def run():
+    cf = ROOT/'outputs/us30cash_m5_native_observations'
+    if (cf/'legacy_ingress_closed.json').exists():
+        with manager_lock(cf/'recovery'):
+            return recover(ROOT,host_clock(),windows_events)
     import msvcrt
     base=ROOT/'outputs/pc_a_stability/restart';base.mkdir(parents=True,exist_ok=True)
     with (base/'monitor.lock').open('a+b') as lock:
