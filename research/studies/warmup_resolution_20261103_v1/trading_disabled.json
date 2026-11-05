@@ -1,0 +1,5 @@
+{
+  "connected": true,
+  "observer_callbacks_do_not_require_trading": true,
+  "terminal_trade_allowed": false
+}

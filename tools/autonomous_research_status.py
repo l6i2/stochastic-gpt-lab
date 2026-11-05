@@ -78,6 +78,8 @@ def build(root=ROOT):
     if raw['status']!='ACTIVE_QUARANTINED':errors.append('RAW_SOURCE_NOT_ACTIVE')
     if snapshot['status']!='ACTIVE_QUARANTINED':errors.append('SNAPSHOT_NOT_ACTIVE')
     historical=read('research/studies/maxbars_history_20261102_v1/summary.json')
+    from controller.warmup_diagnostics import inspect
+    warmup_receipt=inspect(root/'outputs/prospective_derivatives_v1'/capture/'quarantine.sqlite3')
     result=dict(schema='autonomous-research-status/1',observed_ecuador=now.astimezone(ZoneInfo('America/Guayaquil')).isoformat(),
         code_head=code_head(root),
         historical_diagnostic=historical['HISTORICAL_COVERAGE'],historical_parity=historical['MT5_BACKTEST_PARITY'],
@@ -91,6 +93,8 @@ def build(root=ROOT):
         admitted_records=m['admitted_records'],coverage=m['coverage_rule'],rejected_buckets_all_timeframes=m['rejected_buckets'],
         membership=m['membership'],exposure_missing=exposure['missing'],exposure_chain_verified=True,
         feature_status=m['native_indicators_parity'],causal_audit=m['causal_audit'],dataset_maturity=m['dataset_maturity'],
+        warmup_counter_receipt=warmup_receipt,
+        warmup_producer_authority='ORIGINAL_POST_ACTIVATION_CALLBACKS_ONLY_SUBJECT_TO_FROZEN_COVERAGE; SNAPSHOT_TRIAL_NOT_ADMITTED',
         snapshot_trial=snapshot,nts_state=nts,nts_latest_record_hash=receipts[ntsbase+record],
         nts_scope='AUTHENTICATION_VERIFIED_BY_EXISTING_NTS_SERVICE_NOT_RECHECKED_BY_THIS_METADATA_REPORT',
         gate_authority=gate,TRAINING_ADMISSION_GATE=review_state(gate,errors),TRAINING_READINESS='BLOCKED' if not gate['execution_permitted'] or errors else 'AUTHORIZED_NOT_EXECUTED_BY_REPORTER',

@@ -1,0 +1,67 @@
+{
+  "classification": "VERIFIED_COMPOSITE_INTERRUPTION",
+  "events": [
+    {
+      "event_id": 1,
+      "message": "El sistema estaba en un estado de baja energía y se reanudó.\r\n\r\nHora de suspensión: ‎2026‎-‎11‎-‎03T01:29:25.808469200Z\r\nHora de reactivación: ‎2026‎-‎11‎-‎03T13:11:25.656619100Z\r\n\r\nOrigen de la reactivación: Unknown",
+      "provider": "Microsoft-Windows-Power-Troubleshooter",
+      "time": "2026-11-03T08:11:26.7209803-05:00"
+    },
+    {
+      "event_id": 507,
+      "message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Resume from Hibernate. ",
+      "provider": "Microsoft-Windows-Kernel-Power",
+      "time": "2026-11-03T08:11:25.6754413-05:00"
+    },
+    {
+      "event_id": 506,
+      "message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Sleep, Hibernate, or Shutdown. ",
+      "provider": "Microsoft-Windows-Kernel-Power",
+      "time": "2026-11-03T08:11:25.6564564-05:00"
+    },
+    {
+      "event_id": 1,
+      "message": "La hora del sistema ha cambiado a ‎2026‎-‎11‎-‎03T13:11:24.500000000Z de ‎2026‎-‎11‎-‎03T01:29:29.246673000Z.\r\nDiferencia horaria: 42115253 ms\r\n\r\nMotivo del cambio: System time synchronized with the hardware clock.\r\nProceso: '' (PID 4).\r\n\r\nHora de RTC: ‎2026‎-‎11‎-‎03T08:11:24.500000000Z\r\nDiferencia de zona horaria actual: 300\r\nhora RTC es UTC: false\r\nLa hora del sistema se basaba en la hora RTC: false",
+      "provider": "Microsoft-Windows-Kernel-General",
+      "time": "2026-11-03T08:11:24.5003573-05:00"
+    },
+    {
+      "event_id": 107,
+      "message": "El sistema se reanudó del estado de suspensión.",
+      "provider": "Microsoft-Windows-Kernel-Power",
+      "time": "2026-11-02T20:29:29.2467837-05:00"
+    },
+    {
+      "event_id": 42,
+      "message": "El sistema está entrando en suspensión.\r\n\r\nMotivo de la suspensión: Application API",
+      "provider": "Microsoft-Windows-Kernel-Power",
+      "time": "2026-11-02T20:29:26.2525307-05:00"
+    },
+    {
+      "event_id": 507,
+      "message": "El sistema está saliendo del modo de espera moderno \r\n\r\nmotivo: Lid. ",
+      "provider": "Microsoft-Windows-Kernel-Power",
+      "time": "2026-11-02T20:18:40.9776281-05:00"
+    },
+    {
+      "event_id": 1,
+      "message": "La hora del sistema ha cambiado a ‎2026‎-‎11‎-‎03T00:58:39.614349600Z de ‎2026‎-‎11‎-‎03T00:58:39.613660000Z.\r\nDiferencia horaria: 0 ms\r\n\r\nMotivo del cambio: An application or system component changed the time.\r\nProceso: '\\Device\\HarddiskVolume3\\Windows\\System32\\svchost.exe' (PID 5252).\r\n\r\nHora de RTC: ‎2026‎-‎11‎-‎02T19:58:39.614349600Z\r\nDiferencia de zona horaria actual: 300\r\nhora RTC es UTC: false\r\nLa hora del sistema se basaba en la hora RTC: false",
+      "provider": "Microsoft-Windows-Kernel-General",
+      "time": "2026-11-02T19:58:39.6192458-05:00"
+    },
+    {
+      "event_id": 506,
+      "message": "El sistema está entrando en el modo de espera moderno \r\n\r\nmotivo: Lid. ",
+      "provider": "Microsoft-Windows-Kernel-Power",
+      "time": "2026-11-02T19:58:39.0451772-05:00"
+    }
+  ],
+  "initiating_application_unknown": true,
+  "physical_reboot_claimed": false,
+  "prospective_gap_backfilled": false,
+  "resume_recovery_defect": "HEADLESS_XM_PROCESS_PRESENT_NO_RECENT_CALLBACKS_AND_IPC_ATTACH_UNAVAILABLE",
+  "resume_utc": "2026-11-03T13:11:25.6566191Z",
+  "sleep_cause_recorded_by_windows": "Application API",
+  "sleep_utc": "2026-11-03T01:29:25.8084692Z",
+  "terminal_clean_shutdown_ecuador": "2026-11-02T20:29:14"
+}

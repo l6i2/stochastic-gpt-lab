@@ -1,0 +1,14 @@
+{
+  "chain_head": "8f45b34cdad9f2c55816c177e77c58af44a118b06e2cb2418e520e112b921ca1",
+  "entry": {
+    "kind": "WARMUP_RECONSTRUCTION_AND_DIAGNOSTIC_REAL_SNAPSHOT_PERSISTENCE",
+    "ledger_sequence": 60,
+    "new_dataset_admission": false,
+    "previous": "8ba6b199c9e9bf69590c3af5b831a1b3eaaa67ba8b3c0a7907c260dd2a877475",
+    "prospective_backfill": 0,
+    "protected_rows_read": 0,
+    "training_fits": 0
+  },
+  "parent_path": "research/studies/master_mission_20261102_v2/exposure_delta.json",
+  "parent_sha256": "38cc082d37935b1c10b158e8bbb97e1cf9234f776756492c0550489189f69c18"
+}

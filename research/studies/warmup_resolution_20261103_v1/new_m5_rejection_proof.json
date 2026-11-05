@@ -1,0 +1,19 @@
+{
+  "bid_sequence_coverage": {
+    "independent_utc_certification": false,
+    "reasons": [
+      "BID_SEQUENCE_HASH_MISMATCH"
+    ],
+    "scientific_admission": false,
+    "status": "UNVERIFIED_OR_MISMATCH"
+  },
+  "bucket_issues": [
+    "INDISTINGUISHABLE_QUOTE_CALLBACKS"
+  ],
+  "differences": [],
+  "ledger_n": 44764,
+  "native_bar_volume": 1262,
+  "native_open_msc": 1793719500000,
+  "observed_bid_volume": 1262,
+  "parity_exact": true
+}

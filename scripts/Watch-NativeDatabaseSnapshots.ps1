@@ -5,6 +5,7 @@ $script=Join-Path $repo 'tools\native_database_snapshots.py'
 $mutex=New-Object System.Threading.Mutex($false,'Local\StochasticGPTLab_NativeDatabaseSnapshots_v1')
 if(!$mutex.WaitOne(0)){$mutex.Dispose();exit 0}
 $lastLaunch=[datetime]::MinValue
+$lastStallRecovery=[datetime]::MinValue
 $auditChild=$null;$pendingCount=0;$pendingFolder='';$auditedCount=0
 $auditCheckpoint=Join-Path $base 'monitor_checkpoint.json'
 if(Test-Path -LiteralPath $auditCheckpoint){$auditedCount=(Get-Content -LiteralPath $auditCheckpoint -Raw | ConvertFrom-Json).accepted_m5}
@@ -39,6 +40,22 @@ try{
         $statusPath=Join-Path (Join-Path $base $pointer.capture_id) 'status.json'
         if(Test-Path -LiteralPath $statusPath){
             $status=Get-Content -LiteralPath $statusPath -Raw | ConvertFrom-Json
+            # An IPC call can remain stuck after XM disappears. Existence of
+            # Python processes alone is not proof of a live producer. Allow a
+            # five-minute operational grace, then restart only the scoped leaf.
+            $staleSeconds=([datetime]::UtcNow-(Get-Item -LiteralPath $statusPath).LastWriteTimeUtc).TotalSeconds
+            if($processes.Count -gt 0 -and $staleSeconds -ge 300 -and ([datetime]::UtcNow-$lastStallRecovery).TotalSeconds -ge 300){
+                $parents=@($processes|ForEach-Object {$_.ParentProcessId})
+                $leaves=@($processes|Where-Object {$_.ProcessId -notin $parents -and ([datetime]::UtcNow-$_.CreationDate.ToUniversalTime()).TotalSeconds -ge 300})
+                foreach($leaf in $leaves){Stop-Process -Id $leaf.ProcessId -Force -ErrorAction SilentlyContinue}
+                if($leaves.Count -gt 0){
+                    $action='RESTART_STALLED_OWN_IPC_CLIENT_FRESH_CUT_NO_BACKFILL'
+                    $incident=@{host_utc=[datetime]::UtcNow.ToString('o');reason=$action;stale_seconds=$staleSeconds;prior_chain_head=$status.chain_head;prior_records=$status.records;terminated_leaf_pids=@($leaves|ForEach-Object {$_.ProcessId});data_rewritten=$false}
+                    $folder=Join-Path $base 'recovery_events';New-Item -ItemType Directory -Force -Path $folder|Out-Null
+                    $incident|ConvertTo-Json -Depth 5|Out-File -LiteralPath (Join-Path $folder ([guid]::NewGuid().ToString('N')+'.json')) -Encoding utf8 -NoClobber
+                    $lastStallRecovery=[datetime]::UtcNow
+                }
+            }
             if($null -eq $auditChild -and $status.accepted.'300' -gt $auditedCount){
                 $pendingCount=$status.accepted.'300';$id=[guid]::NewGuid().ToString('N');$pendingFolder=Join-Path $base ('monitor_reports\'+$id)
                 $audit=Join-Path $repo 'tools\audit_native_database_trial.py'

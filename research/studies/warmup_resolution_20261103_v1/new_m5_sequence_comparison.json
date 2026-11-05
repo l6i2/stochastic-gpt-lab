@@ -1,0 +1,17 @@
+{
+  "both_prices_and_flags_compared": true,
+  "callback_bid_rows": 1262,
+  "callback_excess_multiplicity": 1,
+  "callback_multiset_equal": false,
+  "database_bid_rows": 1262,
+  "database_excess_multiplicity": 1,
+  "end_native_exclusive_msc": 1793719800000,
+  "first_different_index": 1009,
+  "flags_definition_unchanged": true,
+  "no_dedup_applied": true,
+  "ordered_sequences_equal": false,
+  "reference_adopted_as_input": false,
+  "repeated_adjacent_callback_tuples": 1,
+  "source_file": "pc_a_prospective_utc_v1_385282218_90196122757397_6017.jsonl",
+  "start_native_msc": 1793719500000
+}

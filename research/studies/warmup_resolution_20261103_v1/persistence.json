@@ -1,0 +1,165 @@
+{
+  "final_verified_head": "9be63872db30903c62256598c444d2b9d7447fd2e8cf4202ba18766f2cbdf1e7",
+  "original_two_consecutive_post_repair_not_demonstrated": true,
+  "pairs": [
+    {
+      "bid_updates": 1262,
+      "end_native_exclusive_msc": 1793719800000,
+      "epoch": "22_385416187",
+      "first_observation": {
+        "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+        "all_returned_rows": 1262,
+        "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+        "broker_event_utc_unverified": true,
+        "end_native_exclusive_msc": 1793719800000,
+        "excluded_exact_end_rows": 0,
+        "origin": "TERMINAL_DATABASE_QUERY",
+        "original_tick_receipt_unknown": true,
+        "query_error": null,
+        "read_end": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-03T13:30:01.902214+00:00",
+          "monotonic_ns": 385983173604700,
+          "uptime_ms": 385955421,
+          "utc_certified": false
+        },
+        "read_start": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-03T13:30:01.899486+00:00",
+          "monotonic_ns": 385983169984900,
+          "uptime_ms": 385955421,
+          "utc_certified": false
+        },
+        "retrieval_may_include_server_downloads": true,
+        "start_native_msc": 1793719500000,
+        "tick_size": "0.01"
+      },
+      "first_sha256": "a369d3fc57ac1f04270c6451b85853ef522486788296d00f74e7847f088ce8e9",
+      "frame_seconds": 300,
+      "n": 8540,
+      "native_bar": {
+        "close": 51808.6,
+        "high": 51824.6,
+        "low": 51617.6,
+        "open": 51632.6,
+        "tick_volume": 1262,
+        "time": 1793719500
+      },
+      "reasons": [],
+      "rows": 1262,
+      "second_sha256": "a369d3fc57ac1f04270c6451b85853ef522486788296d00f74e7847f088ce8e9",
+      "start_native_msc": 1793719500000,
+      "status": "VERIFIED_DATABASE_VIEW_ONLY",
+      "strict_recomputed": true,
+      "verification_observation": {
+        "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+        "all_returned_rows": 1262,
+        "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+        "broker_event_utc_unverified": true,
+        "end_native_exclusive_msc": 1793719800000,
+        "excluded_exact_end_rows": 0,
+        "origin": "TERMINAL_DATABASE_QUERY",
+        "original_tick_receipt_unknown": true,
+        "query_error": null,
+        "read_end": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-03T13:30:01.949366+00:00",
+          "monotonic_ns": 385983220219400,
+          "uptime_ms": 385955468,
+          "utc_certified": false
+        },
+        "read_start": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-03T13:30:01.945366+00:00",
+          "monotonic_ns": 385983215841200,
+          "uptime_ms": 385955468,
+          "utc_certified": false
+        },
+        "retrieval_may_include_server_downloads": true,
+        "start_native_msc": 1793719500000,
+        "tick_size": "0.01"
+      }
+    },
+    {
+      "bid_updates": 1640,
+      "end_native_exclusive_msc": 1793720100000,
+      "epoch": "22_385416187",
+      "first_observation": {
+        "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+        "all_returned_rows": 1640,
+        "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+        "broker_event_utc_unverified": true,
+        "end_native_exclusive_msc": 1793720100000,
+        "excluded_exact_end_rows": 0,
+        "origin": "TERMINAL_DATABASE_QUERY",
+        "original_tick_receipt_unknown": true,
+        "query_error": null,
+        "read_end": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-03T13:35:01.570127+00:00",
+          "monotonic_ns": 386282813433200,
+          "uptime_ms": 386255062,
+          "utc_certified": false
+        },
+        "read_start": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-03T13:35:01.567645+00:00",
+          "monotonic_ns": 386282810670000,
+          "uptime_ms": 386255062,
+          "utc_certified": false
+        },
+        "retrieval_may_include_server_downloads": true,
+        "start_native_msc": 1793719800000,
+        "tick_size": "0.01"
+      },
+      "first_sha256": "2f31997cd2414ab05818a1f2dcd7b9054a9ecf1497178a8bfe0021c19c1b10dd",
+      "frame_seconds": 300,
+      "n": 8816,
+      "native_bar": {
+        "close": 51846.1,
+        "high": 51951.1,
+        "low": 51784.1,
+        "open": 51808.1,
+        "tick_volume": 1640,
+        "time": 1793719800
+      },
+      "reasons": [],
+      "rows": 1640,
+      "second_sha256": "2f31997cd2414ab05818a1f2dcd7b9054a9ecf1497178a8bfe0021c19c1b10dd",
+      "start_native_msc": 1793719800000,
+      "status": "VERIFIED_DATABASE_VIEW_ONLY",
+      "strict_recomputed": true,
+      "verification_observation": {
+        "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+        "all_returned_rows": 1640,
+        "availability": "FIRST_OBSERVED_AFTER_QUERY_COMPLETION",
+        "broker_event_utc_unverified": true,
+        "end_native_exclusive_msc": 1793720100000,
+        "excluded_exact_end_rows": 0,
+        "origin": "TERMINAL_DATABASE_QUERY",
+        "original_tick_receipt_unknown": true,
+        "query_error": null,
+        "read_end": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-03T13:35:01.611476+00:00",
+          "monotonic_ns": 386282854382200,
+          "uptime_ms": 386255109,
+          "utc_certified": false
+        },
+        "read_start": {
+          "boot_id": "111",
+          "host_utc_label": "2026-11-03T13:35:01.607411+00:00",
+          "monotonic_ns": 386282850995100,
+          "uptime_ms": 386255109,
+          "utc_certified": false
+        },
+        "retrieval_may_include_server_downloads": true,
+        "start_native_msc": 1793719800000,
+        "tick_size": "0.01"
+      }
+    }
+  ],
+  "scientific_warmup": 0,
+  "snapshot_trial": "PASS_TWO_REAL_CONSECUTIVE_BARS_PERSISTED_ACROSS_INDEPENDENT_AUDITS",
+  "verified_prior_prefix": "125a820057528e643ee6a1db4c849d50f7950de2ec8b70dda8a70baa56d50ec6"
+}

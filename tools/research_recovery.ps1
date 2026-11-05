@@ -1,4 +1,9 @@
 param([switch]$Once,[switch]$DryRun)
+function Test-HeadlessCaptureStall {
+    param([long]$WindowHandle,[double]$ProcessAgeSeconds,[double]$CallbackAgeMs,[double]$StatusAgeSeconds)
+    # Operational restart grace, never a scientific coverage tolerance.
+    return $WindowHandle -eq 0 -and $ProcessAgeSeconds -ge 300 -and $CallbackAgeMs -ge 300000 -and $StatusAgeSeconds -ge 0 -and $StatusAgeSeconds -le 120
+}
 $ErrorActionPreference='Stop'
 $repo=Split-Path -Parent $PSScriptRoot
 $base=Join-Path $repo 'outputs\pc_a_stability'
@@ -17,6 +22,30 @@ try{
     $xm=@($processes | Where-Object {$_.ExecutablePath -eq $terminal})
     $watch=@($processes | Where-Object {$_.Name -eq 'powershell.exe' -and $_.CommandLine -like ('*"'+(Join-Path $repo 'tools\new_capture_watchdog.ps1')+'"*')})
     $actions=@()
+    if($xm.Count -eq 1){
+        $capturePointer=Join-Path $repo 'outputs\new_native_studies\us30cash_m5_native_20261030_01\current_capture.json'
+        if(Test-Path -LiteralPath $capturePointer){
+            $captureId=(Get-Content -LiteralPath $capturePointer -Raw|ConvertFrom-Json).capture_id
+            if($captureId -match '^us30cap_[a-f0-9]{32}$'){
+                $captureStatus=Join-Path (Split-Path $capturePointer -Parent) ($captureId+'\collector_status.json')
+                if(Test-Path -LiteralPath $captureStatus){
+                    $cs=Get-Content -LiteralPath $captureStatus -Raw|ConvertFrom-Json
+                    $xp=Get-Process -Id $xm[0].ProcessId -ErrorAction SilentlyContinue
+                    $profileSafe=$false;$foreignExpert=$false
+                    foreach($chart in (Get-ChildItem -LiteralPath (Join-Path $data 'MQL5\Profiles\Charts\Default') -Filter '*.chr')){
+                        $chartText=Get-Content -LiteralPath $chart.FullName -Raw
+                        foreach($expert in [regex]::Matches($chartText,'(?s)<expert>(.*?)</expert>')){
+                            if($expert.Value -match 'path=Experts\\ResearchDiagnostics\\ProspectiveUtcObserver.ex5'){$profileSafe=$true}else{$foreignExpert=$true}
+                        }
+                    }
+                    if($xp -and $profileSafe -and !$foreignExpert -and (Test-HeadlessCaptureStall $xp.MainWindowHandle ([datetime]::UtcNow-$xp.StartTime.ToUniversalTime()).TotalSeconds $cs.last_callback_age_ms ([datetime]::UtcNow-(Get-Item -LiteralPath $captureStatus).LastWriteTimeUtc).TotalSeconds)){
+                        $actions+='RESTART_EXACT_HEADLESS_XM_NO_CALLBACKS_5MIN_FRESH_COLLECTOR'
+                        if(!$DryRun){Stop-Process -Id $xp.Id -Force;$xm=@()}
+                    }
+                }
+            }
+        }
+    }
     # The authorized separate snapshot trial has its own mutex watchdog. Logon
     # registration alone cannot recover a watchdog lost during the same login.
     $snapshotEnable=Join-Path $repo 'outputs\native_database_snapshots_v1\enabled.json'
@@ -41,6 +70,21 @@ try{
         $pipelineEnabled=(Get-Content -LiteralPath $pipelineEnable -Raw | ConvertFrom-Json).enabled
         $pipelineScript=Join-Path $repo 'tools\prospective_pipeline.py'
         $pipeline=@($processes | Where-Object {$_.Name -eq 'pythonw.exe' -and $_.CommandLine -like ('*"'+$pipelineScript+'" --serve*')})
+        if($pipelineEnabled -and $pipeline.Count -gt 0){
+            $pointer=Join-Path $repo 'outputs\new_native_studies\us30cash_m5_native_20261030_01\current_capture.json'
+            $id=(Get-Content -LiteralPath $pointer -Raw|ConvertFrom-Json).capture_id
+            if($id -match '^us30cap_[a-f0-9]{32}$'){
+                $maturity=Join-Path (Split-Path $pipelineEnable -Parent) ($id+'\maturity.json')
+                if((Test-Path -LiteralPath $maturity) -and ([datetime]::UtcNow-(Get-Item -LiteralPath $maturity).LastWriteTimeUtc).TotalSeconds -ge 300){
+                    $parentIds=@($pipeline|ForEach-Object {$_.ParentProcessId})
+                    $leaves=@($pipeline|Where-Object {$_.ProcessId -notin $parentIds -and ([datetime]::UtcNow-$_.CreationDate.ToUniversalTime()).TotalSeconds -ge 300})
+                    if($leaves.Count -gt 0){
+                        $actions+='RESTART_STALLED_DERIVATIVE_IPC_CLIENT_DURABLE_CURSOR_ONLY'
+                        if(!$DryRun){foreach($leaf in $leaves){Stop-Process -Id $leaf.ProcessId -Force -ErrorAction SilentlyContinue}}
+                    }
+                }
+            }
+        }
         if($pipelineEnabled -and $pipeline.Count -eq 0 -and ([datetime]::UtcNow-$lastPipeline).TotalSeconds -ge 60){
             $actions+='START_QUARANTINED_DERIVATIVE_WORKER'
             if(!$DryRun){Start-Process (Join-Path $repo '.venv\Scripts\pythonw.exe') -ArgumentList ('"'+$pipelineScript+'" --serve') -WorkingDirectory $repo -WindowStyle Hidden -RedirectStandardOutput (Join-Path $repo 'outputs\prospective_derivatives_v1\worker.stdout') -RedirectStandardError (Join-Path $repo 'outputs\prospective_derivatives_v1\worker.stderr') | Out-Null}
