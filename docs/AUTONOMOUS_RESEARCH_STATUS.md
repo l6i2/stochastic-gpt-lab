@@ -1,3 +1,13 @@
+> Revisión integral C+F vigente — 05/11/2026, Ecuador.
+> Acumulado auditado: 72 M1 y 12 M5 verificadas; contexto actual
+> 0/350, científico 0/350. Las suspensiones reales segmentaron el dataset.
+> Paridad ATR/HA/MAIN_K algorítmica retenida verificada; prefijo propio espera 15/276/350 barras.
+> 92 regresiones PASS. Gate WAITING_FOR_EVIDENCE; ningún fit ni scoring ejecutado.
+> Captura, guardian, NTS y monitor incremental siguen activos cuando Windows está despierto.
+> La PC está en batería: para adquisición sostenida hace falta conectarla a corriente.
+> [Informe consolidado](CF_TRAINING_READINESS_FINAL.md); recibos en
+> `research/studies/us30cash_m5_native_observations/readiness_20261105/`.
+
 > Estado vigente C+F: corte exclusivo aplicado el 05/11/2026 a las 09:22:39 Ecuador.
 > Dataset activo: `us30cash_m5_native_observations_20261105_01_dataset_02`.
 > Evidencia auditada posterior al corte: 5 M1, 1 M5 propia verificada, 0 rechazos;

@@ -17,6 +17,7 @@ from controller.pretrain_contracts import seal
 from controller.cf_study import process_events, admission, bridge_allowed
 from controller.native_database_snapshots import Store
 from controller.exclusive_roles import verify_roles
+from controller.cf_session_calendar import transition_review
 from tools import native_database_snapshots as native
 
 BASE = ROOT / 'outputs/us30cash_m5_native_observations'
@@ -31,6 +32,10 @@ class StudyStore(Store):
         if minimum is not None and any(e.get('kind') == 'DATABASE_SNAPSHOT_PAIR' and e['start_native_msc'] < (original['cf_exclusive_minimum_m1_open_msc'] if e['frame_seconds']==60 else minimum) for e in events):
             raise ValueError('PRE_CUTOFF_INTERVAL_REFUSED')
         working = copy.deepcopy(original)
+        # Persist the sleep evidence actually checked by the native poll, without
+        # changing the approved native producer or claiming an OnTick receipt.
+        events = [dict(e,connected=True,sleep_record_id=working.get('last_sleep_record_id'))
+                  if e['kind']=='LIVE_LATEST_STATE_POLL' else e for e in events]
         pending = working.pop('cf_pending_bridges', [])
         extras = process_events(working, events)
         self.state = working
@@ -85,7 +90,7 @@ class Producer(native.Producer):
                      producer_id=self.manifest['producer_id'], dataset_id=self.manifest['dataset_id'],
                      capture_id=self.folder.name, status=status, error=error, process_id=os.getpid(),
                      clock=host_clock(), real_m1=state['accepted']['60'], real_m5=state['accepted']['300'],
-                     consecutive_m5=state['consecutive_m5'], technical_warmup=facts['warmup'],
+                     consecutive_m5=facts['warmup'], numerically_adjacent_m5=state['consecutive_m5'], technical_warmup=facts['warmup'],
                      scientific_warmup=0, BUY=context.get('signals_buy', 0), SELL=context.get('signals_sell', 0),
                      consecutive_signals=facts['signals'], post_bars=facts['post_bars'], evaluable=0,
                      source_rows=state['source_records'], ledger_records=self.store.count, chain_head=self.store.head,
@@ -166,11 +171,14 @@ def serve():
                           monotonic=old.get('monotonic_ns', 0) <= clock['monotonic_ns'],
                           connected=True, no_sleep=producer.store.state.get('last_sleep_record_id') == native.last_sleep_record_id(),
                           poll_gap_ms=clock['uptime_ms']-old.get('uptime_ms', 0))
-            if bridge_allowed(proof, proof.get('from_native_msc', 0), proof.get('to_native_msc', 0), health):
+            request=dict(proof,boundary_reason=reason,last_native_msc=state.get('last_tick'),
+                         current_native_msc=tick['time_msc'],next_m5_open_msc=state['next_open'].get('300'),
+                         expected_source_pin_sha256=producer.active_pin)
+            reviewed=transition_review(request)
+            if reviewed['bridge_allowed'] and all(health[k] for k in ('same_boot','monotonic','connected','no_sleep')) and health['poll_gap_ms']<=10000:
                 start, end = proof['from_native_msc'], proof['to_native_msc']
-                if reason == 'NATIVE_MINUTE_GAP_SESSION_CAUSE_UNKNOWN' and state.get('last_tick', end) < start <= end <= tick['time_msc']:
-                    reason = None
-                    producer.store.state.setdefault('cf_pending_bridges', []).append(dict(kind='CF_VERIFIED_SESSION_TRANSITION', proof_sha256=item['sha256'], start=start, end=end))
+                reason = None
+                producer.store.state.setdefault('cf_pending_bridges', []).append(dict(kind='CF_VERIFIED_SESSION_TRANSITION', proof_sha256=item['sha256'], start=start, end=end,review=reviewed))
                 for frame, opening in producer.store.state['next_open'].items():
                     if start <= opening < end:
                         producer.store.state['next_open'][frame] = end

@@ -90,6 +90,8 @@ def main(serve):
             # Reuse the supervised reporter, rather than another process/task.
             # Separate failure receipt: a bad consolidated report never dispatches.
             try:
+                from tools.cf_quality_monitor import run_once
+                run_once()
                 from tools.autonomous_research_status import build
                 atomic(ROOT/'outputs/status/AUTONOMOUS_RESEARCH_STATUS.json',build())
             except Exception as exc:

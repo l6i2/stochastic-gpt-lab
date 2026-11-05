@@ -1,0 +1,144 @@
+# Preparación científica C+F — cierre técnico del 5 de noviembre de 2026
+
+El estudio sigue en cuarentena y no está admitido. Se cerraron tareas técnicas
+de calendario, verificación de features, control incremental y ensayo de admisión;
+las garantías que aún requieren observaciones o evidencia externa se conservan
+pendientes. Las cifras de este corte están en
+`research/studies/us30cash_m5_native_observations/readiness_20261105/`.
+
+## Corte, pertenencia y conservación
+
+Se conserva el corte exclusivo autorizado de las 09:22:39 Ecuador, el dataset 02,
+productor `cfprod_5c64f0781dc148e5896391b1492ba144` y contrato F original.
+La auditoría verifica su cadena, manifest, ledger y límites nativos por timeframe.
+No se adoptó ninguna barra del dataset 01 ni de los históricos diagnósticos.
+La independencia de roles futuros deriva de la decisión expresa, no de inventar
+los manifests ni los límites desconocidos de reservas históricas. Los 53
+artefactos anteriores de la comprobación conservan sus hashes.
+
+## Calendario y reparación de continuidad
+
+El probe nativo recuperado identifica US30Cash / XMGlobalSC-MT5 5 y sesiones
+QUOTE lunes–viernes 01:00–00:00 nativo; TRADE lunes–jueves 01:05–23:55 y viernes
+01:05–23:50. Estas dos clases de sesiones permanecen separadas. No se sustituyen
+por NYSE, CME, otro broker ni por un offset fijo. La línea de relojes del probe
+no certifica UTC independiente.
+
+Se corrigieron dos defectos demostrados de la ruta de continuidad: un recibo
+futuro ya no puede adelantar el cursor actual, y el contador C+F de barras
+observadas conserva su significado separado del contador de adyacencia numérica
+del productor original. El guard completo rechaza pruebas con booleans sin
+soporte. Exige intervalo exacto, reapertura, calendarios de sesiones adyacentes,
+excepción fechada aplicable y hash-bound, identidad, cadena de supervisión,
+conexión explícita, sleep ID estable, boot y monotonía sin huecos ni interrupciones.
+
+La versión nueva registra conexión y sleep ID en cada observación futura.
+Su instalación tiene pin propio y conserva las fuentes anteriores en Git y los
+manifests originales. No se certificó ninguna transición real: la allowlist de
+recibos de transición sigue vacía. La preparación del verificador no equivale
+a una continuidad observada ni garantiza que se alcancen 350 M5 entre sesiones.
+
+[XM](https://www.xm.com/equity-indices) remite los horarios completos a la cuenta
+autenticada; la búsqueda oficial acotada no produjo una excepción aplicable.
+Una ausencia de ticks por sí sola no certifica cierre normal. Se necesitan
+evidencia nativa vigente a ambos lados, supervisión del cierre completo y una
+excepción/confirmación fechada aplicable antes de admitir esa continuidad.
+Si falta, el nuevo segmento continúa aislado y el anterior queda en cuarentena.
+
+## Features y semillas
+
+Se reutilizó el ensayo nativo retenido de 499 barras, verificando hashes de la
+exportación, código de features, MAIN_K y núcleo HA. No se repitió el probe
+aprobado. Paridad algorítmica: **ATR exacta, HA exacta, MAIN_K con el límite ya
+aprobado**. No se introdujeron nuevas tolerancias.
+
+La prueba de semillas propias verifica el primer hash de barra del contexto,
+counts HA/ATR, 14 TR propios y ausencia de herencia entre epochs. ATR se inicializa
+en la barra propia 15; HA dispone de su valor autorizado en la 276; el warmup
+sigue siendo 350. El oráculo de prefijo propio, compilado con cero errores y
+cero advertencias, espera esos datos. Al llegar a 15, 276 y 350 barras se programa
+una única comprobación por milestone, epoch y versión del código. Usa el terminal
+diagnóstico aislado ya existente y un símbolo personalizado con las M1/M5 propias;
+no consulta históricos ni añade una barra sintética. Tiene guard de RAM y timeout
+limitado a su proceso aislado. La paridad nativa del dataset propio no es PASS
+hasta que ese ensayo termine con evidencia real.
+
+La whitelist de seis features no cambia. Se verifican hashes, cutoff nativo,
+orden de cálculo y disponibilidad física anterior al uso offline. Eso no prueba
+la disponibilidad en la entrada original en vivo ni la generación UTC física.
+Los valores incompletos siguen excluidos de admisión; no se imputan.
+
+## Cobertura, persistencia y suspensión real
+
+El monitor incremental recomputa pares nativos y sus hashes, OHLC/volumen,
+BID/ASK, grid, cinco M1 por M5 mediante los recibos de la capa C+F, límites
+posteriores al corte, features y checkpoints. Solo recorre el sufijo nuevo y
+verifica el ancla del prefijo; un error no convierte datos en admitidos. Consultas
+huérfanas de una interrupción explícita quedan excluidas y no bloquean segmentos
+posteriores válidos. La auditoría completa independiente complementa el monitor.
+
+Windows registró Modern Standby a las 09:57:45 y 09:58:54 por Idle Timeout y
+Austerity Battery Drain Budget Exceeded, con salida a las 10:12:53. El productor
+registró fallo de attach y sleep verificado; no fue un cierre de mercado. Se
+preservó el hueco. La instalación posterior del guard abrió otro epoch conforme
+al contrato, sin conservar su warmup ni hacer backfill. Las seis M5 previas al ajuste de software se
+conservan como observaciones técnicas del dataset, sin sumarlas al contexto nuevo.
+La estación volvió a corriente; no se cambió la política de batería. El reinicio
+físico de Windows continúa sin prueba nueva, y no se provocó uno.
+
+## Madurez y automatización
+
+Se conservan 350 M5 / 800 señales / 100 barras posteriores / 200 evaluables /
+80 BUY / 80 SELL / tres folds por lado. El monitor diferencia acumulado, contexto
+consecutivo técnico, cuarentena y científico admitido. Sus tasas son descriptivas,
+calculadas por barras observadas de un único contexto. No hay muestra suficiente
+para una fecha de madurez o para identificar estadísticamente el requisito más
+lento. Cinco minutos por barra describen tiempo observado de mercado, no tiempo
+calendario ni una promesa de continuidad.
+
+El reporter y guardian existentes ejecutan la verificación sin depender del chat.
+No se añadió un servicio permanente. Hay bloqueo exclusivo para el monitor y
+un único escritor de captura. Los checkpoints son persistentes y los milestones
+se guardan una sola vez; no se repiten oráculos sobre el mismo input. Un fallo
+del ensayo conserva logs y no activa entrenamiento. La captura sigue independiente
+de los trabajos diagnósticos y del terminal aislado.
+
+## Admisión y entrenamiento
+
+El dry-run sobre metadatos sintéticos y recibos reales rechaza hashes alterados,
+importaciones retrospectivas no elegibles, membership incorrecto, overlaps,
+continuidad no probada, seeds incompletas, leakage e inmadurez. Incluso el fixture
+sintético completo devuelve CHECKS_SATISFIED_DRY_RUN_ONLY, nunca admisión real.
+El ensayo real queda NOT_READY con requisitos explícitos, sin ejecutar fit o scoring.
+La ausencia de grant se verifica contra la autoridad existente antes de acceder
+a archivos de entrenamiento.
+
+Se preservan logística L2, BUY/SELL separados, FOLLOW/INVERT, cuatro folds
+cronológicos purgados, whitelist y presupuesto de ocho ajustes planificados:
+**cero ajustes autorizados**. Protocolo y código quedan ligados por hashes. El
+runner conserva su allowlist y rechazo sin dataset sellado y grant específico;
+la preparación no amplía esa autoridad.
+
+Pendientes materiales: continuidad real con calendario/excepción aplicable,
+semillas y paridad del prefijo propio, madurez íntegra, cobertura y membership
+sellados del dataset final, y posteriormente autorización específica de
+entrenamiento. DATASET_HASH sigue null. CAUSAL_AUDIT global no cambia a PASS.
+Discovery Validation, Historical Holdout y Final Test siguen cerrados.
+DEMO=DISABLED, LIVE_TRADING=false, terminal_trade_allowed=false,
+TRAINING_EXECUTED=false y PROTECTED_SCORING=false.
+
+
+Corte final auditado: **72 M1, 12 M5 verificadas**, cero exclusiones de paridad
+M1/M5; **0 M5 consecutivas en el contexto actual**, cero científicamente admitidas.
+La cadena conservó el prefijo y avanzó con cinco M5 adicionales desde la primera
+prueba posterior a la reparación. Hubo más suspensiones en el transcurso de la
+misión; todos los eventos recuperados figuran en `windows_incidents.json`.
+No se suman los contextos separados. BUY=0, SELL=0, señales consecutivas=0/800,
+barras posteriores=0/100; evaluables=0/200 y 0/80 por lado. 92 regresiones PASS.
+
+Acción física necesaria para recolección sostenida: **conectar PC A a corriente
+ y mantenerla encendida**. La medición final indica batería; no se amplió la
+ antigua autorización temporal de inhibición ni se cambió el perfil de batería.
+El collector se reanuda automáticamente al despertar, pero ninguna automatización
+puede producir observaciones mientras Windows está suspendido. No hace falta
+otra autorización científica para continuar esta adquisición en cuarentena.

@@ -1,0 +1,109 @@
+{
+  "observed_host_utc": "2026-11-05T14:56:17.636436+00:00",
+  "native_receipt_sha256": "8b8bb9871b0d3afd4c94a6c994f025f14b19653e9a29ffd33ae3ef57d067b862",
+  "native_weekly_schedule": {
+    "server": "XMGlobalSC-MT5 5",
+    "symbol": "US30Cash",
+    "sessions": {
+      "QUOTE": {
+        "MONDAY": [
+          [
+            60,
+            1440
+          ]
+        ],
+        "TUESDAY": [
+          [
+            60,
+            1440
+          ]
+        ],
+        "WEDNESDAY": [
+          [
+            60,
+            1440
+          ]
+        ],
+        "THURSDAY": [
+          [
+            60,
+            1440
+          ]
+        ],
+        "FRIDAY": [
+          [
+            60,
+            1440
+          ]
+        ],
+        "SATURDAY": [],
+        "SUNDAY": []
+      },
+      "TRADE": {
+        "MONDAY": [
+          [
+            65,
+            1435
+          ]
+        ],
+        "TUESDAY": [
+          [
+            65,
+            1435
+          ]
+        ],
+        "WEDNESDAY": [
+          [
+            65,
+            1435
+          ]
+        ],
+        "THURSDAY": [
+          [
+            65,
+            1435
+          ]
+        ],
+        "FRIDAY": [
+          [
+            65,
+            1430
+          ]
+        ],
+        "SATURDAY": [],
+        "SUNDAY": []
+      }
+    },
+    "records_sha256": "79a05f868f788604df3e924f5687f438a124f51ea86f83780176be137c5b5ef1",
+    "scope": "OBSERVED_WEEKLY_METADATA_NOT_HOLIDAY_OR_HISTORICAL_CERTIFICATION"
+  },
+  "current_observation_state": "VERIFIED_WEEKLY_METADATA_ONLY",
+  "holiday_exceptions": "MISSING_APPLICABLE_CURRENT_ATTESTATION",
+  "real_transition": "NOT_YET_OBSERVED_IN_NEW_DATASET",
+  "reviewed_sources": [
+    {
+      "url": "https://www.xm.com/equity-indices",
+      "finding": "Official page directs account login for all trading hours; does not expose dated server-specific exceptions in public content"
+    },
+    {
+      "url": "https://www.xm.com/assets/pdf/holiday_schedule/XM_holiday_trading_hours_en.pdf",
+      "finding": "Search result exposes obsolete holiday schedule; REJECTED as evidence for November2026"
+    },
+    {
+      "url": "https://www.xm.com/trading-hours",
+      "finding": "Redirects to generic execution-policy page; no current symbol calendar"
+    }
+  ],
+  "rejected_substitutes": [
+    "NYSE calendar",
+    "CME calendar",
+    "other broker US30 schedule",
+    "affiliate XM schedule",
+    "TimeTradeServer minus TimeGMT as independent UTC source"
+  ],
+  "transition_rules_source_sha256": "e72984e3dbd4355aafcd3ff688197f9fd6a51ecc35c77ccf366e1035f44de296",
+  "synthetic_tests_passed": 13,
+  "bridge_proofs_auto_certified": 0,
+  "dataset_admitted": false,
+  "live_trading": false
+}

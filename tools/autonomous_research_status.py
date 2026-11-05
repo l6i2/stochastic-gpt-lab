@@ -139,6 +139,15 @@ def build(root=ROOT):
         result['legacy_collectors']='CLOSED_TO_NEW_INGRESS_ARCHIVED_COUNTERS_ONLY' if legacy_closed else 'PREVIOUS_SCOPE_UNCHANGED'
         if legacy_closed:result['next_automatic_action']='EXCLUSIVE_CF_CAPTURE_NTS_AND_MONITOR_CONTINUE_NO_BACKFILL'
         result['NEW_STUDY_DATASET_ADMISSION']=cf['NEW_STUDY_DATASET_ADMISSION']
+        quality_path='outputs/us30cash_m5_native_observations/quality_status.json'
+        if (root/quality_path).exists():
+            quality=read(quality_path)
+            quality_age=(now-datetime.fromisoformat(quality['observed_host_utc'])).total_seconds()
+            result['cf_quality_monitor']=quality
+            if quality_age<0 or quality_age>120 or quality['status'].startswith('FAIL'):
+                errors.append('CF_QUALITY_MONITOR_FAILED_OR_STALE')
+                result['TRAINING_ADMISSION_GATE']='FAIL'
+                result['TRAINING_READINESS']='BLOCKED'
         result['non_data_blockers']=([] if cf.get('facts',{}).get('nonoverlap') is True else ['CF_RESERVATION_SCOPE_DECISION_PENDING'])+['CF_CALENDAR_AND_CAUSAL_EVIDENCE_PENDING','SPECIFIC_TRAINING_GRANT_REQUIRED']
         result['remaining_blockers']=[r for r in result['remaining_blockers'] if r!='NO_AUTHORIZATION_TO_ADMIT_DATABASE_SNAPSHOT_TRIAL']+['NEW_CF_STUDY_DATASET_ADMISSION_PENDING']
     return result

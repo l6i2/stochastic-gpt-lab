@@ -1,3 +1,10 @@
+> Actualización integral: el corte exclusivo sigue aplicado. El acumulado auditado
+> es 72 M1 / 12 M5, pero el contexto actual es 0/350 tras suspensiones verificadas.
+> La versión de continuidad v3, monitor incremental, ensayos de admisión y oráculo
+> propio por milestones están instalados. No hay dataset admitido ni entrenamiento.
+> Véase [CF_TRAINING_READINESS_FINAL.md](CF_TRAINING_READINESS_FINAL.md) y los
+> recibos `readiness_20261105`. Las cifras siguientes corresponden a la activación histórica.
+
 # Activación del estudio C + F en PC A
 
 La autorización expresa permite un nuevo contrato de observaciones nativas
