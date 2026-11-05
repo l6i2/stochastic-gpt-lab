@@ -230,3 +230,9 @@ focalizadas. El presupuesto científico consumido sigue en cero.
 El boot sigue en 112 y el próximo arranque natural todavía queda por observar.
 La recuperación existente y la adquisición siguen activas. Los recibos de este
 corte están en `research/studies/us30cash_m5_native_observations/priority_readiness_20261105/`.
+
+## Estabilidad C+F verificada el 5 de noviembre de 2026
+
+El ensayo confirmó 35 M5 verificadas y una racha de 16. Después, una desconexión XM observada abrió un epoch nuevo con 0 M5 consecutivas y conservó las 35 acumuladas. El productor se recuperó en el mismo proceso. El monitor existente publica telemetría pasiva.
+
+La paridad exacta de iATR de producción falló por una unidad de redondeo en dos valores. La variante de semilla y recurrencia reprodujo los tres valores comparables del prefijo ensayado. Sigue aislada como diagnóstico. Pasaron 14 pruebas focalizadas. La admisión permanece en `WAITING_FOR_EVIDENCE` y el entrenamiento sigue bloqueado. [Comparación y recibos](CF_CAPTURE_STABILITY_SIX_SOLUTIONS.md).

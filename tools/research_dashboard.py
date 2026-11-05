@@ -98,6 +98,11 @@ def main(serve):
                 atomic(ROOT/'outputs/status/AUTONOMOUS_RESEARCH_STATUS.json',dict(
                     TRAINING_ADMISSION_GATE='FAIL',TRAINING_READINESS='BLOCKED',TRAINING_EXECUTED=False,
                     error=type(exc).__name__+':'+str(exc),LIVE_TRADING=False))
+            try:
+                from tools.cf_capture_stability import passive_snapshot
+                passive_snapshot(ROOT)
+            except Exception as exc:
+                atomic(BASE/'stability_telemetry_error.json',dict(error=type(exc).__name__,reason=str(exc)))
             time.sleep(60)
 
 

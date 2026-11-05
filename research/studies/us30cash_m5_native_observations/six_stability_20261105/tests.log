@@ -1,0 +1,19 @@
+test_explanatory_atr_seed_retains_exact_mismatch (tests.test_cf_capture_stability.CaptureStabilityTests.test_explanatory_atr_seed_retains_exact_mismatch) ... ok
+test_latency_keeps_long_intervals_and_does_not_mix_boot_clocks (tests.test_cf_capture_stability.CaptureStabilityTests.test_latency_keeps_long_intervals_and_does_not_mix_boot_clocks) ... ok
+test_prepared_writer_rolls_back_records_if_checkpoint_insert_fails (tests.test_cf_capture_stability.CaptureStabilityTests.test_prepared_writer_rolls_back_records_if_checkpoint_insert_fails) ... ok
+test_trial_matches_existing_writer_and_backpressure_is_visible (tests.test_cf_capture_stability.CaptureStabilityTests.test_trial_matches_existing_writer_and_backpressure_is_visible) ... ok
+test_empty_epoch_refuses_old_recursive_seed (tests.test_cf_feature_review.CfFeatureReviewTests.test_empty_epoch_refuses_old_recursive_seed) ... ok
+test_own_oracle_copies_only_real_supplied_minutes_no_dummy_bar (tests.test_cf_feature_review.CfFeatureReviewTests.test_own_oracle_copies_only_real_supplied_minutes_no_dummy_bar) ... ok
+test_own_seed_atr_and_ha_boundaries_without_later_inputs (tests.test_cf_feature_review.CfFeatureReviewTests.test_own_seed_atr_and_ha_boundaries_without_later_inputs) ... ok
+test_ha_milestone_requires_actual_ha_parity (tests.test_cf_oracle_jobs.OracleJobTests.test_ha_milestone_requires_actual_ha_parity) ... ok
+test_native_success_requires_same_capture_epoch_and_no_authority_expansion (tests.test_cf_oracle_jobs.OracleJobTests.test_native_success_requires_same_capture_epoch_and_no_authority_expansion) ... ok
+test_partial_output_distinguishes_running_from_dead (tests.test_cf_oracle_jobs.OracleJobTests.test_partial_output_distinguishes_running_from_dead) ... ok
+test_resource_deferral_is_not_native_parity (tests.test_cf_oracle_jobs.OracleJobTests.test_resource_deferral_is_not_native_parity) ... ok
+test_resource_retry_requires_new_prefix_and_later_success_is_reused (tests.test_cf_oracle_jobs.OracleJobTests.test_resource_retry_requires_new_prefix_and_later_success_is_reused) ... ok
+test_explicit_interruption_excludes_orphan_queries_without_blocking_future (tests.test_cf_quality_monitor.QualityMonitorTests.test_explicit_interruption_excludes_orphan_queries_without_blocking_future) ... ok
+test_repeat_skips_verified_prefix_and_wrong_cursor_fails (tests.test_cf_quality_monitor.QualityMonitorTests.test_repeat_skips_verified_prefix_and_wrong_cursor_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.602s
+
+OK

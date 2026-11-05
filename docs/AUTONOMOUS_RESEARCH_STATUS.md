@@ -1,4 +1,11 @@
 > Continuación prioritaria C+F. El corte de las 15:15 en Ecuador verificó 20 M5 acumuladas,
+
+## Estabilidad C+F verificada el 5 de noviembre de 2026
+
+El ensayo confirmó 35 M5 verificadas y una racha de 16. Después, una desconexión XM observada abrió un epoch nuevo con 0 M5 consecutivas y conservó las 35 acumuladas. El productor se recuperó en el mismo proceso. El monitor existente publica telemetría pasiva.
+
+La paridad exacta de iATR de producción falló por una unidad de redondeo en dos valores. La variante de semilla y recurrencia reprodujo los tres valores comparables del prefijo ensayado. Sigue aislada como diagnóstico. Pasaron 14 pruebas focalizadas. La admisión permanece en `WAITING_FOR_EVIDENCE` y el entrenamiento sigue bloqueado. [Comparación y recibos](CF_CAPTURE_STABILITY_SIX_SOLUTIONS.md).
+
 > 1 consecutiva y 0 científicamente elegibles. Admisión real `NOT_READY` y 50 pruebas
 > focalizadas PASS. El oráculo espera 15 M5 propias y el próximo arranque natural
 > de Windows queda pendiente. [Informe de preparación](CF_TRAINING_READINESS_FINAL.md)

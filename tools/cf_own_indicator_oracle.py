@@ -12,6 +12,27 @@ from controller.native_diagnostic import BASE
 from controller.prospective_processor import Processor,initial_state
 
 
+def native_seed_diagnostic(bars, rows):
+    """Compare an explanatory recurrence. The production feature remains untouched."""
+    ranges = [bars[0]['high']-bars[0]['low']]
+    ranges.extend(max(bar['high'],previous['close'])-min(bar['low'],previous['close'])
+                  for previous,bar in zip(bars,bars[1:]))
+    value = 0.0
+    for span in ranges[:14]:
+        value += span
+    value /= 14
+    mismatches = []
+    for index in range(13,len(bars)):
+        if index>=14:
+            value += (ranges[index]-ranges[index-14])/14
+        native = float(rows[index]['atr'])
+        if value!=native:
+            mismatches.append(dict(index=index,computed_hex=value.hex(),native_hex=native.hex()))
+    return dict(compared=len(bars)-13,mismatches=mismatches,
+                method='FIRST_BAR_HIGH_LOW_THEN_ORDERED_ROLLING_RECURRENCE',
+                production_feature_modified=False)
+
+
 def build_source(prefix,run):
     bars=prefix['native_m5'];minutes=prefix['native_m1'];n=len(bars)
     if n<15:raise ValueError('WAITING_FOR_15_OWN_M5')
@@ -65,22 +86,29 @@ def run():
         output=target/'MQL5/Files'/(nonce+'_oracle.csv');shutil.copyfile(output,folder/output.name)
         with output.open(encoding='utf-8-sig') as stream:rows=list(csv.DictReader(stream))
         if len(rows)!=n:raise ValueError('OWN_ORACLE_INCOMPLETE')
+        export_hash=sha(output)
         state=initial_state();emitted=[];clock=lambda:dict(boot_id='offline',monotonic_ns=0)
         processor=Processor(state,lambda kind,body:emitted.append(dict(kind=kind,**body)),None,'0.01',dict(warmup=350,signals=800,post_bars=100,evaluable=200,each_side=80),clock)
-        checked=0;main_error=0;ha_mismatch=0
+        checked=0;main_error=0;ha_mismatch=0;atr_mismatches=[]
         for native,bar in zip(rows,prefix['native_m5']):
             if int(native['time'])!=bar['time'] or any(float(native[k])!=bar[k] for k in ('open','high','low','close')) or int(native['volume'])!=bar['tick_volume']:raise ValueError('OWN_NATIVE_INPUT_CHANGED')
             state['own_run_bars']+=1
-            processor.features(dict(bar,segment=prefix['epoch']),sha(output),dict(native_time_msc=(bar['time']+300)*1000),{})
+            processor.features(dict(bar,segment=prefix['epoch']),export_hash,dict(native_time_msc=(bar['time']+300)*1000),{})
             values=next(e for e in reversed(emitted) if e['kind']=='CAUSAL_PREFIX_FEATURES')['values']
             if values['ATR'] is not None:
                 checked+=1
-                if values['ATR']!=float(native['atr']):raise ValueError('OWN_ATR_EXACT_PARITY_FAILED')
+                actual=float(native['atr'])
+                if values['ATR']!=actual:
+                    atr_mismatches.append(dict(index=checked+13,production_hex=values['ATR'].hex(),native_hex=actual.hex()))
             if values['stoch_k'] is not None:main_error=max(main_error,abs(values['stoch_k']-float(native['main_k'])))
             if int(native['ha_ready'])!=(values['ha_direction'] is not None) or values['ha_direction'] is not None and int(native['ha_direction'])!=values['ha_direction']:ha_mismatch+=1
         if main_error>1e-10 or ha_mismatch:raise ValueError('OWN_STOCH_OR_HA_PARITY_FAILED')
-        result=dict(status='PASS_OWN_PREFIX_NATIVE_DIAGNOSTIC_ONLY',capture_id=prefix['capture_id'],epoch=prefix['epoch'],native_m5=n,ATR_compared=checked,ATR_PARITY='PASS_EXACT',HA_PARITY='PASS_EXACT' if n>=276 else 'SEED_BOUND_READY_VALUES_WAITING_276',MAIN_K_PARITY='PASS_RETAINED_BOUND',native_export_sha256=sha(output),input_manifest_sha256=sha(folder/'input_manifest.json'),source_sha256=sha(source),original_terminals_preserved=all(psutil.pid_exists(pid) for pid in original),orders_sent=0,training_executed=False,dataset_admitted=False)
+        result=dict(status='PASS_OWN_PREFIX_NATIVE_DIAGNOSTIC_ONLY',capture_id=prefix['capture_id'],epoch=prefix['epoch'],native_m5=n,ATR_compared=checked,ATR_PARITY='PASS_EXACT',HA_PARITY='PASS_EXACT' if n>=276 else 'SEED_BOUND_READY_VALUES_WAITING_276',MAIN_K_PARITY='PASS_RETAINED_BOUND',native_export_sha256=export_hash,input_manifest_sha256=sha(folder/'input_manifest.json'),source_sha256=sha(source),original_terminals_preserved=all(psutil.pid_exists(pid) for pid in original),orders_sent=0,training_executed=False,dataset_admitted=False)
         result['own_seed_bar_hash']=prefix['seeds']['seed_bar_hash']
+        if atr_mismatches:
+            result.update(status='FAILED_OWN_ATR_EXACT_PARITY',ATR_PARITY='FAIL_EXACT',
+                          atr_mismatches=atr_mismatches,
+                          native_seed_diagnostic=native_seed_diagnostic(prefix['native_m5'],rows))
         once(folder/'result.json',result);return dict(folder=str(folder),**result)
 
 
