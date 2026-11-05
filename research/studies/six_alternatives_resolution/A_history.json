@@ -1,0 +1,97 @@
+{
+  "bars": {
+    "M1": {
+      "count": 1376,
+      "gaps": [
+        {
+          "after": 1704160680,
+          "before": 1704160800
+        },
+        {
+          "after": 1704164220,
+          "before": 1704164340
+        },
+        {
+          "after": 1704172860,
+          "before": 1704172980
+        },
+        {
+          "after": 1704176220,
+          "before": 1704176340
+        }
+      ],
+      "native_volume_sum": 79201,
+      "ohlc_or_time_mismatches": 0,
+      "quote_count_volume_disagreements": 10
+    },
+    "M5": {
+      "count": 276,
+      "gaps": [],
+      "native_volume_sum": 79201,
+      "ohlc_or_time_mismatches": 0,
+      "quote_count_volume_disagreements": 10
+    }
+  },
+  "copying_block_bytes": 65536,
+  "dataset_id": "historical_d68e921dbe62444c9f9f0ac43db69404",
+  "extraction_utc": "2026-11-05T12:22:30.094358+00:00",
+  "independently_admitted": false,
+  "native_queries": [
+    {
+      "envelope_verified": false,
+      "error": 1,
+      "excluded_exact_end_rows": null,
+      "interval_rows": 0,
+      "kind": "M1",
+      "payload_adopted_as_prospective": false,
+      "returned_rows": 1,
+      "sample_payload_sha256": null
+    },
+    {
+      "envelope_verified": false,
+      "error": 1,
+      "excluded_exact_end_rows": null,
+      "interval_rows": 0,
+      "kind": "M5",
+      "payload_adopted_as_prospective": false,
+      "returned_rows": 1,
+      "sample_payload_sha256": null
+    },
+    {
+      "envelope_verified": true,
+      "error": 1,
+      "excluded_exact_end_rows": 0,
+      "interval_rows": 223,
+      "kind": "TICKS",
+      "payload_adopted_as_prospective": false,
+      "returned_rows": 223,
+      "sample_payload_sha256": "5b44360ae41465fe65f5804fb2ad03495405ecbd244d8c2e5e5802328b4567bf"
+    }
+  ],
+  "replay": {
+    "BASELINE_REPLAY": "PASS",
+    "censored_trades": 18,
+    "decision_arrivals": 3279,
+    "final_test_accessed": false,
+    "indexed_trades": 56,
+    "policy_fill": "STRICTLY_AFTER_DECISION_ARRIVAL_SEQUENCE",
+    "quote_record_bytes": 28,
+    "quote_records": 79211
+  },
+  "source_files": {
+    "diag_d17cbe6aedfc_bar_execution_quotes.csv": "575ffacf591e30b78317a03d898731cda728f9fe52a2201b1537ec76f21530fd",
+    "diag_d17cbe6aedfc_bar_quote_path.bin": "f03c643bc26c4cc236706537e49f0e78dd1fdf89eaab4674b5f599d2439c8711",
+    "diag_d17cbe6aedfc_bar_trade_index.csv": "90571e6a85d858f6fdcdb78dfded60065abf804ed3aa70df42a692539412296a",
+    "diag_d17cbe6aedfc_stochastic_events.csv": "975b374fce187ef4cdf33a02b6a69f743393cc2ef989f352706ae89c8225da81",
+    "diag_d17cbe6aedfc_stochastic_events.csv.native_M1.csv": "12e8af250f76483b28ce90631ccd1dde4786971ffe44d5f118d5f77b4e8a036c",
+    "diag_d17cbe6aedfc_stochastic_events.csv.native_M5.csv": "62e1d0877b3ac9cae68d2f30d17567eff4909d3e7a3417e9bd7f8817b2c208df",
+    "diag_d17cbe6aedfc_stochastic_events.csv.native_main.csv": "13916e70d0f2a3ff099e93186bf28ac8c02a92558c7a9667ba099229c3374a8d"
+  },
+  "source_kind": "HISTORICAL_DIAGNOSTIC_EXPOSED",
+  "terminal": {
+    "connected": true,
+    "maxbars": 20000,
+    "terminal_trade_allowed": false
+  },
+  "tick_count": 79211
+}

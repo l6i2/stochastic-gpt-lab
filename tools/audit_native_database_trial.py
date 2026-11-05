@@ -11,11 +11,15 @@ from controller.native_database_snapshots import assess
 from controller.authorized_capture import sha
 
 
-def audit(out):
+def audit(out,base=None):
     out=Path(out).resolve()
     if out.exists():raise ValueError('NO_OVERWRITE')
     if not (out.is_relative_to(ROOT/'outputs') or out.is_relative_to(ROOT/'research/studies')):raise ValueError('OUTPUT_NAMESPACE_REFUSED')
-    base=ROOT/'outputs/native_database_snapshots_v1';pointer=json.loads((base/'current.json').read_text());folder=base/pointer['capture_id']
+    base=Path(base).resolve() if base else ROOT/'outputs/native_database_snapshots_v1'
+    if base not in ((ROOT/'outputs/native_database_snapshots_v1').resolve(),(ROOT/'outputs/six_alternatives_experiment').resolve()):raise ValueError('UNAUTHORIZED_TRIAL_NAMESPACE')
+    pointer=json.loads((base/'current.json').read_text())
+    if Path(pointer['capture_id']).name!=pointer['capture_id']:raise ValueError('INVALID_CAPTURE_ID')
+    folder=base/pointer['capture_id']
     if sha(folder/'manifest.json')!=pointer['manifest_sha256']:raise ValueError('ORIGIN_MANIFEST_CHANGED')
     db=sqlite3.connect((folder/'snapshots.sqlite3').resolve().as_uri()+'?mode=ro',uri=True);db.execute('BEGIN')
     state_body,state_hash=db.execute('SELECT body,digest FROM state WHERE id=1').fetchone();state=json.loads(state_body)
@@ -63,4 +67,4 @@ def audit(out):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--out',required=True);a=p.parse_args();print(json.dumps(audit(a.out),indent=2))
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--out',required=True);p.add_argument('--base');a=p.parse_args();print(json.dumps(audit(a.out,a.base),indent=2))

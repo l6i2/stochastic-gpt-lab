@@ -1,0 +1,56 @@
+{
+  "candidate_metadata_only": {
+    "dependency_start": 1793880807494,
+    "domain_id": "NEW_PC_A_NATIVE_UNRECONCILED",
+    "instrument": "US30Cash",
+    "label_end": 1793880807494,
+    "signal_ids": [
+      "FUTURE_METADATA_BOUNDARY_PREVIEW"
+    ],
+    "source_sha256": "FUTURE_UNKNOWN"
+  },
+  "current_head_pr_workflows": {
+    "results": 0,
+    "scope": "CONNECTED_GITHUB_FIRST_PAGE_PR_FILTER_ONLY"
+  },
+  "disposition": {
+    "reasons": [
+      "INCOMPLETE_EXPOSURE_LEDGER",
+      "UNCOMPARABLE_OR_UNKNOWN_PROTECTED_INTERVAL"
+    ],
+    "scoring_authorized": false,
+    "status": "BLOCKED",
+    "training_authorized": false
+  },
+  "forward_boundary_test": "HOST_UTC_IS_NOT_PROOF_OF_XM_NATIVE_NONOVERLAP",
+  "git_exact_path_history": [],
+  "legacy_search_receipt_sha256": "5efd7433c588bf86d0fee48e8c38d6c00b939766145058b5a7deff6a7f23e793",
+  "missing": [
+    "ORIGINAL_MASTER_SPLIT_AND_SIGNAL_MEMBERSHIPS",
+    "HISTORICAL_HOLDOUT_EXACT_RESERVATION",
+    "PROSPECTIVE_ROLE_END_OR_NONOVERLAP_ATTESTATION",
+    "RECONCILED_COMPARABLE_TIME_DOMAINS",
+    "COMPLETE_PRIOR_EXPOSURE_LEDGER_OUTSIDE_LOCAL_METADATA"
+  ],
+  "missing_artifacts": {
+    "outputs/future_validation_cohort/cohort_20261019/cohort_manifest.json": {
+      "exists": false,
+      "status": "UNKNOWN"
+    },
+    "outputs/master/master_manifest.json": {
+      "exists": false,
+      "status": "UNKNOWN"
+    },
+    "outputs/splits/split_manifest.json": {
+      "exists": false,
+      "status": "UNKNOWN"
+    }
+  },
+  "new_derived_membership": "DERIVED_WITH_NEW_IDENTITY_NOT_REPLACEMENT_OF_MISSING_ORIGINAL",
+  "recovery_limit": "ORIGINAL_PC_OR_BACKUP_NOT_AVAILABLE; UNKNOWN_NOT_ASSERTED_PERMANENTLY_IRRECOVERABLE",
+  "remote_default_branch_metadata_search": {
+    "results": 0,
+    "scope": "CONNECTED_GITHUB_DEFAULT_BRANCH_CODE_SEARCH"
+  },
+  "rows_protected_opened": 0
+}

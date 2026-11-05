@@ -1,0 +1,162 @@
+{
+  "calendar": {
+    "daily_exceptions_utc": {},
+    "holidays_and_early_closes": [],
+    "schema_version": "xm-us30cash-session-calendar/1.0",
+    "server": "XM account server name still requires local read-only probe",
+    "source": null,
+    "source_sha256": null,
+    "symbol": "US30Cash",
+    "timezone_and_dst": "XM officially documents GMT+2 in winter and GMT+3 in summer and says terminal time follows EU time; exact transition dates for this account server remain unverified",
+    "timezone_evidence": [
+      {
+        "claim": "XM MT4/MT5 servers use GMT+2 in winter and GMT+3 in summer; platform time follows EU time",
+        "url": "https://www.xm.com/help-center/trading-platforms/faq-can-i-change-the-time-zone-on-my-trading-terminal",
+        "verified_on": "2026-10-22"
+      },
+      {
+        "claim": "XM directs clients to the logged-in account to view trading hours for index instruments",
+        "url": "https://www.xm.com/equity-indices",
+        "verified_on": "2026-10-22"
+      }
+    ],
+    "verification_note": "Timezone rule is documented, but the exact server-specific US30Cash quote/trade sessions and current holiday/early-close exceptions are not. Fail maturity closed until those are captured from the active server and authoritative XM schedule, converted to UTC, and hashed. Never infer open hours from observed cohort bars.",
+    "verified": false,
+    "weekly_sessions_utc": []
+  },
+  "calendar_comparison": "OBSERVED_20261028_SCHEDULE_276_LT_350; CURRENT_EXCEPTIONS_AND_SESSION_BRIDGING_NOT_CERTIFIED",
+  "independent_clock": "NTS_CONDITIONAL_BOUNDS",
+  "last_record_sha256": "3833d352bc28c29f263024b43ce9a813a45f39a9ecf0b2265af445c17b0bf087",
+  "measurements": [
+    {
+      "measurement": {
+        "authentication": "TLS_CHAIN_HOSTNAME_ALPN_EXPORTER_AEAD_UID_ORIGIN_VERIFIED",
+        "broker_mapping_authorized": false,
+        "capture_id": "0ee899439bc7423ba49a23da544b2b77",
+        "clock_adjusted": false,
+        "host_elapsed_minus_monotonic_interval_ns": [
+          -684400,
+          1265500
+        ],
+        "host_elapsed_minus_monotonic_ns": 1265500,
+        "host_receive_ns": 1793880591111440900,
+        "host_send_ns": 1793880591075290600,
+        "leap_indicator": 0,
+        "offset_server_minus_host_ns": [
+          646376653,
+          774705007
+        ],
+        "origin": "time.cloudflare.com",
+        "peer_certificate_sha256": "563333c6fbbfcfb8b1dbb1878f5571ab9ade3d253c60311490c693d8ca99da8f",
+        "precision_log2_seconds": -25,
+        "protocol": "RFC8915_NTS_AEAD15_TLS13",
+        "receive_clock_observation": {
+          "qpc_absolute_utc_accuracy": "NOT_IMPLIED_BY_RESOLUTION",
+          "qpc_frequency_hz": 10000000,
+          "qpc_ticks_interval": [
+            1254782751361,
+            1254782751407
+          ],
+          "scope": "LOCAL_WALL_READ_NOT_PACKET_ARRIVAL",
+          "uptime_resolution_bound": "NOT_CALIBRATED"
+        },
+        "receive_kernel_uptime_ms_interval": [
+          125471375,
+          125471375
+        ],
+        "response_sha256": "98c374f4b89957496eb00c1dfbee815efeaa20067a25e8684fa657696dd775b9",
+        "root_delay_ns": 90957641,
+        "root_dispersion_ns": 656127,
+        "rtt_local_read_interval_ns": [
+          34884800,
+          36834700
+        ],
+        "rtt_monotonic_ns": 36834700,
+        "rtt_scope": "QUERY_ELAPSED_INCLUDES_LOCAL_PROCESSING_NOT_PURE_NETWORK_DELAY",
+        "server_advertised_error_ns": 46134978,
+        "server_processing_ns": 91902,
+        "server_receive_utc_ns": 1793880591803860629,
+        "server_transmit_utc_ns": 1793880591803952531,
+        "stratum": 3,
+        "uncertainty_scope": "Conditional on server advertised error and local clock stability; not a metrological absolute bound",
+        "unique_id_sha256": "1e44a54d33438b63e8d93d6d17146c8c519d5b9a34c6cef5d1bbccccd0051aea",
+        "utc_receive_interval_model_ns": [
+          1793880591757817553,
+          1793880591886145907
+        ]
+      },
+      "status": "AUTHENTICATED_MEASUREMENT"
+    },
+    {
+      "measurement": null,
+      "status": "UNAVAILABLE"
+    }
+  ],
+  "missing_guarantees": [
+    "BROKER_GENERATION_ATTESTATION",
+    "BOUNDED_EVENT_TO_RECEIPT_DELAY",
+    "DRIFT_AND_UPTIME_CALIBRATION"
+  ],
+  "native_generation_utc_certified": false,
+  "native_receipt_correlations": {
+    "pc_a_prospective_utc_v1_85456718_90196122757397_15833.jsonl": {
+      "models": [
+        {
+          "capture_id": "0ee899439bc7423ba49a23da544b2b77",
+          "certified": false,
+          "event_utc_inferred": false,
+          "receipt_model_ns": [
+            1793846253975817553,
+            1793846254104145907
+          ],
+          "unbounded_components": [
+            "UPTIME_QUANTIZATION",
+            "OSCILLATOR_DRIFT",
+            "BROKER_GENERATION_TO_CALLBACK_DELAY"
+          ]
+        }
+      ],
+      "native_chain_head": "9a0f495a126102702b5559af5315316e5f0796193de7934075372cfcf8e0fef2",
+      "native_tick": {
+        "callback_uptime_ms": 91133593,
+        "receipt_host_gmt_seconds": 1793846253,
+        "sequence": 4996,
+        "time": 1793853453,
+        "time_msc": 1793853453305
+      }
+    }
+  },
+  "observed_max_adjacent_m5_per_session": 276,
+  "observed_quote_session_minutes": 1380,
+  "required_warmup_m5": 350,
+  "same_server_weekly_evidence_sha256": "cc80aae82f6f50d4f940e0d609907405a0e1b8be0ef0b528ebc0cabff0633ef9",
+  "same_server_weekly_native_evidence": {
+    "canonical_observation": {
+      "clock_basis": "UNVERIFIED_NATIVE_LABELS",
+      "holiday_schedule": "UNKNOWN",
+      "raw_sha256": "3e1e0de1e75fcff5bf98cdf481741df9e82db2656588bed5ce86990ae1d51dfb",
+      "records": [
+        "XM_SESSION_PROBE|START|symbol=US30Cash|symbol_selected=YES|server=XMGlobalSC-MT5 5",
+        "XM_SESSION_PROBE|CLOCK|server_time=2026.10.28 18:35:22|utc_time=2026.10.28 16:35:22|offset_seconds=7200",
+        "XM_SESSION_PROBE|QUOTE|day=MONDAY|index=0|from=00:00|to=23:00",
+        "XM_SESSION_PROBE|TRADE|day=MONDAY|index=0|from=00:05|to=22:55",
+        "XM_SESSION_PROBE|QUOTE|day=TUESDAY|index=0|from=00:00|to=23:00",
+        "XM_SESSION_PROBE|TRADE|day=TUESDAY|index=0|from=00:05|to=22:55",
+        "XM_SESSION_PROBE|QUOTE|day=WEDNESDAY|index=0|from=00:00|to=23:00",
+        "XM_SESSION_PROBE|TRADE|day=WEDNESDAY|index=0|from=00:05|to=22:55",
+        "XM_SESSION_PROBE|QUOTE|day=THURSDAY|index=0|from=00:00|to=23:00",
+        "XM_SESSION_PROBE|TRADE|day=THURSDAY|index=0|from=00:05|to=22:55",
+        "XM_SESSION_PROBE|QUOTE|day=FRIDAY|index=0|from=00:00|to=23:00",
+        "XM_SESSION_PROBE|TRADE|day=FRIDAY|index=0|from=00:05|to=22:50",
+        "XM_SESSION_PROBE|END"
+      ],
+      "server": "XMGlobalSC-MT5 5",
+      "status": "OBSERVED_ONLY_NOT_ACTIVATED",
+      "symbol": "US30Cash"
+    },
+    "original_source_sha256": "d13b3b168c627dcf659d16d00151bc0a6b730b7f7fd9e9c1b3bb48106ca1b731",
+    "status": "OBSERVED_NATIVE_ONLY_NOT_UTC_CALENDAR"
+  },
+  "strategy_time_domain": "NATIVE_EVENT_ORDER",
+  "verified_nts_chain_records": 374
+}

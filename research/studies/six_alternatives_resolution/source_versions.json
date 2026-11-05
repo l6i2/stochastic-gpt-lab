@@ -1,0 +1,13 @@
+{
+  "experimental_sources_immutable_since_capture": true,
+  "files": {
+    "controller/six_routes.py": "31c2362af18c48f57c7d569642f073cfdb0e6a45bc37e6137c10e3e7225b0bd5",
+    "docs/AUTONOMOUS_RESEARCH_STATUS.md": "16c8989858069c6062047a209ac72e156adba86d2179f37beee7bdb913570c84",
+    "docs/SIX_ALTERNATIVES_RESOLUTION.md": "2afbe80341dca50d713fca08dad527e90b0f04c1c538df518e3b5ddf36a93b90",
+    "tests/test_six_routes.py": "cba432b96ab4eb9fd6ca3c3c15e73023204b94b09292e9a74cd9bc3a3a44f603",
+    "tools/audit_native_database_trial.py": "d42068de878fe47e299394dec3fbd9560bcca625df35bb304aa3a6c6ead80632",
+    "tools/prepare_six_routes_study.py": "8a5a678db23ab43dd37d003bd630d4bba22afe3a16deded959fda2f45d345717",
+    "tools/six_routes_capture.py": "f1ed37b3fe656c113522db3688475dcfd6ea6a221337677ab7ddb647e9c7a1a4",
+    "tools/six_routes_experiments.py": "6fc1b416c1e2811bc1401f4a74d2dfe8404939678936e0aaba859381002d7446"
+  }
+}

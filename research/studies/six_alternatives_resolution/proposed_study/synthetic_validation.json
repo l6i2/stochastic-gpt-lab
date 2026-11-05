@@ -1,0 +1,55 @@
+{
+  "actual_fits": 0,
+  "actual_scoring": 0,
+  "dependency_preflight": {
+    "declared_envelopes": "PASS_SYNTHETIC_ONLY",
+    "real_feature_bytes_verified": false,
+    "training_authorized": false
+  },
+  "execution_without_grant_refused": true,
+  "folds": [
+    {
+      "evaluation_count": 95,
+      "evaluation_sides": {
+        "BUY": 47,
+        "SELL": 48
+      },
+      "fold": 1,
+      "purged_train": 5,
+      "train_count": 395
+    },
+    {
+      "evaluation_count": 95,
+      "evaluation_sides": {
+        "BUY": 47,
+        "SELL": 48
+      },
+      "fold": 2,
+      "purged_train": 5,
+      "train_count": 495
+    },
+    {
+      "evaluation_count": 95,
+      "evaluation_sides": {
+        "BUY": 47,
+        "SELL": 48
+      },
+      "fold": 3,
+      "purged_train": 5,
+      "train_count": 595
+    },
+    {
+      "evaluation_count": 100,
+      "evaluation_sides": {
+        "BUY": 50,
+        "SELL": 50
+      },
+      "fold": 4,
+      "purged_train": 5,
+      "train_count": 695
+    }
+  ],
+  "future_feature_rejected": true,
+  "rows_from_protected_sets": 0,
+  "synthetic": true
+}

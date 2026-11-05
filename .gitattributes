@@ -1,4 +1,5 @@
 * text=auto eol=lf
+research/studies/six_alternatives_resolution/experimental_authorization.json -text whitespace=cr-at-eol
 # Hash-bound payloads must retain their exact audited bytes on every checkout.
 docs/FUTURE_VALIDATION_PROTOCOL.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 docs/PROSPECTIVE_EVALUATION_PROTOCOL.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

@@ -178,3 +178,43 @@ El corte de salud fue limpio. La adquisición continúa en cuarentena.
 
 Para reproducir la verificación incremental con el corte disponible, ejecutar
 `.venv\Scripts\python.exe tools/admission_progress_receipt.py --out <archivo_nuevo>`.
+
+## Rescate de seis alternativas del 5 de noviembre
+
+Se completaron A, extracción histórica aislada; B, agregación M1→M5; C, productor
+experimental con identidad propia; D, verificación temporal con NTS; E, búsqueda
+de metadatos y ensayo de frontera independiente; y F, estudio propuesto sellado
+con validación sintética. Los resultados y su matriz están en el informe de las
+seis alternativas y en `research/studies/six_alternatives_resolution/`.
+
+[Informe de seis alternativas](SIX_ALTERNATIVES_RESOLUTION.md)
+
+A preservó 79.211 cotizaciones, 1.376 M1 y 276 M5 del día diagnóstico autorizado.
+La muestra API corregida contiene 223 ticks. B confirmó OHLC y volumen de 276
+agregados contra M5 nativa; 272 contienen cinco M1 y cuatro conservan huecos.
+C produjo dos M5 consecutivas y 14 M1 sin rechazos, con doble lectura exacta y
+estado conservado tras reapertura en procesos independientes. El ensayo finalizó
+de forma controlada y dejó su base en cuarentena. Las pruebas sumaron 25 PASS.
+
+El corte original de las 07:27 Ecuador registra 147.003 callbacks, 557 M1 y
+30 M5 completas acumuladas, 179 M5 rechazadas y racha cero. El warmup científico
+es 0/350, señales 0/800, barras posteriores 0/100 y evaluables 0/200, con soporte
+BUY/SELL de cero frente a 80 por lado. C aporta cero barras al contador original.
+El estado de salud del corte fue limpio y el gate permanece WAITING_FOR_DATA.
+
+La mejor vía técnica es el productor C por su procedencia explícita, paridad,
+persistencia y coste medido. La vía científica es F, un estudio nuevo pendiente
+de aprobación. Conserva estrategia y umbrales y propone la admisión offline de
+observaciones nativas y continuidad entre sesiones solo con cobertura y horario
+demostrados. La sesión de 23 horas observada en el servidor admite 276 M5; un
+reset obligatorio entre esas sesiones impide alcanzar 350 dentro de una sesión.
+La vigencia y las excepciones del horario siguen pendientes de certificación.
+
+El ledger no prueba independencia frente a reservas de límites desconocidos.
+Para avanzar científicamente se necesita evidencia original de membership y
+roles o una decisión explícita sobre la asignación futura de roles, junto con
+el contrato aprobado de observaciones nativas. Después se requerirán datos
+suficientes con semillas, cobertura y causalidad verificadas. El dataset sigue
+sin admisión y con hash nulo. El protocolo de entrenamiento planifica hasta ocho
+ajustes y autoriza cero. El productor original, worker, NTS y guardian mantienen
+su supervisión programada. Los conjuntos protegidos conservan sus restricciones.

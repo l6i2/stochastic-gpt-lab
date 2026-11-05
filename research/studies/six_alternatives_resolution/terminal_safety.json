@@ -1,0 +1,7 @@
+{
+  "connected": true,
+  "terminal_trade_allowed": false,
+  "demo": true,
+  "server": "XMGlobalSC-MT5 5",
+  "maxbars": 20000
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "enabled": true,
+    "last_result": 267014,
+    "name": "StochasticGPTLab_PC_A_ProspectiveUTC_v1",
+    "next_run": "2026-11-05T07:32:37.0000000-05:00",
+    "state": "Running"
+  },
+  {
+    "enabled": true,
+    "last_result": 0,
+    "name": "StochasticGPTLab_PC_A_RawQuarantine_v1",
+    "next_run": "2026-11-05T07:32:57.0000000-05:00",
+    "state": "Ready"
+  },
+  {
+    "enabled": true,
+    "last_result": 2147946720,
+    "name": "StochasticGPTLab_PC_A_RecoveryGuardian_v1",
+    "next_run": "2026-11-05T07:34:40.0000000-05:00",
+    "state": "Running"
+  }
+]

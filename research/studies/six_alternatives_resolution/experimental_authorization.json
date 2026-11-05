@@ -1,0 +1,10 @@
+{
+  "producer_trial_authorized": true,
+  "training_authorized": false,
+  "scoring_authorized": false,
+  "dataset_admission_authorized": false,
+  "live_trading": false,
+  "orders_authorized": false,
+  "authority": "USER_OPERATION_RESCATE_CIENTIFICO",
+  "request_sha256": "e4b35cc283c73b024b519d966a69e185a843098e675aeeddb40d3a2e8886e2af"
+}

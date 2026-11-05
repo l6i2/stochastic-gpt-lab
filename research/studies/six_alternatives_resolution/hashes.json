@@ -1,0 +1,29 @@
+{
+  "files": {
+    "A_history.json": "edcdcb2bf347d4d51b6798a91ae1e840b6446ad2f2d9be7fffdc3a424582a2d7",
+    "B_aggregation.json": "fdab3bff335a0cce3872b81397a455e93a69a036429802a8249eeea99ea90e68",
+    "C_capture.json": "6204c39b645791a7e581e0542e4238183cd8f587ed309ba9a072439a79af171d",
+    "C_origin_manifest.json": "6925ddb07bec750e733ca1a3eeaca97ff929998c3070da2a520aad04fc65f8a4",
+    "D_temporal.json": "5a1087922547b02e407ee34ad882f196746225a231029e80a470d3206ac48164",
+    "E_independence.json": "dbf8e21f52878dc67c3f1eadd316ca709155840dc2389a549eb47f2b3828513e",
+    "F_validation.json": "56ddb0d92f7be7113c01d484a510a08b694f7278ebb682fcf31ed0352f0059e4",
+    "clock_semantics.json": "eb1ffd8df6b9e1a80b00e85444e619cb967ab9ac27efe0d98819e18a57b3ed1d",
+    "comparison_matrix.json": "77ce7a2327973fb47cfda8c9d69e9048a63caa0c9ae2c5fb0dcbcb534d7fac3c",
+    "decision.json": "82323a35d279c0ac4405acb6c30c6945e9a83cde2ec4fbf0e256126425cfca96",
+    "experimental_authorization.json": "a0e6f2b61b53caa034ec16e8bc24eb1648928b18e1e226003c1232334a7c0209",
+    "exposure_delta.json": "6dcc379aa8887142a00515622910829df8d8bb5526d1c8a0b4d7da4d7de4de65",
+    "proposed_study/PROPOSAL_ES.md": "12bc6001b1e3a77523a1224cb55e9bba52b53b35759e9c2b0433de9485af0d55",
+    "proposed_study/feature_whitelist.json": "ab518d250669201b1c7f95cfb0756c83a31036ba0c300b8508dac64512e3e072",
+    "proposed_study/hashes.json": "1cf752da818b60f4c943d4b87919eed75c96315de05618a4eaf8671a32339c03",
+    "proposed_study/statistical_protocol.json": "0824cbd3e4afd44720dfb782b92ce29b110b140d791641b7e901dd4dcd5db230",
+    "proposed_study/study.json": "f526ad8a61ea06cf2a7fd5dd4e0475f189d1f17259471d946fb4db48097eb40f",
+    "proposed_study/synthetic_validation.json": "68c99174f34de617be0659028709bfc4daa6f4e6b826d585fede297f8ae36196",
+    "scheduled_tasks.json": "5d57643cdee6329b83be785b37874be04b70192d3f0c3a84b0d61bd44d7202a0",
+    "source_versions.json": "bd05689d53c8cedd42f0a8933ffd29d68c360a2857050d09c1736d099fadd274",
+    "station_snapshot.json": "939330c9a27fb47afc63bffac2ff764683ddfe2a09ac032ef61b3275477aea3b",
+    "terminal_safety.json": "fafd7ba64101f90d897954910ad932265b9519211ba3175d66591e06e0d5d7e5",
+    "tests.log": "db3e1a6384fc2e7251a864804bf5b73965b6c6fb71d78d874c52775154729df3"
+  },
+  "root_sha256": "afd2d1a5ec5a71ca2c869920f35d0842bce81cda1928201f7295d294cedafcab",
+  "scope": "SEPARATE_EXPERIMENTS_AND_PROPOSED_STUDY_NO_ADMISSION"
+}

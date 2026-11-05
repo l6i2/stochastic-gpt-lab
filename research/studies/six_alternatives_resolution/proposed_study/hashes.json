@@ -1,0 +1,10 @@
+{
+  "files": {
+    "PROPOSAL_ES.md": "12bc6001b1e3a77523a1224cb55e9bba52b53b35759e9c2b0433de9485af0d55",
+    "feature_whitelist.json": "ab518d250669201b1c7f95cfb0756c83a31036ba0c300b8508dac64512e3e072",
+    "statistical_protocol.json": "0824cbd3e4afd44720dfb782b92ce29b110b140d791641b7e901dd4dcd5db230",
+    "study.json": "f526ad8a61ea06cf2a7fd5dd4e0475f189d1f17259471d946fb4db48097eb40f",
+    "synthetic_validation.json": "68c99174f34de617be0659028709bfc4daa6f4e6b826d585fede297f8ae36196"
+  },
+  "root_sha256": "6124fb4cba1573f80e1ff06ac1e2982c44cf4256ab8a7f6b4dc3b06817a81b41"
+}

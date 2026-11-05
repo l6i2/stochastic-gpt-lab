@@ -1,0 +1,1397 @@
+{
+  "exact_ohlc_volume_buckets": 276,
+  "full_five_minute_buckets": 272,
+  "intervals": [
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704157200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704157500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704157800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704158100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704158400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704158700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704159000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704159300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704159600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704159900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704160200
+    },
+    {
+      "complete_five_minutes": false,
+      "differences": [],
+      "native_open": 1704160500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704160800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704161100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704161400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704161700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704162000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704162300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704162600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704162900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704163200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704163500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704163800
+    },
+    {
+      "complete_five_minutes": false,
+      "differences": [],
+      "native_open": 1704164100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704164400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704164700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704165000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704165300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704165600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704165900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704166200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704166500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704166800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704167100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704167400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704167700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704168000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704168300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704168600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704168900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704169200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704169500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704169800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704170100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704170400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704170700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704171000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704171300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704171600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704171900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704172200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704172500
+    },
+    {
+      "complete_five_minutes": false,
+      "differences": [],
+      "native_open": 1704172800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704173100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704173400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704173700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704174000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704174300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704174600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704174900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704175200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704175500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704175800
+    },
+    {
+      "complete_five_minutes": false,
+      "differences": [],
+      "native_open": 1704176100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704176400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704176700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704177000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704177300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704177600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704177900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704178200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704178500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704178800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704179100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704179400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704179700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704180000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704180300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704180600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704180900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704181200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704181500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704181800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704182100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704182400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704182700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704183000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704183300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704183600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704183900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704184200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704184500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704184800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704185100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704185400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704185700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704186000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704186300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704186600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704186900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704187200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704187500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704187800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704188100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704188400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704188700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704189000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704189300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704189600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704189900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704190200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704190500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704190800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704191100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704191400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704191700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704192000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704192300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704192600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704192900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704193200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704193500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704193800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704194100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704194400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704194700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704195000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704195300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704195600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704195900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704196200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704196500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704196800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704197100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704197400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704197700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704198000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704198300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704198600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704198900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704199200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704199500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704199800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704200100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704200400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704200700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704201000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704201300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704201600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704201900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704202200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704202500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704202800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704203100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704203400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704203700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704204000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704204300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704204600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704204900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704205200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704205500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704205800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704206100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704206400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704206700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704207000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704207300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704207600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704207900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704208200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704208500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704208800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704209100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704209400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704209700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704210000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704210300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704210600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704210900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704211200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704211500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704211800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704212100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704212400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704212700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704213000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704213300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704213600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704213900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704214200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704214500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704214800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704215100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704215400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704215700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704216000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704216300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704216600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704216900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704217200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704217500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704217800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704218100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704218400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704218700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704219000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704219300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704219600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704219900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704220200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704220500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704220800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704221100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704221400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704221700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704222000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704222300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704222600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704222900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704223200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704223500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704223800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704224100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704224400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704224700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704225000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704225300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704225600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704225900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704226200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704226500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704226800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704227100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704227400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704227700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704228000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704228300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704228600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704228900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704229200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704229500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704229800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704230100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704230400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704230700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704231000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704231300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704231600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704231900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704232200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704232500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704232800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704233100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704233400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704233700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704234000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704234300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704234600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704234900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704235200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704235500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704235800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704236100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704236400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704236700
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704237000
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704237300
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704237600
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704237900
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704238200
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704238500
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704238800
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704239100
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704239400
+    },
+    {
+      "complete_five_minutes": true,
+      "differences": [],
+      "native_open": 1704239700
+    }
+  ],
+  "m5_from_m1": 276,
+  "m5_native": 276,
+  "original_receipt_coverage_proven": false,
+  "session_status": "NATIVE_LABELS_ONLY_CALENDAR_PARTIAL",
+  "ticks_comparison": {
+    "count": 276,
+    "gaps": [],
+    "native_volume_sum": 79201,
+    "ohlc_or_time_mismatches": 0,
+    "quote_count_volume_disagreements": 10
+  }
+}

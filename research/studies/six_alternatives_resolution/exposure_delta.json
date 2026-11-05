@@ -1,0 +1,17 @@
+{
+  "chain_head": "8430a9d08742e46b46dc1e8bdf37128824b256617c43bb81928b05327f0d05ec",
+  "entry": {
+    "experimental_capture": "dbsnap_f96ae9399e304c738ccffd0592aaf581",
+    "kind": "SIX_SEPARATE_RESCUE_ROUTE_EXPERIMENTS",
+    "ledger_sequence": 63,
+    "matrix_sha256": "77ce7a2327973fb47cfda8c9d69e9048a63caa0c9ae2c5fb0dcbcb534d7fac3c",
+    "new_dataset_admission": false,
+    "previous": "bd8c3395566734a19aef3751f6e3a8dc3b76039907ec75e6148d4fab177bd3c0",
+    "prospective_backfill": 0,
+    "protected_rows_read": 0,
+    "scientific_scoring": 0,
+    "training_fits": 0
+  },
+  "parent_path": "research/studies/admission_progress_20261104_v1/exposure_delta.json",
+  "parent_sha256": "d82c43a60f4b9fa10c27c2c57f4672450a1753ee2520e62857a0806d611c6bd9"
+}

@@ -1,0 +1,13 @@
+{
+  "TimeCurrent": "LAST_KNOWN_SERVER_QUOTE_TIME",
+  "TimeGMT": "LOCAL_COMPUTER_DERIVED",
+  "TimeTradeServer": "CLIENT_CALCULATED_SERVER_TIME_DEPENDENT_ON_LOCAL_CLOCK",
+  "mapping_applied": false,
+  "monotonic": "ORDER_AND_ELAPSED_TIME_WITH_BOOT_ID_NOT_ABSOLUTE_UTC",
+  "receipt": "FIRST_OBSERVED_QUERY_INTERVAL_NOT_GENERATION",
+  "sources": [
+    "https://www.mql5.com/en/docs/dateandtime/timecurrent",
+    "https://www.mql5.com/en/docs/dateandtime/timetradeserver",
+    "https://www.mql5.com/en/docs/dateandtime/timegmt"
+  ]
+}

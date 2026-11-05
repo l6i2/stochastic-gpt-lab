@@ -1,0 +1,83 @@
+{
+  "identity_scope": "PINNED_PRODUCER_ACCOUNT_SERVER_SYMBOL_AND_DATA_FOLDER_CHECK_AT_EACH_QUERY",
+  "origin_manifest_sha256": "6925ddb07bec750e733ca1a3eeaca97ff929998c3070da2a520aad04fc65f8a4",
+  "persistence": {
+    "receipt": {
+      "accepted": {
+        "300": 2,
+        "60": 14
+      },
+      "chain_head": "f54a62aedf93503846db36f6d9e1a3abbc7f5af05d849d660278438f97de2ab4",
+      "consecutive_m5": 2,
+      "records": 859,
+      "state_sha256": "c126dda5352d5962fd49c169323e4e87895b9c1b6f2f23b5d63404b4f5802b56"
+    },
+    "result": "PASS_REAL_SEPARATE_PROCESS_REOPEN"
+  },
+  "post_trial_safety_receipt_sha256": "fafd7ba64101f90d897954910ad932265b9519211ba3175d66591e06e0d5d7e5",
+  "prior_reader_anchor": "262ce1813c13b9cf52e8b33a0e96b0979954161dc1aa20766171deb0ac790aaf",
+  "prior_reader_records": 654,
+  "resources": {
+    "cpu_seconds": 2.75,
+    "private_mib": 252.05078125,
+    "process_id": 18024,
+    "resident_mib": 13.83984375
+  },
+  "server": "XMGlobalSC-MT5 5",
+  "status": {
+    "accepted": {
+      "300": 2,
+      "60": 14
+    },
+    "active_source_pin_sha256": "6925ddb07bec750e733ca1a3eeaca97ff929998c3070da2a520aad04fc65f8a4",
+    "callback_coverage_certified": false,
+    "capture_id": "dbsnap_f96ae9399e304c738ccffd0592aaf581",
+    "chain_head": "f54a62aedf93503846db36f6d9e1a3abbc7f5af05d849d660278438f97de2ab4",
+    "clock": {
+      "boot_id": "112",
+      "host_utc_label": "2026-11-05T12:25:01.768519+00:00",
+      "monotonic_ns": 126388901457300,
+      "uptime_ms": 126382000,
+      "utc_certified": false
+    },
+    "consecutive_m5_database_view": 2,
+    "dataset_admitted": false,
+    "epoch": "1_125528609",
+    "epochs": 1,
+    "error": null,
+    "event_generation_utc_certified": false,
+    "live_trading": false,
+    "maximum_consecutive_m5_database_view": 2,
+    "next_open": {
+      "300": 1793888700000,
+      "60": 1793888700000
+    },
+    "process_id": 18024,
+    "provenance": "NATIVE_DATABASE_OBSERVATIONS_NOT_ORIGINAL_CALLBACK_RECEIPTS",
+    "records": 859,
+    "rejected": {
+      "300": 0,
+      "60": 0
+    },
+    "scientific_warmup": 0,
+    "scoring_authorized": false,
+    "status": "TRIAL_STOPPED_QUARANTINED",
+    "training_authorized": false
+  },
+  "summary": {
+    "accepted": {
+      "300": 2,
+      "60": 14
+    },
+    "capture_id": "dbsnap_f96ae9399e304c738ccffd0592aaf581",
+    "chain_head": "f54a62aedf93503846db36f6d9e1a3abbc7f5af05d849d660278438f97de2ab4",
+    "consecutive_m5_database_view": 2,
+    "dataset_admitted": false,
+    "maximum_consecutive_m5_database_view": 2,
+    "rejected": {},
+    "scientific_warmup": 0,
+    "snapshot_ecuador": "2026-11-05T07:25:12.829081-05:00",
+    "verified_records": 859
+  },
+  "symbol": "US30Cash"
+}

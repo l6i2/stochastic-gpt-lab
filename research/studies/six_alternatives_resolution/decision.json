@@ -1,0 +1,26 @@
+{
+  "CAUSAL_AUDIT": "FAIL_GLOBAL_UNCHANGED",
+  "DATASET_HASH": null,
+  "TRAINING_ADMISSION_GATE": "WAITING_FOR_DATA",
+  "TRAINING_EXECUTED": false,
+  "TRAINING_READINESS": "BLOCKED",
+  "authorization_request_ready": false,
+  "best_technical_route": "C",
+  "current_warmup": 0,
+  "dataset_independently_admitted": false,
+  "eligible_m5": 0,
+  "external_dependencies": [
+    "TRUSTED_MEMBERSHIP_AND_ROLE_BOUNDARIES_OR_EXPLICIT_NEW_FORWARD_ROLE_DECISION",
+    "APPROVAL_OF_NATIVE_DATABASE_ADMISSION_AND_SESSION_CONTINUITY_METHOD",
+    "FUTURE_350_800_100_AND_200_80_80_SUPPORT_WITH_SEEDS"
+  ],
+  "financial_selection_used": false,
+  "scientific_route": "F_REQUIRES_APPROVAL",
+  "scientific_warmup": 0,
+  "selection_basis": [
+    "EXACT_NATIVE_PARITY",
+    "REPRODUCIBLE_HASHED_OBSERVATIONS",
+    "BOUNDED_CPU_AND_MEMORY",
+    "EXPLICIT_PROVENANCE"
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "BUY_SIGNALS": 0,
+  "DEMO": "DISABLED",
+  "LIVE_TRADING": false,
+  "SELL_SIGNALS": 0,
+  "TRAINING_ADMISSION_GATE": "WAITING_FOR_DATA",
+  "TRAINING_EXECUTED": false,
+  "TRAINING_READINESS": "BLOCKED",
+  "admitted_records": 0,
+  "capture_activation": {
+    "after_capture_id": "e0d89c0b39344f1397125160cf6219bf",
+    "basis": "CAUSAL_ORDER_BETWEEN_AUTHENTICATED_PRE_TRANSMIT_AND_POST_RECEIVE_SERVER_TIMESTAMPS",
+    "before_capture_id": "3edc6536c9254739bf61805836075879",
+    "broker_event_utc_certified": false,
+    "estimate_ns": 1793471633341915536,
+    "half_width_ns": 358890332,
+    "local_clock_offset_or_drift_extrapolated": false,
+    "uncertainty": "CONDITIONAL_ON_REMOTE_SERVER_ADVERTISED_ERROR_NOT_METROLOGICAL_ABSOLUTE",
+    "utc_estimate": "2026-10-31T18:33:53.341916+00:00",
+    "utc_interval_ns": [
+      1793471632983025204,
+      1793471633700805868
+    ],
+    "utc_lower": "2026-10-31T18:33:52.983025+00:00",
+    "utc_upper": "2026-10-31T18:33:53.700806+00:00"
+  },
+  "capture_id": "us30cap_15cbddec947f42c98219caa4cec978f2",
+  "causal_audit": "FAIL_GLOBAL_UNCHANGED",
+  "code_head": "7e386bb714a7ae706313994cc0af9f5460b30091",
+  "consecutive_signals": 0,
+  "coverage": "EXACT_NATIVE_BID_SEQUENCE_PLUS_OHLC_VOLUME_REFERENCE_REQUIRED",
+  "dataset_hash": null,
+  "dataset_id": "us30cash_m5_native_new_01_reserved",
+  "dataset_id_is_reservation": true,
+  "dataset_maturity": "NOT_READY_QUARANTINED",
+  "demonstrated_independent_admitted_periods": [],
+  "evaluable_BUY": 0,
+  "evaluable_SELL": 0,
+  "evaluable_required": 200,
+  "evaluable_total": 0,
+  "exposure_chain_verified": true,
+  "exposure_missing": [
+    "ORIGINAL_MASTER_SPLIT_AND_SIGNAL_MEMBERSHIPS",
+    "HISTORICAL_HOLDOUT_EXACT_RESERVATION",
+    "PROSPECTIVE_ROLE_END_OR_NONOVERLAP_ATTESTATION",
+    "RECONCILED_COMPARABLE_TIME_DOMAINS",
+    "COMPLETE_PRIOR_EXPOSURE_LEDGER_OUTSIDE_LOCAL_METADATA"
+  ],
+  "feature_status": "PASS_SYNTHETIC_IMPLEMENTATION_LIVE_SEED_MEMBERSHIP_PENDING",
+  "gate_authority": {
+    "TRAINING_ADMISSION_GATE": "BLOCKED",
+    "authorization_request_ready": false,
+    "authorization_requested": false,
+    "execution_permitted": false,
+    "package_complete": false,
+    "reasons": [
+      "NO_INDEPENDENT_ADMITTED_SEALED_DATASET",
+      "COMPLETE_MEMBERSHIP_AND_COVERAGE_RECEIPTS_REQUIRED",
+      "APPLICABLE_CONTRACT_CAUSALITY_NOT_ADMITTED",
+      "NO_HASH_BOUND_SCIENTIFIC_AUTHORIZATION"
+    ],
+    "scientific_grants": 0,
+    "training_executed": false
+  },
+  "historical_diagnostic": {
+    "M1_chart_first_native": "2026-10-13 12:19",
+    "M5_chart_first_native": "2026-07-22 05:35",
+    "all_history_downloaded": false,
+    "chart_queries_old_day_error": 4401,
+    "complete_server_coverage_certified": false,
+    "downloaded_ticks": 79211,
+    "local_native_database_first": "2022-06-03",
+    "metadata_counts_scope": "ISOLATED_NATIVE_TERMINAL_SAME20K_LIMIT_NOT_ASSUMED_ACTIVE_CACHE_IDENTICAL",
+    "permitted_download_day": "2024-01-02",
+    "protected_period_content_queries": 0,
+    "python_direct_response": "REJECTED_OUT_OF_RANGE_NO_BARS_PERSISTED",
+    "server_advertised_first_native": "2011-08-10"
+  },
+  "historical_parity": {
+    "BUY": 13,
+    "M1_EXACT": 1376,
+    "M5_EXACT": 276,
+    "MAIN_K": {
+      "all_bar_max_error": 1.4210854715202004e-14,
+      "all_native_closed_bars_compared": 268,
+      "compared_signals": 27,
+      "early_warmup_rows_not_compared": 1,
+      "inherited_oracle_absolute_tolerance": 1e-10,
+      "max_error": 1.4210854715202004e-14,
+      "missing_signal_cutoffs": [],
+      "status": "PASS"
+    },
+    "SELL": 15,
+    "new_native_tester_run": true,
+    "run_id": "diag_d17cbe6aedfc",
+    "scope": "FROZEN_NATIVE_VIRTUAL_EXPORTER_VS_PYTHON_NOT_MT5_ORDER_FILL_ENGINE",
+    "status": "PASS",
+    "virtual_paths": 56
+  },
+  "manual_action_required": false,
+  "membership": "RAW_AND_DERIVED_LINEAGE_TRACKED_LEGACY_NONOVERLAP_PENDING",
+  "next_automatic_action": "EXISTING_CAPTURE_WORKER_NTS_SNAPSHOT_MONITOR_CONTINUE_NO_BACKFILL",
+  "non_data_blockers": [
+    "SNAPSHOT_METHOD_ADMISSION_NOT_AUTHORIZED",
+    "UNKNOWN_LEGACY_MEMBERSHIP_NOT_RESOLVED_BY_MORE_TICKS",
+    "EXPLICIT_SCIENTIFIC_GRANT_REQUIRED"
+  ],
+  "nts_latest_record_hash": "152374063b007448e2a6415beaf848a97d07b9d2da3dad4cb2c040fe3dfcd619",
+  "nts_scope": "AUTHENTICATION_VERIFIED_BY_EXISTING_NTS_SERVICE_NOT_RECHECKED_BY_THIS_METADATA_REPORT",
+  "nts_state": {
+    "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:112",
+    "chain_head": "4a7fa8778e1f7171db663f186a22489aea5725f602a38bfdde47a0d0f482da86",
+    "failures": 0,
+    "last_record": "c963844f6bdf44bd8457ac3f0e4001f9.json",
+    "last_uptime_ms": 126402593,
+    "next_due_uptime_ms": 126702593
+  },
+  "observed_ecuador": "2026-11-05T07:27:10.217093-05:00",
+  "observed_m1": 557,
+  "observed_m5": 30,
+  "offline_diagnostic_review": {
+    "coverage": {
+      "M1": {
+        "count": 1376,
+        "gaps": [
+          {
+            "after": 1704160680,
+            "before": 1704160800
+          },
+          {
+            "after": 1704164220,
+            "before": 1704164340
+          },
+          {
+            "after": 1704172860,
+            "before": 1704172980
+          },
+          {
+            "after": 1704176220,
+            "before": 1704176340
+          }
+        ],
+        "native_volume_sum": 79201,
+        "ohlc_or_time_mismatches": 0,
+        "quote_count_volume_disagreements": 10
+      },
+      "M5": {
+        "count": 276,
+        "gaps": [],
+        "native_volume_sum": 79201,
+        "ohlc_or_time_mismatches": 0,
+        "quote_count_volume_disagreements": 10
+      }
+    },
+    "diagnostic_id": "us30cash_native_20240102_diagnostic_d17cbe6aedfc",
+    "historical_independence_demonstrated": false,
+    "receipt_sha256": "935ab7ba6e5575e46bd3292c551117c0edb5c65f2254560437ef14b54e51e38f",
+    "replay": "PASS",
+    "review_scope": "EXPOSED_DIAGNOSTIC_ONLY",
+    "signals": {
+      "BUY": 13,
+      "SELL": 15
+    }
+  },
+  "old_window_queries": 0,
+  "post_required": 100,
+  "post_signal_bars": 0,
+  "protected_sets": {
+    "DISCOVERY_VALIDATION": "BLOCKED",
+    "FINAL_TEST": "LOCKED",
+    "HISTORICAL_HOLDOUT": "LOCKED"
+  },
+  "raw_heartbeats": 18299,
+  "raw_status": "ACTIVE_QUARANTINED",
+  "raw_ticks": 147003,
+  "receipts": {
+    "outputs/native_database_snapshots_v1/current.json": "0e82cfd979adb6e279716b167d52034a3dacaf03a5f885e893edac127cf36750",
+    "outputs/native_database_snapshots_v1/dbsnap_a5b5b6a8d777455d9cc63c8ca8690942/status.json": "14b236f43177792786dc3d790dcfab7ad9749cdeb66085427e9c921ac014b644",
+    "outputs/new_native_studies/us30cash_m5_native_20261030_01/current_capture.json": "88158f3ee45388c56e12ab56cc8ec129554f1e99f91589554e2e4a5cc84aaba7",
+    "outputs/new_native_studies/us30cash_m5_native_20261030_01/us30cap_15cbddec947f42c98219caa4cec978f2/collection_manifest.json": "d6c02812fecf17f6aa3747db50b4cb7fa5a466c8145e98ec37208b80429a571a",
+    "outputs/new_native_studies/us30cash_m5_native_20261030_01/us30cap_15cbddec947f42c98219caa4cec978f2/collector_status.json": "ae2a38db3321452084d60a0eca0f77eddc5591580a8357df0ee4183bb5dd7a95",
+    "outputs/pc_a_prospective_utc/authenticated_utc/c963844f6bdf44bd8457ac3f0e4001f9.json": "152374063b007448e2a6415beaf848a97d07b9d2da3dad4cb2c040fe3dfcd619",
+    "outputs/pc_a_prospective_utc/authenticated_utc/state.json": "0bfd3b35e5708409f850cf4f3e85f9ed83c0acbf3a062898fbe9a2b4dfd7f1bb",
+    "outputs/pc_a_stability/recovery_status.json": "3f1f7465c18843d0b283256d0cc17e5838cc1b93cbdc5398d8906c7c6f829821",
+    "outputs/prospective_derivatives_v1/us30cap_15cbddec947f42c98219caa4cec978f2/maturity.json": "b3f15c3b76b4440dd9bfa7ac18c784ee6776e741dd15921ec06d89907d005c8f",
+    "outputs/research_readiness/broker_identity.json": "6e64e9ab6a4215aeccea1b06e0bcfd5bc01ce2298177a351240532fa65c474f9",
+    "research/studies/final_mission_20261104_v1/offline_receipt.json": "935ab7ba6e5575e46bd3292c551117c0edb5c65f2254560437ef14b54e51e38f",
+    "research/studies/maxbars_history_20261102_v1/summary.json": "2c59c9ea5882b1bab84990757a2d457b38c45c2b9d6fa08155730a9935469440",
+    "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+    "research/studies/us30cash_m5_native_pretrain_v1/package_hashes.json": "6a34ff5006ad80a6ff419c269a35a872e49a8898aff4f2753208c580b5a0f9e3"
+  },
+  "rejected_buckets_all_timeframes": 645,
+  "remaining_blockers": [
+    "EXACT_CALLBACK_COVERAGE_AND_OWN_RECURSIVE_SEEDS",
+    "350_OWN_M5_THEN_800_SIGNALS_AND_100_POST_BARS",
+    "200_EVALUABLE_80_EACH_SIDE_3_FOLDS_EACH",
+    "COMPLETE_COMPARABLE_MEMBERSHIP_AND_APPLICABLE_CAUSALITY",
+    "NO_AUTHORIZATION_TO_ADMIT_DATABASE_SNAPSHOT_TRIAL",
+    "SEALED_DATASET_AND_SPECIFIC_TRAINING_GRANT"
+  ],
+  "report_does_not_train": true,
+  "report_health_errors": [],
+  "required_each_side": 80,
+  "schema": "autonomous-research-status/1",
+  "signals_required": 800,
+  "snapshot_trial": {
+    "accepted": {
+      "300": 53,
+      "60": 400
+    },
+    "active_source_pin_sha256": "1ec89f957d2744952fa3ec3155212e6ea65651f71a10bd3c1a3b1b445cf1d2d9",
+    "callback_coverage_certified": false,
+    "capture_id": "dbsnap_a5b5b6a8d777455d9cc63c8ca8690942",
+    "chain_head": "8607312558a8c378cac99388f3d12a14fd12442200bb1ac9b950ad2dc5787e55",
+    "clock": {
+      "boot_id": "112",
+      "host_utc_label": "2026-11-05T12:27:09.833440+00:00",
+      "monotonic_ns": 126516942351100,
+      "uptime_ms": 126510031,
+      "utc_certified": false
+    },
+    "consecutive_m5_database_view": 0,
+    "dataset_admitted": false,
+    "epoch": "67_126210781",
+    "epochs": 67,
+    "error": null,
+    "event_generation_utc_certified": false,
+    "live_trading": false,
+    "maximum_consecutive_m5_database_view": 10,
+    "next_open": {
+      "300": 1793888700000,
+      "60": 1793888820000
+    },
+    "process_id": 12176,
+    "provenance": "NATIVE_DATABASE_OBSERVATIONS_NOT_ORIGINAL_CALLBACK_RECEIPTS",
+    "records": 26207,
+    "rejected": {
+      "300": 1,
+      "60": 3
+    },
+    "scientific_warmup": 0,
+    "scoring_authorized": false,
+    "status": "ACTIVE_QUARANTINED",
+    "training_authorized": false
+  },
+  "warmup_counter_receipt": {
+    "checkpoint_digest": "37da382b11326ccb1bae5c9baecb239004a8022fd2bd4b6d835ee5997bcd3b9f",
+    "completed_m5": 30,
+    "current_run": 0,
+    "historical_bars_adopted": 0,
+    "last_rejection": {
+      "ledger_digest": "153ce57a92079a7757fcb6a5fd52e97a2a945694ec48f99be4cc3390e4a820a1",
+      "ledger_n": 59847,
+      "native_open_msc": 1793888400000,
+      "reasons": [
+        "INDISTINGUISHABLE_QUOTE_CALLBACKS",
+        "NATIVE_PARITY_MISSING_OR_FAILED",
+        "BID_SEQUENCE_COUNT_MISMATCH",
+        "BID_SEQUENCE_HASH_MISMATCH"
+      ]
+    },
+    "ledger_head": "6e55fe15a9285e8766977600af28cd9cba853a1bdc3dfbf2ecb80532500fca8b",
+    "ledger_last_n": 59963,
+    "maximum_observed_run": 4,
+    "own_run_counter_verified": true,
+    "rejected_m5": 179,
+    "rejection_reasons": {
+      "BID_SEQUENCE_COUNT_MISMATCH": 149,
+      "BID_SEQUENCE_HASH_MISMATCH": 179,
+      "BID_SEQUENCE_REFERENCE_INTERVAL_MISMATCH": 17,
+      "BID_SEQUENCE_REFERENCE_MISSING": 17,
+      "CALLBACK_GAP_TWO_EXISTING_TIMERS": 14,
+      "DISCONNECTED": 6,
+      "FIRST_PARTIAL_BUCKET": 11,
+      "INDISTINGUISHABLE_QUOTE_CALLBACKS": 75,
+      "NATIVE_PARITY_MISSING_OR_FAILED": 140,
+      "UNKNOWN_NATIVE_SESSION_GAP": 5
+    },
+    "scientific_warmup": 0,
+    "scientifically_admitted": 0,
+    "snapshot_bars_adopted": 0,
+    "source": "FROZEN_ORIGINAL_CALLBACK_PRODUCER_ONLY"
+  },
+  "warmup_current": 0,
+  "warmup_producer_authority": "ORIGINAL_POST_ACTIVATION_CALLBACKS_ONLY_SUBJECT_TO_FROZEN_COVERAGE; SNAPSHOT_TRIAL_NOT_ADMITTED",
+  "warmup_required": 350
+}

@@ -1,0 +1,77 @@
+{
+  "DATASET_HASH": null,
+  "DATASET_ID": "us30cash_native_observations_20261105_reserved",
+  "DEMO": "DISABLED",
+  "LIVE_TRADING": false,
+  "PRODUCTOR_ID": "native_database_observations_v2_proposed",
+  "STUDY_ID": "US30CASH_M5_NATIVE_OBSERVATIONS_20261105_PROPOSED",
+  "activation_utc": null,
+  "adopt_existing_trial": false,
+  "evidence_required": [
+    "FORWARD_ROLE_ASSIGNMENT_AND_NONOVERLAP",
+    "OWN_RECURSIVE_SEEDS",
+    "TWO_EXACT_DATABASE_VIEWS",
+    "NATIVE_M1_M5_PARITY",
+    "FIRST_OBSERVATION_MONOTONIC_PROVENANCE",
+    "NATIVE_PREFIX_FEATURE_AVAILABILITY",
+    "KNOWN_SESSION_CALENDAR_FOR_ANY_SESSION_BRIDGE",
+    "SEALED_MEMBERSHIP_AND_DATASET",
+    "SPECIFIC_SCIENTIFIC_GRANT"
+  ],
+  "experimental_capture": "outputs/six_alternatives_experiment/current.json",
+  "first_observation": null,
+  "generation_utc_claim": false,
+  "live_execution_availability_claim": false,
+  "minimums": {
+    "BUY": 80,
+    "SELL": 80,
+    "consecutive_signals": 800,
+    "evaluable": 200,
+    "folds_each_side": 3,
+    "own_m5": 350,
+    "post_m5": 100
+  },
+  "mode": "PROPOSED_NOT_ACTIVE",
+  "original_producer_replaced": false,
+  "protected_sets": {
+    "DISCOVERY_VALIDATION": "BLOCKED",
+    "FINAL_TEST": "LOCKED",
+    "HISTORICAL_HOLDOUT": "LOCKED"
+  },
+  "rejection": [
+    "UNKNOWN_COVERAGE",
+    "REQUERY_CHANGED",
+    "SESSION_NOT_ATTESTED",
+    "DISCONNECTION",
+    "SUSPEND",
+    "CLOCK_DISCONTINUITY",
+    "UNKNOWN_ROLE_OVERLAP"
+  ],
+  "scoring_authorized": false,
+  "source": "NEW_POST_AUTHORIZATION_NATIVE_DATABASE_OBSERVATIONS_WITH_EXPLICIT_RETRIEVAL_PROVENANCE",
+  "strategy": {
+    "D": 3,
+    "K": 5,
+    "SL": 180,
+    "Slowing": 3,
+    "TIME_EXIT": 100,
+    "TP": 240,
+    "levels": [
+      20,
+      80
+    ],
+    "modes": [
+      "FOLLOW",
+      "INVERT"
+    ],
+    "sides": [
+      "BUY",
+      "SELL"
+    ],
+    "skip": false,
+    "symbol": "US30Cash",
+    "timeframe": "M5"
+  },
+  "temporal_claim": "NATIVE_REPLAY_CAUSALITY_AND_OBSERVED_AVAILABILITY",
+  "training_authorized": false
+}
