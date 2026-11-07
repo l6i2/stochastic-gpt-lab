@@ -1,0 +1,192 @@
+{
+  "calendar_receipt_sha256": "8b8bb9871b0d3afd4c94a6c994f025f14b19653e9a29ffd33ae3ef57d067b862",
+  "distinct_epochs": 2,
+  "incident_records": [
+    {
+      "backfill": false,
+      "classification": "UNKNOWN_INTERRUPTION",
+      "observation_gap_ns": 2218644700,
+      "reason": "NATIVE_MINUTE_GAP_SESSION_CAUSE_UNKNOWN",
+      "record": 33867,
+      "record_hash": "f92bfc784340a94c27bdc3c751b5dae85d68f3d4873fbdd96a5da2394868b652"
+    },
+    {
+      "backfill": false,
+      "classification": "SLEEP",
+      "observation_gap_ns": 33426974294600,
+      "reason": "WINDOWS_VERIFIED_SLEEP_EVENT",
+      "record": 33864,
+      "record_hash": "535587c21d10414895ba4cb89c0f5f54b65dee791f5eecddb6309977147a4453"
+    },
+    {
+      "backfill": false,
+      "classification": "XM_DISCONNECT",
+      "observation_gap_ns": 33394295652000,
+      "reason": "XM_DISCONNECTED",
+      "record": 33858,
+      "record_hash": "c3f68ec8573c883b434dae8f3131fe22217e2ed02489bd313b64c5f91d985deb"
+    },
+    {
+      "backfill": false,
+      "classification": "UNKNOWN_INTERRUPTION",
+      "observation_gap_ns": 15180508900,
+      "reason": "POLL_GAP_TWO_EXISTING_5S_TIMERS",
+      "record": 33369,
+      "record_hash": "82a7e9b02a2d2e1b4dcb098fb4cb2694320b13ade4840d4fd0adf6b8acb7b37f"
+    }
+  ],
+  "observed_host_label": "2026-11-07T02:31:04.843804+00:00",
+  "oracle_milestones": [
+    15,
+    30,
+    276,
+    350
+  ],
+  "production_atr_modified": false,
+  "quality": {
+    "chain_head": "ee9cfc9676483d2f4f5deb38c1c7cdd0b5ddc29700bd87395014b05b90db8c33",
+    "m5_with_five_m1_parity": 88,
+    "maturity": {
+      "calendar_eta": null,
+      "dataset_admitted": false,
+      "eta_reason": "SESSION_TRANSITION_UNCERTIFIED_OR_SIGNAL_SAMPLE_IMMATURE_NO_CALENDAR_FORECAST",
+      "observed_market_bar_minutes": 0,
+      "observed_signals_per_100_bars": null,
+      "rate_scope": "DESCRIPTIVE_CURRENT_UNINTERRUPTED_CONTEXT_NOT_AN_INDEPENDENT_SAMPLE",
+      "remaining": {
+        "BUY_evaluable": 80,
+        "BUY_folds": 3,
+        "SELL_evaluable": 80,
+        "SELL_folds": 3,
+        "consecutive_signals": 800,
+        "evaluable": 200,
+        "post_m5": 100,
+        "warmup_m5": 350
+      },
+      "remaining_warmup_observed_bar_minutes": 1750,
+      "requirements": {
+        "BUY": 80,
+        "SELL": 80,
+        "evaluable": 200,
+        "folds_each": 3,
+        "post_m5": 100,
+        "signals": 800,
+        "warmup_m5": 350
+      },
+      "scientific_warmup": 0,
+      "slowest_requirement": "UNDETERMINED_SIGNAL_AND_COVERAGE_RATES_NOT_YET_ESTIMABLE",
+      "statistically_justified_eta": false,
+      "technical_warmup": 0,
+      "training_executed": false
+    },
+    "real_m5": 88,
+    "records_verified": 33861,
+    "recursive_seeds": {
+      "ATR_INITIALIZED": false,
+      "HA_READY": false,
+      "own_bars": 0,
+      "seeds_bound": false
+    },
+    "status": "PASS_INCREMENTAL_QUARANTINED"
+  },
+  "runtime": {
+    "BUY": 0,
+    "NEW_STUDY_DATASET_ADMISSION": "WAITING_FOR_EVIDENCE",
+    "SELL": 0,
+    "TRAINING_ADMISSION_GATE": "BLOCKED_NO_SPECIFIC_TRAINING_GRANT",
+    "calendar": "PARTIAL_NO_CERTIFIED_TRANSITION",
+    "causality": "NATIVE_PREFIX_AND_OFFLINE_USE_RECORDED_FULL_SEEDS_PENDING",
+    "chain_head": "76f705155531d6b519d4dd1576acec97a78220046a9e41295603f4ec306d35a5",
+    "consecutive_m5": 0,
+    "epoch": "29_263405875",
+    "evaluable": 0,
+    "real_m5": 88,
+    "scientific_warmup": 0,
+    "status": "ACTIVE_QUARANTINED"
+  },
+  "samples": [
+    {
+      "bars": 15,
+      "candidate": {
+        "compared": 2,
+        "method": "FIRST_BAR_HIGH_LOW_THEN_ORDERED_ROLLING_RECURRENCE",
+        "mismatches": [],
+        "production_feature_modified": false
+      },
+      "epoch": "26_221161468",
+      "export_sha256": "7c61ef7c054294c26c507a935f396f40137e236a22371e40d71432e5c1b6827d",
+      "manifest_sha256": "9b325899b0409ef8353d7c60099187c322c8ce037faf38f802c44a6bcae31c9d",
+      "production_compared": 1,
+      "production_mismatches": [],
+      "source_sha256": "b651d7c03817e77798ab2ad8bd41c7839a3195cb6663a161dbdaba7779aa7b05"
+    },
+    {
+      "bars": 15,
+      "candidate": {
+        "compared": 2,
+        "method": "FIRST_BAR_HIGH_LOW_THEN_ORDERED_ROLLING_RECURRENCE",
+        "mismatches": [],
+        "production_feature_modified": false
+      },
+      "epoch": "13_154212843",
+      "export_sha256": "87399c6b68e1df875906fb216c93c1adea5cf942aedf5bfa85db1910d94526f5",
+      "manifest_sha256": "1cab14348d6978f7d4dbe58e5911544f75fb956f208d6495583ceabf39ba6c8c",
+      "production_compared": 1,
+      "production_mismatches": [
+        {
+          "index": 14,
+          "native_hex": "0x1.74aecfb9c86dcp+6",
+          "production_hex": "0x1.74aecfb9c86dbp+6"
+        }
+      ],
+      "source_sha256": "5dd73d0126ddfc36a5995fec070f2db94c946d2e0ccb1e89069614ef08ed7ca8"
+    },
+    {
+      "bars": 16,
+      "candidate": {
+        "compared": 3,
+        "method": "FIRST_BAR_HIGH_LOW_THEN_ORDERED_ROLLING_RECURRENCE",
+        "mismatches": [],
+        "production_feature_modified": false
+      },
+      "epoch": "13_154212843",
+      "export_sha256": "07cd7e87a2729ff36ad55395078ef5effaffccb55f202333eae37fdb8c69ef72",
+      "manifest_sha256": "e65fe6f1a755d8533fd3ac81f297eb7fdb18641e5d2078427cc46723c6b2df53",
+      "production_compared": 2,
+      "production_mismatches": [
+        {
+          "index": 14,
+          "native_hex": "0x1.74aecfb9c86dcp+6",
+          "production_hex": "0x1.74aecfb9c86dbp+6"
+        },
+        {
+          "index": 15,
+          "native_hex": "0x1.7667dce434adcp+6",
+          "production_hex": "0x1.7667dce434adbp+6"
+        }
+      ],
+      "source_sha256": "9d325e496a493e7cf106862e51fed66085fe015b21f34aca74ba9936f76a4f0f"
+    }
+  ],
+  "terminal": {
+    "connected_at_ipc_check": true,
+    "demo": true,
+    "server": "XMGlobalSC-MT5 5",
+    "symbol": "US30Cash",
+    "terminal_trade_allowed": false
+  },
+  "terminal_journal": {
+    "latest_authorization": "21:28:40.743",
+    "latest_connection_lost": "21:28:09.221",
+    "latest_sync": "21:28:44.029",
+    "morning_access_point_switch": "09:40:46",
+    "timezone": "America/Guayaquil",
+    "upstream_cause": "UNPROVEN"
+  },
+  "tests_passed": 28,
+  "windows_sleep_evidence": {
+    "proves_latest_xm_disconnect_cause": false,
+    "standby_enter_local": "21:24:58",
+    "standby_exit_local": "21:25:00"
+  }
+}

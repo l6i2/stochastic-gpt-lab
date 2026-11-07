@@ -23,6 +23,24 @@ class OracleJobTests(unittest.TestCase):
                 self.assertTrue(native_oracle_milestone(root,base,dict(status,technical_warmup=17))['native_parity_verified'])
                 native_oracle_milestone(root,base,dict(status,technical_warmup=18));self.assertEqual(launch.call_count,2)
 
+    def test_thirty_own_bars_dispatches_an_expanded_oracle_once(self):
+        with TemporaryDirectory() as d:
+            root = Path(d)
+            base = root / 'outputs'
+            for name in ('tools/cf_own_indicator_oracle.py', 'controller/cf_feature_review.py'):
+                script = root / name
+                script.parent.mkdir(exist_ok=True)
+                script.write_text('# test placeholder')
+            status = dict(technical_warmup=15, capture_id='c', epoch='e', own_seed_bar_hash='seed')
+            with patch('psutil.virtual_memory', return_value=Mock(available=1024**3)), patch('psutil.process_iter', return_value=[]), patch('tools.cf_quality_monitor.oracle_process_running', return_value=False), patch('subprocess.Popen', return_value=Mock(pid=999999)) as launch:
+                initial = native_oracle_milestone(root, base, status)
+                native_oracle_milestone(root, base, dict(status, technical_warmup=29))
+                expanded = native_oracle_milestone(root, base, dict(status, technical_warmup=30))
+                native_oracle_milestone(root, base, dict(status, technical_warmup=31))
+                self.assertNotEqual(initial['job_key'], expanded['job_key'])
+                self.assertEqual(expanded['milestone'], 30)
+                self.assertEqual(launch.call_count, 2)
+
     def test_partial_output_distinguishes_running_from_dead(self):
         with TemporaryDirectory() as d:
             p=Path(d);(p/'stdout.json').write_text('{')

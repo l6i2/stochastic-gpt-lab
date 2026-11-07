@@ -48,7 +48,7 @@ def native_oracle_milestone(root,base,status):
     """Dispatch bounded work only on new seed milestones; never retry same input."""
     import psutil,subprocess,os
     n=status['technical_warmup']
-    milestone=next((limit for limit in (350,276,15) if n>=limit),None)
+    milestone=next((limit for limit in (350,276,30,15) if n>=limit),None)
     if milestone is None:return dict(status='WAITING_FOR_15_OWN_M5',own_bars=n,native_terminal_launched=False)
     if not status.get('own_seed_bar_hash'):raise ValueError('ORACLE_OWN_SEED_NOT_BOUND')
     script=root/'tools/cf_own_indicator_oracle.py'

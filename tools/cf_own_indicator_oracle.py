@@ -105,10 +105,10 @@ def run():
         if main_error>1e-10 or ha_mismatch:raise ValueError('OWN_STOCH_OR_HA_PARITY_FAILED')
         result=dict(status='PASS_OWN_PREFIX_NATIVE_DIAGNOSTIC_ONLY',capture_id=prefix['capture_id'],epoch=prefix['epoch'],native_m5=n,ATR_compared=checked,ATR_PARITY='PASS_EXACT',HA_PARITY='PASS_EXACT' if n>=276 else 'SEED_BOUND_READY_VALUES_WAITING_276',MAIN_K_PARITY='PASS_RETAINED_BOUND',native_export_sha256=export_hash,input_manifest_sha256=sha(folder/'input_manifest.json'),source_sha256=sha(source),original_terminals_preserved=all(psutil.pid_exists(pid) for pid in original),orders_sent=0,training_executed=False,dataset_admitted=False)
         result['own_seed_bar_hash']=prefix['seeds']['seed_bar_hash']
+        result['native_seed_diagnostic']=native_seed_diagnostic(prefix['native_m5'],rows)
         if atr_mismatches:
             result.update(status='FAILED_OWN_ATR_EXACT_PARITY',ATR_PARITY='FAIL_EXACT',
-                          atr_mismatches=atr_mismatches,
-                          native_seed_diagnostic=native_seed_diagnostic(prefix['native_m5'],rows))
+                          atr_mismatches=atr_mismatches)
         once(folder/'result.json',result);return dict(folder=str(folder),**result)
 
 
