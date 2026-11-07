@@ -22,14 +22,23 @@ def native_seed_diagnostic(bars, rows):
         value += span
     value /= 14
     mismatches = []
+    direct_sum_mismatches = []
+    seed_hex = value.hex()
     for index in range(13,len(bars)):
         if index>=14:
             value += (ranges[index]-ranges[index-14])/14
         native = float(rows[index]['atr'])
         if value!=native:
             mismatches.append(dict(index=index,computed_hex=value.hex(),native_hex=native.hex()))
+        direct = sum(ranges[index-13:index+1])/14
+        if direct!=native:
+            direct_sum_mismatches.append(dict(index=index,computed_hex=direct.hex(),native_hex=native.hex()))
     return dict(compared=len(bars)-13,mismatches=mismatches,
                 method='FIRST_BAR_HIGH_LOW_THEN_ORDERED_ROLLING_RECURRENCE',
+                seed_hex=seed_hex,first_range_hex=ranges[0].hex(),
+                direct_sum_mismatches=direct_sum_mismatches,
+                arithmetic='BINARY64_ORDERED_SUM_THEN_ADD_DIFFERENCE_DIVIDED_BY_14',
+                availability='CLOSED_PREFIX_ONLY_NO_FUTURE_BAR_USED',
                 production_feature_modified=False)
 
 
