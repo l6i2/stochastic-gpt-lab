@@ -1,0 +1,1297 @@
+{
+  "bars": 300,
+  "candidate_atr": {
+    "arithmetic": "BINARY64_ORDERED_SUM_THEN_ADD_DIFFERENCE_DIVIDED_BY_14",
+    "availability": "CLOSED_PREFIX_ONLY_NO_FUTURE_BAR_USED",
+    "compared": 287,
+    "direct_sum_mismatches": [
+      {
+        "computed_hex": "0x1.eedb6db6db6dbp+5",
+        "index": 14,
+        "native_hex": "0x1.eedb6db6db6dcp+5"
+      },
+      {
+        "computed_hex": "0x1.f892492492492p+5",
+        "index": 15,
+        "native_hex": "0x1.f892492492493p+5"
+      },
+      {
+        "computed_hex": "0x1.fc00000000000p+5",
+        "index": 22,
+        "native_hex": "0x1.fc00000000001p+5"
+      },
+      {
+        "computed_hex": "0x1.f5b6db6db6db7p+5",
+        "index": 23,
+        "native_hex": "0x1.f5b6db6db6db8p+5"
+      },
+      {
+        "computed_hex": "0x1.ef6db6db6db6ep+5",
+        "index": 24,
+        "native_hex": "0x1.ef6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.ef6db6db6db6ep+5",
+        "index": 25,
+        "native_hex": "0x1.ef6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.ef6db6db6db6ep+5",
+        "index": 26,
+        "native_hex": "0x1.ef6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.ef6db6db6db6ep+5",
+        "index": 27,
+        "native_hex": "0x1.ef6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.ef6db6db6db6ep+5",
+        "index": 28,
+        "native_hex": "0x1.ef6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.ef6db6db6db6ep+5",
+        "index": 29,
+        "native_hex": "0x1.ef6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.ef6db6db6db6ep+5",
+        "index": 30,
+        "native_hex": "0x1.ef6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.f924924924925p+5",
+        "index": 31,
+        "native_hex": "0x1.f924924924926p+5"
+      },
+      {
+        "computed_hex": "0x1.e6db6db6db6dbp+5",
+        "index": 46,
+        "native_hex": "0x1.e6db6db6db6dcp+5"
+      },
+      {
+        "computed_hex": "0x1.e6db6db6db6dbp+5",
+        "index": 47,
+        "native_hex": "0x1.e6db6db6db6dcp+5"
+      },
+      {
+        "computed_hex": "0x1.f092492492492p+5",
+        "index": 48,
+        "native_hex": "0x1.f092492492493p+5"
+      },
+      {
+        "computed_hex": "0x1.fa49249249249p+5",
+        "index": 49,
+        "native_hex": "0x1.fa4924924924ap+5"
+      },
+      {
+        "computed_hex": "0x1.fadb6db6db6dbp+5",
+        "index": 65,
+        "native_hex": "0x1.fadb6db6db6dcp+5"
+      },
+      {
+        "computed_hex": "0x1.fe49249249249p+5",
+        "index": 66,
+        "native_hex": "0x1.fe4924924924ap+5"
+      },
+      {
+        "computed_hex": "0x1.00db6db6db6dbp+6",
+        "index": 67,
+        "native_hex": "0x1.00db6db6db6dcp+6"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 68,
+        "native_hex": "0x1.fb6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 69,
+        "native_hex": "0x1.fb6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 70,
+        "native_hex": "0x1.fb6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 71,
+        "native_hex": "0x1.fb6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 72,
+        "native_hex": "0x1.fb6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 73,
+        "native_hex": "0x1.fb6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 74,
+        "native_hex": "0x1.fb6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 75,
+        "native_hex": "0x1.fb6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 76,
+        "native_hex": "0x1.fb6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.f524924924925p+5",
+        "index": 77,
+        "native_hex": "0x1.f524924924926p+5"
+      },
+      {
+        "computed_hex": "0x1.eedb6db6db6dbp+5",
+        "index": 78,
+        "native_hex": "0x1.eedb6db6db6ddp+5"
+      },
+      {
+        "computed_hex": "0x1.e892492492492p+5",
+        "index": 79,
+        "native_hex": "0x1.e892492492494p+5"
+      },
+      {
+        "computed_hex": "0x1.e892492492492p+5",
+        "index": 80,
+        "native_hex": "0x1.e892492492494p+5"
+      },
+      {
+        "computed_hex": "0x1.e892492492492p+5",
+        "index": 81,
+        "native_hex": "0x1.e892492492494p+5"
+      },
+      {
+        "computed_hex": "0x1.f249249249249p+5",
+        "index": 82,
+        "native_hex": "0x1.f24924924924bp+5"
+      },
+      {
+        "computed_hex": "0x1.fc00000000000p+5",
+        "index": 83,
+        "native_hex": "0x1.fc00000000002p+5"
+      },
+      {
+        "computed_hex": "0x1.02db6db6db6dbp+6",
+        "index": 84,
+        "native_hex": "0x1.02db6db6db6dcp+6"
+      },
+      {
+        "computed_hex": "0x1.02db6db6db6dbp+6",
+        "index": 85,
+        "native_hex": "0x1.02db6db6db6dcp+6"
+      },
+      {
+        "computed_hex": "0x1.02db6db6db6dbp+6",
+        "index": 86,
+        "native_hex": "0x1.02db6db6db6dcp+6"
+      },
+      {
+        "computed_hex": "0x1.02db6db6db6dbp+6",
+        "index": 87,
+        "native_hex": "0x1.02db6db6db6dcp+6"
+      },
+      {
+        "computed_hex": "0x1.ff6db6db6db6ep+5",
+        "index": 88,
+        "native_hex": "0x1.ff6db6db6db6fp+5"
+      },
+      {
+        "computed_hex": "0x1.f924924924925p+5",
+        "index": 89,
+        "native_hex": "0x1.f924924924926p+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 90,
+        "native_hex": "0x1.f2db6db6db6ddp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 91,
+        "native_hex": "0x1.f2db6db6db6ddp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 92,
+        "native_hex": "0x1.f2db6db6db6ddp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 93,
+        "native_hex": "0x1.f2db6db6db6ddp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 94,
+        "native_hex": "0x1.f2db6db6db6ddp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 95,
+        "native_hex": "0x1.f2db6db6db6ddp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 96,
+        "native_hex": "0x1.f2db6db6db6ddp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 97,
+        "native_hex": "0x1.f2db6db6db6ddp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 98,
+        "native_hex": "0x1.f2db6db6db6ddp+5"
+      },
+      {
+        "computed_hex": "0x1.f649249249249p+5",
+        "index": 99,
+        "native_hex": "0x1.f64924924924bp+5"
+      },
+      {
+        "computed_hex": "0x1.f9b6db6db6db7p+5",
+        "index": 100,
+        "native_hex": "0x1.f9b6db6db6db9p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 101,
+        "native_hex": "0x1.fd24924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 102,
+        "native_hex": "0x1.fd24924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 103,
+        "native_hex": "0x1.fd24924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 104,
+        "native_hex": "0x1.fd24924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 105,
+        "native_hex": "0x1.fd24924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 106,
+        "native_hex": "0x1.fd24924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 107,
+        "native_hex": "0x1.fd24924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 108,
+        "native_hex": "0x1.fd24924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 109,
+        "native_hex": "0x1.fd24924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.f6db6db6db6dbp+5",
+        "index": 110,
+        "native_hex": "0x1.f6db6db6db6dep+5"
+      },
+      {
+        "computed_hex": "0x1.f092492492492p+5",
+        "index": 111,
+        "native_hex": "0x1.f092492492495p+5"
+      },
+      {
+        "computed_hex": "0x1.ea49249249249p+5",
+        "index": 112,
+        "native_hex": "0x1.ea4924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.ea49249249249p+5",
+        "index": 113,
+        "native_hex": "0x1.ea4924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.ea49249249249p+5",
+        "index": 114,
+        "native_hex": "0x1.ea4924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.ea49249249249p+5",
+        "index": 115,
+        "native_hex": "0x1.ea4924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.f400000000000p+5",
+        "index": 116,
+        "native_hex": "0x1.f400000000003p+5"
+      },
+      {
+        "computed_hex": "0x1.fdb6db6db6db7p+5",
+        "index": 117,
+        "native_hex": "0x1.fdb6db6db6dbap+5"
+      },
+      {
+        "computed_hex": "0x1.03b6db6db6db7p+6",
+        "index": 118,
+        "native_hex": "0x1.03b6db6db6db8p+6"
+      },
+      {
+        "computed_hex": "0x1.03b6db6db6db7p+6",
+        "index": 119,
+        "native_hex": "0x1.03b6db6db6db8p+6"
+      },
+      {
+        "computed_hex": "0x1.03b6db6db6db7p+6",
+        "index": 120,
+        "native_hex": "0x1.03b6db6db6db8p+6"
+      },
+      {
+        "computed_hex": "0x1.0092492492492p+6",
+        "index": 121,
+        "native_hex": "0x1.0092492492493p+6"
+      },
+      {
+        "computed_hex": "0x1.fadb6db6db6dbp+5",
+        "index": 122,
+        "native_hex": "0x1.fadb6db6db6ddp+5"
+      },
+      {
+        "computed_hex": "0x1.f492492492492p+5",
+        "index": 123,
+        "native_hex": "0x1.f492492492494p+5"
+      },
+      {
+        "computed_hex": "0x1.f492492492492p+5",
+        "index": 124,
+        "native_hex": "0x1.f492492492494p+5"
+      },
+      {
+        "computed_hex": "0x1.f492492492492p+5",
+        "index": 125,
+        "native_hex": "0x1.f492492492494p+5"
+      },
+      {
+        "computed_hex": "0x1.f492492492492p+5",
+        "index": 126,
+        "native_hex": "0x1.f492492492494p+5"
+      },
+      {
+        "computed_hex": "0x1.f492492492492p+5",
+        "index": 127,
+        "native_hex": "0x1.f492492492494p+5"
+      },
+      {
+        "computed_hex": "0x1.f492492492492p+5",
+        "index": 128,
+        "native_hex": "0x1.f492492492494p+5"
+      },
+      {
+        "computed_hex": "0x1.f492492492492p+5",
+        "index": 129,
+        "native_hex": "0x1.f492492492494p+5"
+      },
+      {
+        "computed_hex": "0x1.f492492492492p+5",
+        "index": 130,
+        "native_hex": "0x1.f492492492494p+5"
+      },
+      {
+        "computed_hex": "0x1.f492492492492p+5",
+        "index": 131,
+        "native_hex": "0x1.f492492492494p+5"
+      },
+      {
+        "computed_hex": "0x1.ee49249249249p+5",
+        "index": 132,
+        "native_hex": "0x1.ee4924924924bp+5"
+      },
+      {
+        "computed_hex": "0x1.f1b6db6db6db7p+5",
+        "index": 133,
+        "native_hex": "0x1.f1b6db6db6db9p+5"
+      },
+      {
+        "computed_hex": "0x1.f524924924925p+5",
+        "index": 134,
+        "native_hex": "0x1.f524924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.fedb6db6db6dbp+5",
+        "index": 135,
+        "native_hex": "0x1.fedb6db6db6dep+5"
+      },
+      {
+        "computed_hex": "0x1.fedb6db6db6dbp+5",
+        "index": 136,
+        "native_hex": "0x1.fedb6db6db6dep+5"
+      },
+      {
+        "computed_hex": "0x1.fedb6db6db6dbp+5",
+        "index": 137,
+        "native_hex": "0x1.fedb6db6db6dep+5"
+      },
+      {
+        "computed_hex": "0x1.fedb6db6db6dbp+5",
+        "index": 138,
+        "native_hex": "0x1.fedb6db6db6dep+5"
+      },
+      {
+        "computed_hex": "0x1.fedb6db6db6dbp+5",
+        "index": 139,
+        "native_hex": "0x1.fedb6db6db6dep+5"
+      },
+      {
+        "computed_hex": "0x1.fedb6db6db6dbp+5",
+        "index": 140,
+        "native_hex": "0x1.fedb6db6db6dep+5"
+      },
+      {
+        "computed_hex": "0x1.fedb6db6db6dbp+5",
+        "index": 141,
+        "native_hex": "0x1.fedb6db6db6dep+5"
+      },
+      {
+        "computed_hex": "0x1.fedb6db6db6dbp+5",
+        "index": 142,
+        "native_hex": "0x1.fedb6db6db6dep+5"
+      },
+      {
+        "computed_hex": "0x1.f892492492492p+5",
+        "index": 143,
+        "native_hex": "0x1.f892492492495p+5"
+      },
+      {
+        "computed_hex": "0x1.f249249249249p+5",
+        "index": 144,
+        "native_hex": "0x1.f24924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.ec00000000000p+5",
+        "index": 145,
+        "native_hex": "0x1.ec00000000003p+5"
+      },
+      {
+        "computed_hex": "0x1.ec00000000000p+5",
+        "index": 146,
+        "native_hex": "0x1.ec00000000003p+5"
+      },
+      {
+        "computed_hex": "0x1.ec00000000000p+5",
+        "index": 147,
+        "native_hex": "0x1.ec00000000003p+5"
+      },
+      {
+        "computed_hex": "0x1.ec00000000000p+5",
+        "index": 148,
+        "native_hex": "0x1.ec00000000003p+5"
+      },
+      {
+        "computed_hex": "0x1.ec00000000000p+5",
+        "index": 149,
+        "native_hex": "0x1.ec00000000003p+5"
+      },
+      {
+        "computed_hex": "0x1.f5b6db6db6db7p+5",
+        "index": 150,
+        "native_hex": "0x1.f5b6db6db6dbap+5"
+      },
+      {
+        "computed_hex": "0x1.ff6db6db6db6ep+5",
+        "index": 151,
+        "native_hex": "0x1.ff6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.0492492492492p+6",
+        "index": 152,
+        "native_hex": "0x1.0492492492494p+6"
+      },
+      {
+        "computed_hex": "0x1.0492492492492p+6",
+        "index": 153,
+        "native_hex": "0x1.0492492492494p+6"
+      },
+      {
+        "computed_hex": "0x1.016db6db6db6ep+6",
+        "index": 154,
+        "native_hex": "0x1.016db6db6db6fp+6"
+      },
+      {
+        "computed_hex": "0x1.fc92492492492p+5",
+        "index": 155,
+        "native_hex": "0x1.fc92492492495p+5"
+      },
+      {
+        "computed_hex": "0x1.f649249249249p+5",
+        "index": 156,
+        "native_hex": "0x1.f64924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.f649249249249p+5",
+        "index": 157,
+        "native_hex": "0x1.f64924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.f649249249249p+5",
+        "index": 158,
+        "native_hex": "0x1.f64924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.f649249249249p+5",
+        "index": 159,
+        "native_hex": "0x1.f64924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.f649249249249p+5",
+        "index": 160,
+        "native_hex": "0x1.f64924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.f649249249249p+5",
+        "index": 161,
+        "native_hex": "0x1.f64924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.f649249249249p+5",
+        "index": 162,
+        "native_hex": "0x1.f64924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.f649249249249p+5",
+        "index": 163,
+        "native_hex": "0x1.f64924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.f649249249249p+5",
+        "index": 164,
+        "native_hex": "0x1.f64924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.f000000000000p+5",
+        "index": 165,
+        "native_hex": "0x1.f000000000003p+5"
+      },
+      {
+        "computed_hex": "0x1.e9b6db6db6db7p+5",
+        "index": 166,
+        "native_hex": "0x1.e9b6db6db6dbap+5"
+      },
+      {
+        "computed_hex": "0x1.ed24924924925p+5",
+        "index": 167,
+        "native_hex": "0x1.ed24924924928p+5"
+      },
+      {
+        "computed_hex": "0x1.f6db6db6db6dbp+5",
+        "index": 168,
+        "native_hex": "0x1.f6db6db6db6dfp+5"
+      },
+      {
+        "computed_hex": "0x1.0049249249249p+6",
+        "index": 169,
+        "native_hex": "0x1.004924924924bp+6"
+      },
+      {
+        "computed_hex": "0x1.0049249249249p+6",
+        "index": 170,
+        "native_hex": "0x1.004924924924bp+6"
+      },
+      {
+        "computed_hex": "0x1.0049249249249p+6",
+        "index": 171,
+        "native_hex": "0x1.004924924924bp+6"
+      },
+      {
+        "computed_hex": "0x1.0049249249249p+6",
+        "index": 172,
+        "native_hex": "0x1.004924924924bp+6"
+      },
+      {
+        "computed_hex": "0x1.0049249249249p+6",
+        "index": 173,
+        "native_hex": "0x1.004924924924bp+6"
+      },
+      {
+        "computed_hex": "0x1.0049249249249p+6",
+        "index": 174,
+        "native_hex": "0x1.004924924924bp+6"
+      },
+      {
+        "computed_hex": "0x1.0049249249249p+6",
+        "index": 175,
+        "native_hex": "0x1.004924924924bp+6"
+      },
+      {
+        "computed_hex": "0x1.fa49249249249p+5",
+        "index": 176,
+        "native_hex": "0x1.fa4924924924dp+5"
+      },
+      {
+        "computed_hex": "0x1.f400000000000p+5",
+        "index": 177,
+        "native_hex": "0x1.f400000000004p+5"
+      },
+      {
+        "computed_hex": "0x1.edb6db6db6db7p+5",
+        "index": 178,
+        "native_hex": "0x1.edb6db6db6dbbp+5"
+      },
+      {
+        "computed_hex": "0x1.edb6db6db6db7p+5",
+        "index": 179,
+        "native_hex": "0x1.edb6db6db6dbbp+5"
+      },
+      {
+        "computed_hex": "0x1.edb6db6db6db7p+5",
+        "index": 180,
+        "native_hex": "0x1.edb6db6db6dbbp+5"
+      },
+      {
+        "computed_hex": "0x1.edb6db6db6db7p+5",
+        "index": 181,
+        "native_hex": "0x1.edb6db6db6dbbp+5"
+      },
+      {
+        "computed_hex": "0x1.edb6db6db6db7p+5",
+        "index": 182,
+        "native_hex": "0x1.edb6db6db6dbbp+5"
+      },
+      {
+        "computed_hex": "0x1.edb6db6db6db7p+5",
+        "index": 183,
+        "native_hex": "0x1.edb6db6db6dbbp+5"
+      },
+      {
+        "computed_hex": "0x1.f76db6db6db6ep+5",
+        "index": 184,
+        "native_hex": "0x1.f76db6db6db72p+5"
+      },
+      {
+        "computed_hex": "0x1.0092492492492p+6",
+        "index": 185,
+        "native_hex": "0x1.0092492492494p+6"
+      },
+      {
+        "computed_hex": "0x1.056db6db6db6ep+6",
+        "index": 186,
+        "native_hex": "0x1.056db6db6db6fp+6"
+      },
+      {
+        "computed_hex": "0x1.0249249249249p+6",
+        "index": 187,
+        "native_hex": "0x1.024924924924ap+6"
+      },
+      {
+        "computed_hex": "0x1.fe49249249249p+5",
+        "index": 188,
+        "native_hex": "0x1.fe4924924924bp+5"
+      },
+      {
+        "computed_hex": "0x1.f800000000000p+5",
+        "index": 189,
+        "native_hex": "0x1.f800000000002p+5"
+      },
+      {
+        "computed_hex": "0x1.f800000000000p+5",
+        "index": 190,
+        "native_hex": "0x1.f800000000002p+5"
+      },
+      {
+        "computed_hex": "0x1.f800000000000p+5",
+        "index": 191,
+        "native_hex": "0x1.f800000000002p+5"
+      },
+      {
+        "computed_hex": "0x1.f800000000000p+5",
+        "index": 192,
+        "native_hex": "0x1.f800000000002p+5"
+      },
+      {
+        "computed_hex": "0x1.f800000000000p+5",
+        "index": 193,
+        "native_hex": "0x1.f800000000002p+5"
+      },
+      {
+        "computed_hex": "0x1.f800000000000p+5",
+        "index": 194,
+        "native_hex": "0x1.f800000000002p+5"
+      },
+      {
+        "computed_hex": "0x1.f800000000000p+5",
+        "index": 195,
+        "native_hex": "0x1.f800000000002p+5"
+      },
+      {
+        "computed_hex": "0x1.f800000000000p+5",
+        "index": 196,
+        "native_hex": "0x1.f800000000002p+5"
+      },
+      {
+        "computed_hex": "0x1.f800000000000p+5",
+        "index": 197,
+        "native_hex": "0x1.f800000000002p+5"
+      },
+      {
+        "computed_hex": "0x1.f1b6db6db6db7p+5",
+        "index": 198,
+        "native_hex": "0x1.f1b6db6db6db9p+5"
+      },
+      {
+        "computed_hex": "0x1.eb6db6db6db6ep+5",
+        "index": 199,
+        "native_hex": "0x1.eb6db6db6db70p+5"
+      },
+      {
+        "computed_hex": "0x1.e524924924925p+5",
+        "index": 200,
+        "native_hex": "0x1.e524924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.eedb6db6db6dbp+5",
+        "index": 201,
+        "native_hex": "0x1.eedb6db6db6dep+5"
+      },
+      {
+        "computed_hex": "0x1.f892492492492p+5",
+        "index": 202,
+        "native_hex": "0x1.f892492492495p+5"
+      },
+      {
+        "computed_hex": "0x1.0124924924925p+6",
+        "index": 203,
+        "native_hex": "0x1.0124924924926p+6"
+      },
+      {
+        "computed_hex": "0x1.0124924924925p+6",
+        "index": 204,
+        "native_hex": "0x1.0124924924926p+6"
+      },
+      {
+        "computed_hex": "0x1.0124924924925p+6",
+        "index": 205,
+        "native_hex": "0x1.0124924924926p+6"
+      },
+      {
+        "computed_hex": "0x1.0124924924925p+6",
+        "index": 206,
+        "native_hex": "0x1.0124924924926p+6"
+      },
+      {
+        "computed_hex": "0x1.0124924924925p+6",
+        "index": 207,
+        "native_hex": "0x1.0124924924926p+6"
+      },
+      {
+        "computed_hex": "0x1.0124924924925p+6",
+        "index": 208,
+        "native_hex": "0x1.0124924924926p+6"
+      },
+      {
+        "computed_hex": "0x1.fc00000000000p+5",
+        "index": 209,
+        "native_hex": "0x1.fc00000000003p+5"
+      },
+      {
+        "computed_hex": "0x1.f5b6db6db6db7p+5",
+        "index": 210,
+        "native_hex": "0x1.f5b6db6db6dbap+5"
+      },
+      {
+        "computed_hex": "0x1.ef6db6db6db6ep+5",
+        "index": 211,
+        "native_hex": "0x1.ef6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.ef6db6db6db6ep+5",
+        "index": 212,
+        "native_hex": "0x1.ef6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.ef6db6db6db6ep+5",
+        "index": 213,
+        "native_hex": "0x1.ef6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.ef6db6db6db6ep+5",
+        "index": 214,
+        "native_hex": "0x1.ef6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.ef6db6db6db6ep+5",
+        "index": 215,
+        "native_hex": "0x1.ef6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.ef6db6db6db6ep+5",
+        "index": 216,
+        "native_hex": "0x1.ef6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.ef6db6db6db6ep+5",
+        "index": 217,
+        "native_hex": "0x1.ef6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.f924924924925p+5",
+        "index": 218,
+        "native_hex": "0x1.f924924924928p+5"
+      },
+      {
+        "computed_hex": "0x1.016db6db6db6ep+6",
+        "index": 219,
+        "native_hex": "0x1.016db6db6db6fp+6"
+      },
+      {
+        "computed_hex": "0x1.0324924924925p+6",
+        "index": 220,
+        "native_hex": "0x1.0324924924926p+6"
+      },
+      {
+        "computed_hex": "0x1.0000000000000p+6",
+        "index": 221,
+        "native_hex": "0x1.0000000000001p+6"
+      },
+      {
+        "computed_hex": "0x1.f9b6db6db6db7p+5",
+        "index": 222,
+        "native_hex": "0x1.f9b6db6db6db9p+5"
+      },
+      {
+        "computed_hex": "0x1.f9b6db6db6db7p+5",
+        "index": 223,
+        "native_hex": "0x1.f9b6db6db6db9p+5"
+      },
+      {
+        "computed_hex": "0x1.f9b6db6db6db7p+5",
+        "index": 224,
+        "native_hex": "0x1.f9b6db6db6db9p+5"
+      },
+      {
+        "computed_hex": "0x1.f9b6db6db6db7p+5",
+        "index": 225,
+        "native_hex": "0x1.f9b6db6db6db9p+5"
+      },
+      {
+        "computed_hex": "0x1.f9b6db6db6db7p+5",
+        "index": 226,
+        "native_hex": "0x1.f9b6db6db6db9p+5"
+      },
+      {
+        "computed_hex": "0x1.f9b6db6db6db7p+5",
+        "index": 227,
+        "native_hex": "0x1.f9b6db6db6db9p+5"
+      },
+      {
+        "computed_hex": "0x1.f9b6db6db6db7p+5",
+        "index": 228,
+        "native_hex": "0x1.f9b6db6db6db9p+5"
+      },
+      {
+        "computed_hex": "0x1.f9b6db6db6db7p+5",
+        "index": 229,
+        "native_hex": "0x1.f9b6db6db6db9p+5"
+      },
+      {
+        "computed_hex": "0x1.f9b6db6db6db7p+5",
+        "index": 230,
+        "native_hex": "0x1.f9b6db6db6db9p+5"
+      },
+      {
+        "computed_hex": "0x1.f36db6db6db6ep+5",
+        "index": 231,
+        "native_hex": "0x1.f36db6db6db70p+5"
+      },
+      {
+        "computed_hex": "0x1.ed24924924925p+5",
+        "index": 232,
+        "native_hex": "0x1.ed24924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.e6db6db6db6dbp+5",
+        "index": 233,
+        "native_hex": "0x1.e6db6db6db6dep+5"
+      },
+      {
+        "computed_hex": "0x1.e6db6db6db6dbp+5",
+        "index": 234,
+        "native_hex": "0x1.e6db6db6db6dep+5"
+      },
+      {
+        "computed_hex": "0x1.f092492492492p+5",
+        "index": 235,
+        "native_hex": "0x1.f092492492495p+5"
+      },
+      {
+        "computed_hex": "0x1.fa49249249249p+5",
+        "index": 236,
+        "native_hex": "0x1.fa4924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.0200000000000p+6",
+        "index": 237,
+        "native_hex": "0x1.0200000000001p+6"
+      },
+      {
+        "computed_hex": "0x1.0200000000000p+6",
+        "index": 238,
+        "native_hex": "0x1.0200000000001p+6"
+      },
+      {
+        "computed_hex": "0x1.0200000000000p+6",
+        "index": 239,
+        "native_hex": "0x1.0200000000001p+6"
+      },
+      {
+        "computed_hex": "0x1.0200000000000p+6",
+        "index": 240,
+        "native_hex": "0x1.0200000000001p+6"
+      },
+      {
+        "computed_hex": "0x1.0200000000000p+6",
+        "index": 241,
+        "native_hex": "0x1.0200000000001p+6"
+      },
+      {
+        "computed_hex": "0x1.fdb6db6db6db7p+5",
+        "index": 242,
+        "native_hex": "0x1.fdb6db6db6db9p+5"
+      },
+      {
+        "computed_hex": "0x1.f76db6db6db6ep+5",
+        "index": 243,
+        "native_hex": "0x1.f76db6db6db70p+5"
+      },
+      {
+        "computed_hex": "0x1.f124924924925p+5",
+        "index": 244,
+        "native_hex": "0x1.f124924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.f124924924925p+5",
+        "index": 245,
+        "native_hex": "0x1.f124924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.f124924924925p+5",
+        "index": 246,
+        "native_hex": "0x1.f124924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.f124924924925p+5",
+        "index": 247,
+        "native_hex": "0x1.f124924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.f124924924925p+5",
+        "index": 248,
+        "native_hex": "0x1.f124924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.f124924924925p+5",
+        "index": 249,
+        "native_hex": "0x1.f124924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.f124924924925p+5",
+        "index": 250,
+        "native_hex": "0x1.f124924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.f124924924925p+5",
+        "index": 251,
+        "native_hex": "0x1.f124924924927p+5"
+      },
+      {
+        "computed_hex": "0x1.fadb6db6db6dbp+5",
+        "index": 252,
+        "native_hex": "0x1.fadb6db6db6dep+5"
+      },
+      {
+        "computed_hex": "0x1.fe49249249249p+5",
+        "index": 253,
+        "native_hex": "0x1.fe4924924924cp+5"
+      },
+      {
+        "computed_hex": "0x1.00db6db6db6dbp+6",
+        "index": 254,
+        "native_hex": "0x1.00db6db6db6ddp+6"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 255,
+        "native_hex": "0x1.fb6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 256,
+        "native_hex": "0x1.fb6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 257,
+        "native_hex": "0x1.fb6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 258,
+        "native_hex": "0x1.fb6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 259,
+        "native_hex": "0x1.fb6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 260,
+        "native_hex": "0x1.fb6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 261,
+        "native_hex": "0x1.fb6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 262,
+        "native_hex": "0x1.fb6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.fb6db6db6db6ep+5",
+        "index": 263,
+        "native_hex": "0x1.fb6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.f524924924925p+5",
+        "index": 264,
+        "native_hex": "0x1.f524924924928p+5"
+      },
+      {
+        "computed_hex": "0x1.eedb6db6db6dbp+5",
+        "index": 265,
+        "native_hex": "0x1.eedb6db6db6dfp+5"
+      },
+      {
+        "computed_hex": "0x1.e892492492492p+5",
+        "index": 266,
+        "native_hex": "0x1.e892492492496p+5"
+      },
+      {
+        "computed_hex": "0x1.e892492492492p+5",
+        "index": 267,
+        "native_hex": "0x1.e892492492496p+5"
+      },
+      {
+        "computed_hex": "0x1.e892492492492p+5",
+        "index": 268,
+        "native_hex": "0x1.e892492492496p+5"
+      },
+      {
+        "computed_hex": "0x1.f249249249249p+5",
+        "index": 269,
+        "native_hex": "0x1.f24924924924dp+5"
+      },
+      {
+        "computed_hex": "0x1.fc00000000000p+5",
+        "index": 270,
+        "native_hex": "0x1.fc00000000004p+5"
+      },
+      {
+        "computed_hex": "0x1.02db6db6db6dbp+6",
+        "index": 271,
+        "native_hex": "0x1.02db6db6db6ddp+6"
+      },
+      {
+        "computed_hex": "0x1.02db6db6db6dbp+6",
+        "index": 272,
+        "native_hex": "0x1.02db6db6db6ddp+6"
+      },
+      {
+        "computed_hex": "0x1.02db6db6db6dbp+6",
+        "index": 273,
+        "native_hex": "0x1.02db6db6db6ddp+6"
+      },
+      {
+        "computed_hex": "0x1.02db6db6db6dbp+6",
+        "index": 274,
+        "native_hex": "0x1.02db6db6db6ddp+6"
+      },
+      {
+        "computed_hex": "0x1.ff6db6db6db6ep+5",
+        "index": 275,
+        "native_hex": "0x1.ff6db6db6db71p+5"
+      },
+      {
+        "computed_hex": "0x1.f924924924925p+5",
+        "index": 276,
+        "native_hex": "0x1.f924924924928p+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 277,
+        "native_hex": "0x1.f2db6db6db6dfp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 278,
+        "native_hex": "0x1.f2db6db6db6dfp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 279,
+        "native_hex": "0x1.f2db6db6db6dfp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 280,
+        "native_hex": "0x1.f2db6db6db6dfp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 281,
+        "native_hex": "0x1.f2db6db6db6dfp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 282,
+        "native_hex": "0x1.f2db6db6db6dfp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 283,
+        "native_hex": "0x1.f2db6db6db6dfp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 284,
+        "native_hex": "0x1.f2db6db6db6dfp+5"
+      },
+      {
+        "computed_hex": "0x1.f2db6db6db6dbp+5",
+        "index": 285,
+        "native_hex": "0x1.f2db6db6db6dfp+5"
+      },
+      {
+        "computed_hex": "0x1.f649249249249p+5",
+        "index": 286,
+        "native_hex": "0x1.f64924924924dp+5"
+      },
+      {
+        "computed_hex": "0x1.f9b6db6db6db7p+5",
+        "index": 287,
+        "native_hex": "0x1.f9b6db6db6dbbp+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 288,
+        "native_hex": "0x1.fd24924924929p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 289,
+        "native_hex": "0x1.fd24924924929p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 290,
+        "native_hex": "0x1.fd24924924929p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 291,
+        "native_hex": "0x1.fd24924924929p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 292,
+        "native_hex": "0x1.fd24924924929p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 293,
+        "native_hex": "0x1.fd24924924929p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 294,
+        "native_hex": "0x1.fd24924924929p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 295,
+        "native_hex": "0x1.fd24924924929p+5"
+      },
+      {
+        "computed_hex": "0x1.fd24924924925p+5",
+        "index": 296,
+        "native_hex": "0x1.fd24924924929p+5"
+      },
+      {
+        "computed_hex": "0x1.f6db6db6db6dbp+5",
+        "index": 297,
+        "native_hex": "0x1.f6db6db6db6e0p+5"
+      },
+      {
+        "computed_hex": "0x1.f092492492492p+5",
+        "index": 298,
+        "native_hex": "0x1.f092492492497p+5"
+      },
+      {
+        "computed_hex": "0x1.ea49249249249p+5",
+        "index": 299,
+        "native_hex": "0x1.ea4924924924ep+5"
+      }
+    ],
+    "first_range_hex": "0x1.9000000000000p+5",
+    "method": "FIRST_BAR_HIGH_LOW_THEN_ORDERED_ROLLING_RECURRENCE",
+    "mismatches": [],
+    "production_feature_modified": false,
+    "seed_hex": "0x1.e524924924925p+5"
+  },
+  "compile_status": "0 errors, 0 warnings",
+  "dataset_admitted": false,
+  "ex5_sha256": "ac761314ad00f25d23d5683db51786541a56bf1ae22cef831664cf551e47c50e",
+  "export_sha256": "cd75c4e17cacf62897a30d5fd1faf8911d1b3b7d928e609e38c8f8f221b302ad",
+  "ha_ohlc_compared": 300,
+  "ha_ohlc_mismatches": [],
+  "ha_ready_directions_compared": 25,
+  "input_kind": "DETERMINISTIC_SYNTHETIC_FIXTURE",
+  "orders_sent": 0,
+  "origin": "SYNTHETIC_ONLY_NOT_STUDY_DATA",
+  "original_terminals_preserved": true,
+  "production_atr_exact_mismatches": 36,
+  "recipe": {
+    "bars": 300,
+    "close": "1005.+i%19",
+    "high": "1030.+i%17",
+    "low": "980.-i%11",
+    "minute_ohlc": "SAME_SYNTHETIC_OHLC_AS_ITS_PARENT",
+    "minute_volume": 1,
+    "minutes_per_bar": 5,
+    "open": "1000.+i%13",
+    "run": "cfweek_382ad54e",
+    "tick_volume": 5,
+    "time": "946857600+i*300"
+  },
+  "source_sha256": "141be3abecac26c99eaa20260a29d703c8bba177ebb475a4dcf4ab8fdc746ed1",
+  "training_executed": false
+}

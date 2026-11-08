@@ -4,7 +4,7 @@ from tempfile import TemporaryDirectory
 import unittest
 
 from controller.native_database_snapshots import Store
-from tools.cf_capture_stability import PreparedStore, Profile, live_timing, sqlite_trial
+from tools.cf_capture_stability import PreparedStore, Profile, live_timing, sqlite_trial, reopening_observation, passive_snapshot
 from tools.cf_own_indicator_oracle import native_seed_diagnostic
 
 
@@ -47,3 +47,63 @@ class CaptureStabilityTests(unittest.TestCase):
         result=native_seed_diagnostic(bars,rows)
         self.assertEqual(result['mismatches'][0]['index'],14)
         self.assertFalse(result['production_feature_modified'])
+
+    def test_reopening_records_new_quote_once_across_epoch_and_boot(self):
+        poll = dict(native_quote=dict(time_msc=100), read_start=dict(boot_id='A',monotonic_ns=1),
+                    read_end=dict(boot_id='A',monotonic_ns=2),connected=True)
+        ref = dict(capture_id='synthetic',record=1,checkpoint_epoch='old')
+        state, event = reopening_observation(None,poll,ref)
+        self.assertIsNone(event)
+        unchanged, event = reopening_observation(state,poll,ref)
+        self.assertEqual(unchanged,state)
+        self.assertIsNone(event)
+        newer = dict(poll,native_quote=dict(time_msc=200),read_end=dict(boot_id='B',monotonic_ns=1))
+        state, event = reopening_observation(state,newer,dict(ref,record=5,checkpoint_epoch='new'))
+        self.assertTrue(event['boot_changed'])
+        self.assertTrue(event['checkpoint_epoch_changed'])
+        self.assertFalse(event['bridge_allowed'])
+        self.assertFalse(event['dataset_admitted'])
+        self.assertIsNone(reopening_observation(state,newer,ref)[1])
+
+    def test_future_mutation_does_not_change_atr_prefix_comparison(self):
+        bars = [dict(high=3.,low=1.,close=2.) for _ in range(30)]
+        rows = [dict(atr='2.0') for _ in bars]
+        prefix = native_seed_diagnostic(bars[:16],rows[:16])
+        for bar in bars[16:]:
+            bar['high'] = 1e9
+        full = native_seed_diagnostic(bars,rows)
+        self.assertEqual(prefix['seed_hex'],full['seed_hex'])
+        self.assertFalse([m for m in full['mismatches'] if m['index'] < 16])
+
+    def test_reopening_journal_survives_watch_checkpoint_loss_without_duplicates(self):
+        import json
+        with TemporaryDirectory() as directory:
+            root=Path(directory)
+            base=root/'outputs/us30cash_m5_native_observations'
+            folder=base/'synthetic'
+            folder.mkdir(parents=True)
+            (base/'current.json').write_text(json.dumps(dict(capture_id='synthetic')))
+            db=sqlite3.connect(folder/'snapshots.sqlite3')
+            db.execute('CREATE TABLE records(n INTEGER PRIMARY KEY,digest TEXT,body TEXT)')
+            def append(index,stamp):
+                poll=dict(kind='LIVE_LATEST_STATE_POLL',native_quote=dict(time_msc=stamp),
+                    read_start=dict(boot_id='A',monotonic_ns=index*10),
+                    read_end=dict(boot_id='A',monotonic_ns=index*10+1),
+                    connected=True,connection_ns=0,identity_and_quote_ns=0)
+                db.execute('INSERT INTO records VALUES(?,?,?)',(index,str(index),json.dumps(poll)))
+                db.commit()
+                quality=dict(status='PASS_INCREMENTAL_QUARANTINED',capture_id='synthetic',
+                             records_verified=index+1,chain_head=str(index),epoch='e')
+                (base/'quality_status.json').write_text(json.dumps(quality))
+            append(0,100)
+            passive_snapshot(root)
+            armed=(base/'reopening_watch.json').read_bytes()
+            append(1,200)
+            passive_snapshot(root)
+            first=json.loads((base/'reopening_watch.json').read_bytes())['evidence_sha256']
+            (base/'reopening_watch.json').write_bytes(armed)
+            append(2,300)
+            passive_snapshot(root)
+            self.assertEqual(len(list((base/'reopening_observations').glob('*.json'))),1)
+            self.assertEqual(json.loads((base/'reopening_watch.json').read_bytes())['evidence_sha256'],first)
+            db.close()

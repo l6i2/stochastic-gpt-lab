@@ -1,0 +1,352 @@
+{
+  "calendar": {
+    "records_sha256": "79a05f868f788604df3e924f5687f438a124f51ea86f83780176be137c5b5ef1",
+    "scope": "OBSERVED_WEEKLY_METADATA_NOT_HOLIDAY_OR_HISTORICAL_CERTIFICATION",
+    "server": "XMGlobalSC-MT5 5",
+    "sessions": {
+      "QUOTE": {
+        "FRIDAY": [
+          [
+            60,
+            1440
+          ]
+        ],
+        "MONDAY": [
+          [
+            60,
+            1440
+          ]
+        ],
+        "SATURDAY": [],
+        "SUNDAY": [],
+        "THURSDAY": [
+          [
+            60,
+            1440
+          ]
+        ],
+        "TUESDAY": [
+          [
+            60,
+            1440
+          ]
+        ],
+        "WEDNESDAY": [
+          [
+            60,
+            1440
+          ]
+        ]
+      },
+      "TRADE": {
+        "FRIDAY": [
+          [
+            65,
+            1430
+          ]
+        ],
+        "MONDAY": [
+          [
+            65,
+            1435
+          ]
+        ],
+        "SATURDAY": [],
+        "SUNDAY": [],
+        "THURSDAY": [
+          [
+            65,
+            1435
+          ]
+        ],
+        "TUESDAY": [
+          [
+            65,
+            1435
+          ]
+        ],
+        "WEDNESDAY": [
+          [
+            65,
+            1435
+          ]
+        ]
+      }
+    },
+    "symbol": "US30Cash"
+  },
+  "identity": {
+    "connected": true,
+    "demo": true,
+    "last_native_quote_msc": 1794009599968,
+    "server": "XMGlobalSC-MT5 5",
+    "symbol": "US30Cash",
+    "terminal_trade_allowed": false
+  },
+  "independent_event_generation_utc_certified": false,
+  "native_oracle_source_sha256": "be15a4a1192d222032a3ab75237298cc9bb992f72ec718e4b6ea550826777d5e",
+  "nts": {
+    "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:112",
+    "chain_head": "0d764f44b9619fd85ca8f202504d5890513eca9a9785e749823498463856a783",
+    "failures": 0,
+    "last_record": "63cf3926dfae41a6b105127b2cd304f0.json",
+    "last_uptime_ms": 346899312,
+    "next_due_uptime_ms": 347199312
+  },
+  "observed_host_label": "2026-11-08T01:45:12.966759+00:00",
+  "orders_sent": 0,
+  "protected_scoring": false,
+  "quality": {
+    "capture_id": "dbsnap_0fd175bd0cb94a5fa26e7404819c2228",
+    "chain_head": "9352dc17429da3ad1991b4de83bda2f36ae7770514c4cfe8b34671ace3de5cff",
+    "checkpoint_hash": "c821a1949c7b290a5cde60b1ec54fd2fd3c87e8ddc67b43d058975dd9e6cf405",
+    "epoch": "33_346627031",
+    "m5_m1_m5_parity_exclusions": 0,
+    "m5_with_five_m1_parity": 88,
+    "maturity": {
+      "calendar_eta": null,
+      "dataset_admitted": false,
+      "eta_reason": "SESSION_TRANSITION_UNCERTIFIED_OR_SIGNAL_SAMPLE_IMMATURE_NO_CALENDAR_FORECAST",
+      "observed_market_bar_minutes": 0,
+      "observed_signals_per_100_bars": null,
+      "rate_scope": "DESCRIPTIVE_CURRENT_UNINTERRUPTED_CONTEXT_NOT_AN_INDEPENDENT_SAMPLE",
+      "remaining": {
+        "BUY_evaluable": 80,
+        "BUY_folds": 3,
+        "SELL_evaluable": 80,
+        "SELL_folds": 3,
+        "consecutive_signals": 800,
+        "evaluable": 200,
+        "post_m5": 100,
+        "warmup_m5": 350
+      },
+      "remaining_warmup_observed_bar_minutes": 1750,
+      "requirements": {
+        "BUY": 80,
+        "SELL": 80,
+        "evaluable": 200,
+        "folds_each": 3,
+        "post_m5": 100,
+        "signals": 800,
+        "warmup_m5": 350
+      },
+      "scientific_warmup": 0,
+      "slowest_requirement": "UNDETERMINED_SIGNAL_AND_COVERAGE_RATES_NOT_YET_ESTIMABLE",
+      "statistically_justified_eta": false,
+      "technical_warmup": 0,
+      "training_executed": false
+    },
+    "native_own_prefix_oracle": {
+      "native_terminal_launched": false,
+      "own_bars": 0,
+      "status": "WAITING_FOR_15_OWN_M5"
+    },
+    "new_m5_pairs_checked": 0,
+    "new_records_verified": 48,
+    "observed_host_utc": "2026-11-08T01:43:39.779099+00:00",
+    "orphan_queries_excluded_on_explicit_interruption": 0,
+    "physical_generation_utc_certified": false,
+    "real_m1": 500,
+    "real_m5": 88,
+    "records_verified": 36064,
+    "recursive_seeds": {
+      "ATR_INITIALIZED": false,
+      "HA_READY": false,
+      "own_bars": 0,
+      "seeds_bound": false
+    },
+    "rejected": {
+      "300": 0,
+      "60": 4
+    },
+    "retained_indicator_parity": {
+      "algorithmic_ATR_PARITY": "PASS_EXACT_RETAINED_NATIVE_499_BAR_ORACLE",
+      "algorithmic_HA_PARITY": "PASS_EXACT_RETAINED",
+      "algorithmic_MAIN_K_PARITY": "PASS_RETAINED_BOUND",
+      "code_pin_sha256": "973829b0fd1532cb4ed4b25dd9503567ddee740d04c1d476f0f02d97122e5bf3",
+      "dataset_admitted": false,
+      "feature_fragment_sha256": "c8fe7846f6569d824cd7158c8fb72998a21a7aa3977901aed6cdde6fbc6e109d",
+      "ha_core_sha256": "d9a1e525a99e66f855bc49c3a696030c5e12ef534a1aeff5012b63a462a3e8ef",
+      "native_export_sha256": "a6cf247bb136b6e29d37a154405b476078471fed65d4a6067051171e83bf75e4",
+      "own_dataset_native_iATR_parity": false,
+      "rerun": false,
+      "retained_receipt_sha256": "479d5d6900e1ca6425bc1f91737a5664ed8e514ec0ccce89b02fac1d2e3467bb"
+    },
+    "roles_verified": true,
+    "runtime_status": "ACTIVE_QUARANTINED",
+    "schema": "cf-quality-monitor/1",
+    "scientific_admission": false,
+    "status": "PASS_INCREMENTAL_QUARANTINED",
+    "training_executed": false
+  },
+  "recovery": {
+    "actions": [],
+    "capture_watchdog_count": 0,
+    "dry_run": false,
+    "host_utc": "2026-11-08T01:44:42.1706188Z",
+    "live_trading": false,
+    "no_backfill": true,
+    "recovery_pid": 27064,
+    "requires_user_logon": true,
+    "scope": "EXACT_XM_AND_OWN_WATCHDOG_NTS",
+    "xm_process_count": 1
+  },
+  "recovery_configuration": {
+    "enabled": true,
+    "logon_trigger": 1,
+    "multiple_instances": "IgnoreNew",
+    "repetition": [
+      "PT5M"
+    ],
+    "start_when_available": true,
+    "state": "Running",
+    "stop_on_battery": false
+  },
+  "reopening_monitor_source_sha256": "51232fc31a0fd9604e5d844736175438d6bd864e69c1e7d3941395138217b1a1",
+  "reopening_watch": {
+    "baseline": {
+      "capture_id": "dbsnap_0fd175bd0cb94a5fa26e7404819c2228",
+      "checkpoint_epoch": "33_346627031",
+      "record": 35850,
+      "verified_head": "dab02399253549e2e9264daf3344c6d18ab309ee77f18e481e16689b59cd0b6e"
+    },
+    "baseline_clock": {
+      "boot_id": "112",
+      "host_utc_label": "2026-11-08T01:38:04.889521+00:00",
+      "monotonic_ns": 346803921760800,
+      "uptime_ms": 346763171,
+      "utc_certified": false
+    },
+    "baseline_epoch": "33_346627031",
+    "baseline_native_msc": 1794009599968,
+    "bridge_allowed": false,
+    "last_verified_end": 36064,
+    "status": "ARMED_WAITING_FOR_NEW_NATIVE_QUOTE",
+    "uninspected_record_count": 0
+  },
+  "resources": {
+    "available_bytes": 627187712,
+    "producer_rss_bytes": 9084928
+  },
+  "runtime": {
+    "BUY": 0,
+    "NEW_STUDY_DATASET_ADMISSION": "WAITING_FOR_EVIDENCE",
+    "SELL": 0,
+    "chain_head": "e438d96e8b8132f73a5cc4c50855c041dc5b836bc7c65af45d828182110aff60",
+    "consecutive_m5": 0,
+    "epoch": "33_346627031",
+    "evaluable": 0,
+    "process_id": 3224,
+    "real_m1": 500,
+    "real_m5": 88,
+    "scientific_warmup": 0,
+    "status": "ACTIVE_QUARANTINED"
+  },
+  "schema": "cf-weekend-readiness/1",
+  "scientific_authorization_required_for_admission_and_training": true,
+  "scientific_fits": 0,
+  "source_head_before_changes": "5a2ffee911d9fee0f19fd8f1061f85b7f1d75224",
+  "temporal_display_examples": [
+    {
+      "ecuador": "2026-10-31T11:00:00-05:00",
+      "new_york": "2026-10-31T12:00:00-04:00",
+      "utc": "2026-10-31T16:00:00+00:00",
+      "xm": null
+    },
+    {
+      "ecuador": "2026-11-07T11:00:00-05:00",
+      "new_york": "2026-11-07T11:00:00-05:00",
+      "utc": "2026-11-07T16:00:00+00:00",
+      "xm": null
+    }
+  ],
+  "tests": {
+    "compiler": "0 errors, 0 warnings",
+    "passed": 66,
+    "synthetic_estimator_calls_only": true
+  },
+  "training_plan": {
+    "actual_fits": 0,
+    "actual_scoring": 0,
+    "admitted_dataset": false,
+    "authorization_requested": false,
+    "chronological_plan": null,
+    "dataset_hash": null,
+    "decision": "p>0.5 FOLLOW ELSE INVERT",
+    "execution_enabled": false,
+    "execution_requirements": [
+      "HASH_BOUND_ADMITTED_DATASET_AND_DEPENDENCIES",
+      "COMPLETE_EXPOSURE_AND_MEMBERSHIP",
+      "EXPLICIT_SCIENTIFIC_AUTHORIZATION",
+      "ADMITTED_DATA_ADAPTER_AND_ACCEPTANCE_EVALUATOR_VALIDATION_BEFORE_EXECUTION"
+    ],
+    "family": "logistic",
+    "feature_order": [
+      "stoch_k",
+      "delta_k_1",
+      "ATR",
+      "relative_volume_20",
+      "ha_direction",
+      "range_to_ATR"
+    ],
+    "final_full_dataset_fit": false,
+    "label": "FOLLOW_PNL_MINUS_INVERT_PNL_GT_0",
+    "max_fits": 8,
+    "max_launches": 1,
+    "missing": "NO_IMPUTATION_FINITE_TRAIN_ONLY_MISSING_EVALUATION_FIXED_FOLLOW",
+    "mode": "PRE_TRAIN_PLAN_ONLY",
+    "optimization_searches": 0,
+    "params": {
+      "C": 1,
+      "class_weight": null,
+      "max_iter": 1000,
+      "random_state": 20261030,
+      "solver": "lbfgs"
+    },
+    "plan_sha256": "ed25fbf80c87371e2fb472d954ba26e39d4b85f39e48cfa95ed4ea1ec221acaa",
+    "planned_slots": [
+      {
+        "fold": 1,
+        "side": "BUY"
+      },
+      {
+        "fold": 1,
+        "side": "SELL"
+      },
+      {
+        "fold": 2,
+        "side": "BUY"
+      },
+      {
+        "fold": 2,
+        "side": "SELL"
+      },
+      {
+        "fold": 3,
+        "side": "BUY"
+      },
+      {
+        "fold": 3,
+        "side": "SELL"
+      },
+      {
+        "fold": 4,
+        "side": "BUY"
+      },
+      {
+        "fold": 4,
+        "side": "SELL"
+      }
+    ],
+    "protocol_hash": "ce5ab48ab95cbf4d6c07cb9b1cc9a13ab7f14ab7d14792b494ae2d19a21d45d9",
+    "scaling": "TRAIN_ONLY_DDOF_0_ZERO_SCALE_TO_1",
+    "whitelist_hash": "7d95930599e9ffa5b98a4f89c99e2862afcb47730c238c66052e6024ef703ec8"
+  },
+  "unfitted_buy_sell_instances_separate": true,
+  "versioned_atr_repair": {
+    "production_atr_unchanged": true,
+    "real_30_bar_test_pending": true,
+    "retained_production_pin_requires_review": true,
+    "status": "DIAGNOSTIC_CANDIDATE_PREPARED_NOT_PROMOTED"
+  }
+}

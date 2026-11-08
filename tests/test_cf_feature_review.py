@@ -37,9 +37,44 @@ class CfFeatureReviewTests(unittest.TestCase):
         self.assertNotIn('ArrayResize(bars,500)',text)
         self.assertNotIn('i<499',text)
         self.assertIn('bars[i].tick_volume,DoubleToString(k[i]',text)
+        self.assertIn('"ha_open","ha_high","ha_low","ha_close"',text)
+        self.assertIn('DoubleToString(ha.bars[0].h,16)',text)
         self.assertEqual(text.count('ZeroMemory(minutes['),75)
         with self.assertRaises(ValueError):build_source(dict(native_m5=bars[:-1],native_m1=minutes[:-5]),'test_run')
         with self.assertRaises(ValueError):build_source(dict(native_m5=bars,native_m1=minutes[:-1]),'test_run')
 
+
+class FeaturePersistenceTests(unittest.TestCase):
+    def test_serialized_context_and_future_mutation_preserve_prefix(self):
+        import json
+        def run(mutate=False, restart=False):
+            state=initial_state()
+            outputs=[]
+            def processor():
+                return Processor(state,lambda kind,body:outputs.append(body),None,'0.01',
+                    dict(warmup=350,signals=800,post_bars=100,evaluable=200,each_side=80),
+                    lambda:dict(boot_id='synthetic',monotonic_ns=0))
+            worker=processor()
+            prefix=None
+            for i in range(300):
+                if restart and i==150:
+                    state=json.loads(json.dumps(state))
+                    worker=processor()
+                bar=dict(time=300*(i+1),open=100.,high=110.+i%7,low=90.,close=102.,
+                         tick_volume=5,segment='synthetic')
+                if mutate and i>=276:
+                    bar.update(open=1e8,high=1e9,low=1.,close=1e7)
+                state['own_run_bars']+=1
+                worker.features(bar,'first' if i==0 else str(i),
+                                dict(native_time_msc=(bar['time']+300)*1000),{})
+                if i==275:prefix=copy.deepcopy(outputs)
+            return prefix,state
+        baseline,final=run()
+        restored,restored_final=run(restart=True)
+        mutated,_=run(mutate=True)
+        self.assertEqual(baseline,restored)
+        self.assertEqual(final,restored_final)
+        self.assertEqual(baseline,mutated)
+        self.assertTrue(seed_check(final,'first')['HA_READY'])
 
 if __name__=='__main__':unittest.main()

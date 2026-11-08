@@ -1,0 +1,11 @@
+{
+  "dataset_admitted": false,
+  "files": {
+    ".gitattributes": "98994392717b6f14546db94935003105562ee7e402ede5bf3779d4ad4b99ab73",
+    "cfweek_382ad54e_oracle.csv": "cd75c4e17cacf62897a30d5fd1faf8911d1b3b7d928e609e38c8f8f221b302ad",
+    "readiness.json": "1fa81e823f9e5fb415217435f0e1525f55b047ba30b103067c8ce98f2632c509",
+    "replay.py": "afde6e21e98244a3eabc3081326aa9140695d97ad903b1764ca003c6dbe4cccc",
+    "synthetic_receipt.json": "63784b2c32b7d03c3f89a2ad6af7c6446edd293aea316ac7f31c774286531ce0"
+  },
+  "scope": "SYNTHETIC_AND_QUARANTINED_METADATA_ONLY"
+}

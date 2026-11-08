@@ -1,5 +1,9 @@
 > Continuación prioritaria C+F. El corte de las 15:15 en Ecuador verificó 20 M5 acumuladas,
 
+## Preparación de fin de semana del 7 de noviembre
+
+Se completó el ensayo nativo sintético de 300 barras. La variante iATR coincide en 287 valores y HA coincide en los cuatro precios de las 300 barras, con 25 direcciones desde el hito 276. Pasaron 66 pruebas. El monitor de reapertura quedó integrado en el reporter existente con recibo idempotente y revisión de transición que conserva la cuarentena. Se mantienen 88 M5 propias acumuladas, 0 consecutivas y 0 elegibles. iATR propio, HA propio, calendario y admisión conservan sus pendientes. [Informe único y recibos](CF_WEEKEND_PREPARATION_20261107.md).
+
 ## Seguimiento del 7 de noviembre de 2026
 
 XM y el guardian estaban detenidos al comenzar la sesión. La tarea conservaba el resultado 3221225786, correspondiente a terminación del proceso; el origen de esa terminación sigue desconocido. Se inició la tarea existente. Recuperó una única instancia XM y el productor C+F, que reabrió su checkpoint en el epoch 31. IPC confirmó cuenta demo, servidor XMGlobalSC-MT5 5 y trading algorítmico deshabilitado. El monitor pasó de estado obsoleto durante el arranque a verificar nuevamente la cadena. El corte contiene 500 M1, 88 M5 con paridad, 0 consecutivas y 0 elegibles. La última cotización nativa permanece en el cierre anterior; el retorno de conexión constituye evidencia de recuperación del servicio. La continuidad de barras nuevas espera observaciones futuras.

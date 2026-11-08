@@ -153,6 +153,40 @@ def live_timing(window):
                 poll=distribution([p['previous_poll_timing']['poll_ns'] for p in polls if p.get('previous_poll_timing')]))
 
 
+def reopening_observation(previous, poll, reference):
+    """Record the first newer quote after arming, without calendar permission."""
+    if poll.get('connected') is not True:
+        raise ValueError('REOPENING_CONNECTION_NOT_VERIFIED')
+    stamp = poll['native_quote']['time_msc']
+    if previous is None:
+        return dict(status='ARMED_WAITING_FOR_NEW_NATIVE_QUOTE', baseline_native_msc=stamp,
+                    baseline=reference, baseline_epoch=reference['checkpoint_epoch'],
+                    baseline_clock=poll['read_end'], bridge_allowed=False), None
+    if previous['status'] == 'FIRST_NEW_NATIVE_QUOTE_OBSERVED':
+        return previous, None
+    if stamp <= previous['baseline_native_msc']:
+        return previous, None
+    from controller.cf_session_calendar import transition_review
+    # Observation alone supplies neither a producer session boundary nor the
+    # broker's exact exception attestation. Let the existing verifier enumerate
+    # missing evidence instead of inventing those prerequisites.
+    review = transition_review(dict(
+        from_native_msc=(previous['baseline_native_msc']//300000+1)*300000,
+        to_native_msc=stamp//300000*300000,
+        last_native_msc=previous['baseline_native_msc'], current_native_msc=stamp))
+    evidence = dict(baseline=previous['baseline'], baseline_native_msc=previous['baseline_native_msc'],
+                    first_new_native_quote=poll['native_quote'], read_start=poll['read_start'],
+                    read_end=poll['read_end'], checkpoint_epoch=reference['checkpoint_epoch'], reference=reference,
+                    checkpoint_epoch_changed=previous['baseline_epoch'] != reference['checkpoint_epoch'],
+                    boot_changed=previous['baseline_clock']['boot_id'] != poll['read_end']['boot_id'],
+                    uninspected_record_count=previous.get('uninspected_record_count',0),
+                    connected=poll['connected'], status='FIRST_NEW_NATIVE_QUOTE_OBSERVED',
+                    calendar='PARTIAL_REQUIRES_TRANSITION_AND_EXCEPTION_EVIDENCE',
+                    transition_review=review,
+                    bridge_allowed=False, dataset_admitted=False, training_executed=False)
+    return dict(previous, status=evidence['status'], evidence_sha256=seal(evidence)), evidence
+
+
 def passive_snapshot(root=ROOT):
     """Reuse the quality reporter's validated head. Never call terminal IPC here."""
     base = root/'outputs/us30cash_m5_native_observations'
@@ -173,10 +207,39 @@ def passive_snapshot(root=ROOT):
             raise ValueError('TELEMETRY_QUALITY_HEAD_CHANGED')
         rows = db.execute("SELECT n,body FROM records WHERE n>=? AND n<? AND json_extract(body,'$.kind') IN ('LIVE_LATEST_STATE_POLL','NEW_OBSERVATION_EPOCH','OBSERVATION_INTERRUPTION') ORDER BY n",(max(0,end-800),end))
         polls, boundaries = [], []
+        numbered_polls = []
         for index,body in rows:
             row = json.loads(body)
-            if row['kind']=='LIVE_LATEST_STATE_POLL':polls.append(row)
+            if row['kind']=='LIVE_LATEST_STATE_POLL':
+                polls.append(row)
+                numbered_polls.append((index,row))
             else:boundaries.append(dict(record=index,kind=row['kind'],reason=row.get('reason')))
+    watch_path = base/'reopening_watch.json'
+    previous = json.loads(watch_path.read_text()) if watch_path.exists() else None
+    if previous and previous['baseline']['capture_id'] != capture_id:
+        raise ValueError('REOPENING_WATCH_CAPTURE_CHANGED')
+    if previous and previous['status'] != 'FIRST_NEW_NATIVE_QUOTE_OBSERVED':
+        last_end = previous.get('last_verified_end',previous['baseline']['record']+1)
+        omitted = max(0,end-800-last_end)
+        previous = dict(previous,uninspected_record_count=previous.get('uninspected_record_count',0)+omitted)
+    # On first arming use the newest verified poll. Later inspect the entire tail
+    # in record order so the first observation remains identifiable.
+    candidates = numbered_polls if previous else numbered_polls[-1:]
+    for index,poll in candidates:
+        reference = dict(capture_id=capture_id, record=index, verified_head=quality['chain_head'], checkpoint_epoch=quality['epoch'])
+        previous, evidence = reopening_observation(previous,poll,reference)
+        if evidence:
+            event_path = base/'reopening_observations'/(seal(previous['baseline'])+'.json')
+            if event_path.exists():
+                saved = json.loads(event_path.read_text())
+                if saved['baseline'] != previous['baseline']:
+                    raise ValueError('REOPENING_BASELINE_CHANGED')
+                evidence = saved
+            else:
+                once(event_path,evidence)
+            previous = dict(previous,evidence_sha256=seal(evidence))
+    if previous:
+        atomic(watch_path,dict(previous,last_verified_end=end))
     atomic(target,dict(chain_head=quality['chain_head'],records=end,epoch=quality['epoch'],
                        observed_host_utc=datetime.now(timezone.utc).isoformat(),
                        timing=live_timing(dict(polls=polls,boundaries=boundaries)),

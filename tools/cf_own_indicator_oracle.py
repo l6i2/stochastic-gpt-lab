@@ -60,6 +60,10 @@ def build_source(prefix,run):
     text=text.replace('CopyBuffer(stoch,0,1,499,k)==499',f'CopyBuffer(stoch,0,0,{n},k)=={n}')
     text=text.replace('CopyBuffer(atr,0,1,499,a)==499',f'CopyBuffer(atr,0,0,{n},a)=={n}')
     text=text.replace('i<499',f'i<{n}').replace(',5,DoubleToString(k[i]',',bars[i].tick_volume,DoubleToString(k[i]')
+    text=text.replace('"ha_direction","ha_ready"',
+                      '"ha_direction","ha_ready","ha_open","ha_high","ha_low","ha_close"')
+    text=text.replace('ha.Ready()?1:0);',
+                      'ha.Ready()?1:0,DoubleToString(ha.bars[0].o,16),DoubleToString(ha.bars[0].h,16),DoubleToString(ha.bars[0].l,16),DoubleToString(ha.bars[0].c,16));')
     return text
 
 
@@ -104,6 +108,12 @@ def run():
             state['own_run_bars']+=1
             processor.features(dict(bar,segment=prefix['epoch']),export_hash,dict(native_time_msc=(bar['time']+300)*1000),{})
             values=next(e for e in reversed(emitted) if e['kind']=='CAUSAL_PREFIX_FEATURES')['values']
+            ha = state['ha']
+            expected_ha = dict(ha_open=ha['open'], ha_close=ha['close'],
+                               ha_high=max(bar['high'],ha['open'],ha['close']),
+                               ha_low=min(bar['low'],ha['open'],ha['close']))
+            if any(float(native[name])!=value for name,value in expected_ha.items()):
+                ha_mismatch += 1
             if values['ATR'] is not None:
                 checked+=1
                 actual=float(native['atr'])
@@ -114,6 +124,8 @@ def run():
         if main_error>1e-10 or ha_mismatch:raise ValueError('OWN_STOCH_OR_HA_PARITY_FAILED')
         result=dict(status='PASS_OWN_PREFIX_NATIVE_DIAGNOSTIC_ONLY',capture_id=prefix['capture_id'],epoch=prefix['epoch'],native_m5=n,ATR_compared=checked,ATR_PARITY='PASS_EXACT',HA_PARITY='PASS_EXACT' if n>=276 else 'SEED_BOUND_READY_VALUES_WAITING_276',MAIN_K_PARITY='PASS_RETAINED_BOUND',native_export_sha256=export_hash,input_manifest_sha256=sha(folder/'input_manifest.json'),source_sha256=sha(source),original_terminals_preserved=all(psutil.pid_exists(pid) for pid in original),orders_sent=0,training_executed=False,dataset_admitted=False)
         result['own_seed_bar_hash']=prefix['seeds']['seed_bar_hash']
+        result['HA_OHLC_PARITY']='PASS_EXACT'
+        result['HA_OHLC_compared']=n
         result['native_seed_diagnostic']=native_seed_diagnostic(prefix['native_m5'],rows)
         if atr_mismatches:
             result.update(status='FAILED_OWN_ATR_EXACT_PARITY',ATR_PARITY='FAIL_EXACT',
