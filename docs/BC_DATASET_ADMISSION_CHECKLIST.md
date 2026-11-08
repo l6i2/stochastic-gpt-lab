@@ -28,3 +28,8 @@ Umbrales invariables: 350 contexto; 800 señales base; 100 posteriores; 200 eval
 Los certificados de calendario requieren verificación independiente y registro por hash; la lista está vacía. Las semillas requieren oráculo de este prefijo/vintage. Ningún booleano de readiness ni un contador promueve datos.
 
 DATOS: WAITING_FOR_DATA. ADMISION: no concedida. AUTORIZACION DE ENTRENAMIENTO: no solicitada. El paquete solo candidato está en cuarentena; ambas allowlists científicas siguen vacías. [Plan de ejecución](BC_FIRST_TRAINING_EXECUTION_PLAN.md).
+
+
+## Estados de revisión — schema 2
+
+WAITING_FOR_DATA: faltan umbrales. WAITING_FOR_EVIDENCE: los umbrales existen pero falta prueba. FAIL: una condición falla o se excede la muestra fija. READY_FOR_ADMISSION_REVIEW: paquete técnico completo, aún sin admisión. En todos los estados training_authorized=false; la autorización de entrenamiento sigue separada. El cache valida también el paquete candidato y su versión inmutable. [Auditoría de cierre](BC_FINAL_PREMARKET_AUDIT.md).

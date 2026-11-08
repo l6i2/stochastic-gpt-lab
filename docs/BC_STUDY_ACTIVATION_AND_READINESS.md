@@ -1,5 +1,7 @@
 # B+C: activación, adquisición y preparación científicaLa autorización adjunta se aplicó. El nuevo estudio está activo exclusivamente para adquisición en cuarentena; no hay dataset admitido, fits científicos, scoring ni órdenes.
 
+> Auditoría premercado vigente: TECHNICAL_PRETRAINING_CLOSED; 68 tests, imports y compilación PASS. 18 gates y cuatro estados verificados; dataset 0 M5, WAITING_FOR_DATA, sin admisión ni grant. Sin acción manual. [Informe definitivo](BC_FINAL_PREMARKET_AUDIT.md). Los apartados previos son históricos.
+
 > Estado vigente — cierre pre-entrenamiento: tarea existente e IPC integrados, guardian verifica admisión automáticamente, 54 tests PASS; 0 M5/0 señales, WAITING_FOR_DATA, sin admisión ni entrenamiento. El bloqueo anterior de edición de tareas se resolvió reutilizando los servicios instalados; no requiere acción manual. [Informe consolidado](BC_FINAL_PRETRAINING_CLOSURE.md). Los apartados anteriores describen estados históricos.
 
 ## Corte y exclusividad

@@ -1,0 +1,88 @@
+{
+  "acceptance_criteria": {
+    "block_sensitivity_bars": 451,
+    "bootstrap": 10000,
+    "comparisons": 4,
+    "degenerate": "INCONCLUSIVE",
+    "drawdown_ratio_max": 1.2,
+    "lower_must_exceed": 0,
+    "one_sided_lower_confidence": 0.9875,
+    "positive_effect_fold_share_max": 0.5,
+    "positive_fold_fraction_min": 0.7,
+    "seed": 20261030
+  },
+  "authorized_fits": 0,
+  "code_hash": "5e24ec743688f9c01d33b131ca4f60caf31c5575cb03b3c0c3fb712fc9fcfb39",
+  "code_head": "4d8e6eb89bda8746e18fcd6a543f0bc9b6fb0ead",
+  "dataset_admitted": false,
+  "dataset_hash": null,
+  "dataset_id": "bc_train_f6b99cbfc59542a38627868015f65792",
+  "entry_strategy": "MAIN_K_5_3_3_20_80_NEXT_OBSERVED_M5",
+  "environment": {
+    "numpy": "1.26.4",
+    "python": "3.12.14",
+    "scikit-learn": "1.9.1"
+  },
+  "environment_hash": "23d558f5a5ba9551aab4cfa2a6e3eb047b8fe74f1cd0d4492fd8996e640c9ab0",
+  "evaluation_active": false,
+  "exit_rules": {
+    "BUY_entry": "ASK",
+    "BUY_exit": "BID",
+    "SELL_entry": "BID",
+    "SELL_exit": "ASK",
+    "SL": 180,
+    "TIME_EXIT": 100,
+    "TP": 240,
+    "time_exit_basis": "OBSERVED_M5_AND_REAL_EXECUTABLE_QUOTE"
+  },
+  "exposure_hash": null,
+  "feature_whitelist_hash": "6f8a2c5a04031978f8873d196b6f467c6a3d3a9e881627861400095429078dbe",
+  "final_models": "FIXED_FOLD4_PER_SIDE_NO_NINTH_FIT",
+  "hypothesis_budget": 4,
+  "max_fits": 8,
+  "membership_hash": null,
+  "native_bounds": null,
+  "plan_hash": null,
+  "positions": [
+    {
+      "fold": 1,
+      "side": "BUY"
+    },
+    {
+      "fold": 1,
+      "side": "SELL"
+    },
+    {
+      "fold": 2,
+      "side": "BUY"
+    },
+    {
+      "fold": 2,
+      "side": "SELL"
+    },
+    {
+      "fold": 3,
+      "side": "BUY"
+    },
+    {
+      "fold": 3,
+      "side": "SELL"
+    },
+    {
+      "fold": 4,
+      "side": "BUY"
+    },
+    {
+      "fold": 4,
+      "side": "SELL"
+    }
+  ],
+  "pre_admission_review_hash": "b2b7d6adfb1abb8a54024cb6edfbdcda815f1b55e838087889105ce299b5e1a9",
+  "protocol_hash": "dc18ed4b4cd008355c521d493c1e8b04f2bb553e8376022d03f0ff9d4e29af67",
+  "schema": "bc-future-authorization-package/1",
+  "specific_training_request": null,
+  "status": "WAITING_FOR_DATA",
+  "study_id": "US30CASH_M5_XM_TRAIN_FUTURE_EVAL_PROPOSED_V1",
+  "training_authorization_status": "WAITING_FOR_AUTHORIZATION",
+  "training_authorized": false
+}

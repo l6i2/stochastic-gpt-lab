@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "MetaTrader5": "5.0.6231",
+    "numpy": "1.26.4",
+    "psutil": "7.2.2",
+    "scikit-learn": "1.9.1"
+  },
+  "imports": "PASS",
+  "modules": [
+    "controller.bc_admission",
+    "controller.bc_recovery",
+    "controller.bc_study",
+    "controller.bc_training_rows",
+    "controller.cf_atr_candidate",
+    "controller.native_study_runner",
+    "controller.training_admission_gate",
+    "controller.xm_history_recovery",
+    "tools.bc_study_station",
+    "tools.bc_pretraining_worker",
+    "tools.bc_prefix_oracle",
+    "tools.admitted_training"
+  ],
+  "scientific_fits": 0
+}

@@ -22,11 +22,12 @@ def review(counts,evidence):
     deficits={k:max(0,n-counts[k]) for k,n in MINIMUMS.items()}
     failures=[k for k,v in evidence.items() if v['status']=='FAIL']
     pending=[k for k,v in evidence.items() if v['status'] not in ('PASS','FAIL')]
-    status='FAIL' if failures else 'WAITING_FOR_DATA' if any(deficits.values()) else 'WAITING_FOR_EVIDENCE' if pending else 'WAITING_FOR_AUTHORIZATION'
+    status='FAIL' if failures else 'WAITING_FOR_DATA' if any(deficits.values()) else 'WAITING_FOR_EVIDENCE' if pending else 'READY_FOR_ADMISSION_REVIEW'
     if counts['signals']>800 or counts['post_bars']>100:
         status='FAIL';failures.append('FROZEN_SAMPLE_BOUNDARY_EXCEEDED')
-    result=dict(schema='bc-pre-admission-review/1',status=status,counts=counts,deficits=deficits,
-        gates=evidence,failures=failures,pending=pending,technical_package_complete=status=='WAITING_FOR_AUTHORIZATION',
+    result=dict(schema='bc-pre-admission-review/2',status=status,counts=counts,deficits=deficits,
+        gates=evidence,failures=failures,pending=pending,technical_package_complete=status=='READY_FOR_ADMISSION_REVIEW',
+        training_authorization_status='WAITING_FOR_AUTHORIZATION',
         dataset_admitted=False,training_authorized=False,training_executed=False,
         request_ready=False,reason='SEPARATE_REVIEWED_ADMISSION_AND_HASH_BOUND_TRAINING_GRANT_REQUIRED')
     result['review_hash']=seal(result);return result
@@ -48,4 +49,5 @@ def package_template(identity,bindings,review_result):
             BUY_entry='ASK',SELL_entry='BID',BUY_exit='BID',SELL_exit='ASK'),
         acceptance_criteria=bindings.get('acceptance_criteria'),hypothesis_budget=4,
         pre_admission_review_hash=review_result['review_hash'],status=review_result['status'],
+        training_authorization_status=review_result['training_authorization_status'],
         specific_training_request=None,dataset_admitted=False,training_authorized=False)

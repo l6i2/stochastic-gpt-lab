@@ -1,0 +1,25 @@
+{
+  "code_parent": "4d8e6eb89bda8746e18fcd6a543f0bc9b6fb0ead",
+  "files": {
+    "controller/bc_admission.py": "2dede8cd0ffb1f1eb40fc9545a19d8b341ccb77a4d3412a6422255e278f00a13",
+    "docs/BC_FINAL_PREMARKET_AUDIT.md": "1cc79481f0c9a1616e81751d4c4389642fc4597b635b8525f1247a68934f07c6",
+    "research/studies/bc_train_future_eval_v1/premarket_audit_20261108/admission.json": "03be95bec989c29d70fa40ce8f4d36832da8d2e08983059389621cbd7d473293",
+    "research/studies/bc_train_future_eval_v1/premarket_audit_20261108/code_audit.json": "cbac8c0c49643717058c0970f3931e8511e5d06fb4bdb102072282dde3ad4d79",
+    "research/studies/bc_train_future_eval_v1/premarket_audit_20261108/future_package.json": "902ca0bba01b62a82dc4315f9033711d6a2f4c70c7bed7281f11728ed2913231",
+    "research/studies/bc_train_future_eval_v1/premarket_audit_20261108/guardian.json": "b81a2bdbb3be6264a4ef07f61a39f5d8d76a61f4fc431b862cb71ea31edba57a",
+    "research/studies/bc_train_future_eval_v1/premarket_audit_20261108/imports.json": "f847087721e2237ebadfd6a922b95ab66a75629dbc7760498f2de3df2dd22c9a",
+    "research/studies/bc_train_future_eval_v1/premarket_audit_20261108/nts.json": "7b4ff7fef4a13c4b648504b6c141bd8eb9050344e69ca2aa47dd45293c8ad7fc",
+    "research/studies/bc_train_future_eval_v1/premarket_audit_20261108/recovery.json": "2a0da6714d9a6eb2f512f6ac7c35ad5701fd8838b0c111fc2a13e1ef865ff43e",
+    "research/studies/bc_train_future_eval_v1/premarket_audit_20261108/runtime.json": "78b09870d464af6a2dc46a7527b5fca9fc4f7c9497c309aefec133640b8f54b3",
+    "research/studies/bc_train_future_eval_v1/premarket_audit_20261108/services.json": "99374576d4538153be941399a1c1acfa875b661665d40ce2b6588f6933d33495",
+    "research/studies/bc_train_future_eval_v1/premarket_audit_20261108/status.json": "bf7a22f16bd72a340040fd4496d2968c48939a1948b36654fe5ff4647b46ccf3",
+    "tests/test_bc_final_pretraining.py": "4eac3e28733b82ded7a8290aee80dca97b1b51e2d935eb3314105ad2713ea311",
+    "tools/bc_pretraining_worker.py": "95660aef99dbf0fa9b27e1710e7a42e792cb0575e65482f0797478c65021ac90"
+  },
+  "hash_type": "SHA256_FILE_BYTES",
+  "other_project_modified": false,
+  "protected_datasets_opened": false,
+  "schema": "bc-premarket-audit-index/1",
+  "scientific_authority_changed": false,
+  "training_executed": false
+}

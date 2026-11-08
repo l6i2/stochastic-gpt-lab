@@ -1,0 +1,11 @@
+{
+  "authenticated_origins": [
+    "time.cloudflare.com"
+  ],
+  "broker_event_UTC_certified": false,
+  "chain_head": "4f55424be130cf59460df61cc9dad491268cd0f0a8b9520de5d277a30c116f15",
+  "clock_label": "2026-11-08T22:01:48.842438+00:00",
+  "unavailable_origins": [
+    "ntppool2.time.nl"
+  ]
+}

@@ -1,5 +1,7 @@
 > Continuación prioritaria C+F. El corte de las 15:15 en Ecuador verificó 20 M5 acumuladas,## Recuperación histórica separada del 8 de noviembre
 
+> Auditoría premercado vigente: TECHNICAL_PRETRAINING_CLOSED; 68 tests, imports y compilación PASS. 18 gates y cuatro estados verificados; dataset 0 M5, WAITING_FOR_DATA, sin admisión ni grant. Sin acción manual. [Informe definitivo](BC_FINAL_PREMARKET_AUDIT.md). Los apartados previos son históricos.
+
 > Verificación de reapertura vigente: sin tick nuevo; 0 M1, 0 M5, contexto 0/350. Sesiones nativas actualizadas; siguiente ventana nominal 01:00 XM, referencia condicional 18:00 Ecuador. Vigilancia automática existente cada cinco minutos. [Recibo completo](BC_OPENING_VERIFICATION.md).
 > Estado vigente — cierre pre-entrenamiento: tarea existente e IPC integrados, guardian verifica admisión automáticamente, 54 tests PASS; 0 M5/0 señales, WAITING_FOR_DATA, sin admisión ni entrenamiento. El bloqueo anterior de edición de tareas se resolvió reutilizando los servicios instalados; no requiere acción manual. [Informe consolidado](BC_FINAL_PRETRAINING_CLOSURE.md). Los apartados anteriores describen estados históricos.
 

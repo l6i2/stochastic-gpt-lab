@@ -1,0 +1,20 @@
+{
+  "ancestor_pids": [
+    18492,
+    28100,
+    1796,
+    756,
+    944
+  ],
+  "clock": {
+    "boot_id": "112",
+    "host_utc_label": "2026-11-08T22:03:29.599101+00:00",
+    "monotonic_ns": 420331896124300,
+    "uptime_ms": 420287875,
+    "utc_certified": false
+  },
+  "helper_pid": 15412,
+  "read_only": true,
+  "status": "WAITING_FOR_DATA",
+  "training_executed": false
+}

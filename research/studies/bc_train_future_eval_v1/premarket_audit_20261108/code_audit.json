@@ -1,0 +1,25 @@
+{
+  "compile_command": "python -m compileall -q controller tools python",
+  "pipeline_modules_imported": 12,
+  "protected_datasets_opened": false,
+  "python_compilation": "PASS_EXIT_0",
+  "reviewed_changes": {
+    "controller/bc_admission.py": {
+      "current_sha256": "2dede8cd0ffb1f1eb40fc9545a19d8b341ccb77a4d3412a6422255e278f00a13",
+      "previous_sha256": "2ae87d38cab72f2a0ddd4931543eac60adeccfd5fc035456a84e1946b13449b8"
+    },
+    "tests/test_bc_final_pretraining.py": {
+      "current_sha256": "4eac3e28733b82ded7a8290aee80dca97b1b51e2d935eb3314105ad2713ea311",
+      "previous_sha256": "22d07b0688cfc91f1386d939feff6fb3dafca47a4abd10efaad74448545bd0c3"
+    },
+    "tools/bc_pretraining_worker.py": {
+      "current_sha256": "95660aef99dbf0fa9b27e1710e7a42e792cb0575e65482f0797478c65021ac90",
+      "previous_sha256": "42873aa6c240fcdd6da1d072533e022531d27a0448cc3db6e98372134c499282"
+    }
+  },
+  "scientific_fits": 0,
+  "status": "PASS",
+  "test_command": "python -m unittest tests.test_bc_final_pretraining tests.test_native_reference_recovery tests.test_training_admission_gate tests.test_bc_study tests.test_bc_model_freeze tests.test_bc_ipc_recovery tests.test_first_training_readiness tests.test_scientific_preparation tests.test_xm_history_recovery",
+  "tests": 68,
+  "tests_log_sha256": "1b19af0ab9332463e46578d70e3359b1d09ad0bf51a9b9481cfcce0c56d5a005"
+}

@@ -17,7 +17,7 @@ class FinalPretrainingTests(unittest.TestCase):
 
     def test_counts_do_not_admit_or_authorize(self):
         result=review(MINIMUMS.copy(),self.evidence())
-        self.assertEqual(result['status'],'WAITING_FOR_AUTHORIZATION');self.assertFalse(result['dataset_admitted']);self.assertFalse(result['training_authorized']);self.assertFalse(result['request_ready'])
+        self.assertEqual(result['status'],'READY_FOR_ADMISSION_REVIEW');self.assertEqual(result['training_authorization_status'],'WAITING_FOR_AUTHORIZATION');self.assertFalse(result['dataset_admitted']);self.assertFalse(result['training_authorized']);self.assertFalse(result['request_ready'])
         counts=MINIMUMS.copy();counts['signals']=801
         self.assertEqual(review(counts,self.evidence())['status'],'FAIL')
 
@@ -28,6 +28,16 @@ class FinalPretrainingTests(unittest.TestCase):
         self.assertEqual(review(counts,evidence)['status'],'FAIL')
         evidence['hashes']=dict(status='PASS',witness_hashes=[])
         with self.assertRaisesRegex(ValueError,'WITHOUT_EVIDENCE'):review(counts,evidence)
+
+    def test_each_of_18_gates_blocks_readiness_without_promoting_admission(self):
+        self.assertEqual(len(GATES),18);self.assertEqual(len(set(GATES)),18)
+        for name in GATES:
+            with self.subTest(gate=name):
+                evidence=self.evidence();evidence[name]=dict(status='WAITING_FOR_EVIDENCE',witness_hashes=[])
+                result=review(MINIMUMS.copy(),evidence)
+                self.assertEqual(result['status'],'WAITING_FOR_EVIDENCE');self.assertFalse(result['dataset_admitted'])
+                evidence[name]=dict(status='FAIL',witness_hashes=['SYNTHETIC_FAILED_WITNESS'])
+                self.assertEqual(review(MINIMUMS.copy(),evidence)['status'],'FAIL')
 
     def signal(self):return dict(signal_id='SYNTHETIC',side='BUY',bar_index=0,features={k:1. for k in FEATURES},feature_max_native_msc=299999)
     def tick(self,stamp,bid=1000.,ask=1002.):return dict(time_msc=stamp,bid=bid,ask=ask)
@@ -115,6 +125,9 @@ class FinalPretrainingTests(unittest.TestCase):
             with patch.object(worker,'ROOT',root),patch.object(worker.station,'BASE',base),patch.object(worker.station,'PACKAGE',package),patch.object(worker.station,'load_manifest',return_value=m),patch.object(worker,'checkpoint',return_value=context_initial()),patch.object(worker.subprocess,'check_output',return_value='synthetic-head'),patch('psutil.process_iter',return_value=[]),patch('psutil.virtual_memory',return_value=types.SimpleNamespace(available=1024**3)):
                 first=worker.review_current();second=worker.review_current()
                 self.assertEqual(first['status'],'WAITING_FOR_DATA');self.assertFalse(second['reevaluated'])
+                packet=base/'pretraining_quarantine/future_authorization_package.json';original=packet.read_bytes();packet.write_text('{"changed":true}')
+                with self.assertRaisesRegex(ValueError,'CACHED_CANDIDATE_PACKAGE_CHANGED'):worker.review_current()
+                packet.write_bytes(original)
                 file=base/'pretraining_quarantine/status.json';value=json.loads(file.read_bytes());value['counts']['context']=350;file.write_text(json.dumps(value))
                 with self.assertRaisesRegex(ValueError,'CACHED_REVIEW_CHANGED'):worker.review_current()
 

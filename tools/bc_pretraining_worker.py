@@ -77,6 +77,13 @@ def _review_current(force=False):
                     raise ValueError('BC_CACHED_REVIEW_CHANGED')
             elif saved.get('status') not in ('FAIL','WAITING_FOR_EVIDENCE'):
                 raise ValueError('BC_UNSEALED_CACHED_REVIEW')
+            if 'candidate_package_sha256' in saved:
+                packet=out/'future_authorization_package.json'
+                frozen_packet=out/'versions'/marker/'future_authorization_package.json'
+                expected=saved['candidate_package_sha256']
+                if (not packet.is_file() or not frozen_packet.is_file()
+                        or sha(packet)!=expected or sha(frozen_packet)!=expected):
+                    raise ValueError('BC_CACHED_CANDIDATE_PACKAGE_CHANGED')
             return dict(saved,reevaluated=False)
     counts={k:0 for k in MINIMUMS};gates={k:dict(status='WAITING_FOR_EVIDENCE',witness_hashes=[]) for k in GATES}
     projection_folder=out/'versions'/marker
