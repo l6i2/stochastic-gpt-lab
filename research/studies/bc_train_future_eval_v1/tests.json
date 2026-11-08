@@ -1,0 +1,31 @@
+{
+  "command": "python -m unittest tests.test_bc_study tests.test_bc_model_freeze tests.test_first_training_readiness tests.test_training_admission_gate tests.test_scientific_preparation",
+  "count": 38,
+  "coverage": [
+    "stale_quote",
+    "precut_and_forming_rejection",
+    "BID_ASK_volume",
+    "350_context_boundary",
+    "future_mutation",
+    "gap_segmentation",
+    "historical_recovery_revision",
+    "raw_vintage_immutability",
+    "restart_cursor_idempotence",
+    "no_duplicate_counting",
+    "evaluation_authorization_order",
+    "fixed_fold4_serialization",
+    "no_ninth_fit",
+    "grant_and_admission_refusal",
+    "purged_support_before_fit",
+    "bounded_IPC_retry_same_process_only"
+  ],
+  "estimators": "MOCK_OR_SERIALIZED_FIXTURE_ONLY",
+  "log_sha256": "3b37b8c35301957ebcc837039b69efd3faddd3b881241d5b8711faf4305c1e3d",
+  "physical_restart_tested": false,
+  "primary_count": 36,
+  "scientific_fits": 0,
+  "status": "PASS",
+  "supplementary_command": "python -m unittest tests.test_bc_ipc_recovery",
+  "supplementary_count": 2,
+  "supplementary_log_sha256": "15fddb8c9ea5a76a5b502a02998ee6055b048ceed282f754d059590db40ed1d2"
+}

@@ -1,0 +1,851 @@
+{
+  "head": "9b7a786566b8c44cb7f1046d2e6eeb506bde9fa6662140d0bdbab92b955b99c7",
+  "records": [
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:23:16.962888+00:00",
+          "monotonic_ns": 399919257476200,
+          "uptime_ms": 399875234,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": null,
+        "quarantine": true
+      },
+      "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+      "sequence": 0,
+      "sha256": "571bc55bf6df0c72857436e6543a57c96652c4f63c05ca52fe7703c8c226f87a"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "b5fb9fb25cb0a8b87583996decf1d2add3c8fb383fe8939a365b631dd178da1e"
+      },
+      "previous": "571bc55bf6df0c72857436e6543a57c96652c4f63c05ca52fe7703c8c226f87a",
+      "sequence": 1,
+      "sha256": "4728c9c1778e67beb4f0b3f7b5657d36924af1710c3c64904802ad449f6902f6"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:24:19.398802+00:00",
+          "monotonic_ns": 399981693937600,
+          "uptime_ms": 399937671,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:23:16.962888+00:00",
+          "monotonic_ns": 399919257476200,
+          "uptime_ms": 399875234,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "4728c9c1778e67beb4f0b3f7b5657d36924af1710c3c64904802ad449f6902f6",
+      "sequence": 2,
+      "sha256": "660d3cb3066cc54af34ba1e696eefe489e770d11baec40c4f809f524e06b6aaa"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "f79aa853cc67b400597edbd9f548ee59997628473707271898758f06ad11f0f7"
+      },
+      "previous": "660d3cb3066cc54af34ba1e696eefe489e770d11baec40c4f809f524e06b6aaa",
+      "sequence": 3,
+      "sha256": "7cce7f4e15a832d2f467dc775819aac752a10470a0f4bdcf0f7c94af9454d959"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:29:20.598576+00:00",
+          "monotonic_ns": 400282893467300,
+          "uptime_ms": 400238875,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:24:19.398802+00:00",
+          "monotonic_ns": 399981693937600,
+          "uptime_ms": 399937671,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "7cce7f4e15a832d2f467dc775819aac752a10470a0f4bdcf0f7c94af9454d959",
+      "sequence": 4,
+      "sha256": "52d1b07fcccdbc6468d3bb502800ab74ab30ea70582b45e33700dcf64832922f"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "91aec247d890f8515c10bfd5f947e1960c5257f4fe77aebb30affb11747885e5"
+      },
+      "previous": "52d1b07fcccdbc6468d3bb502800ab74ab30ea70582b45e33700dcf64832922f",
+      "sequence": 5,
+      "sha256": "1b0b06353d699aab8e25fd791613a4874d9ee2e2ab02e6e99cc897ab90cbf0a9"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:34:23.165670+00:00",
+          "monotonic_ns": 400585460013300,
+          "uptime_ms": 400541437,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:29:20.598576+00:00",
+          "monotonic_ns": 400282893467300,
+          "uptime_ms": 400238875,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "1b0b06353d699aab8e25fd791613a4874d9ee2e2ab02e6e99cc897ab90cbf0a9",
+      "sequence": 6,
+      "sha256": "a7af06ff6a3a34717bcba9ac1c9ec4d8041415e318572ed1c53fab444074462f"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "2d09714293049d79d50b57190249746f2d1eb9d378541665327899cb144c13d5"
+      },
+      "previous": "a7af06ff6a3a34717bcba9ac1c9ec4d8041415e318572ed1c53fab444074462f",
+      "sequence": 7,
+      "sha256": "23b4c88d7a852ed899bd4e8682ac9fe99722dc69bd85ae018a2a2e166a83d606"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:39:20.530139+00:00",
+          "monotonic_ns": 400882824800700,
+          "uptime_ms": 400838812,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:34:23.165670+00:00",
+          "monotonic_ns": 400585460013300,
+          "uptime_ms": 400541437,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "23b4c88d7a852ed899bd4e8682ac9fe99722dc69bd85ae018a2a2e166a83d606",
+      "sequence": 8,
+      "sha256": "8bbe11ee794ef878ec94f7d3a4773671a84b155f506e79b74c1ff7850b850d7d"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "eaef683db8e2662415fa9c299f1cd25b2967208f527e491a24394846964702c0"
+      },
+      "previous": "8bbe11ee794ef878ec94f7d3a4773671a84b155f506e79b74c1ff7850b850d7d",
+      "sequence": 9,
+      "sha256": "d198ec59708635e3de4f72eff8db48e4a7c29943843c4253602ab66e781b4381"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:44:21.076624+00:00",
+          "monotonic_ns": 401183371202000,
+          "uptime_ms": 401139359,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:39:20.530139+00:00",
+          "monotonic_ns": 400882824800700,
+          "uptime_ms": 400838812,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "d198ec59708635e3de4f72eff8db48e4a7c29943843c4253602ab66e781b4381",
+      "sequence": 10,
+      "sha256": "fe1e64e7715f8388057746565a731f51a96d730c835110489b75441435785573"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "3506ff7223ce9a7d9ca5d0113bec8c73a3435a0a9a70b00850f03842fe2d7725"
+      },
+      "previous": "fe1e64e7715f8388057746565a731f51a96d730c835110489b75441435785573",
+      "sequence": 11,
+      "sha256": "81f1f3d785a657de00419996ca37c413faada60af07967c6ac4d24a07abd405d"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:49:26.252413+00:00",
+          "monotonic_ns": 401488547029400,
+          "uptime_ms": 401444531,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:44:21.076624+00:00",
+          "monotonic_ns": 401183371202000,
+          "uptime_ms": 401139359,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "81f1f3d785a657de00419996ca37c413faada60af07967c6ac4d24a07abd405d",
+      "sequence": 12,
+      "sha256": "8653b4e24d274ee3645d7b17bbf7a6b0375591a781cbec613e029c46746d622a"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "efd63f4934dfb71c5591cd3ddff87b8445bc470359c6699b02d75891ae2841f1"
+      },
+      "previous": "8653b4e24d274ee3645d7b17bbf7a6b0375591a781cbec613e029c46746d622a",
+      "sequence": 13,
+      "sha256": "16ac7f15d17673bcb734335c7748d88ee5300d1d3a69e3c4e455eba6611c5066"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:54:20.526006+00:00",
+          "monotonic_ns": 401782820901200,
+          "uptime_ms": 401738812,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:49:26.252413+00:00",
+          "monotonic_ns": 401488547029400,
+          "uptime_ms": 401444531,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "16ac7f15d17673bcb734335c7748d88ee5300d1d3a69e3c4e455eba6611c5066",
+      "sequence": 14,
+      "sha256": "3a90497cc9b74132d23929d92cace55766031d3d82dca7aebd8fbb789dd0e2b7"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "fa6a7ce6efba9f3500de52cc59570fd67fc1e941fe820b67a2203d31694ae8bf"
+      },
+      "previous": "3a90497cc9b74132d23929d92cace55766031d3d82dca7aebd8fbb789dd0e2b7",
+      "sequence": 15,
+      "sha256": "6223b29406d7638c554999244f04963ac996aad4e46ff87b58192ebbd04e91f8"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:59:20.475386+00:00",
+          "monotonic_ns": 402082770150700,
+          "uptime_ms": 402038750,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:54:20.526006+00:00",
+          "monotonic_ns": 401782820901200,
+          "uptime_ms": 401738812,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "6223b29406d7638c554999244f04963ac996aad4e46ff87b58192ebbd04e91f8",
+      "sequence": 16,
+      "sha256": "77b4f13d6a9ce52a892cc3c07878e992329bece67a28a17a0cc0f7d07674028a"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "8462033095a613c357823ed29627136f2bb7ba7f16827074a4770e8a2b0ee5c7"
+      },
+      "previous": "77b4f13d6a9ce52a892cc3c07878e992329bece67a28a17a0cc0f7d07674028a",
+      "sequence": 17,
+      "sha256": "775b796ab760df3ba77feca8a23c20679a5be13164990a885c7859fa76eeecf1"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:04:37.859725+00:00",
+          "monotonic_ns": 402400154545800,
+          "uptime_ms": 402356140,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T16:59:20.475386+00:00",
+          "monotonic_ns": 402082770150700,
+          "uptime_ms": 402038750,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "775b796ab760df3ba77feca8a23c20679a5be13164990a885c7859fa76eeecf1",
+      "sequence": 18,
+      "sha256": "728c421988504e6d27cde4b905cfc17b0e5fa3aac41b8ba4eda0d255cbac9136"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "f32b793cb9eaa876bbf8b217863d187a362e782ecd9f78fd4f87bf7ee57614b3"
+      },
+      "previous": "728c421988504e6d27cde4b905cfc17b0e5fa3aac41b8ba4eda0d255cbac9136",
+      "sequence": 19,
+      "sha256": "c59384c6236a41c72a6a4d42cce3cf4c5a5e384ea28aaf62c10a16707be3bcbb"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:09:28.423007+00:00",
+          "monotonic_ns": 402690718155400,
+          "uptime_ms": 402646703,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:04:37.859725+00:00",
+          "monotonic_ns": 402400154545800,
+          "uptime_ms": 402356140,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "c59384c6236a41c72a6a4d42cce3cf4c5a5e384ea28aaf62c10a16707be3bcbb",
+      "sequence": 20,
+      "sha256": "90bc2e1eef819685ecd9a4b937ac6cb1bf621479b833f7758f810918b2893b06"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "c88d956675b2d8cf06cef21c769802883efcbb4b4fbf597dae707c0c8bd816ea"
+      },
+      "previous": "90bc2e1eef819685ecd9a4b937ac6cb1bf621479b833f7758f810918b2893b06",
+      "sequence": 21,
+      "sha256": "9f6aa2bd21ea7472ab0ef8bbf450237a66b441b73c593070eff38aadd8a55e95"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:14:21.754827+00:00",
+          "monotonic_ns": 402984049781700,
+          "uptime_ms": 402940031,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:09:28.423007+00:00",
+          "monotonic_ns": 402690718155400,
+          "uptime_ms": 402646703,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "9f6aa2bd21ea7472ab0ef8bbf450237a66b441b73c593070eff38aadd8a55e95",
+      "sequence": 22,
+      "sha256": "ea2fa8cf706f8d75c954eb0acc6333c1101002559cded61b9c456dfdb9d63ddb"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "a051a20bbfee66ce4fb49ac5f6ac58c30aaf4f42a0fe50c5a7085f0657cc7d46"
+      },
+      "previous": "ea2fa8cf706f8d75c954eb0acc6333c1101002559cded61b9c456dfdb9d63ddb",
+      "sequence": 23,
+      "sha256": "758afbc30f3676e50c2e62d8e24ccb3bf6aa0fe94a075b3bc1e8787cbc4a2aae"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:19:20.646277+00:00",
+          "monotonic_ns": 403282940802500,
+          "uptime_ms": 403238921,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:14:21.754827+00:00",
+          "monotonic_ns": 402984049781700,
+          "uptime_ms": 402940031,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "758afbc30f3676e50c2e62d8e24ccb3bf6aa0fe94a075b3bc1e8787cbc4a2aae",
+      "sequence": 24,
+      "sha256": "f88609e75d1e71f11327938b8ccf5cd3af7bf2cbc9bdb1a2eba18093b1338158"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "af5c48a2d95f79869c617470b647a16275adf38844458a3107ca3f95bdd53f8a"
+      },
+      "previous": "f88609e75d1e71f11327938b8ccf5cd3af7bf2cbc9bdb1a2eba18093b1338158",
+      "sequence": 25,
+      "sha256": "8b1683069a731d77935cbaef8ce4bddf7e6a27be8295abc9cc5d78bb0d703c66"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:24:26.775692+00:00",
+          "monotonic_ns": 403589070077900,
+          "uptime_ms": 403545046,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:19:20.646277+00:00",
+          "monotonic_ns": 403282940802500,
+          "uptime_ms": 403238921,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "8b1683069a731d77935cbaef8ce4bddf7e6a27be8295abc9cc5d78bb0d703c66",
+      "sequence": 26,
+      "sha256": "682cc7cf757bfedf2ac72df75e9cf35564927df9773f8907204bfeb9b4968d19"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "a98bd4d74cdabbce6f560ffbd6a4bc81e436ef664c040576e9e5efed6167b789"
+      },
+      "previous": "682cc7cf757bfedf2ac72df75e9cf35564927df9773f8907204bfeb9b4968d19",
+      "sequence": 27,
+      "sha256": "6a474bcf1369ed53c3d6331f553e240d401fc908d764e0603bef30eb4054b50a"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:29:25.232867+00:00",
+          "monotonic_ns": 403887527235700,
+          "uptime_ms": 403843515,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:24:26.775692+00:00",
+          "monotonic_ns": 403589070077900,
+          "uptime_ms": 403545046,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "6a474bcf1369ed53c3d6331f553e240d401fc908d764e0603bef30eb4054b50a",
+      "sequence": 28,
+      "sha256": "5b94def2c12d35e6e9a811a067f3e4e03d4a7e8a890a7007a2066b004d9faacf"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "1f8a885cc600b483c59f4d25c1059033595d6cc8e791d9f03d5defa6242d6232"
+      },
+      "previous": "5b94def2c12d35e6e9a811a067f3e4e03d4a7e8a890a7007a2066b004d9faacf",
+      "sequence": 29,
+      "sha256": "e7a86c2b6eec4e98771f8a6c0102eeee040b0986e07b9a275cae088b10e7fb9a"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:34:20.608578+00:00",
+          "monotonic_ns": 404182902894600,
+          "uptime_ms": 404138890,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:29:25.232867+00:00",
+          "monotonic_ns": 403887527235700,
+          "uptime_ms": 403843515,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "e7a86c2b6eec4e98771f8a6c0102eeee040b0986e07b9a275cae088b10e7fb9a",
+      "sequence": 30,
+      "sha256": "12a0ca1f48739ae7bb43e64287802c0d16ddc6c6b067f596b5f2315fb323c773"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "b95f55a68923f48f9bc2463bf83f60ef4b4fa2408e68cc8b1cc6d2fc1d135dac"
+      },
+      "previous": "12a0ca1f48739ae7bb43e64287802c0d16ddc6c6b067f596b5f2315fb323c773",
+      "sequence": 31,
+      "sha256": "76dd99af0bebb338458c43cd08400c85e4f4145ec8d5f6232d76f1d3709018df"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:39:20.814307+00:00",
+          "monotonic_ns": 404483109045800,
+          "uptime_ms": 404439093,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:34:20.608578+00:00",
+          "monotonic_ns": 404182902894600,
+          "uptime_ms": 404138890,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "76dd99af0bebb338458c43cd08400c85e4f4145ec8d5f6232d76f1d3709018df",
+      "sequence": 32,
+      "sha256": "fd54e8e78adb4bbd21ab8ea9bcce8d2c7111b57d9a038096cd69383ea75a98c4"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "473a24a21117df1b7b92d0dd713f358062b786c3117c5052fda72ea43046385b"
+      },
+      "previous": "fd54e8e78adb4bbd21ab8ea9bcce8d2c7111b57d9a038096cd69383ea75a98c4",
+      "sequence": 33,
+      "sha256": "ee8c829a77374c90319dc2faa1a4384754ed9daafd7cb158b7fc3ac9161f111f"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:44:28.262886+00:00",
+          "monotonic_ns": 404790558022200,
+          "uptime_ms": 404746546,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:39:20.814307+00:00",
+          "monotonic_ns": 404483109045800,
+          "uptime_ms": 404439093,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "ee8c829a77374c90319dc2faa1a4384754ed9daafd7cb158b7fc3ac9161f111f",
+      "sequence": 34,
+      "sha256": "b4847b79955ed47b77caa61fe55c2329e5238c2c10961474c3b917e30f8799ca"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "df340293473032c6484e966143c00695d24c86adf6dfe37134dd7c4733d1e19a"
+      },
+      "previous": "b4847b79955ed47b77caa61fe55c2329e5238c2c10961474c3b917e30f8799ca",
+      "sequence": 35,
+      "sha256": "f4d1cab86ebacb8e8791e822891a2b9686b3716a94689230286320df9ce59fd0"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T18:54:20.769025+00:00",
+          "monotonic_ns": 408983063689300,
+          "uptime_ms": 408939046,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T17:44:28.262886+00:00",
+          "monotonic_ns": 404790558022200,
+          "uptime_ms": 404746546,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "f4d1cab86ebacb8e8791e822891a2b9686b3716a94689230286320df9ce59fd0",
+      "sequence": 36,
+      "sha256": "0f3136953c1ee51659fb02cd319a5c870c29424ef2400c23d169bd2c64f4f069"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "faedf3c9eb432fd64d25244b9b8b77a48f6d0581053f777af49925785f1ff478"
+      },
+      "previous": "0f3136953c1ee51659fb02cd319a5c870c29424ef2400c23d169bd2c64f4f069",
+      "sequence": 37,
+      "sha256": "1e698460035e265b1195c1f7d1de9e4500312cc8f9d96db32df4f255350d31eb"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T18:54:44.933392+00:00",
+          "monotonic_ns": 409007228178900,
+          "uptime_ms": 408963218,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T18:54:20.769025+00:00",
+          "monotonic_ns": 408983063689300,
+          "uptime_ms": 408939046,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "1e698460035e265b1195c1f7d1de9e4500312cc8f9d96db32df4f255350d31eb",
+      "sequence": 38,
+      "sha256": "610de4d1cfe67c390401c0bbbc15a324aadf991520175494cf4d87dd6697dd3d"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "ee0659efd9b304a84fe08e29ad8c5fea07acf1bceff04e5521d87cb71a0dfb95"
+      },
+      "previous": "610de4d1cfe67c390401c0bbbc15a324aadf991520175494cf4d87dd6697dd3d",
+      "sequence": 39,
+      "sha256": "13dff91c3229f2d2c0cabf68a889b9d08d12356de3a3b3e77d35c4f27eb36fbf"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T19:05:42.690438+00:00",
+          "monotonic_ns": 409664985610000,
+          "uptime_ms": 409620968,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T18:54:44.933392+00:00",
+          "monotonic_ns": 409007228178900,
+          "uptime_ms": 408963218,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "13dff91c3229f2d2c0cabf68a889b9d08d12356de3a3b3e77d35c4f27eb36fbf",
+      "sequence": 40,
+      "sha256": "c99758000dc81a4ac6c998f36e1803441535cabc782c55179d293157adb15e77"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "541017d7a2e2b81133ceda706c2c3e613f917ed4aa500de424d07ae3ddd814ff"
+      },
+      "previous": "c99758000dc81a4ac6c998f36e1803441535cabc782c55179d293157adb15e77",
+      "sequence": 41,
+      "sha256": "a8954f3720a78ab1a7239997ead3d8c68aa09ef6c656c5421ec63e048d647522"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T19:07:21.667813+00:00",
+          "monotonic_ns": 409763962856300,
+          "uptime_ms": 409719953,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T19:05:42.690438+00:00",
+          "monotonic_ns": 409664985610000,
+          "uptime_ms": 409620968,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "a8954f3720a78ab1a7239997ead3d8c68aa09ef6c656c5421ec63e048d647522",
+      "sequence": 42,
+      "sha256": "a9096602d6bbfac8d2f757d0c640a84e1c0d961835c25e46b828b08924aa752b"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "17af277d1644f0e7abb8c5b7e6f38ff74a4ac08da823b48070532b21dab61a0c"
+      },
+      "previous": "a9096602d6bbfac8d2f757d0c640a84e1c0d961835c25e46b828b08924aa752b",
+      "sequence": 43,
+      "sha256": "cc3f2cf38331dc36ea979e884426a701d36fa3577766f0f68445c3c3f0f38a19"
+    },
+    {
+      "payload": {
+        "admitted": false,
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T19:09:20.631188+00:00",
+          "monotonic_ns": 409882925886400,
+          "uptime_ms": 409838906,
+          "utc_certified": false
+        },
+        "historical_recovery_allowed": true,
+        "kind": "BC_EXECUTION",
+        "live_receipt_claimed": false,
+        "previous": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-08T19:07:21.667813+00:00",
+          "monotonic_ns": 409763962856300,
+          "uptime_ms": 409719953,
+          "utc_certified": false
+        },
+        "quarantine": true
+      },
+      "previous": "cc3f2cf38331dc36ea979e884426a701d36fa3577766f0f68445c3c3f0f38a19",
+      "sequence": 44,
+      "sha256": "e9324fa706d01af49f180cfa162cc8cb9662a6544e5a82b59818e071a4d8194d"
+    },
+    {
+      "payload": {
+        "kind": "CHECKPOINT",
+        "quarantine": true,
+        "source_records": 0,
+        "state_hash": "463b7129e6ac5bcf835e8db4288520f6ab1fdc6d5d672e4d2d811668fbb2c0a8"
+      },
+      "previous": "e9324fa706d01af49f180cfa162cc8cb9662a6544e5a82b59818e071a4d8194d",
+      "sequence": 45,
+      "sha256": "9b7a786566b8c44cb7f1046d2e6eeb506bde9fa6662140d0bdbab92b955b99c7"
+    }
+  ],
+  "scope": "METADATA_AND_QUARANTINED_DERIVED_ARTIFACTS_NO_PROTECTED_INPUTS"
+}

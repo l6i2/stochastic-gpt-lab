@@ -1,0 +1,18 @@
+{
+  "activation_sha256": "d343170d6350682207032ef9fe2595ee94e4d9b2d7d38f5cc7493278adb71ac9",
+  "dataset_id": "bc_train_f6b99cbfc59542a38627868015f65792",
+  "epoch": "bc_epoch_0482f829cded4fb0957d6e0dc11804c5",
+  "eval_roles_active": false,
+  "interval_count": 0,
+  "intervals": [],
+  "native_floor": null,
+  "previous_reservations_adopted": false,
+  "reason": "WAITING_FOR_FIRST_NEW_NATIVE_QUOTE_AFTER_AUTHORIZATION",
+  "roles": [
+    "TRAIN_CONTEXT",
+    "TRAIN_DEV"
+  ],
+  "schema": "bc-membership/1",
+  "scientific_admission": false,
+  "study_id": "US30CASH_M5_XM_TRAIN_FUTURE_EVAL_PROPOSED_V1"
+}

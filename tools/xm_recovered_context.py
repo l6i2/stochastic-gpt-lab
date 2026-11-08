@@ -13,7 +13,8 @@ from python.native_metadata_v3 import main_k
 from tools.cf_own_indicator_oracle import build_source
 
 
-def compare(root,base,state,requests):
+def compare(root,base,state,requests,bar_count=30):
+    if bar_count not in (15,30,276,350):raise ValueError('UNAPPROVED_CONTEXT_MILESTONE')
     import psutil
     root=Path(root);base=Path(base)
     if psutil.virtual_memory().available<512*1024**2:
@@ -35,8 +36,8 @@ def compare(root,base,state,requests):
         if chosen and stamp!=chosen[-1]['time']+300:chosen=[]
         if not all(stamp+j*60 in minutes for j in range(5)):chosen=[];continue
         chosen.append(bar)
-        if len(chosen)==30:break
-    if len(chosen)<30:return dict(status='WAITING_FOR_30_CONTIGUOUS_RECOVERED_BARS',training_executed=False)
+        if len(chosen)==bar_count:break
+    if len(chosen)<bar_count:return dict(status='WAITING_FOR_'+str(bar_count)+'_CONTIGUOUS_RECOVERED_BARS',training_executed=False)
     own_minutes=[minutes[bar['time']+j*60] for bar in chosen for j in range(5)]
     target=ISOLATION/'terminal'
     checkpoint=json.loads((ISOLATION/'isolation_checkpoint.json').read_bytes())
@@ -61,7 +62,7 @@ def compare(root,base,state,requests):
             process.kill();process.wait(timeout=10);raise RuntimeError('CONTEXT_NATIVE_TIMEOUT')
         export=target/'MQL5/Files'/(run+'_oracle.csv');shutil.copyfile(export,out/export.name)
         with export.open(encoding='utf-8-sig') as stream:rows=list(csv.DictReader(stream))
-        if len(rows)!=30:raise ValueError('CONTEXT_NATIVE_EXPORT_INCOMPLETE')
+        if len(rows)!=bar_count:raise ValueError('CONTEXT_NATIVE_EXPORT_INCOMPLETE')
         atr=initial_state();ha=None;history=[];errors=[];max_k_error=0.;signals=dict(BUY=0,SELL=0);previous_k=None
         for index,(row,bar) in enumerate(zip(rows,chosen)):
             if int(row['time'])!=bar['time'] or any(float(row[k])!=bar[k] for k in ('open','high','low','close')):
@@ -79,8 +80,8 @@ def compare(root,base,state,requests):
                 if previous_k>=80 and k<80:signals['SELL']+=1
             previous_k=k
         result=dict(status='PASS_RETROSPECTIVE_CONTEXT_DIAGNOSTIC' if not errors and max_k_error<=1e-10 else 'FAILED_PARITY',
-            origin='RETROSPECTIVE_XM_ARCHIVE_NOT_PROSPECTIVE_RECEIPT',bars=30,atr_candidate_compared=17,
-            ha_ohlc_compared=30,ha_own_ready_276=False,main_k_max_abs_error=max_k_error,diagnostic_base_signals=signals,
+            origin='RETROSPECTIVE_XM_ARCHIVE_NOT_PROSPECTIVE_RECEIPT',bars=bar_count,atr_candidate_compared=bar_count-13,
+            ha_ohlc_compared=bar_count,ha_own_ready_276=bar_count>=276,main_k_max_abs_error=max_k_error,diagnostic_base_signals=signals,
             failures=errors,source_sha256=sha(source),export_sha256=sha(export),archive_parents=parents,
             start_native=chosen[0]['time'],end_native_exclusive=chosen[-1]['time']+300,
             original_terminals_preserved=all(psutil.pid_exists(pid) for pid in original),

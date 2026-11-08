@@ -1,0 +1,42 @@
+[
+  {
+    "ActionScript": "bc_study_station.py",
+    "LastResult": 0,
+    "LastRunHostLabel": "2026-11-08T14:09:20.0000000-05:00",
+    "LogonType": "Interactive",
+    "MultipleInstances": "IgnoreNew",
+    "NextRunHostLabel": "2026-11-08T14:14:19.0000000-05:00",
+    "State": "Ready",
+    "Task": "StochasticGPTLab_PC_A_BCTrainAcquisition_v1"
+  },
+  {
+    "ActionScript": "research_recovery.ps1",
+    "LastResult": 2147946720,
+    "LastRunHostLabel": "2026-11-08T14:09:41.0000000-05:00",
+    "LogonType": "Interactive",
+    "MultipleInstances": "IgnoreNew",
+    "NextRunHostLabel": "2026-11-08T14:14:40.0000000-05:00",
+    "State": "Running",
+    "Task": "StochasticGPTLab_PC_A_RecoveryGuardian_v1"
+  },
+  {
+    "ActionScript": "prospective_utc_station.py",
+    "LastResult": 267009,
+    "LastRunHostLabel": "2026-11-08T14:10:38.0000000-05:00",
+    "LogonType": "Interactive",
+    "MultipleInstances": "IgnoreNew",
+    "NextRunHostLabel": "2026-11-08T14:11:37.0000000-05:00",
+    "State": "Running",
+    "Task": "StochasticGPTLab_PC_A_ProspectiveUTC_v1"
+  },
+  {
+    "ActionScript": "xm_historical_recovery.py",
+    "LastResult": 1,
+    "LastRunHostLabel": "2026-11-08T14:07:18.0000000-05:00",
+    "LogonType": "Interactive",
+    "MultipleInstances": "IgnoreNew",
+    "NextRunHostLabel": "2026-11-08T14:12:17.0000000-05:00",
+    "State": "Ready",
+    "Task": "StochasticGPTLab_PC_A_XMHistoricalDiagnostics_v1"
+  }
+]

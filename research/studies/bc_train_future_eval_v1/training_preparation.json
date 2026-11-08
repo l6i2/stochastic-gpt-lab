@@ -1,0 +1,53 @@
+{
+  "authorized_fits": 0,
+  "eval_context_active": false,
+  "eval_prospective_active": false,
+  "final_models": "FIXED_FOLD4_BUY_SELL_NO_NINTH_FIT",
+  "grant_required": true,
+  "max_fits": 8,
+  "model_freeze_implementation_sha256": "c01730c496a46cb5d700ec5d6a256e3f03160239d5a0e602b397f4b33b1dac98",
+  "positions": [
+    {
+      "executed": false,
+      "fold": 1,
+      "side": "BUY"
+    },
+    {
+      "executed": false,
+      "fold": 1,
+      "side": "SELL"
+    },
+    {
+      "executed": false,
+      "fold": 2,
+      "side": "BUY"
+    },
+    {
+      "executed": false,
+      "fold": 2,
+      "side": "SELL"
+    },
+    {
+      "executed": false,
+      "fold": 3,
+      "side": "BUY"
+    },
+    {
+      "executed": false,
+      "fold": 3,
+      "side": "SELL"
+    },
+    {
+      "executed": false,
+      "fold": 4,
+      "side": "BUY"
+    },
+    {
+      "executed": false,
+      "fold": 4,
+      "side": "SELL"
+    }
+  ],
+  "scientific_authority_sha256": "950da37105fb3c66c0adbd0a828e8ca20e14efa8fd43dddfb644627dd2963b98",
+  "status": "TECHNICAL_SYNTHETIC_TESTS_PASS_NO_SCIENTIFIC_EXECUTION"
+}

@@ -40,3 +40,10 @@ STATUS observado 2026-11-08T15:58:07.130622+00:00 (etiqueta de host, no generaci
 25 pruebas sintéticas y simuladas PASS; corregidos árbol local sin revisar, límites observados ausentes y soporte purgado insuficiente antes del fit. Cero fits científicos, admisiones y grants vacíos. CAUSAL_AUDIT=FAIL, TRAINING_READINESS=BLOCKED. DEMO=DISABLED, LIVE_TRADING=false. Guardian en ejecución y UTC periódico observado Running/Ready, recuperador diagnóstico programado; C+F sigue ACTIVE_QUARANTINED.
 
 Expediente único: [cinco rutas](XM_FIVE_PATHS_TO_TRAINING.md), [propuesta](PROPOSED_FIRST_TRAINING_STUDY.md), [plan de admisión](TRAINING_ADMISSION_ACTION_PLAN.md). Faltan decisión metodológica/reserva, datos nuevos, cobertura/calendario/seeds demostrados y admisión por hashes; después autorización específica de entrenamiento. No se solicitan reparaciones manuales.
+
+
+## B+C autorizado y activado — 2026-11-08
+
+La decisión metodológica y la reserva futura ya fueron autorizadas; el corte exclusivo se aplicó a las 2026-11-08T11:23:07.713468-05:00 (Ecuador, con bracket NTS condicionado). C+F anterior conserva 47.173 registros y sus derechos; su ingreso futuro está cerrado. Nuevo dataset de captura `bc_train_f6b99cbfc59542a38627868015f65792`, en cuarentena, sin admisión ni grant de entrenamiento. El primer intervalo nativo sigue pendiente de cotización nueva: 0 M5, 0/350 contexto y 0/800 señales. No se importó A, B ni legacy.
+
+38 pruebas PASS con fixtures y estimadores simulados. Adquisición B+C programada al inicio de sesión y cada cinco minutos; ejecución real comprobada con salida 0, con fallos IPC transitorios documentados. El wrapper de reattach está probado pero Windows denegó actualizar la tarea: mejora pendiente de permisos administrativos, tarea original conservada. Calendario/puentes y paridad de semillas del nuevo contexto siguen pendientes; auditoría global no promocionada. No se ejecutaron fits científicos, scoring ni órdenes. Informe único vigente: [activación B+C y readiness](BC_STUDY_ACTIVATION_AND_READINESS.md). Los apartados previos describen estados históricos.
