@@ -1,4 +1,24 @@
 """Frozen acquisition requirements; descriptive rates never authorize admission."""
+def session_feasibility(schedule):
+    """Conditional bounds from observed quote intervals, without an ETA."""
+    capacities = [max(0,end//5-(start+4)//5)
+                  for intervals in schedule['sessions']['QUOTE'].values()
+                  for start,end in intervals]
+    capacity = max(capacities,default=0)
+    # At most one base signal per M5. The implementation allows a signal on
+    # the warmup boundary itself. This is an optimistic bound, not a forecast.
+    minimum_bars = 350-1+800+100
+    runs = (minimum_bars+capacity-1)//capacity if capacity else None
+    return dict(scope='CONDITIONAL_ON_OBSERVED_WEEKLY_QUOTE_METADATA',
+                maximum_one_quote_run_m5=capacity,
+                warmup_possible_without_session_bridge=capacity>=350,
+                optimistic_minimum_total_m5=minimum_bars,
+                minimum_quote_runs=runs,
+                minimum_certified_bridges=runs-1 if runs else None,
+                signal_frequency_demonstrated=False,calendar_eta=None,
+                thresholds_modified=False,dataset_admitted=False)
+
+
 def maturity(status):
     run=status.get('technical_warmup',0)
     signals=status.get('consecutive_signals',0)

@@ -10,6 +10,7 @@ from controller.cf_feature_review import own_prefix,retained_oracle
 from controller.authorized_capture import sha,once,manager_lock
 from controller.native_diagnostic import BASE
 from controller.prospective_processor import Processor,initial_state
+from controller.cf_atr_candidate import advance as advance_candidate, initial_state as initial_candidate
 
 
 def native_seed_diagnostic(bars, rows):
@@ -103,8 +104,15 @@ def run():
         state=initial_state();emitted=[];clock=lambda:dict(boot_id='offline',monotonic_ns=0)
         processor=Processor(state,lambda kind,body:emitted.append(dict(kind=kind,**body)),None,'0.01',dict(warmup=350,signals=800,post_bars=100,evaluable=200,each_side=80),clock)
         checked=0;main_error=0;ha_mismatch=0;atr_mismatches=[]
+        candidate=initial_candidate();candidate_mismatches=[];candidate_compared=0
         for native,bar in zip(rows,prefix['native_m5']):
             if int(native['time'])!=bar['time'] or any(float(native[k])!=bar[k] for k in ('open','high','low','close')) or int(native['volume'])!=bar['tick_volume']:raise ValueError('OWN_NATIVE_INPUT_CHANGED')
+            candidate=advance_candidate(candidate,bar,export_hash+':'+str(bar['time']),(bar['time']+300)*1000)
+            if candidate['value'] is not None:
+                candidate_compared+=1
+                if candidate['value']!=float(native['atr']):
+                    candidate_mismatches.append(dict(index=candidate['count']-1,
+                        candidate_hex=candidate['value'].hex(),native_hex=float(native['atr']).hex()))
             state['own_run_bars']+=1
             processor.features(dict(bar,segment=prefix['epoch']),export_hash,dict(native_time_msc=(bar['time']+300)*1000),{})
             values=next(e for e in reversed(emitted) if e['kind']=='CAUSAL_PREFIX_FEATURES')['values']
@@ -126,6 +134,9 @@ def run():
         result['own_seed_bar_hash']=prefix['seeds']['seed_bar_hash']
         result['HA_OHLC_PARITY']='PASS_EXACT'
         result['HA_OHLC_compared']=n
+        result['ATR_CANDIDATE_STATE_PARITY']=dict(compared=candidate_compared,
+            mismatches=candidate_mismatches,source_sha256=sha(ROOT/'controller/cf_atr_candidate.py'),
+            diagnostic_only=True,production_feature_modified=False)
         result['native_seed_diagnostic']=native_seed_diagnostic(prefix['native_m5'],rows)
         if atr_mismatches:
             result.update(status='FAILED_OWN_ATR_EXACT_PARITY',ATR_PARITY='FAIL_EXACT',

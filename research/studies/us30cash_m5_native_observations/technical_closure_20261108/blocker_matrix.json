@@ -1,0 +1,62 @@
+[
+  {
+    "blocker": "ATR_BINARY64_AND_RESTARTABLE_CANDIDATE",
+    "can_close_offline": false,
+    "dependency": "REAL_30_OWN_PREFIX_AND_VERSION_PIN_DECISION",
+    "state": "DIAGNOSTIC_REPAIR_PREPARED_TESTED"
+  },
+  {
+    "blocker": "NATIVE_HA_OHLC_AND_PERSISTENCE",
+    "can_close_offline": false,
+    "dependency": "276_OWN_VALID_M5",
+    "state": "SYNTHETIC_PASS_OWN_DATA_PENDING"
+  },
+  {
+    "blocker": "SESSION_CAPACITY",
+    "can_close_offline": false,
+    "dependency": "CERTIFIED_CROSS_SESSION_BRIDGES",
+    "state": "276_LESS_THAN_350_PROVED_CONDITIONALLY"
+  },
+  {
+    "blocker": "DATED_CALENDAR_EXCEPTION",
+    "can_close_offline": false,
+    "dependency": "BROKER_OR_NATIVE_SERVER_EXACT_DATED_SOURCE",
+    "state": "MISSING"
+  },
+  {
+    "blocker": "TRANSITION_COVERAGE",
+    "can_close_offline": false,
+    "dependency": "BEFORE_AFTER_CALENDARS_FULL_CONNECTED_HEALTH_AND_EXCEPTIONS",
+    "state": "NOT_CERTIFIED"
+  },
+  {
+    "blocker": "RAW_PREFIX_AND_EXCLUSIVE_ROLE",
+    "can_close_offline": true,
+    "dependency": null,
+    "state": "VERIFIED_QUARANTINED"
+  },
+  {
+    "blocker": "SCIENTIFIC_MATURITY",
+    "can_close_offline": false,
+    "dependency": "350_800_100_200_80_80_AND_3_FOLDS_EACH",
+    "state": "INCOMPLETE"
+  },
+  {
+    "blocker": "TRAINING_RUNNER",
+    "can_close_offline": false,
+    "dependency": "ADMITTED_SEALED_DATASET_AND_SPECIFIC_GRANT",
+    "state": "PREPARED_SYNTHETIC_TESTED"
+  },
+  {
+    "blocker": "UTC_GENERATION_PROVENANCE",
+    "can_close_offline": false,
+    "dependency": "INDEPENDENT_BROKER_EVENT_GENERATION_EVIDENCE",
+    "state": "UNVERIFIED_REPORTED_SEPARATELY"
+  },
+  {
+    "blocker": "REMOTE_FUTURE_PUBLICATION",
+    "can_close_offline": false,
+    "dependency": "AUTHORIZED_SESSION_OR_LOCAL_GITHUB_CREDENTIAL",
+    "state": "LOCAL_RECEIPTS_AUTOMATIC"
+  }
+]

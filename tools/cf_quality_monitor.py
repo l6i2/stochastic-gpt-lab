@@ -9,7 +9,7 @@ from controller.authorized_capture import sha,once,manager_lock
 from controller.isolated_observation import GENESIS,atomic
 from controller.pretrain_contracts import seal
 from controller.exclusive_roles import verify_roles
-from controller.cf_maturity import maturity
+from controller.cf_maturity import maturity,session_feasibility
 from controller.native_database_snapshots import assess
 from controller.cf_feature_review import seed_check,retained_oracle
 from controller.prospective_processor import initial_state
@@ -52,7 +52,7 @@ def native_oracle_milestone(root,base,status):
     if milestone is None:return dict(status='WAITING_FOR_15_OWN_M5',own_bars=n,native_terminal_launched=False)
     if not status.get('own_seed_bar_hash'):raise ValueError('ORACLE_OWN_SEED_NOT_BOUND')
     script=root/'tools/cf_own_indicator_oracle.py'
-    key=seal([status['capture_id'],status['epoch'],status['own_seed_bar_hash'],milestone,sha(script),sha(root/'controller/cf_feature_review.py')])
+    key=seal([status['capture_id'],status['epoch'],status['own_seed_bar_hash'],milestone,sha(script),sha(root/'controller/cf_feature_review.py'),sha(root/'controller/cf_atr_candidate.py')])
     stage=base/'native_oracle_jobs'/key;folder=stage;request=folder/'request.json'
     if (stage/'verified_result.json').exists():return json.loads((stage/'verified_result.json').read_text())
     if (stage/'last_attempt.json').exists():
@@ -96,6 +96,12 @@ def _run_once(root=ROOT):
     root=Path(root);base=root/'outputs/us30cash_m5_native_observations'
     if not (base/'current.json').exists():return None
     pointer=json.loads((base/'current.json').read_text());folder=base/pointer['capture_id']
+    calendar_path=root/'research/studies/us30cash_m5_native_observations/exclusive_cut_v1/native_calendar_observation.json'
+    capacity=dict(status='MISSING_NATIVE_WEEKLY_METADATA',dataset_admitted=False)
+    if calendar_path.exists():
+        from controller.cf_session_calendar import parse_probe
+        schedule=parse_probe(json.loads(calendar_path.read_text())['records'])
+        capacity=dict(session_feasibility(schedule),source_sha256=sha(calendar_path))
     if folder.parent!=base or sha(folder/'manifest.json')!=pointer['manifest_sha256']:raise ValueError('MONITOR_MANIFEST_CHANGED')
     manifest=json.loads((folder/'manifest.json').read_text());roles=verify_roles(root,manifest)
     checkpoint=base/'quality_checkpoint.json'
@@ -166,6 +172,7 @@ def _run_once(root=ROOT):
         m5_with_five_m1_parity=parity_pass,m5_m1_m5_parity_exclusions=parity_fail,
         orphan_queries_excluded_on_explicit_interruption=excluded_queries,
         roles_verified=bool(roles),recursive_seeds=seeds,maturity=maturity(own_status),
+        session_feasibility=capacity,
         retained_indicator_parity=retained_oracle(root) if (root/'research/studies/us30cash_m5_prospective_pipeline_20261031_v1/native_oracle.json').exists() else None,
         native_own_prefix_oracle=native_oracle_milestone(root,base,dict(own_status,epoch=state['epoch'],own_seed_bar_hash=seed_hash)),
         scientific_admission=False,physical_generation_utc_certified=False,training_executed=False)

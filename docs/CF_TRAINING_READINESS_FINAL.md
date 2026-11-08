@@ -260,3 +260,7 @@ Faltan 350 M5 propias consecutivas, 800 señales, 100 M5 posteriores, 200 evalua
 ## Preparación de fin de semana del 7 de noviembre
 
 Se completó el ensayo nativo sintético de 300 barras. La variante iATR coincide en 287 valores y HA coincide en los cuatro precios de las 300 barras, con 25 direcciones desde el hito 276. Pasaron 66 pruebas. El monitor de reapertura quedó integrado en el reporter existente con recibo idempotente y revisión de transición que conserva la cuarentena. Se mantienen 88 M5 propias acumuladas, 0 consecutivas y 0 elegibles. iATR propio, HA propio, calendario y admisión conservan sus pendientes. [Informe único y recibos](CF_WEEKEND_PREPARATION_20261107.md).
+
+## Cierre técnico del 8 de noviembre de 2026
+
+Se preparó el candidato ATR con estado versionado y restauración exacta, se incluyó su hash en los jobs futuros y se incorporó la factibilidad por sesión al monitor. Pasaron 95 pruebas. El máximo observado de 276 M5 por sesión es menor que 350; la adquisición requiere bridges certificados para superar el warmup. La cota optimista del estudio completo es 1249 M5, al menos cinco sesiones y cuatro bridges, sin pronóstico de señales. Continúan 88 M5 acumuladas, 0 consecutivas y 0 elegibles. [Matriz, evidencias y ruta de entrenamiento](CF_FINAL_TECHNICAL_CLOSURE_AND_TRAINING_PATH.md).

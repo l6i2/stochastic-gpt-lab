@@ -12,6 +12,7 @@ class OracleJobTests(unittest.TestCase):
             root=Path(d);base=root/'outputs';base.mkdir();(root/'tools').mkdir();(root/'controller').mkdir()
             (root/'tools/cf_own_indicator_oracle.py').write_text('# synthetic executable placeholder')
             (root/'controller/cf_feature_review.py').write_text('# synthetic hash input')
+            (root/'controller/cf_atr_candidate.py').write_text('# synthetic candidate hash input')
             status=dict(technical_warmup=15,capture_id='c',epoch='e',own_seed_bar_hash='seed')
             with patch('psutil.virtual_memory',return_value=Mock(available=1024**3)),patch('psutil.process_iter',return_value=[]),patch('tools.cf_quality_monitor.oracle_process_running',return_value=False),patch('subprocess.Popen',return_value=Mock(pid=999999)) as launch:
                 first=native_oracle_milestone(root,base,status);stage=base/'native_oracle_jobs'/first['job_key']
@@ -27,7 +28,7 @@ class OracleJobTests(unittest.TestCase):
         with TemporaryDirectory() as d:
             root = Path(d)
             base = root / 'outputs'
-            for name in ('tools/cf_own_indicator_oracle.py', 'controller/cf_feature_review.py'):
+            for name in ('tools/cf_own_indicator_oracle.py', 'controller/cf_feature_review.py', 'controller/cf_atr_candidate.py'):
                 script = root / name
                 script.parent.mkdir(exist_ok=True)
                 script.write_text('# test placeholder')

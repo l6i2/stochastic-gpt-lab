@@ -1,0 +1,37 @@
+{
+  "candidate_source_sha256": "9bc2efb0e3a2d1af750d4c47ce38fb8ca2b245639856c63ba210a82d23c70dfc",
+  "dataset_admitted": false,
+  "native_exports": [
+    {
+      "bars": 15,
+      "checkpoint_replays": 15,
+      "compared": 2,
+      "epoch": "26_221161468",
+      "export_sha256": "7c61ef7c054294c26c507a935f396f40137e236a22371e40d71432e5c1b6827d",
+      "mismatches": []
+    },
+    {
+      "bars": 15,
+      "checkpoint_replays": 15,
+      "compared": 2,
+      "epoch": "13_154212843",
+      "export_sha256": "87399c6b68e1df875906fb216c93c1adea5cf942aedf5bfa85db1910d94526f5",
+      "mismatches": []
+    },
+    {
+      "bars": 16,
+      "checkpoint_replays": 16,
+      "compared": 3,
+      "epoch": "13_154212843",
+      "export_sha256": "07cd7e87a2729ff36ad55395078ef5effaffccb55f202333eae37fdb8c69ef72",
+      "mismatches": []
+    }
+  ],
+  "production_feature_changed": false,
+  "real_30_own_bar_export_available": false,
+  "schema": "cf-native-atr-candidate-replay/1",
+  "synthetic_checkpoint_replays": 300,
+  "synthetic_native_values": 287,
+  "training_executed": false,
+  "unique_real_comparable_values": 5
+}

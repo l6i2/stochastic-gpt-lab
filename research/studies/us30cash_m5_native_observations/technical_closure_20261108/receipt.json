@@ -1,0 +1,392 @@
+{
+  "admission": {
+    "NEW_STUDY_DATASET_ADMISSION": "WAITING_FOR_EVIDENCE",
+    "TRAINING_ADMISSION_GATE": "BLOCKED_NO_SPECIFIC_TRAINING_GRANT",
+    "TRAINING_EXECUTED": false,
+    "evidence_pending": [
+      "calendar",
+      "coverage",
+      "causality",
+      "seeds"
+    ],
+    "training_authorized": false
+  },
+  "candidate_sha256": "9bc2efb0e3a2d1af750d4c47ce38fb8ca2b245639856c63ba210a82d23c70dfc",
+  "feature_fragment_unchanged": "c8fe7846f6569d824cd7158c8fb72998a21a7aa3977901aed6cdde6fbc6e109d",
+  "frozen_contract_sha256": "2082db65062b1f744d8797fefffe34fa2d912cbb4e41fb0cacfd2fd6ece9c532",
+  "future_milestones": [
+    15,
+    30,
+    276,
+    350
+  ],
+  "identity": {
+    "connected": true,
+    "demo": true,
+    "last_native_quote_msc": 1794009599968,
+    "server": "XMGlobalSC-MT5 5",
+    "symbol": "US30Cash",
+    "terminal_trade_allowed": false
+  },
+  "incident_observations": [
+    {
+      "classification": "UNKNOWN_INTERRUPTION",
+      "clock": {
+        "boot_id": "112",
+        "host_utc_label": "2026-11-08T13:20:24.423653+00:00",
+        "monotonic_ns": 388946718433500,
+        "uptime_ms": 388902703,
+        "utc_certified": false
+      },
+      "observation_gap_ns": 39606820796200,
+      "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL",
+      "record": 37704,
+      "record_hash": "b50bc9dcfdb4cb760f1facd82a43af1c00fbc9bb8ff64c0266fdce5755e4732f"
+    },
+    {
+      "classification": "UNKNOWN_INTERRUPTION",
+      "clock": {
+        "boot_id": "112",
+        "host_utc_label": "2026-11-08T02:02:58.553390+00:00",
+        "monotonic_ns": 348297585540200,
+        "uptime_ms": 348256828,
+        "utc_certified": false
+      },
+      "observation_gap_ns": 16680459700,
+      "reason": "POLL_GAP_TWO_EXISTING_5S_TIMERS",
+      "record": 36817,
+      "record_hash": "3a64f69cbcd19dd0e1c82045fef521c8d9c585fd67898eb944c044ce267f18c5"
+    },
+    {
+      "classification": "UNKNOWN_INTERRUPTION",
+      "clock": {
+        "boot_id": "112",
+        "host_utc_label": "2026-11-08T01:54:43.177667+00:00",
+        "monotonic_ns": 347802209183600,
+        "uptime_ms": 347761453,
+        "utc_certified": false
+      },
+      "observation_gap_ns": 85365572400,
+      "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL",
+      "record": 36424,
+      "record_hash": "71a1a525089230805280d44482a608ea4cf54a18a46ae5236548e4a04ad70af1"
+    },
+    {
+      "classification": "UNKNOWN_INTERRUPTION",
+      "clock": {
+        "boot_id": "112",
+        "host_utc_label": "2026-11-08T01:53:19.917253+00:00",
+        "monotonic_ns": 347718948666400,
+        "uptime_ms": 347678187,
+        "utc_certified": false
+      },
+      "observation_gap_ns": 2105055200,
+      "reason": "REAL_OR_UNKNOWN_OR_CHANGED_XM_IDENTITY",
+      "record": 36412,
+      "record_hash": "90ee7502da324e51817fceac66010ccf6faec2418c118050870bf7dcc0dceb83"
+    },
+    {
+      "classification": "UNKNOWN_INTERRUPTION",
+      "clock": {
+        "boot_id": "112",
+        "host_utc_label": "2026-11-08T01:35:48.746286+00:00",
+        "monotonic_ns": 346667777650300,
+        "uptime_ms": 346627031,
+        "utc_certified": false
+      },
+      "observation_gap_ns": 13533410600,
+      "reason": "POLL_GAP_TWO_EXISTING_5S_TIMERS",
+      "record": 35759,
+      "record_hash": "5d40fc8f1d11ee4ed4529a4d17f7f879e2ee8d4e7dee4ebed0fefa1eaf8d3bb5"
+    }
+  ],
+  "local_broker_notice_search": {
+    "exact_dated_exception_recovered": false,
+    "files_scanned": 3,
+    "method": "BOUNDED_KEYWORD_SCAN_NOT_COMPLETE_MAIL_PARSER",
+    "raw_messages_published": false
+  },
+  "memory": {
+    "available_bytes": 865329152,
+    "producer_rss_bytes": 12464128
+  },
+  "no_backfill": true,
+  "nts": {
+    "authenticated_record_hash": "5e95ad03ed6a20ced031f57bf066cb0f2db8bd4bf8c47207dd75ea414dae1150",
+    "event_generation_utc_certified": false,
+    "results": [
+      {
+        "status": "AUTHENTICATED_MEASUREMENT"
+      },
+      {
+        "error": "TimeoutError",
+        "origin": "ntppool2.time.nl",
+        "status": "UNAVAILABLE"
+      }
+    ],
+    "state": {
+      "boot_identity": "WINDOWS_PREFETCH_BOOT_ID:112",
+      "chain_head": "5e95ad03ed6a20ced031f57bf066cb0f2db8bd4bf8c47207dd75ea414dae1150",
+      "failures": 0,
+      "last_record": "2c2b25b7997a4642a1e081766b2add1a.json",
+      "last_uptime_ms": 389146484,
+      "next_due_uptime_ms": 389446484
+    }
+  },
+  "observed_host_clock": {
+    "boot_id": "112",
+    "host_utc_label": "2026-11-08T13:28:17.037929+00:00",
+    "monotonic_ns": 389419332586400,
+    "uptime_ms": 389375312,
+    "utc_certified": false
+  },
+  "orders_sent": 0,
+  "prefix_comparison": {
+    "head": "2d7114f1d7a38c25c72584dba34eadace6674f3553cbcab3672a12096d061252",
+    "previous_head": "9352dc17429da3ad1991b4de83bda2f36ae7770514c4cfe8b34671ace3de5cff",
+    "previous_records": 36064,
+    "prior_prefix_unchanged": true,
+    "verified_records": 38089
+  },
+  "producer_implementation_pin_sha256": "cce4dc20dc8980290387c59e45861f9dbfa0e9a07f36bc645a01c0fba394f8fa",
+  "producer_implementation_pin_unchanged": true,
+  "protected_scoring": false,
+  "quality": {
+    "capture_id": "dbsnap_0fd175bd0cb94a5fa26e7404819c2228",
+    "chain_head": "2d7114f1d7a38c25c72584dba34eadace6674f3553cbcab3672a12096d061252",
+    "checkpoint_hash": "c5e314dd175f30580114a460ccaa7444b85e74f6853787f16947be66ddd7f828",
+    "epoch": "36_388902703",
+    "m5_m1_m5_parity_exclusions": 0,
+    "m5_with_five_m1_parity": 88,
+    "maturity": {
+      "calendar_eta": null,
+      "dataset_admitted": false,
+      "eta_reason": "SESSION_TRANSITION_UNCERTIFIED_OR_SIGNAL_SAMPLE_IMMATURE_NO_CALENDAR_FORECAST",
+      "observed_market_bar_minutes": 0,
+      "observed_signals_per_100_bars": null,
+      "rate_scope": "DESCRIPTIVE_CURRENT_UNINTERRUPTED_CONTEXT_NOT_AN_INDEPENDENT_SAMPLE",
+      "remaining": {
+        "BUY_evaluable": 80,
+        "BUY_folds": 3,
+        "SELL_evaluable": 80,
+        "SELL_folds": 3,
+        "consecutive_signals": 800,
+        "evaluable": 200,
+        "post_m5": 100,
+        "warmup_m5": 350
+      },
+      "remaining_warmup_observed_bar_minutes": 1750,
+      "requirements": {
+        "BUY": 80,
+        "SELL": 80,
+        "evaluable": 200,
+        "folds_each": 3,
+        "post_m5": 100,
+        "signals": 800,
+        "warmup_m5": 350
+      },
+      "scientific_warmup": 0,
+      "slowest_requirement": "UNDETERMINED_SIGNAL_AND_COVERAGE_RATES_NOT_YET_ESTIMABLE",
+      "statistically_justified_eta": false,
+      "technical_warmup": 0,
+      "training_executed": false
+    },
+    "native_own_prefix_oracle": {
+      "native_terminal_launched": false,
+      "own_bars": 0,
+      "status": "WAITING_FOR_15_OWN_M5"
+    },
+    "new_m5_pairs_checked": 0,
+    "new_records_verified": 66,
+    "observed_host_utc": "2026-11-08T13:27:34.077101+00:00",
+    "orphan_queries_excluded_on_explicit_interruption": 0,
+    "physical_generation_utc_certified": false,
+    "real_m1": 500,
+    "real_m5": 88,
+    "records_verified": 38089,
+    "recursive_seeds": {
+      "ATR_INITIALIZED": false,
+      "HA_READY": false,
+      "own_bars": 0,
+      "seeds_bound": false
+    },
+    "rejected": {
+      "300": 0,
+      "60": 4
+    },
+    "retained_indicator_parity": {
+      "algorithmic_ATR_PARITY": "PASS_EXACT_RETAINED_NATIVE_499_BAR_ORACLE",
+      "algorithmic_HA_PARITY": "PASS_EXACT_RETAINED",
+      "algorithmic_MAIN_K_PARITY": "PASS_RETAINED_BOUND",
+      "code_pin_sha256": "973829b0fd1532cb4ed4b25dd9503567ddee740d04c1d476f0f02d97122e5bf3",
+      "dataset_admitted": false,
+      "feature_fragment_sha256": "c8fe7846f6569d824cd7158c8fb72998a21a7aa3977901aed6cdde6fbc6e109d",
+      "ha_core_sha256": "d9a1e525a99e66f855bc49c3a696030c5e12ef534a1aeff5012b63a462a3e8ef",
+      "native_export_sha256": "a6cf247bb136b6e29d37a154405b476078471fed65d4a6067051171e83bf75e4",
+      "own_dataset_native_iATR_parity": false,
+      "rerun": false,
+      "retained_receipt_sha256": "479d5d6900e1ca6425bc1f91737a5664ed8e514ec0ccce89b02fac1d2e3467bb"
+    },
+    "roles_verified": true,
+    "runtime_status": "ACTIVE_QUARANTINED",
+    "schema": "cf-quality-monitor/1",
+    "scientific_admission": false,
+    "session_feasibility": {
+      "calendar_eta": null,
+      "dataset_admitted": false,
+      "maximum_one_quote_run_m5": 276,
+      "minimum_certified_bridges": 4,
+      "minimum_quote_runs": 5,
+      "optimistic_minimum_total_m5": 1249,
+      "scope": "CONDITIONAL_ON_OBSERVED_WEEKLY_QUOTE_METADATA",
+      "signal_frequency_demonstrated": false,
+      "source_sha256": "8b8bb9871b0d3afd4c94a6c994f025f14b19653e9a29ffd33ae3ef57d067b862",
+      "thresholds_modified": false,
+      "warmup_possible_without_session_bridge": false
+    },
+    "status": "PASS_INCREMENTAL_QUARANTINED",
+    "training_executed": false
+  },
+  "recovery": {
+    "actions": [],
+    "capture_watchdog_count": 0,
+    "dry_run": false,
+    "host_utc": "2026-11-08T13:28:01.8918303Z",
+    "live_trading": false,
+    "no_backfill": true,
+    "recovery_pid": 8856,
+    "requires_user_logon": true,
+    "scope": "EXACT_XM_AND_OWN_WATCHDOG_NTS",
+    "xm_process_count": 1
+  },
+  "remote_future_publication": "LOCAL_RECEIPTS_AUTOMATIC_REMOTE_PUBLICATION_REQUIRES_AUTHORIZED_SESSION_OR_LOCAL_CREDENTIAL",
+  "reopening": {
+    "baseline": {
+      "capture_id": "dbsnap_0fd175bd0cb94a5fa26e7404819c2228",
+      "checkpoint_epoch": "33_346627031",
+      "record": 35850,
+      "verified_head": "dab02399253549e2e9264daf3344c6d18ab309ee77f18e481e16689b59cd0b6e"
+    },
+    "baseline_clock": {
+      "boot_id": "112",
+      "host_utc_label": "2026-11-08T01:38:04.889521+00:00",
+      "monotonic_ns": 346803921760800,
+      "uptime_ms": 346763171,
+      "utc_certified": false
+    },
+    "baseline_epoch": "33_346627031",
+    "baseline_native_msc": 1794009599968,
+    "bridge_allowed": false,
+    "last_verified_end": 38089,
+    "status": "ARMED_WAITING_FOR_NEW_NATIVE_QUOTE",
+    "uninspected_record_count": 0
+  },
+  "runtime": {
+    "BUY": 0,
+    "SELL": 0,
+    "consecutive_m5": 0,
+    "consecutive_signals": 0,
+    "epoch": "36_388902703",
+    "evaluable": 0,
+    "facts": {
+      "calendar": false,
+      "causality": false,
+      "contract_approved": true,
+      "contract_changed": false,
+      "coverage": false,
+      "independence": true,
+      "nonoverlap": true,
+      "post_bars": 0,
+      "seeds": false,
+      "signals": 0,
+      "warmup": 0
+    },
+    "independence": "VERIFIED_FORWARD_SCOPE_BY_EXPLICIT_DECISION",
+    "membership": "OWN_ID_AND_NATIVE_INTERVALS_QUARANTINED",
+    "post_bars": 0,
+    "process_id": 12884,
+    "real_m1": 500,
+    "real_m5": 88,
+    "scientific_warmup": 0,
+    "status": "ACTIVE_QUARANTINED"
+  },
+  "schema": "cf-final-technical-closure/1",
+  "session_feasibility": {
+    "calendar_eta": null,
+    "dataset_admitted": false,
+    "maximum_one_quote_run_m5": 276,
+    "minimum_certified_bridges": 4,
+    "minimum_quote_runs": 5,
+    "optimistic_minimum_total_m5": 1249,
+    "scope": "CONDITIONAL_ON_OBSERVED_WEEKLY_QUOTE_METADATA",
+    "signal_frequency_demonstrated": false,
+    "source_sha256": "8b8bb9871b0d3afd4c94a6c994f025f14b19653e9a29ffd33ae3ef57d067b862",
+    "thresholds_modified": false,
+    "warmup_possible_without_session_bridge": false
+  },
+  "terminal_journal_summary": [
+    {
+      "access_point_switches": 0,
+      "connection_losses": 0,
+      "date": "20261107",
+      "scope": "JOURNAL_COUNTS_NOT_ROOT_CAUSE_PROOF",
+      "source_sha256": "7c8223053c9de64fa28e5e4d0e3085257ac85417eb14bd35936e594e429fdfbd"
+    },
+    {
+      "access_point_switches": 1,
+      "connection_losses": 1,
+      "date": "20261108",
+      "scope": "JOURNAL_COUNTS_NOT_ROOT_CAUSE_PROOF",
+      "source_sha256": "d62eba890b1014733c49643eed5214c916635eeaacbb0a3f5f829f0e02ebf1ff"
+    }
+  ],
+  "tests": {
+    "passed": 95,
+    "protected_scoring": 0,
+    "scientific_fits": 0
+  },
+  "training_authorization_requested": false,
+  "training_executed": false,
+  "windows_events": [
+    {
+      "Id": 507,
+      "RecordId": 210460,
+      "TimeCreated": "2026-11-08T08:12:35.6577181-05:00"
+    },
+    {
+      "Id": 506,
+      "RecordId": 210458,
+      "TimeCreated": "2026-11-08T08:12:35.6449691-05:00"
+    },
+    {
+      "Id": 107,
+      "RecordId": 210447,
+      "TimeCreated": "2026-11-07T21:20:36.6759355-05:00"
+    },
+    {
+      "Id": 42,
+      "RecordId": 210442,
+      "TimeCreated": "2026-11-07T21:20:31.9692634-05:00"
+    },
+    {
+      "Id": 507,
+      "RecordId": 210331,
+      "TimeCreated": "2026-11-07T20:16:09.7694722-05:00"
+    },
+    {
+      "Id": 506,
+      "RecordId": 210329,
+      "TimeCreated": "2026-11-07T20:16:09.7590502-05:00"
+    },
+    {
+      "Id": 107,
+      "RecordId": 210313,
+      "TimeCreated": "2026-11-07T08:31:59.6274669-05:00"
+    },
+    {
+      "Id": 42,
+      "RecordId": 210308,
+      "TimeCreated": "2026-11-07T08:31:58.9504213-05:00"
+    }
+  ]
+}

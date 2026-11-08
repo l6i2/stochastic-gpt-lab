@@ -1,0 +1,10 @@
+{
+  "files": {
+    "ATR_CANDIDATE_DECISION_REQUEST.md": "884d5819163c8f4fff1df240a93219775ea9e281b7ccac3260728e983d03c7e3",
+    "blocker_matrix.json": "54a7f859ad71d00f18cdfc62c006d848f06db086ace3f4910cb124d7e8876f62",
+    "candidate_replay.json": "2f6dfb5782d9306a4aac3cc61475dfe3481503dd1f52f12bc6d60e7b7584df19",
+    "receipt.json": "d41a03f643aa2b4f106a239e7f1f2cd96ce507f1b59dea5803e183878935cdbc"
+  },
+  "scientific_admission": false,
+  "training_executed": false
+}
