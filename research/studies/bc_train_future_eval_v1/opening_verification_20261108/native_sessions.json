@@ -1,0 +1,97 @@
+{
+  "clock_line_independent_utc_evidence": false,
+  "ex5_sha256": "d62e5825b3fd14c317ef0224916816f75349abe8ea80f7ec27bdf81726ecb601",
+  "holiday_exceptions_certified": false,
+  "records": [
+    "XM_SESSION_PROBE|START|symbol=US30Cash|symbol_selected=YES|server=XMGlobalSC-MT5 5",
+    "XM_SESSION_PROBE|CLOCK|server_time=2026.11.08 23:17:31|utc_time=2026.11.08 21:17:31|offset_seconds=7200",
+    "XM_SESSION_PROBE|QUOTE|day=MONDAY|index=0|from=01:00|to=00:00",
+    "XM_SESSION_PROBE|TRADE|day=MONDAY|index=0|from=01:05|to=23:55",
+    "XM_SESSION_PROBE|QUOTE|day=TUESDAY|index=0|from=01:00|to=00:00",
+    "XM_SESSION_PROBE|TRADE|day=TUESDAY|index=0|from=01:05|to=23:55",
+    "XM_SESSION_PROBE|QUOTE|day=WEDNESDAY|index=0|from=01:00|to=00:00",
+    "XM_SESSION_PROBE|TRADE|day=WEDNESDAY|index=0|from=01:05|to=23:55",
+    "XM_SESSION_PROBE|QUOTE|day=THURSDAY|index=0|from=01:00|to=00:00",
+    "XM_SESSION_PROBE|TRADE|day=THURSDAY|index=0|from=01:05|to=23:55",
+    "XM_SESSION_PROBE|QUOTE|day=FRIDAY|index=0|from=01:00|to=00:00",
+    "XM_SESSION_PROBE|TRADE|day=FRIDAY|index=0|from=01:05|to=23:50",
+    "XM_SESSION_PROBE|END"
+  ],
+  "records_sha256": "22a226057cc66449b212626cf58243bfa211aaf5c596ec8eb977d5b3ef44dabe",
+  "role": "CURRENT_NATIVE_WEEKLY_SPECIFICATION_ONLY_NO_HISTORICAL_CALENDAR_PROMOTION",
+  "scope": "OBSERVED_WEEKLY_METADATA_NOT_HOLIDAY_OR_HISTORICAL_CERTIFICATION",
+  "server": "XMGlobalSC-MT5 5",
+  "sessions": {
+    "QUOTE": {
+      "FRIDAY": [
+        [
+          60,
+          1440
+        ]
+      ],
+      "MONDAY": [
+        [
+          60,
+          1440
+        ]
+      ],
+      "SATURDAY": [],
+      "SUNDAY": [],
+      "THURSDAY": [
+        [
+          60,
+          1440
+        ]
+      ],
+      "TUESDAY": [
+        [
+          60,
+          1440
+        ]
+      ],
+      "WEDNESDAY": [
+        [
+          60,
+          1440
+        ]
+      ]
+    },
+    "TRADE": {
+      "FRIDAY": [
+        [
+          65,
+          1430
+        ]
+      ],
+      "MONDAY": [
+        [
+          65,
+          1435
+        ]
+      ],
+      "SATURDAY": [],
+      "SUNDAY": [],
+      "THURSDAY": [
+        [
+          65,
+          1435
+        ]
+      ],
+      "TUESDAY": [
+        [
+          65,
+          1435
+        ]
+      ],
+      "WEDNESDAY": [
+        [
+          65,
+          1435
+        ]
+      ]
+    }
+  },
+  "source_log_sha256": "c1372788f8a2051d4ac8cd9fbb7cbd2b4b1fce5d4ed0aaabdc5d179e92d40e2e",
+  "source_mq5_sha256": "ba10164dcde167e8f9d3c027a97a7f1fdcce25273d74d801332dc798d3fafde0",
+  "symbol": "US30Cash"
+}

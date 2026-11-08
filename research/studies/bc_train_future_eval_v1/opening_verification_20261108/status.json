@@ -1,0 +1,44 @@
+{
+  "BARS_M1": 0,
+  "BARS_M5": 0,
+  "DATASET_ADMISSION": "WAITING_FOR_DATA",
+  "DEMO": "DISABLED",
+  "FIRST_NEW_NATIVE_QUOTE": null,
+  "LAST_NATIVE_TICK": {
+    "ask": 51296.37,
+    "bid": 51290.37,
+    "flags": 6,
+    "time": 1794009599,
+    "time_msc": 1794009599968
+  },
+  "LIVE_TRADING": false,
+  "MARKET_SESSION_STATUS": "WAITING_FOR_MARKET_NO_NEW_NATIVE_QUOTE",
+  "NEXT_AUTOMATIC_ACTION": "POLL_5_MIN_THEN_BIND_NEXT_COMPLETE_NATIVE_M5_AND_ACQUIRE_POST_CUT_ONLY",
+  "PROTECTED_SCORING": false,
+  "REMAINING_BLOCKERS": [
+    "FIRST_POST_CUT_NEW_QUOTE",
+    "OWN_CONTEXT_AND_SIGNALS",
+    "NEW_PREFIX_PARITY_AND_CAUSALITY",
+    "REVIEWED_SERVER_CALENDAR_EXCEPTIONS",
+    "DATASET_ADMISSION_AND_TRAINING_GRANT"
+  ],
+  "TRAIN_CONTEXT_PROGRESS": {
+    "current": 0,
+    "required": 350
+  },
+  "TRAIN_SIGNALS": 0,
+  "UI_transient_unresponsive_recovered": true,
+  "dataset_id": "bc_train_f6b99cbfc59542a38627868015f65792",
+  "historical_recovery_scope": "ONLY_BOUND_BC_NATIVE_INTERVALS; NO_REQUEST_WHILE_FLOOR_NULL",
+  "indicator_oracle": "WAITING_FOR_15_30_276_350_OWN_BARS_NO_PROBE_RUN_WITHOUT_DATA",
+  "native_floor": null,
+  "orders_sent": 0,
+  "original_scientific_contracts_modified": false,
+  "physical_restart_tested": false,
+  "probe_executed_once": true,
+  "probe_reused_existing_binary": true,
+  "terminal_restarted": false,
+  "terminal_trade_allowed": false,
+  "training_executed": false,
+  "windows_restarted": false
+}

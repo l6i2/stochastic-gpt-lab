@@ -1,0 +1,18 @@
+{
+  "code_parent": "d9d60df29a50c3e77acf1ab0dd9bd57e161eaaa6",
+  "files": {
+    "docs/BC_OPENING_VERIFICATION.md": "b5550022ce32eee60e3e5817ed3ded61526cb480b9395a6a37fc4f1a851470d6",
+    "research/studies/bc_train_future_eval_v1/opening_verification_20261108/admission.json": "66f768461555934a7bb5c6c29f07f20eb9568dd24ba1ae505dc563522b2bb790",
+    "research/studies/bc_train_future_eval_v1/opening_verification_20261108/automation.json": "640ce6a61df6777c390410b7530603faf6bb3ce4341bc9aa8c335f9f43658062",
+    "research/studies/bc_train_future_eval_v1/opening_verification_20261108/native_sessions.json": "d15045509aead1092f860c492dfdf81423c6a52efc098583b189380eb72e5434",
+    "research/studies/bc_train_future_eval_v1/opening_verification_20261108/nominal_next_session.json": "732ac4b38f082eaac5922b5c3902de263c8efe09e16a7c8808cf3e82c551923b",
+    "research/studies/bc_train_future_eval_v1/opening_verification_20261108/recovery.json": "6c14436487d05954d6030afa36d7ef4c6cd3fddeaea9535e612a4d21a8789978",
+    "research/studies/bc_train_future_eval_v1/opening_verification_20261108/runtime.json": "1744c43bb451577af5b5fbf802d1b0f8dbad35aef657458b19283c4b64e0b337",
+    "research/studies/bc_train_future_eval_v1/opening_verification_20261108/status.json": "bfcb79a899dd30bc9966d952c3b0d2f44d492ab3a6303c4416b4d15bc570cef3"
+  },
+  "hash_type": "SHA256_FILE_BYTES",
+  "protected_data_read": false,
+  "real_new_data_verified": false,
+  "schema": "bc-opening-verification-index/1",
+  "training_executed": false
+}
