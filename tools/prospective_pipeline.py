@@ -48,7 +48,23 @@ class NativeReference:
         if self.mt5:
             if self.bound_pid==matches[0]:return
             self.close()  # Release old Python IPC only; never close/restart MT5.
-        if not mt5.initialize(path=expected,timeout=5000):raise ValueError('XM_READ_ONLY_ATTACH_FAILED')
+        if not mt5.initialize(path=expected,timeout=5000):
+            # Operational repair for the authorized B+C station. Reattach only
+            # the already pinned terminal; do not launch/restart it or relax any
+            # identity, scientific coverage or timestamp check.
+            bc=ROOT/'outputs/bc_train_future_eval_v1'
+            if not (bc/'current.json').exists():raise ValueError('XM_READ_ONLY_ATTACH_FAILED')
+            first_error=mt5.last_error()[0];mt5.shutdown();before=host_clock()
+            current=[p.pid for p in psutil.process_iter(['exe']) if (p.info.get('exe') or '').replace('\\','/').lower()==expected.lower()]
+            if current!=matches:raise ValueError('XM_PINNED_PROCESS_CHANGED_BEFORE_REATTACH')
+            if not mt5.initialize(path=expected,timeout=20000):raise ValueError('XM_READ_ONLY_ATTACH_FAILED')
+            rebound=[p.pid for p in psutil.process_iter(['exe']) if (p.info.get('exe') or '').replace('\\','/').lower()==expected.lower()]
+            if rebound!=matches:
+                mt5.shutdown();raise ValueError('XM_PINNED_PROCESS_CHANGED_DURING_REATTACH')
+            once(bc/'incidents'/('core_ipc_recovered_'+__import__('uuid').uuid4().hex+'.json'),
+                dict(first_error_code=first_error,before=before,after=host_clock(),
+                     bounded_retry_ms=20000,terminal_pid=matches[0],terminal_restarted=False,
+                     scientific_tolerance_changed=False))
         info=mt5.terminal_info();account=mt5.account_info();symbol=mt5.symbol_info('US30Cash')
         if not info or Path(info.data_path).name!='20C285FE08971A9A2E814AAC44AFC9D2' or not account or account.server!='XMGlobalSC-MT5 5' or account.trade_mode!=0 or not symbol or symbol.chart_mode!=0:
             mt5.shutdown();raise ValueError('PINNED_XM_DEMO_BID_CHART_IDENTITY_MISMATCH')

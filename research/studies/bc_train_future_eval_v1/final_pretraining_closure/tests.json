@@ -1,0 +1,29 @@
+{
+  "command": "python -m unittest tests.test_bc_final_pretraining tests.test_native_reference_recovery tests.test_training_admission_gate tests.test_bc_study tests.test_bc_model_freeze tests.test_bc_ipc_recovery tests.test_first_training_readiness tests.test_scientific_preparation",
+  "log_sha256": "c7a9414c7f93173df26c73e038bce3ac512f54d3dbeb2265a995eebe672073df",
+  "physical_restart_tested": false,
+  "real_checks": [
+    "READONLY_XM_DETACH_REATTACH_SAME_PID",
+    "EXISTING_ACQUISITION_TASK_EXIT_0",
+    "GUARDIAN_AUTOMATIC_REVIEW_ANCESTRY",
+    "BC_SQLITE_CHECKPOINT_AND_CHAIN",
+    "CF_CLOSED_HEAD_PRESERVED"
+  ],
+  "real_post_cut_training_data_verified": false,
+  "schema": "bc-pretraining-tests/1",
+  "scientific_fits": 0,
+  "status": "PASS",
+  "synthetic_checks": [
+    "GRANT_BEFORE_DATA_IO",
+    "APPROVED_BC_PROTOCOL_BINDING",
+    "BID_ASK_FROZEN_REPLAY_PARITY",
+    "TIME_EXIT_REAL_QUOTE_OR_CENSOR",
+    "FEATURE_BEFORE_DECISION",
+    "MODEL_BUDGET_EIGHT_MOCK_FITS",
+    "CACHE_TAMPER_REJECTION",
+    "SQLITE_CLOSE_ON_RECOVERY",
+    "BOOT_CHANGE_WITHOUT_FALSE_PHYSICAL_PROOF",
+    "IPC_BOUND_5S_THEN_20S"
+  ],
+  "tests": 54
+}

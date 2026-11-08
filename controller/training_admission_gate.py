@@ -4,6 +4,7 @@ from pathlib import Path
 from .pretrain_contracts import seal
 
 from .scientific_authority import AUTHORIZED_GRANT_HASHES,ADMITTED_PACKAGE_HASHES
+from .git_runtime import command as git_command
 CHECKS=('independent_dataset','versioned_sealed','dataset_hash','complete_membership',
         'verified_coverage','contract_causality','frozen_whitelist','approved_protocol','approved_budget')
 
@@ -111,16 +112,22 @@ def _verify_bundle(grant,root):
         raise ValueError('REAL_OR_UNKNOWN_ACCOUNT_HARD_FAIL')
     if m.get('protected_sets')!={'DISCOVERY_VALIDATION':'BLOCKED','HISTORICAL_HOLDOUT':'LOCKED','FINAL_TEST':'LOCKED'}:
         raise ValueError('PROTECTED_GATE_CHANGED')
-    package=root/'research/studies/us30cash_m5_native_pretrain_v1'
-    for name,key in (('PROTOCOL_ES.md','protocol_hash'),('feature_model_whitelist.json','feature_whitelist_hash')):
+    from .bc_study import STUDY as BC_STUDY
+    if grant['study_id']==BC_STUDY:
+        package=root/'research/studies/bc_train_future_eval_v1'
+        documents=(('contract.json','protocol_hash'),('feature_whitelist.json','feature_whitelist_hash'))
+    else:
+        package=root/'research/studies/us30cash_m5_native_pretrain_v1'
+        documents=(('PROTOCOL_ES.md','protocol_hash'),('feature_model_whitelist.json','feature_whitelist_hash'))
+    for name,key in documents:
         if hashlib.sha256((package/name).read_bytes()).hexdigest()!=grant[key]:raise ValueError('FROZEN_PROTOCOL_OR_WHITELIST_CHANGED')
-    head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()
+    head=subprocess.check_output(git_command('rev-parse','HEAD'),cwd=root,text=True).strip()
     if head!=grant['code_head']:
-        subprocess.run(['git','merge-base','--is-ancestor',grant['code_head'],head],cwd=root,check=True,capture_output=True)
-        changed=subprocess.check_output(['git','diff','--name-only',grant['code_head'],head],cwd=root,text=True).splitlines()
+        subprocess.run(git_command('merge-base','--is-ancestor',grant['code_head'],head),cwd=root,check=True,capture_output=True)
+        changed=subprocess.check_output(git_command('diff','--name-only',grant['code_head'],head),cwd=root,text=True).splitlines()
         if set(changed)-{'controller/scientific_authority.py','configs/scientific_training_grant.json'}:
             raise ValueError('REVIEWED_CODE_CHANGED_OUTSIDE_EXPLICIT_AUTHORITY_COMMIT')
-    if subprocess.check_output(['git','status','--porcelain','--untracked-files=normal'],cwd=root,text=True).strip():
+    if subprocess.check_output(git_command('status','--porcelain','--untracked-files=normal'),cwd=root,text=True).strip():
         raise ValueError('REVIEWED_WORKTREE_NOT_CLEAN')
     validate_observed_limits(grant['dataset_first_observed_bar'],m.get('dataset_last_observed_bar'))
     if not m.get('files') or m.get('dataset_path') not in m['files']:raise ValueError('DATASET_FILE_INDEX_MISSING')

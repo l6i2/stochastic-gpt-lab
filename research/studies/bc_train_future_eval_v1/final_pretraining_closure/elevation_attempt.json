@@ -1,0 +1,8 @@
+{
+  "administrator": true,
+  "applied": false,
+  "error": "Acceso denegado.\r\n",
+  "host_utc": "2026-11-08T20:31:52.5037859Z",
+  "schema": "bc-task-apply/1",
+  "task": "StochasticGPTLab_PC_A_BCTrainAcquisition_v1"
+}

@@ -1,0 +1,23 @@
+{
+  "boot_transition_observed": false,
+  "chain_head": "4d0e493b76872fd1b0e304e431fe3ee817ca785d5e02895974ff529dc54eb176",
+  "checkpoint_hash": "95b2515cdbaeaa30cabd0f549d96e8360761b4b9dbbd1de44ba0ed170d15e684",
+  "clock": {
+    "boot_id": "112",
+    "host_utc_label": "2026-11-08T21:02:30.046680+00:00",
+    "monotonic_ns": 416672341491900,
+    "uptime_ms": 416628328,
+    "utc_certified": false
+  },
+  "dataset_id": "bc_train_f6b99cbfc59542a38627868015f65792",
+  "live_trading": false,
+  "native_floor": null,
+  "native_resume_proven": false,
+  "next_interval": null,
+  "old_cf_ingress_closed": true,
+  "old_cf_preserved": true,
+  "physical_power_cycle_proven": false,
+  "records": 64,
+  "status": "PASS_BC_CHECKPOINT_INTEGRITY_ONLY",
+  "training_executed": false
+}

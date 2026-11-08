@@ -1,6 +1,6 @@
-> Continuación prioritaria C+F. El corte de las 15:15 en Ecuador verificó 20 M5 acumuladas,
+> Continuación prioritaria C+F. El corte de las 15:15 en Ecuador verificó 20 M5 acumuladas,## Recuperación histórica separada del 8 de noviembre
 
-## Recuperación histórica separada del 8 de noviembre
+> Estado vigente — cierre pre-entrenamiento: tarea existente e IPC integrados, guardian verifica admisión automáticamente, 54 tests PASS; 0 M5/0 señales, WAITING_FOR_DATA, sin admisión ni entrenamiento. El bloqueo anterior de edición de tareas se resolvió reutilizando los servicios instalados; no requiere acción manual. [Informe consolidado](BC_FINAL_PRETRAINING_CLOSURE.md). Los apartados anteriores describen estados históricos.
 
 Se recuperaron en B 246.397 ticks, 1.295 M1 y 251 M5 de 26 gaps posteriores al corte. Se corrigió y probó el límite inclusivo de CopyTicks en Python, se verificaron hashes y se programó recuperación al iniciar sesión y cada cinco minutos. A mantiene 88 M5 y 0 de warmup científico. El contexto retrospectivo de 30 M5 verificó MAIN_K, ATR candidato y HA con MT5. B sigue diagnóstico y expuesto dentro de la reserva C+F. [Resultados, límites y propuesta híbrida](XM_HISTORICAL_RECOVERY_RESULTS.md).
 

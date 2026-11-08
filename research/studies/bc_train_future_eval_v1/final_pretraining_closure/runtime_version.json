@@ -1,0 +1,25 @@
+{
+  "authorization_source_sha256": "9f5e42a272e1bcd841f502ce43149ef6335bcf0ecc7aa4ac06f2c5dc800cec0a",
+  "automatic_review_helper_pid": 26640,
+  "automatic_review_verified_by_ancestry": true,
+  "code_parent": "b5468cdccda59f5eca98f4564f9a4bf0e6481c32",
+  "existing_guardian_pid": 28100,
+  "existing_task_definition_unchanged": true,
+  "no_new_tasks_or_startup_shortcuts": true,
+  "obsolete_temporary_watcher_stopped": true,
+  "old_contracts_modified": false,
+  "schema": "bc-final-runtime/1",
+  "scientific_authority_modified": false,
+  "source_hashes": {
+    "controller/bc_admission.py": "2ae87d38cab72f2a0ddd4931543eac60adeccfd5fc035456a84e1946b13449b8",
+    "controller/bc_recovery.py": "d8be92a85fac900fc5a058d67ddb67b7c4c2de592152b8b314f3d68bb51161f8",
+    "controller/bc_training_rows.py": "70f42f480c48414e9aa33ace1220dc76cce4dc21a06013e7d23c269beb15e476",
+    "controller/git_runtime.py": "6c5486d31d29e5c358ddd23bf0c90c137b73c9f8982a72d85aa09fc53f3d1e5a",
+    "controller/training_admission_gate.py": "fdbc94d41c6fa8396bfecd19d7a6b378000b0dce3cc5be8299984a365b8423b1",
+    "tools/bc_prefix_oracle.py": "e7d32ff8d0f516df2fbc8ee99533698aa0c8894e12b26ffe2af99a3635c9d515",
+    "tools/bc_pretraining_worker.py": "42873aa6c240fcdd6da1d072533e022531d27a0448cc3db6e98372134c499282",
+    "tools/prospective_pipeline.py": "20aa59178ab9aba881d76b9c9d423b5e942c1416eeaa7643600d4b841307a08a",
+    "tools/research_restart_receipt.py": "70c7de07db306e35380ea3cf6b5f72c241a74eaed7e1954e66b972e14a7e472d"
+  },
+  "version": 6
+}

@@ -1,0 +1,149 @@
+{
+  "candidate_package_sha256": "cc2755b051269924804456ca0870e815042e416ad3c055b58e318dcaf4700c32",
+  "clock": {
+    "boot_id": "112",
+    "host_utc_label": "2026-11-08T21:00:46.478684+00:00",
+    "monotonic_ns": 416568773019500,
+    "uptime_ms": 416524750,
+    "utc_certified": false
+  },
+  "counts": {
+    "BUY": 0,
+    "BUY_folds": 0,
+    "SELL": 0,
+    "SELL_folds": 0,
+    "context": 0,
+    "evaluable": 0,
+    "post_bars": 0,
+    "signals": 0
+  },
+  "dataset_admitted": false,
+  "dataset_hash_admitted": null,
+  "deficits": {
+    "BUY": 80,
+    "BUY_folds": 3,
+    "SELL": 80,
+    "SELL_folds": 3,
+    "context": 350,
+    "evaluable": 200,
+    "post_bars": 100,
+    "signals": 800
+  },
+  "failures": [],
+  "gates": {
+    "ATR_seed": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "BID_ASK": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "HA_seed": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "OHLC": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "calendar": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "causality": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "exclusivity": {
+      "scope": "EXCLUSIVE_APPROVED_NATIVE_ORDER_NO_PHYSICAL_UTC_GENERATION_CLAIM",
+      "status": "PASS",
+      "witness_hashes": [
+        "d343170d6350682207032ef9fe2595ee94e4d9b2d7d38f5cc7493278adb71ac9",
+        "e17973f0b2c9aeae8c0262eb2653acb55bdb74cf59fc7f4d18d22ad82e2cbbf9"
+      ]
+    },
+    "exit_horizons": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "features": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "folds": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "hashes": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "historical_continuity": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "independence": {
+      "scope": "EXCLUSIVE_APPROVED_NATIVE_ORDER_NO_PHYSICAL_UTC_GENERATION_CLAIM",
+      "status": "PASS",
+      "witness_hashes": [
+        "d343170d6350682207032ef9fe2595ee94e4d9b2d7d38f5cc7493278adb71ac9",
+        "e17973f0b2c9aeae8c0262eb2653acb55bdb74cf59fc7f4d18d22ad82e2cbbf9"
+      ]
+    },
+    "membership": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "no_leakage": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "provenance": {
+      "scope": "EXCLUSIVE_APPROVED_NATIVE_ORDER_NO_PHYSICAL_UTC_GENERATION_CLAIM",
+      "status": "PASS",
+      "witness_hashes": [
+        "d343170d6350682207032ef9fe2595ee94e4d9b2d7d38f5cc7493278adb71ac9",
+        "e17973f0b2c9aeae8c0262eb2653acb55bdb74cf59fc7f4d18d22ad82e2cbbf9"
+      ]
+    },
+    "reproducibility": {
+      "status": "PASS",
+      "witness_hashes": [
+        "23d558f5a5ba9551aab4cfa2a6e3eb047b8fe74f1cd0d4492fd8996e640c9ab0",
+        "6772cc27f1c7cfb4f8e2677b9cbc5fec2d07299d47d65626f0a345dbe1e05168"
+      ]
+    },
+    "tick_coverage": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    }
+  },
+  "input_marker": "6772cc27f1c7cfb4f8e2677b9cbc5fec2d07299d47d65626f0a345dbe1e05168",
+  "market_status": "WAITING_FOR_MARKET",
+  "pending": [
+    "membership",
+    "tick_coverage",
+    "OHLC",
+    "BID_ASK",
+    "historical_continuity",
+    "calendar",
+    "ATR_seed",
+    "HA_seed",
+    "causality",
+    "features",
+    "exit_horizons",
+    "no_leakage",
+    "folds",
+    "hashes"
+  ],
+  "reason": "SEPARATE_REVIEWED_ADMISSION_AND_HASH_BOUND_TRAINING_GRANT_REQUIRED",
+  "reevaluated": true,
+  "request_ready": false,
+  "review_hash": "696a93b592cd36deab5fe1b27324573cf9a2a8c780d3e9fe85ecf0021285f182",
+  "schema": "bc-pre-admission-review/1",
+  "status": "WAITING_FOR_DATA",
+  "technical_package_complete": false,
+  "training_authorized": false,
+  "training_executed": false
+}

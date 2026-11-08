@@ -30,6 +30,11 @@ ConvertTo-Json -InputObject $events -Compress
 
 def run():
     cf = ROOT/'outputs/us30cash_m5_native_observations'
+    bc=ROOT/'outputs/bc_train_future_eval_v1'
+    if (bc/'current.json').exists() and (cf/'bc_ingress_closed.json').exists():
+        from controller.bc_recovery import recover as recover_bc
+        with manager_lock(bc/'recovery_lock'):
+            return recover_bc(ROOT,host_clock(),windows_events)
     if (cf/'legacy_ingress_closed.json').exists():
         with manager_lock(cf/'recovery'):
             return recover(ROOT,host_clock(),windows_events)
@@ -67,3 +72,19 @@ if __name__=='__main__':
     try:print(json.dumps(run()))
     except Exception as exc:
         print(json.dumps(dict(status='RETRY_REQUIRED_FAIL_CLOSED',error=type(exc).__name__,reason=str(exc))));sys.exit(1)
+    finally:
+        # Reuse the installed guardian's minute cadence. Review only committed
+        # B+C artifacts; never start another collector or alter restart results.
+        bc=ROOT/'outputs/bc_train_future_eval_v1'
+        if (bc/'current.json').exists():
+            try:
+                from tools.bc_pretraining_worker import review_current
+                value=review_current()
+                import os,psutil
+                atomic(bc/'guardian_admission_review.json',dict(clock=host_clock(),
+                    status=value['status'],read_only=True,training_executed=False,
+                    helper_pid=os.getpid(),ancestor_pids=[p.pid for p in psutil.Process().parents()]))
+            except Exception as exc:
+                atomic(bc/'guardian_admission_review.json',dict(clock=host_clock(),
+                    status='WAITING_FOR_EVIDENCE',error=type(exc).__name__+':'+str(exc),
+                    read_only=True,training_executed=False))
