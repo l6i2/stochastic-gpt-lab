@@ -1,0 +1,83 @@
+{
+  "authorized_fits": 0,
+  "chronological_folds": 4,
+  "current_cf_reservation_modified": false,
+  "data_admission_requirements": [
+    "PRE_REGISTERED_FUTURE_WINDOW",
+    "EXPOSURE_AND_EXCLUSIVE_MEMBERSHIP",
+    "NO_PROTECTED_ROLE_OVERLAP",
+    "EXACT_M1_M5_AND_TICK_BID_ASK_AUDIT",
+    "NATIVE_SEED_PARITY",
+    "COMPLETE_DECISION_AND_LABEL_HORIZONS",
+    "NATIVE_SESSION_AND_EXCEPTION_EVIDENCE",
+    "SEALED_DATASET_AND_VERSIONED_VINTAGES"
+  ],
+  "dataset_hash": null,
+  "dataset_id": null,
+  "existing_b_eligible_as_independent": false,
+  "future_cutoff": null,
+  "hypotheses": [
+    "BUY_MODEL_VS_FOLLOW",
+    "BUY_MODEL_VS_INVERT",
+    "SELL_MODEL_VS_FOLLOW",
+    "SELL_MODEL_VS_INVERT"
+  ],
+  "legacy_protected_sets_opened": false,
+  "max_proposed_fits": 8,
+  "method": "NATIVE_HISTORICAL_RECONSTRUCTION_WITH_EXPLICIT_RETRIEVAL_VINTAGES",
+  "model": "LOGISTIC_L2_C1_FIXED_SEED_TRAIN_FOLD_SCALING",
+  "orders_authorized": false,
+  "proposal_id": "US30CASH_M5_XM_HYBRID_PENDING_AUTHORIZATION",
+  "proposed_acceptance": {
+    "degenerate_or_uninterpretable": "INCONCLUSIVE",
+    "lower_bound_strictly_above": 0,
+    "mandatory_block_sensitivity_observed_m5": 451,
+    "maximum_drawdown_vs_baseline_ratio": 1.2,
+    "maximum_positive_fold_share": 0.5,
+    "one_sided_level": 0.9875,
+    "paired_bootstrap_resamples": 10000,
+    "positive_fold_fraction_at_least": 0.7,
+    "retuning_allowed": false,
+    "seed": 20261030
+  },
+  "proposed_minimums": {
+    "BUY": 80,
+    "SELL": 80,
+    "base_signals": 800,
+    "evaluable": 200,
+    "folds_each_side": 3,
+    "post_bars": 100,
+    "warmup": 350
+  },
+  "proposed_strategy": {
+    "D": 3,
+    "K": 5,
+    "SL": 180,
+    "Slowing": 3,
+    "TIME_EXIT": 100,
+    "TP": 240,
+    "levels": [
+      20,
+      80
+    ]
+  },
+  "required_authorizations": [
+    "NEW_FUTURE_NONOVERLAPPING_ROLE_RESERVATION",
+    "NEW_METHOD_AND_CONTEXT_INITIALIZATION_PROTOCOL",
+    "DATASET_ADMISSION",
+    "SPECIFIC_HASH_BOUND_TRAINING_GRANT"
+  ],
+  "scoring_authorized": false,
+  "statistical_reference": {
+    "path": "research/studies/us30cash_m5_native_observations/inherited_PROTOCOL_ES.md",
+    "scope": "PROPOSED_INHERITANCE_ONLY_NEW_ACQUISITION_REQUIRES_APPROVAL",
+    "sha256": "ce5ab48ab95cbf4d6c07cb9b1cc9a13ab7f14ab7d14792b494ae2d19a21d45d9"
+  },
+  "status": "PREPARED_INACTIVE",
+  "training_authorized": false,
+  "whitelist_reference": {
+    "path": "research/studies/us30cash_m5_native_observations/inherited_feature_model_whitelist.json",
+    "scope": "PROPOSED_INHERITANCE_ONLY_NEW_ACQUISITION_REQUIRES_APPROVAL",
+    "sha256": "7d95930599e9ffa5b98a4f89c99e2862afcb47730c238c66052e6024ef703ec8"
+  }
+}

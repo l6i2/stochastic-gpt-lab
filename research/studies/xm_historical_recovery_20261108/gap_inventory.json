@@ -1,0 +1,1752 @@
+{
+  "boundary_policy": "NATIVE_MILLISECONDS_STRICTLY_BETWEEN_OBSERVATIONS",
+  "exclusive_role_unchanged": true,
+  "gaps": [
+    {
+      "end": 1793898873751,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 1866,
+          "reason": "XM_READ_ONLY_ATTACH_FAILED"
+        },
+        {
+          "classification": "WINDOWS_SUSPENDED",
+          "incident": 1869,
+          "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+        }
+      ],
+      "start": 1793897865055
+    },
+    {
+      "end": 1793898908578,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 1876,
+          "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL"
+        }
+      ],
+      "start": 1793898873752
+    },
+    {
+      "end": 1793901280503,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 4219,
+          "reason": "XM_READ_ONLY_ATTACH_FAILED"
+        },
+        {
+          "classification": "WINDOWS_SUSPENDED",
+          "incident": 4222,
+          "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+        }
+      ],
+      "start": 1793901279566
+    },
+    {
+      "end": 1793909389647,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 4225,
+          "reason": "NATIVE_MINUTE_GAP_SESSION_CAUSE_UNKNOWN"
+        }
+      ],
+      "start": 1793901280504
+    },
+    {
+      "end": 1793910515242,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 4913,
+          "reason": "NATIVE_MINUTE_GAP_SESSION_CAUSE_UNKNOWN"
+        }
+      ],
+      "start": 1793910339756
+    },
+    {
+      "end": 1793911756522,
+      "incidents": [
+        {
+          "classification": "WINDOWS_SUSPENDED",
+          "incident": 5729,
+          "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+        }
+      ],
+      "start": 1793911738170
+    },
+    {
+      "end": 1793914905488,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5742,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5745,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5748,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5751,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5758,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5761,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5764,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5767,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5770,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5773,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5776,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5779,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5782,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5785,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5788,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5791,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5794,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5797,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5800,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5803,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5806,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5809,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5812,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5815,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5818,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5821,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5824,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5827,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5830,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5833,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5836,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5839,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5842,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5845,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5848,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5851,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5854,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5857,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5860,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5863,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5866,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5869,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5872,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5875,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5878,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5881,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5884,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5887,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5890,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5893,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5896,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5899,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5902,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5905,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5908,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5911,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5914,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5917,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5920,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5923,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5926,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5929,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5932,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5935,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5938,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5941,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5944,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5947,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5950,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5953,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5956,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5959,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5962,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5965,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5968,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5971,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5974,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5977,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5980,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5983,
+          "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 5986,
+          "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL"
+        }
+      ],
+      "start": 1793911766817
+    },
+    {
+      "end": 1793915167260,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 6234,
+          "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL"
+        }
+      ],
+      "start": 1793915157148
+    },
+    {
+      "end": 1793915489719,
+      "incidents": [
+        {
+          "classification": "XM_DISCONNECTED",
+          "incident": 6453,
+          "reason": "XM_DISCONNECTED"
+        },
+        {
+          "classification": "WINDOWS_SUSPENDED",
+          "incident": 6456,
+          "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+        }
+      ],
+      "start": 1793915387084
+    },
+    {
+      "end": 1793916038538,
+      "incidents": [
+        {
+          "classification": "XM_DISCONNECTED",
+          "incident": 7017,
+          "reason": "XM_DISCONNECTED"
+        },
+        {
+          "classification": "WINDOWS_SUSPENDED",
+          "incident": 7020,
+          "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+        }
+      ],
+      "start": 1793916038029
+    },
+    {
+      "end": 1793916533924,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 7482,
+          "reason": "POLL_GAP_TWO_EXISTING_5S_TIMERS"
+        }
+      ],
+      "start": 1793916519371
+    },
+    {
+      "end": 1793921708481,
+      "incidents": [
+        {
+          "classification": "XM_DISCONNECTED",
+          "incident": 12514,
+          "reason": "XM_DISCONNECTED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 12517,
+          "reason": "XM_READ_ONLY_ATTACH_FAILED"
+        },
+        {
+          "classification": "WINDOWS_SUSPENDED",
+          "incident": 12520,
+          "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+        }
+      ],
+      "start": 1793921623691
+    },
+    {
+      "end": 1793921896293,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 12695,
+          "reason": "POLL_GAP_TWO_EXISTING_5S_TIMERS"
+        }
+      ],
+      "start": 1793921895613
+    },
+    {
+      "end": 1793922042861,
+      "incidents": [
+        {
+          "classification": "XM_DISCONNECTED",
+          "incident": 12698,
+          "reason": "XM_DISCONNECTED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 12701,
+          "reason": "XM_READ_ONLY_ATTACH_FAILED"
+        },
+        {
+          "classification": "WINDOWS_SUSPENDED",
+          "incident": 12704,
+          "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+        }
+      ],
+      "start": 1793921896294
+    },
+    {
+      "end": 1793923199916,
+      "incidents": [
+        {
+          "classification": "XM_DISCONNECTED",
+          "incident": 12853,
+          "reason": "XM_DISCONNECTED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 12856,
+          "reason": "XM_READ_ONLY_ATTACH_FAILED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 12859,
+          "reason": "XM_READ_ONLY_ATTACH_FAILED"
+        },
+        {
+          "classification": "WINDOWS_SUSPENDED",
+          "incident": 12862,
+          "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+        }
+      ],
+      "start": 1793922195944
+    },
+    {
+      "end": 1793926801456,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 12935,
+          "reason": "POLL_GAP_TWO_EXISTING_5S_TIMERS"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 15632,
+          "reason": "NATIVE_MINUTE_GAP_SESSION_CAUSE_UNKNOWN"
+        }
+      ],
+      "start": 1793923199917
+    },
+    {
+      "end": 1793932948983,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 17455,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 17458,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 17461,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 17464,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 17467,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 17470,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 17473,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 17480,
+          "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL"
+        }
+      ],
+      "start": 1793928660083
+    },
+    {
+      "end": 1793936460547,
+      "incidents": [
+        {
+          "classification": "XM_DISCONNECTED",
+          "incident": 21149,
+          "reason": "XM_DISCONNECTED"
+        },
+        {
+          "classification": "WINDOWS_SUSPENDED",
+          "incident": 21152,
+          "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+        }
+      ],
+      "start": 1793936458558
+    },
+    {
+      "end": 1793936482783,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 21155,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 21158,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 21161,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 21164,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 21167,
+          "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL"
+        }
+      ],
+      "start": 1793936460548
+    },
+    {
+      "end": 1793938793604,
+      "incidents": [
+        {
+          "classification": "XM_DISCONNECTED",
+          "incident": 23417,
+          "reason": "XM_DISCONNECTED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 23420,
+          "reason": "XM_READ_ONLY_ATTACH_FAILED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 23423,
+          "reason": "XM_READ_ONLY_ATTACH_FAILED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 23426,
+          "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL"
+        }
+      ],
+      "start": 1793938748495
+    },
+    {
+      "end": 1793940603051,
+      "incidents": [
+        {
+          "classification": "XM_DISCONNECTED",
+          "incident": 23441,
+          "reason": "XM_DISCONNECTED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 23444,
+          "reason": "XM_READ_ONLY_ATTACH_FAILED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 23447,
+          "reason": "XM_READ_ONLY_ATTACH_FAILED"
+        },
+        {
+          "classification": "WINDOWS_SUSPENDED",
+          "incident": 23450,
+          "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+        }
+      ],
+      "start": 1793938805964
+    },
+    {
+      "end": 1793983262694,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 24852,
+          "reason": "REAL_OR_UNKNOWN_OR_CHANGED_XM_IDENTITY"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 24855,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 24858,
+          "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 24865,
+          "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL"
+        }
+      ],
+      "start": 1793941973333
+    },
+    {
+      "end": 1793983482282,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 25038,
+          "reason": "POLL_GAP_TWO_EXISTING_5S_TIMERS"
+        }
+      ],
+      "start": 1793983449502
+    },
+    {
+      "end": 1793991770137,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 33369,
+          "reason": "POLL_GAP_TWO_EXISTING_5S_TIMERS"
+        }
+      ],
+      "start": 1793991755066
+    },
+    {
+      "end": 1793992304385,
+      "incidents": [
+        {
+          "classification": "XM_DISCONNECTED",
+          "incident": 33858,
+          "reason": "XM_DISCONNECTED"
+        },
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 33861,
+          "reason": "XM_READ_ONLY_ATTACH_FAILED"
+        },
+        {
+          "classification": "WINDOWS_SUSPENDED",
+          "incident": 33864,
+          "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+        }
+      ],
+      "start": 1793992302958
+    },
+    {
+      "end": 1794009599968,
+      "incidents": [
+        {
+          "classification": "UNKNOWN_GAP",
+          "incident": 33867,
+          "reason": "NATIVE_MINUTE_GAP_SESSION_CAUSE_UNKNOWN"
+        }
+      ],
+      "start": 1793992304386
+    }
+  ],
+  "observation_gaps_not_proof_of_market_data_loss": true,
+  "pending_native_end": 18,
+  "policy": {
+    "authority_sha256": "26bd39c8898718a6267f20915959005e206e9ab9c28d355cdd17baa369e8428f",
+    "gaps": [
+      {
+        "end": 1793898873751,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 1866,
+            "reason": "XM_READ_ONLY_ATTACH_FAILED"
+          },
+          {
+            "classification": "WINDOWS_SUSPENDED",
+            "incident": 1869,
+            "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+          }
+        ],
+        "start": 1793897865055
+      },
+      {
+        "end": 1793898908578,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 1876,
+            "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL"
+          }
+        ],
+        "start": 1793898873752
+      },
+      {
+        "end": 1793901280503,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 4219,
+            "reason": "XM_READ_ONLY_ATTACH_FAILED"
+          },
+          {
+            "classification": "WINDOWS_SUSPENDED",
+            "incident": 4222,
+            "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+          }
+        ],
+        "start": 1793901279566
+      },
+      {
+        "end": 1793909389647,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 4225,
+            "reason": "NATIVE_MINUTE_GAP_SESSION_CAUSE_UNKNOWN"
+          }
+        ],
+        "start": 1793901280504
+      },
+      {
+        "end": 1793910515242,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 4913,
+            "reason": "NATIVE_MINUTE_GAP_SESSION_CAUSE_UNKNOWN"
+          }
+        ],
+        "start": 1793910339756
+      },
+      {
+        "end": 1793911756522,
+        "incidents": [
+          {
+            "classification": "WINDOWS_SUSPENDED",
+            "incident": 5729,
+            "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+          }
+        ],
+        "start": 1793911738170
+      },
+      {
+        "end": 1793914905488,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5742,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5745,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5748,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5751,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5758,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5761,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5764,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5767,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5770,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5773,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5776,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5779,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5782,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5785,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5788,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5791,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5794,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5797,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5800,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5803,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5806,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5809,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5812,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5815,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5818,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5821,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5824,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5827,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5830,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5833,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5836,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5839,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5842,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5845,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5848,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5851,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5854,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5857,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5860,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5863,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5866,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5869,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5872,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5875,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5878,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5881,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5884,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5887,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5890,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5893,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5896,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5899,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5902,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5905,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5908,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5911,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5914,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5917,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5920,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5923,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5926,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5929,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5932,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5935,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5938,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5941,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5944,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5947,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5950,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5953,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5956,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5959,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5962,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5965,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5968,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5971,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5974,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5977,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5980,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5983,
+            "reason": "CF_TERMINAL_TRADING_MUST_REMAIN_DISABLED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 5986,
+            "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL"
+          }
+        ],
+        "start": 1793911766817
+      },
+      {
+        "end": 1793915167260,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 6234,
+            "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL"
+          }
+        ],
+        "start": 1793915157148
+      },
+      {
+        "end": 1793915489719,
+        "incidents": [
+          {
+            "classification": "XM_DISCONNECTED",
+            "incident": 6453,
+            "reason": "XM_DISCONNECTED"
+          },
+          {
+            "classification": "WINDOWS_SUSPENDED",
+            "incident": 6456,
+            "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+          }
+        ],
+        "start": 1793915387084
+      },
+      {
+        "end": 1793916038538,
+        "incidents": [
+          {
+            "classification": "XM_DISCONNECTED",
+            "incident": 7017,
+            "reason": "XM_DISCONNECTED"
+          },
+          {
+            "classification": "WINDOWS_SUSPENDED",
+            "incident": 7020,
+            "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+          }
+        ],
+        "start": 1793916038029
+      },
+      {
+        "end": 1793916533924,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 7482,
+            "reason": "POLL_GAP_TWO_EXISTING_5S_TIMERS"
+          }
+        ],
+        "start": 1793916519371
+      },
+      {
+        "end": 1793921708481,
+        "incidents": [
+          {
+            "classification": "XM_DISCONNECTED",
+            "incident": 12514,
+            "reason": "XM_DISCONNECTED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 12517,
+            "reason": "XM_READ_ONLY_ATTACH_FAILED"
+          },
+          {
+            "classification": "WINDOWS_SUSPENDED",
+            "incident": 12520,
+            "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+          }
+        ],
+        "start": 1793921623691
+      },
+      {
+        "end": 1793921896293,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 12695,
+            "reason": "POLL_GAP_TWO_EXISTING_5S_TIMERS"
+          }
+        ],
+        "start": 1793921895613
+      },
+      {
+        "end": 1793922042861,
+        "incidents": [
+          {
+            "classification": "XM_DISCONNECTED",
+            "incident": 12698,
+            "reason": "XM_DISCONNECTED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 12701,
+            "reason": "XM_READ_ONLY_ATTACH_FAILED"
+          },
+          {
+            "classification": "WINDOWS_SUSPENDED",
+            "incident": 12704,
+            "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+          }
+        ],
+        "start": 1793921896294
+      },
+      {
+        "end": 1793923199916,
+        "incidents": [
+          {
+            "classification": "XM_DISCONNECTED",
+            "incident": 12853,
+            "reason": "XM_DISCONNECTED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 12856,
+            "reason": "XM_READ_ONLY_ATTACH_FAILED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 12859,
+            "reason": "XM_READ_ONLY_ATTACH_FAILED"
+          },
+          {
+            "classification": "WINDOWS_SUSPENDED",
+            "incident": 12862,
+            "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+          }
+        ],
+        "start": 1793922195944
+      },
+      {
+        "end": 1793926801456,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 12935,
+            "reason": "POLL_GAP_TWO_EXISTING_5S_TIMERS"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 15632,
+            "reason": "NATIVE_MINUTE_GAP_SESSION_CAUSE_UNKNOWN"
+          }
+        ],
+        "start": 1793923199917
+      },
+      {
+        "end": 1793932948983,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 17455,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 17458,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 17461,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 17464,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 17467,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 17470,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 17473,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 17480,
+            "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL"
+          }
+        ],
+        "start": 1793928660083
+      },
+      {
+        "end": 1793936460547,
+        "incidents": [
+          {
+            "classification": "XM_DISCONNECTED",
+            "incident": 21149,
+            "reason": "XM_DISCONNECTED"
+          },
+          {
+            "classification": "WINDOWS_SUSPENDED",
+            "incident": 21152,
+            "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+          }
+        ],
+        "start": 1793936458558
+      },
+      {
+        "end": 1793936482783,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 21155,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 21158,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 21161,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 21164,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 21167,
+            "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL"
+          }
+        ],
+        "start": 1793936460548
+      },
+      {
+        "end": 1793938793604,
+        "incidents": [
+          {
+            "classification": "XM_DISCONNECTED",
+            "incident": 23417,
+            "reason": "XM_DISCONNECTED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 23420,
+            "reason": "XM_READ_ONLY_ATTACH_FAILED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 23423,
+            "reason": "XM_READ_ONLY_ATTACH_FAILED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 23426,
+            "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL"
+          }
+        ],
+        "start": 1793938748495
+      },
+      {
+        "end": 1793940603051,
+        "incidents": [
+          {
+            "classification": "XM_DISCONNECTED",
+            "incident": 23441,
+            "reason": "XM_DISCONNECTED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 23444,
+            "reason": "XM_READ_ONLY_ATTACH_FAILED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 23447,
+            "reason": "XM_READ_ONLY_ATTACH_FAILED"
+          },
+          {
+            "classification": "WINDOWS_SUSPENDED",
+            "incident": 23450,
+            "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+          }
+        ],
+        "start": 1793938805964
+      },
+      {
+        "end": 1793983262694,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 24852,
+            "reason": "REAL_OR_UNKNOWN_OR_CHANGED_XM_IDENTITY"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 24855,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 24858,
+            "reason": "XM_NOT_RUNNING_NO_AUTOMATIC_INITIALIZE_LAUNCH"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 24865,
+            "reason": "PROCESS_RESTART_FRESH_CUT_NO_BACKFILL"
+          }
+        ],
+        "start": 1793941973333
+      },
+      {
+        "end": 1793983482282,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 25038,
+            "reason": "POLL_GAP_TWO_EXISTING_5S_TIMERS"
+          }
+        ],
+        "start": 1793983449502
+      },
+      {
+        "end": 1793991770137,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 33369,
+            "reason": "POLL_GAP_TWO_EXISTING_5S_TIMERS"
+          }
+        ],
+        "start": 1793991755066
+      },
+      {
+        "end": 1793992304385,
+        "incidents": [
+          {
+            "classification": "XM_DISCONNECTED",
+            "incident": 33858,
+            "reason": "XM_DISCONNECTED"
+          },
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 33861,
+            "reason": "XM_READ_ONLY_ATTACH_FAILED"
+          },
+          {
+            "classification": "WINDOWS_SUSPENDED",
+            "incident": 33864,
+            "reason": "WINDOWS_VERIFIED_SLEEP_EVENT"
+          }
+        ],
+        "start": 1793992302958
+      },
+      {
+        "end": 1794009599968,
+        "incidents": [
+          {
+            "classification": "UNKNOWN_GAP",
+            "incident": 33867,
+            "reason": "NATIVE_MINUTE_GAP_SESSION_CAUSE_UNKNOWN"
+          }
+        ],
+        "start": 1793992304386
+      }
+    ],
+    "independence_certified": false,
+    "legacy_unknown_bounds_recovered": false,
+    "maximum_native_msc": 1794009599968,
+    "minimum_native_msc": 1793895900000,
+    "protected_intervals": [],
+    "scope": "POST_EXCLUSIVE_CUT_GAPS_DIAGNOSTIC_COPY_ONLY",
+    "server": "XMGlobalSC-MT5 5",
+    "source_index": {
+      "capture_id": "dbsnap_0fd175bd0cb94a5fa26e7404819c2228",
+      "head": "70eea5097c1866dbe853e258664093ae1d69f41f5335b1579aff80735bdfdfa9",
+      "origin_manifest_sha256": "4febabd9ec893cc00de4785407a9847f488a5ca1aa9840941af4306a05ec0db6",
+      "records": 42312
+    },
+    "symbol": "US30Cash"
+  },
+  "source_capture_id": "dbsnap_0fd175bd0cb94a5fa26e7404819c2228",
+  "source_head": "70eea5097c1866dbe853e258664093ae1d69f41f5335b1579aff80735bdfdfa9",
+  "source_records": 42312
+}

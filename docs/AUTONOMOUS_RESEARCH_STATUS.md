@@ -1,5 +1,9 @@
 > Continuación prioritaria C+F. El corte de las 15:15 en Ecuador verificó 20 M5 acumuladas,
 
+## Recuperación histórica separada del 8 de noviembre
+
+Se recuperaron en B 246.397 ticks, 1.295 M1 y 251 M5 de 26 gaps posteriores al corte. Se corrigió y probó el límite inclusivo de CopyTicks en Python, se verificaron hashes y se programó recuperación al iniciar sesión y cada cinco minutos. A mantiene 88 M5 y 0 de warmup científico. El contexto retrospectivo de 30 M5 verificó MAIN_K, ATR candidato y HA con MT5. B sigue diagnóstico y expuesto dentro de la reserva C+F. [Resultados, límites y propuesta híbrida](XM_HISTORICAL_RECOVERY_RESULTS.md).
+
 ## Cierre técnico del 8 de noviembre de 2026
 
 Se preparó el candidato ATR con estado versionado y restauración exacta, se incluyó su hash en los jobs futuros y se incorporó la factibilidad por sesión al monitor. Pasaron 95 pruebas. El máximo observado de 276 M5 por sesión es menor que 350; la adquisición requiere bridges certificados para superar el warmup. La cota optimista del estudio completo es 1249 M5, al menos cinco sesiones y cuatro bridges, sin pronóstico de señales. Continúan 88 M5 acumuladas, 0 consecutivas y 0 elegibles. [Matriz, evidencias y ruta de entrenamiento](CF_FINAL_TECHNICAL_CLOSURE_AND_TRAINING_PATH.md).

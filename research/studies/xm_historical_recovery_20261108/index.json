@@ -1,0 +1,12 @@
+{
+  "dataset_admitted": false,
+  "files": {
+    "archive_index.json": "a9d0964037e9087106e858e52c8d30bb7a6e1919fab6284e24733270dbd5c140",
+    "authorization.json": "26bd39c8898718a6267f20915959005e206e9ab9c28d355cdd17baa369e8428f",
+    "exposure_ledger.json": "3e3efbd600b90bd1b49f4df2497df773c7dec990efc995c5fc7803e7a6f08e42",
+    "gap_inventory.json": "2eb4f527adf4610ed4370787b8ecf08ea2fbd81cc3f83487bcd953a47990b4a6",
+    "hybrid_proposal.json": "76c67758837c00d49274bc9eb1645cfba2a4354f3e47d1027d55bbc0f097d93a",
+    "results.json": "fd6880c1462c159ed7ad56d1d6f5aef488f7982622a297ff32a2d7ddf86ffc1b"
+  },
+  "raw_data_location": "LOCAL_ONLY_REGISTRY_B"
+}

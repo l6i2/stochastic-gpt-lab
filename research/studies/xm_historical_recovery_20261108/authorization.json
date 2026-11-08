@@ -1,0 +1,15 @@
+{
+  "authorization_source_sha256": "eb697ca427ca5fd0b4761b95911e15e6c2045f7db8cce4900dab49e85be12cc2",
+  "dataset_admission_authorized": false,
+  "diagnostic_recovery_only": true,
+  "live_trading": false,
+  "orders_authorized": false,
+  "prospective_import_allowed": false,
+  "role_assignment_sha256": "a5a42617d9a4230feae05f1986c3848bb5a7c603acf8c9f577e897a03b50b09c",
+  "schema": "xm-historical-diagnostic-authorization/1",
+  "scope": "POST_EXCLUSIVE_CUT_OBSERVED_GAPS_ONLY",
+  "scoring_authorized": false,
+  "server": "XMGlobalSC-MT5 5",
+  "symbol": "US30Cash",
+  "training_authorized": false
+}
