@@ -1,0 +1,7 @@
+# Decisión científica única pendiente — NO APLICADA
+
+Se solicita aprobar conjuntamente el método descrito en docs/PROPOSED_FIRST_TRAINING_STUDY.md y proposal.json: TRAIN histórico nativo nuevo con evaluación prospectiva posterior independiente, contexto explícito, inicialización y versión ATR aprobadas, cuatro folds/ocho fits, modelos finales fold4 prefijados y criterios estadísticos documentados.
+
+Al aprobarse, autorizar un corte futuro real verificable para US30Cash/servidor XM de PC A. Cerrar solo nuevas incorporaciones C+F posteriores al corte y asignarlas exclusivamente al estudio propuesto, primero TRAIN_CONTEXT/TRAIN_DEV, después EVAL_CONTEXT/EVAL_PROSPECTIVE tras congelar modelos y cerrar labels TRAIN. El recibo de activación deberá ligar identidad, tiempos y su incertidumbre, hashes, roles y ausencia de solapamientos. El corte y los límites aún son null; no se retrodata la reserva.
+
+Preservar íntegramente C+F y B anteriores al corte, contratos congelados, semillas y datos originales. No reasignar históricos existentes ni abrir conjuntos protegidos. Aprobar este método no admite dataset, no autoriza entrenamiento, scoring ni operaciones. Tras completar evidencia se presentará el paquete hash-bound y será necesario un grant específico de entrenamiento; la evaluación también requerirá permiso. Esta solicitud sustituye propuestas fragmentadas para el nuevo estudio; no activa ninguna.

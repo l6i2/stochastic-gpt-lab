@@ -268,3 +268,12 @@ Se preparó el candidato ATR con estado versionado y restauración exacta, se in
 ## Recuperación histórica separada del 8 de noviembre
 
 Se recuperaron en B 246.397 ticks, 1.295 M1 y 251 M5 de 26 gaps posteriores al corte. Se corrigió y probó el límite inclusivo de CopyTicks en Python, se verificaron hashes y se programó recuperación al iniciar sesión y cada cinco minutos. A mantiene 88 M5 y 0 de warmup científico. El contexto retrospectivo de 30 M5 verificó MAIN_K, ATR candidato y HA con MT5. B sigue diagnóstico y expuesto dentro de la reserva C+F. [Resultados, límites y propuesta híbrida](XM_HISTORICAL_RECOVERY_RESULTS.md).
+
+
+## Cierre cinco rutas — 2026-11-08
+
+STATUS observado 2026-11-08T15:58:07.130622+00:00 (etiqueta de host, no generación UTC certificada): epoch 39_398136265, 88 M5 acumuladas, 0 consecutivas, 0 warmup científico; BUY=0, SELL=0. B conserva 246.397 ticks, 1.295 M1 y 251 M5 en 302 intervalos únicos; 320 intentos preservados. No hubo nuevas consultas históricas en esta misión. Ningún intervalo actual está demostrado elegible para nuevo TRAIN. Se recomienda ruta B con adquisición C y soporte D/E, condicionada a reserva futura y método aprobado; no se activa ni reasigna C+F.
+
+25 pruebas sintéticas y simuladas PASS; corregidos árbol local sin revisar, límites observados ausentes y soporte purgado insuficiente antes del fit. Cero fits científicos, admisiones y grants vacíos. CAUSAL_AUDIT=FAIL, TRAINING_READINESS=BLOCKED. DEMO=DISABLED, LIVE_TRADING=false. Guardian en ejecución y UTC periódico observado Running/Ready, recuperador diagnóstico programado; C+F sigue ACTIVE_QUARANTINED.
+
+Expediente único: [cinco rutas](XM_FIVE_PATHS_TO_TRAINING.md), [propuesta](PROPOSED_FIRST_TRAINING_STUDY.md), [plan de admisión](TRAINING_ADMISSION_ACTION_PLAN.md). Faltan decisión metodológica/reserva, datos nuevos, cobertura/calendario/seeds demostrados y admisión por hashes; después autorización específica de entrenamiento. No se solicitan reparaciones manuales.

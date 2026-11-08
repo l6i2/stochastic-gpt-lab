@@ -1,0 +1,57 @@
+{
+  "admitted_datasets": 0,
+  "automations": {
+    "cf": "ACTIVE_QUARANTINED",
+    "guardian_last_result_interpretation": "LAST_RESULT_IS_NOT_CURRENT_HEALTH_CERTIFICATE; RUNNING_PROCESS_AND_FRESH_CF_STATUS_OBSERVED",
+    "guardian_last_task_result_observed": 2147946720,
+    "guardian_task": "RUNNING",
+    "historical_diagnostic_task": "READY_5_MIN_LOGON",
+    "historical_last_task_result_observed": 0,
+    "old_raw_task": "DISABLED_NOT_CHANGED",
+    "prospective_utc_task": "PERIODIC_RUNNING_THEN_READY_OBSERVED",
+    "remote_background_publication": "REQUIRES_AUTHENTICATED_SESSION_OR_CREDENTIAL"
+  },
+  "cf": {
+    "BUY": 0,
+    "M5": 88,
+    "SELL": 0,
+    "consecutive": 0,
+    "epoch": "39_398136265",
+    "ledger_records": 46076,
+    "scientific_warmup": 0,
+    "status": "ACTIVE_QUARANTINED"
+  },
+  "code_parent": "dd1ab9ae926d4049b830bdb711d104a0000ae268",
+  "historical": {
+    "M1": 1295,
+    "M5": 251,
+    "all_attempts": 320,
+    "new_queries_this_mission": 0,
+    "source": "research/studies/xm_historical_recovery_20261108/results.json",
+    "superseded_attempts": 18,
+    "ticks": 246397,
+    "unique_intervals": 302
+  },
+  "host_label_utc_certified": false,
+  "host_observation_label": "2026-11-08T15:58:07.130622+00:00",
+  "orders": 0,
+  "proposed_protocol_sha256": "1b55785d4d0d1e205b62252ef83bfa3d4210c863f0779276f47f0a00b4a32678",
+  "protected_scoring": false,
+  "restrictions": {
+    "DEMO": "DISABLED",
+    "DISCOVERY_VALIDATION": "BLOCKED",
+    "FINAL_TEST": "LOCKED",
+    "HISTORICAL_HOLDOUT": "LOCKED",
+    "LIVE_TRADING": false,
+    "terminal_trade_allowed": false
+  },
+  "schema": "five-paths-status/1",
+  "tests": {
+    "command": "python -m unittest tests.test_first_training_readiness tests.test_training_admission_gate tests.test_scientific_preparation",
+    "estimators": "MOCK_ONLY",
+    "result": "PASS",
+    "scientific_fits": 0,
+    "tests": 25
+  },
+  "training_executed": false
+}

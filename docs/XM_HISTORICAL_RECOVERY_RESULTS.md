@@ -38,3 +38,12 @@ Los primeros recibos guardaban los números de registros que originaron los gaps
 Los payloads permanecen en PC A. Los [recibos publicados](../research/studies/xm_historical_recovery_20261108/results.json), [índice de archivos](../research/studies/xm_historical_recovery_20261108/archive_index.json) y [ledger de exposición](../research/studies/xm_historical_recovery_20261108/exposure_ledger.json) permiten comprobar sus hashes contra el archivo local. La reproducción de indicadores reales requiere ese archivo autorizado.
 
 La [propuesta híbrida](XM_HYBRID_DATASET_FEASIBILITY.md) queda inactiva. La descarga no convierte los intervalos reservados a C+F en datos independientes. TRAINING_EXECUTED=false, PROTECTED_SCORING=false, DEMO=DISABLED y LIVE_TRADING=false.
+
+
+## Cierre cinco rutas — 2026-11-08
+
+STATUS observado 2026-11-08T15:58:07.130622+00:00 (etiqueta de host, no generación UTC certificada): epoch 39_398136265, 88 M5 acumuladas, 0 consecutivas, 0 warmup científico; BUY=0, SELL=0. B conserva 246.397 ticks, 1.295 M1 y 251 M5 en 302 intervalos únicos; 320 intentos preservados. No hubo nuevas consultas históricas en esta misión. Ningún intervalo actual está demostrado elegible para nuevo TRAIN. Se recomienda ruta B con adquisición C y soporte D/E, condicionada a reserva futura y método aprobado; no se activa ni reasigna C+F.
+
+25 pruebas sintéticas y simuladas PASS; corregidos árbol local sin revisar, límites observados ausentes y soporte purgado insuficiente antes del fit. Cero fits científicos, admisiones y grants vacíos. CAUSAL_AUDIT=FAIL, TRAINING_READINESS=BLOCKED. DEMO=DISABLED, LIVE_TRADING=false. Guardian en ejecución y UTC periódico observado Running/Ready, recuperador diagnóstico programado; C+F sigue ACTIVE_QUARANTINED.
+
+Expediente único: [cinco rutas](XM_FIVE_PATHS_TO_TRAINING.md), [propuesta](PROPOSED_FIRST_TRAINING_STUDY.md), [plan de admisión](TRAINING_ADMISSION_ACTION_PLAN.md). Faltan decisión metodológica/reserva, datos nuevos, cobertura/calendario/seeds demostrados y admisión por hashes; después autorización específica de entrenamiento. No se solicitan reparaciones manuales.

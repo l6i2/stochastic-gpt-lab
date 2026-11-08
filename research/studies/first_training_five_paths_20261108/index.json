@@ -1,0 +1,22 @@
+{
+  "authority_changed": false,
+  "code_parent": "dd1ab9ae926d4049b830bdb711d104a0000ae268",
+  "files": {
+    "controller/cf_atr_candidate.py": "9bc2efb0e3a2d1af750d4c47ce38fb8ca2b245639856c63ba210a82d23c70dfc",
+    "controller/native_study_design.py": "46906cf2bf0333c500bb6a7950d37c87a8ed01e9362dfd20ed41f51232fff6ed",
+    "controller/pretrain_contracts.py": "9ee7d1c0bcb17227384e16de26c1f7b203db020b349791529dd3ad3d4962a293",
+    "controller/scientific_authority.py": "950da37105fb3c66c0adbd0a828e8ca20e14efa8fd43dddfb644627dd2963b98",
+    "research/studies/first_training_five_paths_20261108/SCIENTIFIC_DECISION_REQUEST.md": "84f6f5082e03276b99bfb366341d90816ba9c7860ce3a6043bf79d9e2807de90",
+    "research/studies/first_training_five_paths_20261108/five_paths.json": "aeb5a18f9848524dc84897e7c8dc2fbf7b938befa4f40a4911445863c54cdf3f",
+    "research/studies/first_training_five_paths_20261108/proposal.json": "1b55785d4d0d1e205b62252ef83bfa3d4210c863f0779276f47f0a00b4a32678",
+    "research/studies/first_training_five_paths_20261108/status.json": "2d11c8be3a9bf6e2137f31b2cf47b2f54018a6ae2b3e9ff2c128f6df5de74947",
+    "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+    "research/studies/xm_historical_recovery_20261108/exposure_ledger.json": "3e3efbd600b90bd1b49f4df2497df773c7dec990efc995c5fc7803e7a6f08e42",
+    "research/studies/xm_historical_recovery_20261108/hybrid_proposal.json": "76c67758837c00d49274bc9eb1645cfba2a4354f3e47d1027d55bbc0f097d93a",
+    "research/studies/xm_historical_recovery_20261108/results.json": "fd6880c1462c159ed7ad56d1d6f5aef488f7982622a297ff32a2d7ddf86ffc1b"
+  },
+  "hash_type": "SHA256_FILE_BYTES",
+  "protected_datasets_read": false,
+  "schema": "five-paths-evidence-index/1",
+  "tests_log_sha256": "e52b16a1b42b70c4a50a50dc77917453707b05ea1f559fe1a239d3809f3fca86"
+}

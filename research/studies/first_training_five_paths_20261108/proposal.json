@@ -1,0 +1,89 @@
+{
+  "ATR_candidate_approved": false,
+  "causal_audit": "FAIL_NOT_PROMOTED",
+  "context_boundary_proposed": "350_COMPLETED_CONTEXT_BARS_BEFORE_FIRST_ELIGIBLE_SIGNAL; FIRST_POSSIBLE_SIGNAL_ON_BAR_351_1_BASED",
+  "cutoff": null,
+  "dataset_hash": null,
+  "dataset_id": null,
+  "evaluation_rule": "FIRST_OBSERVATION_AFTER_MODEL_FREEZE_AND_TRAIN_LAST_LABEL; NO_RETROSPECTIVE_EVAL_BACKFILL",
+  "feature_whitelist_hash": "6f8a2c5a04031978f8873d196b6f467c6a3d3a9e881627861400095429078dbe",
+  "features": [
+    "stoch_k",
+    "delta_k_1",
+    "ATR",
+    "relative_volume_20",
+    "ha_direction",
+    "range_to_ATR"
+  ],
+  "hypotheses": [
+    "BUY model > FOLLOW",
+    "BUY model > INVERT",
+    "SELL model > FOLLOW",
+    "SELL model > INVERT"
+  ],
+  "max_fits_authorized": 0,
+  "max_fits_proposed": 8,
+  "model": {
+    "C": 1,
+    "additional_final_fits": 0,
+    "folds": 4,
+    "max_iter": 1000,
+    "scaling": "TRAIN_ONLY",
+    "seed": 20261030,
+    "selection": "FIXED_FOLD_4_PER_SIDE_NOT_PERFORMANCE",
+    "solver": "lbfgs",
+    "type": "logistic_L2"
+  },
+  "old_B_reassigned": false,
+  "old_cf_modified": false,
+  "period_rule": "NO_CURRENT_INTERVAL_ELIGIBLE; FUTURE_CUT_AFTER_EXPLICIT_AUTHORIZATION_ONLY",
+  "proposed_ATR_candidate_source_sha256": "9bc2efb0e3a2d1af750d4c47ce38fb8ca2b245639856c63ba210a82d23c70dfc",
+  "recommended_path": "B_WITH_C_ACQUISITION_D_RECOVERY_E_PREPARATION",
+  "rejection": [
+    "unknown_membership",
+    "overlap",
+    "unexplained_coverage_gap",
+    "unapproved_seed",
+    "incomplete_exit_horizon",
+    "noncausal_feature",
+    "unbound_grant_or_code",
+    "insufficient_support"
+  ],
+  "reservation_active": false,
+  "roles": [
+    "TRAIN_CONTEXT",
+    "TRAIN_DEV",
+    "EVAL_CONTEXT_AFTER_MODEL_FREEZE",
+    "EVAL_PROSPECTIVE"
+  ],
+  "schema": "first-training-proposal/1",
+  "seed_policy": "EXPLICIT_INITIALIZATION_AND_EXACT_NATIVE_ORACLE_REQUIRED; ATR_CANDIDATE_UNPROMOTED",
+  "statistics": {
+    "block_sensitivity_bars": 451,
+    "bootstrap": 10000,
+    "comparisons": 4,
+    "degenerate": "INCONCLUSIVE",
+    "drawdown_ratio_max": 1.2,
+    "lower_must_exceed": 0,
+    "one_sided_lower_confidence": 0.9875,
+    "positive_effect_fold_share_max": 0.5,
+    "positive_fold_fraction_min": 0.7,
+    "seed": 20261030
+  },
+  "status": "DRAFT_INACTIVE",
+  "stop": "FIRST_FIXED_SAMPLE; INSUFFICIENT_SUPPORT_NOT_READY; NO_EXTENSION_AFTER_PERFORMANCE",
+  "study_id": "US30CASH_M5_XM_TRAIN_FUTURE_EVAL_PROPOSED_V1",
+  "thresholds": {
+    "BUY": 80,
+    "SELL": 80,
+    "base_signals": 800,
+    "evaluable": 200,
+    "evaluable_folds_per_side": 3,
+    "post_bars": 100,
+    "warmup": 350
+  },
+  "time_domain": "XM_NATIVE_ORDER; EXTERNAL_GENERATION_UTC_NOT_CERTIFIED",
+  "training_authorized": false,
+  "training_executed": false,
+  "training_source": "VERSIONED_NATIVE_XM_HISTORY_OF_NEW_EXCLUSIVE_PERIOD_ONLY"
+}

@@ -56,6 +56,26 @@ def prepare_authorization_request(bundle,root):
     return dict(bundle,request_only=True,training_authorized=False,scoring_authorized=False)
 
 
+def validate_observed_limits(first, last):
+    if type(first) is not int or type(last) is not int or first<0 or last<first:
+        raise ValueError('ADMITTED_OBSERVED_BOUNDS_MISSING_OR_INVALID')
+
+
+def validate_observed_bounds(rows, first, last):
+    """Reject missing bootstrap origins before any estimator can consume budget."""
+    validate_observed_limits(first,last)
+    if not isinstance(rows,list) or not rows:
+        raise ValueError('EMPTY_ADMITTED_DATASET')
+    previous=None
+    for row in rows:
+        index=row.get('observed_bar_index') if isinstance(row,dict) else None
+        if type(index) is not int or not first<=index<=last:
+            raise ValueError('ROW_OUTSIDE_ADMITTED_OBSERVED_BOUNDS')
+        if previous is not None and index<=previous:
+            raise ValueError('NONCHRONOLOGICAL_OBSERVED_BAR_INDEX')
+        previous=index
+
+
 def _verify_bundle(grant,root):
     root=Path(root).resolve()
     required={'study_id','dataset_hash','protocol_hash','feature_whitelist_hash','membership_hash',
@@ -84,7 +104,8 @@ def _verify_bundle(grant,root):
     if set(progress)!=set(required_counts) or any(type(progress[k]) is not int or progress[k]<n for k,n in required_counts.items()) or progress['consecutive_signals']!=800 or progress['post_signal_bars']!=100:
         raise ValueError('FROZEN_MATURITY_NOT_MET')
     for k in ('study_id','dataset_hash','protocol_hash','feature_whitelist_hash','membership_hash',
-              'exposure_hash','admission_receipt_hash','code_head','environment_hash'):
+              'exposure_hash','admission_receipt_hash','code_head','environment_hash',
+              'row_schema','plan_hash','dataset_first_observed_bar','max_fits'):
         if m.get(k)!=grant[k]:raise ValueError('GRANT_RECEIPT_BINDING_MISMATCH_'+k)
     if m.get('account_mode')!='DEMO' or m.get('live_trading') is not False:
         raise ValueError('REAL_OR_UNKNOWN_ACCOUNT_HARD_FAIL')
@@ -99,6 +120,9 @@ def _verify_bundle(grant,root):
         changed=subprocess.check_output(['git','diff','--name-only',grant['code_head'],head],cwd=root,text=True).splitlines()
         if set(changed)-{'controller/scientific_authority.py','configs/scientific_training_grant.json'}:
             raise ValueError('REVIEWED_CODE_CHANGED_OUTSIDE_EXPLICIT_AUTHORITY_COMMIT')
+    if subprocess.check_output(['git','status','--porcelain','--untracked-files=normal'],cwd=root,text=True).strip():
+        raise ValueError('REVIEWED_WORKTREE_NOT_CLEAN')
+    validate_observed_limits(grant['dataset_first_observed_bar'],m.get('dataset_last_observed_bar'))
     if not m.get('files') or m.get('dataset_path') not in m['files']:raise ValueError('DATASET_FILE_INDEX_MISSING')
     for relative,digest in m['files'].items():
         if hashlib.sha256(admitted_path(relative).read_bytes()).hexdigest()!=digest:raise ValueError('ADMITTED_FILE_HASH_CHANGED')
@@ -111,6 +135,8 @@ def _verify_bundle(grant,root):
     environment=json.loads(admitted_path(m['receipts']['environment_hash']).read_text())
     if environment!={'python':platform.python_version(),'numpy':version('numpy'),'scikit-learn':version('scikit-learn')}:
         raise ValueError('RUNTIME_ENVIRONMENT_CHANGED')
-    if seal(json.loads(admitted_path(m['dataset_path']).read_text()))!=grant['dataset_hash']:
+    rows=json.loads(admitted_path(m['dataset_path']).read_text())
+    if seal(rows)!=grant['dataset_hash']:
         raise ValueError('CANONICAL_DATASET_HASH_MISMATCH')
+    validate_observed_bounds(rows,grant['dataset_first_observed_bar'],m.get('dataset_last_observed_bar'))
     return m

@@ -11,7 +11,7 @@ from .pretrain_contracts import FEATURES, seal
 from .native_study_design import fold_plan
 from .pretrain_model_preparation import prepare_unfitted
 
-from .training_admission_gate import AUTHORIZED_GRANT_HASHES,authorize_execution
+from .training_admission_gate import AUTHORIZED_GRANT_HASHES,authorize_execution,validate_observed_bounds,validate_observed_limits
 
 
 def bootstrap_contrasts(rows, first_admitted_observed_bar, last_admitted_observed_bar):
@@ -72,7 +72,7 @@ def bootstrap_contrasts(rows, first_admitted_observed_bar, last_admitted_observe
                 contrasts=out,integrity_and_causal_admission_verified=False)
 
 
-def execute(grant, load_admitted_rows, claim_single_attempt):
+def execute(grant, load_admitted_rows, claim_single_attempt, *, model_sink=None):
     """Future-only dependency-injected execution; fail closed before any I/O.
 
     A grant must bind rows, plan, code/environment, protocol, admission receipt,
@@ -80,17 +80,19 @@ def execute(grant, load_admitted_rows, claim_single_attempt):
     Failed convergence/single class is terminal; there are no retries or tuning.
     """
     from pathlib import Path
-    authorize_execution(grant,Path(__file__).resolve().parents[1])
+    manifest=authorize_execution(grant,Path(__file__).resolve().parents[1])
     required={'study_id','dataset_hash','protocol_hash','feature_whitelist_hash',
               'membership_hash','exposure_hash','admission_receipt_hash','code_head',
               'environment_hash','row_schema','plan_hash','dataset_first_observed_bar',
               'manifest_path','manifest_sha256','max_fits'}
     if set(grant)!=required or grant['row_schema']!='native-study-admitted-rows/1':
         raise ValueError('INVALID_FUTURE_GRANT_SCHEMA')
+    validate_observed_limits(grant['dataset_first_observed_bar'],manifest.get('dataset_last_observed_bar'))
     claim_single_attempt(seal(grant))  # Must be an exclusive durable claim; never auto retry.
     rows=load_admitted_rows(grant)
     if seal(rows)!=grant['dataset_hash']:
         raise ValueError('ADMITTED_DATASET_HASH_MISMATCH')
+    validate_observed_bounds(rows,grant['dataset_first_observed_bar'],manifest.get('dataset_last_observed_bar'))
     metadata=[]
     for r in rows:
         if set(r)!={'signal_id','side','decision','arrival_index','follow_exit','invert_exit',
@@ -121,16 +123,23 @@ def execute(grant, load_admitted_rows, claim_single_attempt):
             prepared.append((fold['fold'],side,valid,evaluation,y,[r for r in evaluation if finite(r)]))
     if len(prepared)>grant['max_fits']:
         raise ValueError('FIT_BUDGET_EXCEEDED_BEFORE_FIT')
+    evaluation_counts={side:sum(len(evaluation) for _,group,_,evaluation,_,_ in prepared if group==side)
+                       for side in ('BUY','SELL')}
+    if sum(evaluation_counts.values())<200 or any(n<80 for n in evaluation_counts.values()):
+        raise ValueError('INSUFFICIENT_PURGED_EVALUATION_SUPPORT_BEFORE_FIT')
 
     from sklearn.exceptions import ConvergenceWarning
     result=[]
     fit_count=0
+    frozen_models={}
     for fold_number,side,valid,evaluation,y,good in prepared:
         estimator,_=prepare_unfitted(side)
         with warnings.catch_warnings():
             warnings.simplefilter('error',ConvergenceWarning)
             estimator.fit([[r['features'][f] for f in FEATURES] for r in valid],y)
         fit_count+=1
+        if fold_number==4:
+            frozen_models[side]=estimator
         probability={r['signal_id']:float(p[1]) for r,p in zip(good,
             estimator.predict_proba([[r['features'][f] for f in FEATURES] for r in good]))} if good else {}
         for r in evaluation:
@@ -143,6 +152,9 @@ def execute(grant, load_admitted_rows, claim_single_attempt):
                 follow=r['follow_pnl'],invert=r['invert_pnl']))
     # Preserve original chronology for drawdown and paired block resampling.
     result.sort(key=lambda r:r['arrival_index'])
+    if model_sink is not None:
+        model_sink(frozen_models,dict(selected_fold=4,selection='PREREGISTERED_LAST_FOLD_NOT_PERFORMANCE',
+            grant_sha256=seal(grant),feature_order=list(FEATURES),fits=fit_count,additional_fits=0))
     return dict(rows=result,fits=fit_count,final_full_fit=False,attempt_terminal=True,
                 missing_train_rows_retained_in_original_dataset=True,all_gates_unchanged=True)
 

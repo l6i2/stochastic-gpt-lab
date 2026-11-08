@@ -17,7 +17,8 @@ class AdmissionGateTests(unittest.TestCase):
         for name in ('PROTOCOL_ES.md','feature_model_whitelist.json'):(package/name).write_text('synthetic metadata')
         digest=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
         grant={k:'a'*64 for k in ('dataset_hash','membership_hash','exposure_hash','admission_receipt_hash','environment_hash','plan_hash')}
-        grant['dataset_hash']=seal([])
+        rows=[dict(signal_id=str(i),side='BUY' if i%2 else 'SELL',observed_bar_index=i) for i in range(200)]
+        grant['dataset_hash']=seal(rows)
         grant.update(study_id='TEST',code_head='c'*40,row_schema='native-study-admitted-rows/1',
             protocol_hash=digest(package/'PROTOCOL_ES.md'),feature_whitelist_hash=digest(package/'feature_model_whitelist.json'),
             dataset_first_observed_bar=0,manifest_path=prefix+'manifest.json',max_fits=8)
@@ -26,8 +27,8 @@ class AdmissionGateTests(unittest.TestCase):
             p=base/(key+'.json')
             data={'python':platform.python_version(),'numpy':version('numpy'),'scikit-learn':version('scikit-learn')} if key=='environment_hash' else {'synthetic':True}
             p.write_text(json.dumps(data));grant[key]=digest(p);files[prefix+p.name]=digest(p);receipts[key]=prefix+p.name
-        (base/'dataset.json').write_text('[]');files[prefix+'dataset.json']=digest(base/'dataset.json')
-        m=dict(grant,role='TRAIN_NEW_ADMITTED',quarantine=False,checks={k:True for k in CHECKS},
+        (base/'dataset.json').write_text(json.dumps(rows));files[prefix+'dataset.json']=digest(base/'dataset.json')
+        m=dict(grant,dataset_last_observed_bar=1000,role='TRAIN_NEW_ADMITTED',quarantine=False,checks={k:True for k in CHECKS},
             maturity=dict(own_warmup=350,consecutive_signals=800,post_signal_bars=100,evaluable_total=200,BUY=80,SELL=80,BUY_folds=3,SELL_folds=3),
             account_mode='DEMO',live_trading=False,protected_sets=dict(DISCOVERY_VALIDATION='BLOCKED',HISTORICAL_HOLDOUT='LOCKED',FINAL_TEST='LOCKED'),
             files=files,receipts=receipts,dataset_path=prefix+'dataset.json')
@@ -37,7 +38,7 @@ class AdmissionGateTests(unittest.TestCase):
     def test_all_receipt_checks_on_synthetic_bundle_without_fit(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);grant,m=self.bundle(root)
-            with patch('controller.training_admission_gate.AUTHORIZED_GRANT_HASHES',frozenset([seal(grant)])),patch('controller.training_admission_gate.subprocess.check_output',return_value=grant['code_head']):
+            with patch('controller.training_admission_gate.AUTHORIZED_GRANT_HASHES',frozenset([seal(grant)])),patch('controller.training_admission_gate.subprocess.check_output',side_effect=lambda args,**kwargs:'' if args[1]=='status' else grant['code_head']):
                 self.assertEqual(authorize_execution(grant,root)['study_id'],'TEST')
                 (root/m['dataset_path']).write_text('changed')
                 with self.assertRaisesRegex(ValueError,'HASH_CHANGED'):authorize_execution(grant,root)
@@ -76,7 +77,7 @@ class AdmissionGateTests(unittest.TestCase):
     def test_admitted_package_can_prepare_request_but_cannot_train(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);grant,_=self.bundle(root)
-            with patch('controller.training_admission_gate.ADMITTED_PACKAGE_HASHES',frozenset([seal(grant)])),patch('controller.training_admission_gate.subprocess.check_output',return_value=grant['code_head']):
+            with patch('controller.training_admission_gate.ADMITTED_PACKAGE_HASHES',frozenset([seal(grant)])),patch('controller.training_admission_gate.subprocess.check_output',side_effect=lambda args,**kwargs:'' if args[1]=='status' else grant['code_head']):
                 r=snapshot_gate({},dict(identity_verified=True,demo=True),grant=grant,root=root)
                 self.assertTrue(r['authorization_request_ready'])
                 self.assertFalse(r['execution_permitted'])

@@ -1,0 +1,67 @@
+[
+  {
+    "ADMISSION_REQUIREMENTS": "Resolver reservas, exposición, cobertura, semillas y admisión",
+    "ALTERNATIVE": "A",
+    "CAUSALITY_STATUS": "PARCIAL_NATIVE_DIAGNOSTIC",
+    "DATA_AVAILABLE": "Histórico B y legacy; ningún intervalo TRAIN elegible identificado",
+    "DATA_INDEPENDENCE": "NO_DEMONSTRATED_ELIGIBLE_TRAIN",
+    "PROVENANCE_STATUS": "B: copia diagnóstica C+F; legacy: membership incompleto",
+    "RECOMMENDATION": "No descargar otra vez para fabricar independencia",
+    "REMAINING_BLOCKERS": "Rol y límites exactos desconocidos o incompatibles",
+    "SCIENTIFIC_AUTHORIZATION_REQUIRED": "YES",
+    "TECHNICALLY_FEASIBLE": "CONDITIONAL",
+    "TRAINING_FEASIBILITY": "NO_CURRENT_DATASET"
+  },
+  {
+    "ADMISSION_REQUIREMENTS": "Corte futuro exclusivo, método aprobado, dataset sellado y grant",
+    "ALTERNATIVE": "B",
+    "CAUSALITY_STATUS": "PENDING_ADMITTED_FEATURE_PROOFS",
+    "DATA_AVAILABLE": "TRAIN aún sin reservar; evaluación futura inexistente",
+    "DATA_INDEPENDENCE": "EVAL_FUTURE_ONLY_AFTER_MODEL_FREEZE",
+    "PROVENANCE_STATUS": "Método propuesto, inactivo",
+    "RECOMMENDATION": "Ruta principal: desarrollo histórico autorizado y evaluación prospectiva independiente",
+    "REMAINING_BLOCKERS": "No hay TRAIN admisible ni autorización científica",
+    "SCIENTIFIC_AUTHORIZATION_REQUIRED": "YES",
+    "TECHNICALLY_FEASIBLE": "CONDITIONAL",
+    "TRAINING_FEASIBILITY": "PREPARED_NOT_AUTHORIZED"
+  },
+  {
+    "ADMISSION_REQUIREMENTS": "Roles TRAIN/CONTEXT/EVAL exclusivos, vintages y semillas aprobados",
+    "ALTERNATIVE": "C",
+    "CAUSALITY_STATUS": "NATIVE_CONTEXT_PARTIAL",
+    "DATA_AVAILABLE": "A y B disponibles para diagnóstico, no para nuevo TRAIN",
+    "DATA_INDEPENDENCE": "A_AND_B_OVERLAP",
+    "PROVENANCE_STATUS": "Origen vivo y recuperación separados",
+    "RECOMMENDATION": "Mecanismo de adquisición que apoya B",
+    "REMAINING_BLOCKERS": "No reasignar B ni unir epochs incompatibles",
+    "SCIENTIFIC_AUTHORIZATION_REQUIRED": "YES",
+    "TECHNICALLY_FEASIBLE": "CONDITIONAL",
+    "TRAINING_FEASIBILITY": "PROPOSAL_ONLY"
+  },
+  {
+    "ADMISSION_REQUIREMENTS": "Permiso diagnóstico vigente; nuevo uso requiere otra admisión",
+    "ALTERNATIVE": "D",
+    "CAUSALITY_STATUS": "251_M5_PARITY_1295_M1_PARITY_RETAINED",
+    "DATA_AVAILABLE": "246397 ticks; 1295 M1; 251 M5; 302 intervalos únicos",
+    "DATA_INDEPENDENCE": "NOT_NEW_INDEPENDENT_SAMPLE",
+    "PROVENANCE_STATUS": "320 manifests/payloads auditados; 18 intentos sustituidos preservados",
+    "RECOMMENDATION": "Reutilizar recibos y tarea; cero nuevas consultas en esta misión",
+    "REMAINING_BLOCKERS": "Retención XM no garantiza recepción original ni cobertura futura",
+    "SCIENTIFIC_AUTHORIZATION_REQUIRED": "NO_FOR_EXISTING_DIAGNOSTIC_SCOPE",
+    "TECHNICALLY_FEASIBLE": "YES_EXISTING",
+    "TRAINING_FEASIBILITY": "DIAGNOSTIC_ONLY"
+  },
+  {
+    "ADMISSION_REQUIREMENTS": "Grant confiable, dataset admitido y árbol limpio para ejecución real",
+    "ALTERNATIVE": "E",
+    "CAUSALITY_STATUS": "PRE_FIT_REJECTION_TESTED",
+    "DATA_AVAILABLE": "Fixtures aislados; estimadores simulados",
+    "DATA_INDEPENDENCE": "NOT_SCIENTIFIC_DATA",
+    "PROVENANCE_STATUS": "Tests locales reproducibles",
+    "RECOMMENDATION": "Completado preflight, ocho fits simulados y modelos finales prefijados",
+    "REMAINING_BLOCKERS": "Autoridad y admisiones vacías; no consumo de fits",
+    "SCIENTIFIC_AUTHORIZATION_REQUIRED": "YES_FOR_SCIENTIFIC_EXECUTION",
+    "TECHNICALLY_FEASIBLE": "YES_SYNTHETIC_ONLY",
+    "TRAINING_FEASIBILITY": "TECHNICAL_READY_NOT_SCIENTIFIC_READY"
+  }
+]
