@@ -1,0 +1,98 @@
+{
+  "code_head": "ebd06d02fd735a4a5e06d66c0f8b7bf2bf47d4a6",
+  "comparators": [
+    "FOLLOW_CONSTANT",
+    "INVERT_CONSTANT"
+  ],
+  "fit_budget": 8,
+  "hypotheses_evaluated": 0,
+  "models": [
+    {
+      "current_protocol_family": true,
+      "family": "logistic",
+      "feature_order": [
+        "stoch_k",
+        "delta_k_1",
+        "ATR",
+        "relative_volume_20",
+        "ha_direction",
+        "range_to_ATR"
+      ],
+      "fit_calls": 0,
+      "params": {
+        "C": 1,
+        "class_weight": null,
+        "max_iter": 1000,
+        "random_state": 20261030,
+        "solver": "lbfgs"
+      },
+      "proposal_only": false,
+      "scoring_authorized": false,
+      "side": "BUY",
+      "sklearn_version": "1.9.1",
+      "spec_sha256": "a23f0710a38bfbf53970db86834ec01ea88deb5ce671e5f3c238fe8f869b9556",
+      "training_authorized": false
+    },
+    {
+      "current_protocol_family": true,
+      "family": "logistic",
+      "feature_order": [
+        "stoch_k",
+        "delta_k_1",
+        "ATR",
+        "relative_volume_20",
+        "ha_direction",
+        "range_to_ATR"
+      ],
+      "fit_calls": 0,
+      "params": {
+        "C": 1,
+        "class_weight": null,
+        "max_iter": 1000,
+        "random_state": 20261030,
+        "solver": "lbfgs"
+      },
+      "proposal_only": false,
+      "scoring_authorized": false,
+      "side": "SELL",
+      "sklearn_version": "1.9.1",
+      "spec_sha256": "bec3f5a8fabf72340e612739049312a7f6fae74f7d35bad430c136e6285554e1",
+      "training_authorized": false
+    }
+  ],
+  "outcome": "FOLLOW_PNL_GT_INVERT_PNL_ON_COMPLETE_PAIR",
+  "scientific_promotion": false,
+  "scope": "EXPLORATORY_ONLY",
+  "source_hashes": {
+    "controller/native_study_design.py": "46906cf2bf0333c500bb6a7950d37c87a8ed01e9362dfd20ed41f51232fff6ed",
+    "controller/pretrain_model_preparation.py": "8149f1f73a33abde5ba7e95c6408c91d48d790547a79dbf704fa7db314cdd0bc",
+    "controller/scientific_authority.py": "950da37105fb3c66c0adbd0a828e8ca20e14efa8fd43dddfb644627dd2963b98",
+    "controller/strategy_diagnostic.py": "97f0446a5ee67bfab5db1dffbde1d4bd34b020114a8418c0e772e64e23387444",
+    "research/studies/bc_train_future_eval_v1/feature_whitelist.json": "6f8a2c5a04031978f8873d196b6f467c6a3d3a9e881627861400095429078dbe"
+  },
+  "splits": "FOUR_CHRONOLOGICAL_PURGED_FOLDS",
+  "status": "FROZEN_DESIGN_INACTIVE_FIT_GATE",
+  "strategy": {
+    "buy_cross": 20,
+    "d": 3,
+    "entry": "NEXT_M5_BID_ASK",
+    "k": 5,
+    "sell_cross": 80,
+    "skip": false,
+    "sl": 180,
+    "slowing": 3,
+    "time_exit": 100,
+    "tp": 240
+  },
+  "study_id": "US30CASH_HISTORICAL_EXPLORATORY_AI_V1",
+  "validation": "FUTURE_PROSPECTIVE_SEPARATE_AUTHORIZATION_INACTIVE",
+  "whitelist": [
+    "stoch_k",
+    "delta_k_1",
+    "ATR",
+    "relative_volume_20",
+    "ha_direction",
+    "range_to_ATR"
+  ],
+  "whitelist_sha256": "6f8a2c5a04031978f8873d196b6f467c6a3d3a9e881627861400095429078dbe"
+}

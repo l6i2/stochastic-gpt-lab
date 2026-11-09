@@ -1,0 +1,17 @@
+{
+  "attachment_sha256": "349c639ccfb98681ee35257761ebdfb096d8124b134779354a4bf2829a146ee3",
+  "dataset_gates": [
+    "VERIFIED_DEVELOPMENT_MEMBERSHIP_AND_EXPOSURE",
+    "CAUSAL_COVERAGE",
+    "FROZEN_CODE_WHITELIST_PROTOCOL_HASHES",
+    "NO_PROTECTED_ACCESS",
+    "SAFE_RAM",
+    "SUFFICIENT_PURGED_FOLD_SUPPORT"
+  ],
+  "fit_authorization": "CONDITIONAL_ONLY_IN_THIS_STUDY",
+  "max_fits": 8,
+  "orders": false,
+  "protected_access": false,
+  "study_authorized": true,
+  "study_id": "US30CASH_HISTORICAL_EXPLORATORY_AI_V1"
+}

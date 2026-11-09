@@ -1,0 +1,24 @@
+{
+  "diagnostic": {
+    "M1": 1376,
+    "M5": 276,
+    "bounds_native_msc": [
+      1704153600000,
+      1704240000000
+    ],
+    "dataset_id": "US30CASH_20240102_FIXED_EXPOSED_DIAGNOSTIC",
+    "events_sha256": "975b374fce187ef4cdf33a02b6a69f743393cc2ef989f352706ae89c8225da81",
+    "exposure": "EXPOSED_DEVELOPMENT_DATA",
+    "prior_signal_membership_sha256": "3105b6b8f18776907787aaa30e1ac27afbffd36053d9f657acc57f8b3b30862c",
+    "scope": "FIXED_DIAGNOSTIC_ONLY",
+    "source_run": "diag_fd4e5bf3d468",
+    "ticks": 79211
+  },
+  "inherited_role_matrix_sha256": "ec202ff29cd8efd677b514ce34c9d8de90e4f765cd66749140e050da5bd867ea",
+  "protected_reads": 0,
+  "reservation_imports": 0,
+  "study_id": "US30CASH_HISTORICAL_EXPLORATORY_AI_V1",
+  "train_intervals": [],
+  "training_dataset_id": null,
+  "training_dataset_sha256": null
+}
