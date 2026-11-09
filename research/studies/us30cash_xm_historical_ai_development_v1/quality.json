@@ -1,0 +1,41 @@
+{
+  "direct_m5_differences": [],
+  "first_tick_native_msc": 1704157200107,
+  "identical_tick_rows_retained": 0,
+  "last_tick_native_msc": 1704239998386,
+  "m1": 1376,
+  "m5": 276,
+  "m5_differences": [
+    {
+      "status": "MISSING_OWN_M1",
+      "time": 1704160500
+    },
+    {
+      "status": "MISSING_OWN_M1",
+      "time": 1704164100
+    },
+    {
+      "status": "MISSING_OWN_M1",
+      "time": 1704172800
+    },
+    {
+      "status": "MISSING_OWN_M1",
+      "time": 1704176100
+    }
+  ],
+  "minute_bid_volume_differences": [],
+  "minute_ohlc_differences": [],
+  "missing_minute_labels": [
+    1704160740,
+    1704164280,
+    1704172920,
+    1704176280
+  ],
+  "missing_minute_tick_counts": {
+    "1704160740": 0,
+    "1704164280": 0,
+    "1704172920": 0,
+    "1704176280": 0
+  },
+  "ticks": 79211
+}

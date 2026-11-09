@@ -1,0 +1,29 @@
+{
+  "DEMO": "DISABLED",
+  "LIVE_TRADING": false,
+  "code_head": "4cae2fe35d361c98ed0e3da6a87aa0cd7f963cd3",
+  "dataset_hash": null,
+  "dataset_id": null,
+  "fit_budget": 8,
+  "fit_status": "BLOCKED_INSUFFICIENT_VERIFIED_TRAIN_MEMBERSHIP_CAUSAL_FEATURES_AND_FOLD_SUPPORT",
+  "fits_executed": 0,
+  "fold_plan": "FOUR_CHRONOLOGICAL_PURGED_FOLDS",
+  "independent_evaluation": "INACTIVE_SEPARATE_PROSPECTIVE",
+  "matrix_sha256": "ec202ff29cd8efd677b514ce34c9d8de90e4f765cd66749140e050da5bd867ea",
+  "models": "L2_BUY_AND_SELL_SEPARATE_UNFITTED",
+  "orders": 0,
+  "protected_reads": 0,
+  "scope": "EXPLORATORY_ONLY",
+  "source_hashes": {
+    "controller/native_study_design.py": "46906cf2bf0333c500bb6a7950d37c87a8ed01e9362dfd20ed41f51232fff6ed",
+    "controller/pretrain_model_preparation.py": "8149f1f73a33abde5ba7e95c6408c91d48d790547a79dbf704fa7db314cdd0bc",
+    "controller/strategy_diagnostic.py": "97f0446a5ee67bfab5db1dffbde1d4bd34b020114a8418c0e772e64e23387444",
+    "controller/xm_history_recovery.py": "daec7596dd368f716ea91573c17d315343cc9e2937c47175b6592fcc36b509f6",
+    "research/studies/bc_train_future_eval_v1/feature_whitelist.json": "6f8a2c5a04031978f8873d196b6f467c6a3d3a9e881627861400095429078dbe"
+  },
+  "study_id": "US30CASH_XM_HISTORICAL_AI_DEVELOPMENT_V1",
+  "target": "FOLLOW_PNL_GT_INVERT_PNL_ON_COMPLETE_PAIR",
+  "terminal_trade_allowed": false,
+  "train_intervals": [],
+  "whitelist_sha256": "6f8a2c5a04031978f8873d196b6f467c6a3d3a9e881627861400095429078dbe"
+}
