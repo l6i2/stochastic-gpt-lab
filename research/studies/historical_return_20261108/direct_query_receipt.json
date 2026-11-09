@@ -1,0 +1,43 @@
+{
+  "allowed_native_day": "2024-01-02",
+  "chart_maxbars": 20000,
+  "clock": {
+    "boot_id": "112",
+    "host_utc_label": "2026-11-09T02:07:07.175362+00:00",
+    "monotonic_ns": 434950505543100,
+    "uptime_ms": 434906484,
+    "utc_certified": false
+  },
+  "queries": [
+    {
+      "error": "API_RETURNED_OUTSIDE_QUERY_ENDPOINT",
+      "kind": "m1",
+      "native_end": 1704240000000,
+      "native_start": 1704153600000
+    },
+    {
+      "error": "API_RETURNED_OUTSIDE_QUERY_ENDPOINT",
+      "kind": "m5",
+      "native_end": 1704240000000,
+      "native_start": 1704153600000
+    },
+    {
+      "count": 96,
+      "first_coordinate": 1704157502939,
+      "kind": "ticks",
+      "native_end": 1704157800000,
+      "native_start": 1704157500000,
+      "source": {
+        "api": "copy_ticks_range",
+        "code": 1,
+        "datetime_utc_objects_are_native_coordinate_carriers": true,
+        "excluded_lower_endpoint_rows": 0,
+        "excluded_upper_endpoint_rows": 0,
+        "query_version": "INCLUSIVE_ENDPOINT_V2"
+      }
+    }
+  ],
+  "scope": "FIXED_DIAGNOSTIC_ONLY",
+  "server": "XMGlobalSC-MT5 5",
+  "terminal_trade_allowed": false
+}

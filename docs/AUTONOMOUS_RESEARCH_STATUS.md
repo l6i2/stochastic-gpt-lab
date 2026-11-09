@@ -1,3 +1,5 @@
+> Ruta histórica XM — replay fijo reproducido con 79.211 ticks, 1.376 M1 y 276 M5. TRAIN histórico pendiente de membership verificable. B+C continúa como estudio independiente. [Inventario y matriz](XM_FULL_HISTORY_INVENTORY.md).
+
 > Estado vigente B+C — 5451 ticks, 35 M1 y 7 M5 verificadas en cuarentena. Contexto 7/350. Admisión WAITING_FOR_DATA. [Avance y recibos](BC_DATASET_MATURITY_PROGRESS.md).
 
 > Estabilización B+C — adquisición con lotes de dos M5 y reintento acotado. 4154 ticks, 25 M1 y 5 M5 verificadas en cuarentena. Contexto 5/350. [Mediciones y estado](BC_ACQUISITION_MEMORY_STABILITY.md).

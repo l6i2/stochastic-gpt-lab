@@ -1,0 +1,62 @@
+{
+  "new_historical_train_periods": [],
+  "periods": [
+    {
+      "access": "Replay fijo autorizado",
+      "evidence": "research/studies/strategy_diagnostic_preparation_20261101_v1/reproduction_plan.json",
+      "evidence_sha256": "0c37e357555699283acb07716603ba9c96e39f48eb0138e6ea907d8d9a31027b",
+      "period": "2024-01-02 XM nativo",
+      "role": "DIAGNOSTIC_ONLY_PREVIOUSLY_EXPOSED"
+    },
+    {
+      "access": "Solo metadatos publicados del master",
+      "evidence": "docs/DATASET_FREEZE.md",
+      "evidence_sha256": "8b7e1bd7aefb2c62e118c63d2e03971950402ee4f0945ed610f3c336aa715a07",
+      "period": "2023-12-20 a 2026-10-13 parcial",
+      "role": "MIXED_PROTECTED"
+    },
+    {
+      "access": "Reproducción autorizada acotada y resultados ya publicados",
+      "evidence": "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json",
+      "evidence_sha256": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+      "period": "TRAIN legado purgado / quality-v1",
+      "role": "TRAIN_EXHAUSTED"
+    },
+    {
+      "access": "Bloqueados, incluido el tail del master",
+      "evidence": "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json",
+      "evidence_sha256": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+      "period": "Discovery Validation / Final Test",
+      "role": "PROTECTED_BOUNDARIES_INCOMPLETE"
+    },
+    {
+      "access": "Bloqueado aunque no se conocen sus límites",
+      "evidence": "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json",
+      "evidence_sha256": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+      "period": "Historical Holdout",
+      "role": "PROTECTED_UNKNOWN_EXTENT"
+    },
+    {
+      "access": "Aislamiento de reserva, ninguna reasignación",
+      "evidence": "research/studies/xm_historical_recovery_20261108/exposure_ledger.json",
+      "evidence_sha256": "3e3efbd600b90bd1b49f4df2497df773c7dec990efc995c5fc7803e7a6f08e42",
+      "period": "Reserva C+F e históricos B",
+      "role": "RESERVED_EXPOSED_DIAGNOSTIC"
+    },
+    {
+      "access": "Solo estudio B+C, sin importación histórica externa",
+      "evidence": "research/studies/bc_train_future_eval_v1/activation.json",
+      "evidence_sha256": "d343170d6350682207032ef9fe2595ee94e4d9b2d7d38f5cc7493278adb71ac9",
+      "period": "B+C desde su corte exclusivo",
+      "role": "RESERVED_BC_QUARANTINED"
+    },
+    {
+      "access": "Sin consultas de contenido hasta verificar roles",
+      "evidence": "research/studies/us30cash_m5_native_pretrain_v1/dataset_membership.json",
+      "evidence_sha256": "5bd99a7a50f9d97a34d6e51bd2e49caeecaa0fb97ebe83c66bd4d1911beae5c0",
+      "period": "Otros periodos, incluidos los anteriores al master",
+      "role": "UNCLASSIFIED"
+    }
+  ],
+  "protected_dataset_reads": 0
+}
