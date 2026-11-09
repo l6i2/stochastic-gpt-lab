@@ -7,3 +7,5 @@ La próxima evidencia necesaria es una fuente de membership con límites nativos
 Las dos instancias L2 se construyeron sin ajustar. El runner mantiene las puertas vigentes. La factibilidad científica del histórico sigue sin demostrarse. Ningún conjunto protegido se abrió ni se inició un entrenamiento.
 
 [Estado estructurado](../research/studies/historical_return_20261108/status.json).
+
+[Resolución de reservas, alcance exacto y nuevas comprobaciones](HISTORICAL_MEMBERSHIP_RESOLUTION.md).

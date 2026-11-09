@@ -1,0 +1,283 @@
+{
+  "bounds": "HALF_OPEN_NATIVE_MILLISECONDS_WHERE_KNOWN",
+  "certified_utc_event_bounds": 0,
+  "exposure_ledger_complete": false,
+  "new_historical_train_intervals": [],
+  "protected_content_reads": 0,
+  "rows": [
+    {
+      "ALLOWED_OPERATIONS": [
+        "METADATA_ONLY"
+      ],
+      "END_NATIVE": null,
+      "END_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "EXPOSURE_STATUS": "MIXED",
+      "HASH": "8b7e1bd7aefb2c62e118c63d2e03971950402ee4f0945ed610f3c336aa715a07",
+      "MEMBERSHIP_EVIDENCE": "docs/DATASET_FREEZE.md",
+      "PRODUCER": "XM Strategy Tester",
+      "PROHIBITED_OPERATIONS": [
+        "ADMISSION",
+        "FIT",
+        "PROTECTED_CONTENT_READ",
+        "ROLE_REASSIGNMENT"
+      ],
+      "PROVENANCE_CONFIDENCE": "DECLARED_ENVELOPE_ONLY",
+      "RESERVATION_ROLE": "LEGACY_MASTER_MIXED",
+      "SOURCE": "docs/DATASET_FREEZE.md",
+      "START_NATIVE": null,
+      "START_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "declared_date_envelope": [
+        "2023-12-20",
+        "2026-10-13_PARTIAL"
+      ],
+      "declared_signals": 20422,
+      "row_sha256": "87cda81a19dc02f69db270bb351937d363d7151849b76527776c29389581ce79"
+    },
+    {
+      "ALLOWED_OPERATIONS": [
+        "METADATA_ONLY"
+      ],
+      "END_NATIVE": null,
+      "END_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "EXPOSURE_STATUS": "EXPOSED_OR_PROTECTED",
+      "HASH": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+      "MEMBERSHIP_EVIDENCE": "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json",
+      "PRODUCER": "LEGACY",
+      "PROHIBITED_OPERATIONS": [
+        "ADMISSION",
+        "FIT",
+        "PROTECTED_CONTENT_READ",
+        "ROLE_REASSIGNMENT"
+      ],
+      "PROVENANCE_CONFIDENCE": "ROLE_DECLARED_BOUNDS_UNKNOWN",
+      "RESERVATION_ROLE": "LEGACY_TRAIN_EXHAUSTED",
+      "SOURCE": "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json",
+      "START_NATIVE": null,
+      "START_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "declared_purged_signals": 12243,
+      "row_sha256": "a5d32ea349f55e3cf0b2502df4d9e7bed56fe6aee3245bed6eb8010d56ebaf38"
+    },
+    {
+      "ALLOWED_OPERATIONS": [
+        "METADATA_ONLY"
+      ],
+      "END_NATIVE": null,
+      "END_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "EXPOSURE_STATUS": "EXPOSED_OR_PROTECTED",
+      "HASH": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+      "MEMBERSHIP_EVIDENCE": "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json",
+      "PRODUCER": "LEGACY",
+      "PROHIBITED_OPERATIONS": [
+        "ADMISSION",
+        "FIT",
+        "PROTECTED_CONTENT_READ",
+        "ROLE_REASSIGNMENT"
+      ],
+      "PROVENANCE_CONFIDENCE": "ROLE_DECLARED_BOUNDS_UNKNOWN",
+      "RESERVATION_ROLE": "DISCOVERY_VALIDATION_BLOCKED",
+      "SOURCE": "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json",
+      "START_NATIVE": null,
+      "START_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "declared_purged_signals": 4077,
+      "row_sha256": "9a470ff103fa1972dcf27091c1403d82bece4a6808f01789c7b2c41216d12b40"
+    },
+    {
+      "ALLOWED_OPERATIONS": [
+        "METADATA_ONLY"
+      ],
+      "END_NATIVE": null,
+      "END_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "EXPOSURE_STATUS": "EXPOSED_OR_PROTECTED",
+      "HASH": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+      "MEMBERSHIP_EVIDENCE": "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json",
+      "PRODUCER": "LEGACY",
+      "PROHIBITED_OPERATIONS": [
+        "ADMISSION",
+        "FIT",
+        "PROTECTED_CONTENT_READ",
+        "ROLE_REASSIGNMENT"
+      ],
+      "PROVENANCE_CONFIDENCE": "ROLE_DECLARED_BOUNDS_UNKNOWN",
+      "RESERVATION_ROLE": "FINAL_TEST_LOCKED",
+      "SOURCE": "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json",
+      "START_NATIVE": null,
+      "START_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "declared_purged_signals": null,
+      "row_sha256": "d374c35d93bfa308328d8b1768260001b87df1f9a0b0132da0784db9a7fca5a9"
+    },
+    {
+      "ALLOWED_OPERATIONS": [
+        "METADATA_ONLY"
+      ],
+      "END_NATIVE": null,
+      "END_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "EXPOSURE_STATUS": "UNKNOWN_EXTENT",
+      "HASH": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+      "MEMBERSHIP_EVIDENCE": "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json",
+      "PRODUCER": "UNKNOWN",
+      "PROHIBITED_OPERATIONS": [
+        "ADMISSION",
+        "FIT",
+        "PROTECTED_CONTENT_READ",
+        "ROLE_REASSIGNMENT"
+      ],
+      "PROVENANCE_CONFIDENCE": "BOUNDS_UNKNOWN",
+      "RESERVATION_ROLE": "HISTORICAL_HOLDOUT_LOCKED",
+      "SOURCE": "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json",
+      "START_NATIVE": null,
+      "START_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "row_sha256": "f00a685e53b7715e9f7e92d9996f305b98d08244eadd45ec74d0b9c8c6282192"
+    },
+    {
+      "ALLOWED_OPERATIONS": [
+        "FIXED_BASELINE_REPLAY",
+        "NATIVE_QUALITY_CHECK"
+      ],
+      "END_NATIVE": 1704240000000,
+      "END_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "EXPOSURE_STATUS": "KNOWN_EXPOSED_FIXED_DIAGNOSTIC",
+      "HASH": "c475c96883d21596b50a61f2f1a0a75a7752f84a318cf7234af2a77a2698977c",
+      "M1": 1376,
+      "M5": 276,
+      "MEMBERSHIP_EVIDENCE": "research/studies/historical_return_20261108/diagnostic_replay.json",
+      "PRODUCER": "MT5_VIRTUAL_EXPORTER",
+      "PROHIBITED_OPERATIONS": [
+        "ADMISSION",
+        "FIT",
+        "PROTECTED_CONTENT_READ",
+        "ROLE_REASSIGNMENT"
+      ],
+      "PROVENANCE_CONFIDENCE": "EXACT_FIXED_DIAGNOSTIC_ALLOWLIST",
+      "RESERVATION_ROLE": "EXPLORATORY_REUSED_TRAIN",
+      "SOURCE": "research/studies/historical_return_20261108/diagnostic_replay.json",
+      "START_NATIVE": 1704153600000,
+      "START_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "historic_train_split_membership_asserted": false,
+      "row_sha256": "ec683627a4934ffd396b18a82e6895e445d03e720f581cc5f5bd0b0e05818710",
+      "signal_membership_sha256": "3105b6b8f18776907787aaa30e1ac27afbffd36053d9f657acc57f8b3b30862c",
+      "signals": 28,
+      "ticks": 79211
+    },
+    {
+      "ALLOWED_OPERATIONS": [
+        "METADATA_ONLY"
+      ],
+      "END_NATIVE": null,
+      "END_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "EXPOSURE_STATUS": "RESERVED",
+      "HASH": "a5d8e6cd86b248e82ce8b730705bb1bc78630b5c9c6b6cbfc5af9d4d1e8cd670",
+      "MEMBERSHIP_EVIDENCE": "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json",
+      "PRODUCER": "LEGACY_OBSERVERS",
+      "PROHIBITED_OPERATIONS": [
+        "ADMISSION",
+        "FIT",
+        "PROTECTED_CONTENT_READ",
+        "ROLE_REASSIGNMENT"
+      ],
+      "PROVENANCE_CONFIDENCE": "UTC_DECLARATION_NOT_RECONCILED",
+      "RESERVATION_ROLE": "LEGACY_PROSPECTIVE_CLOSED",
+      "SOURCE": "research/studies/us30cash_m5_native_pretrain_v1/exposure_ledger.json",
+      "START_NATIVE": null,
+      "START_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "row_sha256": "2ffc90f4207ebe21a0837bcc1131d245f1e49b365e1c3a56dc70a4c1fa37d7de"
+    },
+    {
+      "ALLOWED_OPERATIONS": [
+        "PRESERVE_ROLE"
+      ],
+      "END_NATIVE": null,
+      "END_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "EXPOSURE_STATUS": "RESERVED",
+      "HASH": "4febabd9ec893cc00de4785407a9847f488a5ca1aa9840941af4306a05ec0db6",
+      "MEMBERSHIP_EVIDENCE": "research/studies/us30cash_m5_native_observations/exclusive_cut_v1/origin_manifest.json",
+      "PRODUCER": "CF_NATIVE_DATABASE",
+      "PROHIBITED_OPERATIONS": [
+        "ADMISSION",
+        "FIT",
+        "PROTECTED_CONTENT_READ",
+        "ROLE_REASSIGNMENT"
+      ],
+      "PROVENANCE_CONFIDENCE": "EXACT_START_INGRESS_CLOSED_NO_INFERRED_END",
+      "RESERVATION_ROLE": "CF_FORWARD_RESERVATION_CLOSED_TO_NEW_INGRESS",
+      "SOURCE": "research/studies/us30cash_m5_native_observations/exclusive_cut_v1/origin_manifest.json",
+      "START_NATIVE": 1793895900000,
+      "START_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "row_sha256": "fb9f2286ec21fe73544de6eaa6f9edddf9fde3061e5b06cea88ad5420f6ea4ee"
+    },
+    {
+      "ALLOWED_OPERATIONS": [
+        "DIAGNOSTIC_ONLY_WITHIN_CF"
+      ],
+      "END_NATIVE": null,
+      "END_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "EXPOSURE_STATUS": "EXPOSED_WITHIN_CF",
+      "HASH": "3e3efbd600b90bd1b49f4df2497df773c7dec990efc995c5fc7803e7a6f08e42",
+      "MEMBERSHIP_EVIDENCE": "research/studies/xm_historical_recovery_20261108/exposure_ledger.json",
+      "PRODUCER": "XM_RETROSPECTIVE",
+      "PROHIBITED_OPERATIONS": [
+        "ADMISSION",
+        "FIT",
+        "PROTECTED_CONTENT_READ",
+        "ROLE_REASSIGNMENT"
+      ],
+      "PROVENANCE_CONFIDENCE": "VERIFIED_LEDGER_INTERVALS",
+      "RESERVATION_ROLE": "CF_B_RECOVERED_DIAGNOSTIC",
+      "SOURCE": "research/studies/xm_historical_recovery_20261108/exposure_ledger.json",
+      "START_NATIVE": null,
+      "START_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "envelope": [
+        1793897865055,
+        1794009599968
+      ],
+      "intervals": 302,
+      "row_sha256": "dbb9c91e1a92829613e6f5f9e9e3168d0ccc308b4d00e45fd2ae049c7272a3b5"
+    },
+    {
+      "ALLOWED_OPERATIONS": [
+        "EXISTING_BC_ONLY"
+      ],
+      "END_NATIVE": null,
+      "END_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "EXPOSURE_STATUS": "RESERVED",
+      "HASH": "ad1d7cb79fa62cd8267c4392934c640df471a7e80d0bd5ecf7cc701f3ca13b17",
+      "MEMBERSHIP_EVIDENCE": "research/studies/bc_train_future_eval_v1/maturity_progress_20261108/status.json",
+      "PRODUCER": "BC_XM_RETROSPECTIVE",
+      "PROHIBITED_OPERATIONS": [
+        "ADMISSION",
+        "FIT",
+        "PROTECTED_CONTENT_READ",
+        "ROLE_REASSIGNMENT"
+      ],
+      "PROVENANCE_CONFIDENCE": "VERIFIED_NATIVE_FLOOR",
+      "RESERVATION_ROLE": "BC_EXCLUSIVE_FORWARD_QUARANTINED",
+      "SOURCE": "research/studies/bc_train_future_eval_v1/maturity_progress_20261108/status.json",
+      "START_NATIVE": 1794193800000,
+      "START_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "row_sha256": "ad7ff43d5532f471ba03356a38af2f5ffe8b24eba3beee2dad78e477860bff1a"
+    },
+    {
+      "ALLOWED_OPERATIONS": [
+        "METADATA_ONLY"
+      ],
+      "END_NATIVE": null,
+      "END_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "EXPOSURE_STATUS": "UNKNOWN",
+      "HASH": "2c59c9ea5882b1bab84990757a2d457b38c45c2b9d6fa08155730a9935469440",
+      "MEMBERSHIP_EVIDENCE": "research/studies/maxbars_history_20261102_v1/summary.json",
+      "PRODUCER": "XM_METADATA_ONLY",
+      "PROHIBITED_OPERATIONS": [
+        "ADMISSION",
+        "FIT",
+        "PROTECTED_CONTENT_READ",
+        "ROLE_REASSIGNMENT"
+      ],
+      "PROVENANCE_CONFIDENCE": "UNPROVEN_NONOVERLAP",
+      "RESERVATION_ROLE": "UNCLASSIFIED_PRE_MASTER_OR_OUTSIDE_KNOWN_RESERVATIONS",
+      "SOURCE": "research/studies/maxbars_history_20261102_v1/summary.json",
+      "START_NATIVE": null,
+      "START_UTC_CERTIFIED_IF_AVAILABLE": null,
+      "row_sha256": "dacfcbe68df07614a01e7168da8118ed4588401915301452ae4414ab7e1b890e"
+    }
+  ],
+  "schema": "historical-membership-resolution/1"
+}

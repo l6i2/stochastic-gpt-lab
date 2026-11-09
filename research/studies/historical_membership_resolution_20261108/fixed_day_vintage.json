@@ -1,0 +1,32 @@
+{
+  "archive_ticks_in_same_window": 96,
+  "dataset_admitted": false,
+  "end_native_exclusive_msc": 1704157800000,
+  "exact_ordered_quote_match": true,
+  "extra_native_quotes": 0,
+  "missing_native_quotes": 0,
+  "original_live_receipt_proven": false,
+  "payload_sha256": "bb9eb09b39bdb606eca8ff08e7f30cd30537ec4074383f5da034a09674d970ba",
+  "retrieval_clock": {
+    "boot_id": "112",
+    "host_utc_label": "2026-11-09T02:19:08.359876+00:00",
+    "monotonic_ns": 435671690973600,
+    "uptime_ms": 435627671,
+    "utc_certified": false
+  },
+  "retrieved_ticks": 96,
+  "scope": "EXPLORATORY_REUSED_TRAIN_FIXED_DIAGNOSTIC_ONLY",
+  "server": "XMGlobalSC-MT5 5",
+  "source": {
+    "api": "copy_ticks_range",
+    "code": 1,
+    "datetime_utc_objects_are_native_coordinate_carriers": true,
+    "excluded_lower_endpoint_rows": 0,
+    "excluded_upper_endpoint_rows": 0,
+    "query_version": "INCLUSIVE_ENDPOINT_V2"
+  },
+  "start_native_msc": 1704157500000,
+  "symbol": "US30Cash",
+  "training_executed": false,
+  "valid_bid_ask": 96
+}

@@ -1,0 +1,33 @@
+{
+  "baseline_receipt_sha256": "c475c96883d21596b50a61f2f1a0a75a7752f84a318cf7234af2a77a2698977c",
+  "candidate_protocol": {
+    "activation": "REQUIRES_ADMITTED_DATASET_AND_HASH_BOUND_GRANT",
+    "chronological_purged_folds_if_applicable": 4,
+    "comparators": [
+      "FOLLOW",
+      "INVERT"
+    ],
+    "evaluation": "INDEPENDENT_PROSPECTIVE_AFTER_FREEZE",
+    "feature_whitelist_sha256": "6f8a2c5a04031978f8873d196b6f467c6a3d3a9e881627861400095429078dbe",
+    "model": "LOGISTIC_L2",
+    "scaling": "WITHIN_TRAIN_FOLD_ONLY",
+    "sides": [
+      "BUY",
+      "SELL"
+    ]
+  },
+  "fixed_native_interval": [
+    1704153600000,
+    1704240000000
+  ],
+  "future_package": {
+    "dataset_id": null,
+    "dataset_sha256": null,
+    "grant_issued": false,
+    "protocol_sha256": null
+  },
+  "new_hypothesis_budget": 0,
+  "role": "EXPLORATORY_REUSED_TRAIN",
+  "scientific_fit_budget": 0,
+  "status": "PREPARED_DIAGNOSTIC_ONLY"
+}

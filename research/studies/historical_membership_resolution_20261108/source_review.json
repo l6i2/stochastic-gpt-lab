@@ -1,0 +1,33 @@
+{
+  "cf_recovery_chain_head": "db54232a6d8d933ff7145c521ac8086c58ca4bc9e847099b1f6f36e74f41e45f",
+  "cf_recovery_entries": 302,
+  "dataset_admitted": false,
+  "diagnostic_m5": 276,
+  "diagnostic_signals": 28,
+  "diagnostic_ticks": 79211,
+  "earliest_allowed_train": null,
+  "filename_search_scopes": [
+    "REPOSITORY",
+    "CODEX_WORKSPACES",
+    "DOWNLOADS"
+  ],
+  "git_original_manifest_matches": 0,
+  "git_refs_checked": [
+    "origin/main",
+    "origin/research/full-pipeline"
+  ],
+  "latest_allowed_train": null,
+  "legacy_chain_head": "41ae3895825e1243e1095a77c826bc902e59a7bde439e3303737a366b5c36b92",
+  "legacy_entries": 10,
+  "legacy_source_commit": "ced3b6d9e469dadf76a4771049c994e476f19329",
+  "legacy_source_commit_present_locally": false,
+  "original_freeze_commit": "40a2dba62adfd831b38c905a3e38a55306654ff2",
+  "original_metadata_name_matches": 0,
+  "parent": "bbfdeab835768621e7219c7074fb961404a1f628",
+  "protected_reads": 0,
+  "tests_membership": 3,
+  "train_m5": 0,
+  "train_signals": 0,
+  "train_ticks": 0,
+  "training_executed": false
+}

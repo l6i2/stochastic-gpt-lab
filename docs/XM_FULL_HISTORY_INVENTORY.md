@@ -22,3 +22,5 @@ La descarga acotada Python y el archivo nativo del Tester son rutas verificadas 
 La ruta de adquisición extensa debe comenzar con intervalos permitidos verificables. El controlador existente proporciona límites de consulta, vintages y reanudación. Se mantuvieron B+C y el terminal activo sin cambios de configuración. Las ventanas OHLC sin Bid/Ask utilizable se clasificarán separadamente y sus barras servirán para descripción, sin simular fills exactos.
 
 [Recibo de consulta, matriz y hashes](../research/studies/historical_return_20261108/sha256.json).
+
+[Resolución de reservas, alcance exacto y nuevas comprobaciones](HISTORICAL_MEMBERSHIP_RESOLUTION.md).
