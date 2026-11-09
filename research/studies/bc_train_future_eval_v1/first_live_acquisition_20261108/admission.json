@@ -1,0 +1,178 @@
+{
+  "candidate_package_sha256": "4af57c7b9a0d9a8465e59b3a6f774db1d167a5176ae5086db30b32a5c75b8e42",
+  "clock": {
+    "boot_id": "112",
+    "host_utc_label": "2026-11-09T01:16:05.868970+00:00",
+    "monotonic_ns": 431889198735600,
+    "uptime_ms": 431845187,
+    "utc_certified": false
+  },
+  "counts": {
+    "BUY": 0,
+    "BUY_folds": 0,
+    "SELL": 0,
+    "SELL_folds": 0,
+    "context": 1,
+    "evaluable": 0,
+    "post_bars": 0,
+    "signals": 0
+  },
+  "dataset_admitted": false,
+  "dataset_hash_admitted": null,
+  "deficits": {
+    "BUY": 80,
+    "BUY_folds": 3,
+    "SELL": 80,
+    "SELL_folds": 3,
+    "context": 349,
+    "evaluable": 200,
+    "post_bars": 100,
+    "signals": 800
+  },
+  "failures": [],
+  "gates": {
+    "ATR_seed": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "BID_ASK": {
+      "scope": "SELECTED_CONTIGUOUS_NATIVE_TRAIN_PREFIX_ONLY_NOT_GLOBAL_UTC_CERTIFICATION",
+      "status": "PASS",
+      "witness_hashes": [
+        "f3258ec275a99e8391604c4b2735aadfb2ce48063748091b08b3e856aff7da94",
+        "51b7319804bd82fbfdffd068afd671114d9fe438d025185d2b54b2d4e3ee8bfa"
+      ]
+    },
+    "HA_seed": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "OHLC": {
+      "scope": "SELECTED_CONTIGUOUS_NATIVE_TRAIN_PREFIX_ONLY_NOT_GLOBAL_UTC_CERTIFICATION",
+      "status": "PASS",
+      "witness_hashes": [
+        "f3258ec275a99e8391604c4b2735aadfb2ce48063748091b08b3e856aff7da94",
+        "51b7319804bd82fbfdffd068afd671114d9fe438d025185d2b54b2d4e3ee8bfa"
+      ]
+    },
+    "calendar": {
+      "reason": "CURRENT_TRANSITION_EXCEPTION_PROOF_REQUIRED; NUMERIC_ADJACENCY_ALONE_IS_NOT_CALENDAR_CERTIFICATION",
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "causality": {
+      "scope": "SELECTED_CONTIGUOUS_NATIVE_TRAIN_PREFIX_ONLY_NOT_GLOBAL_UTC_CERTIFICATION",
+      "status": "PASS",
+      "witness_hashes": [
+        "f3258ec275a99e8391604c4b2735aadfb2ce48063748091b08b3e856aff7da94",
+        "51b7319804bd82fbfdffd068afd671114d9fe438d025185d2b54b2d4e3ee8bfa"
+      ]
+    },
+    "exclusivity": {
+      "scope": "EXCLUSIVE_APPROVED_NATIVE_ORDER_NO_PHYSICAL_UTC_GENERATION_CLAIM",
+      "status": "PASS",
+      "witness_hashes": [
+        "d343170d6350682207032ef9fe2595ee94e4d9b2d7d38f5cc7493278adb71ac9",
+        "e17973f0b2c9aeae8c0262eb2653acb55bdb74cf59fc7f4d18d22ad82e2cbbf9"
+      ]
+    },
+    "exit_horizons": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "features": {
+      "scope": "SELECTED_CONTIGUOUS_NATIVE_TRAIN_PREFIX_ONLY_NOT_GLOBAL_UTC_CERTIFICATION",
+      "status": "PASS",
+      "witness_hashes": [
+        "f3258ec275a99e8391604c4b2735aadfb2ce48063748091b08b3e856aff7da94",
+        "51b7319804bd82fbfdffd068afd671114d9fe438d025185d2b54b2d4e3ee8bfa"
+      ]
+    },
+    "folds": {
+      "status": "WAITING_FOR_EVIDENCE",
+      "witness_hashes": []
+    },
+    "hashes": {
+      "scope": "SELECTED_CONTIGUOUS_NATIVE_TRAIN_PREFIX_ONLY_NOT_GLOBAL_UTC_CERTIFICATION",
+      "status": "PASS",
+      "witness_hashes": [
+        "f3258ec275a99e8391604c4b2735aadfb2ce48063748091b08b3e856aff7da94",
+        "51b7319804bd82fbfdffd068afd671114d9fe438d025185d2b54b2d4e3ee8bfa"
+      ]
+    },
+    "historical_continuity": {
+      "scope": "SELECTED_CONTIGUOUS_NATIVE_TRAIN_PREFIX_ONLY_NOT_GLOBAL_UTC_CERTIFICATION",
+      "status": "PASS",
+      "witness_hashes": [
+        "f3258ec275a99e8391604c4b2735aadfb2ce48063748091b08b3e856aff7da94",
+        "51b7319804bd82fbfdffd068afd671114d9fe438d025185d2b54b2d4e3ee8bfa"
+      ]
+    },
+    "independence": {
+      "scope": "EXCLUSIVE_APPROVED_NATIVE_ORDER_NO_PHYSICAL_UTC_GENERATION_CLAIM",
+      "status": "PASS",
+      "witness_hashes": [
+        "d343170d6350682207032ef9fe2595ee94e4d9b2d7d38f5cc7493278adb71ac9",
+        "e17973f0b2c9aeae8c0262eb2653acb55bdb74cf59fc7f4d18d22ad82e2cbbf9"
+      ]
+    },
+    "membership": {
+      "scope": "SELECTED_CONTIGUOUS_NATIVE_TRAIN_PREFIX_ONLY_NOT_GLOBAL_UTC_CERTIFICATION",
+      "status": "PASS",
+      "witness_hashes": [
+        "f3258ec275a99e8391604c4b2735aadfb2ce48063748091b08b3e856aff7da94",
+        "51b7319804bd82fbfdffd068afd671114d9fe438d025185d2b54b2d4e3ee8bfa"
+      ]
+    },
+    "no_leakage": {
+      "scope": "SELECTED_CONTIGUOUS_NATIVE_TRAIN_PREFIX_ONLY_NOT_GLOBAL_UTC_CERTIFICATION",
+      "status": "PASS",
+      "witness_hashes": [
+        "f3258ec275a99e8391604c4b2735aadfb2ce48063748091b08b3e856aff7da94",
+        "51b7319804bd82fbfdffd068afd671114d9fe438d025185d2b54b2d4e3ee8bfa"
+      ]
+    },
+    "provenance": {
+      "scope": "EXCLUSIVE_APPROVED_NATIVE_ORDER_NO_PHYSICAL_UTC_GENERATION_CLAIM",
+      "status": "PASS",
+      "witness_hashes": [
+        "d343170d6350682207032ef9fe2595ee94e4d9b2d7d38f5cc7493278adb71ac9",
+        "e17973f0b2c9aeae8c0262eb2653acb55bdb74cf59fc7f4d18d22ad82e2cbbf9"
+      ]
+    },
+    "reproducibility": {
+      "status": "PASS",
+      "witness_hashes": [
+        "23d558f5a5ba9551aab4cfa2a6e3eb047b8fe74f1cd0d4492fd8996e640c9ab0",
+        "0fc018b038306b1d6cc93df7abb6f6239891aa273c91aec401e00715c8d4ed0e"
+      ]
+    },
+    "tick_coverage": {
+      "scope": "SELECTED_CONTIGUOUS_NATIVE_TRAIN_PREFIX_ONLY_NOT_GLOBAL_UTC_CERTIFICATION",
+      "status": "PASS",
+      "witness_hashes": [
+        "f3258ec275a99e8391604c4b2735aadfb2ce48063748091b08b3e856aff7da94",
+        "51b7319804bd82fbfdffd068afd671114d9fe438d025185d2b54b2d4e3ee8bfa"
+      ]
+    }
+  },
+  "input_marker": "0fc018b038306b1d6cc93df7abb6f6239891aa273c91aec401e00715c8d4ed0e",
+  "market_status": "NEW_NATIVE_INTERVAL_BOUND",
+  "pending": [
+    "calendar",
+    "ATR_seed",
+    "HA_seed",
+    "exit_horizons",
+    "folds"
+  ],
+  "reason": "SEPARATE_REVIEWED_ADMISSION_AND_HASH_BOUND_TRAINING_GRANT_REQUIRED",
+  "reevaluated": true,
+  "request_ready": false,
+  "review_hash": "5e119009f6318a331f0fcb72ad5dcd5bef7c2ff058b7f8944edc5da1a58b8f23",
+  "schema": "bc-pre-admission-review/2",
+  "status": "WAITING_FOR_DATA",
+  "technical_package_complete": false,
+  "training_authorization_status": "WAITING_FOR_AUTHORIZATION",
+  "training_authorized": false,
+  "training_executed": false
+}

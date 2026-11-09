@@ -1,0 +1,154 @@
+{
+  "BUY": 0,
+  "SELL": 0,
+  "activation_utc": {
+    "after_capture_id": "79f39a88aa144245a1e505a61694787a",
+    "basis": "CAUSAL_ORDER_BETWEEN_AUTHENTICATED_PRE_TRANSMIT_AND_POST_RECEIVE_SERVER_TIMESTAMPS",
+    "before_capture_id": "b88dfbff8f674b61b169e223831dc553",
+    "broker_event_utc_certified": false,
+    "estimate_ns": 1794154987713468174,
+    "half_width_ns": 392385152,
+    "local_clock_offset_or_drift_extrapolated": false,
+    "uncertainty": "CONDITIONAL_ON_REMOTE_SERVER_ADVERTISED_ERROR_NOT_METROLOGICAL_ABSOLUTE",
+    "utc_estimate": "2026-11-08T16:23:07.713468+00:00",
+    "utc_interval_ns": [
+      1794154987321083022,
+      1794154988105853326
+    ],
+    "utc_lower": "2026-11-08T16:23:07.321083+00:00",
+    "utc_upper": "2026-11-08T16:23:08.105853+00:00"
+  },
+  "anchor_native_msc": 1794009599968,
+  "chain_head": "1aac76780d16229cdda42e114d2e837b7c8a9da0a10203ab08ff912751df79b9",
+  "chain_records": 114,
+  "checkpoint_sha256": "07a0605e6fb54b8c1f3b9b0acfdc9953d1e2cb81a73e1f2079b43dbf05940ddc",
+  "consecutive_m5": 1,
+  "cursor": 1794194100000,
+  "dataset_id": "bc_train_f6b99cbfc59542a38627868015f65792",
+  "epoch": "bc_epoch_0482f829cded4fb0957d6e0dc11804c5",
+  "first_quote": {
+    "admitted": false,
+    "first_fresh_quote": {
+      "ask": 51582.0,
+      "bid": 51576.0,
+      "flags": 1126,
+      "time": 1794193587,
+      "time_msc": 1794193587199
+    },
+    "floor": 1794193800000,
+    "kind": "BC_NATIVE_FLOOR_BOUND",
+    "observation_clock": {
+      "boot_id": "112",
+      "host_utc_label": "2026-11-09T01:06:27.696378+00:00",
+      "monotonic_ns": 431311027084400,
+      "uptime_ms": 431267015,
+      "utc_certified": false
+    },
+    "quarantine": true,
+    "scope": "AFTER_NEW_OBSERVATION_NEXT_NATIVE_M5_NOT_UTC_GENERATION"
+  },
+  "floor": 1794193800000,
+  "prior_manifest_hashes_verified": true,
+  "producer_id": "bc_history_43a3fd9587504d7586c04d9f28548a81",
+  "rejected": 0,
+  "signals": 0,
+  "verified_m5": 1,
+  "vintages": [
+    {
+      "assessment": {
+        "classification": "VERIFIED_NATIVE_ARCHIVE_QUARANTINED",
+        "live_receipt_proven": false,
+        "native_archive_parity": true,
+        "quality": {
+          "broker_tick_completeness_certified": false,
+          "identical_rows_retained": 0,
+          "invalid_bid_ask_rows": 0,
+          "m1": 5,
+          "m1_m5": [
+            {
+              "fields": [],
+              "status": "EXACT",
+              "time": 1794193800
+            }
+          ],
+          "m5": 1,
+          "missing_m1_opens": [],
+          "original_receipt_proven": false,
+          "tick_m1": [
+            {
+              "bid_flag_rows": 159,
+              "different_fields": [],
+              "native_volume": 159,
+              "ohlc": "EXACT",
+              "tick_rows": 159,
+              "time": 1794193800
+            },
+            {
+              "bid_flag_rows": 140,
+              "different_fields": [],
+              "native_volume": 140,
+              "ohlc": "EXACT",
+              "tick_rows": 140,
+              "time": 1794193860
+            },
+            {
+              "bid_flag_rows": 159,
+              "different_fields": [],
+              "native_volume": 159,
+              "ohlc": "EXACT",
+              "tick_rows": 159,
+              "time": 1794193920
+            },
+            {
+              "bid_flag_rows": 163,
+              "different_fields": [],
+              "native_volume": 163,
+              "ohlc": "EXACT",
+              "tick_rows": 163,
+              "time": 1794193980
+            },
+            {
+              "bid_flag_rows": 184,
+              "different_fields": [],
+              "native_volume": 184,
+              "ohlc": "EXACT",
+              "tick_rows": 184,
+              "time": 1794194040
+            }
+          ],
+          "ticks": 805,
+          "ticks_generated_or_simulated": false,
+          "valid_bid_ask_rows": 805
+        },
+        "scientific_admission": false
+      },
+      "counts": {
+        "m1": 5,
+        "m5": 1,
+        "ticks": 805
+      },
+      "end": 1794194100000,
+      "failures": {},
+      "feature_hashes": [
+        "c9aa6faf0ffd27e5f0da4b74f9b5cebcf6f33c303a04b2f8f39bf337c635b877"
+      ],
+      "files": {
+        "m1.jsonl": "85481d730e9be63cd084f0cf266c1acd5b40f1b1d9c41f546f79013314470ed0",
+        "m5.jsonl": "377d027bb0f9ed268970669b49f1a4a0acf27a93c31df80f41bd12ea7ea09b24",
+        "ticks.jsonl": "576d6bee6b4696743a393c9e2b3b928d71078efa6f04833d92a5d5edcb4a0f36"
+      },
+      "first_retrieval_clock": {
+        "boot_id": "112",
+        "host_utc_label": "2026-11-09T01:16:04.192423+00:00",
+        "monotonic_ns": 431887522499900,
+        "uptime_ms": 431843500,
+        "utc_certified": false
+      },
+      "manifest_sha256": "51b7319804bd82fbfdffd068afd671114d9fe438d025185d2b54b2d4e3ee8bfa",
+      "membership_role": "TRAIN_CONTEXT",
+      "origin": "NATIVE_XM_RETROSPECTIVE_TRAIN_CANDIDATE",
+      "quote_native_msc": 1794194163777,
+      "start": 1794193800000
+    }
+  ]
+}

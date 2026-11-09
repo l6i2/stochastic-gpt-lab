@@ -1,0 +1,54 @@
+{
+  "BC_ACQUISITION_STATUS": "ACTIVE_HISTORICAL_TRAIN_QUARANTINED",
+  "BID_ASK_STATUS": {
+    "invalid": 0,
+    "rows": 805
+  },
+  "DATASET_ADMISSION": "WAITING_FOR_DATA",
+  "DATASET_HASH": null,
+  "DEMO": "DISABLED",
+  "FIRST_NEW_NATIVE_QUOTE": {
+    "ask": 51582.0,
+    "bid": 51576.0,
+    "flags": 1126,
+    "time": 1794193587,
+    "time_msc": 1794193587199
+  },
+  "LIVE_TRADING": false,
+  "M1_VERIFIED": 5,
+  "M5_REJECTED": 0,
+  "M5_VERIFIED": 1,
+  "MARKET_OPEN_VERIFIED": true,
+  "NEXT_AUTOMATIC_ACTION": "RUN_EXISTING_WORKER_EVERY_5_MIN_AND_ORACLES_AT_15_30_276_350",
+  "REMAINING_BLOCKERS": [
+    "calendar",
+    "ATR_seed",
+    "HA_seed",
+    "exit_horizons",
+    "folds"
+  ],
+  "TICKS_ACQUIRED": 805,
+  "TRAIN_CONTEXT_PROGRESS": {
+    "current": 1,
+    "required": 350
+  },
+  "TRAIN_SIGNALS_PROGRESS": {
+    "BUY": 0,
+    "SELL": 0,
+    "current": 0,
+    "required": 800
+  },
+  "orders_sent": 0,
+  "protocol_deficits": {
+    "BUY": 80,
+    "BUY_folds": 3,
+    "SELL": 80,
+    "SELL_folds": 3,
+    "context": 349,
+    "evaluable": 200,
+    "post_bars": 100,
+    "signals": 800
+  },
+  "terminal_trade_allowed": false,
+  "training_executed": false
+}

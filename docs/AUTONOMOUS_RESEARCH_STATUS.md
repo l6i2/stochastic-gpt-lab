@@ -1,8 +1,10 @@
+> Estado vigente B+C — cotizaciones nuevas verificadas en XM. 805 ticks, 5 M1 y 1 M5 verificadas en cuarentena, contexto 1/350, señales 0/800, admisión WAITING_FOR_DATA. [Primera adquisición y recibos](BC_FIRST_LIVE_ACQUISITION.md).
+
 > Continuación prioritaria C+F. El corte de las 15:15 en Ecuador verificó 20 M5 acumuladas,## Recuperación histórica separada del 8 de noviembre
 
 > Auditoría premercado vigente: TECHNICAL_PRETRAINING_CLOSED; 68 tests, imports y compilación PASS. 18 gates y cuatro estados verificados; dataset 0 M5, WAITING_FOR_DATA, sin admisión ni grant. Sin acción manual. [Informe definitivo](BC_FINAL_PREMARKET_AUDIT.md). Los apartados previos son históricos.
 
-> Verificación de reapertura vigente: sin tick nuevo; 0 M1, 0 M5, contexto 0/350. Sesiones nativas actualizadas; siguiente ventana nominal 01:00 XM, referencia condicional 18:00 Ecuador. Vigilancia automática existente cada cinco minutos. [Recibo completo](BC_OPENING_VERIFICATION.md).
+> Verificación anterior a la primera adquisición: sin tick nuevo; 0 M1, 0 M5, contexto 0/350. Sesiones nativas actualizadas; siguiente ventana nominal 01:00 XM, referencia condicional 18:00 Ecuador. Vigilancia automática existente cada cinco minutos. [Recibo completo](BC_OPENING_VERIFICATION.md).
 > Estado vigente — cierre pre-entrenamiento: tarea existente e IPC integrados, guardian verifica admisión automáticamente, 54 tests PASS; 0 M5/0 señales, WAITING_FOR_DATA, sin admisión ni entrenamiento. El bloqueo anterior de edición de tareas se resolvió reutilizando los servicios instalados; no requiere acción manual. [Informe consolidado](BC_FINAL_PRETRAINING_CLOSURE.md). Los apartados anteriores describen estados históricos.
 
 Se recuperaron en B 246.397 ticks, 1.295 M1 y 251 M5 de 26 gaps posteriores al corte. Se corrigió y probó el límite inclusivo de CopyTicks en Python, se verificaron hashes y se programó recuperación al iniciar sesión y cada cinco minutos. A mantiene 88 M5 y 0 de warmup científico. El contexto retrospectivo de 30 M5 verificó MAIN_K, ATR candidato y HA con MT5. B sigue diagnóstico y expuesto dentro de la reserva C+F. [Resultados, límites y propuesta híbrida](XM_HISTORICAL_RECOVERY_RESULTS.md).
