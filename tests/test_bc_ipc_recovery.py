@@ -6,6 +6,17 @@ from tools import bc_pretraining_worker as worker
 
 
 class BCIPCRecoveryTests(unittest.TestCase):
+    def test_oracle_reuses_only_pass_bound_to_the_same_ordered_prefix(self):
+        hashes = [str(i) for i in range(16)]
+        receipt = dict(status='PASS_RETROSPECTIVE_CONTEXT_DIAGNOSTIC',
+                       BC_new_dataset_only=True, start_native=123, bars=15,
+                       archive_parents=hashes[:])
+        self.assertTrue(worker.matches_native_prefix(receipt, 123, hashes, 15))
+        self.assertFalse(worker.matches_native_prefix(receipt, 124, hashes, 15))
+        self.assertFalse(worker.matches_native_prefix(receipt, 123, hashes, 30))
+        self.assertFalse(worker.matches_native_prefix(dict(receipt, archive_parents=[]), 123, hashes, 15))
+        self.assertFalse(worker.matches_native_prefix(receipt, 123, hashes[::-1], 15))
+
     def test_memory_retry_waits_for_margin_then_reduces_budget(self):
         low = types.SimpleNamespace(available=worker.ACQUISITION_MEMORY_FLOOR - 1)
         ready = types.SimpleNamespace(available=worker.ACQUISITION_MEMORY_FLOOR)

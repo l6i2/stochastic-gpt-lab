@@ -73,6 +73,17 @@ def closed_gap(proofs,start,end):
         interval['start']<=start<end<=interval['end'] for interval in p.get('closed_native_intervals',[]))),None)
 
 
+def matches_native_prefix(receipt, first_bar, hashes, bars):
+    parents=receipt.get('archive_parents',[])
+    return (receipt.get('status')=='PASS_RETROSPECTIVE_CONTEXT_DIAGNOSTIC'
+            and receipt.get('BC_new_dataset_only') is True
+            and receipt.get('start_native')==first_bar
+            and receipt.get('bars')==bars
+            and bars in (15,30,276,350) and len(hashes)>=bars
+            and parents[:bars]==hashes[:bars]
+            and set(parents)<=set(hashes))
+
+
 def _review_current(force=False):
     m=station.load_manifest();state=checkpoint();base=station.BASE;out=base/'pretraining_quarantine';out.mkdir(exist_ok=True)
     contract=station.PACKAGE/'contract.json';whitelist=station.PACKAGE/'feature_whitelist.json'
@@ -180,6 +191,9 @@ def _review_current(force=False):
         # appears. Failed identical attempts are recorded, not repeated forever.
         for milestone in (15,30,276,350):
             if len(valid)<milestone:continue
+            if any(matches_native_prefix(json.loads(p.read_bytes()),valid[0]['time'],native_hashes,milestone)
+                   for p in proofs):
+                continue
             target=out/'proofs'/(str(valid[0]['time'])+'_'+str(milestone)+'_'+seal(native_hashes[:milestone])[:12]+'.json')
             attempt=target.with_suffix('.attempt_'+seal(resources)[:12]+'.json')
             if target.exists() or attempt.exists():continue
@@ -223,9 +237,7 @@ def _review_current(force=False):
         # seeds. Missing receipts remain pending; old B/C+F results never count.
         for proof in proofs:
             value=json.loads(proof.read_bytes())
-            if (valid and value.get('status')=='PASS_RETROSPECTIVE_CONTEXT_DIAGNOSTIC'
-                    and value.get('start_native')==valid[0]['time'] and value.get('BC_new_dataset_only') is True
-                    and set(value.get('archive_parents',[]))<=set(native_hashes)):
+            if valid and matches_native_prefix(value,valid[0]['time'],native_hashes,value.get('bars')):
                 if value.get('bars',0)>=30:gates['ATR_seed']=dict(status='PASS',witness_hashes=[sha(proof)],scope='MATCHED_NEW_PREFIX_NATIVE_ORACLE')
                 if value.get('ha_own_ready_276'):gates['HA_seed']=dict(status='PASS',witness_hashes=[sha(proof)],scope='MATCHED_NEW_PREFIX_NATIVE_ORACLE')
         result=review(counts,gates)

@@ -1,4 +1,6 @@
-> Estado vigente B+C — adquisición con lotes de dos M5 y reintento acotado. 4154 ticks, 25 M1 y 5 M5 verificadas en cuarentena. Contexto 5/350. [Mediciones y estado](BC_ACQUISITION_MEMORY_STABILITY.md).
+> Estado vigente B+C — 5451 ticks, 35 M1 y 7 M5 verificadas en cuarentena. Contexto 7/350. Admisión WAITING_FOR_DATA. [Avance y recibos](BC_DATASET_MATURITY_PROGRESS.md).
+
+> Estabilización B+C — adquisición con lotes de dos M5 y reintento acotado. 4154 ticks, 25 M1 y 5 M5 verificadas en cuarentena. Contexto 5/350. [Mediciones y estado](BC_ACQUISITION_MEMORY_STABILITY.md).
 
 > Primera adquisición B+C — cotizaciones nuevas verificadas en XM. 805 ticks, 5 M1 y 1 M5 verificadas en cuarentena, contexto 1/350, señales 0/800, admisión WAITING_FOR_DATA. [Primera adquisición y recibos](BC_FIRST_LIVE_ACQUISITION.md).
 
