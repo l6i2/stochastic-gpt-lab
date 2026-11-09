@@ -1,0 +1,52 @@
+{
+  "ACQUISITION_STATUS": "ACTIVE_HISTORICAL_TRAIN_QUARANTINED",
+  "DEMO": "DISABLED",
+  "LIVE_TRADING": false,
+  "M1_VERIFIED": 25,
+  "M5_VERIFIED": 5,
+  "RAM_AVAILABLE": {
+    "acquisition_end_bytes": 618156032,
+    "acquisition_start_bytes": 560480256,
+    "last_bytes": 867233792,
+    "min_bytes": 446029824
+  },
+  "RAM_PEAK": {
+    "sqlite_baseline_noop_allocator_highwater_bytes": 175896,
+    "sqlite_patched_allocator_highwater_bytes": 194528,
+    "worker_baseline_noop_peak_working_set_bytes": 40787968,
+    "worker_patched_peak_working_set_bytes": 44736512,
+    "worker_patched_private_end_bytes": 263065600,
+    "worker_sampled_peak_working_set_bytes": 43061248,
+    "xm_lifetime_peak_working_set_bytes": 229371904,
+    "xm_observed_rss_bytes": 18190336,
+    "xm_private_peak_sample_bytes": 84496384
+  },
+  "REMAINING_BLOCKERS": {
+    "dataset_admitted": false,
+    "deficits": {
+      "BUY": 80,
+      "BUY_folds": 3,
+      "SELL": 80,
+      "SELL_folds": 3,
+      "context": 345,
+      "evaluable": 200,
+      "post_bars": 100,
+      "signals": 800
+    },
+    "evidence": [
+      "calendar",
+      "ATR_seed",
+      "HA_seed",
+      "exit_horizons",
+      "folds"
+    ],
+    "training_grant": false
+  },
+  "TICKS_ACQUIRED": 4154,
+  "TRAIN_CONTEXT_PROGRESS": {
+    "current": 5,
+    "required": 350
+  },
+  "orders": 0,
+  "training_executed": false
+}

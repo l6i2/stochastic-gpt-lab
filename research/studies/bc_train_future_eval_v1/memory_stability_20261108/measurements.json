@@ -1,0 +1,238 @@
+{
+  "baseline": {
+    "after": {
+      "available": 696381440,
+      "peak_wset": 40787968,
+      "pid": 17180,
+      "private": 261177344,
+      "rss": 40767488
+    },
+    "before": {
+      "available": 673533952,
+      "peak_wset": 24834048,
+      "pid": 17180,
+      "private": 13008896,
+      "rss": 24834048
+    },
+    "end_utc": "2026-11-09T01:31:38.219602+00:00",
+    "kind": "baseline",
+    "result": {
+      "runtime": {
+        "BUY": 0,
+        "DEMO": "DISABLED",
+        "LIVE_TRADING": false,
+        "M5_current_consecutive": 4,
+        "M5_rejected": 0,
+        "M5_verified": 4,
+        "SELL": 0,
+        "calendar": "PARTIAL_NO_UNPROVEN_BRIDGE",
+        "causal_audit": "NOT_ADMITTED_GLOBAL_FAIL_UNCHANGED",
+        "chain_head": "a09cb469fc2fbf089eae4726d99d331612fd53891363b608dbf847800097f315",
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-09T01:31:38.199604+00:00",
+          "monotonic_ns": 432821529436700,
+          "uptime_ms": 432777515,
+          "utc_certified": false
+        },
+        "dataset_admitted": false,
+        "dataset_hash": null,
+        "dataset_id": "bc_train_f6b99cbfc59542a38627868015f65792",
+        "epoch": "bc_epoch_0482f829cded4fb0957d6e0dc11804c5",
+        "evaluable": 0,
+        "fold_support": "PENDING_COMPLETE_LABEL_HORIZONS_AND_ADMISSION",
+        "identity": {
+          "account_mode": "DEMO",
+          "quote": {
+            "ask": 51562.0,
+            "bid": 51556.0,
+            "flags": 1126,
+            "time": 1794195097,
+            "time_msc": 1794195097889
+          },
+          "server": "XMGlobalSC-MT5 5",
+          "symbol": "US30Cash",
+          "terminal_data_folder_id": "20C285FE08971A9A2E814AAC44AFC9D2",
+          "terminal_trade_allowed": false,
+          "tick_size": 0.01
+        },
+        "intervals": 4,
+        "ledger_records": 133,
+        "native_floor": 1794193800000,
+        "next_interval": 1794195000000,
+        "old_ingress_closed": true,
+        "orders_sent": 0,
+        "post_bars": 0,
+        "process_rss_bytes": 40763392,
+        "processed_this_run": 0,
+        "schema": "bc-runtime-status/1",
+        "scoring_executed": false,
+        "seeds": "APPROVED_VARIANT_PARITY_ON_NEW_CONTEXT_PENDING",
+        "signals": 0,
+        "status": "ACTIVE_HISTORICAL_TRAIN_QUARANTINED",
+        "study_id": "US30CASH_M5_XM_TRAIN_FUTURE_EVAL_PROPOSED_V1",
+        "terminal_trade_allowed": false,
+        "training_executed": false,
+        "training_readiness": "BLOCKED_NO_ADMITTED_DATASET_OR_SPECIFIC_GRANT",
+        "warmup": 4
+      },
+      "runtime_error": null
+    },
+    "sqlite": {
+      "current_bytes": 0,
+      "peak_bytes": 175896
+    },
+    "start_utc": "2026-11-09T01:31:37.851640+00:00"
+  },
+  "metrics": {
+    "RAM_AVAILABLE": {
+      "acquisition_end_bytes": 618156032,
+      "acquisition_start_bytes": 560480256,
+      "last_bytes": 867233792,
+      "min_bytes": 446029824
+    },
+    "RAM_PEAK": {
+      "sqlite_baseline_noop_allocator_highwater_bytes": 175896,
+      "sqlite_patched_allocator_highwater_bytes": 194528,
+      "worker_baseline_noop_peak_working_set_bytes": 40787968,
+      "worker_patched_peak_working_set_bytes": 44736512,
+      "worker_patched_private_end_bytes": 263065600,
+      "worker_sampled_peak_working_set_bytes": 43061248,
+      "xm_lifetime_peak_working_set_bytes": 229371904,
+      "xm_observed_rss_bytes": 18190336,
+      "xm_private_peak_sample_bytes": 84496384
+    },
+    "first_sample_utc": "2026-11-09T01:29:30.927284+00:00",
+    "json_parse_comparison": {
+      "bytes": 118944,
+      "eager_peak_bytes": 950268,
+      "native_start": "1794194100000",
+      "rows": 944,
+      "rows_identical": true,
+      "streamed_peak_bytes": 803412
+    },
+    "last_sample_utc": "2026-11-09T01:36:04.212092+00:00",
+    "sample_count": 177
+  },
+  "operation": {
+    "cursor_after": 1794195300000,
+    "cursor_before": 1794195300000,
+    "ledger_records_after": 142,
+    "ledger_records_before": 140,
+    "m5_after": 5,
+    "m5_before": 5,
+    "multiple_instances": "IgnoreNew",
+    "orders": 0,
+    "original_action": "tools/bc_study_station.py --budget 6",
+    "reopen_no_duplicate": true,
+    "resource_minimum_bytes": 402653184,
+    "task_action": "tools/bc_pretraining_worker.py --budget 2",
+    "task_last_ecuador": "2026-11-08T20:35:50.0000000-05:00",
+    "task_last_result": 0,
+    "task_next_ecuador": "2026-11-08T20:39:19.0000000-05:00",
+    "training_executed": false,
+    "vintage_hashes": [
+      "2C7EFD8E4AC72726BFF71B80E2808FE01DE1FAE5179F0682361B61364ADA58C4",
+      "2D62D1C777E3115EB055D312B7765D40BE3E9ED537AA764E7F332B5CF7429D01",
+      "3550B95929F4F9F4FE40A4CCE1FC7B9D582F5B4108B36D3F88CDC27CA8E046EB",
+      "51B7319804BD82FBFDFFD068AFD671114D9FE438D025185D2B54B2D4E3EE8BFA",
+      "7965E7925E44F8E81FA2E5DE07B49212F6E2B1A947953297A2BE94F7F3ED2E58"
+    ]
+  },
+  "patched": {
+    "after": {
+      "available": 618156032,
+      "peak_wset": 44736512,
+      "pid": 6592,
+      "private": 263065600,
+      "rss": 43667456
+    },
+    "before": {
+      "available": 560480256,
+      "peak_wset": 24674304,
+      "pid": 6592,
+      "private": 12832768,
+      "rss": 24674304
+    },
+    "end_utc": "2026-11-09T01:35:11.314337+00:00",
+    "kind": "patched",
+    "result": {
+      "PROTECTED_SCORING": false,
+      "TRAINING_EXECUTED": false,
+      "admission_status": "WAITING_FOR_DATA",
+      "clock": {
+        "boot_id": "112",
+        "host_utc_label": "2026-11-09T01:35:11.308323+00:00",
+        "monotonic_ns": 433034638316000,
+        "uptime_ms": 432990625,
+        "utc_certified": false
+      },
+      "orders": 0,
+      "runtime": {
+        "BUY": 0,
+        "DEMO": "DISABLED",
+        "LIVE_TRADING": false,
+        "M5_current_consecutive": 5,
+        "M5_rejected": 0,
+        "M5_verified": 5,
+        "SELL": 0,
+        "calendar": "PARTIAL_NO_UNPROVEN_BRIDGE",
+        "causal_audit": "NOT_ADMITTED_GLOBAL_FAIL_UNCHANGED",
+        "chain_head": "aff43d2b6bc2af86586b97e95ff1d597157941fc993bbad226c45a64415cf0e3",
+        "clock": {
+          "boot_id": "112",
+          "host_utc_label": "2026-11-09T01:35:10.538134+00:00",
+          "monotonic_ns": 433033868416300,
+          "uptime_ms": 432989843,
+          "utc_certified": false
+        },
+        "dataset_admitted": false,
+        "dataset_hash": null,
+        "dataset_id": "bc_train_f6b99cbfc59542a38627868015f65792",
+        "epoch": "bc_epoch_0482f829cded4fb0957d6e0dc11804c5",
+        "evaluable": 0,
+        "fold_support": "PENDING_COMPLETE_LABEL_HORIZONS_AND_ADMISSION",
+        "identity": {
+          "account_mode": "DEMO",
+          "quote": {
+            "ask": 51595.0,
+            "bid": 51589.0,
+            "flags": 1126,
+            "time": 1794195309,
+            "time_msc": 1794195309787
+          },
+          "server": "XMGlobalSC-MT5 5",
+          "symbol": "US30Cash",
+          "terminal_data_folder_id": "20C285FE08971A9A2E814AAC44AFC9D2",
+          "terminal_trade_allowed": false,
+          "tick_size": 0.01
+        },
+        "intervals": 5,
+        "ledger_records": 140,
+        "native_floor": 1794193800000,
+        "next_interval": 1794195300000,
+        "old_ingress_closed": true,
+        "orders_sent": 0,
+        "post_bars": 0,
+        "process_rss_bytes": 41160704,
+        "processed_this_run": 1,
+        "schema": "bc-runtime-status/1",
+        "scoring_executed": false,
+        "seeds": "APPROVED_VARIANT_PARITY_ON_NEW_CONTEXT_PENDING",
+        "signals": 0,
+        "status": "ACTIVE_HISTORICAL_TRAIN_QUARANTINED",
+        "study_id": "US30CASH_M5_XM_TRAIN_FUTURE_EVAL_PROPOSED_V1",
+        "terminal_trade_allowed": false,
+        "training_executed": false,
+        "training_readiness": "BLOCKED_NO_ADMITTED_DATASET_OR_SPECIFIC_GRANT",
+        "warmup": 5
+      },
+      "runtime_error": null
+    },
+    "sqlite": {
+      "current_bytes": 0,
+      "peak_bytes": 194528
+    },
+    "start_utc": "2026-11-09T01:35:09.839091+00:00"
+  }
+}

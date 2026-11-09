@@ -1,4 +1,6 @@
-> Estado vigente B+C — cotizaciones nuevas verificadas en XM. 805 ticks, 5 M1 y 1 M5 verificadas en cuarentena, contexto 1/350, señales 0/800, admisión WAITING_FOR_DATA. [Primera adquisición y recibos](BC_FIRST_LIVE_ACQUISITION.md).
+> Estado vigente B+C — adquisición con lotes de dos M5 y reintento acotado. 4154 ticks, 25 M1 y 5 M5 verificadas en cuarentena. Contexto 5/350. [Mediciones y estado](BC_ACQUISITION_MEMORY_STABILITY.md).
+
+> Primera adquisición B+C — cotizaciones nuevas verificadas en XM. 805 ticks, 5 M1 y 1 M5 verificadas en cuarentena, contexto 1/350, señales 0/800, admisión WAITING_FOR_DATA. [Primera adquisición y recibos](BC_FIRST_LIVE_ACQUISITION.md).
 
 > Continuación prioritaria C+F. El corte de las 15:15 en Ecuador verificó 20 M5 acumuladas,## Recuperación histórica separada del 8 de noviembre
 

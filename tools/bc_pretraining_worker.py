@@ -15,6 +15,26 @@ from controller.native_study_design import fold_plan
 from controller.git_runtime import command as git_command
 
 
+ACQUISITION_MEMORY_FLOOR = 384 * 1024**2
+
+
+def acquire(budget):
+    import psutil
+    try:
+        return ipc.run(budget)
+    except RuntimeError as exc:
+        if str(exc) != 'BC_WAITING_FOR_RESOURCE_MARGIN':
+            raise
+    # The station has already released its lock, SQLite and the XM IPC handle.
+    # Resume from its committed cursor only after the same resource gate clears.
+    for _ in range(3):
+        time.sleep(5)
+        if (psutil.virtual_memory().available >= ACQUISITION_MEMORY_FLOOR
+                and psutil.disk_usage(str(station.BASE)).free >= 2 * 1024**3):
+            return ipc.run(1)
+    raise RuntimeError('BC_WAITING_FOR_RESOURCE_MARGIN')
+
+
 def checkpoint():
     path=station.BASE/'ledger.sqlite3'
     with closing(sqlite3.connect(path.resolve().as_uri()+'?mode=ro',uri=True)) as db:
@@ -70,7 +90,8 @@ def _review_current(force=False):
     previous=out/'status.json'
     if previous.exists() and not force:
         saved=json.loads(previous.read_bytes())
-        if saved['input_marker']==marker:
+        if (saved['input_marker']==marker
+                and saved.get('error')!='RuntimeError:WAITING_FOR_RESOURCES_REVIEW_MEMORY_BOUND'):
             if 'review_hash' in saved:
                 extras={'review_hash','input_marker','reevaluated','clock','market_status','dataset_hash_admitted','candidate_package_sha256'}
                 if seal({k:v for k,v in saved.items() if k not in extras})!=saved['review_hash']:
@@ -97,6 +118,8 @@ def _review_current(force=False):
     context=initial();labels=label_initial();members=[];valid=[];signal_count=0;post=0;native_hashes=[];deadline=time.monotonic()+150
     try:
         for key,item in entries.items():
+            if psutil.virtual_memory().available < ACQUISITION_MEMORY_FLOOR:
+                raise RuntimeError('WAITING_FOR_RESOURCES_REVIEW_MEMORY_BOUND')
             path=(base/item['manifest']).resolve()
             if not path.is_relative_to(base.resolve()) or path.is_symlink() or sha(path)!=item['sha256']:
                 raise ValueError('BC_MANIFEST_MEMBERSHIP_OR_HASH_CHANGED')
@@ -109,10 +132,13 @@ def _review_current(force=False):
             for filename,digest in vintage['files'].items():
                 file=path.parent/filename
                 if file.is_symlink() or sha(file)!=digest:raise ValueError('BC_PAYLOAD_HASH_CHANGED')
-                rows[filename.split('.')[0]]=[json.loads(line) for line in file.read_bytes().splitlines()]
+                with file.open('rb') as stream:
+                    rows[filename.split('.')[0]]=[json.loads(line) for line in stream]
             checked=assessment(rows,start,end)
             if not checked['native_archive_parity'] or vintage['failures']:
-                if not vintage['failures'] and not any(rows.values()) and closed_gap(calendars,start,end):continue
+                verified_closure=not vintage['failures'] and not any(rows.values()) and closed_gap(calendars,start,end)
+                del rows
+                if verified_closure:continue
                 context=initial();labels=label_initial();members=[];valid=[];signal_count=0;post=0;native_hashes=[];continue
             bar=rows['m5'][0]
             if valid and bar['time']!=valid[-1]['time']+300:
@@ -136,6 +162,7 @@ def _review_current(force=False):
             # Labels are frozen baseline diagnostics on this new allowed TRAIN,
             # never model scoring. No protected data reader is used.
             consume(labels,index,rows['ticks'],new_signal)
+            del rows
             if time.monotonic()>deadline:raise RuntimeError('WAITING_FOR_RESOURCES_REVIEW_TIME_BOUND')
             if signal_count==800 and post==100:break
         complete=sorted(labels['rows'],key=lambda r:r['observed_bar_index'])
@@ -240,7 +267,7 @@ def review_current(force=False):
 
 def run(budget=6):
     runtime_error=None
-    try:runtime=ipc.run(budget)
+    try:runtime=acquire(budget)
     except Exception as exc:runtime=None;runtime_error=type(exc).__name__+':'+str(exc)
     # An IPC failure cannot prevent independent review of committed artifacts.
     try:admission=review_current()
