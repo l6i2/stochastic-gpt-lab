@@ -1,0 +1,174 @@
+{
+  "closed_context": {
+    "15": {
+      "BUY": 13,
+      "SELL": 15
+    },
+    "30": {
+      "BUY": 13,
+      "SELL": 15
+    },
+    "5": {
+      "BUY": 13,
+      "SELL": 15
+    },
+    "60": {
+      "BUY": 13,
+      "SELL": 14
+    }
+  },
+  "entries": {
+    "BUY": 13,
+    "SELL": 15
+  },
+  "entry_descriptive_correlations": {
+    "BUY": {
+      "ATR/range_to_ATR": {
+        "all": {
+          "n": 13,
+          "r": 0.12341475612112479
+        },
+        "early": {
+          "n": 6,
+          "r": -0.2299643300735399
+        },
+        "late": {
+          "n": 7,
+          "r": -0.10938977528565604
+        }
+      },
+      "ATR/relative_volume_20": {
+        "all": {
+          "n": 13,
+          "r": -0.12379746470154462
+        },
+        "early": {
+          "n": 6,
+          "r": -0.501689790646783
+        },
+        "late": {
+          "n": 7,
+          "r": 0.15648409140618802
+        }
+      },
+      "stoch_k/stoch_d": {
+        "all": {
+          "n": 13,
+          "r": 0.628019900755586
+        },
+        "early": {
+          "n": 6,
+          "r": 0.7688845289236997
+        },
+        "late": {
+          "n": 7,
+          "r": 0.6310037111732286
+        }
+      }
+    },
+    "SELL": {
+      "ATR/range_to_ATR": {
+        "all": {
+          "n": 15,
+          "r": -0.12074858947947226
+        },
+        "early": {
+          "n": 7,
+          "r": -0.27595458839479003
+        },
+        "late": {
+          "n": 8,
+          "r": -0.18878007359668666
+        }
+      },
+      "ATR/relative_volume_20": {
+        "all": {
+          "n": 15,
+          "r": 0.4454745289201071
+        },
+        "early": {
+          "n": 7,
+          "r": -0.23863457424922457
+        },
+        "late": {
+          "n": 8,
+          "r": 0.4583221317676732
+        }
+      },
+      "stoch_k/stoch_d": {
+        "all": {
+          "n": 15,
+          "r": 0.2706966112851125
+        },
+        "early": {
+          "n": 7,
+          "r": 0.003505738372264848
+        },
+        "late": {
+          "n": 8,
+          "r": 0.4122059841925394
+        }
+      }
+    }
+  },
+  "fits": 0,
+  "hypotheses_tested": 0,
+  "intratrade": {
+    "BUY_FOLLOW": {
+      "mean_mae": 44.40292079207836,
+      "mean_mfe": 56.373102310232184,
+      "mean_unrealized": 17.23922442244346,
+      "rows": 606,
+      "signals": 13
+    },
+    "BUY_INVERT": {
+      "mean_mae": 47.170371900825145,
+      "mean_mfe": 83.36539944903691,
+      "mean_unrealized": 15.917369146006564,
+      "rows": 726,
+      "signals": 13
+    },
+    "SELL_FOLLOW": {
+      "mean_mae": 51.110629999999944,
+      "mean_mfe": 60.16240000000008,
+      "mean_unrealized": 7.922790000000634,
+      "rows": 1000,
+      "signals": 15
+    },
+    "SELL_INVERT": {
+      "mean_mae": 40.212027455121934,
+      "mean_mfe": 59.87191129883836,
+      "mean_unrealized": 9.578585005279322,
+      "rows": 947,
+      "signals": 15
+    }
+  },
+  "m1": 1376,
+  "m5": 276,
+  "mean_displacement_by_frame_and_side": {
+    "M15_BUY": -13.647692307693292,
+    "M15_SELL": 4.816666666667151,
+    "M30_BUY": -26.03461538461572,
+    "M30_SELL": 34.32000000000019,
+    "M5_BUY": 6.254615384615206,
+    "M5_SELL": -6.547333333333275,
+    "M60_BUY": -20.51615384615434,
+    "M60_SELL": 35.17785714285752
+  },
+  "protected_rows_read": 0,
+  "rejected_snapshots": {},
+  "scope": "FIXED_EXPOSED_20240102_DIAGNOSTIC_ONLY",
+  "snapshot_mark_quote_check": {
+    "exact_tape_quote": 3279
+  },
+  "snapshot_rows": 3279,
+  "source_hashes": {
+    "events": "975b374fce187ef4cdf33a02b6a69f743393cc2ef989f352706ae89c8225da81",
+    "m5": "62e1d0877b3ac9cae68d2f30d17567eff4909d3e7a3417e9bd7f8817b2c208df",
+    "snapshots": "e6d2cde9f88a57a744a70f6147e21d34b4b412ebaf2908acbcc595a8dd3e47f3",
+    "tick_tape": "f03c643bc26c4cc236706537e49f0e78dd1fdf89eaab4674b5f599d2439c8711"
+  },
+  "tests_pass": 7,
+  "ticks": 79211,
+  "tool_sha256": "f19dcb86642594125294bb5c399ced5afbb6513975527de04e0580917bf89b5b"
+}

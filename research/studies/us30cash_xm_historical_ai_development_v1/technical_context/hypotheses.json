@@ -1,0 +1,43 @@
+{
+  "fits": 0,
+  "hypotheses": [
+    {
+      "hypothesis": "La pendiente K y el desplazamiento M15 aportan contexto complementario a K/D",
+      "id": "CTX-01",
+      "phase": "Entrada",
+      "requirement": "Estabilidad por lado y contribución frente a las dos políticas constantes"
+    },
+    {
+      "hypothesis": "La alineación de EMA y estructura confirmada aporta contexto a FOLLOW/INVERT",
+      "id": "CTX-02",
+      "phase": "Entrada",
+      "requirement": "Semillas trazables y pivotes disponibles al cutoff"
+    },
+    {
+      "hypothesis": "Volumen relativo y expansión de rango interactúan con el resultado FOLLOW/INVERT",
+      "id": "CTX-03",
+      "phase": "Entrada",
+      "requirement": "Comparación por lado, sin cortes aprendidos del día fijo"
+    },
+    {
+      "hypothesis": "La posición respecto a POC y el rango H1 aportan contexto complementario",
+      "id": "CTX-04",
+      "phase": "Entrada",
+      "requirement": "Bins, cobertura y ventanas congelados"
+    },
+    {
+      "hypothesis": "Retroceso desde MFE y pérdida de momentum preceden reversión",
+      "id": "CTX-05",
+      "phase": "Intratrade",
+      "requirement": "Etiqueta posterior separada, censura y agrupación por operación"
+    },
+    {
+      "hypothesis": "Recuperación tras MAE y transición HA distinguen continuación de agotamiento",
+      "id": "CTX-06",
+      "phase": "Intratrade",
+      "requirement": "Semilla trazable, horizonte fijo y evaluación por operación"
+    }
+  ],
+  "status": "PROPOSED_NOT_PREREGISTERED_FOR_TEST",
+  "tested": 0
+}

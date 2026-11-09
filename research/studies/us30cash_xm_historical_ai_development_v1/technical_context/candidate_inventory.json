@@ -1,0 +1,99 @@
+{
+  "candidate_entry": [
+    "stoch_k",
+    "stoch_d",
+    "closed_M5_range",
+    "closed_M15_displacement",
+    "closed_M30_displacement",
+    "closed_H1_displacement"
+  ],
+  "candidate_intratrade": [
+    "current_unrealized_pnl",
+    "current_mfe_so_far",
+    "current_mae_so_far"
+  ],
+  "candidate_status": "DEFINITION_AND_CAUSAL_REVIEW_REQUIRED",
+  "families": [
+    {
+      "dependencies": "M5 cerradas y pivotes ya confirmados",
+      "evidence": "MAIN_K reproducido. K/D medidos; divergencias y aceleración pendientes",
+      "family": "Stochastic",
+      "features": "K, D, pendientes, cruces, aceleración, divergencia"
+    },
+    {
+      "dependencies": "M5 cerradas y semilla específica por periodo",
+      "evidence": "EMA20/50/100/200 exportadas; EMA9 y semillas propias pendientes",
+      "family": "EMA",
+      "features": "EMA 9/20/50/100/200, distancia, pendiente y alineación"
+    },
+    {
+      "dependencies": "pivote confirmado, ventana previa y estado secuencial",
+      "evidence": "propuesto; no se retrofecha la confirmación",
+      "family": "Soporte y resistencia",
+      "features": "niveles, rechazo, ruptura, retesteo y ruptura fallida"
+    },
+    {
+      "dependencies": "pivotes confirmados y rango anterior que excluye la barra actual",
+      "evidence": "exportación intratrade presente; auditoría de definición pendiente",
+      "family": "Estructura",
+      "features": "HH, HL, LH, LL y cambios de estructura"
+    },
+    {
+      "dependencies": "OHLC cerrados, catálogo fijo y ventanas previas",
+      "evidence": "OHLC verificado; patrones propuestos",
+      "family": "Velas",
+      "features": "cuerpo, mechas, rango, patrones y secuencias"
+    },
+    {
+      "dependencies": "OHLC cerrados, recurrencia y semilla trazable",
+      "evidence": "campos exportados; semilla no certificada para fit",
+      "family": "Heikin Ashi",
+      "features": "dirección, continuidad, intensidad y transición"
+    },
+    {
+      "dependencies": "tick volume BID, baseline previo y pivotes confirmados",
+      "evidence": "volumen BID verificado; relativo exportado",
+      "family": "Volumen",
+      "features": "relativo, anomalías, picos, divergencia y desplazamiento"
+    },
+    {
+      "dependencies": "ticks de ventana cerrada, bins fijos, empates y política de gaps",
+      "evidence": "insumos diagnósticos disponibles; perfiles y fronteras pendientes",
+      "family": "Perfil de volumen",
+      "features": "POC, VAH, VAL, HVN y LVN"
+    },
+    {
+      "dependencies": "TR de barras cerradas, semilla ATR y umbrales congelados",
+      "evidence": "ATR exportado; semilla y régimen pendientes",
+      "family": "Volatilidad",
+      "features": "ATR, compresión, expansión y régimen"
+    },
+    {
+      "dependencies": "retornos y pendientes causales; horizonte futuro solo como etiqueta",
+      "evidence": "propuesto para verificación",
+      "family": "Tendencia y momentum",
+      "features": "intensidad, aceleración, agotamiento y cambios"
+    },
+    {
+      "dependencies": "mapping de evento a UTC demostrado más IANA America/New_York",
+      "evidence": "no disponible con mapping certificado",
+      "family": "Nueva York",
+      "features": "fases, volatilidad y contexto"
+    },
+    {
+      "dependencies": "M5 cerradas, bucket completo y cutoff de decisión",
+      "evidence": "agregación nativa diagnóstica verificada",
+      "family": "Multitemporal",
+      "features": "M5/M15/M30/H1, rango y desplazamiento"
+    },
+    {
+      "dependencies": "entrada, BID/ASK de marca y prefijo de quotes hasta snapshot",
+      "evidence": "orden y marca exacta verificados; etiquetas y políticas pendientes",
+      "family": "Intratrade",
+      "features": "PnL flotante, MFE/MAE, retroceso, recuperación y pérdida de impulso"
+    }
+  ],
+  "fit_allowlist_unchanged": true,
+  "fit_authorized": false,
+  "status": "CANDIDATE_ONLY_REVIEW_REQUIRED_BEFORE_ANY_FIT"
+}
